@@ -1,6 +1,6 @@
 module.exports = {
-    "*.ts": [
-        "eslint",
-        "prettier --list-different"
-    ]
+  '*!d.ts': [
+    'eslint',
+    'prettier --list-different'
+  ]
 };

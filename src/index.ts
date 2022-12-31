@@ -1,1 +1,3 @@
-console.log('Hello World')
+import KhanClient from './KhanClient'
+
+export { KhanClient }
