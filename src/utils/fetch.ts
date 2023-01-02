@@ -2,22 +2,24 @@ export interface TypedResponse<T> extends Response {
   json(): Promise<T>
 }
 
-export async function http<Response>(url: string, init?: RequestInit): Promise<TypedResponse<Response>> {
-  const response = await fetch(url, init)
-
-  if (!response.ok) throw new Error(`${response.status} ${response.statusText}`)
-
-  return response
+export async function http<Response>(
+  url: string,
+  init?: RequestInit
+): Promise<TypedResponse<Response>> {
+  return await fetch(url, init)
 }
 
-export async function get<Response>(url: string, init?: RequestInit): Promise<TypedResponse<Response>> {
-  init = { method: 'get', ...init } as RequestInit
+export async function get<Response>(
+  url: string,
+  init?: RequestInit
+): Promise<TypedResponse<Response>> {
+  init = { method: 'get', ...init }
   return await http<Response>(url, init)
 }
 
-export async function post<Body, Response>(
+export async function post<Response>(
   url: string,
-  body: Body,
+  body: Record<string, unknown>,
   init?: RequestInit
 ): Promise<TypedResponse<Response>> {
   init = { method: 'post', body: JSON.stringify(body), ...init }
@@ -27,13 +29,9 @@ export async function post<Body, Response>(
 export async function graphql<Variables, Response>(
   url: string,
   query: string,
-  variables: Variables,
+  variables: Variables = {} as Variables,
   init?: RequestInit
 ): Promise<TypedResponse<Response>> {
-  interface Body {
-    query: string
-    variables: Variables
-  }
   const body = { query, variables }
-  return await post<Body, Response>(url, body, init)
+  return await post<Response>(url, body, init)
 }

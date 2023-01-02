@@ -3,7 +3,10 @@ module.exports = {
   overrides: [
     {
       files: ['*.ts'],
-      rules: { '@typescript-eslint/no-namespace': 'off' },
+      rules: {
+        '@typescript-eslint/no-namespace': 'off',
+        '@typescript-eslint/no-non-null-assertion': 'off'
+      },
     },
   ],
   parser: '@typescript-eslint/parser',
