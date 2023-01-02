@@ -1,4 +1,5 @@
 import { FKEY, KHAN_GRAPHQL_URL } from '../lib/constants'
+import { StandardResponse } from '../types/responses'
 import { graphql } from '../utils/fetch'
 
 export namespace LoginWithPasswordMutation {
@@ -37,49 +38,30 @@ export namespace LoginWithPasswordMutation {
     password: string
   }
 
-  export type Response = DataResponse | InvalidInputErrorResponse
-
-  interface DataResponse {
-    data: Data
-  }
-
-  interface Data {
-    loginWithPassword: LoginWithPassword
-  }
-
-  interface LoginWithPassword {
-    __typename: 'LoginWithPasswordMutation'
-    error: Error | null
-    isFirstLogin: boolean | null
-    user: User | null
-  }
-
-  interface User {
-    __typename: 'User'
-    canAccessDistrictsHomepage: boolean
-    hasUnresolvedInvitations: boolean
-    id: unknown | null
-    isTeacher: boolean
-    kaid: string
-    preferredKaLocale: unknown | null
-    transferAuthToken: string
-  }
+  export type Response = StandardResponse<{
+    loginWithPassword: {
+      __typename: 'LoginWithPasswordMutation'
+      error: {
+        __typename: 'LoginWithPasswordMutationError'
+        code: ErrorCode
+      } | null
+      isFirstLogin: boolean | null
+      user: {
+        __typename: 'User'
+        canAccessDistrictsHomepage: boolean
+        hasUnresolvedInvitations: boolean
+        id: unknown | null
+        isTeacher: boolean
+        kaid: string
+        preferredKaLocale: unknown | null
+        transferAuthToken: string
+      } | null
+    } | null
+  }>
 
   export enum ErrorCode {
     INVALID_CREDENTIALS = 'INVALID_CREDENTIALS',
-  }
-
-  interface Error {
-    __typename: 'LoginWithPasswordMutationError'
-    code: ErrorCode
-  }
-
-  interface InvalidInputErrorResponse {
-    errors: InvalidInputError[]
-  }
-
-  interface InvalidInputError {
-    message: string
+    TOO_MANY_ATTEMPTS = 'TOO_MANY_ATTEMPTS',
   }
 }
 
