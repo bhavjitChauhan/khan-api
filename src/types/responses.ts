@@ -45,6 +45,8 @@ export function isInputErrorResponse(
   response: StandardResponse
 ): response is InputErrorResponse {
   return (
-    'errors' in response && Array.isArray(response.errors) && !('data' in response)
+    'errors' in response &&
+    Array.isArray(response.errors) &&
+    !('data' in response)
   )
 }

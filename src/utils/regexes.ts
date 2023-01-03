@@ -53,7 +53,9 @@ const PROGRAM_URL_LOCALES = [
   'tr',
   'vi',
   'zh-hans',
+  'sgn-us',
 ] as const
+
 const PROGRAM_URL_PATHS = [
   'computer-programming',
   'cs',

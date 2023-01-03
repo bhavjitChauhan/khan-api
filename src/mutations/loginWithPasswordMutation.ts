@@ -1,5 +1,6 @@
 import { FKEY, KHAN_GRAPHQL_URL } from '../lib/constants'
 import { StandardResponse } from '../types/responses'
+import { UserSchema } from '../types/schema'
 import { graphql } from '../utils/fetch'
 
 export namespace LoginWithPasswordMutation {
@@ -46,16 +47,17 @@ export namespace LoginWithPasswordMutation {
         code: ErrorCode
       } | null
       isFirstLogin: boolean | null
-      user: {
-        __typename: 'User'
-        canAccessDistrictsHomepage: boolean
-        hasUnresolvedInvitations: boolean
-        id: unknown | null
-        isTeacher: boolean
-        kaid: string
-        preferredKaLocale: unknown | null
-        transferAuthToken: string
-      } | null
+      user: Pick<
+        UserSchema,
+        | '__typename'
+        | 'canAccessDistrictsHomepage'
+        | 'hasUnresolvedInvitations'
+        | 'id'
+        | 'isTeacher'
+        | 'kaid'
+        | 'preferredKaLocale'
+        | 'transferAuthToken'
+      > | null
     } | null
   }>
 
