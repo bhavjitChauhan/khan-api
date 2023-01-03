@@ -1,1 +1,1 @@
-# khan-academy-api
+# Khan API

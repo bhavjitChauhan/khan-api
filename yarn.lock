@@ -4189,9 +4189,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"khan-academy-api@workspace:.":
+"khan-api@workspace:.":
   version: 0.0.0-use.local
-  resolution: "khan-academy-api@workspace:."
+  resolution: "khan-api@workspace:."
   dependencies:
     "@babel/core": ^7.20.5
     "@babel/preset-env": ^7.20.2
