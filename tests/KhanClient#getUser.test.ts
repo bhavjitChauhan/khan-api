@@ -1,7 +1,7 @@
 import { KhanClient } from '../src/index'
 import User from '../src/User'
 
-describe('KhanClient#getProfile', () => {
+describe('KhanClient#getUser', () => {
   test('Fetches profile given KAID', async () => {
     const client = new KhanClient()
 
