@@ -1,10 +1,14 @@
+import KhanClient from './KhanClient'
 import { GetFullUserProfile } from './queries/getFullUserProfile'
 import { BadgeCategory } from './types/badges'
+import { UserAccessLevel } from './types/enums'
+import { KAID } from './types/strings'
 import { GoogleIDRegex, QualariiIDRegex } from './utils/regexes'
 
+// @TODO: There has to be a solution that doesn't require duplicating properties
 interface IUser {
   readonly self?: boolean
-  readonly kaid?: string
+  readonly kaid?: KAID
   readonly username?: string
   readonly nickname?: string
   readonly email?: string
@@ -43,31 +47,74 @@ interface IUser {
   readonly midsignupPhantom?: boolean
   readonly satStudent?: boolean
 
-  readonly accessLevel?: GetFullUserProfile.AccessLevel
+  readonly accessLevel?: UserAccessLevel
 }
 
 export default class User implements IUser {
+  /**
+   * The client that this user was fetched with.
+   */
+  client?: KhanClient
+  /**
+   * The raw `getFullUserProfile` data returned by the API.
+   */
   rawFullUserProfile?: GetFullUserProfile.Data
 
+  /**
+   * Whether the user is the currently authenticated user.
+   */
   readonly self?: boolean
-  readonly kaid?: string
+  /**
+   * The user's KAID.
+   */
+  readonly kaid?: KAID
+  /**
+   * The user's username. May not be set by the user.
+   */
   readonly username?: string
+  /**
+   * The user's nickname. May in rare cases be `null`.
+   */
   readonly nickname?: string
+  /**
+   * The user's email address. Required authentication.
+   */
   readonly email?: string
+  /**
+   * The user's authentication email addresses. Required authentication.
+   */
   readonly emails?: string[]
+  /**
+   * The user's bio.
+   */
   readonly bio?: string
+  /**
+   * The user's energy points.
+   */
   readonly points?: number
+  /**
+   * The user's badge counts by category.
+   */
   readonly badgeCounts?: Record<BadgeCategory, number>
+  /**
+   * The date the user created their account.
+   */
   readonly joined?: Date
 
   readonly key?: string
   readonly googleID?: string
   readonly qualarooID?: string
+  /**
+   * The number of unread notifications.
+   */
   readonly newNotifications?: number
   readonly completedVideos?: number
 
   readonly canAccessDistrictsHomepage?: boolean
   readonly canHellban?: boolean
+  /**
+   * Whether the user can send Guardian messages.
+   */
   readonly canMessageUsers?: boolean
   readonly canModifyCoaches?: boolean
 
@@ -77,7 +124,13 @@ export default class User implements IUser {
   readonly hasStudents?: boolean
 
   readonly developer?: boolean
+  /**
+   * Whether the user is a Guardian.
+   */
   readonly moderator?: boolean
+  /**
+   * Whether the user is a child account.
+   */
   readonly child?: boolean
   readonly parent?: boolean
   readonly orphan?: boolean
@@ -89,12 +142,12 @@ export default class User implements IUser {
   readonly midsignupPhantom?: boolean
   readonly satStudent?: boolean
 
-  readonly accessLevel?: GetFullUserProfile.AccessLevel
+  readonly accessLevel?: UserAccessLevel
 
-  static fromFullUserProfile(data: GetFullUserProfile.Data) {
-    if (!data.user) return new User()
+  static #transformFullUserProfile(data: GetFullUserProfile.Data) {
+    if (!data.user) return {}
 
-    const user = new User({
+    return {
       emails: data.user.authEmails ?? undefined,
       badgeCounts: data.user.badgeCounts
         ? (JSON.parse(data.user.badgeCounts) as Record<BadgeCategory, number>)
@@ -138,14 +191,74 @@ export default class User implements IUser {
         ? data.user.userId.match(QualariiIDRegex)![1]
         : undefined,
       username: data.user.username ?? undefined,
-    })
+    }
+  }
+
+  /**
+   * Creates a new user from the given from a `getFullUserProfile` query
+   * 
+   * @description
+   * Note that `KhanClient.getUser` will automatically call this method. This is only useful if you need to use the low-level API.
+   * 
+   * @param data `getFullUserProfile` query data
+   * 
+   * @see KhanClient.getUser
+   */
+  static fromFullUserProfile(data: GetFullUserProfile.Data) {
+    const user = new User(User.#transformFullUserProfile(data))
 
     user.rawFullUserProfile = data
 
     return user
   }
 
+  /**
+   * Creates a new user from the given formatted data or `User` instance
+   * 
+   * @description
+   * Note that `KhanClient.getUser` will automatically use this class for abstraction. This is only useful if you need to talk between the low-level API and the high-level API.
+   * 
+   * @param user Formatted user data or `User` instance
+   */
   constructor(user?: IUser) {
+    if (user) this.copy(user)
+
+    return this
+  }
+
+  /**
+   * Copies the given formatted data or `User` instance
+   * 
+   * @param user Formatted user data or `User` instance
+   */
+  copy(user: IUser) {
     Object.assign(this, user)
+
+    return this
+  }
+
+  /**
+   * Copies the given data from a `getFullUserProfile` query
+   * 
+   * @param data `getFullUserProfile` query data
+   */
+  copyFromFullUserProfile(data: GetFullUserProfile.Data) {
+    this.copy(User.#transformFullUserProfile(data))
+
+    return this
+  }
+
+  /**
+   * Fetches the user's profile using a `getFullUserProfile` query and updates the user's data
+   * 
+   * @param client Optional client to use for the request
+   */
+  async update(client = new KhanClient()) {
+    if (!this.kaid && !this.username) throw new Error('User does not have a KAID/username')
+
+    const user = await client.getUser(this.kaid ?? this.username)
+    if (user) this.copy(user)
+
+    return this
   }
 }
