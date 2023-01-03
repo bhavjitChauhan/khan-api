@@ -118,7 +118,7 @@ export default class KhanClient {
   /**
    * @param identifier KAID or username
    */
-  async getProfile(identifier?: string) {
+  async getUser(identifier?: string) {
     if (!identifier && !this.authenticated)
       throw new Error('Not authenticated: Login or provide a kaid/username')
 
