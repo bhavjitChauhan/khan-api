@@ -92,7 +92,9 @@ export namespace GetFullUserProfile {
     username?: string | null
   }
 
-  export type Response = StandardResponse<{
+  export type Response = StandardResponse<Data>
+
+  export type Data = {
     actorIsImpersonatingUser: boolean
     user: {
       __typename: 'User'
@@ -113,6 +115,9 @@ export namespace GetFullUserProfile {
       hasStudents: boolean | null
       hideVisual: boolean | null
       homepageUrl: string | null
+      /**
+       * Same as KAID
+       */
       id: string
       includesDistrictOwnedData: boolean
       isChild: boolean | null
@@ -135,9 +140,12 @@ export namespace GetFullUserProfile {
       key: string | null
       muteVideos: boolean | null
       newNotificationCount: number | null
-      nickname: string
+      nickname: string | null
       noColorInVideos: boolean | null
-      pendingEmailVerifications: Array<unknown> | null
+      pendingEmailVerifications: Array<{
+        __typename: 'PendingEmailVerification'
+        email: string
+      }> | null
       points: number
       preferredKaLocale: {
         __typename: 'Locale'
@@ -151,6 +159,9 @@ export namespace GetFullUserProfile {
         accessLevel: AccessLevel
       }
       profileRoot: string
+      /**
+       * Either KAID or Qualaroo ID
+       */
       qualarooId: string | null
       shouldShowAgeCheck: boolean | null
       showCaptions: boolean | null
@@ -158,10 +169,13 @@ export namespace GetFullUserProfile {
       soundOn: boolean | null
       tosAccepted: boolean | null
       underAgeGate: unknown | null
+      /**
+       * Either KAID or Google ID
+       */
       userId: string
       username: string
     } | null
-  }>
+  }
 
   export enum AccessLevel {
     COACH = 'COACH',
