@@ -3,5 +3,5 @@ export enum ServiceErrorCode {
 }
 
 export enum ServiceErrorName {
-  USERS = 'users',
+  users = 'users',
 }
