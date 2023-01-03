@@ -9,17 +9,19 @@ import {
   isDataResponse,
   DataResponse,
 } from './types/responses'
+import User from './User'
 import { stripCookies } from './utils/cookies'
 import { TypedResponse } from './utils/fetch'
 import { KaidRegex } from './utils/regexes'
 
 export default class KhanClient {
-  #identifier: string | null = null
-  #password: string | null = null
-  #cookies: string | null = null
+  #identifier?: string
+  #password?: string
+  #cookies?: string
 
-  kaid: string | null = null
   authenticated = false
+  kaid: string | null = null
+  user?: User
 
   constructor() {
     return this
@@ -114,15 +116,16 @@ export default class KhanClient {
   }
 
   /**
-   * @param user KAID or username
+   * @param identifier KAID or username
    */
-  async getProfile(user?: string) {
-    if (!user && !this.authenticated)
+  async getProfile(identifier?: string) {
+    if (!identifier && !this.authenticated)
       throw new Error('Not authenticated: Login or provide a kaid/username')
 
     const response = await getFullUserProfile(
-      user ? { [KaidRegex.test(user) ? 'kaid' : 'username']: user } : undefined,
-      !user
+      identifier ? { [KaidRegex.test(identifier) ? 'kaid' : 'username']: identifier } : undefined,
+      !identifier
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         ? { credentials: 'include', headers: { Cookie: this.#cookies! } }
         : undefined
     )
@@ -132,6 +135,9 @@ export default class KhanClient {
 
     if (!json.data.user) throw new Error('User not found')
 
-    return json.data.user
+    const user = User.fromFullUserProfile(json.data)
+    if (user.self) this.user = user
+
+    return user
   }
 }

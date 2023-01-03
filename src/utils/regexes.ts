@@ -81,3 +81,7 @@ export const ProgramURLRegex = new RegExp(
   )})\\/[a-zA-Z0-9-._~()'!*:@,;]+\\/${ProgramIDRegex.toString().slice(2, -2)}$`,
   'i'
 )
+
+export const GoogleIDRegex = /^http:\/\/googleid\.khanacademy\.org\/(\d+)$/
+
+export const QualariiIDRegex = /^_gae_bingo_random:(\w+-\w+-\w+)$/
