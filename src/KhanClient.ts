@@ -9,6 +9,7 @@ import {
   isDataResponse,
   DataResponse,
 } from './types/responses'
+import { KAID } from './types/strings'
 import User from './User'
 import { stripCookies } from './utils/cookies'
 import { TypedResponse } from './utils/fetch'
@@ -20,7 +21,7 @@ export default class KhanClient {
   #cookies?: string
 
   authenticated = false
-  kaid: string | null = null
+  kaid: KAID | null = null
   user?: User
 
   constructor() {
@@ -106,9 +107,7 @@ export default class KhanClient {
     this.#cookies = stripCookies(cookies)
 
     // Store the user's KAID for future use
-    this.kaid =
-      json.data.loginWithPassword.user?.kaid ??
-      response.headers.get('x-ka-kaid')
+    this.kaid = json.data.loginWithPassword.user?.kaid ?? null
 
     this.authenticated = true
 
@@ -123,10 +122,12 @@ export default class KhanClient {
       throw new Error('Not authenticated: Login or provide a kaid/username')
 
     const response = await getFullUserProfile(
-      identifier ? { [KaidRegex.test(identifier) ? 'kaid' : 'username']: identifier } : undefined,
+      identifier
+        ? { [KaidRegex.test(identifier) ? 'kaid' : 'username']: identifier }
+        : undefined,
       !identifier
-        // eslint-disable-next-line @typescript-eslint/naming-convention
-        ? { credentials: 'include', headers: { Cookie: this.#cookies! } }
+        ? 
+          { credentials: 'include', headers: { Cookie: this.#cookies! } }
         : undefined
     )
     const json = await response.json()
@@ -136,6 +137,7 @@ export default class KhanClient {
     if (!json.data.user) throw new Error('User not found')
 
     const user = User.fromFullUserProfile(json.data)
+    user.client = this
     if (user.self) this.user = user
 
     return user
