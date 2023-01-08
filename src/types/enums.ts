@@ -19,5 +19,5 @@ export enum ProgramEditorType {
   pjs = 'pjs',
   webpage = 'webpage',
   ace_sql = 'ace_sql',
-  unknown = ''
+  unknown = '',
 }

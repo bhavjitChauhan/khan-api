@@ -138,7 +138,8 @@ export default class KhanClient {
     )
     const json = await response.json()
 
-    if (!KhanClient.#isValidResponse(response, json)) return
+    if (!KhanClient.#isValidResponse(response, json))
+      throw new Error('Invalid response')
     if (!json.data.user) throw new Error('User not found')
 
     const user = User.fromUserSchema(json.data.user)
@@ -165,7 +166,8 @@ export default class KhanClient {
     })
     const json = await response.json()
 
-    if (!KhanClient.#isValidResponse(response, json)) return
+    if (!KhanClient.#isValidResponse(response, json))
+      throw new Error('Invalid response')
     if (!json.data.programById) throw new Error('Program not found')
 
     const program = Program.fromProgramSchema(json.data.programById)
@@ -175,11 +177,11 @@ export default class KhanClient {
         author: this.user,
       })
       console.log(
-        `[getProgram] Copied the client's user to program ${
+        `[getProgram] Copied the client's user data to program ${
           program.title
             ? `"${truncate(program.title, 32)}"`
             : program.id ?? 'unknown'
-        } because the program's author was the client's user`
+        } because the program's author matches the client user`
       )
     }
 
