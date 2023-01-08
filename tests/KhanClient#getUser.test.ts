@@ -7,7 +7,7 @@ describe('KhanClient#getUser', () => {
 
     const user = await client.getUser(process.env.KHAN_KAID)
     expect(user).toBeInstanceOf(User)
-    expect(user?.rawFullUserProfile?.user).not.toBeNull()
+    expect(user?.rawData).not.toBeNull()
   })
 
   test('Fetches profile given username', async () => {
@@ -15,7 +15,7 @@ describe('KhanClient#getUser', () => {
 
     const user = await client.getUser(process.env.KHAN_USERNAME)
     expect(user).toBeInstanceOf(User)
-    expect(user?.rawFullUserProfile?.user).not.toBeNull()
+    expect(user?.rawData).not.toBeNull()
   })
 
   test('Fetches own profile iff authenticated', async () => {
@@ -25,7 +25,7 @@ describe('KhanClient#getUser', () => {
     await client.login(process.env.KHAN_IDENTIFIER, process.env.KHAN_PASSWORD)
     const user = await client.getUser()
     expect(user).toBeInstanceOf(User)
-    expect(user?.rawFullUserProfile?.user).not.toBeNull()
+    expect(user?.rawData).not.toBeNull()
     expect(user?.self).toBe(true)
   })
 })
