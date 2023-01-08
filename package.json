@@ -26,7 +26,8 @@
     "lint": "eslint .",
     "format": "prettier ./**/*.ts --write",
     "types": "tsc --emitDeclarationOnly && rollup -c",
-    "build": "yarn node ./scripts/build.js"
+    "build": "yarn node ./scripts/build.js",
+    "doc": "typedoc"
   },
   "devDependencies": {
     "@types/jest": "^29.2.5",
@@ -42,6 +43,8 @@
     "rollup": "^3.9.1",
     "rollup-plugin-dts": "^5.1.1",
     "ts-jest": "^29.0.3",
+    "typedoc": "^0.23.24",
+    "typedoc-plugin-missing-exports": "^1.0.0",
     "typescript": "^4.9.4"
   }
 }
