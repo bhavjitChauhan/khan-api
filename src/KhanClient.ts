@@ -1,7 +1,9 @@
 import loginWithPasswordMutation, {
   LoginWithPasswordMutation,
 } from './mutations/loginWithPasswordMutation'
+import { Program } from './Program'
 import getFullUserProfile from './queries/getFullUserProfile'
+import programQuery from './queries/programQuery'
 import {
   isServiceErrorsResponse,
   isInputErrorResponse,
@@ -13,7 +15,8 @@ import { KAID } from './types/strings'
 import User from './User'
 import { stripCookies } from './utils/cookies'
 import { TypedResponse } from './utils/fetch'
-import { KaidRegex } from './utils/regexes'
+import { truncate } from './utils/format'
+import { KaidRegex, ProgramIDRegex, ProgramURLRegex } from './utils/regexes'
 
 export default class KhanClient {
   #identifier?: string
@@ -107,7 +110,11 @@ export default class KhanClient {
     this.#cookies = stripCookies(cookies)
 
     // Store the user's KAID for future use
-    this.kaid = json.data.loginWithPassword.user?.kaid ?? null
+    this.kaid =
+      typeof json.data.loginWithPassword.user?.kaid === 'string' &&
+      KaidRegex.test(json.data.loginWithPassword.user.kaid)
+        ? (json.data.loginWithPassword.user.kaid as KAID)
+        : null
 
     this.authenticated = true
 
@@ -126,20 +133,56 @@ export default class KhanClient {
         ? { [KaidRegex.test(identifier) ? 'kaid' : 'username']: identifier }
         : undefined,
       !identifier
-        ? 
-          { credentials: 'include', headers: { Cookie: this.#cookies! } }
+        ? { credentials: 'include', headers: { Cookie: this.#cookies! } }
         : undefined
     )
     const json = await response.json()
 
     if (!KhanClient.#isValidResponse(response, json)) return
-
     if (!json.data.user) throw new Error('User not found')
 
-    const user = User.fromFullUserProfile(json.data)
+    const user = User.fromUserSchema(json.data.user)
     user.client = this
     if (user.self) this.user = user
 
     return user
+  }
+
+  /**
+   * @param id Program ID or URL
+   */
+  async getProgram(id: number | string) {
+    if (typeof id === 'number') {
+      id = id.toString()
+      if (!ProgramIDRegex.test(id)) throw new Error('Invalid program ID')
+    } else {
+      if (ProgramURLRegex.test(id)) id = id.match(ProgramURLRegex)![1]
+      if (!ProgramIDRegex.test(id)) throw new Error('Invalid program ID or URL')
+    }
+
+    const response = await programQuery({
+      programId: id,
+    })
+    const json = await response.json()
+
+    if (!KhanClient.#isValidResponse(response, json)) return
+    if (!json.data.programById) throw new Error('Program not found')
+
+    const program = Program.fromProgramSchema(json.data.programById)
+    program.client = this
+    if (this.user && program.author?.kaid === this.kaid) {
+      program.copy({
+        author: this.user,
+      })
+      console.log(
+        `[getProgram] Copied the client's user to program ${
+          program.title
+            ? `"${truncate(program.title, 32)}"`
+            : program.id ?? 'unknown'
+        } because the program's author was the client's user`
+      )
+    }
+
+    return program
   }
 }
