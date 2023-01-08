@@ -1,9 +1,9 @@
-import { KhanClient } from '../src/index'
+import { Client } from '../src/index'
 import User from '../src/User'
 
-describe('KhanClient#getUser', () => {
+describe('Client#getUser', () => {
   test('Fetches profile given KAID', async () => {
-    const client = new KhanClient()
+    const client = new Client()
 
     const user = await client.getUser(process.env.KHAN_KAID)
     expect(user).toBeInstanceOf(User)
@@ -11,7 +11,7 @@ describe('KhanClient#getUser', () => {
   })
 
   test('Fetches profile given username', async () => {
-    const client = new KhanClient()
+    const client = new Client()
 
     const user = await client.getUser(process.env.KHAN_USERNAME)
     expect(user).toBeInstanceOf(User)
@@ -19,7 +19,7 @@ describe('KhanClient#getUser', () => {
   })
 
   test('Fetches own profile iff authenticated', async () => {
-    const client = new KhanClient()
+    const client = new Client()
     await expect(client.getUser()).rejects.toThrowError()
 
     await client.login(process.env.KHAN_IDENTIFIER, process.env.KHAN_PASSWORD)

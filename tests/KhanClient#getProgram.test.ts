@@ -1,4 +1,4 @@
-import { KhanClient } from '../src/index'
+import { Client } from '../src/index'
 import { Program } from '../src/Program'
 import { ProgramIDRegex } from '../src/utils/regexes'
 
@@ -7,9 +7,9 @@ if (typeof process.env.KHAN_PROGRAM_ID === 'undefined')
 else if (!ProgramIDRegex.test(process.env.KHAN_PROGRAM_ID))
   throw new Error('Invalid KHAN_PROGRAM_ID env var')
 
-describe('KhanClient#getProgram', () => {
+describe('Client#getProgram', () => {
   test('Fetches program given program ID string', async () => {
-    const client = new KhanClient()
+    const client = new Client()
 
     const program = await client.getProgram(process.env.KHAN_PROGRAM_ID!)
     expect(program).toBeInstanceOf(Program)
@@ -17,7 +17,7 @@ describe('KhanClient#getProgram', () => {
   })
 
   test('Fetches program given program ID number', async () => {
-    const client = new KhanClient()
+    const client = new Client()
 
     const program = await client.getProgram(
       parseInt(process.env.KHAN_PROGRAM_ID!, 10)
@@ -27,7 +27,7 @@ describe('KhanClient#getProgram', () => {
   })
 
   test('Fetches program given program URL', async () => {
-    const client = new KhanClient()
+    const client = new Client()
 
     const program = await client.getProgram(
       `https://www.khanacademy.org/computer-programming/-/${process.env
@@ -38,13 +38,13 @@ describe('KhanClient#getProgram', () => {
   })
 
   test('Throws error if invalid program ID', async () => {
-    const client = new KhanClient()
+    const client = new Client()
 
     await expect(client.getProgram(0)).rejects.toThrowError()
   })
 
   test('Throws error if invalid program URL', async () => {
-    const client = new KhanClient()
+    const client = new Client()
 
     await expect(
       client.getProgram('https://www.khanacademy.org/')
@@ -52,7 +52,7 @@ describe('KhanClient#getProgram', () => {
   })
 
   test('Throws error if program does not exist', async () => {
-    const client = new KhanClient()
+    const client = new Client()
 
     await expect(client.getProgram(123456789)).rejects.toThrowError()
   })

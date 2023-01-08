@@ -1,4 +1,4 @@
-import KhanClient from './KhanClient'
+import Client from './Client'
 import { BadgeCategory } from './types/badges'
 import { UserAccessLevel } from './types/enums'
 import { UserSchema } from './types/schema'
@@ -55,7 +55,7 @@ export default class User implements IUser {
   /**
    * The client that this user was fetched with.
    */
-  client?: KhanClient
+  client?: Client
   /**
    * The raw user schema data
    *
@@ -218,11 +218,11 @@ export default class User implements IUser {
    * Creates a new user from the given from a user schema
    *
    * @description
-   * Note that `KhanClient.getUser` will automatically call this method. This is only useful if you need to use the low-level API.
+   * Note that `Client.getUser` will automatically call this method. This is only useful if you need to use the low-level API.
    *
    * @param schema
    *
-   * @see KhanClient.getUser
+   * @see Client.getUser
    */
   static fromUserSchema(schema: RecursivePartial<UserSchema>) {
     const user = new User(User.#transformUserSchema(schema))
@@ -235,7 +235,7 @@ export default class User implements IUser {
    * Creates a new user from the given formatted data or `User` instance
    *
    * @description
-   * Note that `KhanClient.getUser` will automatically use this class for abstraction. This is only useful if you need to talk between the low-level API and the high-level API.
+   * Note that `Client.getUser` will automatically use this class for abstraction. This is only useful if you need to talk between the low-level API and the high-level API.
    *
    * @param user Formatted user data or `User` instance
    */
@@ -267,7 +267,7 @@ export default class User implements IUser {
    *
    * @param client Optional client to use for the request
    */
-  async fetch(client = new KhanClient()) {
+  async fetch(client = new Client()) {
     if (!this.kaid && !this.username)
       throw new Error('User does not have a KAID/username')
 

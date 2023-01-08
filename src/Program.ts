@@ -1,4 +1,4 @@
-import KhanClient from './KhanClient'
+import Client from './Client'
 import { ProgramEditorType } from './types/enums'
 import { ProgramSchema } from './types/schema'
 import User from './User'
@@ -34,7 +34,7 @@ export class Program implements IProgram {
   /**
    * The client that this program was fetched with.
    */
-  client?: KhanClient
+  client?: Client
   /**
    * The raw program schema data
    *
@@ -278,7 +278,7 @@ export class Program implements IProgram {
     return this.copy(Program.#transformProgramQuery(schema))
   }
 
-  async fetch(client = new KhanClient()) {
+  async fetch(client = new Client()) {
     if (!this.id) throw new Error('Program is missing ID')
 
     const program = await client.getProgram(this.id)
@@ -286,7 +286,6 @@ export class Program implements IProgram {
     return this.copy(program)
   }
 }
-
 export namespace Program {
   export enum Type {
     ProcessingJS = 'ProcessingJS',
@@ -295,3 +294,5 @@ export namespace Program {
     Other = 'Other',
   }
 }
+
+export default Program

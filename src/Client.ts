@@ -18,7 +18,7 @@ import { TypedResponse } from './utils/fetch'
 import { truncate } from './utils/format'
 import { KaidRegex, ProgramIDRegex, ProgramURLRegex } from './utils/regexes'
 
-export default class KhanClient {
+export default class Client {
   #identifier?: string
   #password?: string
   #cookies?: string
@@ -78,7 +78,7 @@ export default class KhanClient {
     const json = await response.json()
 
     // @TODO: Find a better way to throw errors inside validator while still acting as a user-defined type guard
-    if (!KhanClient.#isValidResponse(response, json)) return
+    if (!Client.#isValidResponse(response, json)) return
 
     if (!json.data.loginWithPassword) throw new Error('Malformed response')
 
@@ -126,7 +126,9 @@ export default class KhanClient {
    */
   async getUser(identifier?: string) {
     if (!identifier && !this.authenticated)
-      throw new Error('Not authenticated: Login or provide a kaid/username')
+      throw new Error(
+        'Not authenticated: Login to get client user or provide a kaid/username'
+      )
 
     const response = await getFullUserProfile(
       identifier
@@ -138,7 +140,7 @@ export default class KhanClient {
     )
     const json = await response.json()
 
-    if (!KhanClient.#isValidResponse(response, json))
+    if (!Client.#isValidResponse(response, json))
       throw new Error('Invalid response')
     if (!json.data.user) throw new Error('User not found')
 
@@ -166,7 +168,7 @@ export default class KhanClient {
     })
     const json = await response.json()
 
-    if (!KhanClient.#isValidResponse(response, json))
+    if (!Client.#isValidResponse(response, json))
       throw new Error('Invalid response')
     if (!json.data.programById) throw new Error('Program not found')
 
