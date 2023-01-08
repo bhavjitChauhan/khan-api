@@ -10,7 +10,7 @@ interface IProgram {
   readonly title?: string
   readonly author?: User
   readonly created?: Date
-  readonly updated?: Date
+  readonly updated?: Date | null
   readonly width?: number
   readonly height?: number
   readonly votes?: number
@@ -31,14 +31,41 @@ interface IProgram {
 }
 
 export class Program implements IProgram {
+  /**
+   * The client that this program was fetched with.
+   */
   client?: KhanClient
+  /**
+   * The raw program schema data
+   *
+   * @description
+   * Only set if the program was created from a user schema.
+   */
   rawData?: RecursivePartial<ProgramSchema>
 
+  /**
+   * The ID of the program.
+   */
   readonly id?: number
+  /**
+   * The title of the program.
+   */
   readonly title?: string
+  /**
+   * The author of the program.
+   */
   readonly author?: User
+  /**
+   * The date the program was created.
+   */
   readonly created?: Date
-  readonly updated?: Date
+  /**
+   * The date the program was last updated.
+   *
+   * @description
+   * Set to `null` if the program has never been updated.
+   */
+  readonly updated?: Date | null
   /**
    * The height of the program in pixels.
    *
@@ -53,10 +80,28 @@ export class Program implements IProgram {
    * Constrained between 400 and 600. May be any value in between.
    */
   readonly height?: number
+  /**
+   * The number of votes the program has received.
+   *
+   * @description
+   * Note that a program has 1 vote on creation.
+   */
   readonly votes?: number
+  /**
+   * The number of spin-offs the program has.
+   */
   readonly spinOffCount?: number
+  /**
+   * The code of the program.
+   */
   readonly code?: string
+  /**
+   * Whether the program is hidden from the hotlist.
+   */
   readonly hidden?: boolean
+  /**
+   * The type of program.
+   */
   readonly type?: Program.Type
 
   /**
@@ -64,12 +109,75 @@ export class Program implements IProgram {
    */
   readonly origin?: Program | null
   readonly key?: string
+  /**
+   * The ID of the latest thumbnail image of the program.
+   *
+   * @description
+   * Previous thumbnails are not guaranteed to be available.
+   */
   readonly thumbnailID?: number
+  /**
+   * The description of the program. Set to `null` if the description is empty string.
+   */
   readonly description?: string | null
+  /**
+   * Whether the program has been deleted.
+   */
   readonly deleted?: boolean
 
+  /**
+   * Whether the program has been flagged by the client's authenticated user.
+   *
+   * @see client
+   */
   readonly flaggedBySelf?: boolean
+  /**
+   * Whether the program has been voted by the client's authenticated user.
+   *
+   * @see client
+   */
   readonly votedBySelf?: boolean
+
+  /**
+   * Number of lines of code in the program.
+   */
+  get lines() {
+    if (this.code) return this.code.split('\n').length
+    return null
+  }
+
+  /**
+   * URL of the program.
+   */
+  get url() {
+    if (this.rawData?.url)
+      return `https://www.khanacademy.org${this.rawData.url}`
+    if (this.id)
+      return `https://www.khanacademy.org/computer-programming/-/${this.id}`
+    return null
+  }
+
+  /**
+   * Short URL of the program.
+   */
+  get shortUrl() {
+    if (this.id) return `https://khanacademy.org/cs/-/${this.id}`
+    return null
+  }
+
+  /**
+   * Thumbnail image URL of the program.
+   *
+   * @description
+   * To get the latest thumbnail image, use 'latest' as the thumbnail ID instead.
+   */
+  get thumbnailUrl() {
+    if (this.rawData?.imagePath)
+      return `https://www.khanacademy.org${this.rawData.imagePath}`
+    if (this.thumbnailID && this.url)
+      return `${this.url}/${this.thumbnailID}.png`
+    return null
+  }
 
   static #transformProgramQuery(schema: RecursivePartial<ProgramSchema>) {
     return {
@@ -81,10 +189,25 @@ export class Program implements IProgram {
             ...schema.creatorProfile,
           })
         : undefined,
-      created: schema.created ? new Date(schema.created) : undefined,
-      updated: schema.revision?.created
-        ? new Date(schema.revision.created)
-        : undefined,
+      created: (() => {
+        if (!schema.created) return undefined
+        // Some very old programs' updated date is before their created date
+        if (schema.revision?.created) {
+          return new Date(
+            Math.min(
+              new Date(schema.created).valueOf(),
+              new Date(schema.revision.created).valueOf()
+            )
+          )
+        }
+        return new Date(schema.created)
+      })(),
+      updated: (() => {
+        if (!schema.revision?.created) return undefined
+        if (schema.created && schema.revision.created === schema.created)
+          return null
+        return new Date(schema.revision.created)
+      })(),
       width: schema.width,
       height: schema.height,
       votes: schema.sumVotesIncremented,
@@ -159,7 +282,6 @@ export class Program implements IProgram {
     if (!this.id) throw new Error('Program is missing ID')
 
     const program = await client.getProgram(this.id)
-    if (!program) throw new Error('Program not found')
 
     return this.copy(program)
   }
