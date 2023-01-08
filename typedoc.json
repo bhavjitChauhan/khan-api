@@ -1,0 +1,15 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": [
+    "src"
+  ],
+  "name": "Khan API",
+  "includeVersion": true,
+  "plugin": [
+    "typedoc-plugin-missing-exports"
+  ],
+  "navigationLinks": {
+    "GitHub": "https://github.com/bhavjitChauhan/khan-api",
+    "NPM": "https://www.npmjs.com/package/@bhavjit/khan-api"
+  }
+}
