@@ -1,6 +1,18 @@
 import { ProgramEditorType, UserAccessLevel } from './enums'
 import { KAID, Locale, QualarooID, GoogleID } from './strings'
 
+/**
+ * @file GraphQL Schema
+ *
+ * @summary
+ * This file contains the GraphQL schema types for the KA API.
+ *
+ * @description
+ * This file exists to reduce code duplication and because GraphQL operates using schemas.
+ *
+ * Khan Academy's safelisted GraphQL queries will usually not request any schema entirely so TypeScript's `Pick` and `Omit` utility types may come in handy.
+ */
+
 export interface UserSchema<
   PendingEmailVerificationData = PendingEmailVerificationSchema,
   LocaleData = LocaleSchema,
@@ -26,9 +38,9 @@ export interface UserSchema<
   hideVisual: boolean | null
   homepageUrl: string | null
   /**
-   * Same as KAID
+   * Same as KAID unless the user is anonymous
    */
-  id: KAID
+  id: KAID | null
   includesDistrictOwnedData: boolean
   isChild: boolean | null
   isCoachingLoggedInUser: boolean
@@ -46,7 +58,10 @@ export interface UserSchema<
   isSelf: boolean
   isTeacher: boolean | null
   joined: string
-  kaid: KAID
+  /**
+   * Will always be a string if requested in the GraphQL query. Defaults to empty string (`''`) for anonymous users.
+   */
+  kaid: KAID | ''
   key: string | null
   muteVideos: boolean | null
   newNotificationCount: number | null
@@ -57,7 +72,10 @@ export interface UserSchema<
   preferredKaLocale: LocaleData | null
   prefersReducedMotion: boolean | null
   profile: ProfileData
-  profileRoot: `/profile/${string}/`
+  /**
+   * Defaults to `null` for anonymous users.
+   */
+  profileRoot: `/profile/${string}/` | null
   /**
    * Either Qualaroo ID or KAID
    */
@@ -109,6 +127,9 @@ export interface ProgramSchema<
   docsUrlPath: string
   flaggedBy: unknown | null
   flaggedByUser: boolean
+  /**
+   * Required special permissions.
+   */
   flags: unknown | null
   height: number
   hideFromHotlist: boolean
@@ -116,7 +137,7 @@ export interface ProgramSchema<
   imagePath: string
   isOwner: boolean
   isProjectOrFork: boolean
-  kaid: KAID
+  kaid: UserSchema['kaid']
   key: string
   newUrlPath: string
   originScratchpad: OriginProgramData | null

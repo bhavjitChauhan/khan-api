@@ -80,8 +80,14 @@ export const ProgramURLRegex = new RegExp(
     '|'
   )})\\/(?:${PROGRAM_URL_PATHS.join(
     '|'
-  )})\\/[a-zA-Z0-9-._~()'!*:@,;]+\\/${ProgramIDRegex.toString().slice(2, -2)}$`,
+  )})\\/[\\w\\d-.~()'!*:@,;]+\\/(${ProgramIDRegex.toString().slice(2, -2)})$`,
   'i'
+)
+
+export const ProgramImagePathRegex = new RegExp(
+  `^\\/(?:${PROGRAM_URL_PATHS.join(
+    '|'
+  )})\\/[\\w\\d-.~()'!*:@,;]+\\/\\d+\\/(\\d+)\\.png$`
 )
 
 export const GoogleIDRegex = /^http:\/\/googleid\.khanacademy\.org\/(\d+)$/
