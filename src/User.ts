@@ -1,15 +1,16 @@
 import KhanClient from './KhanClient'
-import { GetFullUserProfile } from './queries/getFullUserProfile'
 import { BadgeCategory } from './types/badges'
 import { UserAccessLevel } from './types/enums'
+import { UserSchema } from './types/schema'
 import { KAID } from './types/strings'
-import { GoogleIDRegex, QualariiIDRegex } from './utils/regexes'
+import { GoogleIDRegex, KaidRegex, QualariiIDRegex } from './utils/regexes'
+import { RecursivePartial } from './utils/types'
 
 // @TODO: There has to be a solution that doesn't require duplicating properties
 interface IUser {
   readonly self?: boolean
-  readonly kaid?: KAID
-  readonly username?: string
+  readonly kaid?: KAID | null
+  readonly username?: string | null
   readonly nickname?: string
   readonly email?: string
   readonly emails?: string[]
@@ -19,8 +20,8 @@ interface IUser {
   readonly joined?: Date
 
   readonly key?: string
-  readonly googleID?: string
-  readonly qualarooID?: string
+  readonly googleID?: string | null
+  readonly qualarooID?: string | null
   readonly newNotifications?: number
   readonly completedVideos?: number
 
@@ -56,9 +57,12 @@ export default class User implements IUser {
    */
   client?: KhanClient
   /**
-   * The raw `getFullUserProfile` data returned by the API.
+   * The raw user schema data
+   *
+   * @description
+   * Only set if the user was created from a user schema.
    */
-  rawFullUserProfile?: GetFullUserProfile.Data
+  rawData?: RecursivePartial<UserSchema>
 
   /**
    * Whether the user is the currently authenticated user.
@@ -67,11 +71,11 @@ export default class User implements IUser {
   /**
    * The user's KAID.
    */
-  readonly kaid?: KAID
+  readonly kaid?: KAID | null
   /**
    * The user's username. May not be set by the user.
    */
-  readonly username?: string
+  readonly username?: string | null
   /**
    * The user's nickname. May in rare cases be `null`.
    */
@@ -102,8 +106,8 @@ export default class User implements IUser {
   readonly joined?: Date
 
   readonly key?: string
-  readonly googleID?: string
-  readonly qualarooID?: string
+  readonly googleID?: string | null
+  readonly qualarooID?: string | null
   /**
    * The number of unread notifications.
    */
@@ -144,91 +148,105 @@ export default class User implements IUser {
 
   readonly accessLevel?: UserAccessLevel
 
-  static #transformFullUserProfile(data: GetFullUserProfile.Data) {
-    if (!data.user) return {}
-
+  static #transformUserSchema(schema: RecursivePartial<UserSchema>) {
     return {
-      emails: data.user.authEmails ?? undefined,
-      badgeCounts: data.user.badgeCounts
-        ? (JSON.parse(data.user.badgeCounts) as Record<BadgeCategory, number>)
+      emails: schema.authEmails ?? undefined,
+      badgeCounts: schema.badgeCounts
+        ? (JSON.parse(schema.badgeCounts) as Record<BadgeCategory, number>)
         : undefined,
-      bio: data.user.bio ?? undefined,
+      bio: schema.bio ?? undefined,
       canAccessDistrictsHomepage:
-        data.user.canAccessDistrictsHomepage ?? undefined,
-      canHellban: data.user.canHellban ?? undefined,
-      canMessageUsers: data.user.canMessageUsers ?? undefined,
-      canModifyCoaches: data.user.canModifyCoaches ?? undefined,
-      completedVideos: data.user.countVideosCompleted,
-      email: data.user.email ?? undefined,
-      hasChildren: data.user.hasChildren ?? undefined,
-      hasClasses: data.user.hasClasses ?? undefined,
-      hasCoach: data.user.hasCoach ?? undefined,
-      hasStudents: data.user.hasStudents ?? undefined,
-      child: data.user.isChild ?? undefined,
-      creator: data.user.isCreator ?? undefined,
-      curator: data.user.isCurator ?? undefined,
-      developer: data.user.isDeveloper ?? undefined,
-      midsignupPhantom: data.user.isMidsignupPhantom ?? undefined,
-      moderator: data.user.isModerator ?? undefined,
-      orphan: data.user.isOrphan ?? undefined,
-      parent: data.user.isParent ?? undefined,
-      phantom: data.user.isPhantom ?? undefined,
-      publisher: data.user.isPublisher ?? undefined,
-      satStudent: data.user.isSatStudent ?? undefined,
-      self: data.user.isSelf ?? undefined,
-      teacher: data.user.isTeacher ?? undefined,
-      joined: data.user.joined ? new Date(data.user.joined) : undefined,
-      kaid: data.user.kaid ?? undefined,
-      key: data.user.key ?? undefined,
-      newNotifications: data.user.newNotificationCount ?? undefined,
-      nickname: data.user.nickname ?? undefined,
-      points: data.user.points ?? undefined,
-      accessLevel: data.user.profile.accessLevel,
-      googleID: GoogleIDRegex.test(data.user.userId)
-        ? data.user.userId.match(GoogleIDRegex)![1]
-        : undefined,
-      qualarooID: QualariiIDRegex.test(data.user.userId)
-        ? data.user.userId.match(QualariiIDRegex)![1]
-        : undefined,
-      username: data.user.username ?? undefined,
+        schema.canAccessDistrictsHomepage ?? undefined,
+      canHellban: schema.canHellban ?? undefined,
+      canMessageUsers: schema.canMessageUsers ?? undefined,
+      canModifyCoaches: schema.canModifyCoaches ?? undefined,
+      completedVideos: schema.countVideosCompleted,
+      email: schema.email ?? undefined,
+      hasChildren: schema.hasChildren ?? undefined,
+      hasClasses: schema.hasClasses ?? undefined,
+      hasCoach: schema.hasCoach ?? undefined,
+      hasStudents: schema.hasStudents ?? undefined,
+      child: schema.isChild ?? undefined,
+      creator: schema.isCreator ?? undefined,
+      curator: schema.isCurator ?? undefined,
+      developer: schema.isDeveloper ?? undefined,
+      midsignupPhantom: schema.isMidsignupPhantom ?? undefined,
+      moderator: schema.isModerator ?? undefined,
+      orphan: schema.isOrphan ?? undefined,
+      parent: schema.isParent ?? undefined,
+      phantom: schema.isPhantom ?? undefined,
+      publisher: schema.isPublisher ?? undefined,
+      satStudent: schema.isSatStudent ?? undefined,
+      self: schema.isSelf ?? undefined,
+      teacher: schema.isTeacher ?? undefined,
+      joined: schema.joined ? new Date(schema.joined) : undefined,
+      kaid:
+        typeof schema.kaid === 'string' && KaidRegex.test(schema.kaid)
+          ? (schema.kaid as KAID)
+          : typeof schema.kaid === 'string'
+          ? null
+          : undefined,
+      key: schema.key ?? undefined,
+      newNotifications: schema.newNotificationCount ?? undefined,
+      nickname: schema.nickname ?? undefined,
+      points: schema.points ?? undefined,
+      accessLevel: schema.profile?.accessLevel,
+      googleID:
+        typeof schema.userId === 'string' && GoogleIDRegex.test(schema.userId)
+          ? schema.userId.match(GoogleIDRegex)![1]
+          : typeof schema.userId === 'string'
+          ? null
+          : undefined,
+      qualarooID:
+        typeof schema.qualarooId === 'string' &&
+        QualariiIDRegex.test(schema.qualarooId)
+          ? schema.qualarooId.match(QualariiIDRegex)![1]
+          : typeof schema.qualarooId === 'string'
+          ? null
+          : undefined,
+      username:
+        schema.username ??
+        (schema.profileRoot
+          ? !KaidRegex.test(schema.profileRoot.slice(9, -1))
+            ? schema.profileRoot.slice(9, -1)
+            : null
+          : schema.username),
     }
   }
 
   /**
-   * Creates a new user from the given from a `getFullUserProfile` query
-   * 
+   * Creates a new user from the given from a user schema
+   *
    * @description
    * Note that `KhanClient.getUser` will automatically call this method. This is only useful if you need to use the low-level API.
-   * 
-   * @param data `getFullUserProfile` query data
-   * 
+   *
+   * @param schema
+   *
    * @see KhanClient.getUser
    */
-  static fromFullUserProfile(data: GetFullUserProfile.Data) {
-    const user = new User(User.#transformFullUserProfile(data))
-
-    user.rawFullUserProfile = data
+  static fromUserSchema(schema: RecursivePartial<UserSchema>) {
+    const user = new User(User.#transformUserSchema(schema))
+    user.rawData = schema
 
     return user
   }
 
   /**
    * Creates a new user from the given formatted data or `User` instance
-   * 
+   *
    * @description
    * Note that `KhanClient.getUser` will automatically use this class for abstraction. This is only useful if you need to talk between the low-level API and the high-level API.
-   * 
+   *
    * @param user Formatted user data or `User` instance
    */
   constructor(user?: IUser) {
-    if (user) this.copy(user)
-
+    if (user) return this.copy(user)
     return this
   }
 
   /**
    * Copies the given formatted data or `User` instance
-   * 
+   *
    * @param user Formatted user data or `User` instance
    */
   copy(user: IUser) {
@@ -238,27 +256,24 @@ export default class User implements IUser {
   }
 
   /**
-   * Copies the given data from a `getFullUserProfile` query
-   * 
-   * @param data `getFullUserProfile` query data
+   * Copies the given data from a user schema
    */
-  copyFromFullUserProfile(data: GetFullUserProfile.Data) {
-    this.copy(User.#transformFullUserProfile(data))
-
-    return this
+  copyFromUserSchema(schema: RecursivePartial<UserSchema>) {
+    return this.copy(User.#transformUserSchema(schema))
   }
 
   /**
    * Fetches the user's profile using a `getFullUserProfile` query and updates the user's data
-   * 
+   *
    * @param client Optional client to use for the request
    */
-  async update(client = new KhanClient()) {
-    if (!this.kaid && !this.username) throw new Error('User does not have a KAID/username')
+  async fetch(client = new KhanClient()) {
+    if (!this.kaid && !this.username)
+      throw new Error('User does not have a KAID/username')
 
-    const user = await client.getUser(this.kaid ?? this.username)
-    if (user) this.copy(user)
+    const user = await client.getUser(this.kaid ?? this.username!)
+    if (!user) throw new Error('User not found')
 
-    return this
+    return this.copy(user)
   }
 }
