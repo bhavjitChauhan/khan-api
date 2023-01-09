@@ -32,9 +32,7 @@ export namespace LoginWithPasswordMutation {
 `
 
   export interface Variables {
-    /**
-     * Email or username
-     */
+    /** Email or username */
     identifier: string
     password: string
   }
@@ -67,6 +65,29 @@ export namespace LoginWithPasswordMutation {
   }
 }
 
+/**
+ * Low-level function for making a `loginWithPasswordMutation` request.
+ *
+ * @remarks
+ * There are many things that can go wrong with this request and Khan Academy
+ * doesn't provide a great way to handle them. It's recommended to use
+ * {@link Client.login | Client.login} instead.
+ *
+ * @link {@link https://documenter.getpostman.com/view/19553924/2s8YzQUiXU#77a4642b-3580-4409-b837-1ac82a487c35 | Reference}
+ *
+ * @see {@link Client.login | Client.login}
+ *
+ * @example
+ * Simple usage without error handling:
+ * ```js
+ * const response = await loginWithPasswordMutation({
+ *   identifier: 'username', // or email
+ *   password: 'password',
+ * })
+ *
+ * const cookies = response.headers.get('set-cookie')
+ * ```
+ */
 export default function loginWithPasswordMutation(
   variables: LoginWithPasswordMutation.Variables,
   init?: RequestInit
@@ -79,6 +100,7 @@ export default function loginWithPasswordMutation(
     LoginWithPasswordMutation.query,
     variables,
     {
+      // This is required for the request to work, see reference
       headers: {
         'x-ka-fkey': FKEY,
         Cookie: `fkey=${FKEY}`,

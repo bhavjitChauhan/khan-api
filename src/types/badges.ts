@@ -1,3 +1,6 @@
+/**
+ * @link https://www.khanacademy.org/badges/
+ */
 export default interface Badge {
   id: string
   name: string

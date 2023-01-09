@@ -123,6 +123,23 @@ export namespace ProgramQuery {
   }
 }
 
+/**
+ * Low-level function for making a `programQuery` request.
+ *
+ * @link {@link https://documenter.getpostman.com/view/19553924/2s8YzQUiXU#77a4642b-3580-4409-b837-1ac82a487c35 | Reference}
+ *
+ * @see {@link Client.getProgram | Client.getProgram}
+ *
+ * @example
+ * Simple usage wuthout error handling:
+ * ```js
+ * const response = await programQuery({
+ *  programId: '6058668928843776'
+ * })
+ * const json = await response.json()
+ * const program = json.data.programById
+ * ```
+ */
 export default function programQuery(
   variables: ProgramQuery.Variables,
   init?: RequestInit

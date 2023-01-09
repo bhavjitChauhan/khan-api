@@ -78,6 +78,8 @@ export interface UserSchema<
   profileRoot: `/profile/${string}/` | null
   /**
    * Either Qualaroo ID or KAID
+   *
+   * @link https://github.com/kamens/gae_bingo
    */
   qualarooId: QualarooID | KAID | null
   shouldShowAgeCheck: boolean | null
