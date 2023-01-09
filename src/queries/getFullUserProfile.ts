@@ -161,6 +161,50 @@ export namespace GetFullUserProfile {
   }
 }
 
+/**
+ * Low-level function for making a `getFullUserProfile` request.
+ *
+ * @remarks
+ * This request does not require authentication but some fields will be returned
+ * as `null`.
+ *
+ * If, for some reason, both `kaid` and `username` are provided, Khan Academy
+ * will use `kaid` and ignore `username`.
+ *
+ * @param variables Fetches profile associated with any cookies if not provided
+ *
+ * @link {@link https://documenter.getpostman.com/view/19553924/2s8YzQUiXU#9ae4c690-be8a-4b57-acfc-07a4870a5ee3 | Reference}
+ *
+ * @see {@link Client.getUser | Client.getUser}
+ *
+ * @example
+ * Get profile by KAID, without error handling:
+ * ```js
+ * const response = await getFullUserProfile({ kaid: 'kaid_326465577260382527912172' })
+ * const json = await response.json()
+ * const profile = json.data.user
+ * ```
+ *
+ * @example
+ * Similarly, get profile by username:
+ * ```js
+ * const response = await getFullUserProfile({ username: 'sal' })
+ * const json = await response.json()
+ * const profile = json.data.user
+ * ```
+ *
+ * @example
+ * If no variables are provided or an empty object is passed in, Khan Academy
+ * will use any cookies included with the request to fetch the profile
+ * associated with them:
+ * ```js
+ * const response = await getFullUserProfile(null, {
+ *  headers: { cookie: 'KAAS=...' }
+ * })
+ * const json = await response.json()
+ * const profile = json.data.user
+ * ```
+ */
 export default function getFullUserProfile(
   variables?: GetFullUserProfile.Variables,
   init?: RequestInit

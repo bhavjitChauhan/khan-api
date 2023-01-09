@@ -222,7 +222,7 @@ export default class User implements IUser {
    *
    * @param schema
    *
-   * @see Client.getUser
+   * @see {@link Client.getUser}
    */
   static fromUserSchema(schema: RecursivePartial<UserSchema>) {
     const user = new User(User.#transformUserSchema(schema))

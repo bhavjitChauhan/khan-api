@@ -135,7 +135,7 @@ export default class Client {
         ? { [KaidRegex.test(identifier) ? 'kaid' : 'username']: identifier }
         : undefined,
       !identifier
-        ? { credentials: 'include', headers: { Cookie: this.#cookies! } }
+        ? { credentials: 'include', headers: { cookie: this.#cookies! } }
         : undefined
     )
     const json = await response.json()

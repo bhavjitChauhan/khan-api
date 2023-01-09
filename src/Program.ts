@@ -128,13 +128,13 @@ export class Program implements IProgram {
   /**
    * Whether the program has been flagged by the client's authenticated user.
    *
-   * @see client
+   * @see {@link client}
    */
   readonly flaggedBySelf?: boolean
   /**
    * Whether the program has been voted by the client's authenticated user.
    *
-   * @see client
+   * @see {@link client}
    */
   readonly votedBySelf?: boolean
 
