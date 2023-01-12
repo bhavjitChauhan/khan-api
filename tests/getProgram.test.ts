@@ -7,7 +7,7 @@ if (typeof process.env.KHAN_PROGRAM_ID === 'undefined')
 else if (!ProgramIDRegex.test(process.env.KHAN_PROGRAM_ID))
   throw new Error('Invalid KHAN_PROGRAM_ID env var')
 
-describe('Client#getProgram', () => {
+describe('getProgram', () => {
   test('Fetches program given program ID string', async () => {
     const client = new Client()
 
