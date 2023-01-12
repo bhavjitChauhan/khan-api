@@ -1,5 +1,12 @@
 import { ProgramEditorType, UserAccessLevel } from './enums'
-import { KAID, Locale, QualarooID, GoogleID } from './strings'
+import {
+  Kaid,
+  Locale,
+  QualarooID,
+  GoogleID,
+  AvatarPath,
+  AvatarName,
+} from './strings'
 
 /**
  * @file GraphQL Schema
@@ -14,6 +21,7 @@ import { KAID, Locale, QualarooID, GoogleID } from './strings'
  */
 
 export interface UserSchema<
+  AvatarData = AvatarSchema,
   PendingEmailVerificationData = PendingEmailVerificationSchema,
   LocaleData = LocaleSchema,
   ProfileData = ProfileSchema
@@ -21,6 +29,7 @@ export interface UserSchema<
   __typename: 'User'
   authEmails: Array<string> | null
   autocontinueOn: boolean | null
+  avatar: AvatarData
   badgeCounts: string
   bio: string
   canAccessDistrictsHomepage: boolean
@@ -40,7 +49,7 @@ export interface UserSchema<
   /**
    * Same as KAID unless the user is anonymous
    */
-  id: KAID | null
+  id: Kaid | null
   includesDistrictOwnedData: boolean
   isChild: boolean | null
   isCoachingLoggedInUser: boolean
@@ -61,7 +70,7 @@ export interface UserSchema<
   /**
    * Will always be a string if requested in the GraphQL query. Defaults to empty string (`''`) for anonymous users.
    */
-  kaid: KAID | ''
+  kaid: Kaid | ''
   key: string | null
   muteVideos: boolean | null
   newNotificationCount: number | null
@@ -81,7 +90,7 @@ export interface UserSchema<
    *
    * @link https://github.com/kamens/gae_bingo
    */
-  qualarooId: QualarooID | KAID | null
+  qualarooId: QualarooID | Kaid | null
   shouldShowAgeCheck: boolean | null
   showCaptions: boolean | null
   signupDataIfUnverified: unknown | null
@@ -92,8 +101,20 @@ export interface UserSchema<
   /**
    * Either Google ID or KAID
    */
-  userId: GoogleID | KAID
+  userId: GoogleID | Kaid
   username: string
+}
+
+export interface AvatarSchema {
+  __typename: 'Avatar'
+  category: string
+  /**
+   * For example:
+   * `"/images/avatars/svg/blobby-green.svg"`
+   */
+  imageSrc: AvatarPath
+  isDefaultForCategory: boolean
+  name: AvatarName
 }
 
 export interface PendingEmailVerificationSchema {

@@ -1,4 +1,7 @@
+import { Kaid } from '../types/strings'
+
 export const KaidRegex = /^kaid_\d{20,25}$/
+export const isKaid = (str: string): str is Kaid => KaidRegex.test(str)
 
 const VALID_PROGRAM_ID_LENGTHS = [9, 10, 16] as const
 export const ProgramIDRegex = new RegExp(
@@ -93,3 +96,6 @@ export const ProgramImagePathRegex = new RegExp(
 export const GoogleIDRegex = /^http:\/\/googleid\.khanacademy\.org\/(\d+)$/
 
 export const QualariiIDRegex = /^_gae_bingo_random:(\w+-\w+-\w+)$/
+
+export const EmailRegex =
+  /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/

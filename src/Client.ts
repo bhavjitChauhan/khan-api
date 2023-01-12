@@ -2,7 +2,9 @@ import loginWithPasswordMutation, {
   LoginWithPasswordMutation,
 } from './mutations/loginWithPasswordMutation'
 import { Program } from './Program'
+import avatarDataForProfile from './queries/avatarDataForProfile'
 import getFullUserProfile from './queries/getFullUserProfile'
+import getUserByUsernameOrEmail from './queries/getUserByUsernameOrEmail'
 import programQuery from './queries/programQuery'
 import {
   isServiceErrorsResponse,
@@ -11,30 +13,46 @@ import {
   isDataResponse,
   DataResponse,
 } from './types/responses'
-import { KAID } from './types/strings'
+import { Kaid } from './types/strings'
 import User from './User'
+import {
+  extractAvatarSlug,
+  generateAvatarPNG,
+  generateAvatarSVG,
+} from './utils/avatars'
 import { stripCookies } from './utils/cookies'
 import { TypedResponse } from './utils/fetch'
 import { truncate } from './utils/format'
-import { KaidRegex, ProgramIDRegex, ProgramURLRegex } from './utils/regexes'
+import {
+  EmailRegex,
+  isKaid,
+  KaidRegex,
+  ProgramIDRegex,
+  ProgramURLRegex,
+} from './utils/regexes'
 
 export default class Client {
   #identifier?: string
   #password?: string
   #cookies?: string
 
+  #identifierMap = new Map<string, Kaid>()
+
   authenticated = false
-  kaid: KAID | null = null
+  kaid: Kaid | null = null
   user?: User
 
   constructor() {
     return this
   }
 
-  static #isValidResponse<T>(
-    response: TypedResponse<StandardResponse>,
+  /**
+   * @throws Error if the response is not valid
+   */
+  static #assertValidResponse<T>(
+    response: TypedResponse<StandardResponse<T>>,
     json: StandardResponse<T>
-  ): json is DataResponse<T> {
+  ): asserts json is DataResponse<T> {
     if (!response.ok)
       throw new Error(
         `Invalid response: ${response.status} ${response.statusText}${
@@ -46,13 +64,61 @@ export default class Client {
     if (isServiceErrorsResponse(json))
       throw new Error('Service error: ' + json.errors[0].message)
     if (!isDataResponse(json)) throw new Error('Malformed response')
-    return true
+  }
+
+  /**
+   * Resolves a username or email to a KAID and caches the result
+   *
+   * @remarks
+   * If the identifier is cached, it will be returned immediately. Otherwise a
+   * `getUserByUsernameOrEmail` request will be made to resolve the identifier.
+   *
+   * @param identifier Username or email
+   * @returns KAID
+   */
+  async #resolveKaid(identifier: string) {
+    if (KaidRegex.test(identifier)) return identifier as Kaid
+
+    if (this.#identifierMap.has(identifier))
+      return this.#identifierMap.get(identifier)!
+
+    const isEmail = EmailRegex.test(identifier)
+    const response = await getUserByUsernameOrEmail({
+      [isEmail ? 'email' : 'username']: identifier,
+    })
+    const json = await response.json()
+
+    Client.#assertValidResponse(response, json)
+    if (!json.data.user) throw new Error('User not found')
+
+    const kaid = json.data.user.kaid
+    if (kaid === '') throw new Error('User does not have a valid KAID')
+
+    if (!this.#identifierMap.has(identifier))
+      this.#identifierMap.set(identifier, kaid)
+
+    return kaid
+  }
+
+  /**
+   * Gets the KAAS cookie from the current session
+   *
+   * @remarks
+   * The KAAS cookie is used by Khan Academy to authenticate requests.
+   *
+   * @returns KAAS cookie or null if not authenticated
+   */
+  get kaas() {
+    if (!this.authenticated || !this.#cookies) return null
+
+    return this.#cookies.match(/KAAS=([^;]+)/)?.[1] ?? null
   }
 
   /**
    * @param identifier Username or email
    * @param password
    */
+  // @TODO: Add support for KAID login
   async login(identifier?: string, password?: string) {
     // Credentials may already be stored from previous login
     if (identifier) this.#identifier = identifier
@@ -77,9 +143,7 @@ export default class Client {
     // @TODO: Handle invalid JSON response
     const json = await response.json()
 
-    // @TODO: Find a better way to throw errors inside validator while still acting as a user-defined type guard
-    if (!Client.#isValidResponse(response, json)) return
-
+    Client.#assertValidResponse(response, json)
     if (!json.data.loginWithPassword) throw new Error('Malformed response')
 
     // Check for other mutation-specific errors
@@ -109,26 +173,40 @@ export default class Client {
       )
     this.#cookies = stripCookies(cookies)
 
+    // Can this be a getter for `this.#cookies` instead?
+    this.authenticated = true
+
     // Store the user's KAID for future use
     this.kaid =
       typeof json.data.loginWithPassword.user?.kaid === 'string' &&
       KaidRegex.test(json.data.loginWithPassword.user.kaid)
-        ? (json.data.loginWithPassword.user.kaid as KAID)
+        ? (json.data.loginWithPassword.user.kaid as Kaid)
         : null
-
-    this.authenticated = true
+    if (this.kaid === null)
+      console.warn(
+        `User ${
+          identifier ?? this.kaas ?? 'unknown'
+        } does not have a valid KAID`
+      )
 
     return json.data.loginWithPassword
   }
 
   /**
-   * @param identifier KAID or username
+   * @param identifier KAID, username or email
    */
   async getUser(identifier?: string) {
+    // Theoretically possible to also allow email identifiers using `getUserByUsernameOrEmail` query
     if (!identifier && !this.authenticated)
       throw new Error(
         'Not authenticated: Login to get client user or provide a kaid/username'
       )
+
+    let email: string | null = null
+    if (identifier && EmailRegex.test(identifier)) {
+      email = identifier
+      identifier = await this.#resolveKaid(identifier)
+    }
 
     const response = await getFullUserProfile(
       identifier
@@ -140,13 +218,21 @@ export default class Client {
     )
     const json = await response.json()
 
-    if (!Client.#isValidResponse(response, json))
-      throw new Error('Invalid response')
+    Client.#assertValidResponse(response, json)
     if (!json.data.user) throw new Error('User not found')
 
     const user = User.fromUserSchema(json.data.user)
     user.client = this
+    console.debug('Email', email)
+    if (!user.email && email && EmailRegex.test(email)) user.copy({ email })
     if (user.self) this.user = user
+
+    if (user.kaid) {
+      if (user.username && !this.#identifierMap.has(user.username))
+        this.#identifierMap.set(user.username, user.kaid)
+      if (user.email && !this.#identifierMap.has(user.email))
+        this.#identifierMap.set(user.email, user.kaid)
+    }
 
     return user
   }
@@ -168,8 +254,7 @@ export default class Client {
     })
     const json = await response.json()
 
-    if (!Client.#isValidResponse(response, json))
-      throw new Error('Invalid response')
+    Client.#assertValidResponse(response, json)
     if (!json.data.programById) throw new Error('Program not found')
 
     const program = Program.fromProgramSchema(json.data.programById)
@@ -188,5 +273,28 @@ export default class Client {
     }
 
     return program
+  }
+
+  async getAvatar(
+    identifier: string | undefined = this.kaid ?? this.#identifier,
+    type: 'svg' | 'png' = 'svg'
+  ) {
+    if (!identifier) throw new Error('No identifier provided')
+
+    if (!isKaid(identifier)) identifier = await this.#resolveKaid(identifier)
+
+    const response = await avatarDataForProfile({
+      // Why do I have to cast this to `Kaid`? It should already be `Kaid`...
+      kaid: identifier as Kaid,
+    })
+    const json = await response.json()
+
+    Client.#assertValidResponse(response, json)
+    if (!json.data.user) throw new Error('User not found')
+
+    const slug = extractAvatarSlug(json.data.user.avatar.imageSrc)
+    if (!slug) throw new Error('User has no avatar')
+
+    return type === 'svg' ? generateAvatarSVG(slug) : generateAvatarPNG(slug)
   }
 }
