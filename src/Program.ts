@@ -278,7 +278,7 @@ export class Program implements IProgram {
     return this.copy(Program.#transformProgramQuery(schema))
   }
 
-  async fetch(client = new Client()) {
+  async get(client = new Client()) {
     if (!this.id) throw new Error('Program is missing ID')
 
     const program = await client.getProgram(this.id)

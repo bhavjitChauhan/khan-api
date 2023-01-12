@@ -2,18 +2,19 @@ import Client from './Client'
 import { BadgeCategory } from './types/badges'
 import { UserAccessLevel } from './types/enums'
 import { UserSchema } from './types/schema'
-import { KAID } from './types/strings'
+import { AvatarURL, Kaid } from './types/strings'
 import { GoogleIDRegex, KaidRegex, QualariiIDRegex } from './utils/regexes'
 import { RecursivePartial } from './utils/types'
 
 // @TODO: There has to be a solution that doesn't require duplicating properties
 interface IUser {
   readonly self?: boolean
-  readonly kaid?: KAID | null
+  readonly kaid?: Kaid | null
   readonly username?: string | null
   readonly nickname?: string
   readonly email?: string
   readonly emails?: string[]
+  readonly avatar?: AvatarURL
   readonly bio?: string
   readonly points?: number
   readonly badgeCounts?: Record<BadgeCategory, number>
@@ -71,7 +72,7 @@ export default class User implements IUser {
   /**
    * The user's KAID.
    */
-  readonly kaid?: KAID | null
+  readonly kaid?: Kaid | null
   /**
    * The user's username. May not be set by the user.
    */
@@ -88,6 +89,10 @@ export default class User implements IUser {
    * The user's authentication email addresses. Required authentication.
    */
   readonly emails?: string[]
+  /**
+   * The user's avatar URL.
+   */
+  readonly avatar?: AvatarURL
   /**
    * The user's bio.
    */
@@ -182,7 +187,7 @@ export default class User implements IUser {
       joined: schema.joined ? new Date(schema.joined) : undefined,
       kaid:
         typeof schema.kaid === 'string' && KaidRegex.test(schema.kaid)
-          ? (schema.kaid as KAID)
+          ? (schema.kaid as Kaid)
           : typeof schema.kaid === 'string'
           ? null
           : undefined,
@@ -267,13 +272,24 @@ export default class User implements IUser {
    *
    * @param client Optional client to use for the request
    */
-  async fetch(client = new Client()) {
-    if (!this.kaid && !this.username)
-      throw new Error('User does not have a KAID/username')
+  async get(client = new Client()) {
+    if (!this.kaid && !this.username && !this.email)
+      throw new Error('User does not have a KAID, username or email')
 
     const user = await client.getUser(this.kaid ?? this.username!)
-    if (!user) throw new Error('User not found')
 
     return this.copy(user)
+  }
+
+  async getAvatar(client = new Client()) {
+    if (!this.kaid && !this.username && !this.email)
+      throw new Error('User does not have a KAID, username or email')
+
+    const url = await client.getAvatar(
+      this.kaid ?? this.username ?? this.email!
+    )
+    this.copy({ avatar: url })
+
+    return url
   }
 }
