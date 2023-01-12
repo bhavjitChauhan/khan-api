@@ -1,9 +1,9 @@
 import { Client } from '../src/index'
 
-describe('Client#login', () => {
+describe('login', () => {
   test('Logs in successfully with valid credentials', async () => {
     const client = new Client()
-    await client.login(process.env.KHAN_IDENTIFIER, process.env.KHAN_PASSWORD)
+    await client.login(process.env.KHAN_EMAIL, process.env.KHAN_PASSWORD)
 
     expect(client.kaid).not.toBeNull()
     expect(client.authenticated).toBe(true)
