@@ -70,7 +70,7 @@ export namespace ProgramQuery {
     __typename
   }
 }
-`
+` as const
 
   export interface Variables {
     programId: string
@@ -131,9 +131,9 @@ export namespace ProgramQuery {
  * @see {@link Client.getProgram | Client.getProgram}
  *
  * @example
- * Simple usage wuthout error handling:
+ * Simple usage without error handling:
  * ```js
- * const response = await programQuery({
+ * const response = await queries.programQuery({
  *  programId: '6058668928843776'
  * })
  * const json = await response.json()
