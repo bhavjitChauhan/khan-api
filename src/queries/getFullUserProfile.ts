@@ -1,11 +1,12 @@
 import { graphql } from '../utils/fetch'
 import { KHAN_GRAPHQL_URL } from '../lib/constants'
 import { StandardResponse } from '../types/responses'
-import { KAID } from '../types/strings'
+import { Kaid } from '../types/strings'
 import { UserSchema } from '../types/schema'
 
 export namespace GetFullUserProfile {
-  export const query = `query getFullUserProfile($kaid: String, $username: String) {
+  export const query =
+    `query getFullUserProfile($kaid: String, $username: String) {
   user(kaid: $kaid, username: $username) {
     id
     kaid
@@ -87,10 +88,10 @@ export namespace GetFullUserProfile {
   }
   actorIsImpersonatingUser
 }
-`
+` as const
 
   export interface Variables {
-    kaid?: KAID | null
+    kaid?: Kaid | null
     username?: string | null
   }
 
@@ -180,7 +181,7 @@ export namespace GetFullUserProfile {
  * @example
  * Get profile by KAID, without error handling:
  * ```js
- * const response = await getFullUserProfile({ kaid: 'kaid_326465577260382527912172' })
+ * const response = await queries.getFullUserProfile({ kaid: 'kaid_326465577260382527912172' })
  * const json = await response.json()
  * const profile = json.data.user
  * ```
@@ -188,7 +189,7 @@ export namespace GetFullUserProfile {
  * @example
  * Similarly, get profile by username:
  * ```js
- * const response = await getFullUserProfile({ username: 'sal' })
+ * const response = await queries.getFullUserProfile({ username: 'sal' })
  * const json = await response.json()
  * const profile = json.data.user
  * ```
@@ -198,7 +199,7 @@ export namespace GetFullUserProfile {
  * will use any cookies included with the request to fetch the profile
  * associated with them:
  * ```js
- * const response = await getFullUserProfile(null, {
+ * const response = await queries.getFullUserProfile(null, {
  *  headers: { cookie: 'KAAS=...' }
  * })
  * const json = await response.json()
