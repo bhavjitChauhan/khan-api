@@ -1,3 +1,5 @@
 dist
 *.cjs
 *.js
+
+index.d.ts
