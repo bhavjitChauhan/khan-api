@@ -38,6 +38,13 @@ fi
 git checkout docs
 git merge master --no-edit
 
+# Ensure Node.js version >= 18
+if [ "$(node -p "process.versions.node.split('.')[0]")" -lt 18 ]; then
+    echo "Node.js version must be >= 18"
+    cleanup
+    exit 1
+fi
+
 # Check if Yarn is installed
 if ! command -v yarn &> /dev/null; then
     echo "Yarn could not be found, please install it"
@@ -54,4 +61,5 @@ sed -i '/docs/d' .gitignore
 git add docs .gitignore
 git commit -m "Update documentation"
 
+# Cleanup
 cleanup
