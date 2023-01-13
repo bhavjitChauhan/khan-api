@@ -12,7 +12,16 @@
 
 node_modules
 
+coverage/
+docs/
 .env
-dist
-docs
-coverage
+
+# Build artifacts
+dist/
+esm/
+node/
+index.d.ts
+khan-api.js
+khan-api.js.map
+khan-api.min.js
+khan-api.min.js.map

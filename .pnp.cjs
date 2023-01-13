@@ -33,6 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/rimraf", "npm:3.0.2"],\
             ["@typescript-eslint/eslint-plugin", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:5.48.0"],\
             ["@typescript-eslint/parser", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:5.48.0"],\
+            ["chalk", "npm:5.2.0"],\
             ["dotenv", "npm:16.0.3"],\
             ["esbuild", "npm:0.16.15"],\
             ["eslint", "npm:8.31.0"],\
@@ -841,6 +842,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/rimraf", "npm:3.0.2"],\
             ["@typescript-eslint/eslint-plugin", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:5.48.0"],\
             ["@typescript-eslint/parser", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:5.48.0"],\
+            ["chalk", "npm:5.2.0"],\
             ["dotenv", "npm:16.0.3"],\
             ["esbuild", "npm:0.16.15"],\
             ["eslint", "npm:8.31.0"],\
@@ -2434,6 +2436,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["chalk", "npm:4.1.2"],\
             ["ansi-styles", "npm:4.3.0"],\
             ["supports-color", "npm:7.2.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:5.2.0", {\
+          "packageLocation": "./.yarn/cache/chalk-npm-5.2.0-bedd808592-03d8060277.zip/node_modules/chalk/",\
+          "packageDependencies": [\
+            ["chalk", "npm:5.2.0"]\
           ],\
           "linkType": "HARD"\
         }]\

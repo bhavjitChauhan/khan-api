@@ -1,31 +1,49 @@
 {
   "name": "@bhavjit/khan-api",
   "author": "Bhavjit Chauhan",
+  "version": "0.1.0",
   "keywords": [
     "khan-academy"
   ],
-  "packageManager": "yarn@3.3.1",
-  "version": "0.2.0",
-  "main": "./dist/node/khan-api.cjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bhavjitChauhan/khan-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bhavjitChauhan/khan-api/issues"
+  },
+  "homepage": "https://bhavjitchauhan.github.io/khan-api",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "esm/",
+    "node/",
+    "index.d.ts",
+    "khan-api.js",
+    "khan-api.js.map",
+    "khan-api.min.js",
+    "khan-api.min.js.map"
+  ],
   "exports": {
     ".": {
-      "browser": "./dist/khan-api.js",
+      "browser": "./khan-api.js",
       "default": {
-        "require": "./dist/node/khan-api.cjs",
-        "default": "./dist/esm/khan-api.js"
+        "require": "./node/khan-api.cjs",
+        "default": "./esm/khan-api.js"
       }
     }
   },
-  "files": [
-    "dist"
-  ],
+  "main": "./khan-api.js",
+  "types": "./index.d.ts",
+  "runkitExampleFilename": "example.js",
+  "packageManager": "yarn@3.3.1",
   "type": "module",
-  "types": "./dist/index.d.ts",
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
     "format": "prettier ./**/*.ts --write",
-    "types": "tsc --emitDeclarationOnly && rollup -c && rimraf dist/dts",
+    "types": "tsc --emitDeclarationOnly && rollup -c && rimraf dist/types",
     "build": "yarn node ./scripts/build.js",
     "doc": "typedoc"
   },
@@ -35,6 +53,7 @@
     "@types/rimraf": "^3",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
+    "chalk": "^5.2.0",
     "dotenv": "^16.0.3",
     "esbuild": "^0.16.15",
     "eslint": "^8.31.0",
