@@ -25,3 +25,6 @@ khan-api.js
 khan-api.js.map
 khan-api.min.js
 khan-api.min.js.map
+
+# Editor directories and files
+.idea
