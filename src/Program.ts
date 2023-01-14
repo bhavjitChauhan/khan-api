@@ -1,4 +1,5 @@
 import Client from './Client'
+import { Wrapper } from './lib/Wrapper'
 import { ProgramEditorType } from './types/enums'
 import { ProgramSchema } from './types/schema'
 import User from './User'
@@ -30,19 +31,10 @@ interface IProgram {
   readonly votedBySelf?: boolean
 }
 
-export class Program implements IProgram {
-  /**
-   * The client that this program was fetched with.
-   */
-  client?: Client
-  /**
-   * The raw program schema data
-   *
-   * @description
-   * Only set if the program was created from a user schema.
-   */
-  rawData?: RecursivePartial<ProgramSchema>
-
+export class Program
+  extends Wrapper<ProgramSchema, IProgram>
+  implements IProgram
+{
   /**
    * The ID of the program.
    */
@@ -138,6 +130,10 @@ export class Program implements IProgram {
    */
   readonly votedBySelf?: boolean
 
+  get spinoff() {
+    return !!this.origin
+  }
+
   /**
    * Number of lines of code in the program.
    */
@@ -179,7 +175,7 @@ export class Program implements IProgram {
     return null
   }
 
-  static #transformProgramQuery(schema: RecursivePartial<ProgramSchema>) {
+  static #transformSchema(schema: RecursivePartial<ProgramSchema>) {
     return {
       id: schema.id ? parseInt(schema.id, 10) : undefined,
       title: schema.translatedTitle,
@@ -257,33 +253,22 @@ export class Program implements IProgram {
   }
 
   static fromProgramSchema(schema: RecursivePartial<ProgramSchema>) {
-    const program = new Program(Program.#transformProgramQuery(schema))
+    const program = new Program(Program.#transformSchema(schema))
     program.rawData = schema
 
     return program
   }
 
-  constructor(program: IProgram) {
-    if (program) return this.copy(program)
-    return this
+  transformSchema(schema: RecursivePartial<ProgramSchema>) {
+    return Program.#transformSchema(schema)
   }
 
-  copy(program: IProgram) {
-    Object.assign(this, program)
-
-    return this
-  }
-
-  copyFromProgramSchema(schema: RecursivePartial<ProgramSchema>) {
-    return this.copy(Program.#transformProgramQuery(schema))
-  }
-
-  async get(client = new Client()) {
+  async get(client = this.client ?? new Client()) {
     if (!this.id) throw new Error('Program is missing ID')
 
-    const program = await client.getProgram(this.id)
+    const data = await client.getProgram(this.id)
 
-    return this.copy(program)
+    return this.copy(data)
   }
 }
 export namespace Program {
