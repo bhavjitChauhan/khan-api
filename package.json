@@ -1,5 +1,6 @@
 {
   "name": "@bhavjit/khan-api",
+  "description": "A Khan Academy API client for Node.js and the browser",
   "author": "Bhavjit Chauhan",
   "version": "0.2.0",
   "keywords": [
@@ -13,12 +14,14 @@
     "url": "https://github.com/bhavjitChauhan/khan-api/issues"
   },
   "homepage": "https://bhavjitchauhan.github.io/khan-api",
+  "license": "MIT",
   "engines": {
     "node": ">=18.0.0"
   },
   "files": [
     "esm/",
     "node/",
+    "example.js",
     "index.d.ts",
     "khan-api.js",
     "khan-api.js.map",
