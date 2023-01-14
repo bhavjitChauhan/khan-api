@@ -1,4 +1,5 @@
 import Client from './Client'
+import { Wrapper } from './lib/Wrapper'
 import { BadgeCategory } from './types/badges'
 import { UserAccessLevel } from './types/enums'
 import { UserSchema } from './types/schema'
@@ -52,19 +53,7 @@ interface IUser {
   readonly accessLevel?: UserAccessLevel
 }
 
-export default class User implements IUser {
-  /**
-   * The client that this user was fetched with.
-   */
-  client?: Client
-  /**
-   * The raw user schema data
-   *
-   * @description
-   * Only set if the user was created from a user schema.
-   */
-  rawData?: RecursivePartial<UserSchema>
-
+export default class User extends Wrapper<UserSchema, IUser> implements IUser {
   /**
    * Whether the user is the currently authenticated user.
    */
@@ -153,7 +142,7 @@ export default class User implements IUser {
 
   readonly accessLevel?: UserAccessLevel
 
-  static #transformUserSchema(schema: RecursivePartial<UserSchema>) {
+  static #transformSchema(schema: RecursivePartial<UserSchema>) {
     return {
       emails: schema.authEmails ?? undefined,
       badgeCounts: schema.badgeCounts
@@ -230,41 +219,14 @@ export default class User implements IUser {
    * @see {@link Client.getUser}
    */
   static fromUserSchema(schema: RecursivePartial<UserSchema>) {
-    const user = new User(User.#transformUserSchema(schema))
+    const user = new User(User.#transformSchema(schema))
     user.rawData = schema
 
     return user
   }
 
-  /**
-   * Creates a new user from the given formatted data or `User` instance
-   *
-   * @description
-   * Note that `Client.getUser` will automatically use this class for abstraction. This is only useful if you need to talk between the low-level API and the high-level API.
-   *
-   * @param user Formatted user data or `User` instance
-   */
-  constructor(user?: IUser) {
-    if (user) return this.copy(user)
-    return this
-  }
-
-  /**
-   * Copies the given formatted data or `User` instance
-   *
-   * @param user Formatted user data or `User` instance
-   */
-  copy(user: IUser) {
-    Object.assign(this, user)
-
-    return this
-  }
-
-  /**
-   * Copies the given data from a user schema
-   */
-  copyFromUserSchema(schema: RecursivePartial<UserSchema>) {
-    return this.copy(User.#transformUserSchema(schema))
+  transformSchema(schema: RecursivePartial<UserSchema>) {
+    return User.#transformSchema(schema)
   }
 
   /**
@@ -272,7 +234,7 @@ export default class User implements IUser {
    *
    * @param client Optional client to use for the request
    */
-  async get(client = new Client()) {
+  async get(client = this.client ?? new Client()) {
     if (!this.kaid && !this.username && !this.email)
       throw new Error('User does not have a KAID, username or email')
 
@@ -281,7 +243,7 @@ export default class User implements IUser {
     return this.copy(user)
   }
 
-  async getAvatar(client = new Client()) {
+  async getAvatar(client = this.client ?? new Client()) {
     if (!this.kaid && !this.username && !this.email)
       throw new Error('User does not have a KAID, username or email')
 

@@ -223,7 +223,6 @@ export default class Client {
 
     const user = User.fromUserSchema(json.data.user)
     user.client = this
-    console.debug('Email', email)
     if (!user.email && email && EmailRegex.test(email)) user.copy({ email })
     if (user.self) this.user = user
 
