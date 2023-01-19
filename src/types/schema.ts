@@ -27,6 +27,7 @@ export interface UserSchema<
   ProfileData = ProfileSchema
 > {
   __typename: 'User'
+  actorHasUserScopedPermission: boolean
   authEmails: Array<string> | null
   autocontinueOn: boolean | null
   avatar: AvatarData
@@ -51,7 +52,9 @@ export interface UserSchema<
    */
   id: Kaid | null
   includesDistrictOwnedData: boolean
+  isActor: boolean
   isChild: boolean | null
+  isCoachedByActor: boolean
   isCoachingLoggedInUser: boolean
   isCreator: boolean | null
   isCurator: boolean | null
@@ -102,6 +105,7 @@ export interface UserSchema<
    * Either Google ID or KAID
    */
   userId: GoogleID | Kaid
+  userSummaryIsVisibleToActor: boolean
   username: string
 }
 
