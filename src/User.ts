@@ -4,7 +4,13 @@ import { BadgeCategory } from './types/badges'
 import { UserAccessLevel } from './types/enums'
 import { UserSchema } from './types/schema'
 import { AvatarURL, Kaid } from './types/strings'
-import { GoogleIDRegex, KaidRegex, QualariiIDRegex } from './utils/regexes'
+import {
+  GoogleIDRegex,
+  isGoogleID,
+  isKaid,
+  isQualarooID,
+  QualarooIDRegex,
+} from './utils/regexes'
 import { RecursivePartial } from './utils/types'
 
 // @TODO: There has to be a solution that doesn't require duplicating properties
@@ -175,8 +181,8 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
       teacher: schema.isTeacher ?? undefined,
       joined: schema.joined ? new Date(schema.joined) : undefined,
       kaid:
-        typeof schema.kaid === 'string' && KaidRegex.test(schema.kaid)
-          ? (schema.kaid as Kaid)
+        typeof schema.kaid === 'string' && isKaid(schema.kaid)
+          ? schema.kaid
           : typeof schema.kaid === 'string'
           ? null
           : undefined,
@@ -186,22 +192,21 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
       points: schema.points ?? undefined,
       accessLevel: schema.profile?.accessLevel,
       googleID:
-        typeof schema.userId === 'string' && GoogleIDRegex.test(schema.userId)
+        typeof schema.userId === 'string' && isGoogleID(schema.userId)
           ? schema.userId.match(GoogleIDRegex)![1]
           : typeof schema.userId === 'string'
           ? null
           : undefined,
       qualarooID:
-        typeof schema.qualarooId === 'string' &&
-        QualariiIDRegex.test(schema.qualarooId)
-          ? schema.qualarooId.match(QualariiIDRegex)![1]
+        typeof schema.qualarooId === 'string' && isQualarooID(schema.qualarooId)
+          ? schema.qualarooId.match(QualarooIDRegex)![1]
           : typeof schema.qualarooId === 'string'
           ? null
           : undefined,
       username:
         schema.username ??
         (schema.profileRoot
-          ? !KaidRegex.test(schema.profileRoot.slice(9, -1))
+          ? !isKaid(schema.profileRoot.slice(9, -1))
             ? schema.profileRoot.slice(9, -1)
             : null
           : schema.username),

@@ -5,6 +5,7 @@ import { Program } from './Program'
 import avatarDataForProfile from './queries/avatarDataForProfile'
 import getFullUserProfile from './queries/getFullUserProfile'
 import getUserByUsernameOrEmail from './queries/getUserByUsernameOrEmail'
+import getUserHoverCardProfile from './queries/getUserHoverCardProfile'
 import programQuery from './queries/programQuery'
 import {
   isServiceErrorsResponse,
@@ -26,7 +27,6 @@ import { truncate } from './utils/format'
 import {
   EmailRegex,
   isKaid,
-  KaidRegex,
   ProgramIDRegex,
   ProgramURLRegex,
 } from './utils/regexes'
@@ -77,7 +77,7 @@ export default class Client {
    * @returns KAID
    */
   async #resolveKaid(identifier: string) {
-    if (KaidRegex.test(identifier)) return identifier as Kaid
+    if (isKaid(identifier)) return identifier
 
     if (this.#identifierMap.has(identifier))
       return this.#identifierMap.get(identifier)!
@@ -98,6 +98,20 @@ export default class Client {
       this.#identifierMap.set(identifier, kaid)
 
     return kaid
+  }
+
+  async resolveUsername(kaid: Kaid) {
+    if (!isKaid(kaid)) throw new Error('Invalid KAID')
+
+    const response = await getUserHoverCardProfile({
+      kaid,
+    })
+    const json = await response.json()
+
+    Client.#assertValidResponse(response, json)
+    if (!json.data.user) throw new Error('User not found')
+
+    return json.data.user.username
   }
 
   /**
@@ -121,7 +135,11 @@ export default class Client {
   // @TODO: Add support for KAID login
   async login(identifier?: string, password?: string) {
     // Credentials may already be stored from previous login
-    if (identifier) this.#identifier = identifier
+    if (identifier) {
+      if (isKaid(identifier))
+        identifier = await this.resolveUsername(identifier)
+      this.#identifier = identifier
+    }
     if (password) this.#password = password
 
     // Check for missing credentials
@@ -179,8 +197,8 @@ export default class Client {
     // Store the user's KAID for future use
     this.kaid =
       typeof json.data.loginWithPassword.user?.kaid === 'string' &&
-      KaidRegex.test(json.data.loginWithPassword.user.kaid)
-        ? (json.data.loginWithPassword.user.kaid as Kaid)
+      isKaid(json.data.loginWithPassword.user.kaid)
+        ? json.data.loginWithPassword.user.kaid
         : null
     if (this.kaid === null)
       console.warn(
@@ -210,7 +228,7 @@ export default class Client {
 
     const response = await getFullUserProfile(
       identifier
-        ? { [KaidRegex.test(identifier) ? 'kaid' : 'username']: identifier }
+        ? { [isKaid(identifier) ? 'kaid' : 'username']: identifier }
         : undefined,
       !identifier
         ? { credentials: 'include', headers: { cookie: this.#cookies! } }
