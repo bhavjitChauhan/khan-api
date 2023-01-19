@@ -1,5 +1,8 @@
-// Low-level enums with one-to-one mappings to the API
+/**
+ * @file Low-level enums with one-to-one mappings to the API
+ */
 
+/** */
 export enum ServiceErrorCode {
   DOWNSTREAM_SERVICE_ERROR = 'DOWNSTREAM_SERVICE_ERROR',
 }

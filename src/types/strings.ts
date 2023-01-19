@@ -1,4 +1,6 @@
-// Low-level string types with one-to-one mappings to the API
+/**
+ * @file Low-level string types with one-to-one mappings to the API
+ */
 
 import { avatarNames, avatarSlugs } from '../utils/avatars'
 
