@@ -187,7 +187,7 @@ export class Program
         : undefined,
       created: (() => {
         if (!schema.created) return undefined
-        // Some very old programs' updated date is before their created date
+        // Some very old programs' updated date is before their created date (e.g. 981866281)
         if (schema.revision?.created) {
           return new Date(
             Math.min(

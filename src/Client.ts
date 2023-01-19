@@ -134,7 +134,6 @@ export default class Client {
    */
   // @TODO: Add support for KAID login
   async login(identifier?: string, password?: string) {
-    // Credentials may already be stored from previous login
     if (identifier) {
       if (isKaid(identifier))
         identifier = await this.resolveUsername(identifier)
@@ -142,14 +141,12 @@ export default class Client {
     }
     if (password) this.#password = password
 
-    // Check for missing credentials
     if (!this.#identifier || !this.#password) {
       if (!this.#identifier) throw new Error('Missing username or email')
       if (!this.#password) throw new Error('Missing password')
       throw new Error('Missing username/email and password')
     }
 
-    // Make the login request
     const response = await loginWithPasswordMutation(
       {
         identifier: this.#identifier,
@@ -164,7 +161,6 @@ export default class Client {
     Client.#assertValidResponse(response, json)
     if (!json.data.loginWithPassword) throw new Error('Malformed response')
 
-    // Check for other mutation-specific errors
     if (json.data.loginWithPassword.error)
       switch (json.data.loginWithPassword.error.code) {
         case LoginWithPasswordMutation.ErrorCode.INVALID_CREDENTIALS:
@@ -183,7 +179,6 @@ export default class Client {
         }
       }
 
-    // Get the cookies from the response
     const cookies = response.headers.get('set-cookie')
     if (!cookies)
       throw new Error(
@@ -194,7 +189,6 @@ export default class Client {
     // Can this be a getter for `this.#cookies` instead?
     this.authenticated = true
 
-    // Store the user's KAID for future use
     this.kaid =
       typeof json.data.loginWithPassword.user?.kaid === 'string' &&
       isKaid(json.data.loginWithPassword.user.kaid)
@@ -214,7 +208,6 @@ export default class Client {
    * @param identifier KAID, username or email
    */
   async getUser(identifier?: string) {
-    // Theoretically possible to also allow email identifiers using `getUserByUsernameOrEmail` query
     if (!identifier && !this.authenticated)
       throw new Error(
         'Not authenticated: Login to get client user or provide a kaid/username'
@@ -241,6 +234,7 @@ export default class Client {
 
     const user = User.fromUserSchema(json.data.user)
     user.client = this
+    // Why not?
     if (!user.email && email && EmailRegex.test(email)) user.copy({ email })
     if (user.self) this.user = user
 

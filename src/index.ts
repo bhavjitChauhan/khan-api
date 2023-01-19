@@ -1,4 +1,4 @@
-// Queries
+/** Queries */
 import avatarDataForProfile from './queries/avatarDataForProfile'
 import getFullUserProfile from './queries/getFullUserProfile'
 import getUserByUsernameOrEmail from './queries/getUserByUsernameOrEmail'
@@ -10,22 +10,22 @@ export const queries = {
   programQuery,
 }
 
-// Mutations
+/** Mutations */
 import loginWithPasswordMutation from './mutations/loginWithPasswordMutation'
 export const mutations = {
   loginWithPasswordMutation,
 }
 
-// Classes
+/** Classes */
 import Client from './Client'
 import Program from './Program'
 import User from './User'
 export { Client, Program, User }
 
-// Utilities
+/** Utilities */
 export * from './utils/regexes'
 export * from './utils/avatars'
 
-// Types
+/** Types */
 export * from './types/schema'
 export * from './types/strings'

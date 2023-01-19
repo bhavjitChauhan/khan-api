@@ -13,7 +13,8 @@ import {
 } from './utils/regexes'
 import { RecursivePartial } from './utils/types'
 
-// @TODO: There has to be a solution that doesn't require duplicating properties
+// There has to be a solution that doesn't require duplicating properties
+// Update: there is, but it's not worth it
 interface IUser {
   readonly self?: boolean
   readonly kaid?: Kaid | null
