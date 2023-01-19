@@ -29,14 +29,12 @@
     "khan-api.min.js.map"
   ],
   "exports": {
-    ".": {
-      "browser": "./khan-api.js",
-      "default": {
-        "require": "./node/khan-api.cjs",
-        "default": "./esm/khan-api.js"
-      }
-    }
+    "import": "./esm/khan-api.js",
+    "require": "./node/khan-api.cjs",
+    "browser": "./khan-api.js",
+    "default": "./esm/khan-api.js"
   },
+  "module": "./esm/khan-api.js",
   "main": "./khan-api.js",
   "types": "./index.d.ts",
   "runkitExampleFilename": "example.js",
