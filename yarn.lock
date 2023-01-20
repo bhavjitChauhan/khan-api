@@ -413,6 +413,7 @@ __metadata:
   resolution: "@bhavjit/khan-api@workspace:."
   dependencies:
     "@types/jest": ^29.2.6
+    "@types/minimist": ^1
     "@types/node": ^18.11.18
     "@types/rimraf": ^3.0.2
     "@typescript-eslint/eslint-plugin": ^5.48.2
@@ -423,6 +424,7 @@ __metadata:
     eslint: ^8.32.0
     eslint-config-prettier: ^8.6.0
     jest: ^29.3.1
+    minimist: ^1.2.7
     prettier: 2.8.3
     rimraf: ^4.1.1
     rollup: ^3.10.0
@@ -1124,6 +1126,13 @@ __metadata:
   version: 5.1.2
   resolution: "@types/minimatch@npm:5.1.2"
   checksum: 0391a282860c7cb6fe262c12b99564732401bdaa5e395bee9ca323c312c1a0f45efbf34dce974682036e857db59a5c9b1da522f3d6055aeead7097264c8705a8
+  languageName: node
+  linkType: hard
+
+"@types/minimist@npm:^1":
+  version: 1.2.2
+  resolution: "@types/minimist@npm:1.2.2"
+  checksum: b8da83c66eb4aac0440e64674b19564d9d86c80ae273144db9681e5eeff66f238ade9515f5006ffbfa955ceff8b89ad2bd8ec577d7caee74ba101431fb07045d
   languageName: node
   linkType: hard
 
@@ -3605,6 +3614,13 @@ __metadata:
   dependencies:
     brace-expansion: ^2.0.1
   checksum: 32ffda25b9fb8270a1c1beafdb7489dc0e411af553495136509a945691f63c9b6b000eeeaaf8bffe3efa609c1d6d3bc0f5a106f6c3443b5c05da649100ded964
+  languageName: node
+  linkType: hard
+
+"minimist@npm:^1.2.7":
+  version: 1.2.7
+  resolution: "minimist@npm:1.2.7"
+  checksum: 7346574a1038ca23c32e02252f603801f09384dd1d78b69a943a4e8c2c28730b80e96193882d3d3b22a063445f460e48316b29b8a25addca2d7e5e8f75478bec
   languageName: node
   linkType: hard
 
