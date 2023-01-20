@@ -1,23 +1,15 @@
 {
   "name": "@bhavjit/khan-api",
-  "description": "A Khan Academy API client for Node.js and the browser",
-  "author": "Bhavjit Chauhan",
   "version": "0.2.0",
+  "description": "A Khan Academy API client and wrapper",
   "keywords": [
-    "khan-academy"
+    "khan-academy",
+    "api"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bhavjitChauhan/khan-api.git"
-  },
-  "bugs": {
-    "url": "https://github.com/bhavjitChauhan/khan-api/issues"
-  },
   "homepage": "https://bhavjitchauhan.github.io/khan-api",
+  "bugs": "https://github.com/bhavjitChauhan/khan-api/issues",
   "license": "MIT",
-  "engines": {
-    "node": ">=18.0.0"
-  },
+  "author": "Bhavjit Chauhan",
   "files": [
     "esm/",
     "node/",
@@ -28,18 +20,11 @@
     "khan-api.min.js",
     "khan-api.min.js.map"
   ],
-  "exports": {
-    "import": "./esm/khan-api.js",
-    "require": "./node/khan-api.cjs",
-    "browser": "./khan-api.js",
-    "default": "./esm/khan-api.js"
-  },
   "module": "./esm/khan-api.js",
-  "main": "./khan-api.js",
+  "main": "./node/khan-api.cjs",
+  "browser": "./khan-api.js",
   "types": "./index.d.ts",
-  "runkitExampleFilename": "example.js",
-  "packageManager": "yarn@3.3.1",
-  "type": "module",
+  "repository": "github:bhavjitChauhan/khan-api",
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
@@ -48,6 +33,8 @@
     "build": "yarn node ./scripts/build.js",
     "doc": "typedoc"
   },
+  "packageManager": "yarn@3.3.1",
+  "type": "module",
   "devDependencies": {
     "@types/jest": "^29.2.5",
     "@types/node": "^18.11.18",
@@ -68,5 +55,18 @@
     "typedoc": "^0.23.24",
     "typedoc-plugin-missing-exports": "^1.0.0",
     "typescript": "^4.9.4"
-  }
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    "import": "./esm/khan-api.js",
+    "require": "./node/khan-api.cjs",
+    "browser": "./khan-api.js",
+    "default": "./esm/khan-api.js"
+  },
+  "runkitExampleFilename": "example.js"
 }

@@ -52,7 +52,7 @@ const client = new Client()
 #### CommonJS
 
 ```js
-var { Client } = require('@bhavjit/khan-api')
+const { Client } = require('@bhavjit/khan-api')
 
 const client = new Client()
 ```
