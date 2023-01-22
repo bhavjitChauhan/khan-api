@@ -6,6 +6,7 @@ import {
   GoogleID,
   AvatarPath,
   AvatarName,
+  ProgramKey,
 } from './strings'
 
 /**
@@ -165,7 +166,7 @@ export interface ProgramSchema<
   isOwner: boolean
   isProjectOrFork: boolean
   kaid: UserSchema['kaid']
-  key: string
+  key: ProgramKey
   newUrlPath: string
   originScratchpad: OriginProgramData | null
   restrictPosting: boolean
@@ -208,5 +209,54 @@ export interface TopicSchema {
   nodeSlug: string
   relativeUrl: string
   slug: string
+  translatedTitle: string
+}
+
+export interface FeedbackForFocusSchema {
+  __typename: 'FeedbackForFocus'
+  cursor: string | null
+  feedback: BasicFeedbackSchema[] | null
+  isComplete: boolean
+  sortedByDate: boolean
+}
+
+export interface BasicFeedbackSchema {
+  __typename: 'BasicFeedback'
+  appearsAsDeleted: boolean
+  author: Pick<
+    UserSchema<Pick<AvatarSchema, '__typename' | 'imageSrc' | 'name'>>,
+    '__typename' | 'avatar' | 'id' | 'kaid' | 'nickname'
+  >
+  badges: null | unknown
+  content: string
+  date: string
+  definitelyNotSpam: boolean
+  deleted: boolean
+  downVoted: boolean
+  expandKey: string
+  feedbackType: string
+  flaggedBy: null | unknown
+  flaggedByUser: boolean
+  flags: null | unknown
+  focus: FeedbackFocusSchema
+  focusUrl: string
+  fromVideoAuthor: boolean
+  key: string
+  lowQualityScore: number
+  notifyOnAnswer: boolean
+  permalink: string
+  qualityKind: string
+  replyCount: number
+  replyExpandKeys: Array<string>
+  showLowQualityNotice: boolean
+  sumVotesIncremented: number
+  upVoted: boolean
+}
+
+export interface FeedbackFocusSchema {
+  __typename: 'FeedbackFocus'
+  id: string
+  kind: string
+  relativeUrl: string
   translatedTitle: string
 }

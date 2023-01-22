@@ -57,9 +57,9 @@ export type Locale =
   | 'vi'
   | 'zh-hans'
 
-export type AvatarName = typeof avatarNames[number]
+export type AvatarName = (typeof avatarNames)[number]
 
-export type AvatarSlug = typeof avatarSlugs[number]
+export type AvatarSlug = (typeof avatarSlugs)[number]
 
 export type AvatarPath = `/images/avatars/svg/${AvatarSlug}.svg`
 
@@ -70,3 +70,7 @@ export type AvatarPNG =
   `https://www.khanacademy.org/images/avatars/${AvatarSlug}.png`
 
 export type AvatarURL = AvatarSVG | AvatarPNG
+
+export type ProgramKey = `ag5zfmtoYW4tYWNhZGVteXI${
+  | 'U'
+  | 'X'}CxIKU2NyYXRjaHBhZB${'i' | 'j'}${string}}`

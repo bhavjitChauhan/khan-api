@@ -23,9 +23,11 @@ import User from './User'
 export { Client, Program, User }
 
 /** Utilities */
-export * from './utils/regexes'
 export * from './utils/avatars'
+export * from './utils/programs'
+export * from './utils/regexes'
 
 /** Types */
+export * from './types/responses'
 export * from './types/schema'
 export * from './types/strings'

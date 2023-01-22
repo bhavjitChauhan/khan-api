@@ -37,6 +37,14 @@ describe('getProgram', () => {
     expect(program?.rawData).not.toBeNull()
   })
 
+  test('Fetches program given program key', async () => {
+    const client = new Client()
+
+    const program = await client.getProgram(process.env.KHAN_PROGRAM_KEY!)
+    expect(program).toBeInstanceOf(Program)
+    expect(program?.rawData).not.toBeNull()
+  })
+
   test('Throws error if invalid program ID', async () => {
     const client = new Client()
 
