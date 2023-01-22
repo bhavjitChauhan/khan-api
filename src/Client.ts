@@ -7,14 +7,8 @@ import getFullUserProfile from './queries/getFullUserProfile'
 import getUserByUsernameOrEmail from './queries/getUserByUsernameOrEmail'
 import getUserHoverCardProfile from './queries/getUserHoverCardProfile'
 import programQuery from './queries/programQuery'
-import {
-  isServiceErrorsResponse,
-  isInputErrorResponse,
-  StandardResponse,
-  isDataResponse,
-  DataResponse,
-} from './types/responses'
-import { Kaid } from './types/strings'
+import { assertDataResponse } from './types/responses'
+import { Kaid, ProgramKey } from './types/strings'
 import User from './User'
 import {
   extractAvatarSlug,
@@ -22,11 +16,12 @@ import {
   generateAvatarSVG,
 } from './utils/avatars'
 import { stripCookies } from './utils/cookies'
-import { TypedResponse } from './utils/fetch'
+import { programKeyToID } from './utils/programs'
 import { truncate } from './utils/format'
 import {
   EmailRegex,
   isKaid,
+  isProgramKey,
   ProgramIDRegex,
   ProgramURLRegex,
 } from './utils/regexes'
@@ -47,26 +42,6 @@ export default class Client {
   }
 
   /**
-   * @throws Error if the response is not valid
-   */
-  static #assertValidResponse<T>(
-    response: TypedResponse<StandardResponse<T>>,
-    json: StandardResponse<T>
-  ): asserts json is DataResponse<T> {
-    if (!response.ok)
-      throw new Error(
-        `Invalid response: ${response.status} ${response.statusText}${
-          isInputErrorResponse(json) ? `: ${json.errors[0].message}` : ''
-        }`
-      )
-    if (isInputErrorResponse(json))
-      throw new Error('Invalid Input error: ' + json.errors[0].message)
-    if (isServiceErrorsResponse(json))
-      throw new Error('Service error: ' + json.errors[0].message)
-    if (!isDataResponse(json)) throw new Error('Malformed response')
-  }
-
-  /**
    * Resolves a username or email to a KAID and caches the result
    *
    * @remarks
@@ -76,7 +51,7 @@ export default class Client {
    * @param identifier Username or email
    * @returns KAID
    */
-  async #resolveKaid(identifier: string) {
+  async resolveKaid(identifier: string) {
     if (isKaid(identifier)) return identifier
 
     if (this.#identifierMap.has(identifier))
@@ -88,7 +63,7 @@ export default class Client {
     })
     const json = await response.json()
 
-    Client.#assertValidResponse(response, json)
+    assertDataResponse(json)
     if (!json.data.user) throw new Error('User not found')
 
     const kaid = json.data.user.kaid
@@ -100,6 +75,9 @@ export default class Client {
     return kaid
   }
 
+  /**
+   * Resolves a KAID to a username
+   */
   async resolveUsername(kaid: Kaid) {
     if (!isKaid(kaid)) throw new Error('Invalid KAID')
 
@@ -108,10 +86,35 @@ export default class Client {
     })
     const json = await response.json()
 
-    Client.#assertValidResponse(response, json)
+    assertDataResponse(json)
     if (!json.data.user) throw new Error('User not found')
 
     return json.data.user.username
+  }
+
+  /**
+   * Resolves a program ID or URL to a program ID
+   *
+   * @param id Program ID, URL or key
+   */
+  resolveProgramID(id: number | string | ProgramKey) {
+    if (typeof id === 'number') {
+      if (!ProgramIDRegex.test(id.toString()))
+        throw new Error('Invalid program ID')
+      return id
+    } else if (ProgramURLRegex.test(id)) {
+      id = id.match(ProgramURLRegex)![1]
+      if (!ProgramIDRegex.test(id)) throw new Error('Invalid URL')
+      return parseInt(id, 10)
+    } else if (isProgramKey(id)) {
+      id = programKeyToID(id)
+      if (!ProgramIDRegex.test(id.toString()))
+        throw new Error('Invalid program key')
+      return id
+    }
+    if (!ProgramIDRegex.test(id))
+      throw new Error('Invalid program ID, URL or key')
+    return parseInt(id, 10)
   }
 
   /**
@@ -158,7 +161,7 @@ export default class Client {
     // @TODO: Handle invalid JSON response
     const json = await response.json()
 
-    Client.#assertValidResponse(response, json)
+    assertDataResponse(json)
     if (!json.data.loginWithPassword) throw new Error('Malformed response')
 
     if (json.data.loginWithPassword.error)
@@ -216,7 +219,7 @@ export default class Client {
     let email: string | null = null
     if (identifier && EmailRegex.test(identifier)) {
       email = identifier
-      identifier = await this.#resolveKaid(identifier)
+      identifier = await this.resolveKaid(identifier)
     }
 
     const response = await getFullUserProfile(
@@ -229,7 +232,7 @@ export default class Client {
     )
     const json = await response.json()
 
-    Client.#assertValidResponse(response, json)
+    assertDataResponse(json)
     if (!json.data.user) throw new Error('User not found')
 
     const user = User.fromUserSchema(json.data.user)
@@ -252,20 +255,14 @@ export default class Client {
    * @param id Program ID or URL
    */
   async getProgram(id: number | string) {
-    if (typeof id === 'number') {
-      id = id.toString()
-      if (!ProgramIDRegex.test(id)) throw new Error('Invalid program ID')
-    } else {
-      if (ProgramURLRegex.test(id)) id = id.match(ProgramURLRegex)![1]
-      if (!ProgramIDRegex.test(id)) throw new Error('Invalid program ID or URL')
-    }
+    id = this.resolveProgramID(id)
 
     const response = await programQuery({
-      programId: id,
+      programId: id.toString(),
     })
     const json = await response.json()
 
-    Client.#assertValidResponse(response, json)
+    assertDataResponse(json)
     if (!json.data.programById) throw new Error('Program not found')
 
     const program = Program.fromProgramSchema(json.data.programById)
@@ -292,7 +289,7 @@ export default class Client {
   ) {
     if (!identifier) throw new Error('No identifier provided')
 
-    if (!isKaid(identifier)) identifier = await this.#resolveKaid(identifier)
+    if (!isKaid(identifier)) identifier = await this.resolveKaid(identifier)
 
     const response = await avatarDataForProfile({
       // Why do I have to cast this to `Kaid`? It should already be `Kaid`...
@@ -300,7 +297,7 @@ export default class Client {
     })
     const json = await response.json()
 
-    Client.#assertValidResponse(response, json)
+    assertDataResponse(json)
     if (!json.data.user) throw new Error('User not found')
 
     const slug = extractAvatarSlug(json.data.user.avatar.imageSrc)

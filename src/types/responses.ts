@@ -50,3 +50,20 @@ export function isInputErrorResponse(
     !('data' in response)
   )
 }
+
+export function assertDataResponse<T>(
+  response: StandardResponse<T>
+): asserts response is DataResponse<T> {
+  if (isServiceErrorsResponse(response))
+    throw new Error(
+      'Expected data response but got service errors response: ' +
+        response.errors.map((error) => error.message).join(', ')
+    )
+  if (isInputErrorResponse(response))
+    throw new Error(
+      'Expected data response but got input errors response: ' +
+        response.errors.map((error) => error.message).join(', ')
+    )
+  if (!isDataResponse(response))
+    throw new Error('Expected data response but got unknown response')
+}

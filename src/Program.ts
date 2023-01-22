@@ -2,6 +2,7 @@ import Client from './Client'
 import { Wrapper } from './lib/Wrapper'
 import { ProgramEditorType } from './types/enums'
 import { ProgramSchema } from './types/schema'
+import { ProgramKey } from './types/strings'
 import User from './User'
 import { ProgramImagePathRegex, ProgramURLRegex } from './utils/regexes'
 import { RecursivePartial } from './utils/types'
@@ -21,7 +22,7 @@ interface IProgram {
   readonly type?: Program.Type
 
   readonly origin?: Program | null
-  readonly key?: string
+  readonly key?: ProgramKey
   readonly thumbnailID?: number
   readonly description?: string | null
   readonly deleted?: boolean
@@ -100,7 +101,7 @@ export class Program
    * The original program that this program is a spin-off of.
    */
   readonly origin?: Program | null
-  readonly key?: string
+  readonly key?: ProgramKey
   /**
    * The ID of the latest thumbnail image of the program.
    *

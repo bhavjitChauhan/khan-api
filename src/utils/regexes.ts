@@ -1,13 +1,12 @@
-import { GoogleID, Kaid, QualarooID } from '../types/strings'
+import { GoogleID, Kaid, ProgramKey, QualarooID } from '../types/strings'
+import { toStandardBase64 } from './format'
 
 export const KaidRegex = /^kaid_\d{20,25}$/
 export const isKaid = (str: string): str is Kaid => KaidRegex.test(str)
 
-const VALID_PROGRAM_ID_LENGTHS = [9, 10, 16] as const
+const PROGRAM_ID_LENGTHS = [9, 10, 16] as const
 export const ProgramIDRegex = new RegExp(
-  `^[1-9](?:(?:${VALID_PROGRAM_ID_LENGTHS.map((v) => `\\d{${v - 1}}`).join(
-    '|'
-  )}))$`
+  `^[1-9](?:(?:${PROGRAM_ID_LENGTHS.map((v) => `\\d{${v - 1}}`).join('|')}))$`
 )
 
 const PROGRAM_URL_TLDS = ['com', 'org'] as const
@@ -58,7 +57,6 @@ const PROGRAM_URL_LOCALES = [
   'zh-hans',
   'sgn-us',
 ] as const
-
 const PROGRAM_URL_PATHS = [
   'computer-programming',
   'cs',
@@ -92,6 +90,35 @@ export const ProgramImagePathRegex = new RegExp(
     '|'
   )})\\/[\\w\\d-.~()'!*:@,;]+\\/\\d+\\/(\\d+)\\.png$`
 )
+
+const PROGRAM_KEY_LENGTHS = [51, 54] as const
+const ProgramKeyRegex =
+  /^ag5zfmtoYW4tYWNhZGVteXI(?:U|X)CxIKU2NyYXRjaHBhZB(?:i|j)(?=[\w-]*$)(?:.{7}w|.{9}C(?:g|w|A|Q)w)$/
+
+/**
+ * Checks if a string is a valid program key
+ *
+ * @remarks
+ * This function will only check the format of the string and not the existence
+ * of the program on Khan Academy.
+ *
+ * Program keys are not the same format as lesson keys or other keys
+ * that may look similar at first glance.
+ *
+ * This function has been tested against more than 1,000,000 program keys but it
+ * is possible that in the future, new program key formats will be introduced.
+ */
+export function isProgramKey(str: string): str is ProgramKey {
+  if (PROGRAM_KEY_LENGTHS.includes(str.length as 51 | 54)) return false
+  if (!ProgramKeyRegex.test(str)) return false
+
+  try {
+    atob(toStandardBase64(str))
+    return true
+  } catch {
+    return false
+  }
+}
 
 export const GoogleIDRegex = /^http:\/\/googleid\.khanacademy\.org\/(\d+)$/
 export const isGoogleID = (str: string): str is GoogleID =>

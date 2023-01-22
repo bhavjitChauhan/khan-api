@@ -58,7 +58,7 @@ const node = {
 const browser = {
   ...base,
   platform: 'browser',
-  target: 'es2015',
+  target: 'es2020',
   globalName: 'KhanAPI',
   outfile: `${FILE_NAME}.js`,
 }
