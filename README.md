@@ -63,11 +63,9 @@ Remember that Khan Academy's CORS policy will block requests not originating fro
 
 #### JavaScript modules
 
-<!-- @TODO Replace with https://esm.run/@bhavjit/khan-api on next release -->
-
 ```html
 <script type="module">
-  import { Client } from 'https://esm.run/@bhavjit/khan-api/esm/khan-api.js'
+  import { Client } from 'https://esm.run/@bhavjit/khan-api'
 
   const client = new Client()
 </script>

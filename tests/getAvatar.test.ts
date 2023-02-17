@@ -1,17 +1,18 @@
 import { Client } from '../src/index'
+import { KHAN_KAID, KHAN_USERNAME } from './constants'
 
 describe('getAvatar', () => {
   test('Fetches avatar given KAID', async () => {
     const client = new Client()
 
-    const url = await client.getAvatar(process.env.KHAN_KAID)
+    const url = await client.getAvatar(KHAN_KAID)
     expect(typeof url).toBe('string')
   })
 
   test('Fetches avatar given username', async () => {
     const client = new Client()
 
-    const url = await client.getAvatar(process.env.KHAN_USERNAME)
+    const url = await client.getAvatar(KHAN_USERNAME)
     expect(typeof url).toBe('string')
   })
 

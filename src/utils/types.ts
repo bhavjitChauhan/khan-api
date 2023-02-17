@@ -1,3 +1,6 @@
+/**
+ * @link {@link https://stackoverflow.com/a/51365037/9824991}
+ */
 export type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
     ? RecursivePartial<U>[]

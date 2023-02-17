@@ -149,7 +149,25 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
 
   readonly accessLevel?: UserAccessLevel
 
-  static #transformSchema(schema: RecursivePartial<UserSchema>) {
+  /**
+   * Creates a new user from the given from a user schema
+   *
+   * @description
+   * Note that `Client.getUser` will automatically call this method. This is only useful if you need to use the low-level API.
+   *
+   * @param schema
+   *
+   * @see {@link Client.getUser}
+   */
+  static fromSchema(schema: RecursivePartial<UserSchema>) {
+    const user = new User()
+    user.copyFromSchema(schema)
+    user.rawData = schema
+
+    return user
+  }
+
+  transformSchema(schema: RecursivePartial<UserSchema>) {
     return {
       emails: schema.authEmails ?? undefined,
       badgeCounts: schema.badgeCounts
@@ -215,27 +233,6 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
   }
 
   /**
-   * Creates a new user from the given from a user schema
-   *
-   * @description
-   * Note that `Client.getUser` will automatically call this method. This is only useful if you need to use the low-level API.
-   *
-   * @param schema
-   *
-   * @see {@link Client.getUser}
-   */
-  static fromUserSchema(schema: RecursivePartial<UserSchema>) {
-    const user = new User(User.#transformSchema(schema))
-    user.rawData = schema
-
-    return user
-  }
-
-  transformSchema(schema: RecursivePartial<UserSchema>) {
-    return User.#transformSchema(schema)
-  }
-
-  /**
    * Fetches the user's profile using a `getFullUserProfile` query and updates the user's data
    *
    * @param client Optional client to use for the request
@@ -259,5 +256,35 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
     this.copy({ avatar: url })
 
     return url
+  }
+
+  /**
+   * Checks if two users are the same
+   *
+   * @param user The user to compare to
+   */
+  is(user: User | IUser) {
+    if (
+      !(this.kaid && user.kaid) &&
+      !(this.email && user.email) &&
+      !(this.key && user.key) &&
+      !(this.username && user.username) &&
+      !(this.googleID && user.googleID) &&
+      !(this.qualarooID && user.qualarooID)
+    ) {
+      console.warn("Users don't have any identifiers that can be compared")
+      return false
+    }
+    return (
+      (this.kaid && user.kaid && this.kaid === user.kaid) ||
+      (this.email && user.email && this.email === user.email) ||
+      (this.key && user.key && this.key === user.key) ||
+      (this.username && user.username && this.username === user.username) ||
+      (this.googleID && user.googleID && this.googleID === user.googleID) ||
+      (this.qualarooID &&
+        user.qualarooID &&
+        this.qualarooID === user.qualarooID) ||
+      false
+    )
   }
 }

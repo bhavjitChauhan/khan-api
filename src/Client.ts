@@ -8,7 +8,15 @@ import getUserByUsernameOrEmail from './queries/getUserByUsernameOrEmail'
 import getUserHoverCardProfile from './queries/getUserHoverCardProfile'
 import programQuery from './queries/programQuery'
 import { assertDataResponse } from './types/responses'
-import { Kaid, ProgramKey } from './types/strings'
+import {
+  Kaid,
+  EncryptedFeedbackKey,
+  FeedbackKey,
+  ProgramKey,
+  ProgramID,
+  ProgramURL,
+  ProgramIDNumber,
+} from './types/strings'
 import User from './User'
 import {
   extractAvatarSlug,
@@ -20,11 +28,29 @@ import { programKeyToID } from './utils/programs'
 import { truncate } from './utils/format'
 import {
   EmailRegex,
+  isEncryptedFeedbackKey,
   isKaid,
+  isFeedbackKey,
   isProgramKey,
   ProgramIDRegex,
   ProgramURLRegex,
+  isProgramURL,
+  isProgramID,
 } from './utils/regexes'
+import { PLACEHOLDER_PROGRAM_ID } from './lib/constants'
+import feedbackQuery from './queries/feedbackQuery'
+import QAExpandKeyInfo from './queries/QAExpandKeyInfo'
+import { FeedbackFocusKind, FeedbackSort, FeedbackType } from './types/enums'
+import Answer from './lib/messages/Answer'
+import Question from './lib/messages/Question'
+import Reply from './lib/messages/Reply'
+import {
+  isTipsAndThanksSchema,
+  isQuestionSchema,
+  isReplySchema,
+} from './utils/messages'
+import TipsAndThanks from './lib/messages/TipsAndThanks'
+import getFeedbackReplies from './queries/getFeedbackReplies'
 
 export default class Client {
   #identifier?: string
@@ -51,7 +77,7 @@ export default class Client {
    * @param identifier Username or email
    * @returns KAID
    */
-  async resolveKaid(identifier: string) {
+  async resolveKaid(identifier: string): Promise<Kaid> {
     if (isKaid(identifier)) return identifier
 
     if (this.#identifierMap.has(identifier))
@@ -93,28 +119,50 @@ export default class Client {
   }
 
   /**
-   * Resolves a program ID or URL to a program ID
+   * Resolves a program URL or key to a program ID
    *
-   * @param id Program ID, URL or key
+   * @param identifier Program URL or key
    */
-  resolveProgramID(id: number | string | ProgramKey) {
-    if (typeof id === 'number') {
-      if (!ProgramIDRegex.test(id.toString()))
+  resolveProgramID(
+    identifier: ProgramURL | ProgramKey | ProgramID
+  ): ProgramIDNumber {
+    if (typeof identifier === 'number') {
+      if (!ProgramIDRegex.test(identifier.toString()))
         throw new Error('Invalid program ID')
-      return id
-    } else if (ProgramURLRegex.test(id)) {
-      id = id.match(ProgramURLRegex)![1]
-      if (!ProgramIDRegex.test(id)) throw new Error('Invalid URL')
-      return parseInt(id, 10)
-    } else if (isProgramKey(id)) {
-      id = programKeyToID(id)
-      if (!ProgramIDRegex.test(id.toString()))
-        throw new Error('Invalid program key')
-      return id
+      return identifier
+    } else if (isProgramURL(identifier)) {
+      const str = identifier.match(ProgramURLRegex)![1]
+      if (!isProgramID(str)) throw new Error('Invalid URL')
+      return parseInt(str, 10)
+    } else if (isProgramKey(identifier)) {
+      identifier = programKeyToID(identifier)
+      if (!isProgramID(identifier)) throw new Error('Invalid program key')
+      return identifier
     }
-    if (!ProgramIDRegex.test(id))
+    if (!isProgramID(identifier))
       throw new Error('Invalid program ID, URL or key')
-    return parseInt(id, 10)
+    return parseInt(identifier, 10)
+  }
+
+  /**
+   * Resolved an encrypted message key to an unencrypted message key
+   *
+   * @param identifier Encrypted message key
+   */
+  async resolveFeedbackKey(identifier: FeedbackKey | EncryptedFeedbackKey) {
+    if (isFeedbackKey(identifier)) return identifier
+    if (!isEncryptedFeedbackKey(identifier))
+      throw new Error('Invalid encrypted message key')
+
+    const response = await QAExpandKeyInfo({
+      encryptedKey: identifier,
+    })
+    const json = await response.json()
+
+    assertDataResponse(json)
+    if (!json.data.qaExpandKeyInfo) throw new Error('Message key not found')
+
+    return json.data.qaExpandKeyInfo.unencryptedKey
   }
 
   /**
@@ -235,7 +283,7 @@ export default class Client {
     assertDataResponse(json)
     if (!json.data.user) throw new Error('User not found')
 
-    const user = User.fromUserSchema(json.data.user)
+    const user = User.fromSchema(json.data.user)
     user.client = this
     // Why not?
     if (!user.email && email && EmailRegex.test(email)) user.copy({ email })
@@ -252,9 +300,9 @@ export default class Client {
   }
 
   /**
-   * @param id Program ID or URL
+   * @param id Program ID, URL or key
    */
-  async getProgram(id: number | string) {
+  async getProgram(id: ProgramID | ProgramURL | ProgramKey) {
     id = this.resolveProgramID(id)
 
     const response = await programQuery({
@@ -265,14 +313,16 @@ export default class Client {
     assertDataResponse(json)
     if (!json.data.programById) throw new Error('Program not found')
 
-    const program = Program.fromProgramSchema(json.data.programById)
+    const program = Program.fromSchema(json.data.programById)
     program.client = this
+
     if (this.user && program.author?.kaid === this.kaid) {
       program.copy({
         author: this.user,
       })
-      console.log(
-        `[getProgram] Copied the client's user data to program ${
+      // @TODO: Add option to disable this
+      console.debug(
+        `Copied the client's user data to program ${
           program.title
             ? `"${truncate(program.title, 32)}"`
             : program.id ?? 'unknown'
@@ -281,6 +331,117 @@ export default class Client {
     }
 
     return program
+  }
+
+  async getMessage(
+    identifier: FeedbackKey | EncryptedFeedbackKey
+  ): Promise<TipsAndThanks | Question | Answer | Reply> {
+    if (isEncryptedFeedbackKey(identifier))
+      identifier = await this.resolveFeedbackKey(identifier)
+
+    const response = await feedbackQuery({
+      topicId: PLACEHOLDER_PROGRAM_ID.toString(),
+      focusKind: FeedbackFocusKind.Scratchpad,
+      feedbackType: FeedbackType.COMMENT,
+      currentSort: FeedbackSort.TopVoted,
+      qaExpandKey: identifier,
+    })
+    const json = await response.json()
+
+    assertDataResponse(json)
+    if (
+      !json.data.feedback ||
+      !json.data.feedback.feedback ||
+      json.data.feedback.feedback.length === 0
+    )
+      throw new Error('Message not found')
+
+    const messageSchema = json.data.feedback.feedback[0]
+    let message
+
+    if (isTipsAndThanksSchema(messageSchema))
+      message = TipsAndThanks.fromSchema(messageSchema)
+    else if (isQuestionSchema(messageSchema)) {
+      const question = Question.fromSchema(messageSchema)
+      if (question.key !== identifier) {
+        const answer = question.answers?.find(
+          (answer) => answer.key === identifier
+        )
+        if (!answer) throw new Error('Question or answer not found')
+        message = answer
+        message.copy({ question })
+      } else message = question
+    } else if (isReplySchema(messageSchema))
+      message = Reply.fromSchema(messageSchema)
+    else throw new Error('Unknown message type')
+
+    message.client = this
+
+    if (this.user && message.author?.kaid === this.kaid) {
+      message.copy({
+        author: this.user,
+      })
+      console.debug(
+        `Copied the client's user data to comment ${
+          message.key ?? message.encryptedKey ?? 'unknown'
+        } because the comment's author matches the client user`
+      )
+    }
+
+    return message
+  }
+
+  async getTipsAndThanks(identifier: FeedbackKey | EncryptedFeedbackKey) {
+    return this.getMessage(identifier) as Promise<TipsAndThanks>
+  }
+
+  async getQuestion(identifier: FeedbackKey | EncryptedFeedbackKey) {
+    return this.getMessage(identifier) as Promise<Question>
+  }
+
+  async getAnswer(identifier: FeedbackKey | EncryptedFeedbackKey) {
+    return this.getMessage(identifier) as Promise<Answer>
+  }
+
+  async getReply(identifier: FeedbackKey | EncryptedFeedbackKey) {
+    const message = (await this.getMessage(identifier)) as
+      | TipsAndThanks
+      | Question
+      | Answer
+    if (!message.key) throw new Error('Message has no key')
+
+    const response = await getFeedbackReplies({
+      postKey: message.key,
+    })
+    const json = await response.json()
+
+    assertDataResponse(json)
+    if (!json.data.feedbackReplies || json.data.feedbackReplies.length === 0)
+      throw new Error('Reply not found')
+
+    const replySchema = json.data.feedbackReplies.find(
+      (reply) => reply.expandKey === identifier || reply.key === identifier
+    )
+    if (!replySchema) throw new Error('Reply not found')
+
+    const reply = Reply.fromSchema(replySchema)
+    reply.client = this
+    reply.copy({
+      message,
+    })
+
+    if (this.user && reply.author?.kaid === this.kaid) {
+      reply.copy({
+        author: this.user,
+      })
+      console.debug(
+        `Copied the client's user data to reply ${
+          reply.key ?? reply.encryptedKey ?? 'unknown'
+        } because the reply's author matches the client user`
+      )
+    }
+
+    return reply
   }
 
   async getAvatar(

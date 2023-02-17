@@ -63,6 +63,10 @@ export abstract class Wrapper<Schema, Interface> {
    * @returns The class instance
    */
   copyFromSchema(schema: RecursivePartial<Schema>) {
+    this.rawData = {
+      ...this.rawData,
+      ...schema,
+    }
     return this.copy(this.transformSchema(schema))
   }
 
@@ -72,4 +76,16 @@ export abstract class Wrapper<Schema, Interface> {
    * @param client The API client to use
    */
   abstract get(client?: Client): Promise<this>
+
+  /**
+   * Checks if the data represents the same instance
+   */
+  abstract is(data: Interface): boolean
+
+  /**
+   * Checks if the schema represents the same instance
+   */
+  isSchema(schema: RecursivePartial<Schema>) {
+    return this.is(this.transformSchema(schema))
+  }
 }
