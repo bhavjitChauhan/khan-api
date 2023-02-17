@@ -1,4 +1,4 @@
-var { Client } = require("@bhavjit/khan-api")
+const { Client } = require("@bhavjit/khan-api")
 
 const client = new Client()
 
