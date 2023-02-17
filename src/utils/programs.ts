@@ -1,6 +1,6 @@
-import { ProgramKey } from '../types/strings'
+import { ProgramID, ProgramIDNumber, ProgramKey } from '../types/strings'
 import { toStandardBase64, toURLSafeBase64 } from './format'
-import { isProgramKey, ProgramIDRegex } from './regexes'
+import { isProgramID, isProgramKey } from './regexes'
 
 /**
  * Decodes program ID from a program key
@@ -9,10 +9,10 @@ import { isProgramKey, ProgramIDRegex } from './regexes'
  * Program keys are (URL-safe) Base64 encoded strings that contain the program
  * ID.
  *
- * Credits to {@link https://github.com/L1quidH2O | @L1quidH2O} for the
+ * Credit to {@link https://github.com/L1quidH2O | @L1quidH2O} for the
  * original implementation.
  */
-export function programKeyToID(key: string) {
+export function programKeyToID(key: ProgramKey): ProgramIDNumber {
   if (!isProgramKey(key)) throw new Error('Invalid program key')
 
   let bytes = atob(toStandardBase64(key))
@@ -36,11 +36,13 @@ export function programKeyToID(key: string) {
  * Encodes program ID to a program key
  *
  * @remarks
- * Credits to {@link https://github.com/L1quidH2O | @L1quidH2O} for the
+ * Credit to {@link https://github.com/L1quidH2O | @L1quidH2O} for the
  * original implementation.
  */
-export function programIDtoKey(id: number) {
-  if (!ProgramIDRegex.test(id.toString())) throw new Error('Invalid program ID')
+export function programIDtoKey(id: ProgramID) {
+  if (!isProgramID(id)) throw new Error('Invalid program ID')
+
+  if (typeof id === 'string') id = parseInt(id)
 
   const encoded = id
     .toString(2)

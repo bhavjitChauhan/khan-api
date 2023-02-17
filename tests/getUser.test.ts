@@ -1,11 +1,12 @@
 import { Client } from '../src/index'
 import User from '../src/User'
+import { KHAN_KAID, KHAN_USERNAME } from './constants'
 
 describe('getUser', () => {
   test('Fetches profile given KAID', async () => {
     const client = new Client()
 
-    const user = await client.getUser(process.env.KHAN_KAID)
+    const user = await client.getUser(KHAN_KAID)
     expect(user).toBeInstanceOf(User)
     expect(user?.rawData).not.toBeNull()
   })
@@ -13,7 +14,7 @@ describe('getUser', () => {
   test('Fetches profile given username', async () => {
     const client = new Client()
 
-    const user = await client.getUser(process.env.KHAN_USERNAME)
+    const user = await client.getUser(KHAN_USERNAME)
     expect(user).toBeInstanceOf(User)
     expect(user?.rawData).not.toBeNull()
   })

@@ -22,3 +22,44 @@ export enum ProgramEditorType {
   ace_sql = 'ace_sql',
   unknown = '',
 }
+
+export enum FeedbackFocusKind {
+  Challenge = 'Challenge',
+  Interactive = 'Interactive',
+  Project = 'Project',
+  Scratchpad = 'Scratchpad',
+  Talkthrough = 'Talkthrough',
+}
+
+/**
+ * @link {@link https://documenter.getpostman.com/view/19553924/2s8YzQUiXU#afc29a01-a4d7-45db-bb1f-82ea66eb210a | Reference}
+ */
+export enum FeedbackType {
+  ALL_PROJECT_ANSWER = 'ALL_PROJECT_ANSWER',
+  ALL_PROJECT_QUESTION = 'ALL_PROJECT_QUESTION',
+  ANSWER = 'ANSWER',
+  COMMENT = 'COMMENT',
+  PROGRAM = 'PROGRAM',
+  PROJECTFEEDBACK = 'PROJECTFEEDBACK',
+  PROJECT_CRITIQUE_ANSWER = 'PROJECT_CRITIQUE_ANSWER',
+  PROJECT_CRITIQUE_QUESTION = 'PROJECT_CRITIQUE_QUESTION',
+  PROJECT_EVAL_ANSWER = 'PROJECT_EVAL_ANSWER',
+  PROJECT_EVAL_QUESTION = 'PROJECT_EVAL_QUESTION',
+  PROJECT_HELP_ANSWER = 'PROJECT_HELP_ANSWER',
+  PROJECT_HELP_QUESTION = 'PROJECT_HELP_QUESTION',
+  QUESTION = 'QUESTION',
+  REPLY = 'REPLY',
+  SUGGESTED_CLARIFICATION = 'SUGGESTED_CLARIFICATION',
+}
+
+export enum FeedbackTypename {
+  AnswerFeedback = 'AnswerFeedback',
+  BasicFeedback = 'BasicFeedback',
+  LowQualityFeedback = 'LowQualityFeedback',
+  QuestionFeedback = 'QuestionFeedback',
+}
+
+export enum FeedbackSort {
+  TopVoted = 1,
+  Recent = 2,
+}
