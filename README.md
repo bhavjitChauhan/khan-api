@@ -2,11 +2,20 @@
 
 ⚠️ **This project is currently in beta and breaking changes may be released without warning!**
 
-![NPM version](https://img.shields.io/npm/v/@bhavjit/khan-api)
+[![NPM version](https://img.shields.io/npm/v/@bhavjit/khan-api)](https://www.npmjs.com/package/@bhavjit/khan-api?activeTab=versions)
 ![Platform support](https://img.shields.io/node/v/@bhavjit/khan-api)
 [![Try @bhavjit/khan-api on RunKit](https://badge.runkitcdn.com/@bhavjit/khan-api.svg)](https://npm.runkit.com/@bhavjit/khan-api)
 
 A Khan Academy internal API client and wrapper for Node.js and the browser.
+
+<details open>
+
+<summary>Quick links</summary>
+
+- [Documentation](https://bhavjitchauhan.github.io/khan-api)
+- [API Reference](https://documenter.getpostman.com/view/19553924/2s8YzQUiXU)
+
+</details>
 
 ## Install
 
@@ -14,44 +23,59 @@ A Khan Academy internal API client and wrapper for Node.js and the browser.
 
 Currently, the library uses the native [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) which is only supported on [Node.js versions after 18](https://nodejs.org/dist/latest-v18.x/docs/api/globals.html#fetch) without an experimental flag. Support for older versions is planned for future releases.
 
-### ESM
-
-```js
-import * as KhanAPI from 'https://cdn.jsdelivr.net/npm/@bhavjit/khan-api/dist/esm/khan-api.min.js'
-```
-
 ### Node.js
 
-#### Yarn
+#### [Yarn](https://yarn.pm/@bhavjit/khan-api)
 
 ```bash
 yarn add @bhavjit/khan-api
 ```
 
-#### NPM
+#### [NPM](https://www.npmjs.com/package/@bhavjit/khan-api)
 
 ```bash
 npm i @bhavjit/khan-api
+```
+
+## Usage
+
+### Node.js
+
+#### JavaScript modules
+
+```js
+import { Client } from '@bhavjit/khan-api'
+
+const client = new Client()
+```
+
+#### CommonJS
+
+```js
+const { Client } = require('@bhavjit/khan-api')
+
+const client = new Client()
 ```
 
 ### Web
 
 Remember that Khan Academy's CORS policy will block requests not originating from their website.
 
+#### JavaScript modules
+
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@bhavjit/khan-api/dist/khan-api.min.js">
+<script type="module">
+  import { Client } from 'https://esm.run/@bhavjit/khan-api'
+
+  const client = new Client()
+</script>
 ```
 
-## Usage
+#### Script tag
 
-```js
-const client = new Client()
-
-// Get info about a user
-const user = await client.getUser('bhavjitChauhan')
-console.log(user)
-
-// Get info about a program
-const program = await client.getProgram(6058668928843776)
-console.log(program)
+```html
+<script src="https://cdn.jsdelivr.net/npm/@bhavjit/khan-api"></script>
+<script>
+  const client = new KhanAPI.Client()
+</script>
 ```

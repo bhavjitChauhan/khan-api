@@ -112,6 +112,8 @@ export const avatarNames = [
   'hopper_cool_style',
 ] as const
 
+// Not as simple as removing the `_style` suffix and replacing `_` with `-`
+// Why would it be? This is Khan Academy we're talking about
 export const avatarSlugs = [
   'blobby-green',
   'blobby-yellow',

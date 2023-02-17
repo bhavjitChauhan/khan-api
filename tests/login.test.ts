@@ -1,9 +1,18 @@
 import { Client } from '../src/index'
+import { KHAN_KAID } from './constants'
 
 describe('login', () => {
   test('Logs in successfully with valid credentials', async () => {
     const client = new Client()
     await client.login(process.env.KHAN_EMAIL, process.env.KHAN_PASSWORD)
+
+    expect(client.kaid).not.toBeNull()
+    expect(client.authenticated).toBe(true)
+  })
+
+  test('Logs in successfully with KAID and valid credentials', async () => {
+    const client = new Client()
+    await client.login(KHAN_KAID, process.env.KHAN_PASSWORD)
 
     expect(client.kaid).not.toBeNull()
     expect(client.authenticated).toBe(true)

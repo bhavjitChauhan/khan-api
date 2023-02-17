@@ -3,3 +3,5 @@ export const KHAN_GRAPHQL_URL =
 
 // Hopefully this doesn't cause any consequences...
 export const FKEY = `bhavjitchauhan/khan-api_${Date.now()}`
+
+export const PLACEHOLDER_PROGRAM_ID = 4669512406581248

@@ -1,12 +1,20 @@
 import Client from './Client'
+import { Wrapper } from './lib/Wrapper'
 import { BadgeCategory } from './types/badges'
 import { UserAccessLevel } from './types/enums'
 import { UserSchema } from './types/schema'
 import { AvatarURL, Kaid } from './types/strings'
-import { GoogleIDRegex, KaidRegex, QualariiIDRegex } from './utils/regexes'
+import {
+  GoogleIDRegex,
+  isGoogleID,
+  isKaid,
+  isQualarooID,
+  QualarooIDRegex,
+} from './utils/regexes'
 import { RecursivePartial } from './utils/types'
 
-// @TODO: There has to be a solution that doesn't require duplicating properties
+// There has to be a solution that doesn't require duplicating properties
+// Update: there is, but it's not worth it
 interface IUser {
   readonly self?: boolean
   readonly kaid?: Kaid | null
@@ -52,19 +60,7 @@ interface IUser {
   readonly accessLevel?: UserAccessLevel
 }
 
-export default class User implements IUser {
-  /**
-   * The client that this user was fetched with.
-   */
-  client?: Client
-  /**
-   * The raw user schema data
-   *
-   * @description
-   * Only set if the user was created from a user schema.
-   */
-  rawData?: RecursivePartial<UserSchema>
-
+export default class User extends Wrapper<UserSchema, IUser> implements IUser {
   /**
    * Whether the user is the currently authenticated user.
    */
@@ -153,7 +149,25 @@ export default class User implements IUser {
 
   readonly accessLevel?: UserAccessLevel
 
-  static #transformUserSchema(schema: RecursivePartial<UserSchema>) {
+  /**
+   * Creates a new user from the given from a user schema
+   *
+   * @description
+   * Note that `Client.getUser` will automatically call this method. This is only useful if you need to use the low-level API.
+   *
+   * @param schema
+   *
+   * @see {@link Client.getUser}
+   */
+  static fromSchema(schema: RecursivePartial<UserSchema>) {
+    const user = new User()
+    user.copyFromSchema(schema)
+    user.rawData = schema
+
+    return user
+  }
+
+  transformSchema(schema: RecursivePartial<UserSchema>) {
     return {
       emails: schema.authEmails ?? undefined,
       badgeCounts: schema.badgeCounts
@@ -186,8 +200,8 @@ export default class User implements IUser {
       teacher: schema.isTeacher ?? undefined,
       joined: schema.joined ? new Date(schema.joined) : undefined,
       kaid:
-        typeof schema.kaid === 'string' && KaidRegex.test(schema.kaid)
-          ? (schema.kaid as Kaid)
+        typeof schema.kaid === 'string' && isKaid(schema.kaid)
+          ? schema.kaid
           : typeof schema.kaid === 'string'
           ? null
           : undefined,
@@ -197,22 +211,21 @@ export default class User implements IUser {
       points: schema.points ?? undefined,
       accessLevel: schema.profile?.accessLevel,
       googleID:
-        typeof schema.userId === 'string' && GoogleIDRegex.test(schema.userId)
+        typeof schema.userId === 'string' && isGoogleID(schema.userId)
           ? schema.userId.match(GoogleIDRegex)![1]
           : typeof schema.userId === 'string'
           ? null
           : undefined,
       qualarooID:
-        typeof schema.qualarooId === 'string' &&
-        QualariiIDRegex.test(schema.qualarooId)
-          ? schema.qualarooId.match(QualariiIDRegex)![1]
+        typeof schema.qualarooId === 'string' && isQualarooID(schema.qualarooId)
+          ? schema.qualarooId.match(QualarooIDRegex)![1]
           : typeof schema.qualarooId === 'string'
           ? null
           : undefined,
       username:
         schema.username ??
         (schema.profileRoot
-          ? !KaidRegex.test(schema.profileRoot.slice(9, -1))
+          ? !isKaid(schema.profileRoot.slice(9, -1))
             ? schema.profileRoot.slice(9, -1)
             : null
           : schema.username),
@@ -220,59 +233,11 @@ export default class User implements IUser {
   }
 
   /**
-   * Creates a new user from the given from a user schema
-   *
-   * @description
-   * Note that `Client.getUser` will automatically call this method. This is only useful if you need to use the low-level API.
-   *
-   * @param schema
-   *
-   * @see {@link Client.getUser}
-   */
-  static fromUserSchema(schema: RecursivePartial<UserSchema>) {
-    const user = new User(User.#transformUserSchema(schema))
-    user.rawData = schema
-
-    return user
-  }
-
-  /**
-   * Creates a new user from the given formatted data or `User` instance
-   *
-   * @description
-   * Note that `Client.getUser` will automatically use this class for abstraction. This is only useful if you need to talk between the low-level API and the high-level API.
-   *
-   * @param user Formatted user data or `User` instance
-   */
-  constructor(user?: IUser) {
-    if (user) return this.copy(user)
-    return this
-  }
-
-  /**
-   * Copies the given formatted data or `User` instance
-   *
-   * @param user Formatted user data or `User` instance
-   */
-  copy(user: IUser) {
-    Object.assign(this, user)
-
-    return this
-  }
-
-  /**
-   * Copies the given data from a user schema
-   */
-  copyFromUserSchema(schema: RecursivePartial<UserSchema>) {
-    return this.copy(User.#transformUserSchema(schema))
-  }
-
-  /**
    * Fetches the user's profile using a `getFullUserProfile` query and updates the user's data
    *
    * @param client Optional client to use for the request
    */
-  async get(client = new Client()) {
+  async get(client = this.client ?? new Client()) {
     if (!this.kaid && !this.username && !this.email)
       throw new Error('User does not have a KAID, username or email')
 
@@ -281,7 +246,7 @@ export default class User implements IUser {
     return this.copy(user)
   }
 
-  async getAvatar(client = new Client()) {
+  async getAvatar(client = this.client ?? new Client()) {
     if (!this.kaid && !this.username && !this.email)
       throw new Error('User does not have a KAID, username or email')
 
@@ -291,5 +256,35 @@ export default class User implements IUser {
     this.copy({ avatar: url })
 
     return url
+  }
+
+  /**
+   * Checks if two users are the same
+   *
+   * @param user The user to compare to
+   */
+  is(user: User | IUser) {
+    if (
+      !(this.kaid && user.kaid) &&
+      !(this.email && user.email) &&
+      !(this.key && user.key) &&
+      !(this.username && user.username) &&
+      !(this.googleID && user.googleID) &&
+      !(this.qualarooID && user.qualarooID)
+    ) {
+      console.warn("Users don't have any identifiers that can be compared")
+      return false
+    }
+    return (
+      (this.kaid && user.kaid && this.kaid === user.kaid) ||
+      (this.email && user.email && this.email === user.email) ||
+      (this.key && user.key && this.key === user.key) ||
+      (this.username && user.username && this.username === user.username) ||
+      (this.googleID && user.googleID && this.googleID === user.googleID) ||
+      (this.qualarooID &&
+        user.qualarooID &&
+        this.qualarooID === user.qualarooID) ||
+      false
+    )
   }
 }

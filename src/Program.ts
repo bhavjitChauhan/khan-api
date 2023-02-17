@@ -1,12 +1,14 @@
 import Client from './Client'
+import { Wrapper } from './lib/Wrapper'
 import { ProgramEditorType } from './types/enums'
 import { ProgramSchema } from './types/schema'
+import { ProgramIDNumber, ProgramKey } from './types/strings'
 import User from './User'
 import { ProgramImagePathRegex, ProgramURLRegex } from './utils/regexes'
 import { RecursivePartial } from './utils/types'
 
 interface IProgram {
-  readonly id?: number
+  readonly id?: ProgramIDNumber
   readonly title?: string
   readonly author?: User
   readonly created?: Date
@@ -20,29 +22,20 @@ interface IProgram {
   readonly type?: Program.Type
 
   readonly origin?: Program | null
-  readonly key?: string
+  readonly key?: ProgramKey
   readonly thumbnailID?: number
   readonly description?: string | null
   readonly deleted?: boolean
   readonly category?: string
 
-  readonly flaggedBySelf?: boolean
-  readonly votedBySelf?: boolean
+  readonly selfFlagged?: boolean
+  readonly selfVoted?: boolean
 }
 
-export class Program implements IProgram {
-  /**
-   * The client that this program was fetched with.
-   */
-  client?: Client
-  /**
-   * The raw program schema data
-   *
-   * @description
-   * Only set if the program was created from a user schema.
-   */
-  rawData?: RecursivePartial<ProgramSchema>
-
+export class Program
+  extends Wrapper<ProgramSchema, IProgram>
+  implements IProgram
+{
   /**
    * The ID of the program.
    */
@@ -108,7 +101,7 @@ export class Program implements IProgram {
    * The original program that this program is a spin-off of.
    */
   readonly origin?: Program | null
-  readonly key?: string
+  readonly key?: ProgramKey
   /**
    * The ID of the latest thumbnail image of the program.
    *
@@ -130,13 +123,17 @@ export class Program implements IProgram {
    *
    * @see {@link client}
    */
-  readonly flaggedBySelf?: boolean
+  readonly selfFlagged?: boolean
   /**
    * Whether the program has been voted by the client's authenticated user.
    *
    * @see {@link client}
    */
-  readonly votedBySelf?: boolean
+  readonly selfVoted?: boolean
+
+  get spinoff() {
+    return !!this.origin
+  }
 
   /**
    * Number of lines of code in the program.
@@ -179,19 +176,27 @@ export class Program implements IProgram {
     return null
   }
 
-  static #transformProgramQuery(schema: RecursivePartial<ProgramSchema>) {
+  static fromSchema(schema: RecursivePartial<ProgramSchema>) {
+    const program = new Program()
+    program.copyFromSchema(schema)
+    program.rawData = schema
+
+    return program
+  }
+
+  transformSchema(schema: RecursivePartial<ProgramSchema>) {
     return {
       id: schema.id ? parseInt(schema.id, 10) : undefined,
       title: schema.translatedTitle,
       author: schema.creatorProfile
-        ? User.fromUserSchema({
+        ? User.fromSchema({
             isChild: schema.byChild ?? undefined,
             ...schema.creatorProfile,
           })
         : undefined,
       created: (() => {
         if (!schema.created) return undefined
-        // Some very old programs' updated date is before their created date
+        // Some very old programs' updated date is before their created date (e.g. 981866281)
         if (schema.revision?.created) {
           return new Date(
             Math.min(
@@ -251,39 +256,29 @@ export class Program implements IProgram {
           : schema.description,
       deleted: schema.deleted ?? undefined,
 
-      flaggedBySelf: schema.flaggedByUser,
-      votedBySelf: schema.upVoted,
+      selfFlagged: schema.flaggedByUser,
+      selfVoted: schema.upVoted,
     }
   }
 
-  static fromProgramSchema(schema: RecursivePartial<ProgramSchema>) {
-    const program = new Program(Program.#transformProgramQuery(schema))
-    program.rawData = schema
+  async get(client = this.client ?? new Client()) {
+    if (!this.id && !this.key) throw new Error('Program is missing ID and key')
 
-    return program
+    const data = await client.getProgram(this.id ?? this.key!)
+
+    return this.copy(data)
   }
 
-  constructor(program: IProgram) {
-    if (program) return this.copy(program)
-    return this
-  }
-
-  copy(program: IProgram) {
-    Object.assign(this, program)
-
-    return this
-  }
-
-  copyFromProgramSchema(schema: RecursivePartial<ProgramSchema>) {
-    return this.copy(Program.#transformProgramQuery(schema))
-  }
-
-  async get(client = new Client()) {
-    if (!this.id) throw new Error('Program is missing ID')
-
-    const program = await client.getProgram(this.id)
-
-    return this.copy(program)
+  is(program: IProgram) {
+    if (!(this.id && program.id) && !(this.key && program.key)) {
+      console.warn("Programs don't have any identifiers that can be compared")
+      return false
+    }
+    return (
+      (this.id && program.id && this.id === program.id) ||
+      (this.key && program.key && this.key === program.key) ||
+      false
+    )
   }
 }
 export namespace Program {

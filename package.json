@@ -1,44 +1,30 @@
 {
   "name": "@bhavjit/khan-api",
-  "author": "Bhavjit Chauhan",
-  "version": "0.2.0",
+  "version": "0.3.0",
+  "description": "A Khan Academy API client and wrapper",
   "keywords": [
-    "khan-academy"
+    "khan-academy",
+    "api"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bhavjitChauhan/khan-api.git"
-  },
-  "bugs": {
-    "url": "https://github.com/bhavjitChauhan/khan-api/issues"
-  },
   "homepage": "https://bhavjitchauhan.github.io/khan-api",
-  "engines": {
-    "node": ">=18.0.0"
-  },
+  "bugs": "https://github.com/bhavjitChauhan/khan-api/issues",
+  "license": "MIT",
+  "author": "Bhavjit Chauhan",
   "files": [
     "esm/",
     "node/",
+    "example.js",
     "index.d.ts",
     "khan-api.js",
     "khan-api.js.map",
     "khan-api.min.js",
     "khan-api.min.js.map"
   ],
-  "exports": {
-    ".": {
-      "browser": "./khan-api.js",
-      "default": {
-        "require": "./node/khan-api.cjs",
-        "default": "./esm/khan-api.js"
-      }
-    }
-  },
-  "main": "./khan-api.js",
+  "module": "./esm/khan-api.js",
+  "main": "./node/khan-api.cjs",
+  "browser": "./khan-api.js",
   "types": "./index.d.ts",
-  "runkitExampleFilename": "example.js",
-  "packageManager": "yarn@3.3.1",
-  "type": "module",
+  "repository": "github:bhavjitChauhan/khan-api",
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
@@ -47,25 +33,42 @@
     "build": "yarn node ./scripts/build.js",
     "doc": "typedoc"
   },
+  "packageManager": "yarn@3.3.1",
+  "type": "module",
   "devDependencies": {
-    "@types/jest": "^29.2.5",
-    "@types/node": "^18.11.18",
-    "@types/rimraf": "^3",
-    "@typescript-eslint/eslint-plugin": "^5.48.0",
-    "@typescript-eslint/parser": "^5.48.0",
+    "@types/jest": "^29.4.0",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^18.13.0",
+    "@types/rimraf": "^3.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
     "chalk": "^5.2.0",
     "dotenv": "^16.0.3",
-    "esbuild": "^0.16.15",
-    "eslint": "^8.31.0",
+    "esbuild": "^0.17.8",
+    "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
-    "jest": "^29.3.1",
-    "prettier": "2.8.1",
-    "rimraf": "^3.0.2",
-    "rollup": "^3.9.1",
-    "rollup-plugin-dts": "^5.1.1",
-    "ts-jest": "^29.0.3",
-    "typedoc": "^0.23.24",
+    "jest": "^29.4.3",
+    "minimist": "^1.2.8",
+    "prettier": "2.8.4",
+    "rimraf": "^4.1.2",
+    "rollup": "^3.15.0",
+    "rollup-plugin-dts": "^5.2.0",
+    "ts-jest": "^29.0.5",
+    "typedoc": "^0.23.25",
     "typedoc-plugin-missing-exports": "^1.0.0",
-    "typescript": "^4.9.4"
-  }
+    "typescript": "^4.9.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    "import": "./esm/khan-api.js",
+    "require": "./node/khan-api.cjs",
+    "browser": "./khan-api.js",
+    "default": "./esm/khan-api.js"
+  },
+  "runkitExampleFilename": "example.js"
 }

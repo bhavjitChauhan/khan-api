@@ -1,4 +1,10 @@
-import { ProgramEditorType, UserAccessLevel } from './enums'
+import {
+  FeedbackFocusKind,
+  FeedbackType,
+  FeedbackTypename,
+  ProgramEditorType,
+  UserAccessLevel,
+} from './enums'
 import {
   Kaid,
   Locale,
@@ -6,6 +12,8 @@ import {
   GoogleID,
   AvatarPath,
   AvatarName,
+  ProgramKey,
+  FeedbackKey,
 } from './strings'
 
 /**
@@ -27,6 +35,7 @@ export interface UserSchema<
   ProfileData = ProfileSchema
 > {
   __typename: 'User'
+  actorHasUserScopedPermission: boolean
   authEmails: Array<string> | null
   autocontinueOn: boolean | null
   avatar: AvatarData
@@ -51,7 +60,9 @@ export interface UserSchema<
    */
   id: Kaid | null
   includesDistrictOwnedData: boolean
+  isActor: boolean
   isChild: boolean | null
+  isCoachedByActor: boolean
   isCoachingLoggedInUser: boolean
   isCreator: boolean | null
   isCurator: boolean | null
@@ -102,6 +113,7 @@ export interface UserSchema<
    * Either Google ID or KAID
    */
   userId: GoogleID | Kaid
+  userSummaryIsVisibleToActor: boolean
   username: string
 }
 
@@ -156,12 +168,12 @@ export interface ProgramSchema<
   flags: unknown | null
   height: number
   hideFromHotlist: boolean
-  id: string
+  id: `${number}`
   imagePath: string
   isOwner: boolean
   isProjectOrFork: boolean
   kaid: UserSchema['kaid']
-  key: string
+  key: ProgramKey
   newUrlPath: string
   originScratchpad: OriginProgramData | null
   restrictPosting: boolean
@@ -205,4 +217,160 @@ export interface TopicSchema {
   relativeUrl: string
   slug: string
   translatedTitle: string
+}
+
+export interface FeedbackForFocusSchema {
+  __typename: 'FeedbackForFocus'
+  cursor: string | null
+  feedback:
+    | BasicFeedbackSchema[]
+    | QuestionFeedbackSchema[]
+    | AnswerFeedbackSchema[]
+    | null
+  isComplete: boolean
+  sortedByDate: boolean
+}
+
+export interface FeedbackSchemaBase {
+  __typename: FeedbackTypename
+  appearsAsDeleted: boolean
+  author: Pick<
+    UserSchema<Pick<AvatarSchema, '__typename' | 'imageSrc' | 'name'>>,
+    '__typename' | 'avatar' | 'id' | 'kaid' | 'nickname'
+  >
+  /**
+   * Always `null`
+   */
+  badges: null | unknown
+  content: string
+  date: string
+  definitelyNotSpam: boolean
+  deleted: boolean
+  downVoted: boolean
+  expandKey: string
+  feedbackType: FeedbackType
+  /**
+   * Always `null`
+   */
+  flaggedBy: null | unknown
+  flaggedByUser: boolean
+  /**
+   * Always `null`
+   */
+  flags: null | unknown
+  focus: FeedbackFocusSchema
+  focusUrl: string
+  fromVideoAuthor: boolean
+  /**
+   * Encrypted ID
+   */
+  key: string
+  lowQualityScore: number
+  notifyOnAnswer: boolean
+  permalink: string
+  qualityKind: string
+  replyCount: number
+  /**
+   * Expand keys for parent feedback. Always 1-2 elements
+   */
+  replyExpandKeys: Array<FeedbackKey> | FeedbackKey
+  /**
+   * Always `false`? May depend on the user
+   */
+  showLowQualityNotice: boolean
+  sumVotesIncremented: number
+  upVoted: boolean
+}
+
+export interface FeedbackFocusSchema {
+  __typename: 'FeedbackFocus'
+  id: string
+  kind: FeedbackFocusKind
+  relativeUrl: string
+  translatedTitle: string
+}
+
+export interface BasicFeedbackSchema extends FeedbackSchemaBase {
+  // `FeedbackTypename` instead of `FeedbackTypename.BasicFeedback` `Question` to extend `Comment`
+  __typename: FeedbackTypename
+  feedbackType: FeedbackType.COMMENT | FeedbackType.REPLY
+}
+
+export interface QuestionFeedbackSchema extends FeedbackSchemaBase {
+  __typename: FeedbackTypename.QuestionFeedback
+  answerCount: number
+  answers:
+    | Pick<
+        AnswerFeedbackSchema,
+        | '__typename'
+        | 'appearsAsDeleted'
+        | 'author'
+        | 'content'
+        | 'date'
+        | 'definitelyNotSpam'
+        | 'deleted'
+        | 'downVoted'
+        | 'expandKey'
+        | 'feedbackType'
+        | 'flaggedBy'
+        | 'flags'
+        | 'focus'
+        | 'focusUrl'
+        | 'fromVideoAuthor'
+        | 'key'
+        | 'lowQualityScore'
+        | 'notifyOnAnswer'
+        | 'permalink'
+        | 'qualityKind'
+        | 'replyCount'
+        | 'replyExpandKeys'
+        | 'showLowQualityNotice'
+        | 'sumVotesIncremented'
+        | 'upVoted'
+      >[]
+    | null
+  feedbackType: FeedbackType.QUESTION
+  /**
+   * Always `null`
+   */
+  hasAnswered: unknown | null
+  isOld: boolean
+}
+
+export interface AnswerFeedbackSchema extends FeedbackSchemaBase {
+  __typename: FeedbackTypename.AnswerFeedback
+  feedbackType: FeedbackType.ANSWER
+  question: Pick<
+    QuestionFeedbackSchema,
+    | '__typename'
+    | 'appearsAsDeleted'
+    | 'author'
+    | 'content'
+    | 'date'
+    | 'definitelyNotSpam'
+    | 'deleted'
+    | 'downVoted'
+    | 'expandKey'
+    | 'feedbackType'
+    | 'flaggedBy'
+    | 'flags'
+    | 'focusUrl'
+    | 'fromVideoAuthor'
+    | 'key'
+    | 'lowQualityScore'
+    | 'notifyOnAnswer'
+    | 'permalink'
+    | 'qualityKind'
+    | 'replyCount'
+    | 'replyExpandKeys'
+    | 'showLowQualityNotice'
+    | 'sumVotesIncremented'
+    | 'upVoted'
+  >
+}
+
+export interface QaExpandKeyInfoSchema {
+  __typename: 'QaExpandKeyInfo'
+  feedbackType: FeedbackType
+  unencryptedKey: FeedbackKey
 }
