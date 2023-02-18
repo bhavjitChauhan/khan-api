@@ -31,7 +31,8 @@
     "format": "prettier ./**/*.ts --write",
     "types": "tsc --emitDeclarationOnly && rollup -c && rimraf dist/types",
     "build": "yarn node ./scripts/build.js",
-    "doc": "typedoc"
+    "doc": "typedoc",
+    "release": "bash ./scripts/release.sh"
   },
   "packageManager": "yarn@3.3.1",
   "type": "module",

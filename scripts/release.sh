@@ -95,7 +95,7 @@ if [[ ! $response =~ ^[Nn]$ ]]; then
     echo
     read -p "Enter the new version: " -r version
     echo "Upgrading version to $version..."
-    git add --all
+    git add package.json
     npm version "$version" -m "Release %s"
 else
     echo
