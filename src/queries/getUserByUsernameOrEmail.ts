@@ -1,7 +1,9 @@
 import { KHAN_GRAPHQL_URL } from '../lib/constants'
 import { StandardResponse } from '../types/responses'
 import { UserSchema } from '../types/schema'
-import { graphql } from '../utils/fetch'
+import { Email } from '../types/strings'
+import { graphql, TypedResponse } from '../utils/fetch'
+import { isEmail } from '../utils/regexes'
 
 export namespace GetUserByUsernameOrEmail {
   export const query =
@@ -40,9 +42,49 @@ export namespace GetUserByUsernameOrEmail {
  * const json = await response.json()
  * const kaid = json.data.user?.kaid
  * ```
+ *
+ * @example
+ * Similarly, get KAID by email:
+ * ```js
+ * const response = await queries.getUserByUsernameOrEmail({
+ *  email: 'sal@khanacademy.org'
+ * })
+ * const json = await response.json()
+ * const kaid = json.data.user?.kaid
+ * ```
  */
 export default function getUserByUsernameOrEmail(
   variables: GetUserByUsernameOrEmail.Variables,
+  init?: RequestInit
+): Promise<TypedResponse<GetUserByUsernameOrEmail.Response>>
+/**
+ * @example
+ * Alternative usage by username:
+ * ```js
+ * const response = await queries.getUserByUsernameOrEmail('sal')
+ * const json = await response.json()
+ * const kaid = json.data.user?.kaid
+ * ```
+ */
+export default function getUserByUsernameOrEmail(
+  username: string,
+  init?: RequestInit
+): Promise<TypedResponse<GetUserByUsernameOrEmail.Response>>
+/**
+ * @example
+ * Similarly, by email:
+ * ```js
+ * const response = await queries.getUserByUsernameOrEmail('sal@khanacademy.org')
+ * const json = await response.json()
+ * const kaid = json.data.user?.kaid
+ * ```
+ */
+export default function getUserByUsernameOrEmail(
+  email: Email,
+  init?: RequestInit
+): Promise<TypedResponse<GetUserByUsernameOrEmail.Response>>
+export default function getUserByUsernameOrEmail(
+  variablesOrIdentifier: GetUserByUsernameOrEmail.Variables | string | Email,
   init?: RequestInit
 ) {
   return graphql<
@@ -51,7 +93,11 @@ export default function getUserByUsernameOrEmail(
   >(
     `${KHAN_GRAPHQL_URL}/getUserByUsernameOrEmail`,
     GetUserByUsernameOrEmail.query,
-    variables,
+    typeof variablesOrIdentifier === 'string'
+      ? isEmail(variablesOrIdentifier)
+        ? { email: variablesOrIdentifier }
+        : { username: variablesOrIdentifier }
+      : variablesOrIdentifier,
     init
   )
 }

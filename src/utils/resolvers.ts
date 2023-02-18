@@ -35,10 +35,7 @@ import {
 export async function resolveKaid(identifier: Kaid | string): Promise<Kaid> {
   if (isKaid(identifier)) return identifier
 
-  const isEmail = EmailRegex.test(identifier)
-  const response = await getUserByUsernameOrEmail({
-    [isEmail ? 'email' : 'username']: identifier,
-  })
+  const response = await getUserByUsernameOrEmail(identifier)
   const json = await response.json()
 
   assertDataResponse(json)
@@ -64,9 +61,7 @@ export async function resolveUsername(identifier: Kaid | string) {
 
   if (!isKaid(identifier)) identifier = await resolveKaid(identifier)
 
-  const response = await getUserHoverCardProfile({
-    kaid: identifier as Kaid,
-  })
+  const response = await getUserHoverCardProfile(identifier as Kaid)
   const json = await response.json()
 
   assertDataResponse(json)
@@ -115,9 +110,7 @@ export async function resolveFeedbackKey(
   if (!isEncryptedFeedbackKey(identifier))
     throw new Error('Invalid encrypted message key')
 
-  const response = await QAExpandKeyInfo({
-    encryptedKey: identifier,
-  })
+  const response = await QAExpandKeyInfo(identifier)
   const json = await response.json()
 
   assertDataResponse(json)

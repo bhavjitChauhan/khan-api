@@ -1,8 +1,9 @@
-import { graphql } from '../utils/fetch'
+import { graphql, TypedResponse } from '../utils/fetch'
 import { KHAN_GRAPHQL_URL } from '../lib/constants'
 import { StandardResponse } from '../types/responses'
 import { Kaid } from '../types/strings'
 import { UserSchema } from '../types/schema'
+import { isKaid } from '../utils/regexes'
 
 export namespace GetFullUserProfile {
   export const query =
@@ -209,11 +210,45 @@ export namespace GetFullUserProfile {
 export default function getFullUserProfile(
   variables?: GetFullUserProfile.Variables,
   init?: RequestInit
+): Promise<TypedResponse<GetFullUserProfile.Response>>
+/**
+ * @example
+ * Alternative usage by KAID:
+ * ```js
+ * const response = await queries.getFullUserProfile('kaid_326465577260382527912172')
+ * const json = await response.json()
+ * const profile = json.data.user
+ * ```
+ */
+export default function getFullUserProfile(
+  kaid?: Kaid,
+  init?: RequestInit
+): Promise<TypedResponse<GetFullUserProfile.Response>>
+/**
+ * @example
+ * Similarly, by username:
+ * ```js
+ * const response = await queries.getFullUserProfile('sal')
+ * const json = await response.json()
+ * const profile = json.data.user
+ * ```
+ */
+export default function getFullUserProfile(
+  username?: string,
+  init?: RequestInit
+): Promise<TypedResponse<GetFullUserProfile.Response>>
+export default function getFullUserProfile(
+  variablesOrIdentifier?: GetFullUserProfile.Variables | Kaid | string,
+  init?: RequestInit
 ) {
   return graphql<GetFullUserProfile.Variables, GetFullUserProfile.Response>(
     `${KHAN_GRAPHQL_URL}/getFullUserProfile`,
     GetFullUserProfile.query,
-    variables,
+    typeof variablesOrIdentifier === 'string'
+      ? isKaid(variablesOrIdentifier)
+        ? { kaid: variablesOrIdentifier }
+        : { username: variablesOrIdentifier }
+      : variablesOrIdentifier,
     init
   )
 }

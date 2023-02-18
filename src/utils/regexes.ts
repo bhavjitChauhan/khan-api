@@ -7,6 +7,7 @@ import {
   QualarooID,
   ProgramURL,
   ProgramID,
+  Email,
 } from '../types/strings'
 import { toStandardBase64 } from './format'
 
@@ -178,3 +179,4 @@ export const isQualarooID = (str: string): str is QualarooID =>
 export const EmailRegex =
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 export const EmailRegexMatch = matchify(EmailRegex)
+export const isEmail = (str: string): str is Email => EmailRegex.test(str)

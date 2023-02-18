@@ -1,7 +1,8 @@
 import { KHAN_GRAPHQL_URL } from '../lib/constants'
 import { StandardResponse } from '../types/responses'
 import { ProgramSchema, UserSchema } from '../types/schema'
-import { graphql } from '../utils/fetch'
+import { ProgramID } from '../types/strings'
+import { graphql, TypedResponse } from '../utils/fetch'
 
 export namespace ProgramQuery {
   export const query = `query programQuery($programId: String!) {
@@ -143,11 +144,32 @@ export namespace ProgramQuery {
 export default function programQuery(
   variables: ProgramQuery.Variables,
   init?: RequestInit
+): Promise<TypedResponse<ProgramQuery.Response>>
+/**
+ * @example
+ * Alternative usage:
+ * ```js
+ * const response = await queries.programQuery(6058668928843776)
+ * const json = await response.json()
+ * const program = json.data.programById
+ * ```
+ */
+export default function programQuery(
+  programId: ProgramID,
+  init?: RequestInit
+): Promise<TypedResponse<ProgramQuery.Response>>
+export default function programQuery(
+  variablesOrProgramId: ProgramQuery.Variables | ProgramID,
+  init?: RequestInit
 ) {
   return graphql<ProgramQuery.Variables, ProgramQuery.Response>(
     `${KHAN_GRAPHQL_URL}/programQuery`,
     ProgramQuery.query,
-    variables,
+    typeof variablesOrProgramId === 'number'
+      ? { programId: variablesOrProgramId.toString() }
+      : typeof variablesOrProgramId === 'string'
+      ? { programId: variablesOrProgramId }
+      : variablesOrProgramId,
     init
   )
 }
