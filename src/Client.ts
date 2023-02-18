@@ -13,6 +13,7 @@ import {
   ProgramKey,
   ProgramID,
   ProgramURL,
+  Email,
 } from './types/strings'
 import User from './User'
 import {
@@ -23,10 +24,10 @@ import {
 import { stripCookies } from './utils/cookies'
 import { truncate } from './utils/format'
 import {
-  EmailRegex,
   isEncryptedFeedbackKey,
   isKaid,
   isFeedbackKey,
+  isEmail,
 } from './utils/regexes'
 import { PLACEHOLDER_PROGRAM_ID } from './lib/constants'
 import feedbackQuery from './queries/feedbackQuery'
@@ -54,7 +55,7 @@ export default class Client {
   #password?: string
   #cookies?: string
 
-  #cachedKaids = new Map<string, Kaid>()
+  #cachedKaids = new Map<string | Email, Kaid>()
   #cachedUsernames = new Map<Kaid | string, string>()
   #cachedFeedbackKeys = new Map<EncryptedFeedbackKey, FeedbackKey>()
 
@@ -100,7 +101,7 @@ export default class Client {
    * console.log(await getKaid()) // Makes a request
    * console.log(await getKaid()) // Returns cached result
    */
-  async resolveCachedKaid(identifier: Kaid | string): Promise<Kaid> {
+  async resolveCachedKaid(identifier: Kaid | string | Email): Promise<Kaid> {
     if (isKaid(identifier)) return identifier
 
     if (this.#cachedKaids.has(identifier))
@@ -128,7 +129,7 @@ export default class Client {
    * console.log(await getUsername()) // Returns cached result
    */
   async resolveCachedUsername(identifier: Kaid | string) {
-    if (!isKaid(identifier) && !EmailRegex.test(identifier)) return identifier
+    if (!isKaid(identifier) && !isEmail(identifier)) return identifier
 
     if (this.#cachedUsernames.has(identifier))
       return this.#cachedUsernames.get(identifier)!
@@ -185,7 +186,7 @@ export default class Client {
    * @param identifier KAID, username or email
    * @param password
    */
-  async login(identifier?: Kaid | string, password?: string) {
+  async login(identifier?: Kaid | string | Email, password?: string) {
     if (identifier) {
       if (isKaid(identifier))
         identifier = await this.resolveCachedUsername(identifier)
@@ -258,14 +259,14 @@ export default class Client {
   /**
    * @param identifier KAID, username or email
    */
-  async getUser(identifier?: string) {
+  async getUser(identifier?: Kaid | string | Email) {
     if (!identifier && !this.authenticated)
       throw new Error(
         'Not authenticated: Login to get client user or provide a kaid/username'
       )
 
     let email: string | null = null
-    if (identifier && EmailRegex.test(identifier)) {
+    if (identifier && isEmail(identifier)) {
       email = identifier
       identifier = await this.resolveCachedKaid(identifier)
     }
@@ -284,7 +285,7 @@ export default class Client {
     const user = User.fromSchema(json.data.user)
     user.client = this
     // Why not?
-    if (!user.email && email && EmailRegex.test(email)) user.copy({ email })
+    if (!user.email && email && isEmail(email)) user.copy({ email })
     if (user.self) this.user = user
 
     if (user.kaid) {

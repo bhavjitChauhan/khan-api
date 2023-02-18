@@ -3,6 +3,7 @@ import getUserHoverCardProfile from '../queries/getUserHoverCardProfile'
 import QAExpandKeyInfo from '../queries/QAExpandKeyInfo'
 import { assertDataResponse } from '../types/responses'
 import {
+    Email,
   EncryptedFeedbackKey,
   FeedbackKey,
   Kaid,
@@ -14,13 +15,13 @@ import {
 import { programKeyToID } from './programs'
 import {
   isKaid,
-  EmailRegex,
   isProgramID,
   isProgramKey,
   isProgramURL,
   ProgramURLRegex,
   isEncryptedFeedbackKey,
   isFeedbackKey,
+  isEmail,
 } from './regexes'
 
 /**
@@ -32,7 +33,7 @@ import {
  * const kaid = await resolveKaid('bhavjitChauhan')
  * console.log(kaid) // kaid_376749826184384230772276
  */
-export async function resolveKaid(identifier: Kaid | string): Promise<Kaid> {
+export async function resolveKaid(identifier: Kaid | string | Email): Promise<Kaid> {
   if (isKaid(identifier)) return identifier
 
   const response = await getUserByUsernameOrEmail(identifier)
@@ -56,8 +57,8 @@ export async function resolveKaid(identifier: Kaid | string): Promise<Kaid> {
  * const username = await resolveUsername('kaid_376749826184384230772276')
  * console.log(username) // bhavjitChauhan
  */
-export async function resolveUsername(identifier: Kaid | string) {
-  if (!isKaid(identifier) && !EmailRegex.test(identifier)) return identifier
+export async function resolveUsername(identifier: Kaid | string | Email) {
+  if (!isKaid(identifier) && !isEmail(identifier)) return identifier
 
   if (!isKaid(identifier)) identifier = await resolveKaid(identifier)
 
