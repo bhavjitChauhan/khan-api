@@ -45,7 +45,7 @@ export default class Program
 {
   /**
    * Aliases for the program types.
-   * 
+   *
    * @rawEquivalent {@link ProgramRevisionSchema.ProgramEditorType | `revision.editorType`}
    */
   static readonly Type = Type

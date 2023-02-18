@@ -51,6 +51,7 @@ import {
 } from './utils/messages'
 import TipsAndThanks from './lib/messages/TipsAndThanks'
 import getFeedbackReplies from './queries/getFeedbackReplies'
+import { TypedResponse } from './utils/fetch'
 
 export default class Client {
   #identifier?: string
@@ -62,6 +63,20 @@ export default class Client {
   authenticated = false
   kaid: Kaid | null = null
   user?: User
+
+  static async #resolveJsonReponse<T>(response: TypedResponse<T>) {
+    try {
+      return await response.json()
+    } catch (err) {
+      const message =
+        err instanceof Error
+          ? err.message
+          : typeof err === 'string'
+          ? err
+          : 'Unknown error'
+      throw new Error(`Failed to parse response JSON: ${message}`)
+    }
+  }
 
   constructor() {
     return this
@@ -87,7 +102,7 @@ export default class Client {
     const response = await getUserByUsernameOrEmail({
       [isEmail ? 'email' : 'username']: identifier,
     })
-    const json = await response.json()
+    const json = await Client.#resolveJsonReponse(response)
 
     assertDataResponse(json)
     if (!json.data.user) throw new Error('User not found')
@@ -110,7 +125,7 @@ export default class Client {
     const response = await getUserHoverCardProfile({
       kaid,
     })
-    const json = await response.json()
+    const json = await Client.#resolveJsonReponse(response)
 
     assertDataResponse(json)
     if (!json.data.user) throw new Error('User not found')
@@ -157,7 +172,7 @@ export default class Client {
     const response = await QAExpandKeyInfo({
       encryptedKey: identifier,
     })
-    const json = await response.json()
+    const json = await Client.#resolveJsonReponse(response)
 
     assertDataResponse(json)
     if (!json.data.qaExpandKeyInfo) throw new Error('Message key not found')
@@ -206,8 +221,7 @@ export default class Client {
       { credentials: 'include' }
     )
 
-    // @TODO: Handle invalid JSON response
-    const json = await response.json()
+    const json = await Client.#resolveJsonReponse(response)
 
     assertDataResponse(json)
     if (!json.data.loginWithPassword) throw new Error('Malformed response')
@@ -278,7 +292,7 @@ export default class Client {
         ? { credentials: 'include', headers: { cookie: this.#cookies! } }
         : undefined
     )
-    const json = await response.json()
+    const json = await Client.#resolveJsonReponse(response)
 
     assertDataResponse(json)
     if (!json.data.user) throw new Error('User not found')
@@ -308,7 +322,7 @@ export default class Client {
     const response = await programQuery({
       programId: id.toString(),
     })
-    const json = await response.json()
+    const json = await Client.#resolveJsonReponse(response)
 
     assertDataResponse(json)
     if (!json.data.programById) throw new Error('Program not found')
@@ -346,7 +360,7 @@ export default class Client {
       currentSort: FeedbackSort.TopVoted,
       qaExpandKey: identifier,
     })
-    const json = await response.json()
+    const json = await Client.#resolveJsonReponse(response)
 
     assertDataResponse(json)
     if (
@@ -413,7 +427,7 @@ export default class Client {
     const response = await getFeedbackReplies({
       postKey: message.key,
     })
-    const json = await response.json()
+    const json = await Client.#resolveJsonReponse(response)
 
     assertDataResponse(json)
     if (!json.data.feedbackReplies || json.data.feedbackReplies.length === 0)
@@ -456,7 +470,7 @@ export default class Client {
       // Why do I have to cast this to `Kaid`? It should already be `Kaid`...
       kaid: identifier as Kaid,
     })
-    const json = await response.json()
+    const json = await Client.#resolveJsonReponse(response)
 
     assertDataResponse(json)
     if (!json.data.user) throw new Error('User not found')
