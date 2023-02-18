@@ -5,6 +5,8 @@
 import { avatarNames, avatarSlugs } from '../utils/avatars'
 import { PROGRAM_URL_LOCALES, PROGRAM_URL_PATHS } from '../utils/regexes'
 
+export type Email = `${string}@${string}.${string}`
+
 export type Kaid = `kaid_${number}`
 
 export type QualarooID = `_gae_bingo_random:${string}`

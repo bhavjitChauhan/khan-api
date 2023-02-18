@@ -271,9 +271,7 @@ export default class Client {
     }
 
     const response = await getFullUserProfile(
-      identifier
-        ? { [isKaid(identifier) ? 'kaid' : 'username']: identifier }
-        : undefined,
+      identifier,
       !identifier
         ? { credentials: 'include', headers: { cookie: this.#cookies! } }
         : undefined
@@ -305,9 +303,7 @@ export default class Client {
   async getProgram(id: ProgramID | ProgramURL | ProgramKey) {
     id = resolveProgramID(id)
 
-    const response = await programQuery({
-      programId: id.toString(),
-    })
+    const response = await programQuery(id)
     const json = await Client.#resolveJsonReponse(response)
 
     assertDataResponse(json)
@@ -410,9 +406,7 @@ export default class Client {
       | Answer
     if (!message.key) throw new Error('Message has no key')
 
-    const response = await getFeedbackReplies({
-      postKey: message.key,
-    })
+    const response = await getFeedbackReplies(message.key)
     const json = await Client.#resolveJsonReponse(response)
 
     assertDataResponse(json)
@@ -453,10 +447,8 @@ export default class Client {
     if (!isKaid(identifier))
       identifier = await this.resolveCachedKaid(identifier)
 
-    const response = await avatarDataForProfile({
-      // Why do I have to cast this to `Kaid`? It should already be `Kaid`...
-      kaid: identifier as Kaid,
-    })
+    // Why do I have to cast this to `Kaid`? It should already be `Kaid`...
+    const response = await avatarDataForProfile(identifier as Kaid)
     const json = await Client.#resolveJsonReponse(response)
 
     assertDataResponse(json)
