@@ -1,5 +1,5 @@
 import { Client } from '../src/index'
-import { Program } from '../src/Program'
+import Program from '../src/Program'
 import { KHAN_PROGRAM_ID, KHAN_PROGRAM_KEY } from './constants'
 
 describe('getProgram', () => {
