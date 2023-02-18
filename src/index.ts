@@ -39,6 +39,7 @@ export * from './utils/avatars'
 export * from './utils/programs'
 export * from './utils/messages'
 export * from './utils/regexes'
+export * from './utils/resolvers'
 
 /** Types */
 export * from './types/responses'
