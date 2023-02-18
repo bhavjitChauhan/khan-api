@@ -1,7 +1,7 @@
 import loginWithPasswordMutation, {
   LoginWithPasswordMutation,
 } from './mutations/loginWithPasswordMutation'
-import { Program } from './Program'
+import Program from './Program'
 import avatarDataForProfile from './queries/avatarDataForProfile'
 import getFullUserProfile from './queries/getFullUserProfile'
 import getUserByUsernameOrEmail from './queries/getUserByUsernameOrEmail'

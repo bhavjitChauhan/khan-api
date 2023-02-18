@@ -7,6 +7,13 @@ import User from './User'
 import { ProgramImagePathRegex, ProgramURLRegex } from './utils/regexes'
 import { RecursivePartial } from './utils/types'
 
+enum Type {
+  ProcessingJS = 'ProcessingJS',
+  HTML = 'HTML',
+  SQL = 'SQL',
+  Other = 'Other',
+}
+
 interface IProgram {
   readonly id?: ProgramIDNumber
   readonly title?: string
@@ -19,7 +26,7 @@ interface IProgram {
   readonly spinOffCount?: number
   readonly hidden?: boolean
   readonly code?: string
-  readonly type?: Program.Type
+  readonly type?: Type
 
   readonly origin?: Program | null
   readonly key?: ProgramKey
@@ -32,10 +39,17 @@ interface IProgram {
   readonly selfVoted?: boolean
 }
 
-export class Program
+export default class Program
   extends Wrapper<ProgramSchema, IProgram>
   implements IProgram
 {
+  /**
+   * Aliases for the program types.
+   * 
+   * @rawEquivalent {@link ProgramRevisionSchema.ProgramEditorType | `revision.editorType`}
+   */
+  static readonly Type = Type
+
   /**
    * The ID of the program.
    */
@@ -95,7 +109,7 @@ export class Program
   /**
    * The type of program.
    */
-  readonly type?: Program.Type
+  readonly type?: Type
 
   /**
    * The original program that this program is a spin-off of.
@@ -281,13 +295,3 @@ export class Program
     )
   }
 }
-export namespace Program {
-  export enum Type {
-    ProcessingJS = 'ProcessingJS',
-    HTML = 'HTML',
-    SQL = 'SQL',
-    Other = 'Other',
-  }
-}
-
-export default Program
