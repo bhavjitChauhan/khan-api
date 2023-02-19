@@ -94,7 +94,7 @@ export default class Client {
    * If the identifier is cached, it will be returned immediately. Otherwise a
    * `getUserByUsernameOrEmail` request will be made to resolve the identifier
    *
-   * @see resolveKaid
+   * @see {@link utils/resolvers!resolveKaid}
    *
    * @example
    * const getKaid = async () => await client.resolveCachedKaid('bhavjitChauhan')
@@ -121,7 +121,7 @@ export default class Client {
    * If the identifier is cached, it will be returned immediately. Otherwise a
    * `getUserHoverCardProfile` request will be made to resolve the identifier
    *
-   * @see resolveUsername
+   * @see {@link utils/resolvers!resolveUsername}
    *
    * @example
    * const getUsername = async () => await client.resolveCachedUsername('kaid_376749826184384230772276')
@@ -149,7 +149,7 @@ export default class Client {
    * If the identifier is cached, it will be returned immediately. Otherwise a
    * `QAExpandKeyInfo` request will be made to resolve the identifier
    *
-   * @see resolveFeedbackKey
+   * @see {@link utils/resolvers!resolveFeedbackKey}
    */
   async resolveCachedFeedbackKey(
     identifier: FeedbackKey | EncryptedFeedbackKey

@@ -56,6 +56,9 @@ fi
 yarn
 yarn doc
 
+# Create CNAME file
+echo "khan-api.bhavjit.com" > docs/CNAME
+
 # Commit the docs
 sed -i '/docs/d' .gitignore
 git add docs .gitignore

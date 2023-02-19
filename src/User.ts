@@ -1,5 +1,5 @@
 import Client from './Client'
-import { Wrapper } from './lib/Wrapper'
+import Wrapper from './lib/Wrapper'
 import { BadgeCategory } from './types/badges'
 import { UserAccessLevel } from './types/enums'
 import { UserSchema } from './types/schema'
@@ -15,7 +15,7 @@ import { RecursivePartial } from './utils/types'
 
 // There has to be a solution that doesn't require duplicating properties
 // Update: there is, but it's not worth it
-interface IUser {
+export interface IUser {
   readonly self?: boolean
   readonly kaid?: Kaid | null
   readonly username?: string | null
@@ -157,7 +157,7 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
    *
    * @param schema
    *
-   * @see {@link Client.getUser}
+   * @see {@link Client!Client.getUser}
    */
   static fromSchema(schema: RecursivePartial<UserSchema>) {
     const user = new User()

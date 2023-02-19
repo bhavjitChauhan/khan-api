@@ -1,4 +1,4 @@
-import { Wrapper } from '../Wrapper'
+import Wrapper from '../Wrapper'
 import Program from '../../Program'
 import { FeedbackSchemaBase } from '../../types/schema'
 import User from '../../User'
@@ -26,45 +26,45 @@ export default abstract class BaseMessage
   implements IBaseMessage
 {
   /**
-   * @rawEquivalent {@link FeedbackSchemaBase.content | `content`}
+   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.content}
    */
   readonly text?: string
   readonly author?: User
   readonly program?: Program
   /**
-   * @rawEquivalent {@link FeedbackSchemaBase.date | `date`}
+   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.date}
    */
   readonly created?: Date
 
   /**
-   * @rawEquivalent {@link FeedbackSchemaBase.expandKey | `expandKey`}
+   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.expandKey}
    */
   readonly key?: FeedbackKey
   /**
-   * @rawEquivalent {@link FeedbackSchemaBase.key | `key`}
+   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.key}
    */
   readonly encryptedKey?: EncryptedFeedbackKey
 
   /**
-   * @rawEquivalent {@link FeedbackSchemaBase.appearsAsDeleted | `appearsAsDeleted`}
+   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.appearsAsDeleted}
    */
   readonly deleted?: boolean
   /**
-   * @rawEquivalent {@link FeedbackSchemaBase.definitelyNotSpam | `definitelyNotSpam`}
+   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.definitelyNotSpam}
    */
   readonly verified?: boolean
   /**
-   * @rawEquivalent {@link FeedbackSchemaBase.lowQualityScore | `lowQualityScore`}
+   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.lowQualityScore}
    */
   readonly score?: number
 
   /**
-   * @rawEquivalent {@link FeedbackSchemaBase.fromVideoAuthor | `fromVideoAuthor`}
+   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.fromVideoAuthor}
    */
   readonly byVideoAuthor?: boolean
 
   /**
-   * @rawEquivalent {@link FeedbackSchemaBase.flaggedByUser | `flaggedByUser`}
+   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.flaggedByUser}
    */
   readonly selfFlagged?: boolean
 

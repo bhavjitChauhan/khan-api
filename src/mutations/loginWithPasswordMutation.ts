@@ -72,11 +72,11 @@ export namespace LoginWithPasswordMutation {
  * @remarks
  * There are many things that can go wrong with this request and Khan Academy
  * doesn't provide a great way to handle them. It's recommended to use
- * {@link Client.login | Client.login} instead.
+ * {@link Client!Client.login | Client.login} instead.
  *
  * @link {@link https://documenter.getpostman.com/view/19553924/2s8YzQUiXU#77a4642b-3580-4409-b837-1ac82a487c35 | Reference}
  *
- * @see {@link Client.login | Client.login}
+ * @see {@link Client!Client.login}
  *
  * @example
  * Simple usage without error handling:

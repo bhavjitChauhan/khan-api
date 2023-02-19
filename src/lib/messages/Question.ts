@@ -13,7 +13,7 @@ export default class Question extends Message implements IQuestion {
   readonly answerCount?: number
   readonly answers?: Answer[]
   /**
-   * @rawEquivalent {@link BasicFeedbackSchema.isOld | `isOld`}
+   * @rawEquivalent {@link types/schema!QuestionFeedbackSchema.isOld}
    */
   readonly old?: boolean
 
