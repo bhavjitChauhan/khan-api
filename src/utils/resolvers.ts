@@ -3,7 +3,7 @@ import getUserHoverCardProfile from '../queries/getUserHoverCardProfile'
 import QAExpandKeyInfo from '../queries/QAExpandKeyInfo'
 import { assertDataResponse } from '../types/responses'
 import {
-    Email,
+  Email,
   EncryptedFeedbackKey,
   FeedbackKey,
   Kaid,
@@ -33,7 +33,9 @@ import {
  * const kaid = await resolveKaid('bhavjitChauhan')
  * console.log(kaid) // kaid_376749826184384230772276
  */
-export async function resolveKaid(identifier: Kaid | string | Email): Promise<Kaid> {
+export async function resolveKaid(
+  identifier: Kaid | string | Email
+): Promise<Kaid> {
   if (isKaid(identifier)) return identifier
 
   const response = await getUserByUsernameOrEmail(identifier)
