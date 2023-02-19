@@ -34,9 +34,11 @@ export type ProgramIDNumber = number
 export type ProgramID = `${number}` | number
 
 export type ProgramURLPath = (typeof PROGRAM_URL_PATHS)[number]
-export type ProgramURL = `http${string}://${string}khanacademy.${string}/${string}/${string}/${number}`
+export type ProgramURL =
+  `http${string}://${string}khanacademy.${string}/${string}/${string}/${number}`
 
-export type ProgramKey = `ag5zfmtoYW4tYWNhZGVteXI${string}CxIKU2NyYXRjaHBhZB${string}${string}`
+export type ProgramKey =
+  `ag5zfmtoYW4tYWNhZGVteXI${string}CxIKU2NyYXRjaHBhZB${string}${string}`
 
 // Unfortunately (or fortunately, depending on your perspective) this type has
 // too many permutations to be used without lagging the editor

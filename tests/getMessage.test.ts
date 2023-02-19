@@ -1,4 +1,4 @@
-import { Answer, Client, Question, Reply, TipsAndThanks } from '../src/index'
+import { Answer, Client, Question, Reply, TipsAndThanks } from '../src/'
 import Message from '../src/lib/messages/Message'
 import {
   ANSWER_ENCRYPTED_KEY,

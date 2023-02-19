@@ -1,5 +1,4 @@
-import { Client } from '../src/index'
-import User from '../src/User'
+import { Client, User } from '../src/'
 import { KHAN_KAID, KHAN_USERNAME } from './constants'
 
 describe('getUser', () => {

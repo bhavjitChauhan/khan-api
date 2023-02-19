@@ -5,12 +5,19 @@ export * as queries from './queries'
 export * as mutations from './mutations'
 
 /** Classes */
+export { default as Client } from './Client'
 export * from './Client'
+export { default as User } from './User'
 export * from './User'
+export { default as Program } from './Program'
 export * from './Program'
+export { default as TipsAndThanks } from './lib/messages/TipsAndThanks'
 export * from './lib/messages/TipsAndThanks'
+export { default as Question } from './lib/messages/Question'
 export * from './lib/messages/Question'
+export { default as Answer } from './lib/messages/Answer'
 export * from './lib/messages/Answer'
+export { default as Reply } from './lib/messages/Reply'
 export * from './lib/messages/Reply'
 
 /** Utilities */
