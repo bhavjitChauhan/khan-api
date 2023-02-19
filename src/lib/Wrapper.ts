@@ -8,7 +8,7 @@ import { RecursivePartial } from '../utils/types'
  * This class is used to wrap the API schema into a more user-friendly
  * interface.
  */
-export abstract class Wrapper<Schema, Interface> {
+export default abstract class Wrapper<Schema, Interface> {
   /**
    * The client that this base was fetched with.
    */

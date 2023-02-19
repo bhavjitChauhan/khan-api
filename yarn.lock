@@ -431,7 +431,7 @@ __metadata:
     rollup-plugin-dts: ^5.2.0
     ts-jest: ^29.0.5
     typedoc: ^0.23.25
-    typedoc-plugin-missing-exports: ^1.0.0
+    typedoc-plugin-rename-defaults: ^0.6.4
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -4740,12 +4740,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc-plugin-missing-exports@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "typedoc-plugin-missing-exports@npm:1.0.0"
+"typedoc-plugin-rename-defaults@npm:^0.6.4":
+  version: 0.6.4
+  resolution: "typedoc-plugin-rename-defaults@npm:0.6.4"
   peerDependencies:
     typedoc: 0.22.x || 0.23.x
-  checksum: 11ef3ba347a88924397f2f2f84216e5d41f9714baba671e4f9a86dd4de22d5e5e47477a295776c4f489be91065a152fedcbfa9aa6cba90499894e6670441ce31
+  checksum: d7e94ec1f9b1c27623d61c42f40213f226ee49612f096e7b12d76acc2ccbe6c820557946328dfbbda2045c665e5ad785b79c840fd93f012cd7239e9f7df03751
   languageName: node
   linkType: hard
 

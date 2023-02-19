@@ -18,16 +18,16 @@ export interface IMessage extends IBaseMessage {
 
 export default class Message extends BaseMessage implements IMessage {
   /**
-   * @rawEquivalent {@link FeedbackSchemaBase.sumVotesIncremented | `sumVotesIncremented`}
+   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.sumVotesIncremented}
    */
   readonly votes?: number
   readonly replyCount?: number
   /**
-   * @rawEquivalent {@link FeedbackSchemaBase.upVoted | `upVoted`}
+   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.upVoted}
    */
   readonly selfUpvoted?: boolean
   /**
-   * @rawEquivalent {@link FeedbackSchemaBase.downVoted | `downVoted`}
+   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.downVoted}
    */
   readonly selfDownvoted?: boolean
 

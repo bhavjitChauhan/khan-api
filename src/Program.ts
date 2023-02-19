@@ -1,5 +1,5 @@
 import Client from './Client'
-import { Wrapper } from './lib/Wrapper'
+import Wrapper from './lib/Wrapper'
 import { ProgramEditorType } from './types/enums'
 import { ProgramSchema } from './types/schema'
 import { ProgramIDNumber, ProgramKey } from './types/strings'
@@ -7,14 +7,14 @@ import User from './User'
 import { ProgramImagePathRegex, ProgramURLRegex } from './utils/regexes'
 import { RecursivePartial } from './utils/types'
 
-enum Type {
+export enum Type {
   ProcessingJS = 'ProcessingJS',
   HTML = 'HTML',
   SQL = 'SQL',
   Other = 'Other',
 }
 
-interface IProgram {
+export interface IProgram {
   readonly id?: ProgramIDNumber
   readonly title?: string
   readonly author?: User
@@ -46,7 +46,7 @@ export default class Program
   /**
    * Aliases for the program types.
    *
-   * @rawEquivalent {@link ProgramRevisionSchema.ProgramEditorType | `revision.editorType`}
+   * @rawEquivalent {@link types/schema!ProgramRevisionSchema.editorType}
    */
   static readonly Type = Type
 

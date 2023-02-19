@@ -47,7 +47,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rollup-plugin-dts", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:5.2.0"],\
             ["ts-jest", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:29.0.5"],\
             ["typedoc", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:0.23.25"],\
-            ["typedoc-plugin-missing-exports", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:1.0.0"],\
+            ["typedoc-plugin-rename-defaults", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:0.6.4"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=ad5954"]\
           ],\
           "linkType": "SOFT"\
@@ -858,7 +858,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rollup-plugin-dts", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:5.2.0"],\
             ["ts-jest", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:29.0.5"],\
             ["typedoc", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:0.23.25"],\
-            ["typedoc-plugin-missing-exports", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:1.0.0"],\
+            ["typedoc-plugin-rename-defaults", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:0.6.4"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=ad5954"]\
           ],\
           "linkType": "SOFT"\
@@ -5941,18 +5941,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["typedoc-plugin-missing-exports", [\
-        ["npm:1.0.0", {\
-          "packageLocation": "./.yarn/cache/typedoc-plugin-missing-exports-npm-1.0.0-da44643695-11ef3ba347.zip/node_modules/typedoc-plugin-missing-exports/",\
+      ["typedoc-plugin-rename-defaults", [\
+        ["npm:0.6.4", {\
+          "packageLocation": "./.yarn/cache/typedoc-plugin-rename-defaults-npm-0.6.4-a062992e6e-d7e94ec1f9.zip/node_modules/typedoc-plugin-rename-defaults/",\
           "packageDependencies": [\
-            ["typedoc-plugin-missing-exports", "npm:1.0.0"]\
+            ["typedoc-plugin-rename-defaults", "npm:0.6.4"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:1.0.0", {\
-          "packageLocation": "./.yarn/__virtual__/typedoc-plugin-missing-exports-virtual-aaed0762ad/0/cache/typedoc-plugin-missing-exports-npm-1.0.0-da44643695-11ef3ba347.zip/node_modules/typedoc-plugin-missing-exports/",\
+        ["virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:0.6.4", {\
+          "packageLocation": "./.yarn/__virtual__/typedoc-plugin-rename-defaults-virtual-5c226ec351/0/cache/typedoc-plugin-rename-defaults-npm-0.6.4-a062992e6e-d7e94ec1f9.zip/node_modules/typedoc-plugin-rename-defaults/",\
           "packageDependencies": [\
-            ["typedoc-plugin-missing-exports", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:1.0.0"],\
+            ["typedoc-plugin-rename-defaults", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:0.6.4"],\
             ["@types/typedoc", null],\
             ["typedoc", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:0.23.25"]\
           ],\
