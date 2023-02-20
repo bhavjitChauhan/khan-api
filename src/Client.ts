@@ -38,7 +38,7 @@ import Reply from './lib/messages/Reply'
 import {
   isTipsAndThanksSchema,
   isQuestionSchema,
-  isReplySchema,
+  TypeToClass,
 } from './utils/messages'
 import TipsAndThanks from './lib/messages/TipsAndThanks'
 import getFeedbackReplies from './queries/getFeedbackReplies'
@@ -49,6 +49,9 @@ import {
   resolveProgramID,
   resolveUsername,
 } from './utils/resolvers'
+import { BasicFeedbackSchema, QuestionFeedbackSchema } from './types/schema'
+import Message from './lib/messages/Message'
+import { RecursivePartial } from './utils/types'
 
 export default class Client {
   #identifier?: string
@@ -299,12 +302,12 @@ export default class Client {
   }
 
   /**
-   * @param id Program ID, URL or key
+   * @param identifier Program ID, URL or key
    */
-  async getProgram(id: ProgramID | ProgramURL | ProgramKey) {
-    id = resolveProgramID(id)
+  async getProgram(identifier: ProgramID | ProgramURL | ProgramKey) {
+    identifier = resolveProgramID(identifier)
 
-    const response = await programQuery(id)
+    const response = await programQuery(identifier)
     const json = await Client.#resolveJsonReponse(response)
 
     assertDataResponse(json)
@@ -330,9 +333,20 @@ export default class Client {
     return program
   }
 
+  /**
+   * Gets a single message by its feedback key or encrypted feedback key
+   *
+   * @remarks
+   * This method is not recommended when you know the message's type. Use
+   * {@link Client!Client.getTipsAndThanks | `getTipsAndThanks`},
+   * {@link Client!Client.getQuestion | `getQuestion`} or
+   * {@link Client!Client.getReply | `getReply`} instead.
+   *
+   * @param identifier Feedback key or encrypted feedback key
+   */
   async getMessage(
     identifier: FeedbackKey | EncryptedFeedbackKey
-  ): Promise<TipsAndThanks | Question | Answer | Reply> {
+  ): Promise<TipsAndThanks | Question | Answer> {
     if (isEncryptedFeedbackKey(identifier))
       identifier = await this.resolveCachedFeedbackKey(identifier)
 
@@ -368,9 +382,7 @@ export default class Client {
         message = answer
         message.copy({ question })
       } else message = question
-    } else if (isReplySchema(messageSchema))
-      message = Reply.fromSchema(messageSchema)
-    else throw new Error('Unknown message type')
+    } else throw new Error('Unknown message type')
 
     message.client = this
 
@@ -388,23 +400,43 @@ export default class Client {
     return message
   }
 
+  /**
+   * Gets a single tips and thanks message
+   *
+   * @param identifier Feedback key or encrypted feedback key
+   */
   async getTipsAndThanks(identifier: FeedbackKey | EncryptedFeedbackKey) {
     return this.getMessage(identifier) as Promise<TipsAndThanks>
   }
 
+  /**
+   * Gets a single question message
+   *
+   * @remarks
+   * Note that Help Requests are a type of question.
+   *
+   * @param identifier Feedback key or encrypted feedback key
+   */
   async getQuestion(identifier: FeedbackKey | EncryptedFeedbackKey) {
     return this.getMessage(identifier) as Promise<Question>
   }
 
+  /**
+   * Gets a single answer message
+   *
+   * @param identifier Feedback key or encrypted feedback key
+   */
   async getAnswer(identifier: FeedbackKey | EncryptedFeedbackKey) {
     return this.getMessage(identifier) as Promise<Answer>
   }
 
+  /**
+   * Gets a single reply
+   *
+   * @param identifier Feedback key or encrypted feedback key
+   */
   async getReply(identifier: FeedbackKey | EncryptedFeedbackKey) {
-    const message = (await this.getMessage(identifier)) as
-      | TipsAndThanks
-      | Question
-      | Answer
+    const message = await this.getMessage(identifier)
     if (!message.key) throw new Error('Message has no key')
 
     const response = await getFeedbackReplies(message.key)
@@ -437,6 +469,217 @@ export default class Client {
     }
 
     return reply
+  }
+
+  /**
+   * Gets specified types of messages for a program
+   *
+   * @param identifier Program ID, program URL, or program key
+   *
+   * @example
+   * const client = new Client()
+   * for await (const messages of client.getProgramTipsAndThanks(5154160781082624)) {
+   *   console.log(messages.map(message => message.text)
+   * }
+   */
+  async *getProgramMessages(
+    // Default to Tips and Thanks as Khan Academy also should
+    type = Message.Type.TipsAndThanks,
+    identifier: ProgramID | ProgramURL | ProgramKey,
+    sort: FeedbackSort = FeedbackSort.TopVoted
+    // @TODO Add `limit` parameter when the API supports it because currently
+    // it's only there for decoration
+  ) {
+    identifier = resolveProgramID(identifier)
+
+    const variables = {
+      topicId: identifier.toString(),
+      focusKind: FeedbackFocusKind.Scratchpad,
+      feedbackType: type as unknown as FeedbackType,
+      currentSort: sort,
+    }
+
+    // Since TypeScript doesn't like it when you try to assign `this` to a
+    // local variable, we have to use an arrow function here
+    const getProgramMessagesPage = async (cursor?: string) => {
+      const response = await feedbackQuery({
+        ...variables,
+        cursor,
+      })
+      const json = await Client.#resolveJsonReponse(response)
+
+      assertDataResponse(json)
+      if (!json.data.feedback.feedback) throw new Error('Comments not found')
+      if (!json.data.feedback.isComplete && !json.data.feedback.cursor)
+        throw new Error('Cursor not found')
+
+      // I'm sorry for this; ChatGPT wasn't at a point where it could help
+      const feedback = json.data.feedback
+        .feedback as unknown as (RecursivePartial<QuestionFeedbackSchema> &
+        RecursivePartial<BasicFeedbackSchema>)[]
+
+      const messages = feedback.map((feedback) => {
+        const message = TypeToClass[type].fromSchema(feedback)
+        message.client = this
+        return message
+      })
+      const nextCursor =
+        !json.data.feedback.isComplete && json.data.feedback.cursor
+
+      return {
+        messages,
+        cursor: nextCursor,
+      }
+    }
+
+    let { messages, cursor } = await getProgramMessagesPage()
+    yield messages
+
+    while (cursor) {
+      ;({ messages, cursor } = await getProgramMessagesPage(cursor))
+      yield messages
+    }
+  }
+
+  /**
+   * Gets all specified types of messages for a program
+   *
+   * @see {@link Client!Client.getProgramMessages}
+   *
+   * @example
+   * const client = new Client()
+   * const messages = await client.getAllProgramMessages(undefined, 5154160781082624)
+   * console.log(messages.map(message => message.text)
+   */
+  async getAllProgramMessages(
+    type = Message.Type.TipsAndThanks,
+    identifier: ProgramID | ProgramURL | ProgramKey,
+    sort: FeedbackSort = FeedbackSort.TopVoted
+  ) {
+    const messages: Message[] = []
+    for await (const page of this.getProgramMessages(type, identifier, sort)) {
+      messages.push(...page)
+    }
+    return messages
+  }
+
+  /**
+   * Gets Tips and Thanks messages for a program
+   *
+   * @see {@link Client!Client.getProgramMessages}
+   */
+  async *getProgramTipsAndThanks(
+    identifier: ProgramID | ProgramURL | ProgramKey,
+    sort: FeedbackSort = FeedbackSort.TopVoted
+  ) {
+    yield* this.getProgramMessages(
+      Message.Type.TipsAndThanks,
+      identifier,
+      sort
+    ) as unknown as AsyncGenerator<TipsAndThanks[], void, unknown>
+  }
+
+  /**
+   * Gets all Tips and Thanks messages for a program
+   *
+   * @see {@link Client!Client.getAllProgramMessages}
+   */
+  async getAllProgramTipsAndThanks(
+    identifier: ProgramID | ProgramURL | ProgramKey,
+    sort: FeedbackSort = FeedbackSort.TopVoted
+  ) {
+    return this.getAllProgramMessages(
+      Message.Type.TipsAndThanks,
+      identifier,
+      sort
+    ) as Promise<TipsAndThanks[]>
+  }
+
+  /**
+   * Gets questions for a program
+   *
+   * @see {@link Client!Client.getProgramMessages}
+   */
+  async *getProgramQuestions(
+    identifier: ProgramID | ProgramURL | ProgramKey,
+    sort: FeedbackSort = FeedbackSort.TopVoted
+  ) {
+    yield* this.getProgramMessages(
+      Message.Type.Question,
+      identifier,
+      sort
+    ) as unknown as AsyncGenerator<Question[], void, unknown>
+  }
+
+  /**
+   * Gets all questions for a program
+   *
+   * @see {@link Client!Client.getAllProgramMessages}
+   */
+  async getAllProgramQuestions(
+    identifier: ProgramID | ProgramURL | ProgramKey,
+    sort: FeedbackSort = FeedbackSort.TopVoted
+  ) {
+    return this.getAllProgramMessages(
+      Message.Type.Question,
+      identifier,
+      sort
+    ) as Promise<Question[]>
+  }
+
+  /**
+   * Gets Help Requests for a program
+   *
+   * @see {@link Client!Client.getProgramMessages}
+   */
+  async *getProgramHelpRequests(
+    identifier: ProgramID | ProgramURL | ProgramKey,
+    sort: FeedbackSort = FeedbackSort.TopVoted
+  ) {
+    yield* this.getProgramMessages(
+      Message.Type.HelpRequest,
+      identifier,
+      sort
+    ) as unknown as AsyncGenerator<Question[], void, unknown>
+  }
+
+  /**
+   * Gets all Help Requests for a program
+   *
+   * @see {@link Client!Client.getAllProgramMessages}
+   */
+  async getAllProgramHelpRequests(
+    identifier: ProgramID | ProgramURL | ProgramKey,
+    sort: FeedbackSort = FeedbackSort.TopVoted
+  ) {
+    return this.getAllProgramMessages(
+      Message.Type.HelpRequest,
+      identifier,
+      sort
+    ) as Promise<Question[]>
+  }
+
+  /**
+   * Gets all replies to a message
+   *
+   * @rawEquivalent {@link queries!getFeedbackReplies}
+   */
+  async getAllMessageReplies(identifier: FeedbackKey | EncryptedFeedbackKey) {
+    identifier = await resolveFeedbackKey(identifier)
+
+    const response = await getFeedbackReplies(identifier)
+    const json = await Client.#resolveJsonReponse(response)
+
+    assertDataResponse(json)
+    if (!json.data.feedbackReplies) throw new Error('Replies not found')
+
+    const replies = json.data.feedbackReplies.map((replySchema) => {
+      const reply = Reply.fromSchema(replySchema)
+      reply.client = this
+      return reply
+    })
+
+    return replies
   }
 
   async getAvatar(

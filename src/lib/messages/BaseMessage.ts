@@ -114,6 +114,9 @@ export default abstract class BaseMessage
     return this.author ? this.author.is(user) : false
   }
 
+  /**
+   * Checks if the message is the same as the given message
+   */
   is(message: BaseMessage | IBaseMessage): boolean {
     if (
       !(this.key && message.key) &&
