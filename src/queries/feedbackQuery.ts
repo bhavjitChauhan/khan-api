@@ -207,7 +207,7 @@ export namespace FeedbackQuery {
 /**
  * Low-level for making a `feedbackQuery` request.
  *
- * @link {@link https://documenter.getpostman.com/view/19553924/2s8YzQUiXU#e7abb177-fe2b-4e49-a003-5f9be43b90e4 | Reference}
+ * @link {@link https://khan-api.bhavjit.com/reference/view/19553924/2s8YzQUiXU#e7abb177-fe2b-4e49-a003-5f9be43b90e4 | Reference}
  */
 export default function feedbackQuery(
   variables: FeedbackQuery.Variables,

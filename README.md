@@ -12,8 +12,8 @@ A Khan Academy internal API client and wrapper for Node.js and the browser.
 
 <summary>Quick links</summary>
 
-- [Documentation](https://bhavjitchauhan.github.io/khan-api)
-- [API Reference](https://documenter.getpostman.com/view/19553924/2s8YzQUiXU)
+- [Documentation](https://khan-api.bhavjit.com)
+- [API Reference](https://khan-api.bhavjit.com/reference)
 
 </details>
 
