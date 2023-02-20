@@ -32,8 +32,7 @@
     "clean": "rimraf esm node index.d.ts khan-api.js khan-api.js.map khan-api.min.js khan-api.min.js.map",
     "types": "tsc --emitDeclarationOnly && rollup -c && rimraf dist/types",
     "build": "yarn node ./scripts/build.js",
-    "doc": "typedoc",
-    "release": "yarn clean && bash ./scripts/release.sh"
+    "doc": "typedoc"
   },
   "packageManager": "yarn@3.4.1",
   "type": "module",
