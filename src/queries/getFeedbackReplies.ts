@@ -88,7 +88,7 @@ export namespace GetFeedbackReplies {
 /**
  * Low-level function for making a `getFeedbackReplies` request.
  *
- * @link {@link https://documenter.getpostman.com/view/19553924/2s8YzQUiXU#3d616591-a38f-4bec-9836-367dba32a2ac | Reference}
+ * @link {@link https://khan-api.bhavjit.com/reference/view/19553924/2s8YzQUiXU#3d616591-a38f-4bec-9836-367dba32a2ac | Reference}
  *
  * @example
  * Simple usage without error handling:

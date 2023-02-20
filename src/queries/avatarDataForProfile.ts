@@ -35,7 +35,7 @@ export namespace AvatarDataForProfile {
 /**
  * Low-level function for making a `avatarDataForProfile` request.
  *
- * @link {@link https://documenter.getpostman.com/view/19553924/2s8YzQUiXU#256c194a-f6d5-4c7a-aaa5-97792cdba1b3 | Reference}
+ * @link {@link https://khan-api.bhavjit.com/reference/view/19553924/2s8YzQUiXU#256c194a-f6d5-4c7a-aaa5-97792cdba1b3 | Reference}
  *
  * @example
  * Simple usage without error handling:

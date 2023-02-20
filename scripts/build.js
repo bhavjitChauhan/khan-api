@@ -35,7 +35,7 @@ const base = {
   banner: {
     js: `/**
  * Khan API v${packageInfo.version}
- * https://bhavjitchauhan.github.io/khan-api/
+ * https://khan-api.bhavjit.com
  * Licensed under MIT license
  * Copyright ${new Date().getFullYear()} ${packageInfo.author}
  */\n`

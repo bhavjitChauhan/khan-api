@@ -28,7 +28,7 @@ export namespace QaExpandKeyInfo {
 /**
  * Low-level function for making a `QAExpandKeyInfo` request.
  *
- * @link {@link https://documenter.getpostman.com/view/19553924/2s8YzQUiXU#2354cba6-9065-4431-8d4a-f44f24527eb4 | Reference}
+ * @link {@link https://khan-api.bhavjit.com/reference/view/19553924/2s8YzQUiXU#2354cba6-9065-4431-8d4a-f44f24527eb4 | Reference}
  *
  * @example
  * Simple usage without error handling:

@@ -31,7 +31,7 @@ export namespace GetUserByUsernameOrEmail {
 /**
  * Get KAID by username or email.
  *
- * @link {@link https://documenter.getpostman.com/view/19553924/2s8YzQUiXU#46e24c10-e98e-4900-bd53-b02d93f8e3c9 | Reference}
+ * @link {@link https://khan-api.bhavjit.com/reference/view/19553924/2s8YzQUiXU#46e24c10-e98e-4900-bd53-b02d93f8e3c9 | Reference}
  *
  * @example
  * Simple usage without error handling:

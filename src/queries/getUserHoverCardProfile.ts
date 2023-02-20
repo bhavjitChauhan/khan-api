@@ -56,7 +56,7 @@ export namespace GetUserHoverCardProfile {
 /**
  * Low-level function for making a `getUserHoverCardProfile` request.
  *
- * @link {@link https://documenter.getpostman.com/view/19553924/2s8YzQUiXU#6de1d62b-d8b4-425e-b0f2-305be6279718 | Reference}
+ * @link {@link https://khan-api.bhavjit.com/reference/view/19553924/2s8YzQUiXU#6de1d62b-d8b4-425e-b0f2-305be6279718 | Reference}
  *
  * @example
  * Simple usage without error handling:
