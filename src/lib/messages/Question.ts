@@ -2,6 +2,9 @@ import Message, { IMessage } from './Message'
 import Answer from './Answer'
 import { BasicFeedbackSchema, QuestionFeedbackSchema } from '../../types/schema'
 import { RecursivePartial } from '../../utils/types'
+import { FeedbackKey, EncryptedFeedbackKey } from '../../types/strings'
+import { isEncryptedFeedbackKey } from '../../utils/regexes'
+import { resolveFeedbackKey } from '../../utils/resolvers'
 
 export interface IQuestion extends IMessage {
   answers?: Answer[]
@@ -9,6 +12,12 @@ export interface IQuestion extends IMessage {
   old?: boolean
 }
 
+/**
+ * @remarks
+ * Note that Help Requests are a type of Question.
+ *
+ * @rawEquivalent {@link types/schema!QuestionFeedbackSchema}
+ */
 export default class Question extends Message implements IQuestion {
   readonly answerCount?: number
   readonly answers?: Answer[]
@@ -21,6 +30,17 @@ export default class Question extends Message implements IQuestion {
     const question = new Question()
     question.copyFromSchema(schema)
     question.rawData = schema
+    return question
+  }
+
+  static async fromIdentifier(identifier: FeedbackKey | EncryptedFeedbackKey) {
+    const key = await resolveFeedbackKey(identifier)
+
+    const question = new Question({
+      key,
+      encryptedKey: isEncryptedFeedbackKey(identifier) ? identifier : undefined,
+    })
+
     return question
   }
 

@@ -1,9 +1,11 @@
 import Client from '../../Client'
 import { BasicFeedbackSchema } from '../../types/schema'
-import { isFeedbackKey } from '../../utils/regexes'
+import { isEncryptedFeedbackKey, isFeedbackKey } from '../../utils/regexes'
 import { RecursivePartial } from '../../utils/types'
 import Message from './Message'
 import BaseMessage, { IBaseMessage } from './BaseMessage'
+import { FeedbackKey, EncryptedFeedbackKey } from '../../types/strings'
+import { resolveFeedbackKey } from '../../utils/resolvers'
 
 export interface IReply extends IBaseMessage {
   message?: Message
@@ -16,6 +18,17 @@ export default class Reply extends BaseMessage implements IReply {
     const reply = new Reply()
     reply.copyFromSchema(schema)
     reply.rawData = schema
+    return reply
+  }
+
+  static async fromIdentifier(identifier: FeedbackKey | EncryptedFeedbackKey) {
+    const key = await resolveFeedbackKey(identifier)
+
+    const reply = new Reply({
+      key,
+      encryptedKey: isEncryptedFeedbackKey(identifier) ? identifier : undefined,
+    })
+
     return reply
   }
 

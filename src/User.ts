@@ -3,14 +3,16 @@ import Wrapper from './lib/Wrapper'
 import { BadgeCategory } from './types/badges'
 import { UserAccessLevel } from './types/enums'
 import { UserSchema } from './types/schema'
-import { AvatarURL, Kaid } from './types/strings'
+import { AvatarURL, Email, Kaid } from './types/strings'
 import {
   GoogleIDRegex,
+  isEmail,
   isGoogleID,
   isKaid,
   isQualarooID,
   QualarooIDRegex,
 } from './utils/regexes'
+import { resolveKaid } from './utils/resolvers'
 import { RecursivePartial } from './utils/types'
 
 // There has to be a solution that doesn't require duplicating properties
@@ -163,6 +165,20 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
     const user = new User()
     user.copyFromSchema(schema)
     user.rawData = schema
+
+    return user
+  }
+
+  static async fromIdentifier(identifier: Kaid | string | Email) {
+    const kaid = await resolveKaid(identifier)
+    if (!isKaid(kaid)) throw new Error('Invalid KAID')
+
+    const user = new User({
+      kaid: kaid,
+      username:
+        !isKaid(identifier) && !isEmail(identifier) ? identifier : undefined,
+      email: isEmail(identifier) ? identifier : undefined,
+    })
 
     return user
   }

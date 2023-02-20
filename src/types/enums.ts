@@ -32,6 +32,9 @@ export enum FeedbackFocusKind {
 }
 
 /**
+ * @remarks
+ * Not all feedback types are supported by every query/mutation.
+ *
  * @link {@link https://documenter.getpostman.com/view/19553924/2s8YzQUiXU#afc29a01-a4d7-45db-bb1f-82ea66eb210a | Reference}
  */
 export enum FeedbackType {

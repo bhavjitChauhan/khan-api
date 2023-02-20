@@ -1,3 +1,6 @@
+import { MessageType } from '../lib/messages/Message'
+import Question from '../lib/messages/Question'
+import TipsAndThanks from '../lib/messages/TipsAndThanks'
 import { FeedbackType } from '../types/enums'
 import {
   BasicFeedbackSchema,
@@ -28,3 +31,9 @@ export function isAnswerSchema(
 ): schema is AnswerFeedbackSchema {
   return schema.feedbackType === FeedbackType.ANSWER
 }
+
+export const TypeToClass = {
+  [MessageType.TipsAndThanks]: TipsAndThanks,
+  [MessageType.Question]: Question,
+  [MessageType.HelpRequest]: Question,
+} as const
