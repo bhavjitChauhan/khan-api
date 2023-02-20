@@ -2,7 +2,7 @@ import { KHAN_GRAPHQL_URL } from '../lib/constants'
 import { StandardResponse } from '../types/responses'
 import { AvatarSchema, UserSchema } from '../types/schema'
 import { Kaid } from '../types/strings'
-import { graphql } from '../utils/fetch'
+import { graphql, TypedResponse } from '../utils/fetch'
 
 export namespace GetUserHoverCardProfile {
   export const query = `query getUserHoverCardProfile($kaid: String!) {
@@ -57,9 +57,36 @@ export namespace GetUserHoverCardProfile {
  * Low-level function for making a `getUserHoverCardProfile` request.
  *
  * @link {@link https://documenter.getpostman.com/view/19553924/2s8YzQUiXU#6de1d62b-d8b4-425e-b0f2-305be6279718 | Reference}
+ *
+ * @example
+ * Simple usage without error handling:
+ * ```js
+ * const response = await queries.getUserHoverCardProfile({
+ *   kaid: 'kaid_326465577260382527912172'
+ * })
+ * const json = await response.json()
+ * const profile = json.data.user
+ * ```
  */
 export default function getUserHoverCardProfile(
   variables: GetUserHoverCardProfile.Variables,
+  init?: RequestInit
+): Promise<TypedResponse<GetUserHoverCardProfile.Response>>
+/**
+ * @example
+ * Alternative usage:
+ * ```js
+ * const response = await queries.getUserHoverCardProfile('kaid_326465577260382527912172')
+ * const json = await response.json()
+ * const profile = json.data.user
+ * ```
+ */
+export default function getUserHoverCardProfile(
+  kaid: Kaid,
+  init?: RequestInit
+): Promise<TypedResponse<GetUserHoverCardProfile.Response>>
+export default function getUserHoverCardProfile(
+  variablesOrKaid: GetUserHoverCardProfile.Variables | Kaid,
   init?: RequestInit
 ) {
   return graphql<
@@ -68,7 +95,9 @@ export default function getUserHoverCardProfile(
   >(
     `${KHAN_GRAPHQL_URL}/getUserHoverCardProfile`,
     GetUserHoverCardProfile.query,
-    variables,
+    typeof variablesOrKaid === 'string'
+      ? { kaid: variablesOrKaid }
+      : variablesOrKaid,
     init
   )
 }

@@ -1,13 +1,35 @@
 import Client from './Client'
-import { Wrapper } from './lib/Wrapper'
-import { ProgramEditorType } from './types/enums'
+import Question from './lib/messages/Question'
+import TipsAndThanks from './lib/messages/TipsAndThanks'
+import Wrapper from './lib/Wrapper'
+import { FeedbackSort, ProgramEditorType } from './types/enums'
 import { ProgramSchema } from './types/schema'
-import { ProgramIDNumber, ProgramKey } from './types/strings'
+import {
+  ProgramID,
+  ProgramIDNumber,
+  ProgramKey,
+  ProgramURL,
+} from './types/strings'
 import User from './User'
-import { ProgramImagePathRegex, ProgramURLRegex } from './utils/regexes'
+import {
+  isProgramKey,
+  ProgramImagePathRegex,
+  ProgramURLRegex,
+} from './utils/regexes'
+import { resolveProgramID } from './utils/resolvers'
 import { RecursivePartial } from './utils/types'
 
-interface IProgram {
+/**
+ * @rawEquivalent {@link types/enums!ProgramEditorType}
+ */
+export enum ProgramType {
+  ProcessingJS = 'pjs',
+  HTML = 'webpage',
+  SQL = 'ace_sql',
+  Other = '',
+}
+
+export interface IProgram {
   readonly id?: ProgramIDNumber
   readonly title?: string
   readonly author?: User
@@ -19,7 +41,7 @@ interface IProgram {
   readonly spinOffCount?: number
   readonly hidden?: boolean
   readonly code?: string
-  readonly type?: Program.Type
+  readonly type?: ProgramType
 
   readonly origin?: Program | null
   readonly key?: ProgramKey
@@ -30,12 +52,23 @@ interface IProgram {
 
   readonly selfFlagged?: boolean
   readonly selfVoted?: boolean
+
+  readonly tipsAndThanks?: TipsAndThanks[]
+  readonly questions?: Question[]
+  readonly helpRequests?: Question[]
 }
 
-export class Program
+export default class Program
   extends Wrapper<ProgramSchema, IProgram>
   implements IProgram
 {
+  /**
+   * Aliases for the program types.
+   *
+   * @rawEquivalent {@link types/schema!ProgramRevisionSchema.editorType}
+   */
+  static readonly Type = ProgramType
+
   /**
    * The ID of the program.
    */
@@ -95,7 +128,7 @@ export class Program
   /**
    * The type of program.
    */
-  readonly type?: Program.Type
+  readonly type?: ProgramType
 
   /**
    * The original program that this program is a spin-off of.
@@ -131,8 +164,12 @@ export class Program
    */
   readonly selfVoted?: boolean
 
+  readonly tipsAndThanks?: TipsAndThanks[]
+  readonly questions?: Question[]
+  readonly helpRequests?: Question[]
+
   get spinoff() {
-    return !!this.origin
+    return typeof this.origin !== 'undefined' ? !!this.origin : null
   }
 
   /**
@@ -181,6 +218,18 @@ export class Program
     program.copyFromSchema(schema)
     program.rawData = schema
 
+    return program
+  }
+
+  static fromIdentifier(identifier: ProgramID | ProgramURL | ProgramKey) {
+    const id = resolveProgramID(identifier)
+    const program = new Program({
+      id,
+      key:
+        typeof identifier === 'string' && isProgramKey(identifier)
+          ? identifier
+          : undefined,
+    })
     return program
   }
 
@@ -269,6 +318,102 @@ export class Program
     return this.copy(data)
   }
 
+  async *getTipsAndThanks(
+    client = this.client ?? new Client(),
+    sort?: FeedbackSort
+  ) {
+    if (!this.id && !this.key) throw new Error('Program is missing ID and key')
+
+    for await (const messages of client.getProgramTipsAndThanks(
+      this.id ?? this.key!,
+      sort
+    )) {
+      if (!this.tipsAndThanks) this.copy({ tipsAndThanks: [] })
+      messages.forEach((message) => this.tipsAndThanks!.push(message))
+      yield messages
+    }
+
+    return this
+  }
+
+  async getAllTipsAndThanks(
+    client = this.client ?? new Client(),
+    sort?: FeedbackSort
+  ) {
+    if (!this.id && !this.key) throw new Error('Program is missing ID and key')
+
+    const messages = await client.getAllProgramTipsAndThanks(
+      this.id ?? this.key!,
+      sort
+    )
+
+    return this.copy({ tipsAndThanks: messages })
+  }
+
+  async *getQuestions(
+    client = this.client ?? new Client(),
+    sort?: FeedbackSort
+  ) {
+    if (!this.id && !this.key) throw new Error('Program is missing ID and key')
+
+    for await (const messages of client.getProgramQuestions(
+      this.id ?? this.key!,
+      sort
+    )) {
+      if (!this.questions) this.copy({ questions: [] })
+      messages.forEach((message) => this.questions!.push(message))
+      yield messages
+    }
+
+    return this
+  }
+
+  async getAllQuestions(
+    client = this.client ?? new Client(),
+    sort?: FeedbackSort
+  ) {
+    if (!this.id && !this.key) throw new Error('Program is missing ID and key')
+
+    const messages = await client.getAllProgramQuestions(
+      this.id ?? this.key!,
+      sort
+    )
+
+    return this.copy({ questions: messages })
+  }
+
+  async *getHelpRequests(
+    client = this.client ?? new Client(),
+    sort?: FeedbackSort
+  ) {
+    if (!this.id && !this.key) throw new Error('Program is missing ID and key')
+
+    for await (const messages of client.getProgramHelpRequests(
+      this.id ?? this.key!,
+      sort
+    )) {
+      if (!this.helpRequests) this.copy({ helpRequests: [] })
+      messages.forEach((message) => this.helpRequests!.push(message))
+      yield messages
+    }
+
+    return this
+  }
+
+  async getAllHelpRequests(
+    client = this.client ?? new Client(),
+    sort?: FeedbackSort
+  ) {
+    if (!this.id && !this.key) throw new Error('Program is missing ID and key')
+
+    const messages = await client.getAllProgramHelpRequests(
+      this.id ?? this.key!,
+      sort
+    )
+
+    return this.copy({ helpRequests: messages })
+  }
+
   is(program: IProgram) {
     if (!(this.id && program.id) && !(this.key && program.key)) {
       console.warn("Programs don't have any identifiers that can be compared")
@@ -281,13 +426,3 @@ export class Program
     )
   }
 }
-export namespace Program {
-  export enum Type {
-    ProcessingJS = 'ProcessingJS',
-    HTML = 'HTML',
-    SQL = 'SQL',
-    Other = 'Other',
-  }
-}
-
-export default Program

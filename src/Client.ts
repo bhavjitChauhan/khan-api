@@ -1,11 +1,9 @@
 import loginWithPasswordMutation, {
   LoginWithPasswordMutation,
 } from './mutations/loginWithPasswordMutation'
-import { Program } from './Program'
+import Program from './Program'
 import avatarDataForProfile from './queries/avatarDataForProfile'
 import getFullUserProfile from './queries/getFullUserProfile'
-import getUserByUsernameOrEmail from './queries/getUserByUsernameOrEmail'
-import getUserHoverCardProfile from './queries/getUserHoverCardProfile'
 import programQuery from './queries/programQuery'
 import { assertDataResponse } from './types/responses'
 import {
@@ -15,7 +13,7 @@ import {
   ProgramKey,
   ProgramID,
   ProgramURL,
-  ProgramIDNumber,
+  Email,
 } from './types/strings'
 import User from './User'
 import {
@@ -24,22 +22,15 @@ import {
   generateAvatarSVG,
 } from './utils/avatars'
 import { stripCookies } from './utils/cookies'
-import { programKeyToID } from './utils/programs'
 import { truncate } from './utils/format'
 import {
-  EmailRegex,
   isEncryptedFeedbackKey,
   isKaid,
   isFeedbackKey,
-  isProgramKey,
-  ProgramIDRegex,
-  ProgramURLRegex,
-  isProgramURL,
-  isProgramID,
+  isEmail,
 } from './utils/regexes'
 import { PLACEHOLDER_PROGRAM_ID } from './lib/constants'
 import feedbackQuery from './queries/feedbackQuery'
-import QAExpandKeyInfo from './queries/QAExpandKeyInfo'
 import { FeedbackFocusKind, FeedbackSort, FeedbackType } from './types/enums'
 import Answer from './lib/messages/Answer'
 import Question from './lib/messages/Question'
@@ -47,22 +38,54 @@ import Reply from './lib/messages/Reply'
 import {
   isTipsAndThanksSchema,
   isQuestionSchema,
-  isReplySchema,
+  TypeToClass,
 } from './utils/messages'
 import TipsAndThanks from './lib/messages/TipsAndThanks'
 import getFeedbackReplies from './queries/getFeedbackReplies'
+import { TypedResponse } from './utils/fetch'
+import {
+  resolveFeedbackKey,
+  resolveKaid,
+  resolveProgramID,
+  resolveUsername,
+} from './utils/resolvers'
+import { BasicFeedbackSchema, QuestionFeedbackSchema } from './types/schema'
+import Message from './lib/messages/Message'
+import { RecursivePartial } from './utils/types'
 
 export default class Client {
   #identifier?: string
   #password?: string
   #cookies?: string
 
-  #identifierMap = new Map<string, Kaid>()
+  #cachedKaids = new Map<string | Email, Kaid>()
+  #cachedUsernames = new Map<Kaid | string, string>()
+  #cachedFeedbackKeys = new Map<EncryptedFeedbackKey, FeedbackKey>()
 
   authenticated = false
   kaid: Kaid | null = null
   user?: User
 
+  static async #resolveJsonReponse<T>(response: TypedResponse<T>) {
+    try {
+      return await response.json()
+    } catch (err) {
+      const message =
+        err instanceof Error
+          ? err.message
+          : typeof err === 'string'
+          ? err
+          : 'Unknown error'
+      throw new Error(`Failed to parse response JSON: ${message}`)
+    }
+  }
+
+  /**
+   * Creates a new Client instance
+   *
+   * @example
+   * const client = new Client()
+   */
   constructor() {
     return this
   }
@@ -72,97 +95,78 @@ export default class Client {
    *
    * @remarks
    * If the identifier is cached, it will be returned immediately. Otherwise a
-   * `getUserByUsernameOrEmail` request will be made to resolve the identifier.
+   * `getUserByUsernameOrEmail` request will be made to resolve the identifier
    *
-   * @param identifier Username or email
-   * @returns KAID
+   * @see {@link utils/resolvers!resolveKaid}
+   *
+   * @example
+   * const getKaid = async () => await client.resolveCachedKaid('bhavjitChauhan')
+   * console.log(await getKaid()) // Makes a request
+   * console.log(await getKaid()) // Returns cached result
    */
-  async resolveKaid(identifier: string): Promise<Kaid> {
+  async resolveCachedKaid(identifier: Kaid | string | Email): Promise<Kaid> {
     if (isKaid(identifier)) return identifier
 
-    if (this.#identifierMap.has(identifier))
-      return this.#identifierMap.get(identifier)!
+    if (this.#cachedKaids.has(identifier))
+      return this.#cachedKaids.get(identifier)!
 
-    const isEmail = EmailRegex.test(identifier)
-    const response = await getUserByUsernameOrEmail({
-      [isEmail ? 'email' : 'username']: identifier,
-    })
-    const json = await response.json()
+    const kaid = await resolveKaid(identifier)
 
-    assertDataResponse(json)
-    if (!json.data.user) throw new Error('User not found')
-
-    const kaid = json.data.user.kaid
-    if (kaid === '') throw new Error('User does not have a valid KAID')
-
-    if (!this.#identifierMap.has(identifier))
-      this.#identifierMap.set(identifier, kaid)
+    this.#cachedKaids.set(identifier, kaid)
 
     return kaid
   }
 
   /**
-   * Resolves a KAID to a username
+   * Resolves a KAID to a username and caches the result
+   *
+   * @remarks
+   * If the identifier is cached, it will be returned immediately. Otherwise a
+   * `getUserHoverCardProfile` request will be made to resolve the identifier
+   *
+   * @see {@link utils/resolvers!resolveUsername}
+   *
+   * @example
+   * const getUsername = async () => await client.resolveCachedUsername('kaid_376749826184384230772276')
+   * console.log(await getUsername()) // Makes a request
+   * console.log(await getUsername()) // Returns cached result
    */
-  async resolveUsername(kaid: Kaid) {
-    if (!isKaid(kaid)) throw new Error('Invalid KAID')
+  async resolveCachedUsername(identifier: Kaid | string) {
+    if (!isKaid(identifier) && !isEmail(identifier)) return identifier
 
-    const response = await getUserHoverCardProfile({
-      kaid,
-    })
-    const json = await response.json()
+    if (this.#cachedUsernames.has(identifier))
+      return this.#cachedUsernames.get(identifier)!
 
-    assertDataResponse(json)
-    if (!json.data.user) throw new Error('User not found')
+    const username = await resolveUsername(identifier)
 
-    return json.data.user.username
+    this.#cachedUsernames.set(identifier, username)
+
+    return username
   }
 
   /**
-   * Resolves a program URL or key to a program ID
+   * Resolved an encrypted message key to an unencrypted message key and caches
+   * the result
    *
-   * @param identifier Program URL or key
-   */
-  resolveProgramID(
-    identifier: ProgramURL | ProgramKey | ProgramID
-  ): ProgramIDNumber {
-    if (typeof identifier === 'number') {
-      if (!ProgramIDRegex.test(identifier.toString()))
-        throw new Error('Invalid program ID')
-      return identifier
-    } else if (isProgramURL(identifier)) {
-      const str = identifier.match(ProgramURLRegex)![1]
-      if (!isProgramID(str)) throw new Error('Invalid URL')
-      return parseInt(str, 10)
-    } else if (isProgramKey(identifier)) {
-      identifier = programKeyToID(identifier)
-      if (!isProgramID(identifier)) throw new Error('Invalid program key')
-      return identifier
-    }
-    if (!isProgramID(identifier))
-      throw new Error('Invalid program ID, URL or key')
-    return parseInt(identifier, 10)
-  }
-
-  /**
-   * Resolved an encrypted message key to an unencrypted message key
+   * @remarks
+   * If the identifier is cached, it will be returned immediately. Otherwise a
+   * `QAExpandKeyInfo` request will be made to resolve the identifier
    *
-   * @param identifier Encrypted message key
+   * @see {@link utils/resolvers!resolveFeedbackKey}
    */
-  async resolveFeedbackKey(identifier: FeedbackKey | EncryptedFeedbackKey) {
+  async resolveCachedFeedbackKey(
+    identifier: FeedbackKey | EncryptedFeedbackKey
+  ) {
     if (isFeedbackKey(identifier)) return identifier
-    if (!isEncryptedFeedbackKey(identifier))
-      throw new Error('Invalid encrypted message key')
 
-    const response = await QAExpandKeyInfo({
-      encryptedKey: identifier,
-    })
-    const json = await response.json()
+    if (this.#cachedFeedbackKeys.has(identifier))
+      return this.#cachedFeedbackKeys.get(identifier)!
 
-    assertDataResponse(json)
-    if (!json.data.qaExpandKeyInfo) throw new Error('Message key not found')
+    const feedbackKey = await resolveFeedbackKey(identifier)
 
-    return json.data.qaExpandKeyInfo.unencryptedKey
+    this.#cachedFeedbackKeys.set(identifier, feedbackKey)
+
+    return feedbackKey
   }
 
   /**
@@ -180,14 +184,15 @@ export default class Client {
   }
 
   /**
-   * @param identifier Username or email
+   * Logs in to Khan Academy and stores the KAAS cookie
+   *
+   * @param identifier KAID, username or email
    * @param password
    */
-  // @TODO: Add support for KAID login
-  async login(identifier?: string, password?: string) {
+  async login(identifier?: Kaid | string | Email, password?: string) {
     if (identifier) {
       if (isKaid(identifier))
-        identifier = await this.resolveUsername(identifier)
+        identifier = await this.resolveCachedUsername(identifier)
       this.#identifier = identifier
     }
     if (password) this.#password = password
@@ -206,8 +211,7 @@ export default class Client {
       { credentials: 'include' }
     )
 
-    // @TODO: Handle invalid JSON response
-    const json = await response.json()
+    const json = await Client.#resolveJsonReponse(response)
 
     assertDataResponse(json)
     if (!json.data.loginWithPassword) throw new Error('Malformed response')
@@ -258,27 +262,25 @@ export default class Client {
   /**
    * @param identifier KAID, username or email
    */
-  async getUser(identifier?: string) {
+  async getUser(identifier?: Kaid | string | Email) {
     if (!identifier && !this.authenticated)
       throw new Error(
         'Not authenticated: Login to get client user or provide a kaid/username'
       )
 
     let email: string | null = null
-    if (identifier && EmailRegex.test(identifier)) {
+    if (identifier && isEmail(identifier)) {
       email = identifier
-      identifier = await this.resolveKaid(identifier)
+      identifier = await this.resolveCachedKaid(identifier)
     }
 
     const response = await getFullUserProfile(
-      identifier
-        ? { [isKaid(identifier) ? 'kaid' : 'username']: identifier }
-        : undefined,
+      identifier,
       !identifier
         ? { credentials: 'include', headers: { cookie: this.#cookies! } }
         : undefined
     )
-    const json = await response.json()
+    const json = await Client.#resolveJsonReponse(response)
 
     assertDataResponse(json)
     if (!json.data.user) throw new Error('User not found')
@@ -286,29 +288,27 @@ export default class Client {
     const user = User.fromSchema(json.data.user)
     user.client = this
     // Why not?
-    if (!user.email && email && EmailRegex.test(email)) user.copy({ email })
+    if (!user.email && email && isEmail(email)) user.copy({ email })
     if (user.self) this.user = user
 
     if (user.kaid) {
-      if (user.username && !this.#identifierMap.has(user.username))
-        this.#identifierMap.set(user.username, user.kaid)
-      if (user.email && !this.#identifierMap.has(user.email))
-        this.#identifierMap.set(user.email, user.kaid)
+      if (user.username && !this.#cachedKaids.has(user.username))
+        this.#cachedKaids.set(user.username, user.kaid)
+      if (user.email && !this.#cachedKaids.has(user.email))
+        this.#cachedKaids.set(user.email, user.kaid)
     }
 
     return user
   }
 
   /**
-   * @param id Program ID, URL or key
+   * @param identifier Program ID, URL or key
    */
-  async getProgram(id: ProgramID | ProgramURL | ProgramKey) {
-    id = this.resolveProgramID(id)
+  async getProgram(identifier: ProgramID | ProgramURL | ProgramKey) {
+    identifier = resolveProgramID(identifier)
 
-    const response = await programQuery({
-      programId: id.toString(),
-    })
-    const json = await response.json()
+    const response = await programQuery(identifier)
+    const json = await Client.#resolveJsonReponse(response)
 
     assertDataResponse(json)
     if (!json.data.programById) throw new Error('Program not found')
@@ -333,11 +333,22 @@ export default class Client {
     return program
   }
 
+  /**
+   * Gets a single message by its feedback key or encrypted feedback key
+   *
+   * @remarks
+   * This method is not recommended when you know the message's type. Use
+   * {@link Client!Client.getTipsAndThanks | `getTipsAndThanks`},
+   * {@link Client!Client.getQuestion | `getQuestion`} or
+   * {@link Client!Client.getReply | `getReply`} instead.
+   *
+   * @param identifier Feedback key or encrypted feedback key
+   */
   async getMessage(
     identifier: FeedbackKey | EncryptedFeedbackKey
-  ): Promise<TipsAndThanks | Question | Answer | Reply> {
+  ): Promise<TipsAndThanks | Question | Answer> {
     if (isEncryptedFeedbackKey(identifier))
-      identifier = await this.resolveFeedbackKey(identifier)
+      identifier = await this.resolveCachedFeedbackKey(identifier)
 
     const response = await feedbackQuery({
       topicId: PLACEHOLDER_PROGRAM_ID.toString(),
@@ -346,7 +357,7 @@ export default class Client {
       currentSort: FeedbackSort.TopVoted,
       qaExpandKey: identifier,
     })
-    const json = await response.json()
+    const json = await Client.#resolveJsonReponse(response)
 
     assertDataResponse(json)
     if (
@@ -371,9 +382,7 @@ export default class Client {
         message = answer
         message.copy({ question })
       } else message = question
-    } else if (isReplySchema(messageSchema))
-      message = Reply.fromSchema(messageSchema)
-    else throw new Error('Unknown message type')
+    } else throw new Error('Unknown message type')
 
     message.client = this
 
@@ -391,29 +400,47 @@ export default class Client {
     return message
   }
 
+  /**
+   * Gets a single tips and thanks message
+   *
+   * @param identifier Feedback key or encrypted feedback key
+   */
   async getTipsAndThanks(identifier: FeedbackKey | EncryptedFeedbackKey) {
     return this.getMessage(identifier) as Promise<TipsAndThanks>
   }
 
+  /**
+   * Gets a single question message
+   *
+   * @remarks
+   * Note that Help Requests are a type of question.
+   *
+   * @param identifier Feedback key or encrypted feedback key
+   */
   async getQuestion(identifier: FeedbackKey | EncryptedFeedbackKey) {
     return this.getMessage(identifier) as Promise<Question>
   }
 
+  /**
+   * Gets a single answer message
+   *
+   * @param identifier Feedback key or encrypted feedback key
+   */
   async getAnswer(identifier: FeedbackKey | EncryptedFeedbackKey) {
     return this.getMessage(identifier) as Promise<Answer>
   }
 
+  /**
+   * Gets a single reply
+   *
+   * @param identifier Feedback key or encrypted feedback key
+   */
   async getReply(identifier: FeedbackKey | EncryptedFeedbackKey) {
-    const message = (await this.getMessage(identifier)) as
-      | TipsAndThanks
-      | Question
-      | Answer
+    const message = await this.getMessage(identifier)
     if (!message.key) throw new Error('Message has no key')
 
-    const response = await getFeedbackReplies({
-      postKey: message.key,
-    })
-    const json = await response.json()
+    const response = await getFeedbackReplies(message.key)
+    const json = await Client.#resolveJsonReponse(response)
 
     assertDataResponse(json)
     if (!json.data.feedbackReplies || json.data.feedbackReplies.length === 0)
@@ -444,19 +471,229 @@ export default class Client {
     return reply
   }
 
+  /**
+   * Gets specified types of messages for a program
+   *
+   * @param identifier Program ID, program URL, or program key
+   *
+   * @example
+   * const client = new Client()
+   * for await (const messages of client.getProgramTipsAndThanks(5154160781082624)) {
+   *   console.log(messages.map(message => message.text)
+   * }
+   */
+  async *getProgramMessages(
+    // Default to Tips and Thanks as Khan Academy also should
+    type = Message.Type.TipsAndThanks,
+    identifier: ProgramID | ProgramURL | ProgramKey,
+    sort: FeedbackSort = FeedbackSort.TopVoted
+    // @TODO Add `limit` parameter when the API supports it because currently
+    // it's only there for decoration
+  ) {
+    identifier = resolveProgramID(identifier)
+
+    const variables = {
+      topicId: identifier.toString(),
+      focusKind: FeedbackFocusKind.Scratchpad,
+      feedbackType: type as unknown as FeedbackType,
+      currentSort: sort,
+    }
+
+    // Since TypeScript doesn't like it when you try to assign `this` to a
+    // local variable, we have to use an arrow function here
+    const getProgramMessagesPage = async (cursor?: string) => {
+      const response = await feedbackQuery({
+        ...variables,
+        cursor,
+      })
+      const json = await Client.#resolveJsonReponse(response)
+
+      assertDataResponse(json)
+      if (!json.data.feedback.feedback) throw new Error('Comments not found')
+      if (!json.data.feedback.isComplete && !json.data.feedback.cursor)
+        throw new Error('Cursor not found')
+
+      // I'm sorry for this; ChatGPT wasn't at a point where it could help
+      const feedback = json.data.feedback
+        .feedback as unknown as (RecursivePartial<QuestionFeedbackSchema> &
+        RecursivePartial<BasicFeedbackSchema>)[]
+
+      const messages = feedback.map((feedback) => {
+        const message = TypeToClass[type].fromSchema(feedback)
+        message.client = this
+        return message
+      })
+      const nextCursor =
+        !json.data.feedback.isComplete && json.data.feedback.cursor
+
+      return {
+        messages,
+        cursor: nextCursor,
+      }
+    }
+
+    let { messages, cursor } = await getProgramMessagesPage()
+    yield messages
+
+    while (cursor) {
+      ;({ messages, cursor } = await getProgramMessagesPage(cursor))
+      yield messages
+    }
+  }
+
+  /**
+   * Gets all specified types of messages for a program
+   *
+   * @see {@link Client!Client.getProgramMessages}
+   *
+   * @example
+   * const client = new Client()
+   * const messages = await client.getAllProgramMessages(undefined, 5154160781082624)
+   * console.log(messages.map(message => message.text)
+   */
+  async getAllProgramMessages(
+    type = Message.Type.TipsAndThanks,
+    identifier: ProgramID | ProgramURL | ProgramKey,
+    sort: FeedbackSort = FeedbackSort.TopVoted
+  ) {
+    const messages: Message[] = []
+    for await (const page of this.getProgramMessages(type, identifier, sort)) {
+      messages.push(...page)
+    }
+    return messages
+  }
+
+  /**
+   * Gets Tips and Thanks messages for a program
+   *
+   * @see {@link Client!Client.getProgramMessages}
+   */
+  async *getProgramTipsAndThanks(
+    identifier: ProgramID | ProgramURL | ProgramKey,
+    sort: FeedbackSort = FeedbackSort.TopVoted
+  ) {
+    yield* this.getProgramMessages(
+      Message.Type.TipsAndThanks,
+      identifier,
+      sort
+    ) as unknown as AsyncGenerator<TipsAndThanks[], void, unknown>
+  }
+
+  /**
+   * Gets all Tips and Thanks messages for a program
+   *
+   * @see {@link Client!Client.getAllProgramMessages}
+   */
+  async getAllProgramTipsAndThanks(
+    identifier: ProgramID | ProgramURL | ProgramKey,
+    sort: FeedbackSort = FeedbackSort.TopVoted
+  ) {
+    return this.getAllProgramMessages(
+      Message.Type.TipsAndThanks,
+      identifier,
+      sort
+    ) as Promise<TipsAndThanks[]>
+  }
+
+  /**
+   * Gets questions for a program
+   *
+   * @see {@link Client!Client.getProgramMessages}
+   */
+  async *getProgramQuestions(
+    identifier: ProgramID | ProgramURL | ProgramKey,
+    sort: FeedbackSort = FeedbackSort.TopVoted
+  ) {
+    yield* this.getProgramMessages(
+      Message.Type.Question,
+      identifier,
+      sort
+    ) as unknown as AsyncGenerator<Question[], void, unknown>
+  }
+
+  /**
+   * Gets all questions for a program
+   *
+   * @see {@link Client!Client.getAllProgramMessages}
+   */
+  async getAllProgramQuestions(
+    identifier: ProgramID | ProgramURL | ProgramKey,
+    sort: FeedbackSort = FeedbackSort.TopVoted
+  ) {
+    return this.getAllProgramMessages(
+      Message.Type.Question,
+      identifier,
+      sort
+    ) as Promise<Question[]>
+  }
+
+  /**
+   * Gets Help Requests for a program
+   *
+   * @see {@link Client!Client.getProgramMessages}
+   */
+  async *getProgramHelpRequests(
+    identifier: ProgramID | ProgramURL | ProgramKey,
+    sort: FeedbackSort = FeedbackSort.TopVoted
+  ) {
+    yield* this.getProgramMessages(
+      Message.Type.HelpRequest,
+      identifier,
+      sort
+    ) as unknown as AsyncGenerator<Question[], void, unknown>
+  }
+
+  /**
+   * Gets all Help Requests for a program
+   *
+   * @see {@link Client!Client.getAllProgramMessages}
+   */
+  async getAllProgramHelpRequests(
+    identifier: ProgramID | ProgramURL | ProgramKey,
+    sort: FeedbackSort = FeedbackSort.TopVoted
+  ) {
+    return this.getAllProgramMessages(
+      Message.Type.HelpRequest,
+      identifier,
+      sort
+    ) as Promise<Question[]>
+  }
+
+  /**
+   * Gets all replies to a message
+   *
+   * @rawEquivalent {@link queries!getFeedbackReplies}
+   */
+  async getAllMessageReplies(identifier: FeedbackKey | EncryptedFeedbackKey) {
+    identifier = await resolveFeedbackKey(identifier)
+
+    const response = await getFeedbackReplies(identifier)
+    const json = await Client.#resolveJsonReponse(response)
+
+    assertDataResponse(json)
+    if (!json.data.feedbackReplies) throw new Error('Replies not found')
+
+    const replies = json.data.feedbackReplies.map((replySchema) => {
+      const reply = Reply.fromSchema(replySchema)
+      reply.client = this
+      return reply
+    })
+
+    return replies
+  }
+
   async getAvatar(
     identifier: string | undefined = this.kaid ?? this.#identifier,
     type: 'svg' | 'png' = 'svg'
   ) {
     if (!identifier) throw new Error('No identifier provided')
 
-    if (!isKaid(identifier)) identifier = await this.resolveKaid(identifier)
+    if (!isKaid(identifier))
+      identifier = await this.resolveCachedKaid(identifier)
 
-    const response = await avatarDataForProfile({
-      // Why do I have to cast this to `Kaid`? It should already be `Kaid`...
-      kaid: identifier as Kaid,
-    })
-    const json = await response.json()
+    // Why do I have to cast this to `Kaid`? It should already be `Kaid`...
+    const response = await avatarDataForProfile(identifier as Kaid)
+    const json = await Client.#resolveJsonReponse(response)
 
     assertDataResponse(json)
     if (!json.data.user) throw new Error('User not found')

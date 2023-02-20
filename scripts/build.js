@@ -18,6 +18,7 @@ import esbuild from 'esbuild'
 import minimist from 'minimist'
 import { existsSync } from 'fs'
 import { mkdir, writeFile } from 'fs/promises'
+import packageInfo from '../package.json' assert { type: 'json' }
 
 const argv = minimist(process.argv.slice(2), {
   alias: {
@@ -31,6 +32,14 @@ const FILE_NAME = 'khan-api'
 /** @type {esbuild.BuildOptions} */
 const base = {
   entryPoints: ['./src/index.ts'],
+  banner: {
+    js: `/**
+ * Khan API v${packageInfo.version}
+ * https://bhavjitchauhan.github.io/khan-api/
+ * Licensed under MIT license
+ * Copyright ${new Date().getFullYear()} ${packageInfo.author}
+ */\n`
+  },
   bundle: true,
   sourcemap: true,
   metafile: argv.meta,

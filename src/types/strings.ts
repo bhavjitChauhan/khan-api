@@ -5,6 +5,8 @@
 import { avatarNames, avatarSlugs } from '../utils/avatars'
 import { PROGRAM_URL_LOCALES, PROGRAM_URL_PATHS } from '../utils/regexes'
 
+export type Email = `${string}@${string}.${string}`
+
 export type Kaid = `kaid_${number}`
 
 export type QualarooID = `_gae_bingo_random:${string}`
@@ -32,13 +34,11 @@ export type ProgramIDNumber = number
 export type ProgramID = `${number}` | number
 
 export type ProgramURLPath = (typeof PROGRAM_URL_PATHS)[number]
-export type ProgramURL = `http${'s' | ''}://${string}khanacademy.${
-  | 'com'
-  | 'org'}/${string}/${string}/${number}`
+export type ProgramURL =
+  `http${string}://${string}khanacademy.${string}/${string}/${string}/${number}`
 
-export type ProgramKey = `ag5zfmtoYW4tYWNhZGVteXI${
-  | 'U'
-  | 'X'}CxIKU2NyYXRjaHBhZB${'i' | 'j'}${string}`
+export type ProgramKey =
+  `ag5zfmtoYW4tYWNhZGVteXI${string}CxIKU2NyYXRjaHBhZB${string}${string}`
 
 // Unfortunately (or fortunately, depending on your perspective) this type has
 // too many permutations to be used without lagging the editor
@@ -64,13 +64,7 @@ export type ProgramKey = `ag5zfmtoYW4tYWNhZGVteXI${
 //   | 'CAw'
 //   | 'CQw'}`
 
-// A delicate balancing act between type safety and editor performance...
 export type FeedbackKey =
-  `ag5zfmtoYW4tYWNhZGVteX${string}CxIIVXNlckRhdGEi${string}thaWRf${string}${
-    | 'LEghGZWVkYmFjaxiAg'
-    | 'DAsSCEZlZWRiYWNrGICA'
-    | 'MCxIIRmVlZGJhY2sYgI'
-    | 'wLEghGZWVkYmFjaxiAg'
-    | 'DAsSCEZlZWRiYWNrGICA'}${string}`
+  `ag5zfmtoYW4tYWNhZGVteX${string}CxIIVXNlckRhdGEi${string}thaWRf${string}${string}${string}`
 
 export type EncryptedFeedbackKey = `kaencrypted_${string}_${string}`

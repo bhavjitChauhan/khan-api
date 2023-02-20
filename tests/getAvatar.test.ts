@@ -1,4 +1,4 @@
-import { Client } from '../src/index'
+import { Client } from '../src/'
 import { KHAN_KAID, KHAN_USERNAME } from './constants'
 
 describe('getAvatar', () => {
