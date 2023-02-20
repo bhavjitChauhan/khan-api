@@ -4,13 +4,13 @@
     "src"
   ],
   "entryPointStrategy": "expand",
-  "name": "Khan API",
   "includeVersion": true,
-  "plugin": [
-    "typedoc-plugin-rename-defaults"
-  ],
+  "name": "Khan API",
   "navigationLinks": {
     "GitHub": "https://github.com/bhavjitChauhan/khan-api",
     "NPM": "https://www.npmjs.com/package/@bhavjit/khan-api"
-  }
+  },
+  "plugin": [
+    "typedoc-plugin-rename-defaults"
+  ]
 }
