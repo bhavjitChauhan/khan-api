@@ -1,7 +1,7 @@
-import { Client, User } from '../src/'
+import { Client, User } from '../src'
 import { KHAN_KAID, KHAN_USERNAME } from './constants'
 
-describe('getUser', () => {
+describe('user', () => {
   test('Fetches profile given KAID', async () => {
     const client = new Client()
 
