@@ -4,6 +4,7 @@
     "src"
   ],
   "entryPointStrategy": "expand",
+  "gaID": "G-TS3VCNBMER",
   "includeVersion": true,
   "name": "Khan API",
   "navigationLinks": {
