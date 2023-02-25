@@ -53,6 +53,8 @@ import { BasicFeedbackSchema, QuestionFeedbackSchema } from './types/schema'
 import Message from './lib/messages/Message'
 import { RecursivePartial } from './utils/types'
 import projectsAuthoredByUser from './queries/projectsAuthoredByUser'
+import getProfileWidgets from './queries/getProfileWidgets'
+import { UserStatistics } from './types/user-statistics'
 
 export default class Client {
   #identifier?: string
@@ -300,6 +302,56 @@ export default class Client {
     }
 
     return user
+  }
+
+  // @TODO Should probably be renamed to `getUserAvatar`
+  async getAvatar(
+    identifier: string | undefined = this.kaid ?? this.#identifier,
+    type: 'svg' | 'png' = 'svg'
+  ) {
+    if (!identifier) throw new Error('No identifier provided')
+
+    if (!isKaid(identifier))
+      identifier = await this.resolveCachedKaid(identifier)
+
+    // Why do I have to cast this to `Kaid`? It should already be `Kaid`...
+    const response = await avatarDataForProfile(identifier as Kaid)
+    const json = await Client.#resolveJsonReponse(response)
+
+    assertDataResponse(json)
+    if (!json.data.user) throw new Error('User not found')
+
+    const slug = extractAvatarSlug(json.data.user.avatar.imageSrc)
+    if (!slug) throw new Error('User has no avatar')
+
+    return type === 'svg' ? generateAvatarSVG(slug) : generateAvatarPNG(slug)
+  }
+
+  async getUserStatistics(
+    identifier: Kaid | string | Email | undefined = this.kaid ??
+      this.#identifier
+  ) {
+    if (!identifier) throw new Error('No identifier provided')
+
+    if (!isKaid(identifier))
+      identifier = await this.resolveCachedKaid(identifier)
+
+    const response = await getProfileWidgets(identifier as Kaid)
+    const json = await Client.#resolveJsonReponse(response)
+
+    assertDataResponse(json)
+    if (!json.data.user) throw new Error('User not found')
+
+    return {
+      votes: json.data.userSummary.statistics.votes,
+      tipsAndThanks: json.data.userSummary.statistics.comments,
+      questions: json.data.userSummary.statistics.questions,
+      answers: json.data.userSummary.statistics.answers,
+      helpRequests: json.data.userSummary.statistics.projectquestions,
+      helpRequestAnswers: json.data.userSummary.statistics.projectanswers,
+      replies: json.data.userSummary.statistics.replies,
+      flags: json.data.userSummary.statistics.flags,
+    } as UserStatistics
   }
 
   async *getUserPrograms(
@@ -739,7 +791,7 @@ export default class Client {
    * @rawEquivalent {@link queries!getFeedbackReplies}
    */
   async getAllMessageReplies(identifier: FeedbackKey | EncryptedFeedbackKey) {
-    identifier = await resolveFeedbackKey(identifier)
+    identifier = await this.resolveCachedFeedbackKey(identifier)
 
     const response = await getFeedbackReplies(identifier)
     const json = await Client.#resolveJsonReponse(response)
@@ -754,27 +806,5 @@ export default class Client {
     })
 
     return replies
-  }
-
-  async getAvatar(
-    identifier: string | undefined = this.kaid ?? this.#identifier,
-    type: 'svg' | 'png' = 'svg'
-  ) {
-    if (!identifier) throw new Error('No identifier provided')
-
-    if (!isKaid(identifier))
-      identifier = await this.resolveCachedKaid(identifier)
-
-    // Why do I have to cast this to `Kaid`? It should already be `Kaid`...
-    const response = await avatarDataForProfile(identifier as Kaid)
-    const json = await Client.#resolveJsonReponse(response)
-
-    assertDataResponse(json)
-    if (!json.data.user) throw new Error('User not found')
-
-    const slug = extractAvatarSlug(json.data.user.avatar.imageSrc)
-    if (!slug) throw new Error('User has no avatar')
-
-    return type === 'svg' ? generateAvatarSVG(slug) : generateAvatarPNG(slug)
   }
 }

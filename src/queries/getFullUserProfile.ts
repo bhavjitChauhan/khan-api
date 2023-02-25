@@ -2,7 +2,7 @@ import { graphql, TypedResponse } from '../utils/fetch'
 import { KHAN_GRAPHQL_URL } from '../lib/constants'
 import { StandardResponse } from '../types/responses'
 import { Kaid } from '../types/strings'
-import { UserSchema } from '../types/schema'
+import { ProfileSchema, UserSchema } from '../types/schema'
 import { isKaid } from '../utils/regexes'
 
 export namespace GetFullUserProfile {
@@ -101,7 +101,7 @@ export namespace GetFullUserProfile {
   export type Data = {
     actorIsImpersonatingUser: boolean
     user: Pick<
-      UserSchema,
+      UserSchema<unknown, Pick<ProfileSchema, '__typename' | 'accessLevel'>>,
       | '__typename'
       | 'authEmails'
       | 'autocontinueOn'

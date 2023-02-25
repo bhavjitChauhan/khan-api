@@ -30,9 +30,8 @@ import {
 
 export interface UserSchema<
   AvatarData = AvatarSchema,
-  PendingEmailVerificationData = PendingEmailVerificationSchema,
-  LocaleData = LocaleSchema,
-  ProfileData = ProfileSchema
+  ProfileData = ProfileSchema,
+  ListProgramsData = ListProgramsSchema
 > {
   __typename: 'User'
   actorHasUserScopedPermission: boolean
@@ -87,16 +86,16 @@ export interface UserSchema<
   newNotificationCount: number | null
   nickname: string | null
   noColorInVideos: boolean | null
-  pendingEmailVerifications: PendingEmailVerificationData[] | null
+  pendingEmailVerifications: PendingEmailVerificationSchema[] | null
   points: number
-  preferredKaLocale: LocaleData | null
+  preferredKaLocale: LocaleSchema | null
   prefersReducedMotion: boolean | null
   profile: ProfileData
   /**
    * Defaults to `null` for anonymous users.
    */
   profileRoot: `/profile/${string}/` | null
-  programs: ListProgramsSchema
+  programs: ListProgramsData
   /**
    * Either Qualaroo ID or KAID
    *
@@ -145,33 +144,49 @@ export interface LocaleSchema {
 export interface ProfileSchema {
   __typename: 'Profile'
   accessLevel: UserAccessLevel
-}
-
-export interface ListProgramsSchema {
-  __typename: 'ListPrograms'
-  complete: boolean
-  cursor: string
-  programs: (Pick<
+  programs: Pick<
     ProgramSchema,
     | '__typename'
     | 'authorKaid'
     | 'authorNickname'
+    | 'deleted'
     | 'displayableSpinoffCount'
     | 'id'
     | 'imagePath'
     | 'key'
     | 'sumVotesIncremented'
+    | 'translatedTitle'
     | 'url'
-  > & {
-    translatedTitle: ProgramSchema['title']
-  })[]
+  >[]
+}
+
+export interface ListProgramsSchema<ProgramData = unknown> {
+  __typename: 'ListPrograms'
+  complete: boolean
+  cursor: string
+  programs: ProgramData[]
+}
+
+export interface UserSummarySchema {
+  __typename: 'UserSummary'
+  statistics: UserStatisticsSchema
+}
+
+export interface UserStatisticsSchema {
+  __typename: 'UserStatistics'
+  answers: number
+  comments: number
+  flags: number
+  projectanswers: number
+  projectquestions: number
+  questions: number
+  replies: number
+  votes: number
 }
 
 export interface ProgramSchema<
-  UserData = UserSchema,
-  OriginProgramData = OriginProgramSchema,
-  ProgramRevisionData = ProgramRevisionSchema,
-  TopicData = TopicSchema
+  // TypeScript doesn't like circular references, so default can't be `UserSchema`
+  UserData = unknown
 > {
   __typename: 'Program'
   authorKaid: UserSchema['kaid']
@@ -199,14 +214,14 @@ export interface ProgramSchema<
   kaid: UserSchema['kaid']
   key: ProgramKey
   newUrlPath: string
-  originScratchpad: OriginProgramData | null
+  originScratchpad: OriginProgramSchema | null
   restrictPosting: boolean
-  revision: ProgramRevisionData
+  revision: ProgramRevisionSchema
   slug: string
   spinoffCount: number
   sumVotesIncremented: number
   title: string
-  topic: TopicData
+  topic: TopicSchema
   translatedTitle: string
   upVoted: boolean
   url: string

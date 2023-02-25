@@ -3,7 +3,7 @@ import Question from './lib/messages/Question'
 import TipsAndThanks from './lib/messages/TipsAndThanks'
 import Wrapper from './lib/Wrapper'
 import { FeedbackSort, ProgramEditorType } from './types/enums'
-import { ProgramSchema } from './types/schema'
+import { ProgramSchema, UserSchema } from './types/schema'
 import {
   ProgramID,
   ProgramIDNumber,
@@ -59,7 +59,7 @@ export interface IProgram {
 }
 
 export default class Program
-  extends Wrapper<ProgramSchema, IProgram>
+  extends Wrapper<ProgramSchema<UserSchema>, IProgram>
   implements IProgram
 {
   /**
@@ -213,7 +213,7 @@ export default class Program
     return null
   }
 
-  static fromSchema(schema: RecursivePartial<ProgramSchema>) {
+  static fromSchema(schema: RecursivePartial<ProgramSchema<UserSchema>>) {
     const program = new Program()
     program.copyFromSchema(schema)
     program.rawData = schema
@@ -233,7 +233,7 @@ export default class Program
     return program
   }
 
-  transformSchema(schema: RecursivePartial<ProgramSchema>) {
+  transformSchema(schema: RecursivePartial<ProgramSchema<UserSchema>>) {
     return {
       id: schema.id ? parseInt(schema.id, 10) : undefined,
       title: schema.translatedTitle,
