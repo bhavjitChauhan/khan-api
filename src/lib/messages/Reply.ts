@@ -5,7 +5,6 @@ import { RecursivePartial } from '../../utils/types'
 import Message from './Message'
 import BaseMessage, { IBaseMessage } from './BaseMessage'
 import { FeedbackKey, EncryptedFeedbackKey } from '../../types/strings'
-import { resolveFeedbackKey } from '../../utils/resolvers'
 
 export interface IReply extends IBaseMessage {
   message?: Message
@@ -21,11 +20,9 @@ export default class Reply extends BaseMessage implements IReply {
     return reply
   }
 
-  static async fromIdentifier(identifier: FeedbackKey | EncryptedFeedbackKey) {
-    const key = await resolveFeedbackKey(identifier)
-
+  static fromIdentifier(identifier: FeedbackKey | EncryptedFeedbackKey) {
     const reply = new Reply({
-      key,
+      key: isFeedbackKey(identifier) ? identifier : undefined,
       encryptedKey: isEncryptedFeedbackKey(identifier) ? identifier : undefined,
     })
 

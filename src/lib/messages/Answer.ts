@@ -4,8 +4,7 @@ import {
   QuestionFeedbackSchema,
 } from '../../types/schema'
 import { FeedbackKey, EncryptedFeedbackKey } from '../../types/strings'
-import { isEncryptedFeedbackKey } from '../../utils/regexes'
-import { resolveFeedbackKey } from '../../utils/resolvers'
+import { isEncryptedFeedbackKey, isFeedbackKey } from '../../utils/regexes'
 import { RecursivePartial } from '../../utils/types'
 import Message, { IMessage } from './Message'
 import Question from './Question'
@@ -24,11 +23,9 @@ export default class Answer extends Message implements IAnswer {
     return answer
   }
 
-  static async fromIdentifier(identifier: FeedbackKey | EncryptedFeedbackKey) {
-    const key = await resolveFeedbackKey(identifier)
-
+  static fromIdentifier(identifier: FeedbackKey | EncryptedFeedbackKey) {
     const answer = new Answer({
-      key,
+      key: isFeedbackKey(identifier) ? identifier : undefined,
       encryptedKey: isEncryptedFeedbackKey(identifier) ? identifier : undefined,
     })
 

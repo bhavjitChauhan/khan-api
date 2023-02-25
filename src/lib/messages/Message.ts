@@ -6,8 +6,7 @@ import {
   QuestionFeedbackSchema,
 } from '../../types/schema'
 import { EncryptedFeedbackKey, FeedbackKey } from '../../types/strings'
-import { isEncryptedFeedbackKey } from '../../utils/regexes'
-import { resolveFeedbackKey } from '../../utils/resolvers'
+import { isEncryptedFeedbackKey, isFeedbackKey } from '../../utils/regexes'
 import { RecursivePartial } from '../../utils/types'
 import BaseMessage, { IBaseMessage } from './BaseMessage'
 import Reply from './Reply'
@@ -73,11 +72,9 @@ export default class Message extends BaseMessage implements IMessage {
     return message
   }
 
-  static async fromIdentifier(identifier: FeedbackKey | EncryptedFeedbackKey) {
-    const key = await resolveFeedbackKey(identifier)
-
+  static fromIdentifier(identifier: FeedbackKey | EncryptedFeedbackKey) {
     const message = new Message({
-      key,
+      key: isFeedbackKey(identifier) ? identifier : undefined,
       encryptedKey: isEncryptedFeedbackKey(identifier) ? identifier : undefined,
     })
 
