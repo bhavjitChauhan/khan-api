@@ -2,7 +2,7 @@ import { graphql, TypedResponse } from '../utils/fetch'
 import { KHAN_GRAPHQL_URL } from '../lib/constants'
 import { StandardResponse } from '../types/responses'
 import { Kaid } from '../types/strings'
-import { UserSchema } from '../types/schema'
+import { ProfileSchema, UserSchema } from '../types/schema'
 import { isKaid } from '../utils/regexes'
 
 export namespace GetFullUserProfile {
@@ -101,7 +101,7 @@ export namespace GetFullUserProfile {
   export type Data = {
     actorIsImpersonatingUser: boolean
     user: Pick<
-      UserSchema,
+      UserSchema<unknown, Pick<ProfileSchema, '__typename' | 'accessLevel'>>,
       | '__typename'
       | 'authEmails'
       | 'autocontinueOn'
@@ -175,7 +175,7 @@ export namespace GetFullUserProfile {
  *
  * @param variables Fetches profile associated with any cookies if not provided
  *
- * @link {@link https://documenter.getpostman.com/view/19553924/2s8YzQUiXU#9ae4c690-be8a-4b57-acfc-07a4870a5ee3 | Reference}
+ * @link {@link https://khan-api.bhavjit.com/reference/view/19553924/2s8YzQUiXU#9ae4c690-be8a-4b57-acfc-07a4870a5ee3 | Reference}
  *
  * @see {@link Client!Client.getUser}
  *

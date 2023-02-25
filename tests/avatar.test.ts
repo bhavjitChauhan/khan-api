@@ -1,7 +1,7 @@
-import { Client } from '../src/'
+import { Client } from '../src'
 import { KHAN_KAID, KHAN_USERNAME } from './constants'
 
-describe('getAvatar', () => {
+describe('avatar', () => {
   test('Fetches avatar given KAID', async () => {
     const client = new Client()
 

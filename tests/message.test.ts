@@ -1,4 +1,4 @@
-import { Answer, Client, Question, Reply, TipsAndThanks } from '../src/'
+import { Answer, Client, Question, Reply, TipsAndThanks } from '../src'
 import Message from '../src/lib/messages/Message'
 import {
   ANSWER_ENCRYPTED_KEY,
@@ -11,7 +11,7 @@ import {
   REPLY_EXPAND_KEY,
 } from './constants'
 
-describe('getMessage', () => {
+describe('message', () => {
   test('Fetches arbritary message given expand key', async () => {
     const client = new Client()
 

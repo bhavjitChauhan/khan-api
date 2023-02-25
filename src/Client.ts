@@ -23,15 +23,15 @@ import {
 } from './utils/avatars'
 import { stripCookies } from './utils/cookies'
 import { truncate } from './utils/format'
-import {
-  isEncryptedFeedbackKey,
-  isKaid,
-  isFeedbackKey,
-  isEmail,
-} from './utils/regexes'
+import { isKaid, isFeedbackKey, isEmail } from './utils/regexes'
 import { PLACEHOLDER_PROGRAM_ID } from './lib/constants'
 import feedbackQuery from './queries/feedbackQuery'
-import { FeedbackFocusKind, FeedbackSort, FeedbackType } from './types/enums'
+import {
+  FeedbackFocusKind,
+  FeedbackSort,
+  FeedbackType,
+  ListProgramSortOrder,
+} from './types/enums'
 import Answer from './lib/messages/Answer'
 import Question from './lib/messages/Question'
 import Reply from './lib/messages/Reply'
@@ -52,6 +52,9 @@ import {
 import { BasicFeedbackSchema, QuestionFeedbackSchema } from './types/schema'
 import Message from './lib/messages/Message'
 import { RecursivePartial } from './utils/types'
+import projectsAuthoredByUser from './queries/projectsAuthoredByUser'
+import getProfileWidgets from './queries/getProfileWidgets'
+import { UserStatistics } from './types/user-statistics'
 
 export default class Client {
   #identifier?: string
@@ -265,7 +268,7 @@ export default class Client {
   async getUser(identifier?: Kaid | string | Email) {
     if (!identifier && !this.authenticated)
       throw new Error(
-        'Not authenticated: Login to get client user or provide a kaid/username'
+        'Not authenticated: You need to login or provide an indentifier'
       )
 
     let email: string | null = null
@@ -299,6 +302,129 @@ export default class Client {
     }
 
     return user
+  }
+
+  // @TODO Should probably be renamed to `getUserAvatar`
+  async getAvatar(
+    identifier: string | undefined = this.kaid ?? this.#identifier,
+    type: 'svg' | 'png' = 'svg'
+  ) {
+    if (!identifier) throw new Error('No identifier provided')
+
+    if (!isKaid(identifier))
+      identifier = await this.resolveCachedKaid(identifier)
+
+    // Why do I have to cast this to `Kaid`? It should already be `Kaid`...
+    const response = await avatarDataForProfile(identifier as Kaid)
+    const json = await Client.#resolveJsonReponse(response)
+
+    assertDataResponse(json)
+    if (!json.data.user) throw new Error('User not found')
+
+    const slug = extractAvatarSlug(json.data.user.avatar.imageSrc)
+    if (!slug) throw new Error('User has no avatar')
+
+    return type === 'svg' ? generateAvatarSVG(slug) : generateAvatarPNG(slug)
+  }
+
+  async getUserStatistics(
+    identifier: Kaid | string | Email | undefined = this.kaid ??
+      this.#identifier
+  ) {
+    if (!identifier) throw new Error('No identifier provided')
+
+    if (!isKaid(identifier))
+      identifier = await this.resolveCachedKaid(identifier)
+
+    const response = await getProfileWidgets(identifier as Kaid)
+    const json = await Client.#resolveJsonReponse(response)
+
+    assertDataResponse(json)
+    if (!json.data.user) throw new Error('User not found')
+
+    return {
+      votes: json.data.userSummary.statistics.votes,
+      tipsAndThanks: json.data.userSummary.statistics.comments,
+      questions: json.data.userSummary.statistics.questions,
+      answers: json.data.userSummary.statistics.answers,
+      helpRequests: json.data.userSummary.statistics.projectquestions,
+      helpRequestAnswers: json.data.userSummary.statistics.projectanswers,
+      replies: json.data.userSummary.statistics.replies,
+      flags: json.data.userSummary.statistics.flags,
+    } as UserStatistics
+  }
+
+  async *getUserPrograms(
+    identifier?: Kaid | string | Email,
+    sort: ListProgramSortOrder = ListProgramSortOrder.TOP,
+    limit = 40
+  ) {
+    if (!identifier && !this.authenticated)
+      throw new Error(
+        'Not authenticated: You need to login or provide an indentifier'
+      )
+
+    identifier ??= this.kaid ?? this.user?.username ?? this.user?.email
+    if (!identifier) throw new Error('Missing identifier for logged in user')
+
+    const kaid = await this.resolveCachedKaid(identifier)
+
+    const variables = {
+      kaid,
+      pageInfo: {
+        cursor: null,
+        itemsPerPage: limit,
+      },
+      sort,
+    }
+
+    const getUserProgramsPage = async (cursor?: string) => {
+      const reponse = await projectsAuthoredByUser({
+        ...variables,
+        pageInfo: {
+          ...variables.pageInfo,
+          cursor,
+        },
+      })
+      const json = await Client.#resolveJsonReponse(reponse)
+
+      assertDataResponse(json)
+      if (!json.data.user) throw new Error('User not found')
+      if (!json.data.user.programs.complete && !json.data.user.programs.cursor)
+        throw new Error('Cursor not found')
+
+      const programSchemas = json.data.user.programs.programs
+
+      const programs = programSchemas.map((programSchema) => {
+        const program = Program.fromSchema(programSchema)
+        program.client = this
+        return program
+      })
+      const nextCursor =
+        !json.data.user.programs.complete && json.data.user.programs.cursor
+
+      return { programs, cursor: nextCursor }
+    }
+
+    let { programs, cursor } = await getUserProgramsPage()
+    yield programs
+
+    while (cursor) {
+      ;({ programs, cursor } = await getUserProgramsPage(cursor))
+      yield programs
+    }
+  }
+
+  async getAllUserPrograms(
+    identifier?: Kaid | string | Email,
+    sort: ListProgramSortOrder = ListProgramSortOrder.TOP,
+    limit = 100
+  ) {
+    const programs: Program[] = []
+    for await (const page of this.getUserPrograms(identifier, sort, limit)) {
+      programs.push(...page)
+    }
+    return programs
   }
 
   /**
@@ -347,7 +473,7 @@ export default class Client {
   async getMessage(
     identifier: FeedbackKey | EncryptedFeedbackKey
   ): Promise<TipsAndThanks | Question | Answer> {
-    if (isEncryptedFeedbackKey(identifier))
+    if (!isFeedbackKey(identifier))
       identifier = await this.resolveCachedFeedbackKey(identifier)
 
     const response = await feedbackQuery({
@@ -665,7 +791,7 @@ export default class Client {
    * @rawEquivalent {@link queries!getFeedbackReplies}
    */
   async getAllMessageReplies(identifier: FeedbackKey | EncryptedFeedbackKey) {
-    identifier = await resolveFeedbackKey(identifier)
+    identifier = await this.resolveCachedFeedbackKey(identifier)
 
     const response = await getFeedbackReplies(identifier)
     const json = await Client.#resolveJsonReponse(response)
@@ -680,27 +806,5 @@ export default class Client {
     })
 
     return replies
-  }
-
-  async getAvatar(
-    identifier: string | undefined = this.kaid ?? this.#identifier,
-    type: 'svg' | 'png' = 'svg'
-  ) {
-    if (!identifier) throw new Error('No identifier provided')
-
-    if (!isKaid(identifier))
-      identifier = await this.resolveCachedKaid(identifier)
-
-    // Why do I have to cast this to `Kaid`? It should already be `Kaid`...
-    const response = await avatarDataForProfile(identifier as Kaid)
-    const json = await Client.#resolveJsonReponse(response)
-
-    assertDataResponse(json)
-    if (!json.data.user) throw new Error('User not found')
-
-    const slug = extractAvatarSlug(json.data.user.avatar.imageSrc)
-    if (!slug) throw new Error('User has no avatar')
-
-    return type === 'svg' ? generateAvatarSVG(slug) : generateAvatarPNG(slug)
   }
 }

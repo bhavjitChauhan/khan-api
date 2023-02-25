@@ -1,9 +1,11 @@
 import Client from './Client'
 import Wrapper from './lib/Wrapper'
+import Program from './Program'
 import { BadgeCategory } from './types/badges'
-import { UserAccessLevel } from './types/enums'
+import { ListProgramSortOrder, UserAccessLevel } from './types/enums'
 import { UserSchema } from './types/schema'
 import { AvatarURL, Email, Kaid } from './types/strings'
+import { UserStatistics } from './types/user-statistics'
 import {
   GoogleIDRegex,
   isEmail,
@@ -12,7 +14,6 @@ import {
   isQualarooID,
   QualarooIDRegex,
 } from './utils/regexes'
-import { resolveKaid } from './utils/resolvers'
 import { RecursivePartial } from './utils/types'
 
 // There has to be a solution that doesn't require duplicating properties
@@ -60,6 +61,9 @@ export interface IUser {
   readonly satStudent?: boolean
 
   readonly accessLevel?: UserAccessLevel
+
+  readonly statistics?: UserStatistics
+  readonly programs?: Program[]
 }
 
 export default class User extends Wrapper<UserSchema, IUser> implements IUser {
@@ -151,6 +155,9 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
 
   readonly accessLevel?: UserAccessLevel
 
+  readonly statistics?: UserStatistics
+  readonly programs?: Program[]
+
   /**
    * Creates a new user from the given from a user schema
    *
@@ -169,18 +176,23 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
     return user
   }
 
-  static async fromIdentifier(identifier: Kaid | string | Email) {
-    const kaid = await resolveKaid(identifier)
-    if (!isKaid(kaid)) throw new Error('Invalid KAID')
-
+  static fromIdentifier(identifier: Kaid | string | Email) {
     const user = new User({
-      kaid: kaid,
+      kaid: isKaid(identifier) ? identifier : undefined,
       username:
         !isKaid(identifier) && !isEmail(identifier) ? identifier : undefined,
       email: isEmail(identifier) ? identifier : undefined,
     })
 
     return user
+  }
+
+  #resolveIdentifier(): Kaid | string | Email {
+    if (this.kaid) return this.kaid
+    if (this.username) return this.username
+    if (this.email) return this.email
+
+    throw new Error('User has no identifier')
   }
 
   transformSchema(schema: RecursivePartial<UserSchema>) {
@@ -254,24 +266,60 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
    * @param client Optional client to use for the request
    */
   async get(client = this.client ?? new Client()) {
-    if (!this.kaid && !this.username && !this.email)
-      throw new Error('User does not have a KAID, username or email')
-
-    const user = await client.getUser(this.kaid ?? this.username!)
+    const user = await client.getUser(this.#resolveIdentifier())
 
     return this.copy(user)
   }
 
   async getAvatar(client = this.client ?? new Client()) {
-    if (!this.kaid && !this.username && !this.email)
-      throw new Error('User does not have a KAID, username or email')
-
-    const url = await client.getAvatar(
-      this.kaid ?? this.username ?? this.email!
-    )
+    const url = await client.getAvatar(this.#resolveIdentifier())
     this.copy({ avatar: url })
 
     return url
+  }
+
+  async getStatistics(client = this.client ?? new Client()) {
+    const statistics = await client.getUserStatistics(this.#resolveIdentifier())
+
+    return this.copy({ statistics })
+  }
+
+  /**
+   * @see {@link Client!Client.getUserPrograms}
+   */
+  async *getPrograms(
+    client = this.client ?? new Client(),
+    sort?: ListProgramSortOrder,
+    limit?: number
+  ) {
+    for await (const programs of client.getUserPrograms(
+      this.#resolveIdentifier(),
+      sort,
+      limit
+    )) {
+      if (!this.programs) this.copy({ programs: [] })
+      programs.forEach((program) => this.programs?.push(program))
+      yield programs
+    }
+
+    return this
+  }
+
+  /**
+   * @see {@link Client!Client.getAllUserPrograms}
+   */
+  async getAllPrograms(
+    client = this.client ?? new Client(),
+    sort?: ListProgramSortOrder,
+    limit?: number
+  ) {
+    const programs = await client.getAllUserPrograms(
+      this.#resolveIdentifier(),
+      sort,
+      limit
+    )
+
+    return this.copy({ programs })
   }
 
   /**

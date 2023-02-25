@@ -1,7 +1,7 @@
-import { Client, Program } from '../src/'
+import { Client, Program } from '../src'
 import { KHAN_PROGRAM_ID, KHAN_PROGRAM_KEY } from './constants'
 
-describe('getProgram', () => {
+describe('program', () => {
   test('Fetches program given program ID string', async () => {
     const client = new Client()
 
