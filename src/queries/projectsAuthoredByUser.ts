@@ -1,7 +1,7 @@
 import { KHAN_GRAPHQL_URL } from '../lib/constants'
 import { ListProgramSortOrder } from '../types/enums'
 import { StandardResponse } from '../types/responses'
-import { UserSchema } from '../types/schema'
+import { ListProgramsSchema, ProgramSchema, UserSchema } from '../types/schema'
 import { Kaid } from '../types/strings'
 import { graphql } from '../utils/fetch'
 
@@ -44,7 +44,29 @@ export namespace ProjectsAuthoredByUser {
   export type Response = StandardResponse<Data>
 
   export type Data = {
-    user: Pick<UserSchema, '__typename' | 'id' | 'kaid' | 'programs'>
+    user: Pick<
+      UserSchema<
+        unknown,
+        unknown,
+        ListProgramsSchema<
+          Pick<
+            ProgramSchema,
+            | '__typename'
+            | 'authorKaid'
+            | 'authorNickname'
+            | 'displayableSpinoffCount'
+            | 'id'
+            | 'imagePath'
+            | 'key'
+            | 'sumVotesIncremented'
+            | 'url'
+          > & {
+            translatedTitle: ProgramSchema['title']
+          }
+        >
+      >,
+      '__typename' | 'id' | 'kaid' | 'programs'
+    >
   }
 }
 

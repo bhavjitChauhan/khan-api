@@ -5,6 +5,7 @@ import { BadgeCategory } from './types/badges'
 import { ListProgramSortOrder, UserAccessLevel } from './types/enums'
 import { UserSchema } from './types/schema'
 import { AvatarURL, Email, Kaid } from './types/strings'
+import { UserStatistics } from './types/user-statistics'
 import {
   GoogleIDRegex,
   isEmail,
@@ -62,6 +63,7 @@ export interface IUser {
 
   readonly accessLevel?: UserAccessLevel
 
+  readonly statistics?: UserStatistics
   readonly programs?: Program[]
 }
 
@@ -154,6 +156,7 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
 
   readonly accessLevel?: UserAccessLevel
 
+  readonly statistics?: UserStatistics
   readonly programs?: Program[]
 
   /**
@@ -186,6 +189,14 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
     })
 
     return user
+  }
+
+  #resolveIdentifier(): Kaid | string | Email {
+    if (this.kaid) return this.kaid
+    if (this.username) return this.username
+    if (this.email) return this.email
+
+    throw new Error('User has no identifier')
   }
 
   transformSchema(schema: RecursivePartial<UserSchema>) {
@@ -259,24 +270,22 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
    * @param client Optional client to use for the request
    */
   async get(client = this.client ?? new Client()) {
-    if (!this.kaid && !this.username && !this.email)
-      throw new Error('User does not have a KAID, username or email')
-
-    const user = await client.getUser(this.kaid ?? this.username!)
+    const user = await client.getUser(this.#resolveIdentifier())
 
     return this.copy(user)
   }
 
   async getAvatar(client = this.client ?? new Client()) {
-    if (!this.kaid && !this.username && !this.email)
-      throw new Error('User does not have a KAID, username or email')
-
-    const url = await client.getAvatar(
-      this.kaid ?? this.username ?? this.email!
-    )
+    const url = await client.getAvatar(this.#resolveIdentifier())
     this.copy({ avatar: url })
 
     return url
+  }
+
+  async getStatistics(client = this.client ?? new Client()) {
+    const statistics = await client.getUserStatistics(this.#resolveIdentifier())
+
+    return this.copy({ statistics })
   }
 
   /**
@@ -287,11 +296,8 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
     sort?: ListProgramSortOrder,
     limit?: number
   ) {
-    if (!this.kaid && !this.username && !this.email)
-      throw new Error('User does not have a KAID, username or email')
-
     for await (const programs of client.getUserPrograms(
-      this.kaid ?? this.username ?? this.email!,
+      this.#resolveIdentifier(),
       sort,
       limit
     )) {
@@ -311,11 +317,8 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
     sort?: ListProgramSortOrder,
     limit?: number
   ) {
-    if (!this.kaid && !this.username && !this.email)
-      throw new Error('User does not have a KAID, username or email')
-
     const programs = await client.getAllUserPrograms(
-      this.kaid ?? this.username ?? this.email!,
+      this.#resolveIdentifier(),
       sort,
       limit
     )
