@@ -1,7 +1,8 @@
 import Client from './Client'
 import Wrapper from './lib/Wrapper'
+import Program from './Program'
 import { BadgeCategory } from './types/badges'
-import { UserAccessLevel } from './types/enums'
+import { ListProgramSortOrder, UserAccessLevel } from './types/enums'
 import { UserSchema } from './types/schema'
 import { AvatarURL, Email, Kaid } from './types/strings'
 import {
@@ -60,6 +61,8 @@ export interface IUser {
   readonly satStudent?: boolean
 
   readonly accessLevel?: UserAccessLevel
+
+  readonly programs?: Program[]
 }
 
 export default class User extends Wrapper<UserSchema, IUser> implements IUser {
@@ -150,6 +153,8 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
   readonly satStudent?: boolean
 
   readonly accessLevel?: UserAccessLevel
+
+  readonly programs?: Program[]
 
   /**
    * Creates a new user from the given from a user schema
@@ -272,6 +277,50 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
     this.copy({ avatar: url })
 
     return url
+  }
+
+  /**
+   * @see {@link Client!Client.getUserPrograms}
+   */
+  async *getPrograms(
+    client = this.client ?? new Client(),
+    sort?: ListProgramSortOrder,
+    limit?: number
+  ) {
+    if (!this.kaid && !this.username && !this.email)
+      throw new Error('User does not have a KAID, username or email')
+
+    for await (const programs of client.getUserPrograms(
+      this.kaid ?? this.username ?? this.email!,
+      sort,
+      limit
+    )) {
+      if (!this.programs) this.copy({ programs: [] })
+      programs.forEach((program) => this.programs?.push(program))
+      yield programs
+    }
+
+    return this
+  }
+
+  /**
+   * @see {@link Client!Client.getAllUserPrograms}
+   */
+  async getAllPrograms(
+    client = this.client ?? new Client(),
+    sort?: ListProgramSortOrder,
+    limit?: number
+  ) {
+    if (!this.kaid && !this.username && !this.email)
+      throw new Error('User does not have a KAID, username or email')
+
+    const programs = await client.getAllUserPrograms(
+      this.kaid ?? this.username ?? this.email!,
+      sort,
+      limit
+    )
+
+    return this.copy({ programs })
   }
 
   /**

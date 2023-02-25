@@ -329,7 +329,7 @@ export default class Program
       sort
     )) {
       if (!this.tipsAndThanks) this.copy({ tipsAndThanks: [] })
-      messages.forEach((message) => this.tipsAndThanks!.push(message))
+      messages.forEach((message) => this.tipsAndThanks?.push(message))
       yield messages
     }
 

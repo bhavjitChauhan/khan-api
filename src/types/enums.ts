@@ -66,3 +66,8 @@ export enum FeedbackSort {
   TopVoted = 1,
   Recent = 2,
 }
+
+export enum ListProgramSortOrder {
+  TOP = 'TOP',
+  RECENT = 'RECENT',
+}
