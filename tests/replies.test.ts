@@ -9,7 +9,7 @@ import {
 
 describe('replies', () => {
   test('Fetches arbritary message replies given expand key', async () => {
-    const message = await Message.fromIdentifier(COMMENT_EXPAND_KEY)
+    const message = Message.fromIdentifier(COMMENT_EXPAND_KEY)
     await message.getAllReplies()
     const replies = message.replies
     expect(Array.isArray(replies)).toBe(true)
@@ -18,7 +18,7 @@ describe('replies', () => {
   })
 
   test('Fetches Tips and Thanks replies given expand key', async () => {
-    const message = await TipsAndThanks.fromIdentifier(COMMENT_EXPAND_KEY)
+    const message = TipsAndThanks.fromIdentifier(COMMENT_EXPAND_KEY)
     await message.getAllReplies()
     const replies = message.replies
     expect(Array.isArray(replies)).toBe(true)
@@ -27,7 +27,7 @@ describe('replies', () => {
   })
 
   test('Fetches Question replies given expand key', async () => {
-    const message = await Question.fromIdentifier(QUESTION_EXPAND_KEY)
+    const message = Question.fromIdentifier(QUESTION_EXPAND_KEY)
     await message.getAllReplies()
     const replies = message.replies
     expect(Array.isArray(replies)).toBe(true)
@@ -36,7 +36,7 @@ describe('replies', () => {
   })
 
   test('Fetches Answer replies given expand key', async () => {
-    const message = await Answer.fromIdentifier(ANSWER_EXPAND_KEY)
+    const message = Answer.fromIdentifier(ANSWER_EXPAND_KEY)
     await message.getAllReplies()
     const replies = message.replies
     expect(Array.isArray(replies)).toBe(true)

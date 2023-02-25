@@ -233,6 +233,13 @@ export default class Program
     return program
   }
 
+  #resolveIdentifier() {
+    if (this.id) return this.id
+    if (this.key) return this.key
+
+    throw new Error('Program has no identifier')
+  }
+
   transformSchema(schema: RecursivePartial<ProgramSchema<UserSchema>>) {
     return {
       id: schema.id ? parseInt(schema.id, 10) : undefined,
@@ -322,10 +329,8 @@ export default class Program
     client = this.client ?? new Client(),
     sort?: FeedbackSort
   ) {
-    if (!this.id && !this.key) throw new Error('Program is missing ID and key')
-
     for await (const messages of client.getProgramTipsAndThanks(
-      this.id ?? this.key!,
+      this.#resolveIdentifier(),
       sort
     )) {
       if (!this.tipsAndThanks) this.copy({ tipsAndThanks: [] })
@@ -340,10 +345,8 @@ export default class Program
     client = this.client ?? new Client(),
     sort?: FeedbackSort
   ) {
-    if (!this.id && !this.key) throw new Error('Program is missing ID and key')
-
     const messages = await client.getAllProgramTipsAndThanks(
-      this.id ?? this.key!,
+      this.#resolveIdentifier(),
       sort
     )
 
@@ -354,10 +357,8 @@ export default class Program
     client = this.client ?? new Client(),
     sort?: FeedbackSort
   ) {
-    if (!this.id && !this.key) throw new Error('Program is missing ID and key')
-
     for await (const messages of client.getProgramQuestions(
-      this.id ?? this.key!,
+      this.#resolveIdentifier(),
       sort
     )) {
       if (!this.questions) this.copy({ questions: [] })
@@ -372,10 +373,8 @@ export default class Program
     client = this.client ?? new Client(),
     sort?: FeedbackSort
   ) {
-    if (!this.id && !this.key) throw new Error('Program is missing ID and key')
-
     const messages = await client.getAllProgramQuestions(
-      this.id ?? this.key!,
+      this.#resolveIdentifier(),
       sort
     )
 
@@ -386,10 +385,8 @@ export default class Program
     client = this.client ?? new Client(),
     sort?: FeedbackSort
   ) {
-    if (!this.id && !this.key) throw new Error('Program is missing ID and key')
-
     for await (const messages of client.getProgramHelpRequests(
-      this.id ?? this.key!,
+      this.#resolveIdentifier(),
       sort
     )) {
       if (!this.helpRequests) this.copy({ helpRequests: [] })
@@ -404,10 +401,8 @@ export default class Program
     client = this.client ?? new Client(),
     sort?: FeedbackSort
   ) {
-    if (!this.id && !this.key) throw new Error('Program is missing ID and key')
-
     const messages = await client.getAllProgramHelpRequests(
-      this.id ?? this.key!,
+      this.#resolveIdentifier(),
       sort
     )
 

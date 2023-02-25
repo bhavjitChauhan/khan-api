@@ -4,7 +4,7 @@ import { KHAN_KAID } from './constants'
 
 describe('user statistics', () => {
   test('Fetches user statistics', async () => {
-    const user = await User.fromIdentifier(KHAN_KAID)
+    const user = User.fromIdentifier(KHAN_KAID)
     await user.getStatistics()
     const statistics = user.statistics
     expect(statistics).not.toBeUndefined()

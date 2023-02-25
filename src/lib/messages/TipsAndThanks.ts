@@ -1,7 +1,6 @@
 import { BasicFeedbackSchema } from '../../types/schema'
 import { EncryptedFeedbackKey, FeedbackKey } from '../../types/strings'
-import { isEncryptedFeedbackKey } from '../../utils/regexes'
-import { resolveFeedbackKey } from '../../utils/resolvers'
+import { isEncryptedFeedbackKey, isFeedbackKey } from '../../utils/regexes'
 import { RecursivePartial } from '../../utils/types'
 import Message, { IMessage } from './Message'
 
@@ -15,11 +14,9 @@ export default class TipsAndThanks extends Message {
     return message
   }
 
-  static async fromIdentifier(identifier: FeedbackKey | EncryptedFeedbackKey) {
-    const key = await resolveFeedbackKey(identifier)
-
+  static fromIdentifier(identifier: FeedbackKey | EncryptedFeedbackKey) {
     const message = new TipsAndThanks({
-      key,
+      key: isFeedbackKey(identifier) ? identifier : undefined,
       encryptedKey: isEncryptedFeedbackKey(identifier) ? identifier : undefined,
     })
 

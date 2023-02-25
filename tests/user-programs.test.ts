@@ -3,7 +3,7 @@ import { KHAN_KAID } from './constants'
 
 describe('user programs', () => {
   test('Fetches user programs', async () => {
-    const user = await User.fromIdentifier(KHAN_KAID)
+    const user = User.fromIdentifier(KHAN_KAID)
     await user.getAllPrograms()
     const programs = user.programs
     expect(programs).not.toBeUndefined()
