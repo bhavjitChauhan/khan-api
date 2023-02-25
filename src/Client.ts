@@ -23,15 +23,15 @@ import {
 } from './utils/avatars'
 import { stripCookies } from './utils/cookies'
 import { truncate } from './utils/format'
-import {
-  isEncryptedFeedbackKey,
-  isKaid,
-  isFeedbackKey,
-  isEmail,
-} from './utils/regexes'
+import { isKaid, isFeedbackKey, isEmail } from './utils/regexes'
 import { PLACEHOLDER_PROGRAM_ID } from './lib/constants'
 import feedbackQuery from './queries/feedbackQuery'
-import { FeedbackFocusKind, FeedbackSort, FeedbackType } from './types/enums'
+import {
+  FeedbackFocusKind,
+  FeedbackSort,
+  FeedbackType,
+  ListProgramSortOrder,
+} from './types/enums'
 import Answer from './lib/messages/Answer'
 import Question from './lib/messages/Question'
 import Reply from './lib/messages/Reply'
@@ -52,6 +52,7 @@ import {
 import { BasicFeedbackSchema, QuestionFeedbackSchema } from './types/schema'
 import Message from './lib/messages/Message'
 import { RecursivePartial } from './utils/types'
+import projectsAuthoredByUser from './queries/projectsAuthoredByUser'
 
 export default class Client {
   #identifier?: string
@@ -265,7 +266,7 @@ export default class Client {
   async getUser(identifier?: Kaid | string | Email) {
     if (!identifier && !this.authenticated)
       throw new Error(
-        'Not authenticated: Login to get client user or provide a kaid/username'
+        'Not authenticated: You need to login or provide an indentifier'
       )
 
     let email: string | null = null
@@ -299,6 +300,79 @@ export default class Client {
     }
 
     return user
+  }
+
+  async *getUserPrograms(
+    identifier?: Kaid | string | Email,
+    sort: ListProgramSortOrder = ListProgramSortOrder.TOP,
+    limit = 40
+  ) {
+    if (!identifier && !this.authenticated)
+      throw new Error(
+        'Not authenticated: You need to login or provide an indentifier'
+      )
+
+    identifier ??= this.kaid ?? this.user?.username ?? this.user?.email
+    if (!identifier) throw new Error('Missing identifier for logged in user')
+
+    const kaid = await this.resolveCachedKaid(identifier)
+
+    const variables = {
+      kaid,
+      pageInfo: {
+        cursor: null,
+        itemsPerPage: limit,
+      },
+      sort,
+    }
+
+    const getUserProgramsPage = async (cursor?: string) => {
+      const reponse = await projectsAuthoredByUser({
+        ...variables,
+        pageInfo: {
+          ...variables.pageInfo,
+          cursor,
+        },
+      })
+      const json = await Client.#resolveJsonReponse(reponse)
+
+      assertDataResponse(json)
+      if (!json.data.user) throw new Error('User not found')
+      if (!json.data.user.programs.complete && !json.data.user.programs.cursor)
+        throw new Error('Cursor not found')
+
+      const programSchemas = json.data.user.programs.programs
+
+      const programs = programSchemas.map((programSchema) => {
+        const program = Program.fromSchema(programSchema)
+        program.client = this
+        return program
+      })
+      const nextCursor =
+        !json.data.user.programs.complete && json.data.user.programs.cursor
+
+      return { programs, cursor: nextCursor }
+    }
+
+    let { programs, cursor } = await getUserProgramsPage()
+    yield programs
+
+    while (cursor) {
+      ;({ programs, cursor } = await getUserProgramsPage(cursor))
+      yield programs
+    }
+  }
+
+  async getAllUserPrograms(
+    identifier?: Kaid | string | Email,
+    sort: ListProgramSortOrder = ListProgramSortOrder.TOP,
+    limit = 100
+  ) {
+    const programs: Program[] = []
+    for await (const page of this.getUserPrograms(identifier, sort, limit)) {
+      programs.push(...page)
+    }
+    return programs
   }
 
   /**
@@ -347,7 +421,7 @@ export default class Client {
   async getMessage(
     identifier: FeedbackKey | EncryptedFeedbackKey
   ): Promise<TipsAndThanks | Question | Answer> {
-    if (isEncryptedFeedbackKey(identifier))
+    if (!isFeedbackKey(identifier))
       identifier = await this.resolveCachedFeedbackKey(identifier)
 
     const response = await feedbackQuery({

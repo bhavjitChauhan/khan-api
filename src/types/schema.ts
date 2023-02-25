@@ -96,6 +96,7 @@ export interface UserSchema<
    * Defaults to `null` for anonymous users.
    */
   profileRoot: `/profile/${string}/` | null
+  programs: ListProgramsSchema
   /**
    * Either Qualaroo ID or KAID
    *
@@ -146,6 +147,26 @@ export interface ProfileSchema {
   accessLevel: UserAccessLevel
 }
 
+export interface ListProgramsSchema {
+  __typename: 'ListPrograms'
+  complete: boolean
+  cursor: string
+  programs: (Pick<
+    ProgramSchema,
+    | '__typename'
+    | 'authorKaid'
+    | 'authorNickname'
+    | 'displayableSpinoffCount'
+    | 'id'
+    | 'imagePath'
+    | 'key'
+    | 'sumVotesIncremented'
+    | 'url'
+  > & {
+    translatedTitle: ProgramSchema['title']
+  })[]
+}
+
 export interface ProgramSchema<
   UserData = UserSchema,
   OriginProgramData = OriginProgramSchema,
@@ -153,12 +174,15 @@ export interface ProgramSchema<
   TopicData = TopicSchema
 > {
   __typename: 'Program'
+  authorKaid: UserSchema['kaid']
+  authorNickname: UserSchema['nickname']
   byChild: boolean
   category: unknown | null
   created: string
   creatorProfile: UserData
   deleted: boolean | null
   description: string
+  displayableSpinoffCount: number
   docsUrlPath: string
   flaggedBy: unknown | null
   flaggedByUser: boolean

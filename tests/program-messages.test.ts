@@ -1,4 +1,4 @@
-import { Program, Question, TipsAndThanks } from '../src/'
+import { Program, Question, TipsAndThanks } from '../src'
 import { KHAN_PROGRAM_ID } from './constants'
 
 describe('program messages', () => {
