@@ -244,12 +244,15 @@ export default class Program
     return {
       id: schema.id ? parseInt(schema.id, 10) : undefined,
       title: schema.translatedTitle,
-      author: schema.creatorProfile
-        ? User.fromSchema({
-            isChild: schema.byChild ?? undefined,
-            ...schema.creatorProfile,
-          })
-        : undefined,
+      author:
+        schema.authorKaid || schema.authorNickname || schema.creatorProfile
+          ? User.fromSchema({
+              kaid: schema.authorKaid,
+              nickname: schema.authorNickname,
+              isChild: schema.byChild ?? undefined,
+              ...schema.creatorProfile,
+            })
+          : undefined,
       created: (() => {
         if (!schema.created) return undefined
         // Some very old programs' updated date is before their created date (e.g. 981866281)
@@ -272,7 +275,7 @@ export default class Program
       width: schema.width,
       height: schema.height,
       votes: schema.sumVotesIncremented,
-      spinOffCount: schema.spinoffCount,
+      spinOffCount: schema.spinoffCount ?? schema.displayableSpinoffCount,
       code: schema.revision?.code,
       hidden: schema.hideFromHotlist,
       type: (() => {
@@ -288,17 +291,24 @@ export default class Program
         }
       })(),
 
-      origin: schema.originScratchpad
-        ? // Resist the urge to cast as `ProgramSchema`
-          new Program({
-            id: parseInt(
-              schema.originScratchpad.url.match(ProgramURLRegex)![1],
-              10
-            ),
-            title: schema.originScratchpad.translatedTitle,
-            deleted: schema.originScratchpad.deleted,
-          })
-        : schema.originScratchpad,
+      origin: (() => {
+        if (!schema.originScratchpad) return schema.originScratchpad
+        const id = (
+          'https://khanacademy.org' + schema.originScratchpad.url
+        ).match(ProgramURLRegex)?.[1]
+        if (!id) {
+          console.error(
+            `Failed to parse origin program ID from URL: ${schema.originScratchpad.url}`
+          )
+          return undefined
+        }
+        // Resist the urge to cast as `ProgramSchema`
+        return new Program({
+          id: parseInt(id, 10),
+          title: schema.originScratchpad.translatedTitle,
+          deleted: schema.originScratchpad.deleted,
+        })
+      })(),
       key: schema.key,
       thumbnailID:
         schema.imagePath && ProgramImagePathRegex.test(schema.imagePath)
