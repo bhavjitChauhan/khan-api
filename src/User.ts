@@ -58,7 +58,6 @@ export interface IUser {
   readonly creator?: boolean
   readonly phantom?: boolean
   readonly midsignupPhantom?: boolean
-  readonly satStudent?: boolean
 
   readonly accessLevel?: UserAccessLevel
 
@@ -151,7 +150,6 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
   readonly creator?: boolean
   readonly phantom?: boolean
   readonly midsignupPhantom?: boolean
-  readonly satStudent?: boolean
 
   readonly accessLevel?: UserAccessLevel
 
@@ -223,7 +221,6 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
       parent: schema.isParent ?? undefined,
       phantom: schema.isPhantom ?? undefined,
       publisher: schema.isPublisher ?? undefined,
-      satStudent: schema.isSatStudent ?? undefined,
       self: schema.isSelf ?? undefined,
       teacher: schema.isTeacher ?? undefined,
       joined: schema.joined ? new Date(schema.joined) : undefined,

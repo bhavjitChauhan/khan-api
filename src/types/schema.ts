@@ -40,6 +40,7 @@ export interface UserSchema<
   avatar: AvatarData
   badgeCounts: string
   bio: string
+  birthMonthYear: null | unknown
   canAccessDistrictsHomepage: boolean
   canHellban: boolean | null
   canMessageUsers: boolean | null
@@ -47,6 +48,7 @@ export interface UserSchema<
   countVideosCompleted: number
   email: string | null
   gaUserId: string | null
+  hasAccessToAIGuideDev: boolean
   hasChildren: boolean | null
   hasClasses: boolean | null
   hasCoach: boolean | null
@@ -59,6 +61,7 @@ export interface UserSchema<
    */
   id: Kaid | null
   includesDistrictOwnedData: boolean
+  isAIGuideEnabled: boolean
   isActor: boolean
   isChild: boolean | null
   isCoachedByActor: boolean
@@ -82,6 +85,7 @@ export interface UserSchema<
    */
   kaid: Kaid | ''
   key: string | null
+  lastLoginCountry: string | null
   muteVideos: boolean | null
   newNotificationCount: number | null
   nickname: string | null
@@ -104,11 +108,11 @@ export interface UserSchema<
   qualarooId: QualarooID | Kaid | null
   shouldShowAgeCheck: boolean | null
   showCaptions: boolean | null
-  signupDataIfUnverified: unknown | null
+  signupDataIfUnverified: null | unknown
   soundOn: boolean | null
   tosAccepted: boolean | null
   transferAuthToken: string
-  underAgeGate: unknown | null
+  underAgeGate: null | unknown
   /**
    * Either Google ID or KAID
    */
@@ -138,7 +142,7 @@ export interface LocaleSchema {
   __typename: 'Locale'
   id: string
   kaLocale: Locale
-  status: unknown | null
+  status: null | unknown
 }
 
 export interface ProfileSchema {
@@ -192,19 +196,19 @@ export interface ProgramSchema<
   authorKaid: UserSchema['kaid']
   authorNickname: UserSchema['nickname']
   byChild: boolean
-  category: unknown | null
+  category: null | unknown
   created: string
   creatorProfile: UserData
   deleted: boolean | null
   description: string
   displayableSpinoffCount: number
   docsUrlPath: string
-  flaggedBy: unknown | null
+  flaggedBy: null | unknown
   flaggedByUser: boolean
   /**
    * Required special permissions.
    */
-  flags: unknown | null
+  flags: null | unknown
   height: number
   hideFromHotlist: boolean
   id: `${number}`
@@ -372,7 +376,7 @@ export interface QuestionFeedbackSchema extends FeedbackSchemaBase {
   /**
    * Always `null`
    */
-  hasAnswered: unknown | null
+  hasAnswered: null | unknown
   isOld: boolean
 }
 

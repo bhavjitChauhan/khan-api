@@ -25,7 +25,6 @@ export namespace GetFullUserProfile {
     isPublisher: hasPermission(name: "can_publish", scope: ANY_ON_CURRENT_LOCALE)
     isModerator: hasPermission(name: "can_moderate_users", scope: GLOBAL)
     isParent
-    isSatStudent
     isTeacher
     isDataCollectible
     isChild
@@ -47,7 +46,6 @@ export namespace GetFullUserProfile {
     showCaptions
     prefersReducedMotion
     noColorInVideos
-    autocontinueOn
     newNotificationCount
     canHellban: hasPermission(name: "can_ban_users", scope: GLOBAL)
     canMessageUsers: hasPermission(name: "can_send_moderator_messages", scope: GLOBAL)
@@ -85,9 +83,13 @@ export namespace GetFullUserProfile {
     }
     tosAccepted
     shouldShowAgeCheck
+    birthMonthYear
+    lastLoginCountry
     __typename
   }
   actorIsImpersonatingUser
+  isAIGuideEnabled
+  hasAccessToAIGuideDev
 }
 ` as const
 
@@ -104,8 +106,8 @@ export namespace GetFullUserProfile {
       UserSchema<unknown, Pick<ProfileSchema, '__typename' | 'accessLevel'>>,
       | '__typename'
       | 'authEmails'
-      | 'autocontinueOn'
       | 'badgeCounts'
+      | 'birthMonthYear'
       | 'bio'
       | 'canAccessDistrictsHomepage'
       | 'canHellban'
@@ -114,6 +116,7 @@ export namespace GetFullUserProfile {
       | 'countVideosCompleted'
       | 'email'
       | 'gaUserId'
+      | 'hasAccessToAIGuideDev'
       | 'hasChildren'
       | 'hasClasses'
       | 'hasCoach'
@@ -122,6 +125,7 @@ export namespace GetFullUserProfile {
       | 'homepageUrl'
       | 'id'
       | 'includesDistrictOwnedData'
+      | 'isAIGuideEnabled'
       | 'isChild'
       | 'isCoachingLoggedInUser'
       | 'isCreator'
@@ -134,12 +138,12 @@ export namespace GetFullUserProfile {
       | 'isParent'
       | 'isPhantom'
       | 'isPublisher'
-      | 'isSatStudent'
       | 'isSelf'
       | 'isTeacher'
       | 'joined'
       | 'kaid'
       | 'key'
+      | 'lastLoginCountry'
       | 'muteVideos'
       | 'newNotificationCount'
       | 'nickname'
