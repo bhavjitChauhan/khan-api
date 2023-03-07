@@ -32,6 +32,7 @@ export * from './utils/regexes'
 export * from './utils/resolvers'
 
 /** Types */
+export * from './types/enums'
 export * from './types/responses'
 export * from './types/schema'
 export * from './types/strings'
