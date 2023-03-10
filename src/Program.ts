@@ -5,10 +5,8 @@ import Wrapper from './lib/Wrapper'
 import { FeedbackSort, ProgramEditorType } from './types/enums'
 import { ProgramSchema, UserSchema } from './types/schema'
 import {
-  ProgramID,
   ProgramIDNumber,
   ProgramKey,
-  ProgramURL,
 } from './types/strings'
 import User from './User'
 import {
@@ -221,7 +219,7 @@ export default class Program
     return program
   }
 
-  static fromIdentifier(identifier: ProgramID | ProgramURL | ProgramKey) {
+  static fromIdentifier(identifier: Parameters<typeof resolveProgramID>[0]) {
     const id = resolveProgramID(identifier)
     const program = new Program({
       id,

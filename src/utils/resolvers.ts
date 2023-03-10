@@ -11,6 +11,7 @@ import {
   ProgramIDNumber,
   ProgramKey,
   ProgramURL,
+  UserURL,
 } from '../types/strings'
 import { programKeyToID } from './programs'
 import {
@@ -22,6 +23,8 @@ import {
   isEncryptedFeedbackKey,
   isFeedbackKey,
   isEmail,
+  isUserURL,
+  UserURLRegex,
 } from './regexes'
 
 /**
@@ -34,9 +37,16 @@ import {
  * console.log(kaid) // kaid_376749826184384230772276
  */
 export async function resolveKaid(
-  identifier: Kaid | string | Email
+  identifier: Kaid | string | Email | UserURL
 ): Promise<Kaid> {
   if (isKaid(identifier)) return identifier
+
+  if (isUserURL(identifier)) {
+    const match = identifier.match(UserURLRegex)
+    if (!match) throw new Error('Invalid user URL')
+    identifier = match[1]
+    if (isKaid(identifier)) return identifier
+  }
 
   const response = await getUserByUsernameOrEmail(identifier)
   const json = await response.json()
@@ -45,7 +55,7 @@ export async function resolveKaid(
   if (!json.data.user) throw new Error('User not found')
 
   const kaid = json.data.user.kaid
-  if (!isKaid(kaid)) throw new Error('User does not have a valid KAID')
+  if (!isKaid(kaid)) throw new Error('Invalid KAID')
 
   return kaid
 }
@@ -59,8 +69,15 @@ export async function resolveKaid(
  * const username = await resolveUsername('kaid_376749826184384230772276')
  * console.log(username) // bhavjitChauhan
  */
-export async function resolveUsername(identifier: Kaid | string | Email) {
-  if (!isKaid(identifier) && !isEmail(identifier)) return identifier
+export async function resolveUsername(identifier: Kaid | string | Email | UserURL) {
+  if (!isKaid(identifier) && !isEmail(identifier) && !isUserURL(identifier)) return identifier
+
+  if (isUserURL(identifier)) {
+    const match = identifier.match(UserURLRegex)
+    if (!match) throw new Error('Invalid user URL')
+    identifier = match[1]
+    if (!isKaid(identifier) && !isEmail(identifier)) return identifier
+  }
 
   if (!isKaid(identifier)) identifier = await resolveKaid(identifier)
 

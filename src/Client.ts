@@ -23,7 +23,7 @@ import {
 } from './utils/avatars'
 import { stripCookies } from './utils/cookies'
 import { truncate } from './utils/format'
-import { isKaid, isFeedbackKey, isEmail } from './utils/regexes'
+import { isKaid, isFeedbackKey, isEmail, isUserURL } from './utils/regexes'
 import { PLACEHOLDER_PROGRAM_ID } from './lib/constants'
 import feedbackQuery from './queries/feedbackQuery'
 import {
@@ -107,7 +107,9 @@ export default class Client {
    * console.log(await getKaid()) // Makes a request
    * console.log(await getKaid()) // Returns cached result
    */
-  async resolveCachedKaid(identifier: Kaid | string | Email): Promise<Kaid> {
+  async resolveCachedKaid(
+    identifier: Parameters<typeof resolveKaid>[0]
+  ): Promise<Kaid> {
     if (isKaid(identifier)) return identifier
 
     if (this.#cachedKaids.has(identifier))
@@ -134,8 +136,10 @@ export default class Client {
    * console.log(await getUsername()) // Makes a request
    * console.log(await getUsername()) // Returns cached result
    */
-  async resolveCachedUsername(identifier: Kaid | string) {
-    if (!isKaid(identifier) && !isEmail(identifier)) return identifier
+  async resolveCachedUsername(
+    identifier: Parameters<typeof resolveUsername>[0]
+  ) {
+    if (!isKaid(identifier) && !isEmail(identifier) && !isUserURL(identifier)) return identifier
 
     if (this.#cachedUsernames.has(identifier))
       return this.#cachedUsernames.get(identifier)!
@@ -158,7 +162,7 @@ export default class Client {
    * @see {@link utils/resolvers!resolveFeedbackKey}
    */
   async resolveCachedFeedbackKey(
-    identifier: FeedbackKey | EncryptedFeedbackKey
+    identifier: Parameters<typeof resolveFeedbackKey>[0]
   ) {
     if (isFeedbackKey(identifier)) return identifier
 
@@ -265,15 +269,15 @@ export default class Client {
   /**
    * @param identifier KAID, username or email
    */
-  async getUser(identifier?: Kaid | string | Email) {
+  async getUser(identifier?: Parameters<typeof this.resolveCachedKaid>[0]) {
     if (!identifier && !this.authenticated)
       throw new Error(
         'Not authenticated: You need to login or provide an indentifier'
       )
 
     let email: string | null = null
-    if (identifier && isEmail(identifier)) {
-      email = identifier
+    if (identifier) {
+      if (isEmail(identifier)) email = identifier
       identifier = await this.resolveCachedKaid(identifier)
     }
 
@@ -306,13 +310,13 @@ export default class Client {
 
   // @TODO Should probably be renamed to `getUserAvatar`
   async getAvatar(
-    identifier: string | undefined = this.kaid ?? this.#identifier,
+    identifier: Parameters<typeof this.resolveCachedKaid>[0] | undefined = this
+      .kaid ?? this.#identifier,
     type: 'svg' | 'png' = 'svg'
   ) {
     if (!identifier) throw new Error('No identifier provided')
 
-    if (!isKaid(identifier))
-      identifier = await this.resolveCachedKaid(identifier)
+    identifier = await this.resolveCachedKaid(identifier)
 
     // Why do I have to cast this to `Kaid`? It should already be `Kaid`...
     const response = await avatarDataForProfile(identifier as Kaid)
@@ -328,13 +332,12 @@ export default class Client {
   }
 
   async getUserStatistics(
-    identifier: Kaid | string | Email | undefined = this.kaid ??
-      this.#identifier
+    identifier: Parameters<typeof this.resolveCachedKaid>[0] | undefined = this
+      .kaid ?? this.#identifier
   ) {
     if (!identifier) throw new Error('No identifier provided')
 
-    if (!isKaid(identifier))
-      identifier = await this.resolveCachedKaid(identifier)
+    identifier = await this.resolveCachedKaid(identifier)
 
     const response = await getProfileWidgets(identifier as Kaid)
     const json = await Client.#resolveJsonReponse(response)
@@ -355,7 +358,7 @@ export default class Client {
   }
 
   async *getUserPrograms(
-    identifier?: Kaid | string | Email,
+    identifier?: Parameters<typeof this.resolveCachedKaid>[0],
     sort: ListProgramSortOrder = ListProgramSortOrder.TOP,
     limit = 40
   ) {
@@ -430,7 +433,7 @@ export default class Client {
   /**
    * @param identifier Program ID, URL or key
    */
-  async getProgram(identifier: ProgramID | ProgramURL | ProgramKey) {
+  async getProgram(identifier: Parameters<typeof resolveProgramID>[0]) {
     identifier = resolveProgramID(identifier)
 
     const response = await programQuery(identifier)
@@ -611,7 +614,7 @@ export default class Client {
   async *getProgramMessages(
     // Default to Tips and Thanks as Khan Academy also should
     type = Message.Type.TipsAndThanks,
-    identifier: ProgramID | ProgramURL | ProgramKey,
+    identifier: Parameters<typeof resolveProgramID>[0],
     sort: FeedbackSort = FeedbackSort.TopVoted
     // @TODO Add `limit` parameter when the API supports it because currently
     // it's only there for decoration
