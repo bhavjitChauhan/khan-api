@@ -4,7 +4,7 @@ import Program from './Program'
 import { BadgeCategory } from './types/badges'
 import { ListProgramSortOrder, UserAccessLevel } from './types/enums'
 import { UserSchema } from './types/schema'
-import { AvatarURL, Email, Kaid } from './types/strings'
+import { AvatarURL, Email, Kaid, UserURL } from './types/strings'
 import { UserStatistics } from './types/user-statistics'
 import {
   GoogleIDRegex,
@@ -155,6 +155,11 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
 
   readonly statistics?: UserStatistics
   readonly programs?: Program[]
+
+  get url() {
+    if (!this.kaid) return null
+    return `https://www.khanacademy.org/profile/${this.username ?? this.kaid}` as UserURL
+  }
 
   /**
    * Creates a new user from the given from a user schema
