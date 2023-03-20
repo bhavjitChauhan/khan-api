@@ -8,6 +8,7 @@ import {
   ProgramURL,
   ProgramID,
   Email,
+  UserURL,
 } from '../types/strings'
 import { toStandardBase64 } from './format'
 
@@ -15,24 +16,8 @@ function matchify(regex: RegExp) {
   return new RegExp(`(${regex.source.slice(1, -1)})`)
 }
 
-export const KaidRegex = /^kaid_\d{20,25}$/
-export const KaidRegexMatch = matchify(KaidRegex)
-export const isKaid = (str: string): str is Kaid => KaidRegex.test(str)
-
-export const PROGRAM_ID_LENGTHS = [9, 10, 16] as const
-export const ProgramIDRegex = new RegExp(
-  `^[1-9](?:(?:${PROGRAM_ID_LENGTHS.map((v) => `\\d{${v - 1}}`).join('|')}))$`
-)
-export const ProgramIDRegexMatch = new RegExp(
-  `(?:^|\\D)(${ProgramIDRegex.source.slice(1, -1)})(?:$|\\D)`
-)
-
-export function isProgramID(strOrNum: string | number): strOrNum is ProgramID {
-  return ProgramIDRegex.test(strOrNum.toString())
-}
-
-export const PROGRAM_URL_TLDS = ['com', 'org'] as const
-export const PROGRAM_URL_LOCALES = [
+export const URL_TLDS = ['com', 'org'] as const
+export const URL_LOCALES = [
   'as',
   'az',
   'cs',
@@ -79,6 +64,38 @@ export const PROGRAM_URL_LOCALES = [
   'zh-hans',
   'sgn-us',
 ] as const
+
+export const KaidRegex = /^kaid_\d{20,25}$/
+export const KaidRegexMatch = matchify(KaidRegex)
+export const isKaid = (str: string): str is Kaid => KaidRegex.test(str)
+
+export const UserURLRegex = new RegExp(
+  `^https?:\\/\\/(?:(?:www|${URL_LOCALES.join(
+    '|'
+  )})\\.)?khanacademy\\.(?:${URL_TLDS.join(
+    '|'
+  )})\\/profile\\/((?!kaid_|kaid_\\D)\\w+|(?:${KaidRegex.toString().slice(
+    2,
+    -2
+  )}))(?:\\/.*)?$`,
+  'i'
+)
+export const UserURLRegexMatch = matchify(UserURLRegex)
+
+export const isUserURL = (str: string): str is UserURL => UserURLRegex.test(str)
+
+export const PROGRAM_ID_LENGTHS = [9, 10, 16] as const
+export const ProgramIDRegex = new RegExp(
+  `^[1-9](?:(?:${PROGRAM_ID_LENGTHS.map((v) => `\\d{${v - 1}}`).join('|')}))$`
+)
+export const ProgramIDRegexMatch = new RegExp(
+  `(?:^|\\D)(${ProgramIDRegex.source.slice(1, -1)})(?:$|\\D)`
+)
+
+export function isProgramID(strOrNum: string | number): strOrNum is ProgramID {
+  return ProgramIDRegex.test(strOrNum.toString())
+}
+
 export const PROGRAM_URL_PATHS = [
   'computer-programming',
   'cs',
@@ -97,11 +114,9 @@ export const PROGRAM_URL_PATHS = [
   'biology',
 ] as const
 export const ProgramURLRegex = new RegExp(
-  `^https?:\\/\\/(?:(?:www|${PROGRAM_URL_LOCALES.join(
+  `^https?:\\/\\/(?:(?:www|${URL_LOCALES.join(
     '|'
-  )})\\.)?khanacademy\\.(?:${PROGRAM_URL_TLDS.join(
-    '|'
-  )})\\/(?:${PROGRAM_URL_PATHS.join(
+  )})\\.)?khanacademy\\.(?:${URL_TLDS.join('|')})\\/(?:${PROGRAM_URL_PATHS.join(
     '|'
   )})\\/[\\w\\d-.~()'!*:@,;]+\\/(${ProgramIDRegex.toString().slice(2, -2)})$`,
   'i'
