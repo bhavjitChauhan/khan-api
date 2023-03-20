@@ -4,10 +4,7 @@ import TipsAndThanks from './lib/messages/TipsAndThanks'
 import Wrapper from './lib/Wrapper'
 import { FeedbackSort, ProgramEditorType } from './types/enums'
 import { ProgramSchema, UserSchema } from './types/schema'
-import {
-  ProgramIDNumber,
-  ProgramKey,
-} from './types/strings'
+import { ProgramIDNumber, ProgramKey } from './types/strings'
 import User from './User'
 import {
   isProgramKey,

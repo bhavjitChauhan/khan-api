@@ -15,7 +15,8 @@ export type QualarooID = `_gae_bingo_random:${string}`
 
 export type GoogleID = `http://googleid.khanacademy.org/${number}`
 
-export type UserURL = `http${string}://${string}khanacademy.${string}/profile/${string}`
+export type UserURL =
+  `http${string}://${string}khanacademy.${string}/profile/${string}`
 
 export type AvatarName = (typeof avatarNames)[number]
 

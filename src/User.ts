@@ -158,7 +158,9 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
 
   get url() {
     if (!this.kaid) return null
-    return `https://www.khanacademy.org/profile/${this.username ?? this.kaid}` as UserURL
+    return `https://www.khanacademy.org/profile/${
+      this.username ?? this.kaid
+    }` as UserURL
   }
 
   /**
