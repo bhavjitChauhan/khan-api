@@ -7,6 +7,7 @@ import { graphql, TypedResponse } from '../utils/fetch'
 export namespace GetFeedbackReplies {
   export const query = `query getFeedbackReplies($postKey: String!) {
   feedbackReplies(feedbackKey: $postKey) {
+    isLocked
     expandKey
     appearsAsDeleted
     author {
@@ -71,6 +72,7 @@ export namespace GetFeedbackReplies {
       | 'flags'
       | 'focusUrl'
       | 'fromVideoAuthor'
+      | 'isLocked'
       | 'key'
       | 'lowQualityScore'
       | 'notifyOnAnswer'

@@ -304,6 +304,7 @@ export interface FeedbackSchemaBase {
   focus: FeedbackFocusSchema
   focusUrl: string
   fromVideoAuthor: boolean
+  isLocked: boolean
   /**
    * Encrypted ID
    */
