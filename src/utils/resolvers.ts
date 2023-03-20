@@ -69,8 +69,11 @@ export async function resolveKaid(
  * const username = await resolveUsername('kaid_376749826184384230772276')
  * console.log(username) // bhavjitChauhan
  */
-export async function resolveUsername(identifier: Kaid | string | Email | UserURL) {
-  if (!isKaid(identifier) && !isEmail(identifier) && !isUserURL(identifier)) return identifier
+export async function resolveUsername(
+  identifier: Kaid | string | Email | UserURL
+) {
+  if (!isKaid(identifier) && !isEmail(identifier) && !isUserURL(identifier))
+    return identifier
 
   if (isUserURL(identifier)) {
     const match = identifier.match(UserURLRegex)
