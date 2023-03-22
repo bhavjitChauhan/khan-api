@@ -46,34 +46,45 @@ const base = {
 }
 
 /** @type {esbuild.BuildOptions} */
-const esm = {
-  ...base,
-  platform: 'neutral',
-  target: 'node18',
-  format: 'esm',
-  outfile: `esm/${FILE_NAME}.js`,
-}
-
-/** @type {esbuild.BuildOptions} */
-const node = {
+const nodeESM = {
   ...base,
   platform: 'node',
-  target: 'node18',
-  format: 'cjs',
-  outfile: `node/${FILE_NAME}.cjs`,
+  target: 'node14',
+  format: 'esm',
+  outfile: `node/esm/${FILE_NAME}.mjs`,
+  banner: {
+    js: base.banner.js + "\nimport { createRequire } from 'module'; const require = createRequire(import.meta.url);"
+  }
 }
 
 /** @type {esbuild.BuildOptions} */
-const browser = {
+const nodeCJS = {
+  ...base,
+  platform: 'node',
+  target: 'node14',
+  format: 'cjs',
+  outfile: `node/cjs/${FILE_NAME}.cjs`,
+}
+/** @type {esbuild.BuildOptions} */
+const browserESM = {
+  ...base,
+  platform: 'browser',
+  target: 'es2020',
+  format: 'esm',
+  outfile: `browser/esm/${FILE_NAME}.js`,
+}
+
+/** @type {esbuild.BuildOptions} */
+const browserIIFE = {
   ...base,
   platform: 'browser',
   target: 'es2020',
   globalName: 'KhanAPI',
-  outfile: `${FILE_NAME}.js`,
+  outfile: `browser/iife/${FILE_NAME}.js`,
 }
 
-const configs = [esm, node, browser]
-configs.push(...configs.map(config => ({ ...config, minify: true, outfile: config.outfile.replace(/\.(c?js)$/, '.min.$1') })))
+const configs = [nodeESM, nodeCJS, browserESM, browserIIFE]
+configs.push(...configs.map(config => ({ ...config, minify: true, outfile: config.outfile.replace(/\.([cm]?js)$/, '.min.$1') })))
 
 let start = performance.now()
 

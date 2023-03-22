@@ -1,5 +1,8 @@
 dist
-*.cjs
+browser
+node
+
 *.js
+*.cjs
 
 index.d.ts

@@ -87,6 +87,11 @@ else
     echo
 fi
 
+echo "Cleaning..."
+yarn clean
+echo "Cleaned"
+echo
+
 echo "Building..."
 yarn build
 echo "Built"

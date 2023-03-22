@@ -19,10 +19,6 @@ A Khan Academy internal API client and wrapper for Node.js and the browser.
 
 ## Install
 
-### Requirements
-
-Currently, the library uses the native [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) which is only supported on [Node.js versions after 18](https://nodejs.org/dist/latest-v18.x/docs/api/globals.html#fetch) without an experimental flag. Support for older versions is planned for future releases.
-
 ### Node.js
 
 #### [Yarn](https://yarn.pm/@bhavjit/khan-api)
