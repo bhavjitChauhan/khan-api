@@ -11,31 +11,30 @@
   "license": "MIT",
   "author": "Bhavjit Chauhan",
   "files": [
-    "esm/",
+    "browser/",
     "node/",
     "example.js",
-    "index.d.ts",
-    "khan-api.js",
-    "khan-api.js.map",
-    "khan-api.min.js",
-    "khan-api.min.js.map"
+    "index.d.ts"
   ],
-  "module": "./esm/khan-api.js",
-  "main": "./node/khan-api.cjs",
-  "browser": "./khan-api.js",
+  "module": "./node/esm/khan-api.mjs",
+  "main": "./node/cjs/khan-api.cjs",
+  "browser": "./browser/iife/khan-api.js",
   "types": "./index.d.ts",
   "repository": "github:bhavjitChauhan/khan-api",
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
-    "format": "prettier --write ./**/*.ts ./esm/*.js ./node/*.cjs khan-api.js",
-    "clean": "rimraf esm node index.d.ts khan-api.js khan-api.js.map khan-api.min.js khan-api.min.js.map",
+    "format": "prettier --write ./**/*.ts ./browser/**/*.js ./node/**/*js",
+    "clean": "rimraf browser node index.d.ts",
     "types": "tsc --emitDeclarationOnly && rollup -c && rimraf dist/types",
     "build": "yarn node ./scripts/build.js",
     "doc": "typedoc"
   },
   "packageManager": "yarn@3.5.0",
   "type": "module",
+  "dependencies": {
+    "cross-fetch": "^3.1.5"
+  },
   "devDependencies": {
     "@types/jest": "^29.5.0",
     "@types/minimist": "^1.2.2",
@@ -59,16 +58,24 @@
     "typescript": "^5.0.2"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=14"
   },
   "publishConfig": {
     "access": "public"
   },
   "exports": {
-    "import": "./esm/khan-api.js",
-    "require": "./node/khan-api.cjs",
-    "browser": "./khan-api.js",
-    "default": "./esm/khan-api.js"
+    "types": "./index.d.ts",
+    "node": {
+      "import": "./node/esm/khan-api.mjs",
+      "require": "./node/cjs/khan-api.cjs",
+      "default": "./node/esm/khan-api.mjs"
+    },
+    "browser": {
+      "import": "./browser/esm/khan-api.js",
+      "require": null,
+      "default": "./browser/iife/khan-api.js"
+    },
+    "default": "./node/esm/khan-api.mjs"
   },
   "runkitExampleFilename": "example.js"
 }
