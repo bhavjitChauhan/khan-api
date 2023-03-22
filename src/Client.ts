@@ -139,7 +139,8 @@ export default class Client {
   async resolveCachedUsername(
     identifier: Parameters<typeof resolveUsername>[0]
   ) {
-    if (!isKaid(identifier) && !isEmail(identifier) && !isUserURL(identifier)) return identifier
+    if (!isKaid(identifier) && !isEmail(identifier) && !isUserURL(identifier))
+      return identifier
 
     if (this.#cachedUsernames.has(identifier))
       return this.#cachedUsernames.get(identifier)!
