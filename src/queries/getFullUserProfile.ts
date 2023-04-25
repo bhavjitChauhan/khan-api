@@ -17,7 +17,6 @@ export namespace GetFullUserProfile {
     username
     profileRoot
     gaUserId
-    qualarooId
     isPhantom
     isDeveloper: hasPermission(name: "can_do_what_only_admins_can_do")
     isCurator: hasPermission(name: "can_curate_tags", scope: ANY_ON_CURRENT_LOCALE)
@@ -154,7 +153,6 @@ export namespace GetFullUserProfile {
       | 'prefersReducedMotion'
       | 'profile'
       | 'profileRoot'
-      | 'qualarooId'
       | 'shouldShowAgeCheck'
       | 'showCaptions'
       | 'signupDataIfUnverified'

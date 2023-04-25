@@ -104,6 +104,8 @@ export interface UserSchema<
    * Either Qualaroo ID or KAID
    *
    * @link https://github.com/kamens/gae_bingo
+   * 
+   * @deprecated Since 2023-04-24
    */
   qualarooId: QualarooID | Kaid | null
   shouldShowAgeCheck: boolean | null
