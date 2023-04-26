@@ -81,6 +81,13 @@ export default class Message extends BaseMessage implements IMessage {
     return message
   }
 
+  #resolveIdentifier(): FeedbackKey | EncryptedFeedbackKey {
+    if (this.key) return this.key
+    if (this.encryptedKey) return this.encryptedKey
+
+    throw new Error('Message does not have a key or encrypted key')
+  }
+
   transformSchema(
     schema: RecursivePartial<
       BasicFeedbackSchema | QuestionFeedbackSchema | AnswerFeedbackSchema
@@ -100,14 +107,30 @@ export default class Message extends BaseMessage implements IMessage {
   }
 
   async get(client = this.client ?? new Client()) {
-    if (!this.key && !this.encryptedKey)
-      throw new Error('Message does not have a key or encrypted key')
-
-    const comment = await client.getMessage(this.key ?? this.encryptedKey!)
+    const comment = await client.getMessage(this.#resolveIdentifier())
 
     return this.copy(comment)
   }
 
+  /**
+   * @see {@link Client!Client.getMessageReplies}
+   */
+  async *getReplies(client = this.client ?? new Client(), limit?: number) {
+    for await (const replies of client.getMessageReplies(
+      this.#resolveIdentifier(),
+      limit
+    )) {
+      if (!this.replies) this.copy({ replies: [] })
+      this.replies?.push(...replies)
+      yield replies
+    }
+
+    return this
+  }
+
+  /**
+   * @see {@link Client!Client.getAllMessageReplies}
+   */
   async getAllReplies(client = this.client ?? new Client()) {
     if (!this.key && !this.encryptedKey)
       throw new Error('Message does not have a key or encrypted key')
