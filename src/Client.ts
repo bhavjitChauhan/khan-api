@@ -38,7 +38,7 @@ import Reply from './lib/messages/Reply'
 import {
   isTipsAndThanksSchema,
   isQuestionSchema,
-  TypeToClass,
+  TypeToMessageClass,
 } from './utils/messages'
 import TipsAndThanks from './lib/messages/TipsAndThanks'
 import getFeedbackReplies from './queries/getFeedbackReplies'
@@ -649,7 +649,7 @@ export default class Client {
         RecursivePartial<BasicFeedbackSchema>)[]
 
       const messages = feedback.map((feedback) => {
-        const message = TypeToClass[type].fromSchema(feedback)
+        const message = TypeToMessageClass[type].fromSchema(feedback)
         message.client = this
         return message
       })
