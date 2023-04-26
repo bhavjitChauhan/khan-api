@@ -310,8 +310,7 @@ export default class Client {
     return user
   }
 
-  // @TODO Should probably be renamed to `getUserAvatar`
-  async getAvatar(
+  async getUserAvatar(
     identifier: Parameters<typeof this.resolveCachedKaid>[0] | undefined = this
       .kaid ?? this.#identifier,
     type: 'svg' | 'png' = 'svg'

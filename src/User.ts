@@ -268,6 +268,8 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
    * Fetches the user's profile using a `getFullUserProfile` query and updates the user's data
    *
    * @param client Optional client to use for the request
+   * 
+   * @see {@link Client!Client.getUser}
    */
   async get(client = this.client ?? new Client()) {
     const user = await client.getUser(this.#resolveIdentifier())
@@ -275,13 +277,19 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
     return this.copy(user)
   }
 
+  /**
+   * @see {@link Client!.getUserAvatar}
+   */
   async getAvatar(client = this.client ?? new Client()) {
-    const url = await client.getAvatar(this.#resolveIdentifier())
+    const url = await client.getUserAvatar(this.#resolveIdentifier())
     this.copy({ avatar: url })
 
     return url
   }
 
+  /**
+   * @see {@link Client!Client.getUserStatistics}
+   */
   async getStatistics(client = this.client ?? new Client()) {
     const statistics = await client.getUserStatistics(this.#resolveIdentifier())
 

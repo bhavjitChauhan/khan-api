@@ -5,21 +5,21 @@ describe('avatar', () => {
   test('Fetches avatar given KAID', async () => {
     const client = new Client()
 
-    const url = await client.getAvatar(KHAN_KAID)
+    const url = await client.getUserAvatar(KHAN_KAID)
     expect(typeof url).toBe('string')
   })
 
   test('Fetches avatar given username', async () => {
     const client = new Client()
 
-    const url = await client.getAvatar(KHAN_USERNAME)
+    const url = await client.getUserAvatar(KHAN_USERNAME)
     expect(typeof url).toBe('string')
   })
 
   test('Fetches profile given email', async () => {
     const client = new Client()
 
-    const url = await client.getAvatar(process.env.KHAN_EMAIL)
+    const url = await client.getUserAvatar(process.env.KHAN_EMAIL)
     expect(typeof url).toBe('string')
   })
 
@@ -28,7 +28,7 @@ describe('avatar', () => {
     await expect(client.getUser()).rejects.toThrowError()
 
     await client.login(process.env.KHAN_EMAIL, process.env.KHAN_PASSWORD)
-    const url = await client.getAvatar()
+    const url = await client.getUserAvatar()
     expect(typeof url).toBe('string')
   })
 
@@ -36,8 +36,8 @@ describe('avatar', () => {
     const client = new Client()
 
     await expect(
-      client.getAvatar('kaid_12345678901234567890')
+      client.getUserAvatar('kaid_12345678901234567890')
     ).rejects.toThrowError()
-    await expect(client.getAvatar(' ')).rejects.toThrowError()
+    await expect(client.getUserAvatar(' ')).rejects.toThrowError()
   })
 })
