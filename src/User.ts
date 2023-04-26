@@ -302,7 +302,7 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
       limit
     )) {
       if (!this.programs) this.copy({ programs: [] })
-      programs.forEach((program) => this.programs?.push(program))
+      this.programs?.push(...programs)
       yield programs
     }
 

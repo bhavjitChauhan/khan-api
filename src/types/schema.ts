@@ -420,3 +420,10 @@ export interface QaExpandKeyInfoSchema {
   feedbackType: FeedbackType
   unencryptedKey: FeedbackKey
 }
+
+export interface RepliesSchema {
+  __typename: 'Replies'
+  cursor: string | null
+  feedback: BasicFeedbackSchema[] | null
+  isComplete: boolean
+}

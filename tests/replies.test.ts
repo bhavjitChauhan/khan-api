@@ -8,6 +8,16 @@ import {
 } from './constants'
 
 describe('replies', () => {
+  test('Fetches arbritary message replies page given expand key', async () => {
+    const NUMBER_OF_REPLIES = 1
+    const message = Message.fromIdentifier(COMMENT_EXPAND_KEY)
+    await message.getReplies(undefined, NUMBER_OF_REPLIES).next()
+    const replies = message.replies
+    expect(Array.isArray(replies)).toBe(true)
+    expect(replies?.length).toBe(NUMBER_OF_REPLIES)
+    if (replies) replies.forEach((reply) => expect(reply).toBeInstanceOf(Reply))
+  })
+
   test('Fetches arbritary message replies given expand key', async () => {
     const message = Message.fromIdentifier(COMMENT_EXPAND_KEY)
     await message.getAllReplies()
