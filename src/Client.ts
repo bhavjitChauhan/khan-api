@@ -265,7 +265,7 @@ export default class Client {
         } does not have a valid KAID`
       )
 
-    return json.data.loginWithPassword
+    return this
   }
 
   /**

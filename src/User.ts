@@ -268,7 +268,7 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
    * Fetches the user's profile using a `getFullUserProfile` query and updates the user's data
    *
    * @param client Optional client to use for the request
-   * 
+   *
    * @see {@link Client!Client.getUser}
    */
   async get(client = this.client ?? new Client()) {
