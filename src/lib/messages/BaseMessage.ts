@@ -80,6 +80,19 @@ export default abstract class BaseMessage
     return this.client?.user ? this.byUser(this.client.user) : false
   }
 
+  get url() {
+    if (!this.program?.url || !this.encryptedKey) return null
+    const parameters = {
+      qa_expand_key: this.key ?? this.encryptedKey,
+      qa_expand_type: this.rawData?.feedbackType?.toLowerCase(),
+    }
+    const url = new URL(this.program.url)
+    for (const [key, value] of Object.entries(parameters)) {
+      if (value) url.searchParams.set(key, value)
+    }
+    return url.toString()
+  }
+
   transformSchema(schema: RecursivePartial<FeedbackSchemaBase>): IBaseMessage {
     return {
       text: schema.content,
