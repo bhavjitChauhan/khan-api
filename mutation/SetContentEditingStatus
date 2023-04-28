@@ -1,0 +1,14 @@
+mutation SetContentEditingStatus($publishEnabled: Boolean, $editingEnabled: Boolean) {
+  setContentEditingStatus(publishEnabled: $publishEnabled, editingEnabled: $editingEnabled) {
+    contentEditingStatus {
+      editingEnabled
+      publishEnabled
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
