@@ -1,0 +1,21 @@
+{
+  "name": "khan-api-safelist",
+  "version": "1.0.0",
+  "description": "Safelisted GraphQL documents used by Khan Academy's internal API.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf query mutation fragment queries.json mutations.json fragments.json queries.js mutations.js fragments.js queries.browser.js mutations.browser.js fragments.browser.js"
+  },
+  "author": "Bhavjit Chauhan",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-utilities": "^1.3.4",
+    "graphql": "^14.5.8",
+    "prettier": "^2.8.8"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.0"
+  }
+}
