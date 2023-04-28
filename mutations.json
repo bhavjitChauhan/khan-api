@@ -349,5 +349,7 @@
   "userExerciseCacheMutations": "mutation userExerciseCacheMutations($kaid: String!) {\n  clearUserExerciseCache(kaid: $kaid) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}\n",
   "VoteEntityMutation": "mutation VoteEntityMutation($postKey: String!, $voteType: Int!) {\n  voteEntity(entityKey: $postKey, voteType: $voteType) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}\n",
   "ForceLinkEmail": "mutation ForceLinkEmail($email: String!, $kaid: String!) {\n  forceLinkEmail(email: $email, kaid: $kaid) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}\n",
-  "UnlinkEmailForSupport": "mutation UnlinkEmailForSupport($email: String!, $kaid: String!) {\n  unlinkEmailForSupport(email: $email, kaid: $kaid) {\n    error {\n      code\n      __typename\n    }\n    removed\n    __typename\n  }\n}\n"
+  "UnlinkEmailForSupport": "mutation UnlinkEmailForSupport($email: String!, $kaid: String!) {\n  unlinkEmailForSupport(email: $email, kaid: $kaid) {\n    error {\n      code\n      __typename\n    }\n    removed\n    __typename\n  }\n}\n",
+  "DisableAIGuide": "mutation DisableAIGuide($kaid: String!) {\n  disableAIGuide(kaid: $kaid, reason: DISABLED_BY_USER) {\n    error {\n      code\n      debugMessage\n      __typename\n    }\n    __typename\n  }\n}\n",
+  "UpdateSubscriptionByToken": "mutation UpdateSubscriptionByToken($token: String!, $subscribe: Boolean!) {\n  updateSubscriptionByToken(token: $token, subscribe: $subscribe) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}\n"
 }

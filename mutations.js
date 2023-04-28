@@ -10095,4 +10095,25 @@ fragment entry on TeamPageEntryForEditing {
   }
 }
 `,
+  DisableAIGuide: `mutation DisableAIGuide($kaid: String!) {
+  disableAIGuide(kaid: $kaid, reason: DISABLED_BY_USER) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  UpdateSubscriptionByToken: `mutation UpdateSubscriptionByToken($token: String!, $subscribe: Boolean!) {
+  updateSubscriptionByToken(token: $token, subscribe: $subscribe) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
+`,
 }
