@@ -1,0 +1,8 @@
+fragment contentSearchLearnableContent on LearnableContent {
+  id
+  slug
+  title
+  listed
+  defaultUrlPath
+  __typename
+}

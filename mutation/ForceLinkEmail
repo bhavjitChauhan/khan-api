@@ -1,0 +1,9 @@
+mutation ForceLinkEmail($email: String!, $kaid: String!) {
+  forceLinkEmail(email: $email, kaid: $kaid) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

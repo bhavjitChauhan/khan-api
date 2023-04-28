@@ -5,8 +5,13 @@ import { parse, print } from 'graphql'
 import { addTypenameToDocument } from 'apollo-utilities'
 import { format } from 'prettier'
 import { randomUUID } from 'crypto'
+import queries from './queries.js'
+import mutations from './mutations.js'
+import fragments from './fragments.js'
 
 config()
+
+const FETCH_BATCH_SIZE = 100
 
 /**
  * Formats a GraphQL document (query, mutation, etc.) by adding the __typename and formatting according to the GraphQL spec.
@@ -119,23 +124,21 @@ console.log('Fetched runtime URLs')
 console.log(`Fetching ${scriptURLs.length} scripts...`)
 
 let scriptFetchedCount = 0
-const scripts = (await Promise.all(scriptURLs.map(url => fetch(url)
-    .then(async (res) => {
-        scriptFetchedCount++
-        return await res.text()
-    })
-    .catch(() => {
-        console.error('Failed to fetch script')
-        return null
-    })
-)))
-    .filter(script => {
-        if (!script) {
-            console.warn('script is null')
-            return false
-        }
-        return true
-    })
+const scripts = []
+for (let i = 0; i < scriptURLs.length; i += FETCH_BATCH_SIZE) {
+    const batch = scriptURLs.slice(i, i + FETCH_BATCH_SIZE)
+    console.log(`Fetching scripts ${i + 1}-${i + batch.length}...`)
+    const batchScripts = (await Promise.all(batch.map(url => fetch(url)
+        .then(async (res) => {
+            scriptFetchedCount++
+            return await res.text()
+        })
+        .catch(() => null)
+    )))
+        .filter(script => script)
+    scripts.push(...batchScripts)
+    console.log(`Fetched ${batchScripts.length} scripts`)
+}
 
 console.log(`Fetched ${scriptFetchedCount}/${scriptURLs.length} scripts`)
 
@@ -230,6 +233,11 @@ for (const type of documentTypes) {
     for (let [operation, document] of filteredDocuments[type]) {
         if (type === 'query' || type === 'mutation')
             document = sortDocumentFragments(document)
+        if (!document) {
+            failed = true
+            console.warn(`${operation} document is null`)
+            continue
+        }
         await writeFile(`${type}/${operation}`, document)
         writtenDocumentCount++
     }
@@ -240,6 +248,11 @@ console.log(`Wrote ${writtenDocumentCount}/${documents.length} documents`)
 
 console.log(`Inserting missing fragments...`)
 
+const existingDocuments = {
+    query: queries,
+    mutation: mutations,
+    fragment: fragments
+}
 let totalInsertedFragmentCount = 0
 for (const type of documentTypes) {
     if (type === 'fragment') continue
@@ -266,8 +279,13 @@ for (const type of documentTypes) {
             insertedFragmentCount++
             totalInsertedFragmentCount++
         }
-        document = sortDocumentFragments(document)
-        await writeFile(`${type}/${file}`, document)
+        const existingDocument = existingDocuments[type][extractOperation(document)]
+        if (existingDocument && ((extractFragments(document)?.length ?? 0) < (extractFragments(existingDocument)?.length) ?? 0)) {
+            console.warn(`Fragment count mismatch in ${type}/${file}`)
+        } else {
+            document = sortDocumentFragments(document)
+            await writeFile(`${type}/${file}`, document)
+        }
         // console.log(`Inserted ${insertedFragmentCount} fragments in ${type}/${file}`)
     }
 }
@@ -275,17 +293,22 @@ for (const type of documentTypes) {
 console.log(`Inserted ${totalInsertedFragmentCount} fragments`)
 
 
-console.log('Generating JSON and JavaScript filees')
+console.log('Generating JSON and JavaScript files')
 
 const fileNames = {
     query: 'queries',
     mutation: 'mutations',
     fragment: 'fragments'
 }
-for (const type of ['query', 'mutation', 'fragment']) {
-    const files = await readdir(type), documents = {}
+for (const type of documentTypes) {
+    const files = await readdir(type), documents = existingDocuments[type]
     for (const file of files) {
         const document = await readFile(`${type}/${file}`).then(buffer => buffer.toString())
+        if (!document) {
+            failed = true
+            console.error(`Document ${type}/${file} is null`)
+            continue
+        }
         documents[extractOperation(document)] = document
     }
 
@@ -318,4 +341,4 @@ if (!failed && typeof process.env.SAFELIST_HEARTBEAT_URL === 'string') {
     console.log('Sending heartbeat...')
     await fetch(process.env.SAFELIST_HEARTBEAT_URL)
     console.log('Sent heartbeat')
-}
+} else process.exit(1)

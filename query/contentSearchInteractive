@@ -1,0 +1,15 @@
+query contentSearchInteractive($contentId: String!) {
+  interactiveById(id: $contentId) {
+    ...contentSearchLearnableContent
+    __typename
+  }
+}
+
+fragment contentSearchLearnableContent on LearnableContent {
+  id
+  slug
+  title
+  listed
+  defaultUrlPath
+  __typename
+}

@@ -1,0 +1,15 @@
+query contentSearchTalkthrough($contentId: String!) {
+  talkthroughById(id: $contentId) {
+    ...contentSearchLearnableContent
+    __typename
+  }
+}
+
+fragment contentSearchLearnableContent on LearnableContent {
+  id
+  slug
+  title
+  listed
+  defaultUrlPath
+  __typename
+}

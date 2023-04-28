@@ -2046,4 +2046,13 @@ fragment InvitationsField on Invitation {
   __typename
 }
 `,
+  contentSearchLearnableContent: `fragment contentSearchLearnableContent on LearnableContent {
+  id
+  slug
+  title
+  listed
+  defaultUrlPath
+  __typename
+}
+`,
 }

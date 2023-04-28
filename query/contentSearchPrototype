@@ -1,0 +1,17 @@
+query contentSearchPrototype($queryString: String!) {
+  contentSearch(queryString: $queryString) {
+    results {
+      contentKind
+      contentId
+      facets
+      score
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

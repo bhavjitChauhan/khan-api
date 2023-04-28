@@ -1,0 +1,10 @@
+mutation UnlinkEmailForSupport($email: String!, $kaid: String!) {
+  unlinkEmailForSupport(email: $email, kaid: $kaid) {
+    error {
+      code
+      __typename
+    }
+    removed
+    __typename
+  }
+}
