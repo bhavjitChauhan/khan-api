@@ -1,8 +1,12 @@
-import { existsSync } from 'fs'
+import { existsSync, write } from 'fs'
 import { mkdir, readFile, readdir, writeFile } from 'fs/promises'
+import { config } from 'dotenv'
 import { parse, print } from 'graphql'
 import { addTypenameToDocument } from 'apollo-utilities'
 import { format } from 'prettier'
+import { randomUUID } from 'crypto'
+
+config()
 
 /**
  * Formats a GraphQL document (query, mutation, etc.) by adding the __typename and formatting according to the GraphQL spec.
@@ -87,6 +91,7 @@ function sortDocumentFragments(str) {
     return str
 }
 
+
 let failed = false
 
 console.log('Fetching homepage script...')
@@ -98,6 +103,7 @@ if (!runtimeScriptURL) {
 }
 console.log('Fetched homepage script')
 
+
 console.log('Fetching script URLs...')
 const runtimeScript = await fetch(runtimeScriptURL).then(r => r.text())
 const scriptURLs = Object.entries(eval('(' + runtimeScript.match(/(\{[\w",:-]+\})\[\w+\]\+"\.js"/)[1] + ')')).map(([key, value]) => `https://cdn.kastatic.org/genwebpack/prod/en/${key}.${value}.js`)
@@ -108,6 +114,7 @@ if (!addtionalScriptURL) {
 }
 scriptURLs.push(addtionalScriptURL)
 console.log('Fetched runtime URLs')
+
 
 console.log(`Fetching ${scriptURLs.length} scripts...`)
 
@@ -131,6 +138,7 @@ const scripts = (await Promise.all(scriptURLs.map(url => fetch(url)
     })
 
 console.log(`Fetched ${scriptFetchedCount}/${scriptURLs.length} scripts`)
+
 
 let documents = scripts
     .map(script => [...script?.matchAll(/`\n\s+((?:query|mutation|fragment)[^`]+)/g)]
@@ -299,3 +307,15 @@ for (const type of ['query', 'mutation', 'fragment']) {
 }
 
 console.log('Generated JSON and JavaScript files')
+
+
+console.log('Writing heartbeat file')
+await writeFile('heartbeat', "# This file should be updated hourly. It's basically a proof-of-life\n" + randomUUID() + '\n')
+console.log('Wrote heartbeat file')
+
+
+if (!failed && typeof process.env.SAFELIST_HEARTBEAT_URL === 'string') {
+    console.log('Sending heartbeat...')
+    await fetch(process.env.SAFELIST_HEARTBEAT_URL)
+    console.log('Sent heartbeat')
+}

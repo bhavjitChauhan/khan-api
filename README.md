@@ -17,7 +17,6 @@ Safelisted GraphQL documents used by Khan Academy's internal API.
 
 Khan Academy's internal GraphQL API only allows a set of "safelisted" queries and mutations for security reasons. This can lead to your app breaking when Khan inevitably changes these to make way for new features or remove old ones. This repository keeps track of the queries and mutations that are currently safelisted.
 
-<!--
 ## Usage
 
 ```js
@@ -28,9 +27,8 @@ const GET_FULL_USER_PROFILE_QUERY = await fetch('https://cdn.jsdelivr.net/gh/bha
 You can either use the safelist for every request or as a fallback when a request fails.
 
 ```js
-const response = await fetch(...)
+const response = await fetch(/* ... */)
 if (response.status === 403) {
     // Fall back to the safelist
 }
 ```
--->
