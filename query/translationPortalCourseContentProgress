@@ -8,12 +8,44 @@ query translationPortalCourseContentProgress($courseId: String!, $contentLocale:
   }
 }
 
+fragment tapContentItem on TAPContentItem {
+  id
+  contentKind
+  contentId
+  sha
+  isNativeContent
+  isUnlisted
+  slug
+  title
+  translatedTitle
+  __typename
+}
+
 fragment tapCourseNode on TAPCourseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
   children {
     ...tapUnitNode
+    __typename
+  }
+  __typename
+}
+
+fragment tapMetadataWordCounts on TAPMetadataWordCounts {
+  metadataWordCount
+  metadataTranslatableWordCount
+  metadataTranslatedWordCount
+  metadataApprovedWordCount
+  __typename
+}
+
+fragment tapUnitNode on TAPUnitNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapLessonNode
     __typename
   }
   __typename

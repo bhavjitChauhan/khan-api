@@ -8930,6 +8930,44 @@ fragment CommonUserInfoFragment on User {
     __typename
   }
 }
+
+fragment gtp_checkpointFragment on Checkpoint {
+  id
+  stages {
+    numCreditedTasks
+    creditedTaskIds
+    goalTasks
+    stageIndex
+    stageDisplayNumber
+    startedAt
+    completedAt
+    incomingLevels {
+      name
+      level
+      __typename
+    }
+    focusAreas {
+      skillTitle
+      areaId
+      areaTitle
+      __typename
+    }
+    __typename
+  }
+  checkpointIndex
+  startedAt
+  completedAt
+  drillMode
+  isComplete
+  removedFromSchedule
+  hasDonePracticeTasks
+  numStages
+  canCreateNewStage
+  hasDonePracticeTasks
+  miniSectionStages
+  tmsTaskIds
+  __typename
+}
 `,
   gtp_getDescriptors: `query gtp_getDescriptors($examId: String!, $checkpointStr: String) {
   descriptorList(examId: $examId, requestedCheckpoint: $checkpointStr) {
@@ -9649,6 +9687,109 @@ fragment gtp_taskFragment on Task {
     ...gtp_tpudFragment
     __typename
   }
+}
+
+fragment gtp_checkpointFragment on Checkpoint {
+  id
+  stages {
+    numCreditedTasks
+    creditedTaskIds
+    goalTasks
+    stageIndex
+    stageDisplayNumber
+    startedAt
+    completedAt
+    incomingLevels {
+      name
+      level
+      __typename
+    }
+    focusAreas {
+      skillTitle
+      areaId
+      areaTitle
+      __typename
+    }
+    __typename
+  }
+  checkpointIndex
+  startedAt
+  completedAt
+  drillMode
+  isComplete
+  removedFromSchedule
+  hasDonePracticeTasks
+  numStages
+  canCreateNewStage
+  hasDonePracticeTasks
+  miniSectionStages
+  tmsTaskIds
+  __typename
+}
+
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+
+fragment gtp_tpudFragment on TestPrepUserData {
+  id
+  examId
+  currentStage
+  currentCheckpoint
+  targetScore
+  diagnosticsStates {
+    type
+    state
+    __typename
+  }
+  onboardingState
+  hasSeededSkillLevels
+  hasUnlockedDrillMode
+  scoreInfo {
+    minScore
+    maxScore
+    __typename
+  }
+  schedule {
+    examDate
+    practiceTestDates
+    __typename
+  }
+  __typename
 }
 `,
   gtp_onboardingStatus: `query gtp_onboardingStatus($examGroupId: String!) {
@@ -13071,6 +13212,28 @@ fragment tapChallengeNode on TAPChallengeNode {
   __typename
 }
 
+fragment tapContentItem on TAPContentItem {
+  id
+  contentKind
+  contentId
+  sha
+  isNativeContent
+  isUnlisted
+  slug
+  title
+  translatedTitle
+  __typename
+}
+
+fragment tapContentWordCounts on TAPContentWordCounts {
+  wordCount
+  translatableWordCount
+  translatedWordCount
+  translatedWordCount
+  approvedWordCount
+  __typename
+}
+
 fragment tapExerciseNode on TAPExerciseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13083,6 +13246,14 @@ fragment tapInteractiveNode on TAPInteractiveNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
+  __typename
+}
+
+fragment tapMetadataWordCounts on TAPMetadataWordCounts {
+  metadataWordCount
+  metadataTranslatableWordCount
+  metadataTranslatedWordCount
+  metadataApprovedWordCount
   __typename
 }
 
@@ -13126,12 +13297,44 @@ fragment tapVideoNode on TAPVideoNode {
   }
 }
 
+fragment tapContentItem on TAPContentItem {
+  id
+  contentKind
+  contentId
+  sha
+  isNativeContent
+  isUnlisted
+  slug
+  title
+  translatedTitle
+  __typename
+}
+
 fragment tapCourseNode on TAPCourseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
   children {
     ...tapUnitNode
+    __typename
+  }
+  __typename
+}
+
+fragment tapMetadataWordCounts on TAPMetadataWordCounts {
+  metadataWordCount
+  metadataTranslatableWordCount
+  metadataTranslatedWordCount
+  metadataApprovedWordCount
+  __typename
+}
+
+fragment tapUnitNode on TAPUnitNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapLessonNode
     __typename
   }
   __typename
@@ -13147,12 +13350,44 @@ fragment tapCourseNode on TAPCourseNode {
   }
 }
 
+fragment tapContentItem on TAPContentItem {
+  id
+  contentKind
+  contentId
+  sha
+  isNativeContent
+  isUnlisted
+  slug
+  title
+  translatedTitle
+  __typename
+}
+
 fragment tapCourseNode on TAPCourseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
   children {
     ...tapUnitNode
+    __typename
+  }
+  __typename
+}
+
+fragment tapMetadataWordCounts on TAPMetadataWordCounts {
+  metadataWordCount
+  metadataTranslatableWordCount
+  metadataTranslatedWordCount
+  metadataApprovedWordCount
+  __typename
+}
+
+fragment tapUnitNode on TAPUnitNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapLessonNode
     __typename
   }
   __typename
@@ -13205,10 +13440,40 @@ fragment tapCourseNode on TAPCourseNode {
   }
 }
 
+fragment tapContentItem on TAPContentItem {
+  id
+  contentKind
+  contentId
+  sha
+  isNativeContent
+  isUnlisted
+  slug
+  title
+  translatedTitle
+  __typename
+}
+
+fragment tapContentWordCounts on TAPContentWordCounts {
+  wordCount
+  translatableWordCount
+  translatedWordCount
+  translatedWordCount
+  approvedWordCount
+  __typename
+}
+
 fragment tapDomainNode on TAPDomainNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
+  __typename
+}
+
+fragment tapMetadataWordCounts on TAPMetadataWordCounts {
+  metadataWordCount
+  metadataTranslatableWordCount
+  metadataTranslatedWordCount
+  metadataApprovedWordCount
   __typename
 }
 
