@@ -305,35 +305,6 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     __typename
   }
 }
-
-fragment ArticleRevision on ArticleRevision {
-  id
-  contentId
-  contentKind
-  creationDate
-  sha
-  authorKey
-  customDescriptionTag
-  customTitleTag
-  description
-  descriptionHtml: description
-  doNotPublish
-  sourceKaLocale
-  sourceLanguage: sourceKaLocale
-  slug
-  readableId: slug
-  title
-  sponsored
-  thumbnailData
-  thumbnailCache
-  alternateSlugs
-  assessmentItemTags
-  authorNames
-  clarificationsEnabled
-  perseusContent
-  listed
-  __typename
-}
 `,
   articleEditorRedirectQuery: `query articleEditorRedirectQuery($contentId: String!) {
   articleRevisionById(id: $contentId) {
@@ -9077,6 +9048,20 @@ fragment gtp_egudFragment on ExamGroupUserData {
     __typename
   }
 }
+
+fragment gtp_essayScoresFragment on EssayScores {
+  areas {
+    translatedTitle
+    essays {
+      examCompletionDate
+      score
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
 `,
   gtp_getExamGroupMetadata: `query gtp_getExamGroupMetadata($examGroupId: String!) {
   examGroup(examGroupId: $examGroupId) {
@@ -13069,6 +13054,67 @@ fragment TranslatedContentFields on LearnableContent {
     __typename
   }
 }
+
+fragment tapArticleNode on TAPArticleNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapChallengeNode on TAPChallengeNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapExerciseNode on TAPExerciseNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapInteractiveNode on TAPInteractiveNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapProjectNode on TAPProjectNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapTalkthroughNode on TAPTalkthroughNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  isDubbed
+  isSubtitled
+  youtubeId
+  __typename
+}
+
+fragment tapVideoNode on TAPVideoNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  isDubbed
+  dubIsSubtitled
+  isSubtitled
+  translatedYoutubeId
+  youtubeId
+  __typename
+}
 `,
   translationPortalCourseContentProgress: `query translationPortalCourseContentProgress($courseId: String!, $contentLocale: String!) {
   courseTranslationProgress(courseId: $courseId, contentKALocale: $contentLocale) {
@@ -13079,6 +13125,17 @@ fragment TranslatedContentFields on LearnableContent {
     __typename
   }
 }
+
+fragment tapCourseNode on TAPCourseNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapUnitNode
+    __typename
+  }
+  __typename
+}
 `,
   translationPortalCourseContentProgressCached: `query translationPortalCourseContentProgressCached($courseId: String!, $contentLocale: String!) {
   courseTranslationProgress(courseId: $courseId, contentKALocale: $contentLocale) {
@@ -13088,6 +13145,17 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
+}
+
+fragment tapCourseNode on TAPCourseNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapUnitNode
+    __typename
+  }
+  __typename
 }
 `,
   translationPortalCourseTitlesByIds: `query translationPortalCourseTitlesByIds($ids: [String]!) {
@@ -13135,6 +13203,21 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
+}
+
+fragment tapDomainNode on TAPDomainNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapPlatformNode on TAPPlatformNode {
+  ...tapContentWordCounts
+  id
+  slug
+  title
+  __typename
 }
 `,
   translationPortalTranslationFreshness: `query translationPortalTranslationFreshness {
