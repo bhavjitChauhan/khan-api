@@ -1,0 +1,32 @@
+query DistrictWithRosterJobs($districtId: ID!, $numJobs: Int!) {
+  districtById(districtId: $districtId) {
+    id
+    lastNRosterJobs(numJobs: $numJobs) {
+      createdAt
+      numClassrooms
+      numSchools
+      numStudents
+      numTeachers
+      numDistrictAdmins
+      numSchoolAdmins
+      rosterSource
+      timeSpentSeconds
+      numNewClassrooms
+      numNewSchools
+      numNewStudents
+      numNewTeachers
+      numNewDistrictAdmins
+      numNewSchoolAdmins
+      numRemovedClassrooms
+      numRemovedSchools
+      numRemovedStudents
+      numRemovedTeachers
+      numRemovedDistrictAdmins
+      numRemovedSchoolAdmins
+      numInGracePeriodStudents
+      numInGracePeriodTeachers
+      __typename
+    }
+    __typename
+  }
+}

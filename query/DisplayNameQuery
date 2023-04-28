@@ -1,0 +1,11 @@
+query DisplayNameQuery($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    userDistrictInfos(includeDeleted: true) {
+      id
+      displayNameForTeacher
+      __typename
+    }
+    __typename
+  }
+}

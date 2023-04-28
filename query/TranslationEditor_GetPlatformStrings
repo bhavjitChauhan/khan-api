@@ -1,0 +1,11 @@
+query TranslationEditor_GetPlatformStrings($category: String!) {
+  platformStrings(category: $category) {
+    title
+    strings {
+      english
+      translation
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,9 @@
+mutation sendAiGuideEnrolledTestEmail {
+  sendAiGuideEnrolledTestEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

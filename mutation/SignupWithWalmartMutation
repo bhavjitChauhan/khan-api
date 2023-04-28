@@ -1,0 +1,14 @@
+mutation SignupWithWalmartMutation($profileKeyName: String!, $email: String!) {
+  signupWithWalmart(profileKeyName: $profileKeyName, email: $email) {
+    error {
+      code
+      __typename
+    }
+    user {
+      id
+      kaid
+      __typename
+    }
+    __typename
+  }
+}

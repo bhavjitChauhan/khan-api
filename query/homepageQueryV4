@@ -1,0 +1,59 @@
+query homepageQueryV4($kaid: String, $username: String) {
+  flag(name: "lp_class_picker_via_gateway") {
+    id
+    name
+    isUserPassing
+    __typename
+  }
+  actorUser: user {
+    id
+    isAIGuideEnabled
+    canViewAiGuideHistory: hasPermission(name: "can_view_ai_guide_history")
+    __typename
+  }
+  user(kaid: $kaid, username: $username) {
+    id
+    kaid
+    isActor
+    isCoachedByActor
+    isManagedByActor
+    isAIGuideEnabled
+    canViewUserProgress: actorHasUserScopedPermission(capability: CAN_VIEW_USER_PROGRESS)
+    canViewTeachersAndClassrooms: actorHasUserScopedPermission(capability: CAN_VIEW_TEACHERS_AND_CLASSROOMS)
+    isDistrictSynced
+    isKmapSynced
+    homepageModules {
+      navigation {
+        myCoursesEnabled
+        interestedInSat
+        interestedInLsat
+        classes {
+          studentList {
+            id
+            descriptor
+            cacheId
+            name
+            coach {
+              id
+              kaid
+              __typename
+            }
+            signupCode
+            __typename
+          }
+          showAssignments
+          hasActiveAssignments
+          hasKmapGoals
+          hasNonMapGoals
+          isKmap
+          isK4d
+          isActive
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

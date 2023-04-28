@@ -1,0 +1,18 @@
+mutation createClassroomMutation($classroomName: String!, $subscribeToUpdates: Boolean) {
+  createClassroom(classroomName: $classroomName, subscribeToUpdates: $subscribeToUpdates) {
+    classroom {
+      id
+      cacheId
+      descriptor
+      key
+      name
+      signupCode
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

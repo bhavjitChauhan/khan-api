@@ -1,0 +1,34 @@
+query findUsers($identifier: String) {
+  usersSearch(identifier: $identifier) {
+    users {
+      ...UserFields
+      __typename
+    }
+    children {
+      ...UserFields
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment UserFields on User {
+  id
+  kaid
+  lastLogin
+  points
+  profileRoot
+  nickname
+  joined
+  authEmails
+  userId
+  username
+  coaches {
+    id
+    email
+    username
+    kaid
+    __typename
+  }
+  __typename
+}

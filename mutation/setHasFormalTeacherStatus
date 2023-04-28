@@ -1,0 +1,14 @@
+mutation setHasFormalTeacherStatus($tosForFormalTeacherStatus: Boolean) {
+  setSettings(tosForFormalTeacherStatus: $tosForFormalTeacherStatus) {
+    user {
+      id
+      tosForFormalTeacherStatus
+      __typename
+    }
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+}

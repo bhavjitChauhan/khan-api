@@ -1,0 +1,9 @@
+mutation translationEditorEditTalkthrough($sha: String!, $input: EditTalkthroughInput!) {
+  editTalkthrough(sha: $sha, input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

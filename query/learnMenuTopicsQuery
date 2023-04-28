@@ -1,0 +1,19 @@
+query learnMenuTopicsQuery($curriculum: String) {
+  learnMenuTopics(curriculum: $curriculum) {
+    slug
+    translatedTitle
+    href
+    isNew
+    icon
+    children {
+      slug
+      translatedTitle
+      href
+      isNew
+      loggedOutHref
+      nonContentLink
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,23 @@
+mutation setSettingsMutationWithErrors($kaid: String!, $nickname: String, $username: String, $soundOn: Boolean, $muteVideos: Boolean, $showCaptions: Boolean, $playbackRate: PlaybackRate, $userLanguage: String, $birthdate: String, $hideVisual: Boolean, $prefersReducedMotion: Boolean, $noColorInVideos: Boolean) {
+  setSettings(kaid: $kaid, nickname: $nickname, username: $username, soundOn: $soundOn, muteVideos: $muteVideos, showCaptions: $showCaptions, playbackRate: $playbackRate, userLanguage: $userLanguage, birthdate: $birthdate, hideVisual: $hideVisual, prefersReducedMotion: $prefersReducedMotion, noColorInVideos: $noColorInVideos) {
+    user {
+      id
+      nickname
+      username
+      soundOn
+      muteVideos
+      showCaptions
+      userLanguage
+      birthdate
+      hideVisual
+      prefersReducedMotion
+      noColorInVideos
+      __typename
+    }
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+}

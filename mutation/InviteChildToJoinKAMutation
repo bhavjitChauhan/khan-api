@@ -1,0 +1,16 @@
+mutation InviteChildToJoinKAMutation($childEmail: String!) {
+  inviteChild(childEmail: $childEmail) {
+    childInvite {
+      invitationType
+      email
+      requestKey
+      nickname
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

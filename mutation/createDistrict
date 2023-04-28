@@ -1,0 +1,14 @@
+mutation createDistrict($name: String!, $offerings: [Offering!]!, $rosterSource: RosterSource!, $isTest: Boolean!, $rosterID: String!, $nweaID: String!, $ncesID: String, $sendEmails: Boolean!, $goLiveDate: Date!, $schoolYearDates: DistrictSchoolYearInput!) {
+  createDistrict(name: $name, offerings: $offerings, isTest: $isTest, rosterID: $rosterID, rosterSource: $rosterSource, nweaID: $nweaID, ncesID: $ncesID, sendTeacherActivationEmails: $sendEmails, goLiveDate: $goLiveDate, schoolYearDates: $schoolYearDates) {
+    error {
+      code
+      __typename
+    }
+    district {
+      id
+      name
+      __typename
+    }
+    __typename
+  }
+}

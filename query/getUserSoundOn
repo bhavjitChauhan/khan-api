@@ -1,0 +1,7 @@
+query getUserSoundOn {
+  user {
+    id
+    soundOn
+    __typename
+  }
+}

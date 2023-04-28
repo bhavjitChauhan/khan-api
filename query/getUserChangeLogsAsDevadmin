@@ -1,0 +1,26 @@
+query getUserChangeLogsAsDevadmin($after: ID, $actorKaid: String, $targetKaid: String, $pageSize: Int) {
+  user {
+    id
+    userSettingsChangeLogsPage(actorKaid: $actorKaid, targetKaid: $targetKaid, pageSize: $pageSize, after: $after) {
+      logs {
+        id
+        actorKaid
+        targetKaid
+        timestamp
+        changes {
+          settingsType
+          beforeValue
+          afterValue
+          __typename
+        }
+        __typename
+      }
+      pageInfo {
+        nextCursor
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

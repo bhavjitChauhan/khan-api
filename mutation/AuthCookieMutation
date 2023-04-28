@@ -1,0 +1,6 @@
+mutation AuthCookieMutation {
+  refreshAuthCookies {
+    error
+    __typename
+  }
+}

@@ -1,0 +1,15 @@
+mutation linkAppleAccountMutation($authCode: String!, $state: String!) {
+  linkAppleAccount(authCode: $authCode, state: $state) {
+    error {
+      code
+      accessToken
+      __typename
+    }
+    user {
+      id
+      kaid
+      __typename
+    }
+    __typename
+  }
+}

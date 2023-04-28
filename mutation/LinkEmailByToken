@@ -1,0 +1,10 @@
+mutation LinkEmailByToken($token: String!) {
+  verifyLinkedEmail(token: $token) {
+    email
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

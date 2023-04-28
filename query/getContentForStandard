@@ -1,0 +1,3 @@
+query getContentForStandard($set: String!, $standard: String) {
+  contentForStandardMappings(setId: $set, standardId: $standard)
+}

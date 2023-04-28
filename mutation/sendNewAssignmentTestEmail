@@ -1,0 +1,9 @@
+mutation sendNewAssignmentTestEmail {
+  sendNewAssignmentTestEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

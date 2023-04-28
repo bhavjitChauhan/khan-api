@@ -1,0 +1,28 @@
+query getLearnStormCampaign($id: ID!) {
+  campaign: learnStormCampaign(id: $id) {
+    id
+    live
+    eligibleLocale
+    eligibleCountryCodes
+    campaignName
+    promoSite
+    growthMindsetUrl
+    certificateUrl
+    signupStartDate
+    startDate
+    stopDate
+    shutdownDate
+    bannerEnrollmentHeader
+    bannerEnrollmentCopy
+    bannerBeforeHeader
+    bannerBeforeCopy
+    bannerDuringHeader
+    bannerDuringCopy
+    bannerAfterHeader
+    bannerAfterCopy
+    week
+    weeks
+    bannerVisible
+    __typename
+  }
+}

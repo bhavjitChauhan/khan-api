@@ -1,0 +1,8 @@
+query getFlagsSummary {
+  flags {
+    id
+    name
+    isUserPassing
+    __typename
+  }
+}

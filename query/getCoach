@@ -1,0 +1,25 @@
+query getCoach {
+  coach: user {
+    id
+    nickname
+    __typename
+  }
+  user {
+    id
+    tosForFormalTeacherStatus
+    isKmapTeacher
+    isK4dTeacher
+    schoolAffiliation {
+      id
+      name
+      country
+      postalCode
+      administrativeAreaLevel1
+      administrativeAreaLevel2
+      locality
+      __typename
+    }
+    affiliationCountryCode
+    __typename
+  }
+}

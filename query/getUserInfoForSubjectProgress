@@ -1,0 +1,20 @@
+query getUserInfoForSubjectProgress($topicId: String!) {
+  user {
+    id
+    curationItemProgress(topicId: $topicId) {
+      masteryMap {
+        progressKey
+        status
+        __typename
+      }
+      currentMastery {
+        percentage
+        pointsEarned
+        pointsAvailable
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

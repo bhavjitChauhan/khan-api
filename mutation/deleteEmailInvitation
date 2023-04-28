@@ -1,0 +1,14 @@
+mutation deleteEmailInvitation($studentEmail: String!) {
+  deleteEmailInvite(studentEmail: $studentEmail) {
+    coach: user {
+      id
+      kaid
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

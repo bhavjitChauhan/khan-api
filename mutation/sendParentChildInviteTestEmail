@@ -1,0 +1,9 @@
+mutation sendParentChildInviteTestEmail {
+  sendParentChildInviteTestEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

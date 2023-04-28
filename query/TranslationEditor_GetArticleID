@@ -1,0 +1,6 @@
+query TranslationEditor_GetArticleID($slug: String!) {
+  article(slug: $slug) {
+    id
+    __typename
+  }
+}

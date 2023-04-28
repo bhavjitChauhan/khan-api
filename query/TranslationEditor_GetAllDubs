@@ -1,0 +1,22 @@
+query TranslationEditor_GetAllDubs {
+  allDubs {
+    sourceYouTubeId
+    dubYouTubeId
+    video {
+      id
+      title
+      duration
+      dateAdded
+      translatedYoutubeId
+      parentTopic {
+        id
+        title
+        relativeUrl
+        __typename
+      }
+      urlWithinTopic
+      __typename
+    }
+    __typename
+  }
+}

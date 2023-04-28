@@ -1,0 +1,8 @@
+query articleEditorRedirectQuery($contentId: String!) {
+  articleRevisionById(id: $contentId) {
+    id
+    slug
+    sha
+    __typename
+  }
+}

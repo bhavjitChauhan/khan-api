@@ -1,0 +1,15 @@
+query careersPageQuery {
+  careers {
+    departments {
+      name
+      jobs {
+        title
+        location
+        url
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

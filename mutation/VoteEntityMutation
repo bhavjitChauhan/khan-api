@@ -1,0 +1,9 @@
+mutation VoteEntityMutation($postKey: String!, $voteType: Int!) {
+  voteEntity(entityKey: $postKey, voteType: $voteType) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,11 @@
+query getLearnStormCampaignEnrollmentStatus($campaignId: ID!) {
+  learnStormCampaignEnrollmentStatus(id: $campaignId) {
+    isEnrolled
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

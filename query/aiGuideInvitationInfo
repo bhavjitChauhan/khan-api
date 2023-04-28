@@ -1,0 +1,14 @@
+query aiGuideInvitationInfo($token: String!) {
+  aiGuideInvitationInfo(token: $token) {
+    digitalTermsOfServiceURL
+    isExpired
+    hasHitUsageLimit
+    __typename
+  }
+  isEnrolledInAIGuide
+  user {
+    id
+    age
+    __typename
+  }
+}

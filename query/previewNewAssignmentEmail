@@ -1,0 +1,7 @@
+query previewNewAssignmentEmail {
+  preview: previewNewAssignmentEmail {
+    textContent
+    htmlContent
+    __typename
+  }
+}

@@ -1,0 +1,20 @@
+query domainRevision($id: String!) {
+  domainRevision: domainRevisionById(id: $id) {
+    contentKind
+    id
+    title
+    slug
+    alternateSlugs
+    description
+    listed
+    sponsored
+    showCurationModule
+    lowerToc
+    customDescriptionTag
+    customTitleTag
+    curationData
+    sha
+    hasUnpublishedChanges
+    __typename
+  }
+}

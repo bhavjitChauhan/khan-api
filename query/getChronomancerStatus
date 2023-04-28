@@ -1,0 +1,12 @@
+query getChronomancerStatus {
+  chronomancer {
+    mode
+    isCollegeBoardIntegrationEnabled
+    outages {
+      start
+      end
+      __typename
+    }
+    __typename
+  }
+}

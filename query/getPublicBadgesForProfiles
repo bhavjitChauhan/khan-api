@@ -1,0 +1,35 @@
+query getPublicBadgesForProfiles($kaid: String) {
+  user(kaid: $kaid) {
+    id
+    profile {
+      badges {
+        ...Badge
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment Badge on Badge {
+  badgeCategory
+  description
+  fullDescription
+  isCustom
+  isRetired
+  name
+  points
+  absoluteUrl
+  hideContext
+  icons {
+    smallUrl
+    compactUrl
+    emailUrl
+    largeUrl
+    __typename
+  }
+  relativeUrl
+  slug
+  __typename
+}

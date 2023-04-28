@@ -1,0 +1,14 @@
+query InstructionalAndRitBandsQuery {
+  kmapTopics {
+    id
+    key
+    title
+    domainSlug
+    band
+    bandGradeName
+    bandKey
+    strand
+    strandKey
+    __typename
+  }
+}

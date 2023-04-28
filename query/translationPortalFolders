@@ -1,0 +1,19 @@
+query translationPortalFolders {
+  folderGroups {
+    myFolders {
+      id
+      name
+      kaLocale
+      courseIds
+      __typename
+    }
+    otherFolders {
+      id
+      name
+      kaLocale
+      courseIds
+      __typename
+    }
+    __typename
+  }
+}

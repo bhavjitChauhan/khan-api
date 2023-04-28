@@ -1,0 +1,51 @@
+query simpleCompletionQuery($assignmentId: String!, $teacherKaid: String) {
+  coach: user {
+    id
+    assignment: assignmentByThisUser(id: $assignmentId) {
+      contents {
+        id
+        translatedTitle
+        defaultUrlPath
+        kind
+        __typename
+      }
+      assignedDate
+      dueDate
+      id
+      itemCompletionStates: itemCompletionStatesForAllStudents {
+        student {
+          id
+          kaid
+          coachNickname(teacherKaid: $teacherKaid)
+          profileRoot
+          __typename
+        }
+        state
+        completedOn
+        bestScore {
+          numCorrect
+          numAttempted
+          __typename
+        }
+        exerciseAttempts {
+          id
+          isCompleted
+          isRestarted
+          numAttempted
+          numCorrect
+          lastAttemptDate
+          __typename
+        }
+        __typename
+      }
+      studentList {
+        id
+        cacheId
+        name
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

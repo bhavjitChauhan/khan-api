@@ -1,0 +1,7 @@
+query QAExpandKeyInfo($encryptedKey: String) {
+  qaExpandKeyInfo(encryptedQaExpandKey: $encryptedKey) {
+    feedbackType
+    unencryptedKey
+    __typename
+  }
+}

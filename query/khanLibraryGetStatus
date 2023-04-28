@@ -1,0 +1,6 @@
+query khanLibraryGetStatus {
+  contentEditingStatus {
+    editingEnabled
+    __typename
+  }
+}

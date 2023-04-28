@@ -1,0 +1,22 @@
+query getTeacherCampaignPreviewVideo($id: String!) {
+  video(id: $id) {
+    id
+    thumbnailUrl
+    kind
+    kaUrl
+    slug
+    translatedTitle
+    translatedYoutubeId
+    translatedDescription
+    youtubeId
+    __typename
+  }
+  user {
+    id
+    contentItemProgresses(queryBy: {videoSlug: $id}) {
+      completionStatus
+      __typename
+    }
+    __typename
+  }
+}

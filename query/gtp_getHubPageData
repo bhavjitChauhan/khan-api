@@ -1,0 +1,33 @@
+query gtp_getHubPageData($examId: String!) {
+  metadata(examId: $examId) {
+    id
+    examGroupMetadata {
+      examGroupId
+      __typename
+    }
+    subExamMode
+    __typename
+  }
+  descriptorList(examId: $examId, express: true) {
+    id
+    checkpointStr
+    expressDescriptors {
+      id
+      examId
+      kaid
+      taskType
+      translatedTitle
+      exerciseName
+      taskId
+      areaId
+      taskDurationSeconds
+      startDatetime
+      completionDatetime
+      numTotal
+      numCorrect
+      numAttempted
+      __typename
+    }
+    __typename
+  }
+}

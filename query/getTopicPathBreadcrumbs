@@ -1,0 +1,23 @@
+query getTopicPathBreadcrumbs($descriptors: [String!]!) {
+  contentForDescriptors(descriptors: $descriptors) {
+    id
+    topicPaths {
+      path {
+        id
+        kind
+        slug
+        content {
+          ... on CurationNode {
+            id
+            title
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

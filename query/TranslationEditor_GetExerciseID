@@ -1,0 +1,6 @@
+query TranslationEditor_GetExerciseID($slug: String!) {
+  exercise(name: $slug) {
+    id
+    __typename
+  }
+}

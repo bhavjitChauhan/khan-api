@@ -1,0 +1,33 @@
+query TranslationEditor_GetExerciseStrings($exerciseId: String!) {
+  exerciseStrings(exerciseId: $exerciseId) {
+    orderedProblemTypes {
+      name
+      assessmentItems
+      __typename
+    }
+    problemTypes {
+      key
+      value
+      __typename
+    }
+    translationItems {
+      assessmentItem
+      englishString
+      jiptString
+      __typename
+    }
+    translatedAssessmentItems {
+      key
+      value
+      __typename
+    }
+    __typename
+  }
+  exerciseById(id: $exerciseId) {
+    id
+    title
+    defaultUrlPath
+    listed
+    __typename
+  }
+}

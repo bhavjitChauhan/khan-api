@@ -1,0 +1,12 @@
+query ManageFolders_CoursesInFolder($folderID: String!) {
+  folderById(id: $folderID) {
+    id
+    courses {
+      id
+      contentId
+      title
+      __typename
+    }
+    __typename
+  }
+}

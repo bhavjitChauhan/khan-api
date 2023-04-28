@@ -1,0 +1,14 @@
+mutation updateDistrictRosterDistrictAdmins($districtID: String!, $enable: Boolean!) {
+  updateDistrictRosterDistrictAdmins(districtID: $districtID, enable: $enable) {
+    district {
+      id
+      rosterDistrictAdmins
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

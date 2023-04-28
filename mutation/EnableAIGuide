@@ -1,0 +1,10 @@
+mutation EnableAIGuide($kaid: String!) {
+  enableAIGuide(kaid: $kaid) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

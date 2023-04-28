@@ -1,0 +1,23 @@
+query userSpinoffsOfProgram($spinoffOrigin: SpinoffOrigin!, $pageInfo: ListProgramsPageInfo, $sort: ListProgramSortOrder) {
+  user {
+    id
+    programSpinoffs(from: $spinoffOrigin, pageInfo: $pageInfo, sort: $sort) {
+      complete
+      cursor
+      programs {
+        id
+        key
+        authorKaid
+        authorNickname
+        displayableSpinoffCount
+        imagePath
+        sumVotesIncremented
+        translatedTitle: title
+        url
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,9 @@
+query courseEditorGetPublishedTopicUnitTest($slug: String!) {
+  topicUnitTest(slug: $slug) {
+    id
+    kind
+    creationDate
+    defaultUrlPath
+    __typename
+  }
+}

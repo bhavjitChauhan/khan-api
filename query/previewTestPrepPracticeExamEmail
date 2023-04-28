@@ -1,0 +1,7 @@
+query previewTestPrepPracticeExamEmail {
+  preview: previewTestPrepPracticeExamEmail {
+    textContent
+    htmlContent
+    __typename
+  }
+}

@@ -1,0 +1,10 @@
+mutation sendKmapActivationEmailForTeacherMutation($districtEmail: String!) {
+  sendKmapActivationEmailForTeacher(districtEmail: $districtEmail) {
+    emailSent
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

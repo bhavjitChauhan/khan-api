@@ -1,0 +1,9 @@
+query localesForI18nSuggestBannerQuery {
+  localesForLanguagePicker(includeEnglish: true, includeFake: false) {
+    id
+    localName
+    kaLocale
+    displayName
+    __typename
+  }
+}

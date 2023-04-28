@@ -1,0 +1,14 @@
+mutation updateDistrictRosterSyncing($districtID: String!, $sync: Boolean!) {
+  updateDistrictRosterSyncing(districtID: $districtID, sync: $sync) {
+    district {
+      id
+      rosterSyncingEnabled
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

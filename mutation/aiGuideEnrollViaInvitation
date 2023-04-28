@@ -1,0 +1,10 @@
+mutation aiGuideEnrollViaInvitation($input: AIGuideEnrollViaInvitationInput!) {
+  aiGuideEnrollViaInvitation(input: $input) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

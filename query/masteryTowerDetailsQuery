@@ -1,0 +1,21 @@
+query masteryTowerDetailsQuery($classDescriptor: String!) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
+    id
+    cacheId
+    countStudents
+    masteryTowerCurrentWeekScore
+    masteryTowerCurrentWeekSessions
+    masteryTowerDifficultyOptions {
+      easy
+      medium
+      hard
+      __typename
+    }
+    masteryTowerConfiguration {
+      currentWeeklyGoal
+      masteryTowerName
+      __typename
+    }
+    __typename
+  }
+}

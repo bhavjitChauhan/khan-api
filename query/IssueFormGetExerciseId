@@ -1,0 +1,6 @@
+query IssueFormGetExerciseId($exerciseName: String!) {
+  exercise(name: $exerciseName) {
+    id
+    __typename
+  }
+}

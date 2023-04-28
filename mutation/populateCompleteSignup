@@ -1,0 +1,20 @@
+mutation populateCompleteSignup($token: String, $inviteId: String, $parent: Boolean) {
+  populateCompleteSignup(token: $token, inviteId: $inviteId, parent: $parent) {
+    token
+    inviteId
+    isParent
+    isTeacher
+    isStudentInvite
+    unverifiedUser {
+      email
+      nickname
+      username
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

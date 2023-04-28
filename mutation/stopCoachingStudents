@@ -1,0 +1,9 @@
+mutation stopCoachingStudents($kaids: [ID!]!) {
+  stopCoachingStudents(studentKaids: $kaids) {
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+}

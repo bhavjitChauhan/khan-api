@@ -1,0 +1,13 @@
+query getActiveDonationAsks {
+  activeDonationAsks {
+    id
+    copy
+    graphic
+    headline
+    defaultDonationFrequency
+    oneTimeDonationAmounts
+    recurringDonationAmounts
+    classyCampaignId
+    __typename
+  }
+}

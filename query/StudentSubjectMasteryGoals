@@ -1,0 +1,16 @@
+query StudentSubjectMasteryGoals {
+  user {
+    id
+    goals: subjectMasteryAssignments {
+      id
+      topic {
+        id
+        slug
+        domainSlug
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

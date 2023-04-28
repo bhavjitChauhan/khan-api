@@ -1,0 +1,7 @@
+query LocalesForStandardsEditor {
+  locales(includeEnglish: true, includeFake: false, liveOnly: true) {
+    id
+    displayName
+    __typename
+  }
+}

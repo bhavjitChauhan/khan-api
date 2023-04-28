@@ -1,0 +1,11 @@
+mutation translationEditorSignURLForTalkthroughMP3Upload($kaLocale: KALocale!, $youtubeID: String!) {
+  signURLForTalkthroughMP3Upload(kaLocale: $kaLocale, youtubeID: $youtubeID) {
+    uploadURL
+    publicURL
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

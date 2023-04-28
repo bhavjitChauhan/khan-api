@@ -1,0 +1,14 @@
+mutation EditModifyCoachesCapability($targetKaid: String!, $allow: Boolean!) {
+  setModifyCoachesCapability(targetKaid: $targetKaid, allow: $allow) {
+    target {
+      id
+      canModifyCoaches
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

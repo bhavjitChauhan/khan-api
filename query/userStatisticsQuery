@@ -1,0 +1,15 @@
+query userStatisticsQuery($kaid: String!) {
+  userSummary(kaid: $kaid) {
+    statistics {
+      answers
+      comments
+      projectanswers
+      projectquestions
+      questions
+      replies
+      votes
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,15 @@
+mutation createStudentAccounts($studentListKey: String, $students: [CreateStudentsInput]!) {
+  createStudents(students: $students, studentListKey: $studentListKey) {
+    students {
+      id
+      username
+      __typename
+    }
+    errors {
+      code
+      username
+      __typename
+    }
+    __typename
+  }
+}

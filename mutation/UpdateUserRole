@@ -1,0 +1,15 @@
+mutation UpdateUserRole($role: UserRole!, $operation: RoleOperation!, $kaid: String) {
+  updateUserRole(role: $role, operation: $operation, kaid: $kaid) {
+    error {
+      code
+      __typename
+    }
+    user {
+      id
+      isTeacher
+      isParent
+      __typename
+    }
+    __typename
+  }
+}

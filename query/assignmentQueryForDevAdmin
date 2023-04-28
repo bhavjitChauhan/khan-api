@@ -1,0 +1,35 @@
+query assignmentQueryForDevAdmin($coachKaid: String!, $contentAssignmentId: String!) {
+  coach: user(kaid: $coachKaid) {
+    id
+    assignment: assignmentByThisUser(id: $contentAssignmentId) {
+      id
+      itemCompletionStates: itemCompletionStatesForAllStudents {
+        student {
+          id
+          kaid
+          coachNickname(teacherKaid: $coachKaid)
+          __typename
+        }
+        state
+        completedOn
+        bestScore {
+          numCorrect
+          numAttempted
+          __typename
+        }
+        exerciseAttempts {
+          id
+          isCompleted
+          isRestarted
+          numAttempted
+          numCorrect
+          lastAttemptDate
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

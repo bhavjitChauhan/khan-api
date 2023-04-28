@@ -1,0 +1,16 @@
+query courseEditorSearchEditing($text: String!, $filters: [EditingSearchFilter!]) {
+  searchEditingContent(text: $text, filters: $filters, limit: 100) {
+    ... on ContentRevision {
+      id
+      contentKind
+      contentId
+      __typename
+    }
+    ... on LearnableContentRevision {
+      title
+      translatedTitle
+      __typename
+    }
+    __typename
+  }
+}

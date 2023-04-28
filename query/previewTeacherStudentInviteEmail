@@ -1,0 +1,7 @@
+query previewTeacherStudentInviteEmail {
+  preview: previewTeacherStudentInviteEmail {
+    textContent
+    htmlContent
+    __typename
+  }
+}

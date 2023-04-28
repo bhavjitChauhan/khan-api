@@ -1,0 +1,29 @@
+query getCreateMasteryAssignmentsFormData($classroomDescriptor: String!, $coursesIds: [String]!) {
+  classroomByDescriptorV2(descriptor: $classroomDescriptor) {
+    id
+    cacheId
+    studentKaidsAndNicknames {
+      id
+      kaid
+      coachNickname
+      __typename
+    }
+    __typename
+  }
+  coursesByIds(ids: $coursesIds) {
+    id
+    translatedTitle
+    unitChildren {
+      id
+      masteryEnabled
+      translatedTitle
+      learnableContentSummary {
+        countExercises
+        __typename
+      }
+      iconPath
+      __typename
+    }
+    __typename
+  }
+}

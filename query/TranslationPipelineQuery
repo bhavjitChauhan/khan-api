@@ -1,0 +1,35 @@
+query TranslationPipelineQuery {
+  crowdinLocales
+  currentPipelines {
+    timestamp
+    crowdinLocale
+    priority
+    archiveId
+    pipelines {
+      stage
+      status
+      startTime
+      endTime
+      message
+      attempts
+      __typename
+    }
+    __typename
+  }
+  historicalPipelines {
+    timestamp
+    crowdinLocale
+    priority
+    archiveId
+    pipelines {
+      stage
+      status
+      startTime
+      endTime
+      message
+      attempts
+      __typename
+    }
+    __typename
+  }
+}

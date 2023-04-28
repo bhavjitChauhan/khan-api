@@ -1,0 +1,35 @@
+mutation LinkUDIToUserMutation($uuid: ID!, $kaid: ID!) {
+  linkUserDistrictInfoV2(uuid: $uuid, kaid: $kaid, method: DEVADMIN) {
+    succeeded
+    user {
+      id
+      userDistrictInfos {
+        id
+        district {
+          id
+          name
+          __typename
+        }
+        createdAt
+        updatedAt
+        uuid
+        kaid
+        activatedAt
+        activationMethod
+        activationEmailSentAt
+        districtProvidedFullName
+        districtProvidedEmail
+        primaryRole
+        isKmap
+        adminOfSchools {
+          id
+          name
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

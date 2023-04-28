@@ -1,0 +1,11 @@
+fragment khanLibraryDomainRevision on DomainRevision {
+  id
+  sha
+  childrenDescriptors {
+    canonicalId
+    contentId
+    kind
+    __typename
+  }
+  __typename
+}

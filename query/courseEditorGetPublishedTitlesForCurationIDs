@@ -1,0 +1,9 @@
+query courseEditorGetPublishedTitlesForCurationIDs($ids: [String!]!) {
+  topicsById(ids: $ids) {
+    id
+    contentKind
+    title
+    translatedTitle
+    __typename
+  }
+}

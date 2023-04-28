@@ -1,0 +1,14 @@
+mutation updateDistrictTeacherActivationEmails($districtID: String!, $enable: Boolean!) {
+  updateDistrictTeacherActivationEmails(districtID: $districtID, enable: $enable) {
+    district {
+      id
+      sendActivationEmails
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

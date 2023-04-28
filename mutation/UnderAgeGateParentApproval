@@ -1,0 +1,39 @@
+mutation UnderAgeGateParentApproval($username: String!) {
+  underAgeGateParentApproval(username: $username) {
+    error {
+      code
+      __typename
+    }
+    user {
+      id
+      nickname
+      underAgeGatePendingApprovals {
+        username
+        daysUntilCutoff
+        __typename
+      }
+      childInvitations {
+        invitationType
+        email
+        requestKey
+        nickname
+        __typename
+      }
+      parentChildren: children {
+        id
+        coachNickname
+        kaid
+        userId
+        isUnderAgeGateManagedByActor
+        avatar {
+          name
+          imageSrc
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

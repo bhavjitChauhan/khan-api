@@ -1,0 +1,6 @@
+mutation clearRecommendationFor321ContentItem($contentDescriptor: String!, $unitId: String!) {
+  clearRecommendation(contentDescriptor: $contentDescriptor, unitId: $unitId) {
+    wasSuccessful
+    __typename
+  }
+}

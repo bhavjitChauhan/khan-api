@@ -1,0 +1,15 @@
+query khanLibraryGetFolder($id: String!) {
+  folderById(id: $id) {
+    ...Folder
+    __typename
+  }
+}
+
+fragment Folder on Folder {
+  ...BaseFolder
+  courses {
+    ...PublishedCourseRevisionFragment
+    __typename
+  }
+  __typename
+}

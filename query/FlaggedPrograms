@@ -1,0 +1,38 @@
+query FlaggedPrograms($page: Int, $sort: ModerationSortOrder, $limit: Int) {
+  flaggedPrograms(page: $page, sort: $sort, limit: $limit) {
+    programs {
+      programID: id
+      key
+      appearsAsDeleted
+      date: created
+      deleted
+      hideFromHotlist
+      flaggedBy: flaggedByKaids
+      flags
+      permalink: url
+      relativeUrl: url
+      sumVotesIncremented
+      title
+      thumbnail: imagePath
+      latestRevision {
+        code
+        created
+        __typename
+      }
+      author {
+        id
+        kaid
+        nickname
+        avatar {
+          name
+          imageSrc
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    total
+    __typename
+  }
+}

@@ -1,0 +1,9 @@
+mutation resendVerificationEmail($token: String!) {
+  resendVerificationEmail(token: $token) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

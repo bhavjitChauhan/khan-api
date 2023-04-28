@@ -1,0 +1,18 @@
+query articleRevisionsForDiff($contentId: String!) {
+  allArticleRevisionsById(id: $contentId) {
+    revisions {
+      id
+      cacheId: sha
+      sha
+      creationDate
+      createdBy {
+        id
+        nickname
+        __typename
+      }
+      __typename
+    }
+    hasMore
+    __typename
+  }
+}

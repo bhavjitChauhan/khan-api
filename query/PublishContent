@@ -1,0 +1,29 @@
+query PublishContent($id: String!) {
+  publishContent(id: $id) {
+    changes {
+      id
+      kind
+      slug
+      title
+      cmsUrl
+      operations {
+        operation
+        parentTitle
+        __typename
+      }
+      __typename
+    }
+    diff {
+      id
+      sha
+      kind
+      slug
+      title
+      authorNickname
+      cmsUrl
+      __typename
+    }
+    isForCourse
+    __typename
+  }
+}

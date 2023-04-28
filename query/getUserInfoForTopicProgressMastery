@@ -1,0 +1,53 @@
+query getUserInfoForTopicProgressMastery($topicId: String!) {
+  user {
+    contentItemProgresses(queryBy: {parentTopicId: $topicId}) {
+      ...CommonContentItemProgressesFragment
+      __typename
+    }
+    ...CommonUserInfoFragment
+    __typename
+  }
+}
+
+fragment CommonContentItemProgressesFragment on ContentItemProgress {
+  bestScore {
+    numAttempted
+    numCorrect
+    completedDate
+    __typename
+  }
+  completionStatus
+  content {
+    id
+    progressKey
+    __typename
+  }
+  __typename
+}
+
+fragment CommonUserInfoFragment on User {
+  id
+  curationItemProgress(topicId: $topicId) {
+    masteryEnabled
+    subjectMasteryEnabled
+    masteryMap {
+      progressKey
+      status
+      __typename
+    }
+    currentMastery {
+      percentage
+      pointsEarned
+      pointsAvailable
+      __typename
+    }
+    __typename
+  }
+  recommendationsForUnit(unitId: $topicId) {
+    contentId
+    sourceId
+    kind
+    __typename
+  }
+  __typename
+}

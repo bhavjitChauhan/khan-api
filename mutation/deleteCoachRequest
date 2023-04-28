@@ -1,0 +1,14 @@
+mutation deleteCoachRequest($studentEmail: String!) {
+  deleteCoachRequest(studentEmail: $studentEmail) {
+    coach: user {
+      id
+      kaid
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

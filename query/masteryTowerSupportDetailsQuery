@@ -1,0 +1,15 @@
+query masteryTowerSupportDetailsQuery($classDescriptor: String!) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
+    id
+    cacheId
+    masteryTowerCurrentWeekScore
+    masteryTowerCurrentWeekSessions
+    masteryTowerConfiguration {
+      currentWeeklyGoal
+      masteryTowerName
+      dateRange
+      __typename
+    }
+    __typename
+  }
+}

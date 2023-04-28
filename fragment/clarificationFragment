@@ -1,0 +1,8 @@
+fragment clarificationFragment on OfficialClarification {
+  id
+  text
+  openTimestamp
+  closeTimestamp
+  youtubeId
+  __typename
+}

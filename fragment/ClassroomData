@@ -1,0 +1,12 @@
+fragment ClassroomData on StudentList {
+  cacheId
+  id
+  descriptor
+  name
+  key
+  signupCode
+  googleClassId
+  googleClassName
+  googleClassUrl
+  __typename
+}

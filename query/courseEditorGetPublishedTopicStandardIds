@@ -1,0 +1,7 @@
+query courseEditorGetPublishedTopicStandardIds($slug: String!, $locale: String!) {
+  topic(slug: $slug) {
+    id
+    mappedStandardIds(locale: $locale)
+    __typename
+  }
+}

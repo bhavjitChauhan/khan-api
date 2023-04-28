@@ -1,0 +1,12 @@
+query getVideoPlayerSettings {
+  user {
+    id
+    hasClasses
+    hasPermission(name: "can_moderate_users")
+    muteVideos
+    noColorInVideos
+    showCaptions
+    playbackRate
+    __typename
+  }
+}

@@ -1,0 +1,7 @@
+query isHellbanned($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    discussionBanned
+    __typename
+  }
+}

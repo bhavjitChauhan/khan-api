@@ -1,0 +1,20 @@
+fragment UserFields on User {
+  id
+  kaid
+  lastLogin
+  points
+  profileRoot
+  nickname
+  joined
+  authEmails
+  userId
+  username
+  coaches {
+    id
+    email
+    username
+    kaid
+    __typename
+  }
+  __typename
+}

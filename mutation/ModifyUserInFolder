@@ -1,0 +1,17 @@
+mutation ModifyUserInFolder($folderId: ID!, $userKaid: String!, $operation: FolderEditOperation!) {
+  updateTeamKaidsInFolder(folderId: $folderId, kaid: $userKaid, operation: $operation) {
+    folder {
+      id
+      kaLocale
+      name
+      courseIds
+      teamKaids
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

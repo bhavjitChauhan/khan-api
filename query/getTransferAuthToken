@@ -1,0 +1,7 @@
+query getTransferAuthToken {
+  user {
+    id
+    transferAuthToken
+    __typename
+  }
+}

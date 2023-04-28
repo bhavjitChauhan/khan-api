@@ -1,0 +1,129 @@
+mutation CourseEditorEditCourseSponsor($input: EditCourseSponsor!) {
+  mutated: editCourseSponsor(inputData: $input) {
+    course {
+      ...CourseStructure
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment CourseStructure on CourseRevision {
+  id
+  contentId
+  translationFingerprint
+  title
+  description
+  customTitleTag
+  customDescriptionTag
+  slugRedirects {
+    redirectType
+    oldSlug
+    contentId
+    __typename
+  }
+  legacySlugRedirects {
+    redirectType
+    oldSlug
+    contentId
+    __typename
+  }
+  slugsEverPublished
+  locale
+  slug
+  importedCurationData
+  linkedCourseStructure
+  curriculumKey
+  footerHtml
+  allowedExerciseTypes
+  hideCommunityQuestions
+  listed
+  importable
+  masteryEnabled
+  introSetting {
+    title
+    description
+    buttonText
+    internalContent
+    externalUrl
+    hideButton
+    __typename
+  }
+  sponsorSetting {
+    sponsorImageSetting {
+      imageUrl
+      imageCaption
+      imageBaselineAligned
+      __typename
+    }
+    taglineHtml
+    __typename
+  }
+  operationId
+  lastPublishedOperationId
+  snapshotCount
+  intent
+  resources
+  changeLog
+  items {
+    ... on CourseRevisionUnit {
+      type
+      id
+      cacheId
+      contentId
+      slugSuffix
+      translationFingerprint
+      title
+      description
+      listed
+      customTitleTag
+      customDescriptionTag
+      masteryEnabled
+      unitTestContentId
+      unitTestSlug
+      intent
+      resources
+      changeLog
+      items {
+        ... on CourseRevisionLesson {
+          type
+          id
+          cacheId
+          contentId
+          slugSuffix
+          translationFingerprint
+          title
+          description
+          listed
+          intent
+          resources
+          changeLog
+          items {
+            ... on CourseRevisionContent {
+              type
+              id
+              cacheId
+              contentId
+              contentKind
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        ... on CourseRevisionQuiz {
+          type
+          id
+          slug
+          cacheId
+          contentId
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  __typename
+}

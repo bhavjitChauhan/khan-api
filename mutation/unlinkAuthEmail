@@ -1,0 +1,14 @@
+mutation unlinkAuthEmail($authEmail: String!) {
+  unlinkEmail(authEmail: $authEmail) {
+    user {
+      id
+      authEmails
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

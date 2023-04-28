@@ -1,0 +1,41 @@
+mutation UpdateTeamPageEntry($entryId: ID!, $content: TeamPageEntryInput!) {
+  updateTeamPageEntry(entryId: $entryId, content: $content) {
+    updatedEntry {
+      ...entry
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment entry on TeamPageEntryForEditing {
+  id
+  isPet
+  isIntern
+  isAlum
+  hasPendingChanges
+  draftContent {
+    id
+    name
+    altNames
+    startDate
+    isAlum
+    mainPhotoURL
+    hoverPhotoURL
+    title
+    bio
+    contactLinks {
+      type
+      editValue
+      editPrefix
+      url
+      __typename
+    }
+    __typename
+  }
+  __typename
+}

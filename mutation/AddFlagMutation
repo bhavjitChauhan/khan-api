@@ -1,0 +1,24 @@
+mutation AddFlagMutation($flagName: String!, $description: String!, $team: String!, $rules: [RuleInput!]!) {
+  addFlag(name: $flagName, description: $description, team: $team, rules: $rules) {
+    flag {
+      id
+      name
+      description
+      team
+      created
+      expires
+      rules {
+        name
+        whitelist
+        context {
+          name
+          value
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

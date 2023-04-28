@@ -1,0 +1,16 @@
+query contentEditorGetProjectRevision($id: String!) {
+  projectRevisionById(id: $id) {
+    ...ProjectRevision
+    __typename
+  }
+}
+
+fragment ProjectRevision on ProjectRevision {
+  id
+  contentId
+  contentKind
+  slug
+  sha
+  listed
+  __typename
+}

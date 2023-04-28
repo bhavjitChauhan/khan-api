@@ -1,0 +1,6 @@
+query getResources {
+  coachResourcesCurationPage {
+    curationData
+    __typename
+  }
+}

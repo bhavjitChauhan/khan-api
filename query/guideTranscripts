@@ -1,0 +1,13 @@
+query guideTranscripts($kaid: String!, $cursor: String) {
+  aiGuideThreads(kaid: $kaid, cursor: $cursor) {
+    threads {
+      id
+      summary
+      lastUpdatedAt
+      flagged
+      __typename
+    }
+    cursor
+    __typename
+  }
+}

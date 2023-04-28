@@ -1,0 +1,46 @@
+query contentEditorExerciseRevisions($contentId: String!) {
+  allExerciseRevisionsById(id: $contentId) {
+    revisions {
+      ...contentEditorContentRevision
+      ...contentEditorLearnableContent
+      createdBy {
+        id
+        nickname
+        __typename
+      }
+      authorName
+      covers
+      prerequisites
+      relatedContent
+      completionCriteria: suggestedCompletionCriteria
+      problemItems: problemTypes {
+        name
+        relatedVideos
+        items {
+          id
+          sha
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment contentEditorContentRevision on ContentRevision {
+  id
+  cacheId: sha
+  creationDate
+  __typename
+}
+
+fragment contentEditorLearnableContent on LearnableContentRevision {
+  doNotPublish
+  listed
+  slug
+  title
+  description
+  __typename
+}

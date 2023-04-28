@@ -1,0 +1,6 @@
+query TranslationEditor_GetCurationNodeID($slug: String!) {
+  topic(slug: $slug) {
+    id
+    __typename
+  }
+}

@@ -1,0 +1,9 @@
+mutation removeParents($childKaid: String!, $parentKaid: String!) {
+  removeParents(childKaid: $childKaid, parentKaid: $parentKaid) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

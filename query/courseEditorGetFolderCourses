@@ -1,0 +1,9 @@
+query courseEditorGetFolderCourses($ids: [String!]!) {
+  courses(ids: $ids) {
+    id
+    contentId
+    title
+    importable
+    __typename
+  }
+}

@@ -1,0 +1,16 @@
+mutation SetVideo($kaid: String!, $muteVideos: Boolean!, $showCaptions: Boolean!, $playbackRate: PlaybackRate!) {
+  setSettings(kaid: $kaid, muteVideos: $muteVideos, showCaptions: $showCaptions, playbackRate: $playbackRate) {
+    user {
+      id
+      muteVideos
+      showCaptions
+      playbackRate
+      __typename
+    }
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+}

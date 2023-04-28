@@ -1,0 +1,8 @@
+query CourseMenuEditor_ContentStageItems($kaLocale: KALocale!, $descriptors: [String!]!) {
+  contentStageItems(kaLocale: $kaLocale, contentDescriptors: $descriptors) {
+    id
+    contentId
+    isModified
+    __typename
+  }
+}

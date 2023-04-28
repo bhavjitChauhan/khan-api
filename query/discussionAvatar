@@ -1,0 +1,11 @@
+query discussionAvatar {
+  user {
+    id
+    avatar {
+      name
+      imageSrc
+      __typename
+    }
+    __typename
+  }
+}

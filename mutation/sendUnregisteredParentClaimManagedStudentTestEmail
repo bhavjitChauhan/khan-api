@@ -1,0 +1,9 @@
+mutation sendUnregisteredParentClaimManagedStudentTestEmail {
+  sendUnregisteredParentClaimManagedStudentTestEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

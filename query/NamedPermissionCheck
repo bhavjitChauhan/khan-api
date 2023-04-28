@@ -1,0 +1,7 @@
+query NamedPermissionCheck($name: String!, $scope: Scope) {
+  user {
+    id
+    hasPermission(name: $name, scope: $scope)
+    __typename
+  }
+}

@@ -1,0 +1,17 @@
+query UserDowngradedQuery {
+  user {
+    id
+    userDistrictInfos(includeDeleted: true) {
+      id
+      district {
+        id
+        name
+        __typename
+      }
+      deletedAt
+      primaryRole
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,26 @@
+query ActiveDistrictQuery($districtName: String!, $from: DateTime, $upTo: DateTime, $schoolIds: [ID!], $gradeLevels: [DistrictGradeLevel!], $courseSIS: [String!]) {
+  district(districtName: $districtName) {
+    id
+    schools {
+      id
+      name
+      isKADSchool
+      isKmapSchool
+      __typename
+    }
+    activeGrades(from: $from, upTo: $upTo, schoolIds: $schoolIds) {
+      id
+      sortIndex
+      name
+      __typename
+    }
+    activeCourseSISNumbers(from: $from, upTo: $upTo, schoolIds: $schoolIds, gradeLevels: $gradeLevels)
+    activeTeachers(from: $from, upTo: $upTo, schoolIds: $schoolIds, gradeLevels: $gradeLevels, courseSIS: $courseSIS) {
+      id
+      kaid
+      displayNameForTeacher
+      __typename
+    }
+    __typename
+  }
+}

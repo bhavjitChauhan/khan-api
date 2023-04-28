@@ -1,0 +1,9 @@
+mutation DeletePostMutation($postKey: String!) {
+  hideFeedback(feedbackKey: $postKey) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

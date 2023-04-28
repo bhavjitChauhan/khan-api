@@ -1,0 +1,10 @@
+query isCleverTeacher {
+  user {
+    id
+    cleverId
+    isTeacher
+    isKmapTeacher
+    isK4dTeacher
+    __typename
+  }
+}

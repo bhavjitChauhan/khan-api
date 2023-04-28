@@ -1,0 +1,13 @@
+query getStripeSubscriptionForEditing($subscriptionId: String!) {
+  simplifiedStripeSubscription(subscriptionId: $subscriptionId) {
+    id
+    customerName
+    customerId
+    last4
+    status
+    expMonth
+    expYear
+    monthlyAmountCents
+    __typename
+  }
+}

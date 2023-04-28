@@ -1,0 +1,45 @@
+query districtHomepageProgress($districtID: String!, $schoolIDs: [ID!], $mapOnly: Boolean) {
+  districtHomepage(districtID: $districtID, schoolIDs: $schoolIDs) {
+    top5CourseSchool {
+      course {
+        id
+        title
+        __typename
+      }
+      school {
+        id
+        name
+        __typename
+      }
+      info {
+        attemptedPercent
+        familiarPercent
+        proficientPercent
+        masteredPercent
+        __typename
+      }
+      __typename
+    }
+    top5GradeSchool(mapOnly: $mapOnly) {
+      gradeLevel {
+        id
+        name
+        __typename
+      }
+      school {
+        id
+        name
+        __typename
+      }
+      info {
+        attemptedPercent
+        familiarPercent
+        proficientPercent
+        masteredPercent
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

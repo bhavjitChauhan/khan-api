@@ -1,0 +1,43 @@
+query ProgressByStudent($assignmentFilters: CoachAssignmentFilters, $classDescriptor: String!, $pageSize: Int, $after: ID) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    descriptor
+    name
+    studentKaidsAndNicknames {
+      id
+      coachNickname
+      __typename
+    }
+    assignmentsPage(filters: $assignmentFilters, after: $after, pageSize: $pageSize) {
+      assignments {
+        id
+        dueDate
+        contents {
+          id
+          translatedTitle
+          kind
+          defaultUrlPath
+          __typename
+        }
+        itemCompletionStates: itemCompletionStatesForAllStudents {
+          completedOn
+          studentKaid
+          bestScore {
+            numAttempted
+            numCorrect
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      pageInfo {
+        nextCursor
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

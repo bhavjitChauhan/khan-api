@@ -1,0 +1,47 @@
+query getFeedbackRepliesPage($postKey: String!, $cursor: String, $limit: Int!) {
+  feedbackRepliesPaginated(feedbackKey: $postKey, cursor: $cursor, limit: $limit) {
+    cursor
+    isComplete
+    feedback {
+      isLocked
+      isPinned
+      expandKey
+      appearsAsDeleted
+      author {
+        id
+        kaid
+        nickname
+        avatar {
+          name
+          imageSrc
+          __typename
+        }
+        __typename
+      }
+      content
+      date
+      definitelyNotSpam
+      deleted
+      downVoted
+      expandKey
+      feedbackType
+      flaggedBy
+      flaggedByUser
+      flags
+      focusUrl
+      fromVideoAuthor
+      key
+      lowQualityScore
+      notifyOnAnswer
+      permalink
+      qualityKind
+      replyCount
+      replyExpandKeys
+      showLowQualityNotice
+      sumVotesIncremented
+      upVoted
+      __typename
+    }
+    __typename
+  }
+}

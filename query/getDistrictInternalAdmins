@@ -1,0 +1,9 @@
+query getDistrictInternalAdmins($districtID: String!) {
+  getDistrictInternalAdmins(districtID: $districtID) {
+    id
+    kaid
+    districtProvidedFullName
+    districtProvidedEmail
+    __typename
+  }
+}

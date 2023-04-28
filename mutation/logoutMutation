@@ -1,0 +1,6 @@
+mutation logoutMutation($allowClever: Boolean!, $continueUrl: String!, $finish: Boolean!) {
+  logout(allowClever: $allowClever, continueUrl: $continueUrl, finish: $finish) {
+    continueUrl
+    __typename
+  }
+}

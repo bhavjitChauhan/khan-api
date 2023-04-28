@@ -1,0 +1,8 @@
+fragment Folder on Folder {
+  ...BaseFolder
+  courses {
+    ...PublishedCourseRevisionFragment
+    __typename
+  }
+  __typename
+}

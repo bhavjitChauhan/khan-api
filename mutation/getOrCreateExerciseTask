@@ -1,0 +1,214 @@
+mutation getOrCreateExerciseTask($input: GetOrCreateExerciseTaskInput!) {
+  getOrCreateExerciseTask(input: $input) {
+    result {
+      error {
+        code
+        debugMessage
+        __typename
+      }
+      userTask {
+        cards {
+          done
+          cardType
+          ... on ProblemCard {
+            exerciseName
+            problemType
+            __typename
+          }
+          __typename
+        }
+        includeSkipButton
+        task {
+          id
+          key
+          pointBounty
+          pointsEarned
+          taskType
+          completionCriteria {
+            name
+            __typename
+          }
+          ... on MasteryChallengeTask {
+            expirationTime
+            promotionCriteria {
+              name
+              value
+              __typename
+            }
+            reservedItems
+            reservedItemsCompleted
+            taskAttemptHistory {
+              correct
+              timeDone
+              seenHint
+              itemId
+              __typename
+            }
+            __typename
+          }
+          ... on SubjectChallengeTask {
+            promotionCriteria {
+              name
+              value
+              __typename
+            }
+            reservedItems
+            reservedItemsCompleted
+            taskAttemptHistory {
+              correct
+              timeDone
+              seenHint
+              itemId
+              __typename
+            }
+            __typename
+          }
+          ... on TopicQuizTask {
+            contentKey
+            promotionCriteria {
+              name
+              value
+              __typename
+            }
+            reservedItems
+            reservedItemsCompleted
+            taskAttemptHistory {
+              correct
+              timeDone
+              seenHint
+              itemId
+              __typename
+            }
+            __typename
+          }
+          ... on TopicUnitTestTask {
+            contentKey
+            promotionCriteria {
+              name
+              value
+              __typename
+            }
+            reservedItems
+            reservedItemsCompleted
+            taskAttemptHistory {
+              correct
+              timeDone
+              seenHint
+              itemId
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        userExercises {
+          ...exerciseTaskUserExerciseFields
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment exerciseTaskUserExerciseFields on UserExercise {
+  exerciseModel: exercise {
+    id
+    assessmentItemCount: numAssessmentItems
+    displayName
+    isQuiz
+    isSkillCheck
+    name
+    nodeSlug
+    progressKey
+    translatedDisplayName
+    relatedContent {
+      id
+      contentKind
+      kind
+      thumbnailUrl
+      translatedTitle
+      topicPaths {
+        path {
+          id
+          kind
+          slug
+          __typename
+        }
+        __typename
+      }
+      ... on Article {
+        kaUrl
+        nodeSlug
+        relativeUrl
+        slug
+        __typename
+      }
+      ... on Video {
+        duration
+        imageUrl
+        kaUrl
+        nodeSlug
+        relativeUrl
+        slug
+        translatedYoutubeId
+        __typename
+      }
+      __typename
+    }
+    relatedVideos {
+      contentKind
+      duration
+      id
+      imageUrl
+      kaUrl
+      kind
+      nodeSlug
+      progressKey
+      relativeUrl
+      slug
+      thumbnailUrl
+      translatedDescription
+      translatedTitle
+      translatedYoutubeId
+      __typename
+    }
+    problemTypes {
+      items {
+        id
+        live
+        sha
+        __typename
+      }
+      name
+      relatedVideos
+      __typename
+    }
+    translatedProblemTypes {
+      items {
+        id
+        live
+        sha
+        __typename
+      }
+      name
+      relatedVideos
+      __typename
+    }
+    __typename
+  }
+  exercise: exerciseName
+  fpmMasteryLevel
+  lastAttemptNumber
+  lastCountHints
+  lastDone
+  lastMasteryUpdate
+  longestStreak
+  maximumExerciseProgressDt: maximumExerciseProgressDate
+  streak
+  totalCorrect
+  totalDone
+  __typename
+}

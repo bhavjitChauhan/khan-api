@@ -1,0 +1,18 @@
+query masteryTowerCurrentLeaderboardQuery($classDescriptor: String!) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
+    id
+    cacheId
+    masteryTowerLeaderboard {
+      classDescriptor
+      masteryTowerName
+      sessionCount
+      score
+      __typename
+    }
+    masteryTowerConfiguration {
+      dateRange
+      __typename
+    }
+    __typename
+  }
+}

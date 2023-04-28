@@ -1,0 +1,17 @@
+query getUsersWithGrantsForEmail($email: String!) {
+  usersWithGrants(email: $email) {
+    id
+    email
+    kaid
+    nickname
+    grants {
+      permissionId
+      role {
+        name
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,15 @@
+query GetAssessmentItemTags {
+  assessmentItemTags(filter: ALL) {
+    ...AssessmentItemTagFields
+    __typename
+  }
+}
+
+fragment AssessmentItemTagFields on AssessmentItemTag {
+  editId: id
+  id: urlsafeTag
+  displayName
+  description
+  relatedContentId: lessonId
+  __typename
+}

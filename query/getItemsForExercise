@@ -1,0 +1,18 @@
+query getItemsForExercise($id: String!) {
+  exercise: exerciseById(id: $id) {
+    id
+    problemTypes {
+      items {
+        id
+        __typename
+      }
+      __typename
+    }
+    assessmentItems {
+      id
+      tags: tagIds
+      __typename
+    }
+    __typename
+  }
+}

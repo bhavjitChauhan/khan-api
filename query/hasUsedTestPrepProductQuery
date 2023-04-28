@@ -1,0 +1,7 @@
+query hasUsedTestPrepProductQuery($examGroupId: String!) {
+  examGroup(examGroupId: $examGroupId) {
+    id
+    actorHasUsedProduct
+    __typename
+  }
+}

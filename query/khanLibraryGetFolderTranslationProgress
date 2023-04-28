@@ -1,0 +1,20 @@
+query khanLibraryGetFolderTranslationProgress($folderId: String!) {
+  folderTranslationProgress(folderId: $folderId) {
+    courses {
+      ...tapCourseNode
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment tapCourseNode on TAPCourseNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapUnitNode
+    __typename
+  }
+  __typename
+}

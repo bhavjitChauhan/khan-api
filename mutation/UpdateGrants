@@ -1,0 +1,17 @@
+mutation UpdateGrants($kaid: ID!, $rolesToGrant: [RoleInput!]!, $roleIdsToRevoke: [ID!]!) {
+  revokeAndGrantRoles(kaid: $kaid, rolesToGrant: $rolesToGrant, roleIdsToRevoke: $roleIdsToRevoke) {
+    userWithGrants {
+      id
+      grants {
+        permissionId
+        role {
+          name
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

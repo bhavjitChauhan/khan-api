@@ -1,0 +1,6 @@
+mutation submitStory($story: SubmitStoryInput!) {
+  submitStory(story: $story) {
+    success
+    __typename
+  }
+}

@@ -1,0 +1,9 @@
+mutation updateDistrictGoLiveDate($districtID: String!, $goLiveDate: Date!) {
+  updateDistrictGoLiveDate(districtID: $districtID, goLiveDate: $goLiveDate) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

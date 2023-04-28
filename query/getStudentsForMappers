@@ -1,0 +1,29 @@
+query getStudentsForMappers {
+  user {
+    id
+    nickname
+    username
+    age
+    studentLists: coachedStudentLists {
+      id
+      cacheId
+      key
+      name
+      __typename
+    }
+    students: coachees {
+      id
+      nickname
+      username
+      age
+      studentLists {
+        id
+        cacheId
+        key
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

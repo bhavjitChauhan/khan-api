@@ -1,0 +1,9 @@
+mutation rejectCoachRequestMutation($coachKaid: String!, $studentKaid: String) {
+  deleteCoachRequestAsStudent(coachKaid: $coachKaid, studentKaid: $studentKaid) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

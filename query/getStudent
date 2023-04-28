@@ -1,0 +1,11 @@
+query getStudent($kaid: String!, $teacherKaid: String!) {
+  user(kaid: $kaid) {
+    id
+    email
+    username
+    nickname
+    coachNickname(teacherKaid: $teacherKaid)
+    profileRoot
+    __typename
+  }
+}

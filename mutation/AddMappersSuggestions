@@ -1,0 +1,23 @@
+mutation AddMappersSuggestions($kaid: String!, $categories: [AddMappersCategoryInput]!) {
+  addMappersCategories(studentKaid: $kaid, categories: $categories) {
+    mappersSuggestions {
+      unit {
+        id
+        title: translatedTitle
+        relativeUrl
+        __typename
+      }
+      progress {
+        completed
+        total
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,10 @@
+mutation deleteDonationAsk($id: String!) {
+  deleteDonationAsk(id: $id) {
+    success
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

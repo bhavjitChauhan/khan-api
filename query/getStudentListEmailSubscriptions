@@ -1,0 +1,19 @@
+query getStudentListEmailSubscriptions($studentListId: String!) {
+  coach: user {
+    id
+    emailSubscriptions {
+      coachReportSubscription: classroomEmailSubscriptionForClassroomID(classroomID: $studentListId) {
+        checked
+        token
+        __typename
+      }
+      satCoachReportSubscription: satClassroomEmailSubscriptionForClassroomID(classroomID: $studentListId) {
+        checked
+        token
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

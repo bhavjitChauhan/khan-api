@@ -1,0 +1,9 @@
+mutation PullTestResultForDistrict($districtID: String!, $force: Boolean!) {
+  pullTestResultForDistrict(districtID: $districtID, force: $force) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

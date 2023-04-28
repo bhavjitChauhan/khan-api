@@ -1,0 +1,9 @@
+query checkUsername($username: String!) {
+  checkUsername(username: $username) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,22 @@
+query getProfileWidgetPrograms($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    profile {
+      programs {
+        id
+        authorKaid
+        authorNickname
+        deleted
+        displayableSpinoffCount
+        imagePath
+        key
+        sumVotesIncremented
+        translatedTitle: title
+        url
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

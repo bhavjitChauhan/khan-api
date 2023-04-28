@@ -1,0 +1,21 @@
+query FetchFlagsQuery {
+  flags {
+    id
+    name
+    description
+    team
+    expires
+    created
+    rules {
+      name
+      whitelist
+      context {
+        name
+        value
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

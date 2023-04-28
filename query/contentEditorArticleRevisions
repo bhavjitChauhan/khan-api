@@ -1,0 +1,33 @@
+query contentEditorArticleRevisions($contentId: String!) {
+  allArticleRevisionsById(id: $contentId) {
+    revisions {
+      ...contentEditorContentRevision
+      ...contentEditorLearnableContent
+      createdBy {
+        id
+        nickname
+        __typename
+      }
+      authorNames
+      content: perseusContent
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment contentEditorContentRevision on ContentRevision {
+  id
+  cacheId: sha
+  creationDate
+  __typename
+}
+
+fragment contentEditorLearnableContent on LearnableContentRevision {
+  doNotPublish
+  listed
+  slug
+  title
+  description
+  __typename
+}

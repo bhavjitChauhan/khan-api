@@ -1,0 +1,33 @@
+query TranslationEditor_GetVideoTranslationStatus($kaLocale: String!) {
+  allVideoTranslationProgressForKaLocale(kaLocale: $kaLocale) {
+    id
+    slug
+    title
+    isDubbed
+    dubIsSubtitled
+    isSubtitled
+    revisionStatus
+    upstreamDuration
+    youtubeId
+    upstreamYoutubeId
+    lesson {
+      id
+      slug
+      title
+      unit: parent {
+        id
+        slug
+        title
+        course: parent {
+          id
+          slug
+          title
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

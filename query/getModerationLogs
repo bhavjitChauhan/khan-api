@@ -1,0 +1,23 @@
+query getModerationLogs($limit: Int!, $cursor: String!) {
+  moderationLogs(limit: $limit, cursor: $cursor) {
+    moderationLogs {
+      date
+      description {
+        href
+        linkText
+        postText
+        preText
+        __typename
+      }
+      moderator {
+        id
+        kaid
+        nickname
+        __typename
+      }
+      __typename
+    }
+    nextCursor
+    __typename
+  }
+}

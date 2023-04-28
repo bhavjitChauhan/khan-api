@@ -1,0 +1,66 @@
+query getSatSkill($skillId: String!) {
+  satSkill(skillId: $skillId) {
+    name
+    domain
+    subDomain
+    categoryTitle
+    frequencyBand
+    relatedTopics {
+      id
+      title
+      iconPath
+      relativeUrl
+      __typename
+    }
+    relatedVideos {
+      id
+      kind
+      title
+      youtubeId
+      thumbnailUrl
+      relativeUrl
+      duration
+      slug
+      __typename
+    }
+    relatedExercises {
+      id
+      kind
+      title
+      thumbnailUrl
+      relativeUrl
+      slug
+      __typename
+    }
+    relatedArticles {
+      id
+      kind
+      title
+      thumbnailUrl
+      relativeUrl
+      slug
+      __typename
+    }
+    workedExamples {
+      id
+      kind
+      title
+      youtubeId
+      thumbnailUrl
+      relativeUrl
+      duration
+      slug
+      __typename
+    }
+    cbLessonPlans {
+      id
+      kind
+      title
+      thumbnailUrl
+      relativeUrl
+      slug
+      __typename
+    }
+    __typename
+  }
+}

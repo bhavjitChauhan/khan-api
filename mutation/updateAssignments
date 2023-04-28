@@ -1,0 +1,38 @@
+mutation updateAssignments($ids: [ID]!, $startDate: DateTime, $dueDate: DateTime) {
+  updateAssignments(ids: $ids, assignment: {startDate: $startDate, dueDate: $dueDate}) {
+    assignments {
+      id
+      contents {
+        id
+        title
+        __typename
+      }
+      studentList {
+        id
+        cacheId
+        name
+        __typename
+      }
+      students {
+        id
+        kaid
+        __typename
+      }
+      coach {
+        id
+        kaid
+        __typename
+      }
+      startDate
+      dueDate
+      isDraft
+      subjectSlug
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

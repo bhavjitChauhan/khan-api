@@ -1,0 +1,29 @@
+mutation updateDomainRevisionMutation($sha: String!, $input: EditDomainInput!) {
+  editDomain(sha: $sha, input: $input) {
+    domain {
+      contentKind
+      id
+      title
+      slug
+      alternateSlugs
+      description
+      listed
+      sponsored
+      showCurationModule
+      lowerToc
+      customDescriptionTag
+      customTitleTag
+      curationData
+      sha
+      hasUnpublishedChanges
+      __typename
+    }
+    error {
+      code
+      conflictSha
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,53 @@
+query KmapProgressReportQuery($classDescriptor: String!, $progressFrom: DateTime, $progressUpTo: DateTime) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    studentKaidsAndNicknames {
+      id
+      kaid
+      coachNickname
+      __typename
+    }
+    assignments: subjectMasteryAssignments(filter: KMAP) {
+      id
+      studentKaids
+      historicalStudentData {
+        kaid
+        __typename
+      }
+      completedStudentData {
+        kaid
+        __typename
+      }
+      course: topic {
+        id
+        ... on KMapTopic {
+          strand
+          strandKey
+          band
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  teacherKmapProgressReport: teacherMapProgressReport(classroomDescriptor: $classDescriptor, filters: {progressFrom: $progressFrom, progressUpTo: $progressUpTo}) {
+    rows {
+      studentKaidAndNickname: studentKaidsAndNickname {
+        id
+        kaid
+        __typename
+      }
+      totalMinutes
+      assignedCourseMasteryGoalId
+      skillsLeveledUp
+      skillsWithoutProgress
+      courseMasteryGrowthPercentage
+      courseMasteryOverallPercentage
+      __typename
+    }
+    __typename
+  }
+}

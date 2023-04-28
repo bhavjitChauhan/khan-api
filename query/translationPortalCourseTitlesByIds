@@ -1,0 +1,9 @@
+query translationPortalCourseTitlesByIds($ids: [String]!) {
+  topicsById(ids: $ids) {
+    id
+    title
+    domainSlug
+    courseSnapshotId
+    __typename
+  }
+}

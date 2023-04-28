@@ -1,0 +1,26 @@
+mutation loginWithAppleAuthCodeAndState($authCode: String!, $state: String!, $userData: AppleUserData, $role: UserRole) {
+  loginWithAppleAuthCodeAndState(authCode: $authCode, state: $state, userData: $userData, role: $role) {
+    error {
+      code
+      accessToken
+      __typename
+    }
+    user {
+      id
+      kaid
+      canAccessDistrictsHomepage
+      isTeacher
+      hasUnresolvedInvitations
+      transferAuthToken
+      preferredKaLocale {
+        id
+        kaLocale
+        status
+        __typename
+      }
+      __typename
+    }
+    isFirstLogin
+    __typename
+  }
+}

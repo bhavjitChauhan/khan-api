@@ -1,0 +1,13 @@
+query getLastSecond($readableVideoId: String!) {
+  user {
+    id
+    contentItemProgresses(queryBy: {videoSlug: $readableVideoId}) {
+      ... on VideoItemProgress {
+        lastSecondWatched
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

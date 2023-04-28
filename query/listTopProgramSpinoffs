@@ -1,0 +1,19 @@
+query listTopProgramSpinoffs($pageInfo: ListProgramsPageInfo, $from: SpinoffOrigin!, $sort: ListProgramSortOrder) {
+  listTopProgramSpinoffs(pageInfo: $pageInfo, from: $from, sort: $sort) {
+    complete
+    cursor
+    programs {
+      id
+      key
+      authorKaid
+      authorNickname
+      displayableSpinoffCount
+      imagePath
+      sumVotesIncremented
+      translatedTitle: title
+      url
+      __typename
+    }
+    __typename
+  }
+}

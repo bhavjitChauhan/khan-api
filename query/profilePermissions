@@ -1,0 +1,8 @@
+query profilePermissions($kaid: String, $username: String) {
+  user(kaid: $kaid, username: $username) {
+    id
+    isCoachListWritable
+    isManagedByActor
+    __typename
+  }
+}

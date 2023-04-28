@@ -1,0 +1,7 @@
+query contentForDescriptors($descriptors: [String]!) {
+  contentForDescriptors(descriptors: $descriptors) {
+    id
+    sha
+    __typename
+  }
+}

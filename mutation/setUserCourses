@@ -1,0 +1,21 @@
+mutation setUserCourses($courseIds: [String]!, $gradeLevelId: String) {
+  setUserCourses(courseIds: $courseIds, gradeLevelId: $gradeLevelId) {
+    error {
+      code
+      __typename
+    }
+    user {
+      id
+      homepageModules {
+        navigation {
+          interestedInSat
+          interestedInLsat
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

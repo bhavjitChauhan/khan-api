@@ -1,0 +1,6 @@
+mutation deleteOffensiveTerm($id: ID!) {
+  deleteOffensiveTerm(id: $id) {
+    success
+    __typename
+  }
+}

@@ -1,0 +1,28 @@
+query getChildrenForDevadmin($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    maybeManagedChildren {
+      id
+      canModifyCoaches
+      email
+      isUnderAgeGate: isChild
+      isSpawnedByCurrentUser: isSpawnedBy(coachKaid: $kaid)
+      kaid
+      nickname
+      username
+      __typename
+    }
+    unmanagedChildren {
+      id
+      canModifyCoaches
+      email
+      isUnderAgeGate: isChild
+      isSpawnedByCurrentUser: isSpawnedBy(coachKaid: $kaid)
+      kaid
+      nickname
+      username
+      __typename
+    }
+    __typename
+  }
+}

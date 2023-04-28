@@ -222,7 +222,7 @@ for (const type of documentTypes) {
     for (let [operation, document] of filteredDocuments[type]) {
         if (type === 'query' || type === 'mutation')
             document = sortDocumentFragments(document)
-        await writeFile(`${type}/${operation}.graphql`, document)
+        await writeFile(`${type}/${operation}`, document)
         writtenDocumentCount++
     }
 }

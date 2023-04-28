@@ -1,0 +1,9 @@
+mutation endMasteryTowerSession($classDescriptor: String!) {
+  endMasteryTowerSession(classDescriptor: $classDescriptor) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

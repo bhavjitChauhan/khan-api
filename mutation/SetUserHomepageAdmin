@@ -1,0 +1,14 @@
+mutation SetUserHomepageAdmin($homepage: UserHomepage!, $kaid: String) {
+  setUserHomepage(homepage: $homepage, kaid: $kaid) {
+    error {
+      code
+      __typename
+    }
+    user {
+      id
+      homepage
+      __typename
+    }
+    __typename
+  }
+}

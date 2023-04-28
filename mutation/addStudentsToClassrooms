@@ -1,0 +1,10 @@
+mutation addStudentsToClassrooms($kaids: [ID!]!, $classroomIds: [ID!]!) {
+  addStudentsToClassrooms(kaids: $kaids, classroomIds: $classroomIds) {
+    coach {
+      id
+      kaid
+      __typename
+    }
+    __typename
+  }
+}

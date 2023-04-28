@@ -1,0 +1,54 @@
+mutation UpdateFeedback($feedbackKey: String!, $textContent: String!, $shownLowQualityNotice: Boolean) {
+  updateFeedback(feedbackKey: $feedbackKey, textContent: $textContent, shownLowQualityNotice: $shownLowQualityNotice) {
+    feedback {
+      isLocked
+      isPinned
+      appearsAsDeleted
+      author {
+        id
+        kaid
+        nickname
+        avatar {
+          name
+          imageSrc
+          __typename
+        }
+        __typename
+      }
+      content
+      date
+      definitelyNotSpam
+      deleted
+      downVoted
+      expandKey
+      feedbackType
+      flaggedBy
+      flags
+      focusUrl
+      focus {
+        kind
+        id
+        translatedTitle
+        relativeUrl
+        __typename
+      }
+      fromVideoAuthor
+      key
+      lowQualityScore
+      notifyOnAnswer
+      permalink
+      qualityKind
+      replyCount
+      replyExpandKeys
+      showLowQualityNotice
+      sumVotesIncremented
+      upVoted
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

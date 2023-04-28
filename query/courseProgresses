@@ -1,0 +1,40 @@
+query courseProgresses($courseIds: [String!]!) {
+  user {
+    id
+    courseProgresses(courseIds: $courseIds) {
+      ...CourseProgress
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment CourseProgress on SubjectProgress {
+  topic {
+    domainSlug
+    iconPath
+    id
+    slug
+    title: translatedTitle
+    relativeUrl
+    __typename
+  }
+  unitProgresses {
+    lastWorkedOn
+    currentMastery {
+      percentage
+      __typename
+    }
+    topic {
+      id
+      iconPath
+      title: translatedTitle
+      relativeUrl
+      masteryEnabled
+      subjectMasteryEnabled
+      __typename
+    }
+    __typename
+  }
+  __typename
+}

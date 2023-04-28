@@ -1,0 +1,57 @@
+mutation AddFeedbackToDiscussion($focusKind: String, $focusId: String, $parentKey: String, $textContent: String!, $feedbackType: FeedbackType!, $fromVideoAuthor: Boolean, $shownLowQualityNotice: Boolean) {
+  addFeedbackToDiscussion(focusKind: $focusKind, focusId: $focusId, parentKey: $parentKey, textContent: $textContent, feedbackType: $feedbackType, fromVideoAuthor: $fromVideoAuthor, shownLowQualityNotice: $shownLowQualityNotice) {
+    feedback {
+      appearsAsDeleted
+      author {
+        id
+        kaid
+        nickname
+        avatar {
+          name
+          imageSrc
+          __typename
+        }
+        __typename
+      }
+      content
+      date
+      definitelyNotSpam
+      deleted
+      downVoted
+      expandKey
+      feedbackType
+      flaggedBy
+      flags
+      focusUrl
+      focus {
+        kind
+        id
+        translatedTitle
+        relativeUrl
+        __typename
+      }
+      fromVideoAuthor
+      key
+      lowQualityScore
+      notifyOnAnswer
+      permalink
+      qualityKind
+      replyCount
+      replyExpandKeys
+      showLowQualityNotice
+      sumVotesIncremented
+      upVoted
+      ... on LowQualityFeedback {
+        feedbackCode
+        feedbackChar
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,9 @@
+query getDistrictInstructionalAreaQuery {
+  kmapTopics {
+    id
+    key
+    instructionalAreaName: strand
+    instructionalAreaKey: strandKey
+    __typename
+  }
+}

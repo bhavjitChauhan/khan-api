@@ -1,0 +1,16 @@
+query masteryTowerHistoricalRankingQuery($classDescriptor: String!) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
+    id
+    cacheId
+    masteryTowerHistoricalRanking {
+      score
+      sessionCount
+      rank
+      leaderboardSize
+      startDate
+      endDate
+      __typename
+    }
+    __typename
+  }
+}

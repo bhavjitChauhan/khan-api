@@ -1,0 +1,37 @@
+query districts($filter: String!) {
+  districts(filter: $filter) {
+    id
+    name
+    rosterID
+    rosterSource
+    nweaID
+    ncesID
+    rosterSyncingEnabled
+    sendActivationEmails
+    rosterDistrictAdmins
+    isTest
+    isKmapDistrict
+    isK4dDistrict
+    lastRostered
+    lastTestPull
+    goLiveDate
+    schoolYearDates {
+      start {
+        nthWeek
+        dayOfWeek
+        month
+        __typename
+      }
+      end {
+        nthWeek
+        dayOfWeek
+        month
+        __typename
+      }
+      __typename
+    }
+    schoolYearStart
+    schoolYearEnd
+    __typename
+  }
+}

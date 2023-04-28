@@ -1,0 +1,36 @@
+query getContentAssignmentsForCoachAsDevadmin($after: ID, $assignmentFilters: CoachAssignmentFilters, $classDescriptor: String!, $orderBy: AssignmentOrder!, $pageSize: Int) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    assignmentsPage(filters: $assignmentFilters, orderBy: $orderBy, after: $after, pageSize: $pageSize) {
+      assignments {
+        id
+        createdDate
+        assignedDate
+        updatedDate
+        dueDate
+        startDate
+        contents {
+          id
+          defaultUrlPath
+          kind
+          title
+          __typename
+        }
+        studentKaids
+        numStudentsCompleted
+        exerciseConfig {
+          itemPickerStrategy
+          __typename
+        }
+        __typename
+      }
+      pageInfo {
+        nextCursor
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

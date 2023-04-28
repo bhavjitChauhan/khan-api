@@ -1,0 +1,9 @@
+query curriculumsQuery {
+  curriculums {
+    country
+    key
+    name
+    region
+    __typename
+  }
+}

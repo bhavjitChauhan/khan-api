@@ -1,0 +1,8 @@
+query getTopic($slug: String!) {
+  topic(slug: $slug) {
+    id
+    relativeUrl
+    translatedTitle
+    __typename
+  }
+}

@@ -1,0 +1,22 @@
+query gtp_getSeedSkillLevelsBannerData($examId: String!) {
+  tpud(examId: $examId) {
+    id
+    diagnosticsStates {
+      type
+      state
+      __typename
+    }
+    hasSeededSkillLevels
+    __typename
+  }
+  descriptorList(examId: $examId) {
+    id
+    checkpointStr
+    expressDescriptors {
+      id
+      taskDurationSeconds
+      __typename
+    }
+    __typename
+  }
+}

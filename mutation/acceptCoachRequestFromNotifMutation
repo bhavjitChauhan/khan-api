@@ -1,0 +1,9 @@
+mutation acceptCoachRequestFromNotifMutation($coachKaid: String!) {
+  acceptCoachRequest(coachKaid: $coachKaid) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

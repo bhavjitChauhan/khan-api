@@ -1,0 +1,176 @@
+query getNotificationsForUser($after: ID) {
+  user {
+    id
+    notifications(after: $after) {
+      notifications {
+        __typename
+        brandNew
+        class_
+        date
+        kaid
+        read
+        url
+        urlsafeKey
+        ...ThreadCreatedNotificationType
+        ...AssignmentDueDateNotificationType
+        ...AssignmentCreatedNotificationType
+        ...CoachRequestNotificationType
+        ...BadgeNotificationType
+        ...CourseMasteryGoalCreatedNotificationType
+        ...ModeratorNotificationType
+        ...ProgramFeedbackNotificationType
+        ...CoachRequestAcceptedNotificationType
+        ...AvatarNotificationType
+        ...InfoNotificationType
+        ...ResponseFeedbackNotificationType
+        ...GroupedBadgeNotificationType
+      }
+      pageInfo {
+        nextCursor
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment AssignmentCreatedNotificationType on AssignmentCreatedNotification {
+  numAssignments
+  contentTitle
+  curationNodeIconURL
+  className
+  __typename
+}
+
+fragment AssignmentDueDateNotificationType on AssignmentDueDateNotification {
+  numAssignments
+  dueDate
+  contentTitle
+  curationNodeIconURL
+  __typename
+}
+
+fragment AvatarNotificationType on AvatarNotification {
+  name
+  thumbnailSrc
+  __typename
+}
+
+fragment BadgeNotificationType on BadgeNotification {
+  badgeName
+  badge {
+    description
+    fullDescription
+    name
+    relativeUrl
+    icons {
+      compactUrl
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+
+fragment CoachRequestAcceptedNotificationType on CoachRequestAcceptedNotification {
+  isMultipleClassrooms
+  student {
+    id
+    email
+    nickname
+    __typename
+  }
+  classroom {
+    cacheId
+    id
+    name
+    topics {
+      id
+      slug
+      iconUrl
+      key
+      translatedStandaloneTitle
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+
+fragment CoachRequestNotificationType on CoachRequestNotification {
+  coachIsParent
+  coach {
+    id
+    kaid
+    nickname
+    __typename
+  }
+  __typename
+}
+
+fragment CourseMasteryGoalCreatedNotificationType on CourseMasteryGoalCreatedNotification {
+  curationNodeIconURL
+  curationNodeTranslatedTitle
+  masteryPercentage
+  __typename
+}
+
+fragment GroupedBadgeNotificationType on GroupedBadgeNotification {
+  badgeNotifications {
+    badge {
+      badgeCategory
+      description
+      fullDescription
+      name
+      icons {
+        compactUrl
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+
+fragment InfoNotificationType on InfoNotification {
+  notificationType
+  __typename
+}
+
+fragment ModeratorNotificationType on ModeratorNotification {
+  text
+  __typename
+}
+
+fragment ProgramFeedbackNotificationType on ProgramFeedbackNotification {
+  authorAvatarSrc
+  authorNickname
+  feedbackType
+  translatedScratchpadTitle
+  content
+  __typename
+}
+
+fragment ResponseFeedbackNotificationType on ResponseFeedbackNotification {
+  authorAvatarUrl
+  authorNickname
+  feedbackType
+  focusTranslatedTitle
+  content
+  sumVotesIncremented
+  __typename
+}
+
+fragment ThreadCreatedNotificationType on ThreadCreatedNotification {
+  coachee {
+    id
+    kaid
+    nickname
+    __typename
+  }
+  threadId
+  flagged
+  __typename
+}

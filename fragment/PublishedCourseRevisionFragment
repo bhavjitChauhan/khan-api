@@ -1,0 +1,20 @@
+fragment PublishedCourseRevisionFragment on CourseRevision {
+  id
+  contentId
+  kaLocale
+  title
+  importable
+  hasUnpublishedChanges
+  published {
+    id
+    slug
+    title
+    listed
+    masteryEnabled
+    domainSlug
+    domainId: parentTopicId
+    courseSnapshotId
+    __typename
+  }
+  __typename
+}

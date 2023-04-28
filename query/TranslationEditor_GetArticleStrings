@@ -1,0 +1,20 @@
+query TranslationEditor_GetArticleStrings($articleId: String!) {
+  articleStrings(articleId: $articleId) {
+    title
+    englishContent
+    jiptContent
+    translationItems {
+      assessmentItem
+      englishString
+      jiptString
+      __typename
+    }
+    __typename
+  }
+  articleById(id: $articleId) {
+    id
+    defaultUrlPath
+    listed
+    __typename
+  }
+}

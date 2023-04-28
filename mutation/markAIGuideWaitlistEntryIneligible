@@ -1,0 +1,10 @@
+mutation markAIGuideWaitlistEntryIneligible($kaid: String!) {
+  markAIGuideWaitlistEntryIneligible(kaid: $kaid) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

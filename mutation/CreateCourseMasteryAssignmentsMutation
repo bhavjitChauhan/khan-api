@@ -1,0 +1,11 @@
+mutation CreateCourseMasteryAssignmentsMutation($classDescriptors: [String!]!, $studentKaids: [ID!]!, $topicId: String!, $dueDate: DateTime!) {
+  createCourseMasteryAssignments(assignments: {classroomDescriptors: $classDescriptors, studentKaids: $studentKaids, courseId: $topicId, dueDate: $dueDate}) {
+    assignments {
+      id
+      createdDate
+      dueDate
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,9 @@
+mutation readNotification($key: String!) {
+  readNotification(key: $key) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

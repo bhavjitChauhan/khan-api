@@ -1,0 +1,16 @@
+mutation AddUserNote($kaid: String!, $text: String!) {
+  addUserNote(kaid: $kaid, text: $text) {
+    error
+    note {
+      text
+      date
+      author {
+        id
+        email
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

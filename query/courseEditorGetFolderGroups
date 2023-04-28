@@ -1,0 +1,21 @@
+query courseEditorGetFolderGroups {
+  folderGroups {
+    myFolders {
+      ...LibraryFolder
+      __typename
+    }
+    otherFolders {
+      ...LibraryFolder
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment LibraryFolder on Folder {
+  id
+  name
+  kaLocale
+  courseIds
+  __typename
+}

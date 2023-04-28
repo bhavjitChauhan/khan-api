@@ -1,0 +1,40 @@
+mutation updateInteractiveProgress($programId: ID!, $lessonId: ID!) {
+  updateInteractiveProgress(input: {programId: $programId, lessonId: $lessonId}) {
+    actionResults {
+      pointsEarned {
+        points
+        __typename
+      }
+      notificationsAdded {
+        badges
+        avatarParts
+        readable
+        urgent
+        toast
+        continueUrl
+        __typename
+      }
+      tutorialNodeProgress {
+        contentId
+        progress
+        __typename
+      }
+      userProfile {
+        countVideosCompleted
+        points
+        countBrandNewNotifications
+        __typename
+      }
+      __typename
+    }
+    programProgress {
+      completionStatus
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

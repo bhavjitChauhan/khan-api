@@ -1,0 +1,14 @@
+mutation linkThirdPartyAccountMutation($loginType: String!, $token: String!) {
+  linkThirdPartyAccount(loginType: $loginType, token: $token) {
+    error {
+      code
+      __typename
+    }
+    user {
+      id
+      kaid
+      __typename
+    }
+    __typename
+  }
+}

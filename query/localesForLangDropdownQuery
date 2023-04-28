@@ -1,0 +1,8 @@
+query localesForLangDropdownQuery {
+  localesForLanguagePicker(includeEnglish: true, includeFake: false) {
+    id
+    localName
+    kaLocale
+    __typename
+  }
+}

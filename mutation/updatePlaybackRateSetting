@@ -1,0 +1,10 @@
+mutation updatePlaybackRateSetting($playbackRate: PlaybackRate!) {
+  setSettings(playbackRate: $playbackRate) {
+    user {
+      id
+      playbackRate
+      __typename
+    }
+    __typename
+  }
+}

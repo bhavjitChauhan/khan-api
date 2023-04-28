@@ -1,0 +1,30 @@
+query TranslationSearchQuery($query: String!, $type: QueryType!) {
+  stringSearch(query: $query, type: $type) {
+    snapshotId
+    filename
+    entry {
+      msgKey
+      msgId
+      msgIdPlural
+      comment
+      occurrences {
+        file
+        line
+        __typename
+      }
+      flags
+      timestamp
+      isPlatform
+      deleted
+      __typename
+    }
+    translations {
+      crowdinLocale
+      msgStr
+      approved
+      lintError
+      __typename
+    }
+    __typename
+  }
+}

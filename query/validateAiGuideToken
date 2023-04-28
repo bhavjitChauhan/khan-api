@@ -1,0 +1,11 @@
+query validateAiGuideToken($token: String!) {
+  validateAiGuideToken(token: $token) {
+    kaid
+    email
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

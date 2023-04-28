@@ -1,0 +1,22 @@
+mutation CreateAssessmentItemTag($displayName: String!, $description: String!, $lessonId: String!) {
+  createAssessmentItemTag(displayName: $displayName, description: $description, lessonId: $lessonId) {
+    assessmentItemTag {
+      ...AssessmentItemTagFields
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment AssessmentItemTagFields on AssessmentItemTag {
+  editId: id
+  id: urlsafeTag
+  displayName
+  description
+  relatedContentId: lessonId
+  __typename
+}

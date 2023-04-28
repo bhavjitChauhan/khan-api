@@ -1,0 +1,18 @@
+query getUserInfoForLinking($userDistrictInfoUuid: ID!) {
+  userDistrictInfo(uuid: $userDistrictInfoUuid) {
+    id
+    districtProvidedEmail
+    districtProvidedFirstName
+    districtProvidedLastName
+    districtProvidedFullName
+    districtProvidedBirthYear
+    districtProvidedBirthMonth
+    primaryRole
+    isKmap
+    kaid
+    uuid
+    cleverId
+    classlinkId
+    __typename
+  }
+}

@@ -1,0 +1,10 @@
+mutation BulkPerformModAction($bulkModAction: BulkModAction!, $entityKeys: [String!]) {
+  bulkPerformModAction(modAction: $bulkModAction, entityKeys: $entityKeys) {
+    error {
+      code
+      erroredKeys
+      __typename
+    }
+    __typename
+  }
+}

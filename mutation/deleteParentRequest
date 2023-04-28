@@ -1,0 +1,20 @@
+mutation deleteParentRequest($childEmail: String!) {
+  deleteCoachRequest(studentEmail: $childEmail) {
+    user {
+      id
+      childInvitations {
+        invitationType
+        email
+        requestKey
+        nickname
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

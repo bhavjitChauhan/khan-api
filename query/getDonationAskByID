@@ -1,0 +1,15 @@
+query getDonationAskByID($id: String!) {
+  donationAskByID(id: $id) {
+    id
+    graphic
+    headline
+    copy
+    defaultDonationFrequency
+    oneTimeDonationAmounts
+    recurringDonationAmounts
+    classyCampaignId
+    active
+    authorKaid
+    __typename
+  }
+}

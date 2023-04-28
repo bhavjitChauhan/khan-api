@@ -1,0 +1,43 @@
+query getEligibleLearnStormCampaign {
+  learnStormActiveEligibleCampaign {
+    id
+    live
+    bannerVisible
+    campaignName
+    promoSite
+    signupStartDate
+    startDate
+    stopDate
+    shutdownDate
+    bannerBeforeHeader
+    bannerBeforeCopy
+    bannerDuringHeader
+    bannerDuringCopy
+    bannerAfterHeader
+    bannerAfterCopy
+    week
+    weeks
+    growthMindsetUrl
+    certificateUrl
+    bannerEnrollmentHeader
+    bannerEnrollmentCopy
+    __typename
+  }
+  coach: user {
+    id
+    coachedStudentLists {
+      id
+      cacheId
+      countStudents
+      hasCourseMasteryGoals
+      signupCode
+      topics {
+        id
+        masteryEnabled
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

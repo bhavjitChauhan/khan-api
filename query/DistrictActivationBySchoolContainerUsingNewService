@@ -1,0 +1,25 @@
+query DistrictActivationBySchoolContainerUsingNewService($districtId: ID!, $schoolIds: [ID!]) {
+  activationReportBySchool: activationReportBySchoolPortedToGo(districtId: $districtId, schoolIds: $schoolIds) {
+    rows {
+      school {
+        id
+        name
+        __typename
+      }
+      numStudentsTotal
+      numStudentsActivated
+      numTeachersTotal
+      numTeachersActivated
+      __typename
+    }
+    updatedAt
+    totalRow {
+      numStudentsTotal
+      numStudentsActivated
+      numTeachersTotal
+      numTeachersActivated
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,15 @@
+query getClassSelector {
+  coach: user {
+    id
+    studentLists: coachedStudentLists {
+      id
+      descriptor
+      cacheId
+      name
+      signupCode
+      countStudents
+      __typename
+    }
+    __typename
+  }
+}

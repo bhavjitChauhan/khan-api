@@ -1,0 +1,46 @@
+query courseEditorGetPublishedEntities($descriptors: [String!]!) {
+  contentForDescriptors(descriptors: $descriptors) {
+    id
+    kind
+    sha
+    slug
+    listed
+    sourceLanguage
+    title
+    translatedTitle
+    description
+    translatedDescription
+    mappedStandards {
+      id
+      setId
+      standardId
+      __typename
+    }
+    ... on Article {
+      perseusContent
+      __typename
+    }
+    ... on Exercise {
+      assessmentItems {
+        id
+        itemData
+        authorNames
+        name
+        perseusApiMajorVersion
+        problemType
+        __typename
+      }
+      suggestedCompletionCriteria
+      __typename
+    }
+    ... on Video {
+      youtubeId
+      subtitles {
+        text
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

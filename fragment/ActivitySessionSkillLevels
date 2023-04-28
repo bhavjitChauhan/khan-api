@@ -1,0 +1,6 @@
+fragment ActivitySessionSkillLevels on SkillLevelChange {
+  id
+  before
+  after
+  __typename
+}

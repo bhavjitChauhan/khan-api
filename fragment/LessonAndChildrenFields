@@ -1,0 +1,28 @@
+fragment LessonAndChildrenFields on Lesson {
+  ... on Lesson {
+    id
+    description
+    iconPath
+    key
+    kind
+    mappedStandardIds
+    title: translatedTitle
+    children {
+      __typename
+      ...LearnableContentFields
+      ... on Video {
+        duration
+        imageUrl
+        translatedYoutubeId
+        youtubeId
+        __typename
+      }
+      ... on Exercise {
+        expectedDoNCount: exerciseLength(useDefault: true)
+        __typename
+      }
+    }
+    __typename
+  }
+  __typename
+}

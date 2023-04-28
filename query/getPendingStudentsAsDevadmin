@@ -1,0 +1,24 @@
+query getPendingStudentsAsDevadmin($kaid: String!) {
+  coach: user(kaid: $kaid) {
+    id
+    invitations {
+      id
+      email
+      accepted
+      __typename
+    }
+    coachRequests {
+      id
+      studentIdentifier
+      studentKaid
+      __typename
+    }
+    cleverCoachRequests {
+      id
+      studentIdentifier
+      studentKaid
+      __typename
+    }
+    __typename
+  }
+}

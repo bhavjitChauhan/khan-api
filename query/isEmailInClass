@@ -1,0 +1,10 @@
+query isEmailInClass($email: String!, $classCode: String!) {
+  isEmailInClass(email: $email, classCode: $classCode) {
+    inClass
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,10 @@
+mutation enrollMultipleInAIGuide($kaids: [String!], $enrollmentGroup: AIGuideEnrollmentGroup!) {
+  enrollMultipleInAIGuide(kaids: $kaids, enrollmentGroup: $enrollmentGroup) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

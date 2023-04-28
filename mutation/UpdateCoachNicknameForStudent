@@ -1,0 +1,9 @@
+mutation UpdateCoachNicknameForStudent($nickname: String, $studentKaid: String!) {
+  updateCoachNicknameForStudent(nickname: $nickname, studentKaid: $studentKaid) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

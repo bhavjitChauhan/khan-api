@@ -1,0 +1,18 @@
+query UserAfterUDIDeactivationQuery($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    userDistrictInfos {
+      id
+      __typename
+    }
+    authEmails
+    userAdminLogs {
+      adminKaid
+      adminEmail
+      date
+      description
+      __typename
+    }
+    __typename
+  }
+}

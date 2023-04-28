@@ -1,0 +1,11 @@
+mutation GetOrCreateReadAloud($assessmentItemID: ID!, $exerciseID: ID!, $perseusSerializedState: String) {
+  getOrCreateReadAloud(assessmentItemID: $assessmentItemID, exerciseID: $exerciseID, perseusSerializedState: $perseusSerializedState) {
+    readAloud
+    error {
+      code
+      message
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,11 @@
+query contentEditorGetPublishedExerciseProblems($id: String!) {
+  exerciseById(id: $id) {
+    id
+    assessmentItems {
+      id
+      sha
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,21 @@
+query curationPageRevision($id: String!) {
+  curationPageRevision: curationPageRevisionById(id: $id) {
+    contentKind
+    id
+    title
+    slug
+    alternateSlugs
+    description
+    listed
+    sponsored
+    showCurationModule
+    lowerToc
+    customDescriptionTag
+    customTitleTag
+    curationData
+    curriculumKey
+    sha
+    hasUnpublishedChanges
+    __typename
+  }
+}

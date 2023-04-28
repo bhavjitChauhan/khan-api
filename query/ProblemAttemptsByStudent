@@ -1,0 +1,34 @@
+query ProblemAttemptsByStudent($studentKaids: [String], $contentDescriptor: String!, $progressAfter: DateTime) {
+  students: users(kaids: $studentKaids) {
+    id
+    contentItemProgresses(queryBy: {contentDescriptors: [$contentDescriptor]}) {
+      ... on ExerciseItemProgress {
+        logs(progressAfter: $progressAfter) {
+          ...ProblemAttemptFields
+          __typename
+        }
+        __typename
+      }
+      ... on AssessmentItemProgress {
+        logs(progressAfter: $progressAfter) {
+          ...ProblemAttemptFields
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment ProblemAttemptFields on ProblemAttempt {
+  kaid
+  correct
+  contentId: seed
+  countAttempts
+  countHints
+  timeDone
+  attemptStates
+  __typename
+}

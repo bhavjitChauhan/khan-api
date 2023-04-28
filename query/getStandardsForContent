@@ -1,0 +1,7 @@
+query getStandardsForContent($setId: String!, $contentDescriptor: String!, $secondaryDescriptor: String) {
+  standards: editableStandardsForContent(setId: $setId, contentDescriptor: $contentDescriptor, secondaryDescriptor: $secondaryDescriptor) {
+    id
+    standardId
+    __typename
+  }
+}

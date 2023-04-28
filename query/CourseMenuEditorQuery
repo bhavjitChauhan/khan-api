@@ -1,0 +1,32 @@
+query CourseMenuEditorQuery {
+  curricula: curriculums(includeEmptyCurriculum: true) {
+    key
+    courseMenuRevision {
+      ...CourseMenuRevisionFields
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment CourseMenuRevisionFields on CourseMenuRevision {
+  id
+  sha
+  groups {
+    identifier
+    translatedTitle
+    href
+    isNew
+    children {
+      identifier
+      translatedTitle
+      href
+      isNew
+      nonContentLink
+      loggedOutHref
+      __typename
+    }
+    __typename
+  }
+  __typename
+}

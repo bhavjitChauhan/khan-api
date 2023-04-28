@@ -1,0 +1,10 @@
+mutation signURLForReport($recordID: String!) {
+  signURLForReport(recordID: $recordID) {
+    url
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

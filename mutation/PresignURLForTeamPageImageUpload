@@ -1,0 +1,11 @@
+mutation PresignURLForTeamPageImageUpload($filename: String!) {
+  presignURLForTeamPageImageUpload(filename: $filename) {
+    presignedPutURL
+    uploadedImageURL
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

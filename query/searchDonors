@@ -1,0 +1,21 @@
+query searchDonors($filterBy: DonorOrProspectFilterType!, $search: String!) {
+  donorOrProspectsByKind(filterBy: $filterBy, search: $search) {
+    id
+    kaids
+    acquisitionChannels
+    emails
+    transactions {
+      id
+      customerId
+      subscriptionId
+      medium
+      timestamp
+      amountCents
+      refunded
+      cancelled
+      transactionId
+      __typename
+    }
+    __typename
+  }
+}

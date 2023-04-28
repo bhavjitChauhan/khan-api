@@ -1,0 +1,7 @@
+query courseEditorGetPublishedTopicSlugById($id: String!) {
+  topicById(id: $id) {
+    id
+    slug
+    __typename
+  }
+}

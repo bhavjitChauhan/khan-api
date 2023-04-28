@@ -1,0 +1,15 @@
+query getSatStudentRecentActivity($kaid: String!, $domain: SatDomain, $startDate: Date, $endDate: Date) {
+  coach: user {
+    id
+    satStudent(id: $kaid, domain: $domain, startDate: $startDate, endDate: $endDate) {
+      id
+      problemsInfosWithDomain {
+        problemsDone
+        minutes
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

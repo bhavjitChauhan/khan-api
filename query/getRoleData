@@ -1,0 +1,7 @@
+query getRoleData {
+  roles {
+    name
+    description
+    __typename
+  }
+}

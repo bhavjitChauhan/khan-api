@@ -1,0 +1,10 @@
+mutation updateCustomBadge($input: UpdateCustomBadgeInput) {
+  updateCustomBadge(input: $input) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

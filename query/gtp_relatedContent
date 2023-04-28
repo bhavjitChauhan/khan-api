@@ -1,0 +1,61 @@
+query gtp_relatedContent($taskType: String!, $taskId: String!) {
+  relatedContent(taskType: $taskType, taskId: $taskId) {
+    id
+    taskId
+    concepts {
+      translatedTitle
+      conceptId
+      content {
+        ... on LearnableContent {
+          id
+          thumbnailUrl
+          slug
+          translatedTitle
+          kind
+          __typename
+        }
+        ... on Video {
+          translatedYoutubeId
+          duration
+          relativeUrl
+          youtubeId
+          __typename
+        }
+        ... on Article {
+          relativeUrl
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    skills {
+      translatedTitle
+      skillId
+      content {
+        ... on LearnableContent {
+          id
+          thumbnailUrl
+          slug
+          translatedTitle
+          kind
+          __typename
+        }
+        ... on Video {
+          translatedYoutubeId
+          duration
+          relativeUrl
+          youtubeId
+          __typename
+        }
+        ... on Article {
+          relativeUrl
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

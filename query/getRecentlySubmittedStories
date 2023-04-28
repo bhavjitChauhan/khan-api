@@ -1,0 +1,10 @@
+query getRecentlySubmittedStories {
+  recentSubmittedStories {
+    key
+    submitterName
+    date
+    story
+    youtubeId
+    __typename
+  }
+}

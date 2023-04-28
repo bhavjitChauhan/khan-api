@@ -1,0 +1,19 @@
+query listClassroomPrograms($pageInfo: ListProgramsPageInfo, $classroomId: String!, $onlyOfficialProgramSpinoffs: Boolean!) {
+  listClassroomPrograms(pageInfo: $pageInfo, classroomId: $classroomId, onlyOfficialProgramSpinoffs: $onlyOfficialProgramSpinoffs) {
+    complete
+    cursor
+    programs {
+      id
+      key
+      authorKaid
+      authorNickname
+      displayableSpinoffCount
+      imagePath
+      sumVotesIncremented
+      translatedTitle: title
+      url
+      __typename
+    }
+    __typename
+  }
+}

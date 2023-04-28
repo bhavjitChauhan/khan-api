@@ -1,0 +1,196 @@
+mutation attemptProblem($input: AttemptProblemInput!) {
+  attemptProblem(attempt: $input) {
+    result {
+      userExercise {
+        ...userExerciseFields
+        __typename
+      }
+      newTask {
+        cards {
+          done
+          cardType
+          ... on ProblemCard {
+            exerciseName
+            problemType
+            __typename
+          }
+          __typename
+        }
+        includeSkipButton
+        task {
+          id
+          key
+          pointBounty
+          pointsEarned
+          taskType
+          completionCriteria {
+            name
+            __typename
+          }
+          ... on PracticeTask {
+            promotionCriteria {
+              name
+              value
+              __typename
+            }
+            reservedItems
+            reservedItemsCompleted
+            taskAttemptHistory {
+              correct
+              timeDone
+              seenHint
+              itemId
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        userExercises {
+          ...userExerciseFields
+          __typename
+        }
+        __typename
+      }
+      actionResults {
+        attemptCorrect
+        notificationsAdded {
+          avatarParts
+          badges
+          readable
+          toast
+          urgent
+          continueUrl
+          __typename
+        }
+        pointsEarned {
+          points
+          __typename
+        }
+        __typename
+      }
+      attemptPromotions {
+        fpmPromotions {
+          progressKey
+          level
+          __typename
+        }
+        __typename
+      }
+      updatedRecommendations {
+        contentId
+        kind
+        sourceId
+        __typename
+      }
+      error {
+        code
+        debugMessage
+        uuid
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment userExerciseFields on UserExercise {
+  exerciseModel: exercise {
+    id
+    assessmentItemCount: numAssessmentItems
+    displayName
+    isQuiz
+    isSkillCheck
+    name
+    nodeSlug
+    progressKey
+    translatedDisplayName
+    relatedContent {
+      id
+      contentKind
+      kind
+      thumbnailUrl
+      translatedTitle
+      topicPaths {
+        path {
+          id
+          kind
+          slug
+          __typename
+        }
+        __typename
+      }
+      ... on Article {
+        kaUrl
+        nodeSlug
+        relativeUrl
+        slug
+        __typename
+      }
+      ... on Video {
+        duration
+        imageUrl
+        kaUrl
+        nodeSlug
+        relativeUrl
+        slug
+        translatedYoutubeId
+        __typename
+      }
+      __typename
+    }
+    relatedVideos {
+      contentKind
+      duration
+      id
+      imageUrl
+      kaUrl
+      kind
+      nodeSlug
+      progressKey
+      relativeUrl
+      slug
+      thumbnailUrl
+      translatedDescription
+      translatedTitle
+      translatedYoutubeId
+      __typename
+    }
+    problemTypes {
+      items {
+        id
+        live
+        sha
+        __typename
+      }
+      name
+      relatedVideos
+      __typename
+    }
+    translatedProblemTypes {
+      items {
+        id
+        live
+        sha
+        __typename
+      }
+      name
+      relatedVideos
+      __typename
+    }
+    __typename
+  }
+  exercise: exerciseName
+  fpmMasteryLevel
+  lastAttemptNumber
+  lastCountHints
+  lastDone
+  lastMasteryUpdate
+  longestStreak
+  maximumExerciseProgressDt: maximumExerciseProgressDate
+  streak
+  totalCorrect
+  totalDone
+  __typename
+}

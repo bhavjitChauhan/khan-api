@@ -1,0 +1,31 @@
+query getLearnStormDashboard($classDescriptor: String!) {
+  coach: user {
+    id
+    studentLists: coachedStudentLists {
+      id
+      cacheId
+      name
+      signupCode
+      countStudents
+      __typename
+    }
+    __typename
+  }
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    countStudents
+    signupCode
+    learnStormStatus {
+      pointsNeededPerLevel
+      classroomProgress {
+        id
+        earnedLevel
+        currentLevelProgress
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

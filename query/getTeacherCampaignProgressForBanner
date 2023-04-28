@@ -1,0 +1,64 @@
+query getTeacherCampaignProgressForBanner {
+  coach: user {
+    id
+    teacherCampaignProgress {
+      id
+      optedOutPreCampaign
+      optedOutOfCampaign
+      completedSteps
+      campaign {
+        id
+        live
+        eligibleLocale
+        eligibleCountryCodes
+        campaignName
+        promoSite
+        signupStartDate
+        startDate
+        shutdownDate
+        bannerBeforeHeader
+        bannerBeforeCopy
+        bannerBeforeGraphic
+        colorBg
+        colorBgAccent
+        challengeActive
+        contestActive
+        steps {
+          id
+          header
+          body
+          graphic
+          cta
+          headerShort
+          __typename
+          ... on TeacherCampaignVideoStep {
+            numberRequired
+            handouts
+            videos
+            __typename
+          }
+          ... on TeacherCampaignResponseStep {
+            exercises {
+              introduction
+              questions
+              __typename
+            }
+            __typename
+          }
+          ... on TeacherCampaignAwardStep {
+            headerOnCompletion
+            bodyOnCompletion
+            certificate
+            extraCredit
+            nextDrawTime
+            useGenericIcon
+            __typename
+          }
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

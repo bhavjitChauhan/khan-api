@@ -1,0 +1,8 @@
+query getFlag($name: String!) {
+  flag(name: $name) {
+    id
+    name
+    isUserPassing
+    __typename
+  }
+}

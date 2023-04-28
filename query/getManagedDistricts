@@ -1,0 +1,16 @@
+query getManagedDistricts {
+  user {
+    id
+    managedDistricts {
+      id
+      name
+      isTest
+      isKmapDistrict
+      isK4dDistrict
+      __typename
+    }
+    homepageUrl
+    userChosenRoles
+    __typename
+  }
+}

@@ -1,0 +1,10 @@
+mutation exchangeGoogleCodeForIDTokenMutation($code: String!, $redirectURI: String!) {
+  exchangeGoogleCodeForIDToken(code: $code, redirectURI: $redirectURI) {
+    idToken
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

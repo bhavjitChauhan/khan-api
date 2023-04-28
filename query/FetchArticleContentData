@@ -1,0 +1,3 @@
+query FetchArticleContentData($path: String!, $queryParams: String!, $isModal: Boolean, $followRedirects: Boolean, $countryCode: String!) {
+  contentJson: curatedArticleContentLibraryJson(path: $path, queryParams: $queryParams, isModal: $isModal, followRedirects: $followRedirects, countryCode: $countryCode)
+}

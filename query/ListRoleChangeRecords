@@ -1,0 +1,20 @@
+query ListRoleChangeRecords($kaid: String!) {
+  listRoleChangeRecords(targetKaid: $kaid) {
+    roleChangeRecords {
+      approvalDate
+      approverDistrictID
+      approverEmail
+      approverKaid
+      approverType
+      kaid
+      removalDate
+      removerDistrictID
+      removerEmail
+      removerKaid
+      removerType
+      role
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,9 @@
+mutation FlagPostMutation($flag: String!, $entityKey: String!, $justification: String) {
+  flagEntity(flag: $flag, entityKey: $entityKey, justification: $justification) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

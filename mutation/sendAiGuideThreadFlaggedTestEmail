@@ -1,0 +1,9 @@
+mutation sendAiGuideThreadFlaggedTestEmail {
+  sendChildAiGuideThreadFlaggedTestEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

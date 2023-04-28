@@ -1,0 +1,7 @@
+query previewTeacherReportEmail {
+  preview: previewTeacherReportEmail {
+    textContent
+    htmlContent
+    __typename
+  }
+}

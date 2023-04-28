@@ -1,0 +1,11 @@
+query activatedDistrictTeachers($districtName: String!, $pageSize: Int, $cursor: Int) {
+  activationReportByTeacher(districtName: $districtName, pageSize: $pageSize, cursor: $cursor) {
+    rows {
+      isActivated
+      teacherKaid
+      teacherName
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,87 @@
+query districtHomepage($districtID: String!, $schoolIDs: [ID!]) {
+  districtHomepage(districtID: $districtID, schoolIDs: $schoolIDs) {
+    dateInfo {
+      lastUpdatedDate
+      from
+      upTo
+      __typename
+    }
+    studentActivations {
+      numRosteredStudents
+      numActivated
+      numWithLearningTime
+      __typename
+    }
+    weeklyLearningTime {
+      startOfWeek
+      endOfWeek
+      numActivatedStudents
+      numStudentsNoTime
+      numStudentsLt15
+      numStudents15to30
+      numStudentsGt30
+      __typename
+    }
+    top5Courses: top5CourseSchool {
+      course {
+        id
+        title
+        __typename
+      }
+      school {
+        id
+        name
+        __typename
+      }
+      info {
+        attemptedPercent
+        familiarPercent
+        proficientPercent
+        masteredPercent
+        __typename
+      }
+      __typename
+    }
+    top5Grades: top5GradeSchool {
+      gradeLevel {
+        id
+        name
+        __typename
+      }
+      school {
+        id
+        name
+        __typename
+      }
+      info {
+        attemptedPercent
+        familiarPercent
+        proficientPercent
+        masteredPercent
+        __typename
+      }
+      __typename
+    }
+    mapOnlyTop5Grades: top5GradeSchool(mapOnly: true) {
+      gradeLevel {
+        id
+        name
+        __typename
+      }
+      school {
+        id
+        name
+        __typename
+      }
+      info {
+        attemptedPercent
+        familiarPercent
+        proficientPercent
+        masteredPercent
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

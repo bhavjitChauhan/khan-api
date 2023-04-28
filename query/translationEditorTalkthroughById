@@ -1,0 +1,10 @@
+query translationEditorTalkthroughById($id: String!) {
+  talkthroughById(id: $id) {
+    id
+    title
+    translatedMp3Url
+    defaultUrlPath
+    listed
+    __typename
+  }
+}

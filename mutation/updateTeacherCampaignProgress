@@ -1,0 +1,10 @@
+mutation updateTeacherCampaignProgress($campaignId: ID!) {
+  teacherCampaignProgressUpdate(campaignId: $campaignId) {
+    progress: teacherCampaignProgress {
+      id
+      completedSteps
+      __typename
+    }
+    __typename
+  }
+}

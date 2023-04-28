@@ -1,0 +1,92 @@
+query UserAssignments($after: ID, $dueAfter: DateTime, $dueBefore: DateTime, $pageSize: Int, $orderBy: AssignmentOrder!, $studentListId: String, $coachKaid: String) {
+  user {
+    id
+    kaid
+    assignmentsPage(after: $after, dueAfter: $dueAfter, dueBefore: $dueBefore, pageSize: $pageSize, orderBy: $orderBy, studentListId: $studentListId, coachKaid: $coachKaid) {
+      assignments {
+        id
+        key
+        subjectSlug
+        contents {
+          ...ContentFields
+          __typename
+        }
+        assignedDate
+        dueDate
+        studentList {
+          id
+          cacheId
+          signupCode
+          name
+          __typename
+        }
+        totalCompletionStates: itemCompletionStates {
+          student {
+            id
+            kaid
+            __typename
+          }
+          state
+          completedOn
+          bestScore {
+            numCorrect
+            numAttempted
+            __typename
+          }
+          __typename
+        }
+        exerciseConfig {
+          itemPickerStrategy
+          __typename
+        }
+        domainId
+        courseId
+        unitId
+        lessonId
+        __typename
+      }
+      pageInfo {
+        nextCursor
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment ContentFields on LearnableContent {
+  contentId: id
+  id
+  kind
+  title: translatedTitle
+  defaultUrlPath
+  topicPaths {
+    path {
+      id
+      kind
+      slug
+      __typename
+    }
+    __typename
+  }
+  description: translatedDescription
+  thumbnailUrl
+  slug
+  ... on Exercise {
+    expectedDoNCount: exerciseLength
+    timeEstimate {
+      lowerBound
+      upperBound
+      __typename
+    }
+    __typename
+  }
+  ... on Video {
+    youtubeId
+    translatedYoutubeId
+    duration
+    __typename
+  }
+  __typename
+}

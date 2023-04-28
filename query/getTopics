@@ -1,0 +1,40 @@
+query getTopics($courseIdsToAdd: [String]!, $descriptor: String!, $fetchDistrictCourses: Boolean!) {
+  domains: studentListTopics {
+    slug: domainSlug
+    title: translatedTitle
+    subjects: topics {
+      contentKind
+      slug
+      id
+      key
+      title: translatedTitle
+      iconPath
+      domainSlug
+      __typename
+    }
+    __typename
+  }
+  coursesByIds(ids: $courseIdsToAdd) {
+    contentKind
+    slug
+    id
+    key
+    title: translatedTitle
+    iconPath
+    domainSlug
+    __typename
+  }
+  classroom: classroomByDescriptor(descriptor: $descriptor) @include(if: $fetchDistrictCourses) {
+    id
+    cacheId
+    classroomDistrictInfo {
+      id
+      customCourses {
+        id
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

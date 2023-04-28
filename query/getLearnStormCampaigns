@@ -1,0 +1,8 @@
+query getLearnStormCampaigns {
+  learnStormCampaigns {
+    id
+    campaignName
+    live
+    __typename
+  }
+}

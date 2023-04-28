@@ -1,0 +1,18 @@
+fragment CleverCoachRequestField on CleverCoachRequest {
+  id
+  email: studentIdentifier
+  __typename
+}
+
+fragment CoachRequestField on CoachRequest {
+  id
+  email: studentIdentifier
+  __typename
+}
+
+fragment InvitationsField on Invitation {
+  id
+  email
+  accepted
+  __typename
+}

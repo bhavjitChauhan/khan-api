@@ -1,0 +1,14 @@
+query localeMappings($includeEnglish: Boolean) {
+  locales(includeEnglish: $includeEnglish) {
+    id
+    kaLocale
+    crowdinLocale
+    ... on Locale {
+      id
+      previewCmsEnabled
+      displayName
+      __typename
+    }
+    __typename
+  }
+}

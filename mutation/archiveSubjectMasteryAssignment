@@ -1,0 +1,9 @@
+mutation archiveSubjectMasteryAssignment($assignmentId: ID!) {
+  archiveSubjectMasteryAssignments(ids: [$assignmentId]) {
+    assignments {
+      id
+      __typename
+    }
+    __typename
+  }
+}

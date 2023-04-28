@@ -1,0 +1,12 @@
+query availableKinds {
+  permission {
+    content {
+      data {
+        availableKinds
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

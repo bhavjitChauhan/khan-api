@@ -1,0 +1,10 @@
+mutation enrollInAIGuide($kaid: String!, $enrollmentGroup: AIGuideEnrollmentGroup!) {
+  enrollInAIGuide(kaid: $kaid, enrollmentGroup: $enrollmentGroup) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

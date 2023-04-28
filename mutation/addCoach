@@ -1,0 +1,17 @@
+mutation addCoach($studentKaid: String!, $coachEmail: String!) {
+  addCoach(studentKaid: $studentKaid, coachEmail: $coachEmail) {
+    coach {
+      id
+      kaid
+      username
+      nickname
+      email
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

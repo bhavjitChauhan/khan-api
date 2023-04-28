@@ -1,0 +1,23 @@
+query courseEditorGetEditingIdentity($descriptors: [String!]!) {
+  revisionsForDescriptors(descriptors: $descriptors) {
+    ... on ContentRevision {
+      id
+      sha
+      __typename
+    }
+    ... on LearnableContentRevision {
+      doNotPublish
+      slug
+      sourceKaLocale
+      importedFromSha
+      listed
+      title
+      __typename
+    }
+    ... on ExerciseRevision {
+      suggestedCompletionCriteria
+      __typename
+    }
+    __typename
+  }
+}

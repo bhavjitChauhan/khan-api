@@ -1,0 +1,48 @@
+query StandaloneUserAssignments($after: ID, $pageSize: Int, $kaid: String!, $classDescriptor: String!, $orderBy: AssignmentOrder!) {
+  student: user(kaid: $kaid) {
+    id
+    assignmentsPage(after: $after, pageSize: $pageSize, classroomDescriptor: $classDescriptor, orderBy: $orderBy) {
+      assignments {
+        id
+        contents {
+          ...TranslatedContentFields
+          __typename
+        }
+        assignedDate
+        dueDate
+        itemCompletionStates {
+          studentKaid
+          state
+          completedOn
+          bestScore {
+            numCorrect
+            numAttempted
+            __typename
+          }
+          exerciseAttempts {
+            id
+            isCompleted
+            isRestarted
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      pageInfo {
+        nextCursor
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment TranslatedContentFields on LearnableContent {
+  id
+  kind
+  translatedTitle
+  defaultUrlPath
+  __typename
+}

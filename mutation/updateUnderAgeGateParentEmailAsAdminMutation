@@ -1,0 +1,18 @@
+mutation updateUnderAgeGateParentEmailAsAdminMutation($parentEmail: String!, $childKaid: String!) {
+  updateUnderAgeGateParentEmailAsAdmin(parentEmail: $parentEmail, childKaid: $childKaid) {
+    user {
+      id
+      kaid
+      underAgeGate {
+        parentEmail
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

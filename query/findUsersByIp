@@ -1,0 +1,30 @@
+query findUsersByIp($ip: String!, $usersCursor: ID, $pageSize: Int) {
+  usersSearchByIpPage(ip: $ip, after: $usersCursor, pageSize: $pageSize) {
+    users {
+      id
+      kaid
+      lastLogin
+      points
+      profileRoot
+      nickname
+      joined
+      authEmails
+      userId
+      username
+      coaches {
+        id
+        email
+        username
+        kaid
+        __typename
+      }
+      __typename
+    }
+    pageInfo {
+      nextCursor
+      __typename
+    }
+    totalCount
+    __typename
+  }
+}

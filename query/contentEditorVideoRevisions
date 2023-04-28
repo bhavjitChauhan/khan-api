@@ -1,0 +1,36 @@
+query contentEditorVideoRevisions($contentId: String!) {
+  allVideoRevisionsById(id: $contentId) {
+    revisions {
+      ...contentEditorContentRevision
+      ...contentEditorLearnableContent
+      createdBy {
+        id
+        nickname
+        __typename
+      }
+      authorNames
+      augmentedTranscript
+      keywords
+      duration
+      youtubeId
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment contentEditorContentRevision on ContentRevision {
+  id
+  cacheId: sha
+  creationDate
+  __typename
+}
+
+fragment contentEditorLearnableContent on LearnableContentRevision {
+  doNotPublish
+  listed
+  slug
+  title
+  description
+  __typename
+}

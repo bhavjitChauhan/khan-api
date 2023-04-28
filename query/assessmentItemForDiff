@@ -1,0 +1,8 @@
+query assessmentItemForDiff($sha: String!) {
+  assessmentItemRevisionsBySHAs(shas: [$sha]) {
+    id
+    itemShapeType
+    itemData
+    __typename
+  }
+}

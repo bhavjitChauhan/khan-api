@@ -1,0 +1,26 @@
+query allCurationNodes {
+  allDomains {
+    id
+    slug
+    title
+    children: courseChildren {
+      id
+      slug
+      title
+      children: unitChildren {
+        id
+        slug
+        title
+        children: lessonChildren {
+          id
+          slug
+          title
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

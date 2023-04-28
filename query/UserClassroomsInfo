@@ -1,0 +1,13 @@
+query UserClassroomsInfo($teacherKaid: String) {
+  user(kaid: $teacherKaid) {
+    id
+    coachedClassrooms {
+      cacheId
+      id
+      name
+      descriptor
+      __typename
+    }
+    __typename
+  }
+}

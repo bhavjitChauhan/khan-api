@@ -1,0 +1,7 @@
+query DevadminListAuthors {
+  allAuthorOptions {
+    id
+    name
+    __typename
+  }
+}

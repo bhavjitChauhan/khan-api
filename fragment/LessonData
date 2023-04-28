@@ -1,0 +1,15 @@
+fragment LessonData on Lesson {
+  id
+  relativeUrl
+  slug
+  translatedTitle
+  key
+  curatedChildren(includeUnlisted: false) {
+    ... on LearnableContent {
+      ...LearnableContentMetadata
+      __typename
+    }
+    __typename
+  }
+  __typename
+}

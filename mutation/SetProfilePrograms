@@ -1,0 +1,9 @@
+mutation SetProfilePrograms($kaid: String!, $programKeys: [String!]!) {
+  setProfilePrograms(kaid: $kaid, programKeys: $programKeys) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

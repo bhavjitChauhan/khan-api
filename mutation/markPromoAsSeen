@@ -1,0 +1,10 @@
+mutation markPromoAsSeen($promoName: String!, $kaid: String!) {
+  recordPromo(promoName: $promoName, kaid: $kaid) {
+    registrationSuccess
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

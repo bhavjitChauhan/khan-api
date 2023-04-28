@@ -1,0 +1,14 @@
+mutation mppDevadminSignURLForImageUpload($contentType: ImageContentType!) {
+  signURLForImageUpload(contentType: $contentType) {
+    result {
+      publicURL
+      uploadURL
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

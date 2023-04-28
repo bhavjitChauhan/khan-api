@@ -1,0 +1,21 @@
+query ProgressByGradeQuery($districtName: String!, $schoolIds: [ID!], $gradeLevels: [DistrictGradeLevel!], $kmapStrandId: ID, $progressFrom: DateTime, $progressUpTo: DateTime) {
+  districtProgressReportByGrade(districtName: $districtName, filters: {schoolIds: $schoolIds, gradeLevels: $gradeLevels, progressFrom: $progressFrom, progressUpTo: $progressUpTo, kmapStrandId: $kmapStrandId}) {
+    avgRow {
+      avgTotalMinutes
+      avgSkillsLeveledUp
+      __typename
+    }
+    rows {
+      gradeLevel {
+        id
+        name
+        sortIndex
+        __typename
+      }
+      totalMinutes
+      skillsLeveledUp
+      __typename
+    }
+    __typename
+  }
+}

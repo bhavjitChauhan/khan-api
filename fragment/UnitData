@@ -1,0 +1,9 @@
+fragment UnitData on Unit {
+  id
+  masteryEnabled
+  slug
+  translatedTitle
+  relativeUrl
+  unlistedAncestorIds
+  __typename
+}

@@ -1,0 +1,12 @@
+query getSettingsPageData($targetKaid: String) {
+  target: user(kaid: $targetKaid) {
+    id
+    nickname
+    username
+    isActor
+    isChild
+    email
+    isEnrolledInAIGuide
+    __typename
+  }
+}

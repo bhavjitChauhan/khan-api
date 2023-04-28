@@ -1,0 +1,35 @@
+query SkillsMetadataAndNoStudentsQuery($selectedMasteryCourseIds: [String]!) {
+  coursesByIds(ids: $selectedMasteryCourseIds) {
+    id
+    unitChildren {
+      id
+      filteredContent(kinds: ["Exercise"]) {
+        __typename
+        id
+        kind
+        translatedTitle
+        translatedDescription
+        defaultUrlPath
+        mappedStandards {
+          id
+          standardId
+          __typename
+        }
+        topicPaths {
+          path {
+            id
+            __typename
+          }
+          __typename
+        }
+        ... on Exercise {
+          imageUrl
+          imageUrl256
+          __typename
+        }
+      }
+      __typename
+    }
+    __typename
+  }
+}

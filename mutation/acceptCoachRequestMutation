@@ -1,0 +1,9 @@
+mutation acceptCoachRequestMutation($coachKaid: String!, $studentKaid: String) {
+  acceptCoachRequest(coachKaid: $coachKaid, studentKaid: $studentKaid) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,9 @@
+mutation removeThirdPartyAuth($oauthType: ThirdPartyOAuthType!) {
+  removeThirdPartyAuth(oauthType: $oauthType) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,9 @@
+query translationEditorTalkthroughRevisionById($id: String!) {
+  talkthroughRevisionById(id: $id) {
+    id
+    sha
+    translatedMP3URLs
+    youtubeID
+    __typename
+  }
+}

@@ -1,0 +1,103 @@
+query getAccountSettings($targetKaid: String) {
+  actor: user {
+    id
+    email
+    username
+    isChild
+    hasPassword
+    __typename
+  }
+  target: user(kaid: $targetKaid) {
+    id
+    isChild
+    isParent
+    tosForFormalTeacherStatus
+    affiliationCountryCode
+    schoolAffiliation {
+      id
+      name
+      country
+      postalCode
+      administrativeAreaLevel1
+      administrativeAreaLevel2
+      locality
+      __typename
+    }
+    hasSendableEmail
+    nickname
+    username
+    birthdate
+    userLanguage
+    soundOn
+    muteVideos
+    showCaptions
+    playbackRate
+    hideVisual
+    prefersReducedMotion
+    noColorInVideos
+    pendingParentEmail
+    profileRoot
+    hasPassword
+    canModifyCoaches
+    age
+    authEmails
+    appleId
+    applePrimaryEmail
+    googleId
+    googlePrimaryEmail
+    facebookId
+    facebookPrimaryEmail
+    mobileNumber
+    canAccessDistrictsHomepage
+    userChosenRoles
+    homepage
+    managingParent {
+      id
+      email
+      __typename
+    }
+    underAgeGate {
+      approvalGivenAt
+      parentEmail
+      daysUntilCutoff
+      __typename
+    }
+    isSatStudent
+    satStudent(id: $targetKaid) {
+      id
+      cbLinked
+      extraTimeSections
+      timePercentMultiplier
+      __typename
+    }
+    maybeManagedChildren {
+      id
+      nickname
+      username
+      __typename
+    }
+    unmanagedChildren {
+      id
+      nickname
+      username
+      __typename
+    }
+    hasChildren
+    includesDistrictOwnedData
+    badgeCounts
+    points
+    userDistrictInfos {
+      id
+      districtProvidedBirthMonth
+      districtProvidedBirthYear
+      rosterSource
+      __typename
+    }
+    __typename
+  }
+  chronomancer {
+    isCollegeBoardIntegrationEnabled
+    __typename
+  }
+  sessionHash
+}

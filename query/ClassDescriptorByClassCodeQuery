@@ -1,0 +1,8 @@
+query ClassDescriptorByClassCodeQuery($classCode: String!) {
+  studentList(classCode: $classCode) {
+    id
+    cacheId
+    descriptor
+    __typename
+  }
+}

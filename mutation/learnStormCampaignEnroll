@@ -1,0 +1,10 @@
+mutation learnStormCampaignEnroll($campaignId: ID!) {
+  learnStormEnroll(campaignId: $campaignId) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

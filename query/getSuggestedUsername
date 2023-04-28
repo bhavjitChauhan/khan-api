@@ -1,0 +1,3 @@
+query getSuggestedUsername($requestedUsername: String!) {
+  suggestedUsername(requestedUsername: $requestedUsername)
+}

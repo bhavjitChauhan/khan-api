@@ -1,0 +1,7 @@
+query getDatastoreUserData($examGroupId: String!, $kaid: String) {
+  examGroup(examGroupId: $examGroupId) {
+    id
+    datastoreUserData(kaid: $kaid)
+    __typename
+  }
+}

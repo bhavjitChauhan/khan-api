@@ -1,0 +1,41 @@
+fragment EmailSubscriptionFields on EmailSubscriptions {
+  allEmailSubscription {
+    checked
+    key
+    __typename
+  }
+  answerNotificationEmailSubscription {
+    checked
+    key
+    __typename
+  }
+  newAssignmentNotificationEmailSubscription {
+    checked
+    key
+    __typename
+  }
+  allStudentsCoachReportEmailSubscription {
+    key
+    checked
+    __typename
+  }
+  parentReportEmailSubscriptions {
+    key
+    description
+    checked
+    __typename
+  }
+  studentListEmailSubscriptions {
+    key
+    checked
+    description
+    __typename
+  }
+  satStudentListEmailSubscriptions {
+    key
+    checked
+    description
+    __typename
+  }
+  __typename
+}

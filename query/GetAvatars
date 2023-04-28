@@ -1,0 +1,21 @@
+query GetAvatars {
+  user {
+    id
+    avatar {
+      name
+      __typename
+    }
+    allAvatars {
+      avatar {
+        category
+        imageSrc
+        isDefaultForCategory
+        name
+        __typename
+      }
+      isAvailable
+      __typename
+    }
+    __typename
+  }
+}

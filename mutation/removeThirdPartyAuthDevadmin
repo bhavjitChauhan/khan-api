@@ -1,0 +1,9 @@
+mutation removeThirdPartyAuthDevadmin($oauthType: ThirdPartyOAuthType!, $targetKaid: String) {
+  removeThirdPartyAuth(oauthType: $oauthType, targetKaid: $targetKaid) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,10 @@
+mutation updateDonationAsk($donationAsk: DonationAskInput) {
+  updateDonationAsk(donationAsk: $donationAsk) {
+    success
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

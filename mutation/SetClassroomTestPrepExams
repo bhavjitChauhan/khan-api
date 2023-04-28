@@ -1,0 +1,9 @@
+mutation SetClassroomTestPrepExams($classDescriptor: String!, $examIds: [String!]!) {
+  setClassroomTestPrepExams(classroomDescriptor: $classDescriptor, examIds: $examIds) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

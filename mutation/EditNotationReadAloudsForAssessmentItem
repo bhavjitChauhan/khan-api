@@ -1,0 +1,21 @@
+mutation EditNotationReadAloudsForAssessmentItem($assessmentItemID: ID!, $exerciseID: ID!, $notationMap: String!) {
+  editNotationReadAloudsForAssessmentItem(assessmentItemID: $assessmentItemID, exerciseID: $exerciseID, notationMap: $notationMap) {
+    updatedNotations {
+      assessmentItemId
+      domainId
+      exerciseId
+      exerciseUrl
+      id
+      original
+      readable
+      __typename
+    }
+    deletedNotations
+    error {
+      code
+      message
+      __typename
+    }
+    __typename
+  }
+}

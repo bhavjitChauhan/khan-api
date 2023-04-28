@@ -1,0 +1,15 @@
+query DistrictActivationByTeacherContainer($districtName: String!, $schoolIds: [ID!], $teacherIDs: [ID!], $pageSize: Int, $cursor: Int) {
+  activationReportByTeacher(districtName: $districtName, schoolIds: $schoolIds, teacherIDs: $teacherIDs, pageSize: $pageSize, cursor: $cursor) {
+    rows {
+      teacherId
+      teacherName
+      numStudentsTotal
+      numStudentsActivated
+      isActivated
+      __typename
+    }
+    totalCount
+    updatedAt
+    __typename
+  }
+}

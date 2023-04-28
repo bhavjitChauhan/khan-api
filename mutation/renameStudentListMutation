@@ -1,0 +1,15 @@
+mutation renameStudentListMutation($listId: ID!, $name: String!) {
+  renameStudentList(listId: $listId, name: $name) {
+    studentList {
+      id
+      cacheId
+      name
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

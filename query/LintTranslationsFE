@@ -1,0 +1,8 @@
+query LintTranslationsFE($translations: [TranslationLinterInput!]!) {
+  lintTranslations(translations: $translations) {
+    status
+    message
+    correction
+    __typename
+  }
+}

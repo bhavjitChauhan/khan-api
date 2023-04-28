@@ -1,0 +1,7 @@
+mutation sendSampleTestEmail {
+  sendSampleTestEmail {
+    emailsSent
+    errorMessages
+    __typename
+  }
+}

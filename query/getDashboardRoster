@@ -1,0 +1,83 @@
+query getDashboardRoster($teacherKaid: String!, $after: Int, $pageSize: Int) {
+  coach: user {
+    id
+    countStudents: coacheeCount
+    studentsPage(after: $after, pageSize: $pageSize) {
+      ...StudentField1
+      __typename
+    }
+    invitations {
+      ...InvitationsField
+      __typename
+    }
+    coachRequests {
+      ...CoachRequestField
+      __typename
+    }
+    cleverCoachRequests {
+      ...CleverCoachRequestField
+      __typename
+    }
+    studentLists: coachedStudentLists {
+      id
+      cacheId
+      descriptor
+      name
+      topics {
+        id
+        slug
+        translatedStandaloneTitle
+        __typename
+      }
+      key
+      studentKaids
+      isDistrictSynced
+      __typename
+    }
+    schoolAffiliation {
+      id
+      __typename
+    }
+    affiliationCountryCode
+    isFormalTeacher
+    __typename
+  }
+  user {
+    id
+    tosForFormalTeacherStatus
+    __typename
+  }
+}
+
+fragment CleverCoachRequestField on CleverCoachRequest {
+  id
+  email: studentIdentifier
+  __typename
+}
+
+fragment CoachRequestField on CoachRequest {
+  id
+  email: studentIdentifier
+  __typename
+}
+
+fragment InvitationsField on Invitation {
+  id
+  email
+  accepted
+  __typename
+}
+
+fragment StudentField1 on StudentsPage {
+  students {
+    kaid
+    id
+    email
+    coachNickname(teacherKaid: $teacherKaid)
+    profileRoot
+    username
+    __typename
+  }
+  nextCursor
+  __typename
+}

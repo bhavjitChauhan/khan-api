@@ -1,0 +1,24 @@
+query getStudentSettings($kaid: String!) {
+  student: user(kaid: $kaid) {
+    id
+    nickname
+    username
+    birthdate
+    userLanguage
+    soundOn
+    muteVideos
+    showCaptions
+    hideVisual
+    prefersReducedMotion
+    noColorInVideos
+    isDistrictSynced
+    settingsCanBeModByLoggedInUser
+    userDistrictInfos {
+      id
+      districtProvidedBirthMonth
+      districtProvidedBirthYear
+      __typename
+    }
+    __typename
+  }
+}

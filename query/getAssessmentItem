@@ -1,0 +1,17 @@
+query getAssessmentItem($input: AssessmentItemInput!) {
+  assessmentItem(input: $input) {
+    item {
+      id
+      sha
+      problemType
+      itemData
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

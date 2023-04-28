@@ -1,0 +1,17 @@
+query TranslationEditor_GetVideosByIDs($ids: [String!]!) {
+  videosByIds(ids: $ids) {
+    id
+    title
+    duration
+    dateAdded
+    translatedYoutubeId
+    parentTopic {
+      id
+      title
+      relativeUrl
+      __typename
+    }
+    urlWithinTopic
+    __typename
+  }
+}

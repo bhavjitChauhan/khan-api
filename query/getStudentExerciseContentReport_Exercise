@@ -1,0 +1,24 @@
+query getStudentExerciseContentReport_Exercise($assignmentId: String!, $slug: String) {
+  exercise(name: $slug) {
+    id
+    translatedTitle: translatedDisplayName
+    assessmentItems {
+      id
+      contentId
+      itemData
+      __typename
+    }
+    __typename
+  }
+  student: user {
+    id
+    kaid
+    nickname
+    assignment(id: $assignmentId) {
+      id
+      assignedDate
+      __typename
+    }
+    __typename
+  }
+}

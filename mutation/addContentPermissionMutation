@@ -1,0 +1,9 @@
+mutation addContentPermissionMutation($userEmail: String!, $contentPermission: AddContentPermissionInput!) {
+  addContentPermission(userEmail: $userEmail, contentPermission: $contentPermission) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

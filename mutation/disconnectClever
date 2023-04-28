@@ -1,0 +1,9 @@
+mutation disconnectClever($kaid: String!) {
+  devadminDisconnectClever(kaid: $kaid) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,54 @@
+query FeedbackAnswers($parentKey: String!) {
+  feedbackByKey(key: $parentKey) {
+    ... on QuestionFeedback {
+      answers {
+        isLocked
+        isPinned
+        replyCount
+        appearsAsDeleted
+        author {
+          id
+          kaid
+          nickname
+          avatar {
+            name
+            imageSrc
+            __typename
+          }
+          __typename
+        }
+        content
+        date
+        definitelyNotSpam
+        deleted
+        downVoted
+        expandKey
+        feedbackType
+        flaggedBy
+        flags
+        focusUrl
+        focus {
+          kind
+          id
+          translatedTitle
+          relativeUrl
+          __typename
+        }
+        fromVideoAuthor
+        key
+        lowQualityScore
+        notifyOnAnswer
+        permalink
+        qualityKind
+        replyCount
+        replyExpandKeys
+        showLowQualityNotice
+        sumVotesIncremented
+        upVoted
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

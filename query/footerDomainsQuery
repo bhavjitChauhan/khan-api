@@ -1,0 +1,7 @@
+query footerDomainsQuery($curriculum: String) {
+  footerDomains(curriculum: $curriculum) {
+    translatedTitle
+    href
+    __typename
+  }
+}

@@ -1,0 +1,37 @@
+query unprocessedAIGuideWaitlistEntries($cursor: String, $eligibility: Boolean, $stableRandomOrder: Boolean) {
+  unprocessedAIGuideWaitlistEntries(cursor: $cursor, eligibility: $eligibility, stableRandomOrder: $stableRandomOrder) {
+    cursor
+    entries {
+      id
+      isEligible
+      isProcessed
+      joinDate
+      user {
+        id
+        age
+        nickname
+        email
+        children {
+          id
+          underAgeGate {
+            parentEmail
+            __typename
+          }
+          classrooms {
+            id
+            cacheId
+            __typename
+          }
+          __typename
+        }
+        discussionBanned
+        isMVAL
+        isParent
+        isTeacher
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

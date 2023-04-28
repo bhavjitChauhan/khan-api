@@ -1,0 +1,6 @@
+query TranslationEditor_GetProjectID($slug: String!) {
+  project(slug: $slug) {
+    id
+    __typename
+  }
+}

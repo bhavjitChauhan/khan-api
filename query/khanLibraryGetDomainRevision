@@ -1,0 +1,18 @@
+query khanLibraryGetDomainRevision($contentId: String!) {
+  domainRevisionById(id: $contentId) {
+    ...khanLibraryDomainRevision
+    __typename
+  }
+}
+
+fragment khanLibraryDomainRevision on DomainRevision {
+  id
+  sha
+  childrenDescriptors {
+    canonicalId
+    contentId
+    kind
+    __typename
+  }
+  __typename
+}

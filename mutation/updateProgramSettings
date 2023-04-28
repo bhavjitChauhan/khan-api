@@ -1,0 +1,18 @@
+mutation updateProgramSettings($programId: ID!, $height: Int!, $width: Int!, $category: ProgramCategoryInput, $description: String) {
+  updateProgramSettings(programId: $programId, height: $height, width: $width, category: $category, description: $description) {
+    program {
+      id
+      height
+      width
+      category
+      description
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

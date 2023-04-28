@@ -1,0 +1,24 @@
+query userDistrictInfoByEmailAndClassCode($email: String!, $classCode: String!) {
+  userDistrictInfoByEmailAndClassCode(email: $email, classCode: $classCode) {
+    error {
+      debugMessage
+      code
+      __typename
+    }
+    userDistrictInfo {
+      id
+      districtProvidedEmail
+      districtProvidedFirstName
+      districtProvidedLastName
+      districtProvidedFullName
+      districtProvidedBirthYear
+      districtProvidedBirthMonth
+      primaryRole
+      isKmap
+      kaid
+      uuid
+      __typename
+    }
+    __typename
+  }
+}

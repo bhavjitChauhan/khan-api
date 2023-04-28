@@ -1,0 +1,9 @@
+mutation sendAgingParentTestEmail {
+  sendAgingParentTestEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

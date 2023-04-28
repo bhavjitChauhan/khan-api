@@ -1,0 +1,7 @@
+query getCustomRedirect($redirectFrom: String!) {
+  customRedirect(redirectFrom: $redirectFrom) {
+    id
+    redirectTo
+    __typename
+  }
+}

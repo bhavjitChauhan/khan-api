@@ -1,0 +1,40 @@
+mutation modifyDistrict($existingDistrictID: ID!, $newName: String, $offerings: [Offering!], $rosterSyncingEnabled: Boolean, $rosterID: String, $rosterSource: RosterSource, $nweaID: String, $ncesID: String, $isTest: Boolean, $sendTeacherActivationEmails: Boolean, $goLiveDate: Date, $kaLocale: String, $schoolYearDates: DistrictSchoolYearInput) {
+  modifyDistrict(existingDistrictID: $existingDistrictID, newName: $newName, offerings: $offerings, rosterSyncingEnabled: $rosterSyncingEnabled, rosterID: $rosterID, rosterSource: $rosterSource, nweaID: $nweaID, ncesID: $ncesID, isTest: $isTest, sendTeacherActivationEmails: $sendTeacherActivationEmails, goLiveDate: $goLiveDate, kaLocale: $kaLocale, schoolYearDates: $schoolYearDates) {
+    district {
+      id
+      rosterID
+      name
+      isKmapDistrict
+      isK4dDistrict
+      rosterSource
+      nweaID
+      ncesID
+      isTest
+      sendActivationEmails
+      rosterSyncingEnabled
+      goLiveDate
+      kaLocale
+      schoolYearDates {
+        start {
+          nthWeek
+          dayOfWeek
+          month
+          __typename
+        }
+        end {
+          nthWeek
+          dayOfWeek
+          month
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

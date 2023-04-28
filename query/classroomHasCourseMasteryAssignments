@@ -1,0 +1,8 @@
+query classroomHasCourseMasteryAssignments($classroomDescriptor: String!) {
+  classroomByDescriptorV2(descriptor: $classroomDescriptor) {
+    id
+    cacheId
+    hasMasteryAssignments
+    __typename
+  }
+}

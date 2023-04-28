@@ -1,0 +1,8 @@
+query getAllBadges {
+  allBadges(excludeFilters: [CONTEXT_SPECIFIC]) {
+    name
+    description
+    isCustom
+    __typename
+  }
+}

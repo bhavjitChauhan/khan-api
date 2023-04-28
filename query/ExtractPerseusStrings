@@ -1,0 +1,3 @@
+query ExtractPerseusStrings($perseusJson: String!) {
+  extractPerseusStrings(perseusJson: $perseusJson)
+}

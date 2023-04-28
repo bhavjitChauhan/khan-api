@@ -1,0 +1,11 @@
+query getAssessmentItems($exerciseName: String) {
+  exercise(name: $exerciseName) {
+    id
+    assessmentItems {
+      id
+      itemData
+      __typename
+    }
+    __typename
+  }
+}

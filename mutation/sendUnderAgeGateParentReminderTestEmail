@@ -1,0 +1,9 @@
+mutation sendUnderAgeGateParentReminderTestEmail {
+  sendUnderAgeGateParentReminderTestEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

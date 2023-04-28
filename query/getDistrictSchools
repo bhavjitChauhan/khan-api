@@ -1,0 +1,11 @@
+query getDistrictSchools($districtName: String!) {
+  district(districtName: $districtName) {
+    id
+    schools {
+      id
+      name
+      __typename
+    }
+    __typename
+  }
+}

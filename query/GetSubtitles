@@ -1,0 +1,9 @@
+query GetSubtitles($youtubeId: String!, $kaLocale: String!) {
+  subtitles(youtubeId: $youtubeId, kaLocale: $kaLocale) {
+    text
+    startTime
+    endTime
+    kaIsValid
+    __typename
+  }
+}

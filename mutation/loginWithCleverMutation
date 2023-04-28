@@ -1,0 +1,35 @@
+mutation loginWithCleverMutation($code: String!, $reauth: Boolean!, $fromDevApp: Boolean!, $isMap: Boolean!, $referrerUrl: String!) {
+  loginWithClever(code: $code, reauth: $reauth, fromDevApp: $fromDevApp, isMap: $isMap, referrerUrl: $referrerUrl) {
+    error {
+      code
+      cleverUserInfo {
+        cleverId
+        isTeacher
+        cleverEmail
+        __typename
+      }
+      transferToken
+      udiUuid
+      __typename
+    }
+    user {
+      id
+      kaid
+      canAccessDistrictsHomepage
+      isTeacher
+      hasUnresolvedInvitations
+      transferAuthToken
+      preferredKaLocale {
+        id
+        kaLocale
+        status
+        __typename
+      }
+      __typename
+    }
+    isLibraryUser
+    isFirstLogin
+    transferToken
+    __typename
+  }
+}

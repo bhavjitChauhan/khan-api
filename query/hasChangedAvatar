@@ -1,0 +1,7 @@
+query hasChangedAvatar($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    hasChangedAvatar
+    __typename
+  }
+}

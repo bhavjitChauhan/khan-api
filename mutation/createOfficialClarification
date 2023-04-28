@@ -1,0 +1,13 @@
+mutation createOfficialClarification($clarification: CreateOfficialClarificationInput!) {
+  createOfficialClarification(clarification: $clarification) {
+    newClarification {
+      ...clarificationFragmentWithReporter
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

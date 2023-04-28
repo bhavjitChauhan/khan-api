@@ -1,0 +1,15 @@
+mutation setCustomRedirect($from: String!, $to: String!) {
+  setCustomRedirect(redirectFrom: $from, redirectTo: $to) {
+    error {
+      code
+      __typename
+    }
+    customRedirect {
+      id
+      redirectFrom
+      redirectTo
+      __typename
+    }
+    __typename
+  }
+}

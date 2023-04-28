@@ -1,0 +1,7 @@
+query getOffensiveTerms {
+  offensiveTerms {
+    id
+    term
+    __typename
+  }
+}

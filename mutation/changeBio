@@ -1,0 +1,14 @@
+mutation changeBio($bio: String!, $kaid: String!) {
+  setSettings(bio: $bio, kaid: $kaid) {
+    user {
+      id
+      bio
+      __typename
+    }
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+}

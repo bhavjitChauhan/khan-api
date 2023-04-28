@@ -1,0 +1,42 @@
+query CoachAssignments($classDescriptor: String!, $assignmentFilters: CoachAssignmentFilters, $orderBy: AssignmentOrder!, $pageSize: Int, $after: ID) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    assignmentsPage(filters: $assignmentFilters, orderBy: $orderBy, after: $after, pageSize: $pageSize) {
+      assignments {
+        id
+        studentKaids
+        isDraft
+        assignmentStatus
+        subjectSlug
+        numStudentsCompleted
+        assignedDate
+        startDate
+        dueDate
+        contentDescriptors
+        domainId
+        courseId
+        unitId
+        lessonId
+        contents {
+          id
+          title: translatedTitle
+          kind
+          defaultUrlPath
+          __typename
+        }
+        exerciseConfig {
+          itemPickerStrategy
+          __typename
+        }
+        __typename
+      }
+      pageInfo {
+        nextCursor
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

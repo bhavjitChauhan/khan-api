@@ -1,0 +1,7 @@
+query getVideoSlug($contentId: String!) {
+  videoById(contentId: $contentId) {
+    id
+    slug
+    __typename
+  }
+}

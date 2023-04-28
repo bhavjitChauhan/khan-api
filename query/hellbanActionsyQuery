@@ -1,0 +1,13 @@
+query hellbanActionsyQuery($kaid: String!) {
+  userSummary(kaid: $kaid) {
+    hellbanActions {
+      date
+      isHellban
+      moderatorNickname
+      reason
+      urlsafeKey
+      __typename
+    }
+    __typename
+  }
+}

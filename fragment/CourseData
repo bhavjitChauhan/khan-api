@@ -1,0 +1,16 @@
+fragment CourseData on Course {
+  id
+  masteryEnabled
+  relativeUrl
+  slug
+  translatedTitle
+  parent {
+    id
+    contentKind
+    relativeUrl
+    slug
+    translatedTitle
+    __typename
+  }
+  __typename
+}

@@ -1,0 +1,19 @@
+query getStudentsPerCoach($coachKaid: String, $after: Int, $pageSize: Int) {
+  coach: user(kaid: $coachKaid) {
+    id
+    studentsPage(after: $after, pageSize: $pageSize) {
+      students {
+        id
+        coachNickname(teacherKaid: $coachKaid)
+        kaid
+        email
+        isChild
+        username
+        __typename
+      }
+      nextCursor
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,18 @@
+query youtubeVideoInfoAddContent($youtubeId: String!) {
+  youtubeVideoInfo(youtubeId: $youtubeId) {
+    description
+    readableId: slug
+    title
+    duration
+    keywords: keywordsString
+    ... on YoutubeVideoInfoFromExistingContent {
+      videoRevision {
+        id
+        __typename
+      }
+      kaUserLicense
+      __typename
+    }
+    __typename
+  }
+}

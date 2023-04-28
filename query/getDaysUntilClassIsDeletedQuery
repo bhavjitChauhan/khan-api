@@ -1,0 +1,12 @@
+query getDaysUntilClassIsDeletedQuery($classDescriptor: String!) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    classroomDistrictInfo {
+      id
+      classWillBeRemovedInDays
+      __typename
+    }
+    __typename
+  }
+}

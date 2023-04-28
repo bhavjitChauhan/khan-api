@@ -1,0 +1,9 @@
+query courseEditorGetPublishedTopicQuiz($slug: String!) {
+  topicQuiz(slug: $slug) {
+    id
+    kind
+    creationDate
+    defaultUrlPath
+    __typename
+  }
+}

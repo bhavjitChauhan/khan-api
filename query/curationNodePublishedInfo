@@ -1,0 +1,8 @@
+query curationNodePublishedInfo($contentId: String!) {
+  publishedInfo: topicById(id: $contentId) {
+    id
+    relativeUrl
+    creationDate
+    __typename
+  }
+}

@@ -1,0 +1,16 @@
+query khanLibraryGetMyGroup {
+  folderGroups {
+    myFolders {
+      ...BaseFolder
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment BaseFolder on Folder {
+  id
+  name
+  kaLocale
+  __typename
+}

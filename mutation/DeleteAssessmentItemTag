@@ -1,0 +1,9 @@
+mutation DeleteAssessmentItemTag($id: String!) {
+  deleteAssessmentItemTag(id: $id) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

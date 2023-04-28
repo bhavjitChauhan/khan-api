@@ -1,0 +1,9 @@
+mutation sendChildAddedCoachTestEmail {
+  sendChildAddedCoachTestEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

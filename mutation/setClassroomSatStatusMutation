@@ -1,0 +1,16 @@
+mutation setClassroomSatStatusMutation($classDescriptor: String!, $includeSat: Boolean!, $fromUpsell: Boolean) {
+  setClassroomSatStatus(classroomDescriptor: $classDescriptor, includeSat: $includeSat, fromUpsell: $fromUpsell) {
+    classroom {
+      id
+      cacheId
+      descriptor
+      includesSat
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

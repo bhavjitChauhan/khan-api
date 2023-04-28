@@ -1,0 +1,6 @@
+fragment BaseFolder on Folder {
+  id
+  name
+  kaLocale
+  __typename
+}

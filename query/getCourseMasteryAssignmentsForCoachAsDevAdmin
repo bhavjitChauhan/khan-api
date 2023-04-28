@@ -1,0 +1,55 @@
+query getCourseMasteryAssignmentsForCoachAsDevAdmin($descriptor: String!) {
+  classroomByDescriptor(descriptor: $descriptor) {
+    id
+    cacheId
+    studentKaidsAndNicknames {
+      kaid
+      coachNickname
+      __typename
+    }
+    courseMasteryAssignments: subjectMasteryAssignments(activeFilter: ACTIVE_OR_ARCHIVED) {
+      id
+      assignedDate
+      createdDate
+      archivedDate
+      dueDate
+      course: topic {
+        id
+        translatedTitle
+        relativeUrl
+        __typename
+      }
+      isArchived
+      activeStudentData {
+        kaid
+        assignedDate
+        unassignedDate
+        __typename
+      }
+      historicalStudentData {
+        kaid
+        assignedDate
+        unassignedDate
+        __typename
+      }
+      completedStudentData {
+        kaid
+        completedDate
+        __typename
+      }
+      studentProgress {
+        kaid
+        lastWorkedOn
+        currentMastery {
+          percentage
+          pointsEarned
+          pointsAvailable
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

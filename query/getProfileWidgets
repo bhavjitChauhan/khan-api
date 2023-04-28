@@ -1,0 +1,55 @@
+query getProfileWidgets($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    kaid
+    badgeCounts
+    isChild
+    profile {
+      programs {
+        id
+        authorKaid
+        authorNickname
+        deleted
+        displayableSpinoffCount
+        imagePath
+        key
+        sumVotesIncremented
+        translatedTitle: title
+        url
+        __typename
+      }
+      __typename
+    }
+    programs(sort: TOP, pageInfo: {itemsPerPage: 2}) {
+      programs {
+        id
+        authorKaid
+        authorNickname
+        deleted
+        displayableSpinoffCount
+        imagePath
+        key
+        sumVotesIncremented
+        translatedTitle: title
+        url
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  userSummary(kaid: $kaid) {
+    statistics {
+      answers
+      comments
+      flags
+      projectanswers
+      projectquestions
+      questions
+      replies
+      votes
+      __typename
+    }
+    __typename
+  }
+}

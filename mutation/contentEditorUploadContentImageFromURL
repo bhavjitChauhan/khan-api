@@ -1,0 +1,11 @@
+mutation contentEditorUploadContentImageFromURL($imageURL: String!) {
+  uploadContentImageFromURL(imageURL: $imageURL) {
+    url
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

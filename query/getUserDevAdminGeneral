@@ -1,0 +1,216 @@
+query getUserDevAdminGeneral($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    age
+    applePrimaryEmail
+    appleId
+    authEmails
+    birthdate
+    bio
+    canAccessDistrictsHomepage
+    canModifyCoaches
+    cleverDistrictId
+    cleverId
+    cleverLastSync
+    coaches {
+      id
+      kaid
+      email
+      username
+      __typename
+    }
+    collegeBoardUsername
+    pendingCoaches {
+      id
+      kaid
+      email
+      username
+      __typename
+    }
+    countExercisesMastered
+    countVideosCompleted
+    discussionBanned
+    email
+    facebookPrimaryEmail
+    facebookId
+    googlePrimaryEmail
+    googleId
+    hasParents
+    hasPassword
+    homepage
+    isAIGuideEnabled
+    isChild
+    isEnrolledInAIGuide
+    isPhantom
+    isParent
+    isTeacher
+    isFormalTeacher
+    joined
+    kaid
+    lastLogin
+    lastLoginIp
+    lastLoginCountry
+    lastLoginLocale
+    lastReportedTimezone
+    managingParent {
+      id
+      kaid
+      email
+      username
+      __typename
+    }
+    mobileNumber
+    mobileNumberVerified
+    nickname
+    parents {
+      id
+      kaid
+      email
+      username
+      __typename
+    }
+    pendingEmails
+    pendingEmailVerifications {
+      email
+      __typename
+    }
+    points
+    possibleConflictingUsers {
+      kaid: id
+      email
+      username
+      __typename
+    }
+    profileRoot
+    programCount
+    signupDataIfUnverified {
+      email
+      __typename
+    }
+    spawningTeacher {
+      id
+      kaid
+      email
+      username
+      __typename
+    }
+    spawningParent {
+      id
+      kaid
+      email
+      username
+      __typename
+    }
+    title
+    tosForFormalTeacherStatus
+    underAgeGate {
+      approvalGivenAt
+      approvalSource
+      parentEmail
+      __typename
+    }
+    userAdminLogs {
+      adminKaid
+      adminEmail
+      date
+      description
+      __typename
+    }
+    userId
+    userLanguage
+    username
+    userNotes {
+      text
+      date
+      author {
+        id
+        email
+        __typename
+      }
+      __typename
+    }
+    userChosenRoles
+    userDistrictInfos {
+      id
+      district {
+        id
+        name
+        __typename
+      }
+      createdAt
+      updatedAt
+      uuid
+      kaid
+      cleverId
+      classlinkId
+      rosterSource
+      activationEmailSentAt
+      activatedAt
+      activationMethod
+      districtProvidedFullName
+      districtProvidedEmail
+      districtProvidedBirthMonth
+      districtProvidedBirthYear
+      primaryRole
+      isKmap
+      isKAD
+      gradeLevel
+      adminOfSchools {
+        id
+        name
+        __typename
+      }
+      __typename
+    }
+    walmartId
+    walmartDivision
+    hasCoach
+    isK4dStudent
+    isK4dTeacher
+    isStudentOfFormalTeacherActor
+    __typename
+  }
+  coach: user(kaid: $kaid) {
+    id
+    countStudents: coacheeCount
+    studentLists: coachedStudentLists {
+      id
+      descriptor
+      cacheId
+      name
+      includesSat
+      isCleverLibrarySynced
+      isK4dClassroom
+      isKmapClassroom
+      signupCode
+      googleClassId
+      topics {
+        id
+        title
+        __typename
+      }
+      classroomDistrictInfo {
+        id
+        classWillBeRemovedInDays
+        __typename
+      }
+      createdOn
+      studentKaids
+      primaryTeacher: coach {
+        id
+        kaid
+        email
+        __typename
+      }
+      allTeachers {
+        id
+        kaid
+        email
+        __typename
+      }
+      masteryTowerCurrentWeekScore
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,10 @@
+mutation setInitialClassroomCourses($classDescriptor: String!, $courseKeys: [String!]!) {
+  setClassroomCourses(classroomDescriptor: $classDescriptor, courseKeys: $courseKeys) {
+    classroom {
+      id
+      cacheId
+      __typename
+    }
+    __typename
+  }
+}

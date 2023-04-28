@@ -1,0 +1,24 @@
+query gtp_getExpressDescriptors($examId: String!) {
+  descriptorList(examId: $examId, express: true) {
+    id
+    checkpointStr
+    expressDescriptors {
+      id
+      examId
+      kaid
+      taskType
+      translatedTitle
+      exerciseName
+      taskId
+      areaId
+      taskDurationSeconds
+      startDatetime
+      completionDatetime
+      numTotal
+      numCorrect
+      numAttempted
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,21 @@
+mutation updateStripeCardInSubscription($subscriptionId: String!, $cardToken: String!) {
+  updateStripeSubscription(subscriptionId: $subscriptionId, cardToken: $cardToken) {
+    subscription {
+      id
+      customerName
+      customerId
+      last4
+      status
+      expMonth
+      expYear
+      monthlyAmountCents
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,15 @@
+query courseEditorGetEditingTitles($descriptors: [String!]!) {
+  revisionsForDescriptors(descriptors: $descriptors) {
+    ... on ContentRevision {
+      id
+      sha
+      __typename
+    }
+    ... on LearnableContentRevision {
+      title
+      translatedTitle
+      __typename
+    }
+    __typename
+  }
+}

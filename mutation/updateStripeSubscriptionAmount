@@ -1,0 +1,15 @@
+mutation updateStripeSubscriptionAmount($subscriptionId: String!, $newPlan: String!, $zipCode: String!) {
+  updateStripeSubscriptionAmount(subscriptionId: $subscriptionId, newPlan: $newPlan, zipCode: $zipCode) {
+    subscription {
+      id
+      monthlyAmountCents
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

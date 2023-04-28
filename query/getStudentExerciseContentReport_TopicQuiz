@@ -1,0 +1,28 @@
+query getStudentExerciseContentReport_TopicQuiz($assignmentId: String!, $slug: String) {
+  topicQuiz(slug: $slug) {
+    id
+    translatedTitle
+    coveredExercises(includeCoveredSkills: true) {
+      id
+      assessmentItems {
+        id
+        contentId
+        itemData
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  student: user {
+    id
+    kaid
+    nickname
+    assignment(id: $assignmentId) {
+      id
+      assignedDate
+      __typename
+    }
+    __typename
+  }
+}

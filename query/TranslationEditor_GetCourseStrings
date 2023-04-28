@@ -1,0 +1,12 @@
+query TranslationEditor_GetCourseStrings($courseId: String!) {
+  courseStrings(courseId: $courseId) {
+    id
+    slug
+    renderType
+    title
+    translatedTitle
+    description
+    translatedDescription
+    __typename
+  }
+}

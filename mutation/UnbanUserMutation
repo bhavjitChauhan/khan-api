@@ -1,0 +1,9 @@
+mutation UnbanUserMutation($targetKaid: String!) {
+  unhellbanUser(targetKaid: $targetKaid) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

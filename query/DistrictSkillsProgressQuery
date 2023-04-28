@@ -1,0 +1,43 @@
+query DistrictSkillsProgressQuery($districtID: String!, $filters: DistrictSkillsProgressFilters!, $courseID: String!) {
+  districtSkillsProgress(districtID: $districtID, filters: $filters) {
+    totalStudents
+    numSkillsWorkedOn
+    rows {
+      exercise {
+        id
+        title
+        mappedStandards {
+          id
+          setId
+          standardId
+          __typename
+        }
+        __typename
+      }
+      numAttempted
+      numFamiliar
+      numProficient
+      numMastered
+      numStudents
+      __typename
+    }
+    __typename
+  }
+  courseById(id: $courseID) {
+    id
+    title
+    unitChildren {
+      unitID: id
+      unitTitle: translatedTitle
+      learnableContentPage(pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}) {
+        contents {
+          exerciseID: id
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

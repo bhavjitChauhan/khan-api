@@ -1,0 +1,22 @@
+query courseEditorGetPublishedInteractive($contentId: String!) {
+  interactiveById(id: $contentId) {
+    ...LearnableContent
+    __typename
+  }
+}
+
+fragment LearnableContent on LearnableContent {
+  id
+  kind
+  creationDate
+  topicPaths {
+    path {
+      id
+      kind
+      slug
+      __typename
+    }
+    __typename
+  }
+  __typename
+}

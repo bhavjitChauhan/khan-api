@@ -1,0 +1,169 @@
+query GetTopicQuestionsQuery($topicSlug: String!, $cursor: String, $limit: Int, $feedbackType: FeedbackType, $forceInTutorial: Boolean, $minAnswers: Int, $maxAnswers: Int) {
+  topicQuestions(topicSlug: $topicSlug, cursor: $cursor, limit: $limit, feedbackType: $feedbackType, forceInTutorial: $forceInTutorial, minAnswers: $minAnswers, maxAnswers: $maxAnswers, answersLimit: 1) {
+    feedback {
+      isLocked
+      isPinned
+      replyCount
+      appearsAsDeleted
+      author {
+        id
+        kaid
+        nickname
+        avatar {
+          name
+          imageSrc
+          __typename
+        }
+        __typename
+      }
+      content
+      date
+      definitelyNotSpam
+      deleted
+      downVoted
+      expandKey
+      feedbackType
+      flaggedBy
+      flaggedByUser
+      flags
+      focusUrl
+      focus {
+        kind
+        id
+        translatedTitle
+        relativeUrl
+        __typename
+      }
+      fromVideoAuthor
+      key
+      lowQualityScore
+      notifyOnAnswer
+      permalink
+      qualityKind
+      replyCount
+      replyExpandKeys
+      showLowQualityNotice
+      sumVotesIncremented
+      upVoted
+      ... on QuestionFeedback {
+        hasAnswered
+        answers {
+          isLocked
+          isPinned
+          replyCount
+          appearsAsDeleted
+          author {
+            id
+            kaid
+            nickname
+            avatar {
+              name
+              imageSrc
+              __typename
+            }
+            __typename
+          }
+          content
+          date
+          definitelyNotSpam
+          deleted
+          downVoted
+          expandKey
+          feedbackType
+          flaggedBy
+          flags
+          focusUrl
+          focus {
+            kind
+            id
+            translatedTitle
+            relativeUrl
+            __typename
+          }
+          fromVideoAuthor
+          key
+          lowQualityScore
+          notifyOnAnswer
+          permalink
+          qualityKind
+          replyCount
+          replyExpandKeys
+          showLowQualityNotice
+          sumVotesIncremented
+          upVoted
+          __typename
+        }
+        isOld
+        answerCount
+        __typename
+      }
+      ... on AnswerFeedback {
+        question {
+          isLocked
+          isPinned
+          replyCount
+          appearsAsDeleted
+          author {
+            id
+            kaid
+            nickname
+            avatar {
+              name
+              imageSrc
+              __typename
+            }
+            __typename
+          }
+          content
+          date
+          definitelyNotSpam
+          deleted
+          downVoted
+          expandKey
+          feedbackType
+          flaggedBy
+          flags
+          focusUrl
+          focus {
+            kind
+            id
+            translatedTitle
+            relativeUrl
+            __typename
+          }
+          fromVideoAuthor
+          key
+          lowQualityScore
+          notifyOnAnswer
+          permalink
+          qualityKind
+          replyCount
+          replyExpandKeys
+          showLowQualityNotice
+          sumVotesIncremented
+          upVoted
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    domainId
+    cursor
+    complete
+    length
+    topic {
+      id
+      slug
+      translatedTitle
+      relativeUrl
+      description
+      title
+      creationDate
+      kind
+      translatedDescription
+      __typename
+    }
+    __typename
+  }
+}

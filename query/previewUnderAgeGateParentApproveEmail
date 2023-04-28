@@ -1,0 +1,7 @@
+query previewUnderAgeGateParentApproveEmail {
+  preview: previewUnderAgeGateParentApproveEmail {
+    textContent
+    htmlContent
+    __typename
+  }
+}

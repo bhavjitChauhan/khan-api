@@ -1,0 +1,47 @@
+mutation updateProjectProgress($programId: ID!, $lessonId: ID!, $stashedCode: String, $status: Int) {
+  updateProjectProgress(input: {programId: $programId, lessonId: $lessonId, stashedCode: $stashedCode, status: $status}) {
+    actionResults {
+      pointsEarned {
+        points
+        __typename
+      }
+      notificationsAdded {
+        badges
+        avatarParts
+        readable
+        urgent
+        toast
+        continueUrl
+        __typename
+      }
+      tutorialNodeProgress {
+        contentId
+        progress
+        __typename
+      }
+      userProfile {
+        countVideosCompleted
+        points
+        countBrandNewNotifications
+        __typename
+      }
+      __typename
+    }
+    programProgress {
+      completionStatus
+      content {
+        id
+        contentKind
+        __typename
+      }
+      points
+      stashedCode
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

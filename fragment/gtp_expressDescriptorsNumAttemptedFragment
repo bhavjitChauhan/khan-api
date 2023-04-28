@@ -1,0 +1,4 @@
+fragment gtp_expressDescriptorsNumAttemptedFragment on ExpressDiagnosticTaskDescriptor {
+  numAttempted
+  __typename
+}

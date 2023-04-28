@@ -1,0 +1,75 @@
+fragment AssignmentData on Assignment {
+  id
+  contents {
+    id
+    contentDescriptor
+    contentKind
+    slug
+    translatedTitle
+    parentTopic {
+      id
+      parent {
+        id
+        masteryEnabled
+        translatedTitle
+        __typename
+      }
+      __typename
+    }
+    topicPaths {
+      path {
+        id
+        slug
+        kind
+        __typename
+      }
+      __typename
+    }
+    urlWithinCurationNode
+    ... on TopicQuiz {
+      index
+      __typename
+    }
+    __typename
+  }
+  courseId
+  domainId
+  dueDate
+  exerciseConfig {
+    itemPickerStrategy
+    __typename
+  }
+  itemCompletionStates {
+    state
+    exerciseAttempts {
+      id
+      isCompleted
+      isRestarted
+      lastAttemptDate
+      numCorrect
+      numAttempted
+      __typename
+    }
+    __typename
+  }
+  key
+  lesson {
+    id
+    parent {
+      id
+      masteryEnabled
+      translatedTitle
+      __typename
+    }
+    __typename
+  }
+  lessonId
+  unit {
+    id
+    masteryEnabled
+    translatedTitle
+    __typename
+  }
+  unitId
+  __typename
+}

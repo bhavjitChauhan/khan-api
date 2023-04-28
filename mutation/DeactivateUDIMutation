@@ -1,0 +1,9 @@
+mutation DeactivateUDIMutation($uuid: ID!) {
+  deactivateUserDistrictInfo: deactivateUserDistrictInfoV2(uuid: $uuid) {
+    exists
+    canDeactivate
+    wasDeactivated
+    kaid
+    __typename
+  }
+}

@@ -1,0 +1,22 @@
+mutation khanLibraryAddCourseToFolder($folderId: String!, $courseId: String!) {
+  addCourseToFolder(folderId: $folderId, courseId: $courseId) {
+    folder {
+      ...Folder
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment Folder on Folder {
+  ...BaseFolder
+  courses {
+    ...PublishedCourseRevisionFragment
+    __typename
+  }
+  __typename
+}

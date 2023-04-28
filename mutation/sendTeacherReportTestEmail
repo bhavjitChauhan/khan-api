@@ -1,0 +1,9 @@
+mutation sendTeacherReportTestEmail {
+  sendTeacherReportTestEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

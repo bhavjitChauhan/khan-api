@@ -1,0 +1,9 @@
+fragment Classroom on StudentList {
+  cacheId
+  coachKaid
+  descriptor
+  hasAssignments
+  id
+  name
+  __typename
+}

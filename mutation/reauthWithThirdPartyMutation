@@ -1,0 +1,14 @@
+mutation reauthWithThirdPartyMutation($loginType: String!, $token: String!) {
+  reauthWithThirdParty(loginType: $loginType, token: $token) {
+    error {
+      code
+      __typename
+    }
+    user {
+      id
+      kaid
+      __typename
+    }
+    __typename
+  }
+}

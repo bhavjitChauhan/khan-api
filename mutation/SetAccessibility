@@ -1,0 +1,16 @@
+mutation SetAccessibility($kaid: String!, $hideVisual: Boolean!, $prefersReducedMotion: Boolean!, $noColorInVideos: Boolean!) {
+  setSettings(kaid: $kaid, hideVisual: $hideVisual, prefersReducedMotion: $prefersReducedMotion, noColorInVideos: $noColorInVideos) {
+    user {
+      id
+      hideVisual
+      prefersReducedMotion
+      noColorInVideos
+      __typename
+    }
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+}

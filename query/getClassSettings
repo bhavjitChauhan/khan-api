@@ -1,0 +1,52 @@
+query getClassSettings($classDescriptor: String!) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    founderKaid: coachKaid
+    descriptor
+    name
+    key
+    signupCode
+    classroomDistrictInfo {
+      id
+      teacherUserDistrictInfoIDs {
+        id
+        displayNameForTeacher
+        kaid
+        __typename
+      }
+      __typename
+    }
+    allTeachers {
+      id
+      kaid
+      __typename
+    }
+    googleClassId
+    googleClassName
+    includesSat
+    invitations {
+      id
+      accepted
+      __typename
+    }
+    coachRequests {
+      id
+      __typename
+    }
+    cleverCoachRequests {
+      id
+      __typename
+    }
+    topics {
+      id
+      key
+      slug
+      translatedStandaloneTitle
+      __typename
+    }
+    isDistrictSynced
+    isK4dClassroom
+    __typename
+  }
+}

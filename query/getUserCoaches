@@ -1,0 +1,33 @@
+query getUserCoaches($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    classroomDistrictInfos {
+      id
+      teacherUserDistrictInfoIDs {
+        id
+        kaid
+        __typename
+      }
+      __typename
+    }
+    coaches {
+      id
+      kaid
+      username
+      nickname
+      profileRoot
+      isCoachingLoggedInUser
+      __typename
+    }
+    pendingCoaches {
+      id
+      kaid
+      username
+      nickname
+      profileRoot
+      isCoachingLoggedInUser
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,8 @@
+query getModerationResult($input: String!) {
+  getModerationResult(input: $input) {
+    categories
+    categoryScores
+    flagged
+    __typename
+  }
+}

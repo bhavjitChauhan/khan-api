@@ -1,0 +1,8 @@
+query getAllSetsOfStandards($locale: String, $domain: String) {
+  sets: allSetsOfStandards(locale: $locale, domain: $domain) {
+    id
+    name
+    shortName
+    __typename
+  }
+}

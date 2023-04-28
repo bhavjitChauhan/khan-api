@@ -1,0 +1,46 @@
+query videoEditorQuery($contentId: String!) {
+  contentEditingStatus {
+    editingDisabled
+    publishDisabled
+    __typename
+  }
+  isEditableByCurrentUser(contentId: $contentId, contentKind: "Video")
+  isPublishableByCurrentUser(contentId: $contentId, contentKind: "Video")
+  videoRevisionById(id: $contentId) {
+    ...VideoRevision
+    __typename
+  }
+}
+
+fragment VideoRevision on VideoRevision {
+  id
+  contentId
+  contentKind
+  creationDate
+  sha
+  authorKey
+  customDescriptionTag
+  customTitleTag
+  description
+  descriptionHtml: description
+  doNotPublish
+  sourceKaLocale
+  sourceLanguage: sourceKaLocale
+  slug
+  readableId: slug
+  title
+  sponsored
+  thumbnailCache
+  thumbnailData
+  alternateSlugs
+  assessmentItemTags
+  augmentedTranscript
+  authorNames
+  clarificationsEnabled
+  duration
+  kaUserLicense
+  keywords
+  youtubeId
+  listed
+  __typename
+}
