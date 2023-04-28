@@ -1,0 +1,19 @@
+query getEotCardDetails($taskId: String!) {
+  user {
+    id
+    exerciseData {
+      practiceAttempt(taskId: $taskId) {
+        id
+        numAttempted
+        numCorrect
+        startingFpmLevel
+        endingFpmLevel
+        masteryLevelChange
+        pointsEarned
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

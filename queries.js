@@ -305,35 +305,6 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     __typename
   }
 }
-
-fragment ArticleRevision on ArticleRevision {
-  id
-  contentId
-  contentKind
-  creationDate
-  sha
-  authorKey
-  customDescriptionTag
-  customTitleTag
-  description
-  descriptionHtml: description
-  doNotPublish
-  sourceKaLocale
-  sourceLanguage: sourceKaLocale
-  slug
-  readableId: slug
-  title
-  sponsored
-  thumbnailData
-  thumbnailCache
-  alternateSlugs
-  assessmentItemTags
-  authorNames
-  clarificationsEnabled
-  perseusContent
-  listed
-  __typename
-}
 `,
   articleEditorRedirectQuery: `query articleEditorRedirectQuery($contentId: String!) {
   articleRevisionById(id: $contentId) {
@@ -9115,20 +9086,6 @@ fragment gtp_egudFragment on ExamGroupUserData {
     __typename
   }
 }
-
-fragment gtp_essayScoresFragment on EssayScores {
-  areas {
-    translatedTitle
-    essays {
-      examCompletionDate
-      score
-      maxScore
-      __typename
-    }
-    __typename
-  }
-  __typename
-}
 `,
   gtp_getExamGroupMetadata: `query gtp_getExamGroupMetadata($examGroupId: String!) {
   examGroup(examGroupId: $examGroupId) {
@@ -13350,6 +13307,23 @@ fragment tapCourseNode on TAPCourseNode {
   __typename
 }
 
+fragment tapLessonNode on TAPLessonNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapArticleNode
+    ...tapChallengeNode
+    ...tapExerciseNode
+    ...tapInteractiveNode
+    ...tapProjectNode
+    ...tapTalkthroughNode
+    ...tapVideoNode
+    __typename
+  }
+  __typename
+}
+
 fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataWordCount
   metadataTranslatableWordCount
@@ -13398,6 +13372,23 @@ fragment tapCourseNode on TAPCourseNode {
   fingerprint
   children {
     ...tapUnitNode
+    __typename
+  }
+  __typename
+}
+
+fragment tapLessonNode on TAPLessonNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapArticleNode
+    ...tapChallengeNode
+    ...tapExerciseNode
+    ...tapInteractiveNode
+    ...tapProjectNode
+    ...tapTalkthroughNode
+    ...tapVideoNode
     __typename
   }
   __typename
@@ -15014,6 +15005,26 @@ fragment contentSearchLearnableContent on LearnableContent {
     translatedYoutubeLang
     youtubeId
     augmentedTranscript
+    __typename
+  }
+}
+`,
+  getEotCardDetails: `query getEotCardDetails($taskId: String!) {
+  user {
+    id
+    exerciseData {
+      practiceAttempt(taskId: $taskId) {
+        id
+        numAttempted
+        numCorrect
+        startingFpmLevel
+        endingFpmLevel
+        masteryLevelChange
+        pointsEarned
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }
