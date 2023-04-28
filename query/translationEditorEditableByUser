@@ -1,0 +1,3 @@
+query translationEditorEditableByUser($contentId: String!, $contentKind: String!) {
+  isEditableByCurrentUser(contentId: $contentId, contentKind: $contentKind)
+}

@@ -1,0 +1,27 @@
+mutation khanLibraryEditDomain($sha: String!, $input: EditDomainInput!) {
+  editDomain(sha: $sha, input: $input) {
+    domain {
+      ...khanLibraryDomainRevision
+      __typename
+    }
+    error {
+      code
+      conflictSha
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment khanLibraryDomainRevision on DomainRevision {
+  id
+  sha
+  childrenDescriptors {
+    canonicalId
+    contentId
+    kind
+    __typename
+  }
+  __typename
+}

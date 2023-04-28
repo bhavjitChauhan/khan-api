@@ -1,0 +1,7 @@
+query getUserHasUsedProduct($examGroupId: String!, $kaid: String!) {
+  examGroup(examGroupId: $examGroupId) {
+    id
+    userHasUsedProduct(kaid: $kaid)
+    __typename
+  }
+}

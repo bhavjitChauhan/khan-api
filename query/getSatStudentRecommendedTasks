@@ -1,0 +1,20 @@
+query getSatStudentRecommendedTasks($kaid: String!, $domain: SatDomain, $startDate: Date, $endDate: Date) {
+  coach: user {
+    id
+    satStudent(id: $kaid, domain: $domain, startDate: $startDate, endDate: $endDate) {
+      id
+      recommendedTasks {
+        domain
+        isCompleted
+        name
+        title
+        taskId
+        taskType
+        level
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

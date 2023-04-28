@@ -1,0 +1,7 @@
+query LiteVideo_SlugFromYoutubeId($youtubeId: String!) {
+  videoByYoutubeId(youtubeId: $youtubeId) {
+    id
+    defaultUrlPath
+    __typename
+  }
+}

@@ -1,0 +1,14 @@
+query getSailthruNewslettersByToken($token: String!) {
+  emailSettingsFromUnsubscribeToken(token: $token) {
+    emailSubscriptions {
+      sailthruSubscriptions {
+        checked
+        description
+        key
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

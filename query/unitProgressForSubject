@@ -1,0 +1,69 @@
+query unitProgressForSubject($subjectId: String!) {
+  topicById(id: $subjectId) {
+    id
+    slug
+    title
+    masteryEnabled
+    masteryChallenge {
+      id
+      timeEstimate {
+        lowerBound
+        upperBound
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  user {
+    id
+    latestCourseChallengeAttempt(courseId: $subjectId) {
+      id
+      canResume
+      completedDate
+      __typename
+    }
+    exerciseData {
+      masteryChallengeStatus(courseId: $subjectId) {
+        totalQuestions
+        isEligible
+        currentAttempt {
+          id
+          canResume
+          timeLeftSeconds
+          expirationTime
+          expirationPeriodHours
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    subjectProgress(topicId: $subjectId) {
+      notification {
+        dismissalKey
+        modifiedUnits {
+          id
+          __typename
+        }
+        __typename
+      }
+      unitProgresses {
+        masteryEnabled
+        currentMastery {
+          percentage
+          pointsEarned
+          pointsAvailable
+          __typename
+        }
+        topic {
+          id
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

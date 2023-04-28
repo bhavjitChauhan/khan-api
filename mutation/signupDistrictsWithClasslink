@@ -1,0 +1,24 @@
+mutation signupDistrictsWithClasslink($options: ClasslinkSignupOptions) {
+  signupDistrictsWithClasslink(options: $options) {
+    user {
+      id
+      kaid
+      canAccessDistrictsHomepage
+      isTeacher
+      hasUnresolvedInvitations
+      transferAuthToken
+      preferredKaLocale {
+        id
+        kaLocale
+        status
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

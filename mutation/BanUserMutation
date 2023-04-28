@@ -1,0 +1,9 @@
+mutation BanUserMutation($targetKaid: String!, $banReason: String!) {
+  hellbanUser(targetKaid: $targetKaid, hellbanReason: $banReason) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

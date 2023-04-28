@@ -1,0 +1,9 @@
+mutation signupResendVerificationEmailMutation {
+  signupResendVerificationEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

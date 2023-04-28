@@ -1,0 +1,14 @@
+query getContentAssignmentChangesQuery($assignmentID: ID!, $maxNumChanges: Int!) {
+  contentAssignmentChanges(assignmentID: $assignmentID, maxNumChanges: $maxNumChanges) {
+    assignmentID
+    type
+    timestamp
+    actor {
+      id
+      kaid
+      nickname
+      __typename
+    }
+    __typename
+  }
+}

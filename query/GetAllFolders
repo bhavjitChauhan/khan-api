@@ -1,0 +1,10 @@
+query GetAllFolders {
+  allFolders {
+    id
+    kaLocale
+    name
+    courseIds
+    teamKaids
+    __typename
+  }
+}

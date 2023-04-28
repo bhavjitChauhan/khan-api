@@ -1,0 +1,14 @@
+mutation accountTransitionMutation($targetKaid: String!, $childOrAdult: String!) {
+  accountTransition(targetKaid: $targetKaid, childOrAdult: $childOrAdult) {
+    user {
+      id
+      isChild
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

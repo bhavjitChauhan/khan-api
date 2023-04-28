@@ -1,0 +1,8 @@
+query localesForFlagRuleQuery {
+  localesForLanguagePicker(includeEnglish: false, includeFake: false) {
+    id
+    kaLocale
+    displayName
+    __typename
+  }
+}

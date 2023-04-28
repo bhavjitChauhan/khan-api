@@ -1,0 +1,19 @@
+query getUsersWithGrants($withRoles: [String!]) {
+  usersWithGrants(withRoles: $withRoles) {
+    id
+    kaid
+    email
+    nickname
+    grants {
+      role {
+        name
+        description
+        __typename
+      }
+      grantingUserEmail
+      permissionId
+      __typename
+    }
+    __typename
+  }
+}

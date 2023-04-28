@@ -1,0 +1,9 @@
+mutation deleteOfficialClarification($id: ID!) {
+  deleteOfficialClarification(id: $id) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,10 @@
+mutation contentEditorPreviewYouTubeThumbnail($objectName: String!, $titleText: String!) {
+  previewYouTubeThumbnail(objectName: $objectName, titleText: $titleText, width: 160, height: 90) {
+    src
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

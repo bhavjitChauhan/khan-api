@@ -1,0 +1,16 @@
+mutation UpdateRolesAndHomepage($roles: [UserRole]!, $homepage: UserHomepage!) {
+  updateRolesAndHomepageSettings(roles: $roles, homepage: $homepage) {
+    user {
+      id
+      isTeacher
+      isParent
+      homepageUrl
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

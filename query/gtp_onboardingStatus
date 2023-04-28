@@ -1,0 +1,25 @@
+query gtp_onboardingStatus($examGroupId: String!) {
+  egud(examGroupId: $examGroupId) {
+    id
+    selectedExams
+    __typename
+  }
+  examGroup(examGroupId: $examGroupId) {
+    id
+    exams {
+      id
+      examId
+      userData {
+        id
+        tpud {
+          id
+          onboardingState
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

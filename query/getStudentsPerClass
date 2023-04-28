@@ -1,0 +1,20 @@
+query getStudentsPerClass($after: Int, $classDescriptor: String!, $coachKaid: String, $dueAfter: DateTime, $pageSize: Int) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    studentsPage(after: $after, pageSize: $pageSize) {
+      students {
+        id
+        assignmentCount(dueAfter: $dueAfter)
+        coachNickname(teacherKaid: $coachKaid)
+        email
+        isChild
+        username
+        __typename
+      }
+      nextCursor
+      __typename
+    }
+    __typename
+  }
+}

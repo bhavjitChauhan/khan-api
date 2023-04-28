@@ -1,0 +1,8 @@
+query articleForDiff($sha: String!) {
+  articleRevisionBySha(sha: $sha) {
+    id
+    sha
+    perseusContent
+    __typename
+  }
+}

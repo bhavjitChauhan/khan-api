@@ -1,0 +1,29 @@
+query studentPageByDescriptorQuery($classDescriptor: String!) {
+  coach: user {
+    id
+    isFormalTeacher
+    __typename
+  }
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    classroomDistrictInfo {
+      id
+      isNweaMapSynced
+      studentUserDistrictInfos {
+        id
+        kaid
+        displayNameForTeacher
+        __typename
+      }
+      __typename
+    }
+    studentKaidsAndNicknames {
+      id
+      kaid
+      coachNickname
+      __typename
+    }
+    __typename
+  }
+}

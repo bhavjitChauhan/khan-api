@@ -1,0 +1,14 @@
+query masteryTowerPreviousWeekLeaderboardQuery($classDescriptor: String!) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
+    id
+    cacheId
+    masteryTowerPreviousWeekLeaderboard {
+      classDescriptor
+      masteryTowerName
+      sessionCount
+      score
+      __typename
+    }
+    __typename
+  }
+}

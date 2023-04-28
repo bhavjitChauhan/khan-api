@@ -1,0 +1,13 @@
+query getThankYouVideo {
+  video(id: "evergreen-thank-you-video") {
+    id
+    kaUrl
+    kind
+    slug
+    title
+    translatedTitle
+    translatedYoutubeId
+    youtubeId
+    __typename
+  }
+}

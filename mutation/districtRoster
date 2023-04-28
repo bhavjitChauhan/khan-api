@@ -1,0 +1,9 @@
+mutation districtRoster($districtID: String!, $force: Boolean!) {
+  rosterDistrict(districtID: $districtID, force: $force) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

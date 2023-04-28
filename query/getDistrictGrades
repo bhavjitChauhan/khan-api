@@ -1,0 +1,12 @@
+query getDistrictGrades($districtName: String!) {
+  district(districtName: $districtName) {
+    id
+    activeGrades {
+      id
+      sortIndex
+      name
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,9 @@
+query CourseEditor_MobileRegions {
+  curricula: curriculums {
+    key
+    name
+    country
+    region
+    __typename
+  }
+}

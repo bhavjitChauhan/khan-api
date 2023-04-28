@@ -1,0 +1,43 @@
+query ClassSubjectMasteryProgress($classDescriptor: String!, $topicId: String!, $teacherKaid: String!) {
+  topicById(id: $topicId) {
+    id
+    childTopics {
+      id
+      translatedTitle
+      __typename
+    }
+    __typename
+  }
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    students {
+      id
+      coachNickname(teacherKaid: $teacherKaid)
+      subjectProgress(topicId: $topicId) {
+        currentMastery {
+          percentage
+          pointsEarned
+          pointsAvailable
+          __typename
+        }
+        unitProgresses {
+          topic {
+            id
+            __typename
+          }
+          currentMastery {
+            percentage
+            pointsEarned
+            pointsAvailable
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

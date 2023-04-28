@@ -1,0 +1,14 @@
+mutation DismissItemMutation($itemName: String!, $expires: DateTime) {
+  dismissItem(itemName: $itemName, expires: $expires) {
+    error {
+      code
+      __typename
+    }
+    dismissedItem {
+      id
+      isDismissed
+      __typename
+    }
+    __typename
+  }
+}

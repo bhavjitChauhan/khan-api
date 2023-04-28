@@ -1,0 +1,25 @@
+mutation loginWithGoogleMutation($token: String!, $birthdate: String, $linkClever: Boolean, $role: UserRole, $cleverTransferToken: String, $inviteId: String) {
+  loginWithGoogle(token: $token, birthdate: $birthdate, linkClever: $linkClever, role: $role, cleverTransferToken: $cleverTransferToken, inviteId: $inviteId) {
+    user {
+      id
+      kaid
+      canAccessDistrictsHomepage
+      isTeacher
+      hasUnresolvedInvitations
+      transferAuthToken
+      preferredKaLocale {
+        id
+        kaLocale
+        status
+        __typename
+      }
+      __typename
+    }
+    isFirstLogin
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

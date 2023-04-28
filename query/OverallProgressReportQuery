@@ -1,0 +1,27 @@
+query OverallProgressReportQuery($classDescriptor: String!, $progressFrom: DateTime, $progressUpTo: DateTime) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    studentKaidsAndNicknames {
+      id
+      kaid
+      coachNickname
+      __typename
+    }
+    __typename
+  }
+  teacherOverallProgressReport(classroomDescriptor: $classDescriptor, filters: {progressFrom: $progressFrom, progressUpTo: $progressUpTo}) {
+    rows {
+      skillsLeveledUp
+      skillsWithoutProgress
+      studentKaidAndNickname: studentKaidsAndNickname {
+        id
+        kaid
+        __typename
+      }
+      totalMinutes
+      __typename
+    }
+    __typename
+  }
+}

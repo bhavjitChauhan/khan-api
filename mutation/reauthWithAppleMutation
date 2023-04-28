@@ -1,0 +1,15 @@
+mutation reauthWithAppleMutation($authCode: String!, $state: String!) {
+  reauthWithApple(authCode: $authCode, state: $state) {
+    error {
+      code
+      accessToken
+      __typename
+    }
+    user {
+      id
+      kaid
+      __typename
+    }
+    __typename
+  }
+}

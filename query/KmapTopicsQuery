@@ -1,0 +1,23 @@
+query KmapTopicsQuery {
+  kmapTopics {
+    id
+    key
+    title
+    domainSlug
+    slug
+    iconPath
+    masteryEnabled
+    subjectMasteryEnabled
+    isHighSchoolSubject
+    learnableContentSummary {
+      countExercises
+      __typename
+    }
+    band
+    bandGradeName
+    bandKey
+    strand
+    strandKey
+    __typename
+  }
+}

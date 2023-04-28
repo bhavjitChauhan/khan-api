@@ -1,0 +1,7 @@
+query getLearnStormCampaignDataForEnrollment {
+  learnStormActiveEligibleCampaign {
+    id
+    campaignName
+    __typename
+  }
+}

@@ -1,0 +1,9 @@
+mutation sendWaitlistApprovedTestEmail {
+  sendWaitlistApprovedTestEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

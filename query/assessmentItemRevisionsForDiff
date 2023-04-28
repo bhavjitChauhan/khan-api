@@ -1,0 +1,14 @@
+query assessmentItemRevisionsForDiff($contentId: String!) {
+  allAssessmentItemRevisionsByID(contentId: $contentId) {
+    id
+    cacheId: sha
+    sha
+    creationDate
+    createdBy {
+      id
+      nickname
+      __typename
+    }
+    __typename
+  }
+}

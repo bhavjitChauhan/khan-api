@@ -1,0 +1,16 @@
+query querySchoolAffiliation {
+  coach: user {
+    id
+    schoolAffiliation {
+      id
+      __typename
+    }
+    isFormalTeacher
+    __typename
+  }
+  user {
+    id
+    tosForFormalTeacherStatus
+    __typename
+  }
+}

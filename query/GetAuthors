@@ -1,0 +1,8 @@
+query GetAuthors {
+  allAuthorOptions {
+    id
+    name
+    key
+    __typename
+  }
+}

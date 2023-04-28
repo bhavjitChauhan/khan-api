@@ -1,0 +1,9 @@
+mutation transferAuthMutation($key: String!) {
+  transferAuth(key: $key) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

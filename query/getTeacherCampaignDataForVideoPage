@@ -1,0 +1,31 @@
+query getTeacherCampaignDataForVideoPage($id: ID!) {
+  coach: user {
+    id
+    teacherCampaignProgress(id: $id) {
+      id
+      completedSteps
+      campaign {
+        id
+        steps {
+          __typename
+          id
+          ... on TeacherCampaignVideoStep {
+            header
+            body
+            graphic
+            numberRequired
+            handouts
+            manualHandouts
+            manualHandoutDescriptions
+            videos
+            description
+            __typename
+          }
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

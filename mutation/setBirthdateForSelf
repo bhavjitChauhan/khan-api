@@ -1,0 +1,9 @@
+mutation setBirthdateForSelf($birthdate: String!) {
+  setSettings(birthdate: $birthdate) {
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+}

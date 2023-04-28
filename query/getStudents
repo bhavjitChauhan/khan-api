@@ -1,0 +1,13 @@
+query getStudents($classDescriptor: String!) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    studentKaidsAndNicknames {
+      id
+      kaid
+      coachNickname
+      __typename
+    }
+    __typename
+  }
+}

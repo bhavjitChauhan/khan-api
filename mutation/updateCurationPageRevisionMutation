@@ -1,0 +1,30 @@
+mutation updateCurationPageRevisionMutation($sha: String!, $input: EditCurationPageInput!) {
+  editCurationPage(sha: $sha, input: $input) {
+    curationPage {
+      contentKind
+      id
+      title
+      slug
+      alternateSlugs
+      curriculumKey
+      description
+      listed
+      sponsored
+      showCurationModule
+      lowerToc
+      customDescriptionTag
+      customTitleTag
+      curationData
+      sha
+      hasUnpublishedChanges
+      __typename
+    }
+    error {
+      code
+      conflictSha
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

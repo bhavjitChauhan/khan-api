@@ -1,0 +1,34 @@
+query getCommoncore {
+  commoncore {
+    standards {
+      code
+      description
+      domains {
+        code
+        description
+        standards {
+          id
+          code
+          descriptionHtml
+          contents(filterByKind: [EXERCISE]) {
+            id
+            kind
+            slug
+            englishName: title
+            translatedName: translatedTitle
+            description
+            ... on Exercise {
+              questions: numAssessmentItems
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

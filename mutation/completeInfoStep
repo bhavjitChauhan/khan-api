@@ -1,0 +1,10 @@
+mutation completeInfoStep($stepId: ID!) {
+  teacherCampaignInfoStepMarkComplete(stepId: $stepId) {
+    progress {
+      id
+      completedSteps
+      __typename
+    }
+    __typename
+  }
+}

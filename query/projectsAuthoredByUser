@@ -1,0 +1,23 @@
+query projectsAuthoredByUser($kaid: String, $pageInfo: ListProgramsPageInfo, $sort: ListProgramSortOrder) {
+  user(kaid: $kaid) {
+    id
+    programs(pageInfo: $pageInfo, sort: $sort) {
+      complete
+      cursor
+      programs {
+        id
+        key
+        authorKaid
+        authorNickname
+        displayableSpinoffCount
+        imagePath
+        sumVotesIncremented
+        translatedTitle: title
+        url
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

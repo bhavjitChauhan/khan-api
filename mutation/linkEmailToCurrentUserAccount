@@ -1,0 +1,10 @@
+mutation linkEmailToCurrentUserAccount($email: String!) {
+  linkEmailToCurrentUserAccount(email: $email) {
+    email
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,9 @@
+query videoDataYoutubeId($videoId: String!) {
+  video: videoByYoutubeId(youtubeId: $videoId) {
+    id
+    title
+    youtubeId
+    contentId
+    __typename
+  }
+}

@@ -1,0 +1,13 @@
+mutation addCoachAsAdminMutation($studentKaid: String!, $coachKaid: String!) {
+  addCoachAsAdmin(studentKaid: $studentKaid, coachKaid: $coachKaid) {
+    coach {
+      id
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

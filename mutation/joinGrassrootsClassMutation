@@ -1,0 +1,7 @@
+mutation joinGrassrootsClassMutation($classCode: String!) {
+  joinStudent(classCode: $classCode) {
+    isDistrictSynced
+    errors
+    __typename
+  }
+}

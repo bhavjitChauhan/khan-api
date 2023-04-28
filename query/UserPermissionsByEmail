@@ -1,0 +1,19 @@
+query UserPermissionsByEmail($email: String!) {
+  user(email: $email) {
+    id
+    userKaid: kaid
+    userEmail: email
+    userName: username
+    permissions: contentPermissions {
+      id
+      kind
+      role
+      granterEmail
+      locale: kaLocale
+      canPublish
+      topic: curationNodeSlug
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,25 @@
+query quizAndUnitTestAttemptsQuery($topicId: String!) {
+  user {
+    id
+    latestUnitTestAttempts(unitId: $topicId) {
+      id
+      numAttempted
+      numCorrect
+      completedDate
+      canResume
+      isCompleted
+      __typename
+    }
+    latestQuizAttempts(topicId: $topicId) {
+      id
+      numAttempted
+      numCorrect
+      completedDate
+      canResume
+      isCompleted
+      positionKey
+      __typename
+    }
+    __typename
+  }
+}

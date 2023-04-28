@@ -1,0 +1,10 @@
+query getAllSubject {
+  domains: studentListTopics {
+    subjects: topics {
+      id
+      slug
+      __typename
+    }
+    __typename
+  }
+}

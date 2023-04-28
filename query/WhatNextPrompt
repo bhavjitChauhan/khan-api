@@ -1,0 +1,114 @@
+query WhatNextPrompt($assignmentsPageSize: Int, $assignmentsOrderBy: AssignmentOrder!, $assignmentsDueAfter: DateTime!) {
+  user {
+    id
+    kaid
+    assignmentsPage(pageSize: $assignmentsPageSize, orderBy: $assignmentsOrderBy, dueAfter: $assignmentsDueAfter) {
+      assignments {
+        id
+        contents {
+          id
+          contentKind
+          translatedTitle
+          topicPaths {
+            path {
+              id
+              slug
+              kind
+              __typename
+            }
+            __typename
+          }
+          urlWithinCurationNode
+          __typename
+        }
+        courseId
+        domainId
+        dueDate
+        exerciseConfig {
+          itemPickerStrategy
+          __typename
+        }
+        key
+        lessonId
+        unitId
+        classroom {
+          id
+          cacheId
+          signupCode
+          __typename
+        }
+        itemCompletionStates {
+          state
+          bestScore {
+            numCorrect
+            numAttempted
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    courseMasteryAssignments(isPast: false) {
+      id
+      dueDate
+      currentUserProgressV2 {
+        currentMasteryV2 {
+          percentage
+          pointsEarned
+          pointsAvailable
+          __typename
+        }
+        unitProgresses {
+          ...UnitProgressFields
+          __typename
+        }
+        __typename
+      }
+      topic {
+        ...TopicFields
+        __typename
+      }
+      __typename
+    }
+    classPickerCourseProgresses {
+      lastWorkedOn
+      topic {
+        ...TopicFields
+        __typename
+      }
+      unitProgresses {
+        ...UnitProgressFields
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment TopicFields on Topic {
+  contentId: id
+  id
+  contentKind
+  title: translatedTitle
+  relativeUrl
+  slug
+  __typename
+}
+
+fragment UnitProgressFields on UnitProgress {
+  lastWorkedOn
+  currentMasteryV2 {
+    percentage
+    pointsEarned
+    pointsAvailable
+    __typename
+  }
+  topic {
+    ...TopicFields
+    __typename
+  }
+  __typename
+}

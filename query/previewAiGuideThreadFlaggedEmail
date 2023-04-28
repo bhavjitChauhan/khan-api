@@ -1,0 +1,7 @@
+query previewAiGuideThreadFlaggedEmail {
+  preview: previewChildAiGuideThreadFlaggedEmail {
+    textContent
+    htmlContent
+    __typename
+  }
+}

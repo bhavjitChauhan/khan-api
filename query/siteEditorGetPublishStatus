@@ -1,0 +1,15 @@
+query siteEditorGetPublishStatus($kaLocale: KALocale!, $contentDescriptors: [String!]!) {
+  contentEditingStatus {
+    publishEnabled
+    __typename
+  }
+  contentStageItems(kaLocale: $kaLocale, contentDescriptors: $contentDescriptors) {
+    id
+    contentKind
+    contentId
+    sha
+    publishedSha
+    isModified
+    __typename
+  }
+}

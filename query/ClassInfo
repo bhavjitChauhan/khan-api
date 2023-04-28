@@ -1,0 +1,10 @@
+query ClassInfo($classCode: String!) {
+  joinByClassCodeInfo(classCode: $classCode) {
+    id
+    cacheId
+    name
+    signupCode
+    includesDistrictOwnedData
+    __typename
+  }
+}

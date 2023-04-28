@@ -1,0 +1,6 @@
+mutation joinStudentMutationForModal($classCode: String!) {
+  joinStudent(classCode: $classCode) {
+    isDistrictSynced
+    __typename
+  }
+}

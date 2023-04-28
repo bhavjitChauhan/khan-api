@@ -1,0 +1,13 @@
+fragment CourseFields on Course {
+  ... on Course {
+    id
+    description
+    iconPath
+    key
+    kind
+    mappedStandardIds
+    title: translatedTitle
+    __typename
+  }
+  __typename
+}

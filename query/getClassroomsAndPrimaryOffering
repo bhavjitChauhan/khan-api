@@ -1,0 +1,12 @@
+query getClassroomsAndPrimaryOffering {
+  districtPrimaryOfferingAsTeacher
+  coach: user {
+    id
+    studentLists: coachedStudentLists {
+      id
+      cacheId
+      __typename
+    }
+    __typename
+  }
+}

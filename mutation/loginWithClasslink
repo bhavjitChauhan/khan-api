@@ -1,0 +1,26 @@
+mutation loginWithClasslink($classlinkCode: String, $useDevClasslinkClient: Boolean) {
+  loginWithClasslink(classlinkCode: $classlinkCode, useDevClasslinkClient: $useDevClasslinkClient) {
+    user {
+      id
+      kaid
+      canAccessDistrictsHomepage
+      isTeacher
+      hasUnresolvedInvitations
+      transferAuthToken
+      preferredKaLocale {
+        id
+        kaLocale
+        status
+        __typename
+      }
+      __typename
+    }
+    isFirstLogin
+    udiUUID
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

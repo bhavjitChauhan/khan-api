@@ -1,0 +1,39 @@
+query csvReportStatus($kaid: String!, $districtID: String!) {
+  getLastNAdminReportsForUser(kaid: $kaid, districtID: $districtID, topNResults: 1) {
+    adminReports {
+      id
+      kaid
+      districtKeyId
+      status
+      blobCreatedAt
+      blobExpiresAt
+      reportType
+      startDate
+      endDate
+      schools
+      createdAt
+      fileName
+      fileSize
+      bands
+      courseSISValues
+      teacherKaids
+      course {
+        id
+        key
+        title
+        translatedTitle
+        masteryEnabled
+        __typename
+      }
+      grades
+      strandKey
+      notifyByEmail
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

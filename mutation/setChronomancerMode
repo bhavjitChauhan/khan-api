@@ -1,0 +1,20 @@
+mutation setChronomancerMode($mode: ChronomancerMode!) {
+  setChronomancerMode(mode: $mode) {
+    chronomancer {
+      mode
+      isCollegeBoardIntegrationEnabled
+      outages {
+        start
+        end
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

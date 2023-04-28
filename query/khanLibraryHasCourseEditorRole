@@ -1,0 +1,7 @@
+query khanLibraryHasCourseEditorRole {
+  user {
+    id
+    hasPermission(name: "can_edit_courses")
+    __typename
+  }
+}

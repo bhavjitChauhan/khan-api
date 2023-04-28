@@ -1,0 +1,92 @@
+query getCoachExerciseReport($assignmentId: String!, $teacherKaid: String!) {
+  coach: user {
+    id
+    assignment: assignmentByThisUser(id: $assignmentId) {
+      id
+      assignedDate
+      students {
+        id
+        kaid
+        coachNickname(teacherKaid: $teacherKaid)
+        __typename
+      }
+      studentList {
+        id
+        cacheId
+        name
+        signupCode
+        __typename
+      }
+      contents {
+        ...ExerciseContentFields
+        __typename
+      }
+      exerciseConfig {
+        itemPickerStrategy
+        assessmentItemIds
+        __typename
+      }
+      itemCompletionStatesForAllStudents {
+        studentKaid
+        exerciseAttempts {
+          id
+          isCompleted
+          numAttempted
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment ExerciseContentFields on LearnableContent {
+  id
+  kind
+  slug
+  ... on Exercise {
+    translatedTitle: translatedDisplayName
+    exerciseLength
+    assessmentItems {
+      id
+      contentId
+      itemData
+      __typename
+    }
+    __typename
+  }
+  ... on TopicQuiz {
+    id
+    translatedTitle
+    exerciseLength
+    coveredExercises(includeCoveredSkills: true) {
+      id
+      assessmentItems {
+        id
+        contentId
+        itemData
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  ... on TopicUnitTest {
+    translatedTitle
+    exerciseLength
+    coveredExercises(includeCoveredSkills: true) {
+      id
+      assessmentItems {
+        id
+        contentId
+        itemData
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  __typename
+}

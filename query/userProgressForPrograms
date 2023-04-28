@@ -1,0 +1,34 @@
+query userProgressForPrograms($contentDescriptors: [String!]!) {
+  user {
+    id
+    contentItemProgresses(queryBy: {contentDescriptors: $contentDescriptors}) {
+      completionStatus
+      content {
+        id
+        contentKind
+        __typename
+      }
+      ... on ChallengeItemProgress {
+        points
+        stashedCode
+        __typename
+      }
+      ... on InteractiveItemProgress {
+        points
+        __typename
+      }
+      ... on ProjectItemProgress {
+        points
+        stashedCode
+        __typename
+      }
+      ... on TalkthroughItemProgress {
+        points
+        lastMsWatched
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

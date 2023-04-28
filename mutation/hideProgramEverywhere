@@ -1,0 +1,10 @@
+mutation hideProgramEverywhere($programID: ID!, $hide: Boolean!) {
+  hideProgramEverywhere(programID: $programID, hide: $hide) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

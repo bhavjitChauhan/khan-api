@@ -1,0 +1,9 @@
+mutation setAdminReportCancelled($reportID: ID!) {
+  setAdminReportCancelled(reportID: $reportID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

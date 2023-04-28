@@ -1,0 +1,10 @@
+mutation hideProgramFromHotlist($programID: ID!, $hide: Boolean!) {
+  hideProgramFromHotlist(programID: $programID, hide: $hide) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

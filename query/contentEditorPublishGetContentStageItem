@@ -1,0 +1,10 @@
+query contentEditorPublishGetContentStageItem($kaLocale: KALocale!, $contentKind: String!, $contentId: String!) {
+  contentStageItem(kaLocale: $kaLocale, contentKind: $contentKind, contentId: $contentId) {
+    id
+    sha
+    sourceKaLocale
+    isModified
+    doNotPublish
+    __typename
+  }
+}

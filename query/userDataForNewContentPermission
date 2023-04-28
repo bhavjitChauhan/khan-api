@@ -1,0 +1,10 @@
+query userDataForNewContentPermission($email: String!) {
+  user(email: $email) {
+    id
+    kaid
+    email
+    username
+    nickname
+    __typename
+  }
+}

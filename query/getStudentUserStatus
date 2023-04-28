@@ -1,0 +1,14 @@
+query getStudentUserStatus {
+  user {
+    id
+    nickname
+    age
+    birthdate
+    cleverId
+    userDistrictInfos {
+      id
+      __typename
+    }
+    __typename
+  }
+}

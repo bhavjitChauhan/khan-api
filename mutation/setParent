@@ -1,0 +1,9 @@
+mutation setParent($parentEmail: String!) {
+  setParent(parentEmail: $parentEmail) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

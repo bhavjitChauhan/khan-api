@@ -1,0 +1,6 @@
+mutation joinStudentMutation($classCode: String!) {
+  joinStudent(classCode: $classCode) {
+    errors
+    __typename
+  }
+}

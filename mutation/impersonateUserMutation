@@ -1,0 +1,9 @@
+mutation impersonateUserMutation($kaid: String!, $reason: String!) {
+  impersonateUser(kaid: $kaid, reason: $reason) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

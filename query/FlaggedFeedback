@@ -1,0 +1,140 @@
+query FlaggedFeedback($feedbackType: FeedbackType, $page: Int, $sort: ModerationSortOrder, $limit: Int, $kaLocale: String) {
+  flaggedFeedback(feedbackType: $feedbackType, page: $page, sort: $sort, limit: $limit, kaLocale: $kaLocale) {
+    feedback {
+      author {
+        id
+        kaid
+        nickname
+        avatar {
+          name
+          imageSrc
+          __typename
+        }
+        __typename
+      }
+      content
+      flags
+      flaggedBy
+      flaggedByUser
+      key
+      expandKey
+      permalink
+      feedbackType
+      deleted
+      sumVotesIncremented
+      appearsAsDeleted
+      date
+      replyCount
+      lowQualityScore
+      qualityKind
+      replyExpandKeys
+      downVoted
+      upVoted
+      focusUrl
+      focus {
+        id
+        translatedTitle
+        kind
+        relativeUrl
+        __typename
+      }
+      ... on QuestionFeedback {
+        hasAnswered
+        answers {
+          appearsAsDeleted
+          author {
+            id
+            kaid
+            nickname
+            avatar {
+              name
+              imageSrc
+              __typename
+            }
+            __typename
+          }
+          content
+          date
+          definitelyNotSpam
+          deleted
+          downVoted
+          expandKey
+          feedbackType
+          flaggedBy
+          flaggedByUser
+          flags
+          focusUrl
+          focus {
+            kind
+            id
+            translatedTitle
+            relativeUrl
+            __typename
+          }
+          fromVideoAuthor
+          key
+          lowQualityScore
+          permalink
+          qualityKind
+          replyCount
+          replyExpandKeys
+          sumVotesIncremented
+          upVoted
+          __typename
+        }
+        isOld
+        answerCount
+        __typename
+      }
+      ... on AnswerFeedback {
+        questionKey
+        question {
+          author {
+            id
+            kaid
+            nickname
+            avatar {
+              name
+              imageSrc
+              __typename
+            }
+            __typename
+          }
+          appearsAsDeleted
+          content
+          date
+          definitelyNotSpam
+          deleted
+          downVoted
+          expandKey
+          feedbackType
+          flaggedBy
+          flaggedByUser
+          flags
+          focusUrl
+          focus {
+            kind
+            id
+            translatedTitle
+            relativeUrl
+            __typename
+          }
+          fromVideoAuthor
+          key
+          lowQualityScore
+          permalink
+          qualityKind
+          replyCount
+          replyExpandKeys
+          sumVotesIncremented
+          upVoted
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    total
+    __typename
+  }
+}

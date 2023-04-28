@@ -1,0 +1,23 @@
+query getAllSubmittedStories($cursor: String!, $sort: SubmittedStorySort!) {
+  allSubmittedStories(sortBy: $sort, cursor: $cursor, count: 20) {
+    stories {
+      date
+      key
+      name: submitterName
+      email
+      level
+      teaser
+      role
+      published
+      upvotes: votes
+      story
+      share_allowed: shareAllowed
+      video_url: videoUrl
+      video_title: videoTitle
+      __typename
+    }
+    maybeMore
+    nextCursor
+    __typename
+  }
+}

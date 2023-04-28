@@ -1,0 +1,3 @@
+query isCourseEditableByCurrentUser($courseId: String!) {
+  isCourseEditableByCurrentUser(courseId: $courseId)
+}

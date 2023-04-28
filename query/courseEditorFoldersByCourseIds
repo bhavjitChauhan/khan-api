@@ -1,0 +1,6 @@
+query courseEditorFoldersByCourseIds($courseIds: [String!]) {
+  allFolders(courseIdsFilter: $courseIds) {
+    id
+    __typename
+  }
+}

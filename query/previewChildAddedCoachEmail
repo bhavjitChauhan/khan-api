@@ -1,0 +1,7 @@
+query previewChildAddedCoachEmail {
+  preview: previewChildAddedCoachEmail {
+    textContent
+    htmlContent
+    __typename
+  }
+}

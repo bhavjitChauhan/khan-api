@@ -1,0 +1,18 @@
+query CourseMenuEditor_DefaultCourseMenu {
+  defaultCourseMenu: learnMenuTopics {
+    identifier: slug
+    translatedTitle
+    href
+    isNew
+    children {
+      identifier: slug
+      translatedTitle
+      href
+      isNew
+      loggedOutHref
+      nonContentLink
+      __typename
+    }
+    __typename
+  }
+}

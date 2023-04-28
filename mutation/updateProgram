@@ -1,0 +1,27 @@
+mutation updateProgram($programId: ID!, $title: String, $revision: ProgramRevisionInput!) {
+  updateProgram(programId: $programId, title: $title, revision: $revision) {
+    program {
+      ...Program
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment Program on Program {
+  id
+  latestRevision {
+    id
+    code
+    __typename
+  }
+  title
+  url
+  userAuthoredContentType
+  __typename
+}

@@ -1,0 +1,45 @@
+query getCombinedBadges($kaid: String, $spotlightBadgeSlug: String!) {
+  user(kaid: $kaid) {
+    id
+    badges {
+      lastEarnedDate
+      count
+      badge {
+        ...Badge
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  allBadges(excludeFilters: [RETIRED, CUSTOM, HIDDEN_IF_UNKNOWN]) {
+    ...Badge
+    __typename
+  }
+  badgeBySlug(slug: $spotlightBadgeSlug) {
+    ...Badge
+    __typename
+  }
+}
+
+fragment Badge on Badge {
+  badgeCategory
+  description
+  fullDescription
+  isCustom
+  isRetired
+  name
+  points
+  absoluteUrl
+  hideContext
+  icons {
+    smallUrl
+    compactUrl
+    emailUrl
+    largeUrl
+    __typename
+  }
+  relativeUrl
+  slug
+  __typename
+}

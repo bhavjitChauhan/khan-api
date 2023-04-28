@@ -1,0 +1,40 @@
+query khanLibraryCourseStructure($id: String!) {
+  courseById(id: $id) {
+    id
+    domainSlug
+    slug
+    title
+    creationDate
+    masteryEnabled
+    unitChildren {
+      id
+      masteryEnabled
+      title
+      allOrderedChildren {
+        ... on TopicUnitTest {
+          id
+          title
+          __typename
+        }
+        ... on TopicQuiz {
+          id
+          title
+          __typename
+        }
+        ... on Lesson {
+          id
+          title
+          allLearnableContent {
+            id
+            title
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

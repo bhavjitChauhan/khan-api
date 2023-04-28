@@ -1,0 +1,9 @@
+query allTranslatableLocales {
+  locales(includeEnglish: false) {
+    id
+    lang: kaLocale
+    crowdinLocale
+    displayName
+    __typename
+  }
+}

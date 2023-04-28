@@ -1,0 +1,86 @@
+query getUserProgressDump($kaid: String!, $problemLogCursor: ID, $videoProgressesCursor: ID, $pageSize: Int, $startDt: DateTime, $endDt: DateTime) {
+  user(kaid: $kaid) {
+    id
+    kaid
+    email
+    lastLoginLocale
+    rawLogs {
+      videoProgressesPage(startDt: $startDt, endDt: $endDt, after: $videoProgressesCursor) {
+        videoProgresses {
+          completed
+          lastSecondWatched
+          duration
+          progress
+          points
+          secondsWatched
+          lastWatched
+          content {
+            id
+            title
+            ... on Video {
+              youtubeId
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        pageInfo {
+          nextCursor
+          __typename
+        }
+        __typename
+      }
+      problemLogsPage(startDt: $startDt, endDt: $endDt, after: $problemLogCursor, pageSize: $pageSize) {
+        problemLogs {
+          correct
+          countAttempts
+          countHints
+          exercise
+          exerciseContent {
+            id
+            title
+            __typename
+          }
+          ipAddress
+          incomingFpmLevel
+          outgoingFpmLevel
+          pointsEarned
+          problemNumber
+          problemsCorrect
+          problemsTotal
+          task {
+            id
+            isRestarted
+            creationDate
+            completedDate
+            skillLevelChanges {
+              id
+              skillId
+              after
+              __typename
+            }
+            __typename
+          }
+          taskContent {
+            id
+            title
+            __typename
+          }
+          taskKey
+          taskType
+          timeDone
+          timeTaken
+          __typename
+        }
+        pageInfo {
+          nextCursor
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

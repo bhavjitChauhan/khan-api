@@ -1,0 +1,20 @@
+query getUserHoverCardProfile($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    nickname
+    username
+    bio
+    avatar {
+      name
+      imageSrc
+      __typename
+    }
+    points
+    isPhantom
+    isActor
+    isCoachedByActor
+    userSummaryIsVisibleToActor
+    actorHasUserScopedPermission(capability: CAN_VIEW_USER_IDENTITY)
+    __typename
+  }
+}

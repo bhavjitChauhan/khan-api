@@ -1,0 +1,17 @@
+query CoursesUnitsQuery($selectedMasteryCourseIds: [String]!) {
+  coursesByIds(ids: $selectedMasteryCourseIds) {
+    id
+    slug
+    translatedTitle
+    unitChildren {
+      id
+      translatedTitle
+      learnableContentSummary {
+        countExercises
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

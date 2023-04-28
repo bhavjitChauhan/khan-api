@@ -1,0 +1,12 @@
+query getSATLandingPageVideo($id: String!) {
+  video(id: $id) {
+    id
+    kind
+    kaUrl
+    slug
+    translatedTitle
+    translatedYoutubeId
+    youtubeId
+    __typename
+  }
+}

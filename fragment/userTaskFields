@@ -1,0 +1,52 @@
+fragment userTaskFields on PracticeUserTask {
+  cards {
+    done
+    cardType
+    ... on ProblemCard {
+      exerciseName
+      problemType
+      __typename
+    }
+    __typename
+  }
+  includeSkipButton
+  task {
+    contentKey
+    exerciseLength
+    id
+    key
+    pointBounty
+    pointsEarned
+    slug
+    taskType
+    timeEstimate {
+      lowerBound
+      upperBound
+      __typename
+    }
+    completionCriteria {
+      name
+      __typename
+    }
+    promotionCriteria {
+      name
+      value
+      __typename
+    }
+    reservedItems
+    reservedItemsCompleted
+    taskAttemptHistory {
+      correct
+      timeDone
+      seenHint
+      itemId
+      __typename
+    }
+    __typename
+  }
+  userExercises {
+    ...userExerciseFields
+    __typename
+  }
+  __typename
+}

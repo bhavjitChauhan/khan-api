@@ -1,0 +1,10 @@
+query ManageFolders_UsersInFolder($kaids: [String!]!) {
+  users(kaids: $kaids) {
+    id
+    kaid
+    email
+    username
+    nickname
+    __typename
+  }
+}

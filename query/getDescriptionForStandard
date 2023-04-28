@@ -1,0 +1,7 @@
+query getDescriptionForStandard($setId: String!, $standardId: String!) {
+  publishedStandard(setId: $setId, standardId: $standardId) {
+    id
+    description
+    __typename
+  }
+}

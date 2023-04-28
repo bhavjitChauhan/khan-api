@@ -1,0 +1,19 @@
+query hotlist($curationNodeId: String, $onlyOfficialProjectSpinoffs: Boolean!, $sort: ListProgramSortOrder, $pageInfo: ListProgramsPageInfo) {
+  listTopPrograms(curationNodeId: $curationNodeId, onlyOfficialProjectSpinoffs: $onlyOfficialProjectSpinoffs, sort: $sort, pageInfo: $pageInfo) {
+    complete
+    cursor
+    programs {
+      id
+      key
+      authorKaid
+      authorNickname
+      displayableSpinoffCount
+      imagePath
+      sumVotesIncremented
+      translatedTitle: title
+      url
+      __typename
+    }
+    __typename
+  }
+}

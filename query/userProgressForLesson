@@ -1,0 +1,55 @@
+query userProgressForLesson($lessonId: String!, $unitId: String!, $masteryEnabled: Boolean!) {
+  user {
+    id
+    contentItemProgresses(queryBy: {parentTopicId: $lessonId}) {
+      ...BasicContentItemProgress
+      ... on ExerciseItemProgress @include(if: $masteryEnabled) {
+        lastCompletedAttempt {
+          id
+          lastAttemptDate
+          numCorrect
+          numAttempted
+          __typename
+        }
+        updatedMasteryLevel
+        __typename
+      }
+      __typename
+    }
+    latestQuizAttempts(topicId: $unitId) {
+      id
+      numCorrect
+      numAttempted
+      isCompleted
+      positionKey
+      __typename
+    }
+    latestUnitTestAttempts(unitId: $unitId) {
+      id
+      numCorrect
+      numAttempted
+      isCompleted
+      topicId
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment BasicContentItemProgress on ContentItemProgress {
+  bestScore {
+    numAttempted
+    numCorrect
+    completedDate
+    __typename
+  }
+  completionStatus
+  content {
+    id
+    contentKind
+    contentDescriptor
+    progressKey
+    __typename
+  }
+  __typename
+}

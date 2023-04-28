@@ -1,0 +1,11 @@
+mutation contentEditorUploadContentImage($imageBase64: String!) {
+  uploadContentImage(imageBase64: $imageBase64) {
+    url
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,30 @@
+mutation signupUnderAgeGateMutation($username: String!, $password: String!, $birthdate: Date!, $parentEmail: String!, $signupCodes: [String]) {
+  signupUnderAgeGate(username: $username, password: $password, birthdate: $birthdate, parentEmail: $parentEmail, signupCodes: $signupCodes) {
+    user {
+      id
+      kaid
+      canAccessDistrictsHomepage
+      isTeacher
+      hasUnresolvedInvitations
+      transferAuthToken
+      preferredKaLocale {
+        id
+        kaLocale
+        status
+        __typename
+      }
+      studentLists {
+        id
+        cacheId
+        signupCode
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

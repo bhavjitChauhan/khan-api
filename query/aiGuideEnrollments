@@ -1,0 +1,26 @@
+query aiGuideEnrollments($kaids: [String!]) {
+  aiGuideEnrollments(kaids: $kaids) {
+    enrollments {
+      disabledByModeratorDate
+      disabledByModeratorKAID
+      disabledByUserDate
+      enrolledAt
+      enrolledByKaid
+      enrollmentGroup
+      id
+      user {
+        id
+        kaid
+        email
+        nickname
+        age
+        isTeacher
+        isParent
+        joined
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,11 @@
+mutation linkCurrentUserToUDIByUUIDMutation($uuid: ID!, $loginType: String!, $method: UserDistrictInfoActivationMethod) {
+  linkCurrentUserToUDIByUUID(uuid: $uuid, loginType: $loginType, method: $method) {
+    succeeded
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

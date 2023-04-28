@@ -1,0 +1,12 @@
+query districtsMetrics($filter: String!) {
+  districts(filter: $filter) {
+    id
+    lastNRosterJobs(numJobs: 1) {
+      numClassrooms
+      numStudents
+      numTeachers
+      __typename
+    }
+    __typename
+  }
+}

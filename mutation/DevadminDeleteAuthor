@@ -1,0 +1,9 @@
+mutation DevadminDeleteAuthor($id: ID!) {
+  deleteAuthorOption(id: $id) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

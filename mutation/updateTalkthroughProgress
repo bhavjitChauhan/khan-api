@@ -1,0 +1,47 @@
+mutation updateTalkthroughProgress($fullyWatched: Boolean!, $lastMsWatched: Float!, $lessonId: ID!, $msDuration: Int!, $msWatched: Float!, $programId: ID!, $updateProgress: Boolean!) {
+  updateTalkthroughProgress(input: {fullyWatched: $fullyWatched, lastMsWatched: $lastMsWatched, lessonId: $lessonId, msDuration: $msDuration, msWatched: $msWatched, programId: $programId, updateProgress: $updateProgress}) {
+    actionResults {
+      pointsEarned {
+        points
+        __typename
+      }
+      notificationsAdded {
+        badges
+        avatarParts
+        readable
+        urgent
+        toast
+        continueUrl
+        __typename
+      }
+      tutorialNodeProgress {
+        contentId
+        progress
+        __typename
+      }
+      userProfile {
+        countVideosCompleted
+        points
+        countBrandNewNotifications
+        __typename
+      }
+      __typename
+    }
+    programProgress {
+      completionStatus
+      content {
+        id
+        contentKind
+        __typename
+      }
+      points
+      lastMsWatched
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

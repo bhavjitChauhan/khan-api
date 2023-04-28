@@ -1,0 +1,7 @@
+query previewWaitlistApprovedReminderEmail {
+  preview: previewWaitlistApprovedReminderEmail {
+    textContent
+    htmlContent
+    __typename
+  }
+}

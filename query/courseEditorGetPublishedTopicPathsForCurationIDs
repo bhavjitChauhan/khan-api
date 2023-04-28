@@ -1,0 +1,28 @@
+query courseEditorGetPublishedTopicPathsForCurationIDs($ids: [String!]!) {
+  topicsById(ids: $ids) {
+    id
+    contentKind
+    slug
+    topicPaths {
+      path {
+        id
+        kind
+        slug
+        content {
+          ... on CurationNode {
+            title
+            __typename
+          }
+          ... on LearnableContent {
+            title
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

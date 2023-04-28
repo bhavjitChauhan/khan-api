@@ -1,0 +1,15 @@
+mutation SetWalmartInfo($kaid: String!, $walmartId: String, $walmartDivision: String) {
+  setWalmartInfoAsAdmin(walmartId: $walmartId, walmartDivision: $walmartDivision, kaid: $kaid) {
+    error {
+      code
+      __typename
+    }
+    user {
+      id
+      walmartId
+      walmartDivision
+      __typename
+    }
+    __typename
+  }
+}

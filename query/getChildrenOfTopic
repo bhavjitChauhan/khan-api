@@ -1,0 +1,29 @@
+query getChildrenOfTopic($id: String!) {
+  topic: topicById(id: $id) {
+    id
+    contentId: id
+    kind
+    slug
+    translatedTitle
+    children: childrenWithUnlisted {
+      ... on CurationNode {
+        id
+        contentId: id
+        kind
+        slug
+        translatedTitle
+        __typename
+      }
+      ... on LearnableContent {
+        id
+        contentId: id
+        kind
+        slug
+        translatedTitle
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

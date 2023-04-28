@@ -1,0 +1,6 @@
+fragment contentEditorContentRevision on ContentRevision {
+  id
+  cacheId: sha
+  creationDate
+  __typename
+}

@@ -1,0 +1,39 @@
+query userProgressForAssignments($contentDescriptors: [String!]!) {
+  user {
+    id
+    contentItemProgresses(queryBy: {contentDescriptors: $contentDescriptors}) {
+      ...BasicContentItemProgress
+      ... on ExerciseItemProgress {
+        lastCompletedAttempt {
+          id
+          lastAttemptDate
+          numCorrect
+          numAttempted
+          __typename
+        }
+        updatedMasteryLevel
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment BasicContentItemProgress on ContentItemProgress {
+  bestScore {
+    numAttempted
+    numCorrect
+    completedDate
+    __typename
+  }
+  completionStatus
+  content {
+    id
+    contentKind
+    contentDescriptor
+    progressKey
+    __typename
+  }
+  __typename
+}

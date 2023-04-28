@@ -1,0 +1,16 @@
+query getExerciseRevisionGo($firstId: String!, $secondId: String!) {
+  first: exerciseRevisionById(id: $firstId) {
+    id
+    slug
+    __typename
+  }
+  second: exerciseRevisionById(id: $secondId) {
+    id
+    displayName: title
+    name: slug
+    slug
+    sha
+    trackingDocumentUrl
+    __typename
+  }
+}

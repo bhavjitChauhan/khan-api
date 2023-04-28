@@ -1,0 +1,15 @@
+query gtp_getOnboardingContentProgress($lessonId: String!) {
+  user {
+    id
+    contentItemProgresses(queryBy: {parentTopicId: $lessonId}) {
+      completionStatus
+      content {
+        id
+        progressKey
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

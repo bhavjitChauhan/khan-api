@@ -1,0 +1,11 @@
+mutation removeCoachees($coachKaid: String!, $studentKaids: [String]!) {
+  removeCoachees(coachKaid: $coachKaid, studentKaids: $studentKaids) {
+    removedKaids
+    errors {
+      kaid
+      code
+      __typename
+    }
+    __typename
+  }
+}

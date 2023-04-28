@@ -1,0 +1,14 @@
+mutation DevadminCreateAuthor($name: String!) {
+  createAuthorOption(name: $name) {
+    author {
+      id
+      name
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,89 @@
+query KmapPlacementStudentListAdminQuery($classDescriptor: String!) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    signupCode
+    kmapAssignments: subjectMasteryAssignments(filter: KMAP) {
+      id
+      studentListId
+      activeStudentData {
+        kaid
+        assignedDate
+        __typename
+      }
+      studentKaids
+      course: topic {
+        id
+        slug
+        domainSlug
+        ... on KMapTopic {
+          strandKey
+          bandKey
+          __typename
+        }
+        __typename
+      }
+      studentProgress {
+        kaid
+        currentMastery {
+          percentage
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    classroomDistrictInfo {
+      id
+      isNweaMapSynced
+      studentUserDistrictInfos {
+        uuid
+        id
+        kaid
+        gradeLevel
+        displayNameForTeacher
+        suggestedGradeBandKey
+        previousMathAssessment {
+          id
+          isGrowthMeasure
+          testStartDate
+          termName
+          goalData {
+            id
+            strandKey
+            ritScore
+            suggestedRitScoreBandKey
+            __typename
+          }
+          __typename
+        }
+        currentMathAssessment {
+          id
+          isGrowthMeasure
+          testStartDate
+          termName
+          goalData {
+            id
+            strandKey
+            ritScore
+            suggestedRitScoreBandKey
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  kmapTopics {
+    id
+    slug
+    strand
+    band
+    strandKey
+    bandKey
+    __typename
+  }
+}

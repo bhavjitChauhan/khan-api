@@ -1,0 +1,9 @@
+fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
+  email
+  nickname
+  error {
+    code
+    __typename
+  }
+  __typename
+}

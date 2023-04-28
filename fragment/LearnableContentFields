@@ -1,0 +1,10 @@
+fragment LearnableContentFields on LearnableContent {
+  contentId
+  description
+  kind
+  mappedStandardIds
+  nodeUrl: urlWithinTopic
+  slug
+  title: translatedTitle
+  __typename
+}

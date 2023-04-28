@@ -1,0 +1,56 @@
+query WhatNextUnitDataQuery($unitID: String!) {
+  unitById(id: $unitID) {
+    id
+    allOrderedChildren {
+      ... on Lesson {
+        id
+        contentKind
+        contentItems {
+          id
+          kind
+          __typename
+        }
+        relativeUrl
+        translatedTitle
+        __typename
+      }
+      ... on TopicQuiz {
+        id
+        contentKind
+        translatedTitle
+        urlWithinCurationNode(ancestorId: $unitID)
+        __typename
+      }
+      ... on TopicUnitTest {
+        id
+        contentKind
+        translatedTitle
+        urlWithinCurationNode(ancestorId: $unitID)
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  user {
+    id
+    kaid
+    contentItemProgresses(queryBy: {courseOrUnitId: $unitID}) {
+      completionStatus
+      content {
+        id
+        contentId
+        contentKind
+        urlWithinCurationNode(ancestorId: $unitID)
+        translatedTitle
+        __typename
+      }
+      ... on ExerciseItemProgress {
+        updatedMasteryLevel
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

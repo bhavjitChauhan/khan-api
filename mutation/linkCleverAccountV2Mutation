@@ -1,0 +1,9 @@
+mutation linkCleverAccountV2Mutation($transferToken: String!) {
+  linkCleverAccountV2(transferToken: $transferToken) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

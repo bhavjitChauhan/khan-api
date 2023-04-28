@@ -1,0 +1,10 @@
+query getArticleForTeacherCampaignExtraCredit($slug: String!) {
+  article(slug: $slug) {
+    nodeUrl: urlWithinTopic
+    title
+    kind
+    contentId: id
+    slug
+    __typename
+  }
+}

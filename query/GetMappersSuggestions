@@ -1,0 +1,16 @@
+query GetMappersSuggestions($kaid: String!) {
+  mappersSuggestions(studentKaid: $kaid) {
+    unit {
+      id
+      title: translatedTitle
+      relativeUrl
+      __typename
+    }
+    progress {
+      completed
+      total
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,18 @@
+query getLearnMenuProgress($slugs: [String!]) {
+  user {
+    id
+    subjectProgressesBySlug(slugs: $slugs) {
+      topic {
+        id
+        slug
+        __typename
+      }
+      currentMastery {
+        percentage
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,15 @@
+query gtp_getEmailRemindersData($listName: String!) {
+  user {
+    id
+    emailSubscriptions {
+      email
+      sailthruSubscriptionForListName(listName: $listName) {
+        checked
+        token
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

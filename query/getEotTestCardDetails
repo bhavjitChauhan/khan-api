@@ -1,0 +1,33 @@
+query getEotTestCardDetails($taskId: String!, $topicId: String!) {
+  user {
+    id
+    exerciseData {
+      unitTestAttempt(taskId: $taskId, topicId: $topicId) {
+        id
+        numAttempted
+        numCorrect
+        pointsEarned
+        skillsLeveledDown
+        skillsLeveledUp
+        skillsNoChange
+        skillsNotTested
+        skillLevelChanges {
+          id
+          exercise {
+            id
+            title
+            translatedTitle
+            __typename
+          }
+          before
+          after
+          changeDirection
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

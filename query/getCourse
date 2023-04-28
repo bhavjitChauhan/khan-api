@@ -1,0 +1,8 @@
+query getCourse($id: String!) {
+  courseById(id: $id) {
+    id
+    relativeUrl
+    translatedTitle
+    __typename
+  }
+}

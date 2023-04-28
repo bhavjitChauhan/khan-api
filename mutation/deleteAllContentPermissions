@@ -1,0 +1,9 @@
+mutation deleteAllContentPermissions($kaid: String!) {
+  deleteAllContentPermissions(kaid: $kaid) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

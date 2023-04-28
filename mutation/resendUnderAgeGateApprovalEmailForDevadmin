@@ -1,0 +1,9 @@
+mutation resendUnderAgeGateApprovalEmailForDevadmin($kaid: String!) {
+  resendUnderAgeGateApprovalEmail(kaid: $kaid) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

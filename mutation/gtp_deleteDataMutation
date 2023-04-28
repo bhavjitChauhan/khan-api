@@ -1,0 +1,6 @@
+mutation gtp_deleteDataMutation($examGroupId: String!) {
+  deleteData(examGroupId: $examGroupId) {
+    success
+    __typename
+  }
+}

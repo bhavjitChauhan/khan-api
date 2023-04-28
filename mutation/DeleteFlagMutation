@@ -1,0 +1,6 @@
+mutation DeleteFlagMutation($flagName: String!) {
+  removeFlag(name: $flagName) {
+    wasSuccess
+    __typename
+  }
+}

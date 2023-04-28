@@ -1,0 +1,6 @@
+mutation CourseEditorPublish($input: PublishCourse!) {
+  publishResult: publishCourse(inputData: $input) {
+    snapshotId
+    __typename
+  }
+}

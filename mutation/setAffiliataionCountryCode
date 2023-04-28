@@ -1,0 +1,9 @@
+mutation setAffiliataionCountryCode($countryCode: String!) {
+  userSettingsSetAffiliationCountryCode(countryCode: $countryCode) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

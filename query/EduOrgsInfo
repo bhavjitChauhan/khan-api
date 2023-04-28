@@ -1,0 +1,9 @@
+query EduOrgsInfo($postalCode: String!) {
+  eduOrganizations(postalCode: $postalCode) {
+    keyId: id
+    name
+    postalCode
+    locationDisplayText: location
+    __typename
+  }
+}

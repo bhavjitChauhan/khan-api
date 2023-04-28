@@ -1,0 +1,7 @@
+query getVideoNameForTeacherCampaignPreview($id: String!) {
+  video(id: $id) {
+    id
+    translatedTitle
+    __typename
+  }
+}

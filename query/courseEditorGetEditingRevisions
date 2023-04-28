@@ -1,0 +1,60 @@
+query courseEditorGetEditingRevisions($descriptors: [String!]!) {
+  revisionsForDescriptors(descriptors: $descriptors) {
+    ... on ContentRevision {
+      id
+      contentKind
+      sha
+      __typename
+    }
+    ... on LearnableContentRevision {
+      doNotPublish
+      slug
+      sourceKaLocale
+      importedFromSha
+      listed
+      title
+      translatedTitle
+      description
+      mappedStandards {
+        id
+        setId
+        standardId
+        __typename
+      }
+      __typename
+    }
+    ... on ArticleRevision {
+      perseusContent
+      __typename
+    }
+    ... on ExerciseRevision {
+      assessmentItems {
+        id
+        itemData
+        name
+        authorNames
+        perseusApiMajorVersion
+        __typename
+      }
+      problemTypes {
+        name
+        items {
+          id
+          __typename
+        }
+        __typename
+      }
+      suggestedCompletionCriteria
+      __typename
+    }
+    ... on VideoRevision {
+      youtubeId
+      subtitles {
+        text
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,15 @@
+mutation requestAuthEmailForDev($authEmail: String!) {
+  requestAuthEmail(authEmail: $authEmail) {
+    user {
+      id
+      pendingEmails
+      __typename
+    }
+    verificationUrl
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

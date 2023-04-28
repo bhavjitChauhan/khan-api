@@ -1,0 +1,19 @@
+query getTestPrepProgressReport($classDescriptor: String!, $filters: TestPrepProgressReportFilters) {
+  testPrepProgressReport(classroomDescriptor: $classDescriptor, filters: $filters) {
+    teacherKaid
+    classId
+    rows {
+      studentKaidAndNickname {
+        id
+        coachNickname
+        __typename
+      }
+      totalMinutes
+      completedPracticeTasks
+      passedPracticeTasks
+      skillsLeveledUp
+      __typename
+    }
+    __typename
+  }
+}

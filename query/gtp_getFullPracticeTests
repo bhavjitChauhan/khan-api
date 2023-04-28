@@ -1,0 +1,35 @@
+query gtp_getFullPracticeTests($examId: String!, $examGroupId: String!) {
+  egud(examGroupId: $examGroupId) {
+    id
+    selectedExams
+    __typename
+  }
+  exam(examId: $examId) {
+    id
+    examId
+    userData {
+      id
+      practiceTests {
+        id
+        approxTestMins
+        testTitle
+        referenceTitle
+        completionStatus
+        completedAt
+        sections {
+          exerciseSlug
+          completed
+          taskId
+          __typename
+        }
+        subScores {
+          score
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,13 @@
+fragment ActivitySession on ActivitySession {
+  id
+  title
+  subtitle
+  activityKind {
+    id
+    __typename
+  }
+  durationMinutes
+  eventTimestamp
+  skillType
+  __typename
+}

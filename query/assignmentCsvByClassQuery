@@ -1,0 +1,63 @@
+query assignmentCsvByClassQuery($classDescriptor: String!, $filters: CoachAssignmentFilters!, $orderBy: AssignmentOrder!, $after: ID, $teacherKaid: String!) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    assignmentsPage(filters: $filters, orderBy: $orderBy, after: $after) {
+      assignments {
+        ...AssignmentCsvData
+        __typename
+      }
+      pageInfo {
+        nextCursor
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment AssignmentCsvData on Assignment {
+  assignedDate
+  startDate
+  dueDate
+  id
+  contents {
+    id
+    title: translatedTitle
+    defaultUrlPath
+    kind
+    __typename
+  }
+  itemCompletionStates: itemCompletionStatesForAllStudents {
+    student {
+      id
+      coachNickname(teacherKaid: $teacherKaid)
+      __typename
+    }
+    state
+    completedOn
+    bestScore {
+      numCorrect
+      numAttempted
+      __typename
+    }
+    exerciseAttempts {
+      id
+      isCompleted
+      isRestarted
+      numAttempted
+      numCorrect
+      lastAttemptDate
+      __typename
+    }
+    __typename
+  }
+  studentList {
+    id
+    cacheId
+    name
+    __typename
+  }
+  __typename
+}

@@ -1,0 +1,9 @@
+mutation scheduleUserDeletionMutation($targetKaid: String!, $keepActivityIfNecessary: Boolean) {
+  scheduleUserDeletion(targetKaid: $targetKaid, keepActivityIfNecessary: $keepActivityIfNecessary) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

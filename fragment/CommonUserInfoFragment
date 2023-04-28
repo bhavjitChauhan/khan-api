@@ -1,0 +1,26 @@
+fragment CommonUserInfoFragment on User {
+  id
+  curationItemProgress(topicId: $topicId) {
+    masteryEnabled
+    subjectMasteryEnabled
+    masteryMap {
+      progressKey
+      status
+      __typename
+    }
+    currentMastery {
+      percentage
+      pointsEarned
+      pointsAvailable
+      __typename
+    }
+    __typename
+  }
+  recommendationsForUnit(unitId: $topicId) {
+    contentId
+    sourceId
+    kind
+    __typename
+  }
+  __typename
+}

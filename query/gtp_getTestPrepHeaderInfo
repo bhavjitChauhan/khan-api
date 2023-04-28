@@ -1,0 +1,17 @@
+query gtp_getTestPrepHeaderInfo($examId: String!) {
+  exam(examId: $examId) {
+    id
+    examGroup {
+      id
+      examGroupMetadata {
+        id
+        testMaker
+        testMakerLogoImg
+        kaRelationshipToTestCopy
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

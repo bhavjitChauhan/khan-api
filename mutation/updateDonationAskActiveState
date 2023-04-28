@@ -1,0 +1,10 @@
+mutation updateDonationAskActiveState($donationAsk: DonationAskActivityInput) {
+  updateDonationAskActiveState(donationAsk: $donationAsk) {
+    success
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

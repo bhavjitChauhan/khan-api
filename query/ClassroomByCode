@@ -1,0 +1,11 @@
+query ClassroomByCode($classCode: String!) {
+  studentList(classCode: $classCode) {
+    cacheId
+    coachKaid
+    descriptor
+    hasAssignments
+    id
+    name
+    __typename
+  }
+}

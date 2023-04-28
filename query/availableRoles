@@ -1,0 +1,12 @@
+query availableRoles {
+  permission {
+    content {
+      data {
+        availableRoles
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,12 @@
+query allStandardsForSet($setId: String!) {
+  setOfStandards(setId: $setId) {
+    id
+    standards {
+      id
+      standardId
+      description
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,10 @@
+mutation deleteProgram($programID: ID!) {
+  deleteProgram(programID: $programID) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

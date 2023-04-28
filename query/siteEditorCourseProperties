@@ -1,0 +1,21 @@
+query siteEditorCourseProperties($id: String!) {
+  course(id: $id) {
+    id
+    title
+    slug
+    listed
+    slugRedirects {
+      redirectType
+      oldSlug
+      contentId
+      __typename
+    }
+    legacySlugRedirects {
+      redirectType
+      oldSlug
+      contentId
+      __typename
+    }
+    __typename
+  }
+}

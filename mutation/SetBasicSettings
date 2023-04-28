@@ -1,0 +1,20 @@
+mutation SetBasicSettings($kaid: String!, $nickname: String, $username: String, $soundOn: Boolean, $userLanguage: String, $birthdate: String) {
+  setSettings(kaid: $kaid, nickname: $nickname, username: $username, soundOn: $soundOn, userLanguage: $userLanguage, birthdate: $birthdate) {
+    user {
+      id
+      nickname
+      username
+      soundOn
+      userLanguage
+      birthdate
+      homepageUrl
+      transferAuthToken
+      __typename
+    }
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+}

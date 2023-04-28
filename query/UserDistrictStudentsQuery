@@ -1,0 +1,27 @@
+query UserDistrictStudentsQuery($classDescriptor: String!) {
+  classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    signupCode
+    classroomDistrictInfo {
+      id
+      isNweaMapSynced
+      studentUserDistrictInfos {
+        id
+        kaid
+        uuid
+        displayNameForTeacher
+        districtProvidedEmail
+        __typename
+      }
+      __typename
+    }
+    studentKaidsAndNicknames {
+      id
+      kaid
+      coachNickname
+      __typename
+    }
+    __typename
+  }
+}

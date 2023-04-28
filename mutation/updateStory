@@ -1,0 +1,6 @@
+mutation updateStory($key: ID!, $story: UpdateStoryInput!) {
+  updateStory(key: $key, story: $story) {
+    success
+    __typename
+  }
+}

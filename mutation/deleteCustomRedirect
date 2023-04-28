@@ -1,0 +1,13 @@
+mutation deleteCustomRedirect($from: String!) {
+  deleteCustomRedirect(redirectFrom: $from) {
+    error {
+      code
+      __typename
+    }
+    deletedRedirect {
+      id
+      __typename
+    }
+    __typename
+  }
+}

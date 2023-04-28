@@ -1,0 +1,36 @@
+query masteryAssignments($classCode: String!) {
+  classroom(classCode: $classCode) {
+    id
+    cacheId
+    masteryAssignments {
+      id
+      type: curationNodeLevel
+      dueDate
+      course {
+        id
+        translatedTitle
+        iconUrl
+        __typename
+      }
+      studentData {
+        kaid
+        status
+        __typename
+      }
+      unit {
+        id
+        translatedTitle
+        iconUrl
+        __typename
+      }
+      __typename
+    }
+    students: studentKaidsAndNicknames {
+      id
+      kaid
+      coachNickname
+      __typename
+    }
+    __typename
+  }
+}

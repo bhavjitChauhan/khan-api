@@ -1,0 +1,12 @@
+query ClassCodeByClassIdQuery($classId: String!) {
+  user {
+    id
+    studentList(id: $classId) {
+      id
+      cacheId
+      signupCode
+      __typename
+    }
+    __typename
+  }
+}

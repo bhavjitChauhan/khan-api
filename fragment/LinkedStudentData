@@ -1,0 +1,4 @@
+fragment LinkedStudentData on LinkedGoogleClassStudent {
+  email
+  __typename
+}

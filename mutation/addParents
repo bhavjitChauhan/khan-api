@@ -1,0 +1,15 @@
+mutation addParents($parentEmail: String!) {
+  addParents(parentEmail: $parentEmail) {
+    parent {
+      id
+      kaid
+      nickname
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

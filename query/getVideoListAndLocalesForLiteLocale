@@ -1,0 +1,20 @@
+query getVideoListAndLocalesForLiteLocale($kaLocale: String!) {
+  videoListingForLocale(kaLocale: $kaLocale) {
+    title
+    description
+    videos {
+      id
+      youtubeId
+      title
+      description
+      __typename
+    }
+    __typename
+  }
+  localesForLanguagePicker(includeEnglish: false, includeFake: false) {
+    id
+    localName
+    kaLocale
+    __typename
+  }
+}

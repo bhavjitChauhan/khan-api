@@ -1,0 +1,26 @@
+query DistrictActivationByGradeLevelContainerUsingNewService($districtId: ID!, $schoolIds: [ID!]) {
+  activationReportByGradeLevel: activationReportByGradeLevelPortedToGo(districtId: $districtId, schoolIds: $schoolIds) {
+    rows {
+      gradeLevel {
+        id
+        name
+        sortIndex
+        __typename
+      }
+      numStudentsTotal
+      numStudentsActivated
+      numTeachersTotal
+      numTeachersActivated
+      __typename
+    }
+    updatedAt
+    totalRow {
+      numStudentsTotal
+      numStudentsActivated
+      numTeachersTotal
+      numTeachersActivated
+      __typename
+    }
+    __typename
+  }
+}

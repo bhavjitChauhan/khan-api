@@ -1,0 +1,17 @@
+mutation postloginJoinStudentMutation($classCode: String!) {
+  joinStudent(classCode: $classCode) {
+    error {
+      code
+      signupCode
+      classroomName
+      __typename
+    }
+    classroom {
+      id
+      cacheId
+      signupCode
+      __typename
+    }
+    __typename
+  }
+}

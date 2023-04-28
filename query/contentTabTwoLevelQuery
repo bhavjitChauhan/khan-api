@@ -1,0 +1,110 @@
+query contentTabTwoLevelQuery($courseId: String!) {
+  courseById(id: $courseId) {
+    id
+    children: curatedChildren {
+      ...CourseFields
+      ...LessonAndChildrenFields
+      ... on Unit {
+        id
+        description
+        iconPath
+        key
+        kind
+        mappedStandardIds
+        title: translatedTitle
+        children: allOrderedChildren {
+          __typename
+          ...LearnableContentFields
+          ...QuizAndTestFields
+          ... on Lesson {
+            id
+            description
+            iconPath
+            key
+            kind
+            mappedStandardIds
+            title: translatedTitle
+            __typename
+          }
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment CourseFields on Course {
+  ... on Course {
+    id
+    description
+    iconPath
+    key
+    kind
+    mappedStandardIds
+    title: translatedTitle
+    __typename
+  }
+  __typename
+}
+
+fragment LearnableContentFields on LearnableContent {
+  contentId
+  description
+  kind
+  mappedStandardIds
+  nodeUrl: urlWithinTopic
+  slug
+  title: translatedTitle
+  __typename
+}
+
+fragment LessonAndChildrenFields on Lesson {
+  ... on Lesson {
+    id
+    description
+    iconPath
+    key
+    kind
+    mappedStandardIds
+    title: translatedTitle
+    children {
+      __typename
+      ...LearnableContentFields
+      ... on Video {
+        duration
+        imageUrl
+        translatedYoutubeId
+        youtubeId
+        __typename
+      }
+      ... on Exercise {
+        expectedDoNCount: exerciseLength(useDefault: true)
+        __typename
+      }
+    }
+    __typename
+  }
+  __typename
+}
+
+fragment QuizAndTestFields on LearnableContent {
+  ... on TopicQuiz {
+    coveredTutorials {
+      id
+      title: translatedTitle
+      __typename
+    }
+    defaultUrlPath
+    expectedDoNCount: exerciseLength
+    index
+    __typename
+  }
+  ... on TopicUnitTest {
+    defaultUrlPath
+    expectedDoNCount: exerciseLength
+    __typename
+  }
+  __typename
+}

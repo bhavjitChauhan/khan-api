@@ -1,0 +1,8 @@
+fragment contentEditorLearnableContent on LearnableContentRevision {
+  doNotPublish
+  listed
+  slug
+  title
+  description
+  __typename
+}

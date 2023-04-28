@@ -1,0 +1,15 @@
+query GetStaticContent {
+  allLicenseOptions {
+    id
+    name
+    fullName
+    deedURL
+    logoURL
+    __typename
+  }
+  allCompletionCriteriaOptions {
+    id
+    name
+    __typename
+  }
+}

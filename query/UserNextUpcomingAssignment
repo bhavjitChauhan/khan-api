@@ -1,0 +1,24 @@
+query UserNextUpcomingAssignment {
+  user {
+    id
+    assignmentDueNext {
+      id
+      studentList {
+        ...Classroom
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment Classroom on StudentList {
+  cacheId
+  coachKaid
+  descriptor
+  hasAssignments
+  id
+  name
+  __typename
+}

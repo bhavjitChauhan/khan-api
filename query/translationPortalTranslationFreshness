@@ -1,0 +1,14 @@
+query translationPortalTranslationFreshness {
+  platformTranslationProgress {
+    ...tapTranslationFreshness
+    __typename
+  }
+}
+
+fragment tapTranslationFreshness on TAPTranslationFreshness {
+  lastStringsUpdateDate
+  lastDubsUpdateDate
+  lastSubtitlesUpdateDate
+  updateDate
+  __typename
+}

@@ -1,0 +1,9 @@
+query courseEditorGetPublishedTopic($contentId: String!) {
+  topicById(id: $contentId) {
+    id
+    kind
+    creationDate
+    relativeUrl
+    __typename
+  }
+}

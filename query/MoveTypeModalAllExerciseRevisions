@@ -1,0 +1,8 @@
+query MoveTypeModalAllExerciseRevisions {
+  allExerciseRevisions {
+    id
+    slug
+    title
+    __typename
+  }
+}

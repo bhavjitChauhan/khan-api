@@ -1,0 +1,9 @@
+fragment TalkthroughRevision on TalkthroughRevision {
+  id
+  contentId
+  contentKind
+  slug
+  sha
+  listed
+  __typename
+}

@@ -1,0 +1,7 @@
+query previewExistingParentClaimManagedStudentEmail {
+  preview: previewExistingParentClaimManagedStudentEmail {
+    textContent
+    htmlContent
+    __typename
+  }
+}

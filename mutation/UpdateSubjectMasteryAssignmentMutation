@@ -1,0 +1,10 @@
+mutation UpdateSubjectMasteryAssignmentMutation($id: ID!, $studentKaids: [ID]!, $dueDate: DateTime!) {
+  updateSubjectMasteryAssignment(updateSubjectMasteryAssignmentInput: {id: $id, studentKaids: $studentKaids, dueDate: $dueDate}) {
+    assignment {
+      id
+      dueDate
+      __typename
+    }
+    __typename
+  }
+}

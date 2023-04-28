@@ -1,0 +1,38 @@
+query getTeacherCampaignDataForResponsePage($id: ID!, $stepId: ID!) {
+  coach: user {
+    id
+    teacherCampaignProgress(id: $id) {
+      id
+      completedSteps
+      responseProgress(stepId: $stepId) {
+        completedExercises
+        __typename
+      }
+      campaign {
+        id
+        steps {
+          __typename
+          id
+          ... on TeacherCampaignResponseStep {
+            header
+            body
+            graphic
+            description
+            exercises {
+              title
+              description
+              introduction
+              questions
+              samples
+              __typename
+            }
+            __typename
+          }
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

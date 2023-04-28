@@ -1,0 +1,19 @@
+query manticoreEditorGetVideo($enVideoSlug: String!) {
+  video(id: $enVideoSlug) {
+    id
+    title
+    description
+    youtubeId
+    translatedYoutubeId
+    hasTranslatedSubtitles
+    subtitlesEditURLForVideo: subtitlesEditURL
+    parentTopic {
+      id
+      slug
+      __typename
+    }
+    defaultUrlPath
+    listed
+    __typename
+  }
+}

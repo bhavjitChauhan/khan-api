@@ -1,0 +1,9 @@
+query lookupUser($kaid: String, $email: String, $username: String) {
+  user(kaid: $kaid, email: $email, username: $username) {
+    id
+    kaid
+    email
+    username
+    __typename
+  }
+}

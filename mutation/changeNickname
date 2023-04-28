@@ -1,0 +1,14 @@
+mutation changeNickname($nickname: String!, $kaid: String!) {
+  setSettings(nickname: $nickname, kaid: $kaid) {
+    user {
+      id
+      nickname
+      __typename
+    }
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,50 @@
+query getSatClass($classDescriptor: String!, $coachKaid: String, $domain: SatDomain, $startDate: Date, $endDate: Date) {
+  coach: user(kaid: $coachKaid) {
+    id
+    satClass(classroomDescriptor: $classDescriptor) {
+      studentList {
+        id
+        cacheId
+        name
+        includesSat
+        __typename
+      }
+      studentData(domain: $domain, startDate: $startDate, endDate: $endDate) {
+        id
+        cbLinked
+        examDate
+        kaid
+        name
+        registeredExamDate
+        problemsInfosWithDomain {
+          problemsDone
+          minutes
+          mathRecommendedProblemsDone
+          mathProblemsDone
+          rwRecommendedProblemsDone
+          rwProblemsDone
+          mathDiagnosticsProgress
+          rwDiagnosticsProgress
+          __typename
+        }
+        __typename
+      }
+      skillInfo {
+        skillId
+        rank
+        studentRecommendations
+        studentLevels
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  satSkills {
+    name
+    domain
+    categoryTitle
+    skillId
+    __typename
+  }
+}

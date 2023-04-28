@@ -1,0 +1,10 @@
+mutation formalTeacherStatusMutation($tosForFormalTeacherStatus: Boolean) {
+  setSettings(tosForFormalTeacherStatus: $tosForFormalTeacherStatus) {
+    user {
+      id
+      tosForFormalTeacherStatus
+      __typename
+    }
+    __typename
+  }
+}

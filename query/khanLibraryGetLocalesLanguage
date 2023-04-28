@@ -1,0 +1,8 @@
+query khanLibraryGetLocalesLanguage {
+  localesForLanguagePicker(includeEnglish: true, includeFake: false) {
+    id
+    kaLocale
+    displayName
+    __typename
+  }
+}

@@ -1,0 +1,15 @@
+mutation siteEditorStartPublish($title: String, $contentDescriptors: [String!]!) {
+  startPublishForContentDescriptors(title: $title, contentDescriptors: $contentDescriptors) {
+    publishStatus {
+      id
+      queued
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

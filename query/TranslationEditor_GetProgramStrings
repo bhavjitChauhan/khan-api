@@ -1,0 +1,17 @@
+query TranslationEditor_GetProgramStrings($programKind: ProgramStringsKind!, $programId: String!, $contentDescriptor: String!) {
+  programStrings(programKind: $programKind, programId: $programId) {
+    title
+    strings {
+      english
+      translation
+      __typename
+    }
+    __typename
+  }
+  contentForDescriptors(descriptors: [$contentDescriptor]) {
+    id
+    defaultUrlPath
+    listed
+    __typename
+  }
+}

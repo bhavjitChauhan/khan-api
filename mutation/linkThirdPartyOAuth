@@ -1,0 +1,14 @@
+mutation linkThirdPartyOAuth($oauthType: ThirdPartyOAuthType!, $password: String!, $accessToken: String!) {
+  linkThirdPartyAuth(oauthType: $oauthType, password: $password, accessToken: $accessToken) {
+    user {
+      id
+      kaid
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

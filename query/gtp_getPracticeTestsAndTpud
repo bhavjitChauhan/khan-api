@@ -1,0 +1,24 @@
+query gtp_getPracticeTestsAndTpud($examId: String!) {
+  exam(examId: $examId) {
+    id
+    userData {
+      id
+      practiceTests {
+        id
+        completionStatus
+        __typename
+      }
+      tpud {
+        id
+        schedule {
+          practiceTestDates
+          __typename
+        }
+        targetScore
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

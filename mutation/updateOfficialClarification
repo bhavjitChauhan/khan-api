@@ -1,0 +1,13 @@
+mutation updateOfficialClarification($id: ID!, $clarification: UpdateOfficialClarificationInput!) {
+  updateOfficialClarification(id: $id, clarification: $clarification) {
+    updatedClarification {
+      ...clarificationFragmentWithReporter
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

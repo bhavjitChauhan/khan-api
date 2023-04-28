@@ -1,0 +1,125 @@
+query userSummaryQuery($kaid: String!) {
+  userSummary(kaid: $kaid) {
+    answers {
+      ...SharedFeedbackFields
+      __typename
+    }
+    comments {
+      ...SharedFeedbackFields
+      __typename
+    }
+    projectanswers {
+      ...SharedFeedbackFields
+      __typename
+    }
+    projectquestions {
+      ...SharedFeedbackFields
+      __typename
+    }
+    questions {
+      ...SharedFeedbackFields
+      __typename
+    }
+    replies {
+      ...SharedFeedbackFields
+      __typename
+    }
+    badges {
+      count
+      badge {
+        absoluteUrl
+        badgeCategory
+        description
+        fullDescription
+        hideContext
+        icons {
+          compactUrl
+          emailUrl
+          largeUrl
+          smallUrl
+          __typename
+        }
+        isCustom
+        isRetired
+        name
+        points
+        relativeUrl
+        slug
+        __typename
+      }
+      __typename
+    }
+    statistics {
+      answers
+      comments
+      flags
+      projectanswers
+      projectquestions
+      questions
+      replies
+      votes
+      __typename
+    }
+    hellbanActions {
+      date
+      isHellban
+      moderatorNickname
+      reason
+      urlsafeKey
+      __typename
+    }
+    __typename
+  }
+  user(kaid: $kaid) {
+    id
+    notifications(notificationClass: MOD_NOTIFICATION) {
+      notifications {
+        date
+        read
+        ... on ModeratorNotification {
+          text
+          mod {
+            id
+            nickname
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment SharedFeedbackFields on Feedback {
+  __typename
+  appearsAsDeleted
+  content
+  date
+  definitelyNotSpam
+  deleted
+  downVoted
+  expandKey
+  feedbackType
+  focusUrl
+  fromVideoAuthor
+  key
+  lowQualityScore
+  notifyOnAnswer
+  permalink
+  relativeUrl
+  replyCount
+  restrictPosting
+  showLowQualityNotice
+  sumVotesIncremented
+  upVoted
+  focus {
+    id
+    kind
+    relativeUrl
+    translatedTitle
+    __typename
+  }
+}

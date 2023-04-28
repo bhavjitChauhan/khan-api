@@ -1,0 +1,7 @@
+query translationsVideosGetVideos($youtubeIds: [String!]!) {
+  videosByYoutubeIds(youtubeIds: $youtubeIds) {
+    id
+    contentId
+    __typename
+  }
+}

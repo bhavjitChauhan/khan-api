@@ -1,0 +1,30 @@
+query ParentQuery {
+  user {
+    id
+    nickname
+    underAgeGatePendingApprovals {
+      username
+      daysUntilCutoff
+      __typename
+    }
+    childInvitations {
+      invitationType
+      email
+      requestKey
+      __typename
+    }
+    parentChildren: children {
+      id
+      coachNickname
+      kaid
+      isUnderAgeGateManagedByActor
+      avatar {
+        name
+        imageSrc
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

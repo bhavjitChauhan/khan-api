@@ -1,0 +1,9 @@
+fragment ProjectRevision on ProjectRevision {
+  id
+  contentId
+  contentKind
+  slug
+  sha
+  listed
+  __typename
+}

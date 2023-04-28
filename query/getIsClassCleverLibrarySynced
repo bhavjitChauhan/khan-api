@@ -1,0 +1,8 @@
+query getIsClassCleverLibrarySynced($classDescriptor: String!) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    isCleverLibrarySynced
+    __typename
+  }
+}

@@ -1,0 +1,90 @@
+query StudentKmapPlacementQuery($classDescriptor: String!, $studentKaid: String!) {
+  student: user(kaid: $studentKaid) {
+    id
+    assignments: subjectMasteryAssignments(filter: KMAP, classroomDescriptor: $classDescriptor) {
+      id
+      studentListId
+      activeStudentData {
+        kaid
+        assignedDate
+        __typename
+      }
+      studentKaids
+      course: topic {
+        id
+        slug
+        domainSlug
+        ... on KMapTopic {
+          strandKey
+          bandKey
+          __typename
+        }
+        __typename
+      }
+      studentProgress {
+        kaid
+        currentMastery {
+          percentage
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    classroomDistrictInfo {
+      id
+      studentUserDistrictInfos(filters: {studentKaid: $studentKaid}) {
+        id
+        kaid
+        gradeLevel
+        displayNameForTeacher
+        suggestedGradeBandKey
+        previousMathAssessment {
+          id
+          isGrowthMeasure
+          testStartDate
+          termName
+          goalData {
+            id
+            strandKey
+            ritScore
+            suggestedRitScoreBandKey
+            __typename
+          }
+          __typename
+        }
+        currentMathAssessment {
+          id
+          isGrowthMeasure
+          testStartDate
+          termName
+          goalData {
+            id
+            strandKey
+            ritScore
+            suggestedRitScoreBandKey
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  kmapTopics {
+    id
+    slug
+    strand
+    band
+    strandKey
+    bandKey
+    __typename
+  }
+}

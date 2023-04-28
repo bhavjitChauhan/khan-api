@@ -1,0 +1,20 @@
+query getClassesAndStudents {
+  coach: user {
+    id
+    studentLists: coachedStudentLists {
+      id
+      descriptor
+      cacheId
+      name
+      signupCode
+      studentKaidsAndNicknames {
+        id
+        kaid
+        coachNickname
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

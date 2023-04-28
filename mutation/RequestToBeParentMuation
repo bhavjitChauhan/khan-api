@@ -1,0 +1,9 @@
+mutation RequestToBeParentMuation($childEmail: String!) {
+  requestChild(childEmail: $childEmail) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

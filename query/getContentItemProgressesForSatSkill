@@ -1,0 +1,44 @@
+query getContentItemProgressesForSatSkill($contentDescriptors: [String!]) {
+  user {
+    id
+    contentItemProgresses(queryBy: {contentDescriptors: $contentDescriptors}) {
+      completionStatus
+      content {
+        id
+        kind
+        contentId
+        translatedTitle
+        title
+        slug
+        nodeUrl: defaultUrlPath
+        progressKey
+        ... on Exercise {
+          isSkillCheck
+          relatedContent: relatedContentKeys
+          expectedDoNCount: exerciseLength
+          timeEstimate {
+            lowerBound
+            upperBound
+            __typename
+          }
+          thumbnailUrl
+          parentTopic {
+            id
+            slug
+            __typename
+          }
+          __typename
+        }
+        ... on Video {
+          youtubeId
+          translatedYoutubeId
+          kaUrl
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

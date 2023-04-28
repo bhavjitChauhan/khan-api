@@ -1,0 +1,11 @@
+query avatarDataForProfile($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    avatar {
+      name
+      imageSrc
+      __typename
+    }
+    __typename
+  }
+}

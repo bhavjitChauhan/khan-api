@@ -1,0 +1,53 @@
+query courseEditorGetEditingCourseRevisions($ids: [String!]!) {
+  courses(ids: $ids) {
+    ...FolderCourseRevisionFragment
+    __typename
+  }
+}
+
+fragment FolderCourseRevisionFragment on CourseRevision {
+  id
+  contentId
+  title
+  items {
+    ... on CourseRevisionUnit {
+      id
+      cacheId
+      contentId
+      slugSuffix
+      title
+      items {
+        ... on CourseRevisionLesson {
+          type
+          id
+          cacheId
+          contentId
+          slugSuffix
+          title
+          items {
+            ... on CourseRevisionContent {
+              id
+              cacheId
+              contentKind
+              contentId
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        ... on CourseRevisionQuiz {
+          type
+          id
+          cacheId
+          contentId
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  __typename
+}

@@ -1,0 +1,25 @@
+mutation contentEditorEditProject($sha: String!, $input: EditProjectInput!) {
+  editProject(sha: $sha, input: $input) {
+    project {
+      ...ProjectRevision
+      __typename
+    }
+    error {
+      code
+      conflictSha
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment ProjectRevision on ProjectRevision {
+  id
+  contentId
+  contentKind
+  slug
+  sha
+  listed
+  __typename
+}

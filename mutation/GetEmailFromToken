@@ -1,0 +1,11 @@
+mutation GetEmailFromToken($token: String!) {
+  getEmailFromLinkAccountToken(token: $token) {
+    email
+    isEmancipated
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

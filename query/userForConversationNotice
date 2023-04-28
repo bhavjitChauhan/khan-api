@@ -1,0 +1,8 @@
+query userForConversationNotice {
+  user {
+    id
+    hasParents
+    hasCoach
+    __typename
+  }
+}

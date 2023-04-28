@@ -1,0 +1,9 @@
+query courseEditorGetCourseEntity($id: String!) {
+  courseById(id: $id) {
+    id
+    creationDate
+    belongsToCourseId
+    courseSnapshotId
+    __typename
+  }
+}

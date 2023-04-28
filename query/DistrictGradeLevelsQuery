@@ -1,0 +1,7 @@
+query DistrictGradeLevelsQuery {
+  userFacingGradeLevels {
+    id
+    name
+    __typename
+  }
+}

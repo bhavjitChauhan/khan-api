@@ -1,0 +1,10 @@
+mutation createOffensiveTerm($term: String!, $kaLocale: String) {
+  createNewOffensiveTerm(term: $term, kaLocale: $kaLocale) {
+    offensiveTerm {
+      id
+      term
+      __typename
+    }
+    __typename
+  }
+}

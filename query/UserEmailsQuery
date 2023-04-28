@@ -1,0 +1,7 @@
+query UserEmailsQuery {
+  user {
+    id
+    authEmails
+    __typename
+  }
+}

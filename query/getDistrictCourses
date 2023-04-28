@@ -1,0 +1,7 @@
+query getDistrictCourses($districtName: String!) {
+  district(districtName: $districtName) {
+    id
+    activeCourseSISNumbers
+    __typename
+  }
+}

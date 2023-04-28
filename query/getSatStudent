@@ -1,0 +1,82 @@
+query getSatStudent($kaid: String!, $domain: SatDomain, $startDate: Date, $endDate: Date) {
+  coach: user {
+    id
+    satStudent(id: $kaid, domain: $domain, startDate: $startDate, endDate: $endDate) {
+      id
+      name
+      kaid
+      activeScheduleCreated
+      examType
+      practiceTime {
+        hour
+        minute
+        __typename
+      }
+      examDate
+      registeredExamDate
+      cbLinked
+      recommendedTasks {
+        domain
+        isCompleted
+        name
+        title
+        taskId
+        taskType
+        level
+        minutes
+        __typename
+      }
+      completedTasks {
+        date
+        completedTasks {
+          domain
+          name
+          title
+          taskId
+          taskType
+          level
+          minutes
+          numCorrect
+          numTotal
+          reviewable
+          formName
+          scanAndScore
+          __typename
+        }
+        __typename
+      }
+      practiceTestScores {
+        title
+        math
+        readingAndWriting
+        overall
+        essay {
+          reading
+          analysis
+          writing
+          __typename
+        }
+        scanAndScore
+        __typename
+      }
+      practicePlan {
+        date
+        callToAction
+        examCompleted
+        examId
+        numProblems
+        sessionLength
+        visited
+        minutesSpent
+        __typename
+      }
+      domainSkillLevels {
+        domain
+        level
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

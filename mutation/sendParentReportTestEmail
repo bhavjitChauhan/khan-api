@@ -1,0 +1,9 @@
+mutation sendParentReportTestEmail {
+  sendParentReportTestEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,9 @@
+query isActivityAccessibleForProfiles {
+  user {
+    id
+    isActor
+    isCoachedByActor
+    actorHasUserScopedPermission(capability: CAN_VIEW_USER_PROGRESS)
+    __typename
+  }
+}

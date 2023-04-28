@@ -1,0 +1,15 @@
+query studentListByClassCode($classCode: String!) {
+  joinByClassCodeInfo(classCode: $classCode) {
+    id
+    cacheId
+    name
+    signupCode
+    includesDistrictOwnedData
+    classroomDistrictInfo {
+      id
+      emailDomains
+      __typename
+    }
+    __typename
+  }
+}

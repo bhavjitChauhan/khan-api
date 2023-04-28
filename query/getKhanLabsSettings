@@ -1,0 +1,19 @@
+query getKhanLabsSettings($targetKaid: String!) {
+  user(kaid: $targetKaid) {
+    id
+    age
+    isParent
+    isAIGuideEnabled
+    aiGuideDisabledReason
+    nickname
+    children {
+      id
+      age
+      nickname
+      isAIGuideEnabled
+      aiGuideDisabledReason
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,14 @@
+query masteryTowerCurrentSessionQuery($classDescriptor: String!) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
+    id
+    cacheId
+    masteryTowerCurrentSession {
+      currentScore
+      secondsRemaining
+      startTime
+      startingFloors
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,47 @@
+mutation khanLibraryCreateCourse($input: CreateDefaultCourse!) {
+  course: createDefaultCourse(inputData: $input) {
+    ...CourseRevisionStructure
+    __typename
+  }
+}
+
+fragment CourseRevisionStructure on CourseRevision {
+  id
+  contentId
+  operationId
+  title
+  allowedExerciseTypes
+  items {
+    ... on CourseRevisionUnit {
+      type
+      id
+      items {
+        ... on CourseRevisionLesson {
+          type
+          id
+          items {
+            cacheId
+            ... on CourseRevisionContent {
+              type
+              id
+              contentKind
+              contentId
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        ... on CourseRevisionQuiz {
+          type
+          id
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  __typename
+}

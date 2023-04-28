@@ -1,0 +1,20 @@
+query translationPortalCourseContentProgress($courseId: String!, $contentLocale: String!) {
+  courseTranslationProgress(courseId: $courseId, contentKALocale: $contentLocale) {
+    course {
+      ...tapCourseNode
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment tapCourseNode on TAPCourseNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapUnitNode
+    __typename
+  }
+  __typename
+}

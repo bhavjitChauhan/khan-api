@@ -1,0 +1,11 @@
+query siteEditorGetPublishQueueList {
+  publishList {
+    statuses {
+      id
+      queued
+      contentDescriptors
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,25 @@
+query getTeamPage($name: TeamPageName!) {
+  teamPage(name: $name) {
+    entries {
+      id
+      liveContent {
+        id
+        name
+        isAlum
+        mainPhotoURL
+        hoverPhotoURL
+        title
+        bio
+        altNames
+        contactLinks {
+          type
+          url
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

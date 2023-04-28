@@ -1,0 +1,35 @@
+mutation CourseMenuEditor_EditCourseMenuRevision($sha: String!, $updatedCourseMenu: EditCourseMenuInput!) {
+  editCourseMenu(sha: $sha, input: $updatedCourseMenu) {
+    courseMenu {
+      ...CourseMenuRevisionFields
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment CourseMenuRevisionFields on CourseMenuRevision {
+  id
+  sha
+  groups {
+    identifier
+    translatedTitle
+    href
+    isNew
+    children {
+      identifier
+      translatedTitle
+      href
+      isNew
+      nonContentLink
+      loggedOutHref
+      __typename
+    }
+    __typename
+  }
+  __typename
+}

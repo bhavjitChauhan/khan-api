@@ -1,0 +1,9 @@
+mutation sendExistingParentClaimManagedStudentTestEmail {
+  sendExistingParentClaimManagedStudentTestEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

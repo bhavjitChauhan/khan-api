@@ -1,0 +1,36 @@
+mutation RestartTask($key: String!) {
+  restartTask(input: {key: $key}) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    task {
+      id
+      ... on PracticeTask {
+        exerciseLength
+        taskAttemptHistory {
+          itemId
+          __typename
+        }
+        __typename
+      }
+      ... on TopicQuizTask {
+        taskAttemptHistory {
+          itemId
+          __typename
+        }
+        __typename
+      }
+      ... on TopicUnitTestTask {
+        taskAttemptHistory {
+          itemId
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

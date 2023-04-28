@@ -1,0 +1,9 @@
+query courseEditorGetPublishedTitlesForDescriptors($descriptors: [String!]!) {
+  contentForDescriptors(descriptors: $descriptors) {
+    id
+    contentKind
+    title
+    translatedTitle
+    __typename
+  }
+}

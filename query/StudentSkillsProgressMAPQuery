@@ -1,0 +1,36 @@
+query StudentSkillsProgressMAPQuery($studentKaid: String!, $progressFrom: DateTime!, $progressUpTo: DateTime!, $bands: [String!], $strandKey: String) {
+  districtStudentsSkillsProgressForCourses(studentKaid: $studentKaid, progressFrom: $progressFrom, progressUpTo: $progressUpTo, bands: $bands, strandKey: $strandKey) {
+    exercise {
+      id
+      title
+      mappedStandards {
+        id
+        setId
+        standardId
+        __typename
+      }
+      __typename
+    }
+    exerciseMinutes
+    netLevelChanges
+    skillLevel
+    workedOn
+    __typename
+  }
+  kmapTopics {
+    id
+    title
+    band
+    bandGradeName
+    bandKey
+    strandKey
+    learnableContentPage(pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}) {
+      contents {
+        exerciseID: id
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

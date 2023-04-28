@@ -1,0 +1,9 @@
+mutation AcceptTOS {
+  acceptTos {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

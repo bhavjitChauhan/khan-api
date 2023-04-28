@@ -1,0 +1,4 @@
+fragment UnitTestMetadata on TopicUnitTest {
+  ...LearnableContentMetadata
+  __typename
+}

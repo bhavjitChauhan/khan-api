@@ -1,0 +1,8 @@
+query getTeacherCampaigns {
+  teacherCampaigns {
+    id
+    campaignName
+    live
+    __typename
+  }
+}

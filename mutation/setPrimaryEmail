@@ -1,0 +1,14 @@
+mutation setPrimaryEmail($email: String!, $targetKaid: String) {
+  setPrimaryEmail(email: $email, targetKaid: $targetKaid) {
+    user {
+      id
+      email
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

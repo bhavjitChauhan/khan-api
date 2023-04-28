@@ -1,0 +1,8 @@
+query getInfoForTotalStudentCountQuery {
+  coach: user {
+    id
+    coacheeCount
+    coachInvitationsCount
+    __typename
+  }
+}

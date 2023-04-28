@@ -1,0 +1,9 @@
+mutation resendUnderAgeGateApprovalEmailForLogin {
+  resendUnderAgeGateApprovalEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

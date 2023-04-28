@@ -1,0 +1,71 @@
+query getEmailSettings($targetKaid: String) {
+  actor: user {
+    id
+    __typename
+  }
+  target: user(kaid: $targetKaid) {
+    id
+    isChild
+    isEmailVerified
+    hasSendableEmail
+    email
+    authEmails
+    hasStudents: hasCoachees
+    hasChildren
+    pendingEmailVerifications {
+      email
+      __typename
+    }
+    signupDataIfUnverified {
+      email
+      __typename
+    }
+    emailSubscriptions {
+      ...EmailSubscriptionFields
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment EmailSubscriptionFields on EmailSubscriptions {
+  allEmailSubscription {
+    checked
+    key
+    __typename
+  }
+  answerNotificationEmailSubscription {
+    checked
+    key
+    __typename
+  }
+  newAssignmentNotificationEmailSubscription {
+    checked
+    key
+    __typename
+  }
+  allStudentsCoachReportEmailSubscription {
+    key
+    checked
+    __typename
+  }
+  parentReportEmailSubscriptions {
+    key
+    description
+    checked
+    __typename
+  }
+  studentListEmailSubscriptions {
+    key
+    checked
+    description
+    __typename
+  }
+  satStudentListEmailSubscriptions {
+    key
+    checked
+    description
+    __typename
+  }
+  __typename
+}

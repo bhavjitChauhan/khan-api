@@ -1,0 +1,6 @@
+query getOfficialClarificationsWithReporter($youtubeId: String!) {
+  officialClarifications(youtubeId: $youtubeId) {
+    ...clarificationFragmentWithReporter
+    __typename
+  }
+}

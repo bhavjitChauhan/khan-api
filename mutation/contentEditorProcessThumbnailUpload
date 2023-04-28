@@ -1,0 +1,11 @@
+mutation contentEditorProcessThumbnailUpload($objectName: String!) {
+  processThumbnailUpload(objectName: $objectName) {
+    gcsName
+    publicURL
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

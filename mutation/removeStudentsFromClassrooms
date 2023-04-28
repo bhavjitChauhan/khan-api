@@ -1,0 +1,10 @@
+mutation removeStudentsFromClassrooms($kaids: [ID!]!, $classroomIds: [ID!]!) {
+  removeStudentsFromClassrooms(kaids: $kaids, classroomIds: $classroomIds) {
+    coach {
+      id
+      kaid
+      __typename
+    }
+    __typename
+  }
+}

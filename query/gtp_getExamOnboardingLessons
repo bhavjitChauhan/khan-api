@@ -1,0 +1,51 @@
+query gtp_getExamOnboardingLessons($examId: String!) {
+  exam(examId: $examId) {
+    id
+    onboardingLessons {
+      id
+      slug
+      translatedTitle
+      translatedDescription
+      content: childrenWithUnlisted {
+        ... on Video {
+          id
+          contentId
+          title
+          translatedTitle
+          slug
+          kind
+          thumbnailUrl
+          description
+          contentId
+          progressKey
+          imageUrl
+          duration
+          youtubeId
+          translatedYoutubeId
+          downloadUrls
+          translatedYoutubeLang
+          nodeUrl: relativeUrl
+          kaUrl
+          __typename
+        }
+        ... on Article {
+          id
+          contentId
+          title
+          translatedTitle
+          slug
+          kind
+          thumbnailUrl
+          description
+          contentId
+          progressKey
+          nodeUrl: relativeUrl
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

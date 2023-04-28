@@ -1,0 +1,31 @@
+query translationPortalPlatformAndDomainsProgress($locale: String!) {
+  domainsTranslationProgress(contentKALocale: $locale) {
+    domains {
+      ...tapDomainNode
+      __typename
+    }
+    __typename
+  }
+  platformTranslationProgress {
+    platform {
+      ...tapPlatformNode
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment tapDomainNode on TAPDomainNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapPlatformNode on TAPPlatformNode {
+  ...tapContentWordCounts
+  id
+  slug
+  title
+  __typename
+}

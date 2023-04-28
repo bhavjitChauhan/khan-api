@@ -1,0 +1,39 @@
+query getCourseProgressByStudent($filters: DistrictCourseProgressFilters!, $classroomDescriptor: String!, $courseID: String!, $onlyStudentsWhoWorkedOnTheCourseNotForAClass: Boolean) {
+  districtCourseProgressByStudent(filters: $filters, courseID: $courseID, classroomDescriptor: $classroomDescriptor, onlyStudentsWhoWorkedOnTheCourseNotForAClass: $onlyStudentsWhoWorkedOnTheCourseNotForAClass) {
+    dateInfo {
+      from
+      upTo
+      lastUpdatedDate
+      __typename
+    }
+    rows {
+      user {
+        id
+        kaid
+        userDistrictInfos(includeDeleted: true) {
+          id
+          displayNameForTeacher
+          __typename
+        }
+        __typename
+      }
+      info {
+        activeLearners
+        averageMinutes
+        averageSkillsLeveledToProficient
+        averageSkillsLeveledUp
+        averageSkillsWorkedOn
+        percent1to15
+        percent15to30
+        percent30plus
+        attemptedPercent
+        familiarPercent
+        proficientPercent
+        masteredPercent
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

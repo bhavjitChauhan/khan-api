@@ -1,0 +1,7 @@
+query courseEditorGetPublishedTopicsTitles($ids: [String!]!) {
+  topicsById(ids: $ids) {
+    id
+    title
+    __typename
+  }
+}

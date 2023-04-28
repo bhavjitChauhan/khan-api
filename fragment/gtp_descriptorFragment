@@ -1,0 +1,37 @@
+fragment gtp_descriptorFragment on TaskDescriptor {
+  id
+  examId
+  kaid
+  taskType
+  translatedTitle
+  exerciseName
+  taskId
+  areaId
+  taskDurationSeconds
+  startDatetime
+  completionDatetime
+  numTotal
+  numCorrect
+  numAttempted
+  ... on SkillTaskDescriptor {
+    skillId
+    description
+    areaTitle
+    level
+    isRecommendedLevel
+    stage
+    rationale {
+      level
+      importance
+      context
+      frequency
+      __typename
+    }
+    __typename
+  }
+  ... on TmsTaskDescriptor {
+    areaTitle
+    __typename
+  }
+  __typename
+}

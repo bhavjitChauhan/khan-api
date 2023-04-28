@@ -1,0 +1,9 @@
+mutation deleteContentPermission($userKaid: String!, $permissionId: String!) {
+  deleteContentPermission(userKaid: $userKaid, contentPermissionId: $permissionId) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

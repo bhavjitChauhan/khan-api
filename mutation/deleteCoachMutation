@@ -1,0 +1,6 @@
+mutation deleteCoachMutation($coachKaid: ID!, $studentKaid: String) {
+  removeCoach(coachKaid: $coachKaid, studentKaid: $studentKaid) {
+    wasSuccessful
+    __typename
+  }
+}

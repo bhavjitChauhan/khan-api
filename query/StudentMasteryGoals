@@ -1,0 +1,56 @@
+query StudentMasteryGoals($kaid: String, $filter: SubjectMasteryContextFilter, $isPast: Boolean!, $classDescriptor: String) {
+  user(kaid: $kaid) {
+    id
+    hasTakenKmapExam
+    subjectMasteryAssignments(filter: $filter, isPast: $isPast, classroomDescriptor: $classDescriptor) {
+      id
+      activeStudentData {
+        kaid
+        assignedDate
+        __typename
+      }
+      isKmap
+      isPast
+      whyPast
+      whenPast
+      whenCompleted
+      studentList {
+        id
+        cacheId
+        name
+        coach {
+          id
+          kaid
+          __typename
+        }
+        __typename
+      }
+      dueDate
+      topic {
+        ... on KMapTopic {
+          strandKey
+          band
+          strand
+          __typename
+        }
+        id
+        slug
+        domainSlug
+        translatedTitle
+        largeIconPath
+        __typename
+      }
+      currentUserProgress {
+        currentMastery {
+          percentage
+          pointsEarned
+          pointsAvailable
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

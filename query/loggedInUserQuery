@@ -1,0 +1,17 @@
+query loggedInUserQuery {
+  user {
+    id
+    kaid
+    canAccessDistrictsHomepage
+    isTeacher
+    hasUnresolvedInvitations
+    transferAuthToken
+    preferredKaLocale {
+      id
+      kaLocale
+      status
+      __typename
+    }
+    __typename
+  }
+}

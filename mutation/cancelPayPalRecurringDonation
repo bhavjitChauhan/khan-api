@@ -1,0 +1,10 @@
+mutation cancelPayPalRecurringDonation($paypalProfileID: String!) {
+  cancelPayPalRecurringDonation(paypalProfileID: $paypalProfileID) {
+    success
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,6 @@
+query UntranslatedContentCheck($path: String!, $countryCode: String!) {
+  contentRoute(path: $path, countryCode: $countryCode) {
+    resolvedPath
+    __typename
+  }
+}

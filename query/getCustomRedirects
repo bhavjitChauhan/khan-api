@@ -1,0 +1,8 @@
+query getCustomRedirects {
+  customRedirects {
+    id
+    redirectFrom
+    redirectTo
+    __typename
+  }
+}

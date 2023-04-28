@@ -1,0 +1,13 @@
+mutation updateRewards {
+  checkForNewRewards {
+    newBadges {
+      name
+      __typename
+    }
+    newAvatars {
+      name
+      __typename
+    }
+    __typename
+  }
+}

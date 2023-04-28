@@ -1,0 +1,9 @@
+mutation sendModMessageMutation($kaid: String!, $message: String!) {
+  sendModMessage(kaid: $kaid, message: $message) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

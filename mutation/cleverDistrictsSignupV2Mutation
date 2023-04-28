@@ -1,0 +1,24 @@
+mutation cleverDistrictsSignupV2Mutation($udiUuid: String!, $cleverId: String!) {
+  cleverDistrictsSignupV2(udiUuid: $udiUuid, cleverId: $cleverId) {
+    error {
+      code
+      __typename
+    }
+    user {
+      id
+      kaid
+      canAccessDistrictsHomepage
+      isTeacher
+      hasUnresolvedInvitations
+      transferAuthToken
+      preferredKaLocale {
+        id
+        kaLocale
+        status
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

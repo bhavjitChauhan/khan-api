@@ -1,0 +1,37 @@
+query StudentSkillsProgressKADQuery($studentKaid: String!, $progressFrom: DateTime!, $progressUpTo: DateTime!, $courseID: String!) {
+  districtStudentsSkillsProgressForCourses(studentKaid: $studentKaid, progressFrom: $progressFrom, progressUpTo: $progressUpTo, courseID: $courseID) {
+    exercise {
+      id
+      title
+      mappedStandards {
+        id
+        setId
+        standardId
+        __typename
+      }
+      __typename
+    }
+    exerciseMinutes
+    netLevelChanges
+    skillLevel
+    workedOn
+    __typename
+  }
+  courseById(id: $courseID) {
+    id
+    title
+    unitChildren {
+      unitID: id
+      unitTitle: translatedTitle
+      learnableContentPage(pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}) {
+        contents {
+          exerciseID: id
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

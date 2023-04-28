@@ -1,0 +1,7 @@
+query previewSampleEmail {
+  preview: previewSampleEmail {
+    textContent
+    htmlContent
+    __typename
+  }
+}

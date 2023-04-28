@@ -1,0 +1,8 @@
+query gtp_getDescriptors($examId: String!, $checkpointStr: String) {
+  descriptorList(examId: $examId, requestedCheckpoint: $checkpointStr) {
+    id
+    checkpointStr
+    ...gtp_descriptorsFragment
+    __typename
+  }
+}

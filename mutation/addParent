@@ -1,0 +1,13 @@
+mutation addParent($childKaid: String!, $parentKaid: String!) {
+  setParentAsAdmin(childKaid: $childKaid, parentKaid: $parentKaid) {
+    user {
+      id
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

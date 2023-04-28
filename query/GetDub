@@ -1,0 +1,16 @@
+query GetDub($sourceYouTubeId: String!) {
+  dub(sourceYouTubeId: $sourceYouTubeId) {
+    sourceYouTubeId
+    dubYouTubeId
+    video {
+      id
+      translatedTitle
+      duration
+      dateAdded
+      defaultUrlPath
+      description
+      __typename
+    }
+    __typename
+  }
+}

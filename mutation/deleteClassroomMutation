@@ -1,0 +1,9 @@
+mutation deleteClassroomMutation($classroomId: String!) {
+  deleteClassroom(classroomId: $classroomId) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

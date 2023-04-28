@@ -1,0 +1,8 @@
+query GetWalmartProfile($profileKeyName: String!) {
+  walmartProfile(profileKeyName: $profileKeyName) {
+    walmartId
+    nickname
+    continueUrl
+    __typename
+  }
+}

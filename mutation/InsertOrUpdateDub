@@ -1,0 +1,16 @@
+mutation InsertOrUpdateDub($input: DubInsertOrUpdateInputEntry!) {
+  insertOrUpdateDub(dubInputEntry: $input) {
+    error {
+      code
+      debugMessage
+      dubInsertOrUpdateEntry {
+        sourceYouTubeId
+        dubYouTubeId
+        contentId
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

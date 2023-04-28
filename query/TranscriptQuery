@@ -1,0 +1,13 @@
+query TranscriptQuery($videoId: String!) {
+  videoById(contentId: $videoId) {
+    id
+    title
+    augmentedTranscript
+    subtitles {
+      startTime
+      text
+      __typename
+    }
+    __typename
+  }
+}

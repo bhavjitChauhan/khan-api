@@ -1,0 +1,35 @@
+mutation transferCleverAuthMutation($transferToken: String!, $reauth: Boolean!) {
+  transferCleverAuth(transferToken: $transferToken, reauth: $reauth) {
+    error {
+      code
+      cleverUserInfo {
+        cleverId
+        isTeacher
+        cleverEmail
+        __typename
+      }
+      transferToken
+      udiUuid
+      __typename
+    }
+    user {
+      id
+      kaid
+      canAccessDistrictsHomepage
+      isTeacher
+      hasUnresolvedInvitations
+      transferAuthToken
+      preferredKaLocale {
+        id
+        kaLocale
+        status
+        __typename
+      }
+      __typename
+    }
+    isLibraryUser
+    isFirstLogin
+    transferToken
+    __typename
+  }
+}

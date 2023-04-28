@@ -1,0 +1,15 @@
+mutation classroomProgressUpdate($classroomDescriptor: String!) {
+  classroomProgressUpdate(classroomDescriptor: $classroomDescriptor) {
+    error {
+      code
+      __typename
+    }
+    classroomProgress {
+      id
+      earnedLevel
+      currentLevelProgress
+      __typename
+    }
+    __typename
+  }
+}

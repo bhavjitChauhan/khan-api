@@ -1,0 +1,7 @@
+query previewParentChildInviteEmail {
+  preview: previewParentChildInviteEmail {
+    textContent
+    htmlContent
+    __typename
+  }
+}

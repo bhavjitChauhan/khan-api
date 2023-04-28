@@ -1,0 +1,11 @@
+mutation notifyAnswer($key: String!, $notifyOnAnswer: Boolean!) {
+  modifyNotifyOnAnswer(feedbackKey: $key, notifyOnAnswer: $notifyOnAnswer) {
+    feedback {
+      feedbackType
+      content
+      notifyOnAnswer
+      __typename
+    }
+    __typename
+  }
+}

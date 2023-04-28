@@ -1,0 +1,17 @@
+fragment BasicContentItemProgress on ContentItemProgress {
+  bestScore {
+    numAttempted
+    numCorrect
+    completedDate
+    __typename
+  }
+  completionStatus
+  content {
+    id
+    contentKind
+    contentDescriptor
+    progressKey
+    __typename
+  }
+  __typename
+}

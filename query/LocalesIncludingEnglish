@@ -1,0 +1,6 @@
+query LocalesIncludingEnglish {
+  locales(includeEnglish: true) {
+    id
+    __typename
+  }
+}

@@ -1,0 +1,53 @@
+query allFlaggedGuideThreads($cursor: String) {
+  allFlaggedGuideThreads: allAiGuideThreads(moderationStatus: FLAGGED, cursor: $cursor) {
+    threads {
+      id
+      user {
+        id
+        kaid
+        nickname
+        joined
+        points
+        isAIGuideEnabled
+        age
+        isTeacher
+        isFormalTeacher
+        isParent
+        isChild
+        canAccessDistrictsHomepage
+        hasParents
+        hasCoach
+        isK4dStudent
+        isK4dTeacher
+        isStudentOfFormalTeacherActor
+        __typename
+      }
+      summary
+      lastUpdatedAt
+      flagged
+      flaggedCategories
+      interactions {
+        id
+        question
+        url
+        flagged
+        flaggedCategories
+        flaggedScores {
+          hate
+          hateThreatening
+          selfHarm
+          sexual
+          sexualMinors
+          violence
+          violenceGraphic
+          kaOffensiveTerms
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    cursor
+    __typename
+  }
+}

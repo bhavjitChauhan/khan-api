@@ -1,0 +1,19 @@
+query courseEditorGetPublishedTopicChildren($ids: [String!]!) {
+  topicsById(ids: $ids) {
+    id
+    children {
+      ... on LearnableContent {
+        id
+        contentKind
+        __typename
+      }
+      ... on CurationNode {
+        id
+        contentKind
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

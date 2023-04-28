@@ -1,0 +1,10 @@
+mutation linkUserByClassCodeV2($email: String!, $classCode: String!) {
+  linkUserByClassCodeV2(email: $email, classCode: $classCode) {
+    succeeded
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

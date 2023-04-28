@@ -1,0 +1,9 @@
+mutation setBirthdateForUser($kaid: String!, $birthdate: String) {
+  setSettings(kaid: $kaid, birthdate: $birthdate) {
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,15 @@
+query courseEditorGetPublishedIdentity($descriptors: [String!]!) {
+  contentForDescriptors(descriptors: $descriptors) {
+    id
+    sha
+    slug
+    listed
+    sourceLanguage
+    title
+    ... on Exercise {
+      suggestedCompletionCriteria
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,11 @@
+query GetStandardMappingEdits($setId: String!) {
+  standardMappingEdits(setId: $setId) {
+    id
+    setId
+    standardId
+    contentDescriptor
+    secondaryDescriptor
+    deletion: isDeletion
+    __typename
+  }
+}

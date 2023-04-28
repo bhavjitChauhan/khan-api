@@ -1,0 +1,7 @@
+query previewDistrictsCSVReportReadyForDownloadEmail {
+  preview: previewDistrictsCSVReportReadyForDownloadEmail {
+    textContent
+    htmlContent
+    __typename
+  }
+}

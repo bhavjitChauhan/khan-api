@@ -1,0 +1,6 @@
+query courseEditorGetStatus {
+  contentEditingStatus {
+    publishEnabled
+    __typename
+  }
+}

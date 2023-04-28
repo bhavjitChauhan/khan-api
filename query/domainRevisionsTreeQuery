@@ -1,0 +1,39 @@
+query domainRevisionsTreeQuery {
+  domainRevisions {
+    id
+    title
+    contentId
+    contentKind
+    sha
+    hasUnpublishedChanges
+    listed
+    children {
+      ... on CourseRevision {
+        id
+        title
+        contentId
+        contentKind
+        hasUnpublishedChanges
+        listed
+        __typename
+      }
+      ... on CurationPageRevision {
+        id
+        title
+        contentId
+        contentKind
+        hasUnpublishedChanges
+        listed
+        __typename
+      }
+      __typename
+    }
+    childrenDescriptors {
+      canonicalId
+      contentId
+      kind
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,14 @@
+query TranslationEditor_GetDescriptionStrings($curationNodeId: String!) {
+  curationNodeDescriptionStrings(curationNodeId: $curationNodeId) {
+    id
+    slug
+    contentKind
+    title
+    translatedTitle
+    standaloneTitle
+    translatedStandaloneTitle
+    description
+    translatedDescription
+    __typename
+  }
+}

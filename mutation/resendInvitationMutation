@@ -1,0 +1,9 @@
+mutation resendInvitationMutation($coacheeEmail: String!) {
+  resendInvitation(coacheeEmail: $coacheeEmail) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

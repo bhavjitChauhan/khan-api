@@ -1,0 +1,6 @@
+query TranslationEditor_GetChallengeID($slug: String!) {
+  challenge(slug: $slug) {
+    id
+    __typename
+  }
+}

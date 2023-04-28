@@ -1,0 +1,35 @@
+query PublishList($limit: Int, $queuedFilter: PublishListFilter, $kaLocaleFilter: KALocale) {
+  publishList(limit: $limit, queuedFilter: $queuedFilter, kaLocaleFilter: $kaLocaleFilter) {
+    statuses {
+      id
+      commitSha: publishedContentVersion
+      commitMessage
+      statusText
+      success
+      queued
+      queueInsertTime
+      startTime
+      endTime
+      kaLocale
+      ownerEmail
+      contentDescriptors
+      profile {
+        time
+        name
+        childEntries {
+          time
+          name
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    currentlyRunningPublishIds
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

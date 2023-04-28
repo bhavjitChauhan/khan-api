@@ -1,0 +1,19 @@
+query StudentListsQuery {
+  coach: user {
+    id
+    studentLists: coachedStudentLists {
+      id
+      cacheId
+      name
+      signupCode
+      topics {
+        id
+        slug
+        translatedStandaloneTitle
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

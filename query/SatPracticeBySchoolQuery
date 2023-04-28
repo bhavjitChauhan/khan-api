@@ -1,0 +1,23 @@
+query SatPracticeBySchoolQuery($districtName: String!, $schoolIds: [ID!], $gradeLevels: [DistrictGradeLevel!], $progressFrom: DateTime, $progressUpTo: DateTime, $orderBy: BySchoolSortableColumn, $orderDir: OrderDir, $pageSize: Int, $cursor: Int) {
+  districtSatPracticeReportBySchool(districtName: $districtName, filters: {schoolIds: $schoolIds, gradeLevels: $gradeLevels, progressFrom: $progressFrom, progressUpTo: $progressUpTo}, orderBy: $orderBy, orderDir: $orderDir, pageSize: $pageSize, cursor: $cursor) {
+    avgRow {
+      avgPracticeMinutes
+      avgMathPractice
+      avgReadingAndWritingPractice
+      __typename
+    }
+    rows {
+      school {
+        id
+        name
+        __typename
+      }
+      practiceMinutes
+      mathPractice
+      readingAndWritingPractice
+      __typename
+    }
+    totalCount
+    __typename
+  }
+}

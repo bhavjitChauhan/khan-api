@@ -1,0 +1,12 @@
+query Content_GetRelatedAssessmentItems($exerciseId: String) {
+  exerciseById(id: $exerciseId) {
+    id
+    assessmentItems {
+      id
+      itemShapeType
+      itemData
+      __typename
+    }
+    __typename
+  }
+}

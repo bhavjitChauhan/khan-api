@@ -1,0 +1,10 @@
+query verifyThirdPartyAuth($oauthType: ThirdPartyOAuthType!, $accessToken: String!) {
+  verifyThirdPartyAuth(oauthType: $oauthType, accessToken: $accessToken) {
+    error {
+      code
+      __typename
+    }
+    email
+    __typename
+  }
+}

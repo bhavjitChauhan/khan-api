@@ -1,0 +1,53 @@
+mutation gtp_createNewStageMutation($examId: String!, $stageIndex: Int!) {
+  createNewStage(examId: $examId, stageIndex: $stageIndex) {
+    checkpoints {
+      ...gtp_checkpointFragment
+      __typename
+    }
+    tpud {
+      id
+      currentStage
+      currentCheckpoint
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment gtp_checkpointFragment on Checkpoint {
+  id
+  stages {
+    numCreditedTasks
+    creditedTaskIds
+    goalTasks
+    stageIndex
+    stageDisplayNumber
+    startedAt
+    completedAt
+    incomingLevels {
+      name
+      level
+      __typename
+    }
+    focusAreas {
+      skillTitle
+      areaId
+      areaTitle
+      __typename
+    }
+    __typename
+  }
+  checkpointIndex
+  startedAt
+  completedAt
+  drillMode
+  isComplete
+  removedFromSchedule
+  hasDonePracticeTasks
+  numStages
+  canCreateNewStage
+  hasDonePracticeTasks
+  miniSectionStages
+  tmsTaskIds
+  __typename
+}

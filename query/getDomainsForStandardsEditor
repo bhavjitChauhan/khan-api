@@ -1,0 +1,10 @@
+query getDomainsForStandardsEditor {
+  allDomains {
+    id
+    contentId: id
+    slug
+    translatedTitle
+    kind
+    __typename
+  }
+}

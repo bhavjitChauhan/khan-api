@@ -1,0 +1,16 @@
+mutation BulkInsertOrUpdateDub($input: [DubInsertOrUpdateInputEntry!]!) {
+  bulkInsertOrUpdateDub(dubInputEntryList: $input) {
+    errors {
+      code
+      debugMessage
+      dubInsertOrUpdateEntry {
+        sourceYouTubeId
+        dubYouTubeId
+        contentId
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

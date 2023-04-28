@@ -1,0 +1,7 @@
+query isSatStudent {
+  user {
+    id
+    isSatStudent
+    __typename
+  }
+}

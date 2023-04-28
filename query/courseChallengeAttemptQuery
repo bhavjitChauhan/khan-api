@@ -1,0 +1,15 @@
+query courseChallengeAttemptQuery($topicId: String!) {
+  user {
+    id
+    latestCourseChallengeAttempt(courseId: $topicId) {
+      id
+      numAttempted
+      numCorrect
+      completedDate
+      canResume
+      isCompleted
+      __typename
+    }
+    __typename
+  }
+}

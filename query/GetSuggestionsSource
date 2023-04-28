@@ -1,0 +1,7 @@
+query GetSuggestionsSource($version: String!) {
+  queryCounts(version: $version) {
+    name
+    count
+    __typename
+  }
+}

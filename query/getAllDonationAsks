@@ -1,0 +1,7 @@
+query getAllDonationAsks {
+  allDonationAsks {
+    id
+    active
+    __typename
+  }
+}

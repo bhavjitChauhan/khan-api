@@ -1,0 +1,5 @@
+fragment QuizMetadata on TopicQuiz {
+  ...LearnableContentMetadata
+  index
+  __typename
+}

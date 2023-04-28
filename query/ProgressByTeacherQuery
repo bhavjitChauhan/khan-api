@@ -1,0 +1,22 @@
+query ProgressByTeacherQuery($districtName: String!, $schoolIds: [ID!], $gradeLevels: [DistrictGradeLevel!], $teacherIds: [ID!], $progressFrom: DateTime, $progressUpTo: DateTime, $orderBy: ReportByTeacherSortableColumn, $orderDir: OrderDir, $kmapStrandId: ID, $pageSize: Int, $cursor: Int) {
+  districtProgressReportByTeacher(districtName: $districtName, filters: {schoolIds: $schoolIds, gradeLevels: $gradeLevels, teacherIds: $teacherIds, progressFrom: $progressFrom, progressUpTo: $progressUpTo, kmapStrandId: $kmapStrandId}, orderBy: $orderBy, orderDir: $orderDir, pageSize: $pageSize, cursor: $cursor) {
+    avgRow {
+      avgTotalMinutes
+      avgSkillsLeveledUp
+      __typename
+    }
+    rows {
+      teacherUserDistrictInfo {
+        id
+        kaid
+        displayNameForTeacher
+        __typename
+      }
+      totalMinutes
+      skillsLeveledUp
+      __typename
+    }
+    totalCount
+    __typename
+  }
+}

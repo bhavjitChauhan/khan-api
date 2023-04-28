@@ -1,0 +1,9 @@
+mutation setPrimaryEmailMutation($email: String!) {
+  setPrimaryEmail(email: $email) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

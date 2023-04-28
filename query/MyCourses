@@ -1,0 +1,91 @@
+query MyCourses {
+  classPicker {
+    enabled
+    classesInGradeLevels {
+      id
+      subjects {
+        id
+        __typename
+      }
+      __typename
+    }
+    gradeLevelGroups {
+      title
+      levels {
+        id
+        title
+        __typename
+      }
+      __typename
+    }
+    domains {
+      slug
+      title
+      subjects {
+        id
+        key
+        slug
+        title: translatedTitle
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  user {
+    id
+    selfSelectedGradeLevel
+    districtGradeLevel
+    cleverId
+    isDistrictSynced
+    classPickerSubjectProgresses {
+      ...CourseProgress
+      __typename
+    }
+    recentTopics(limit: 4) {
+      id
+      slug
+      title: translatedTitle
+      unit: parent {
+        id
+        title: translatedTitle
+        thumbnailUrl: largeIconPath
+        domain: domainSlug
+        nodeUrl: relativeUrl
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment CourseProgress on SubjectProgress {
+  topic {
+    domainSlug
+    iconPath
+    id
+    slug
+    title: translatedTitle
+    relativeUrl
+    __typename
+  }
+  unitProgresses {
+    lastWorkedOn
+    currentMastery {
+      percentage
+      __typename
+    }
+    topic {
+      id
+      iconPath
+      title: translatedTitle
+      relativeUrl
+      masteryEnabled
+      subjectMasteryEnabled
+      __typename
+    }
+    __typename
+  }
+  __typename
+}

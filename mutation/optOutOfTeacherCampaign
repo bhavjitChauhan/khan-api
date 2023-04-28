@@ -1,0 +1,11 @@
+mutation optOutOfTeacherCampaign($campaignId: ID!) {
+  teacherCampaignOptOut(campaignId: $campaignId) {
+    teacherCampaignProgress {
+      id
+      optedOutPreCampaign
+      optedOutOfCampaign
+      __typename
+    }
+    __typename
+  }
+}

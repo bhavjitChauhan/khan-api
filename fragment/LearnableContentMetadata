@@ -1,0 +1,20 @@
+fragment LearnableContentMetadata on LearnableContent {
+  id
+  canonicalUrl: defaultUrlPath
+  contentDescriptor
+  contentKind
+  slug
+  translatedTitle
+  parentTopic {
+    id
+    parent {
+      id
+      masteryEnabled
+      __typename
+    }
+    __typename
+  }
+  urlWithinCurationNode
+  translatedCustomTitleTag
+  __typename
+}

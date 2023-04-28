@@ -1,0 +1,9 @@
+mutation devadminTriggerAlarm($level: AlarmLevel!, $subject: String!, $contents: String) {
+  devadminTriggerAlarm(level: $level, subject: $subject, contents: $contents) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

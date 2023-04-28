@@ -1,0 +1,18 @@
+query seoMetadataQuery($examGroupId: String!) {
+  examGroup(examGroupId: $examGroupId) {
+    id
+    examGroupMetadata {
+      id
+      seoMetadata {
+        id
+        description
+        image
+        title
+        url
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

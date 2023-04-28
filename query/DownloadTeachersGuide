@@ -1,0 +1,15 @@
+query DownloadTeachersGuide($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    userDistrictInfos {
+      id
+      district {
+        id
+        downloadTeachersGuide
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

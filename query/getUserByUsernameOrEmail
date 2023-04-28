@@ -1,0 +1,7 @@
+query getUserByUsernameOrEmail($username: String, $email: String) {
+  user(username: $username, email: $email) {
+    id
+    kaid
+    __typename
+  }
+}

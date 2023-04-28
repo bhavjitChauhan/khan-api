@@ -1,0 +1,7 @@
+query getAIGuideWaitlistStatus {
+  user {
+    id
+    aiGuideWaitlistStatus
+    __typename
+  }
+}

@@ -1,0 +1,9 @@
+mutation unsyncGoogleClassroom($classroomId: String!) {
+  unsyncGoogleClassroom(classroomId: $classroomId) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

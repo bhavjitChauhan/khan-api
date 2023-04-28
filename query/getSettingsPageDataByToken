@@ -1,0 +1,16 @@
+query getSettingsPageDataByToken($token: String!, $targetKaid: String) {
+  target: user(kaid: $targetKaid) {
+    id
+    nickname
+    username
+    isActor
+    isChild
+    email
+    isEnrolledInAIGuide
+    __typename
+  }
+  emailSettingsFromUnsubscribeToken(token: $token) {
+    email
+    __typename
+  }
+}

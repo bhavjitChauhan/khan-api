@@ -1,0 +1,24 @@
+mutation cleverCreateAccountWithEmailV2Mutation($transferToken: String!, $email: String!, $birthdate: Date) {
+  cleverCreateAccountWithEmailV2(transferToken: $transferToken, email: $email, birthdate: $birthdate) {
+    error {
+      code
+      __typename
+    }
+    user {
+      id
+      kaid
+      canAccessDistrictsHomepage
+      isTeacher
+      hasUnresolvedInvitations
+      transferAuthToken
+      preferredKaLocale {
+        id
+        kaLocale
+        status
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

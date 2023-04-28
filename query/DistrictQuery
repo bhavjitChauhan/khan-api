@@ -1,0 +1,23 @@
+query DistrictQuery($districtName: String!) {
+  district(districtName: $districtName) {
+    id
+    name
+    isTest
+    isKmapDistrict
+    isK4dDistrict
+    activeGrades {
+      id
+      sortIndex
+      name
+      __typename
+    }
+    schools {
+      id
+      name
+      isKADSchool
+      isKmapSchool
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,9 @@
+mutation classroomProgressReset($classroomDescriptor: String!) {
+  classroomProgressReset(classroomDescriptor: $classroomDescriptor) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

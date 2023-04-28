@@ -1,0 +1,7 @@
+query aiGuideEnrollmentsMeta {
+  aiGuideEnrollmentsMeta {
+    countEnabled
+    countEnrolled
+    __typename
+  }
+}

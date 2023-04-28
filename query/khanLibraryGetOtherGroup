@@ -1,0 +1,21 @@
+query khanLibraryGetOtherGroup {
+  folderGroups {
+    otherFolders {
+      ...BaseFolder
+      courses {
+        id
+        importable
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment BaseFolder on Folder {
+  id
+  name
+  kaLocale
+  __typename
+}

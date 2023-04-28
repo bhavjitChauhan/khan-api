@@ -1,0 +1,22 @@
+query courseEditorSearchPublished($query: String!, $contentKinds: [String]) {
+  searchPage(query: $query, contentKinds: $contentKinds, numResults: 100) {
+    results {
+      contentKind: kind
+      contentId
+      learnableContent {
+        id
+        title
+        translatedTitle
+        __typename
+      }
+      curationNode {
+        id
+        title
+        translatedTitle
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

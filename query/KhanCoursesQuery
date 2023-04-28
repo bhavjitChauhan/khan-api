@@ -1,0 +1,31 @@
+query KhanCoursesQuery($districtId: ID!, $courseIdsToAdd: [String]!) {
+  studentListTopics {
+    translatedTitle
+    topics {
+      id
+      key
+      translatedTitle
+      masteryEnabled
+      __typename
+    }
+    __typename
+  }
+  coursesByIds(ids: $courseIdsToAdd) {
+    id
+    key
+    translatedTitle
+    masteryEnabled
+    __typename
+  }
+  districtById(districtId: $districtId) {
+    id
+    curriculumAlignedCourses {
+      id
+      key
+      translatedTitle
+      masteryEnabled
+      __typename
+    }
+    __typename
+  }
+}

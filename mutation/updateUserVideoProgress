@@ -1,0 +1,67 @@
+mutation updateUserVideoProgress($input: UserVideoProgressInput!) {
+  updateUserVideoProgress(videoProgressUpdate: $input) {
+    videoItemProgress {
+      content {
+        id
+        progressKey
+        ... on Video {
+          downloadUrls
+          __typename
+        }
+        __typename
+      }
+      lastSecondWatched
+      secondsWatched
+      lastWatched
+      points
+      started
+      completed
+      __typename
+    }
+    actionResults {
+      pointsEarned {
+        points
+        __typename
+      }
+      tutorialNodeProgress {
+        contentId
+        progress
+        __typename
+      }
+      userProfile {
+        countVideosCompleted
+        points
+        countBrandNewNotifications
+        __typename
+      }
+      notificationsAdded {
+        badges
+        avatarParts
+        readable
+        urgent
+        toast
+        continueUrl
+        __typename
+      }
+      ... on VideoActionResults {
+        currentTask {
+          id
+          content {
+            id
+            __typename
+          }
+          pointBounty
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

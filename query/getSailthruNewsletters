@@ -1,0 +1,15 @@
+query getSailthruNewsletters($targetKaid: String) {
+  target: user(kaid: $targetKaid) {
+    id
+    emailSubscriptions {
+      sailthruSubscriptions {
+        checked
+        description
+        key
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

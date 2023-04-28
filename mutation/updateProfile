@@ -1,0 +1,25 @@
+mutation updateProfile($avatarName: String, $bio: String, $profileAccessLevel: ProfileAccessLevel, $nickname: String, $username: String) {
+  setSettings(avatarName: $avatarName, bio: $bio, nickname: $nickname, username: $username, profileAccessLevel: $profileAccessLevel) {
+    user {
+      id
+      avatar {
+        name
+        imageSrc
+        __typename
+      }
+      bio
+      profile {
+        accessLevel
+        __typename
+      }
+      nickname
+      username
+      __typename
+    }
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,14 @@
+query isDigitalSatStudent {
+  user {
+    id
+    mathProgress: curationItemProgress(topicId: "x0fcc98a58ba3bea7") {
+      lastWorkedOn
+      __typename
+    }
+    readingAndWritingProgress: curationItemProgress(topicId: "x0d47bcec73eb6c4b") {
+      lastWorkedOn
+      __typename
+    }
+    __typename
+  }
+}

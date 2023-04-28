@@ -1,0 +1,18 @@
+query getAllBadgesFull {
+  allBadges {
+    name
+    description
+    fullDescription
+    points
+    badgeCategory
+    icons {
+      compactUrl
+      emailUrl
+      largeUrl
+      smallUrl
+      __typename
+    }
+    isCustom
+    __typename
+  }
+}

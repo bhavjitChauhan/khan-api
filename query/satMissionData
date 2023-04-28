@@ -1,0 +1,22 @@
+query satMissionData {
+  curator: actorRoleScopes(role: CREATOR) {
+    contentKind
+    __typename
+  }
+  user {
+    id
+    kaid
+    isChild
+    userId
+    __typename
+  }
+  satCheats: flag(name: "sat_cheats") {
+    id
+    isUserPassing
+    __typename
+  }
+  chronomancer {
+    isCollegeBoardIntegrationEnabled
+    __typename
+  }
+}

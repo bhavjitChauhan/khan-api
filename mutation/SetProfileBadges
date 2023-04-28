@@ -1,0 +1,9 @@
+mutation SetProfileBadges($kaid: String!, $badgeNames: [String!]!) {
+  setProfileBadges(kaid: $kaid, badgeNames: $badgeNames) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

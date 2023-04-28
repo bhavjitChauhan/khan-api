@@ -1,0 +1,13 @@
+mutation setWalmartInfoToJoinMutation($profileKeyName: String!) {
+  setWalmartInfo(profileKeyName: $profileKeyName) {
+    error {
+      code
+      __typename
+    }
+    walmartProfile {
+      continueUrl
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,36 @@
+mutation setTeacherAffiliation($tosForFormalTeacherStatus: Boolean, $countryCode: String!, $eduorgKeyId: ID!) {
+  setSettings(tosForFormalTeacherStatus: $tosForFormalTeacherStatus) {
+    user {
+      id
+      tosForFormalTeacherStatus
+      __typename
+    }
+    __typename
+  }
+  userSettingsSetAffiliationCountryCode(countryCode: $countryCode) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+  setEduorgAffiliation(eduorgKeyId: $eduorgKeyId) {
+    user {
+      id
+      schoolAffiliation {
+        id
+        name
+        postalCode
+        location
+        __typename
+      }
+      affiliationCountryCode
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

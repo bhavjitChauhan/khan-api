@@ -1,0 +1,9 @@
+query validateResetToken($token: String!) {
+  validateResetToken(token: $token) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

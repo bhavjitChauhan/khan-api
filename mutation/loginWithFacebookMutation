@@ -1,0 +1,25 @@
+mutation loginWithFacebookMutation($token: String!, $role: UserRole, $inviteId: String) {
+  loginWithFacebook(token: $token, role: $role, inviteId: $inviteId) {
+    user {
+      id
+      kaid
+      canAccessDistrictsHomepage
+      isTeacher
+      hasUnresolvedInvitations
+      transferAuthToken
+      preferredKaLocale {
+        id
+        kaLocale
+        status
+        __typename
+      }
+      __typename
+    }
+    isFirstLogin
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

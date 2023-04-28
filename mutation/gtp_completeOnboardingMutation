@@ -1,0 +1,10 @@
+mutation gtp_completeOnboardingMutation($examId: String!) {
+  completeOnboarding(examId: $examId) {
+    tpud {
+      id
+      onboardingState
+      __typename
+    }
+    __typename
+  }
+}
