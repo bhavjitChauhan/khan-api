@@ -13336,6 +13336,23 @@ fragment tapCourseNode on TAPCourseNode {
   __typename
 }
 
+fragment tapLessonNode on TAPLessonNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapArticleNode
+    ...tapChallengeNode
+    ...tapExerciseNode
+    ...tapInteractiveNode
+    ...tapProjectNode
+    ...tapTalkthroughNode
+    ...tapVideoNode
+    __typename
+  }
+  __typename
+}
+
 fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataWordCount
   metadataTranslatableWordCount
@@ -13384,6 +13401,23 @@ fragment tapCourseNode on TAPCourseNode {
   fingerprint
   children {
     ...tapUnitNode
+    __typename
+  }
+  __typename
+}
+
+fragment tapLessonNode on TAPLessonNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapArticleNode
+    ...tapChallengeNode
+    ...tapExerciseNode
+    ...tapInteractiveNode
+    ...tapProjectNode
+    ...tapTalkthroughNode
+    ...tapVideoNode
     __typename
   }
   __typename
