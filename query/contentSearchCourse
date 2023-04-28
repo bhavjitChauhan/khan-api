@@ -1,0 +1,12 @@
+query contentSearchCourse($contentId: String!) {
+  courseById(id: $contentId) {
+    id
+    slug
+    title
+    listed
+    relativeUrl
+    masteryEnabled
+    linkedCourseStructure
+    __typename
+  }
+}

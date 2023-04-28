@@ -13241,6 +13241,28 @@ fragment tapChallengeNode on TAPChallengeNode {
   __typename
 }
 
+fragment tapContentItem on TAPContentItem {
+  id
+  contentKind
+  contentId
+  sha
+  isNativeContent
+  isUnlisted
+  slug
+  title
+  translatedTitle
+  __typename
+}
+
+fragment tapContentWordCounts on TAPContentWordCounts {
+  wordCount
+  translatableWordCount
+  translatedWordCount
+  translatedWordCount
+  approvedWordCount
+  __typename
+}
+
 fragment tapExerciseNode on TAPExerciseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13253,6 +13275,14 @@ fragment tapInteractiveNode on TAPInteractiveNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
+  __typename
+}
+
+fragment tapMetadataWordCounts on TAPMetadataWordCounts {
+  metadataWordCount
+  metadataTranslatableWordCount
+  metadataTranslatedWordCount
+  metadataApprovedWordCount
   __typename
 }
 
@@ -13296,12 +13326,44 @@ fragment tapVideoNode on TAPVideoNode {
   }
 }
 
+fragment tapContentItem on TAPContentItem {
+  id
+  contentKind
+  contentId
+  sha
+  isNativeContent
+  isUnlisted
+  slug
+  title
+  translatedTitle
+  __typename
+}
+
 fragment tapCourseNode on TAPCourseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
   children {
     ...tapUnitNode
+    __typename
+  }
+  __typename
+}
+
+fragment tapMetadataWordCounts on TAPMetadataWordCounts {
+  metadataWordCount
+  metadataTranslatableWordCount
+  metadataTranslatedWordCount
+  metadataApprovedWordCount
+  __typename
+}
+
+fragment tapUnitNode on TAPUnitNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapLessonNode
     __typename
   }
   __typename
@@ -13317,12 +13379,44 @@ fragment tapCourseNode on TAPCourseNode {
   }
 }
 
+fragment tapContentItem on TAPContentItem {
+  id
+  contentKind
+  contentId
+  sha
+  isNativeContent
+  isUnlisted
+  slug
+  title
+  translatedTitle
+  __typename
+}
+
 fragment tapCourseNode on TAPCourseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
   children {
     ...tapUnitNode
+    __typename
+  }
+  __typename
+}
+
+fragment tapMetadataWordCounts on TAPMetadataWordCounts {
+  metadataWordCount
+  metadataTranslatableWordCount
+  metadataTranslatedWordCount
+  metadataApprovedWordCount
+  __typename
+}
+
+fragment tapUnitNode on TAPUnitNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapLessonNode
     __typename
   }
   __typename
@@ -13375,10 +13469,40 @@ fragment tapCourseNode on TAPCourseNode {
   }
 }
 
+fragment tapContentItem on TAPContentItem {
+  id
+  contentKind
+  contentId
+  sha
+  isNativeContent
+  isUnlisted
+  slug
+  title
+  translatedTitle
+  __typename
+}
+
+fragment tapContentWordCounts on TAPContentWordCounts {
+  wordCount
+  translatableWordCount
+  translatedWordCount
+  translatedWordCount
+  approvedWordCount
+  __typename
+}
+
 fragment tapDomainNode on TAPDomainNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
+  __typename
+}
+
+fragment tapMetadataWordCounts on TAPMetadataWordCounts {
+  metadataWordCount
+  metadataTranslatableWordCount
+  metadataTranslatedWordCount
+  metadataApprovedWordCount
   __typename
 }
 
@@ -14700,6 +14824,196 @@ fragment UnitProgressFields on UnitProgress {
       kaUserLicense
       __typename
     }
+    __typename
+  }
+}
+`,
+  contentSearchArticle: `query contentSearchArticle($contentId: String!) {
+  articleById(id: $contentId) {
+    ...contentSearchLearnableContent
+    __typename
+  }
+}
+
+fragment contentSearchLearnableContent on LearnableContent {
+  id
+  slug
+  title
+  listed
+  defaultUrlPath
+  __typename
+}
+`,
+  contentSearchChallenge: `query contentSearchChallenge($contentId: String!) {
+  challengeById(id: $contentId) {
+    ...contentSearchLearnableContent
+    __typename
+  }
+}
+
+fragment contentSearchLearnableContent on LearnableContent {
+  id
+  slug
+  title
+  listed
+  defaultUrlPath
+  __typename
+}
+`,
+  contentSearchCourse: `query contentSearchCourse($contentId: String!) {
+  courseById(id: $contentId) {
+    id
+    slug
+    title
+    listed
+    relativeUrl
+    masteryEnabled
+    linkedCourseStructure
+    __typename
+  }
+}
+`,
+  contentSearchExercise: `query contentSearchExercise($contentId: String!) {
+  exerciseById(id: $contentId) {
+    ...contentSearchLearnableContent
+    __typename
+  }
+}
+
+fragment contentSearchLearnableContent on LearnableContent {
+  id
+  slug
+  title
+  listed
+  defaultUrlPath
+  __typename
+}
+`,
+  contentSearchInteractive: `query contentSearchInteractive($contentId: String!) {
+  interactiveById(id: $contentId) {
+    ...contentSearchLearnableContent
+    __typename
+  }
+}
+
+fragment contentSearchLearnableContent on LearnableContent {
+  id
+  slug
+  title
+  listed
+  defaultUrlPath
+  __typename
+}
+`,
+  contentSearchProject: `query contentSearchProject($contentId: String!) {
+  projectById(id: $contentId) {
+    ...contentSearchLearnableContent
+    __typename
+  }
+}
+
+fragment contentSearchLearnableContent on LearnableContent {
+  id
+  slug
+  title
+  listed
+  defaultUrlPath
+  __typename
+}
+`,
+  contentSearchPrototype: `query contentSearchPrototype($queryString: String!) {
+  contentSearch(queryString: $queryString) {
+    results {
+      contentKind
+      contentId
+      facets
+      score
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  contentSearchTalkthrough: `query contentSearchTalkthrough($contentId: String!) {
+  talkthroughById(id: $contentId) {
+    ...contentSearchLearnableContent
+    __typename
+  }
+}
+
+fragment contentSearchLearnableContent on LearnableContent {
+  id
+  slug
+  title
+  listed
+  defaultUrlPath
+  __typename
+}
+`,
+  contentSearchVideo: `query contentSearchVideo($contentId: String!) {
+  videoById(contentId: $contentId) {
+    ...contentSearchLearnableContent
+    __typename
+  }
+}
+
+fragment contentSearchLearnableContent on LearnableContent {
+  id
+  slug
+  title
+  listed
+  defaultUrlPath
+  __typename
+}
+`,
+  videoByReadableID: `query videoByReadableID($id: String!) {
+  video(id: $id) {
+    id
+    assessmentItemTags
+    contentKind
+    defaultUrlPath
+    kind
+    nodeSlug
+    slug
+    sponsored
+    title
+    translatedDescription
+    translatedTitle
+    translatedCustomTitleTag
+    authorNames
+    authorList {
+      name
+      __typename
+    }
+    clarificationsEnabled
+    creationDate
+    dateAdded
+    description
+    descriptionHtml
+    downloadUrls
+    duration
+    imageUrl
+    kaUrl
+    kaUserLicense
+    keywords
+    readableId
+    relativeUrl
+    sha
+    thumbnailUrls {
+      category
+      url
+      __typename
+    }
+    translatedDescriptionHtml
+    translatedYoutubeId
+    translatedYoutubeLang
+    youtubeId
+    augmentedTranscript
     __typename
   }
 }

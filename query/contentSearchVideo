@@ -1,0 +1,15 @@
+query contentSearchVideo($contentId: String!) {
+  videoById(contentId: $contentId) {
+    ...contentSearchLearnableContent
+    __typename
+  }
+}
+
+fragment contentSearchLearnableContent on LearnableContent {
+  id
+  slug
+  title
+  listed
+  defaultUrlPath
+  __typename
+}

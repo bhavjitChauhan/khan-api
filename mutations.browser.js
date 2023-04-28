@@ -10074,4 +10074,25 @@ fragment entry on TeamPageEntryForEditing {
   }
 }
 `,
+  ForceLinkEmail: `mutation ForceLinkEmail($email: String!, $kaid: String!) {
+  forceLinkEmail(email: $email, kaid: $kaid) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  UnlinkEmailForSupport: `mutation UnlinkEmailForSupport($email: String!, $kaid: String!) {
+  unlinkEmailForSupport(email: $email, kaid: $kaid) {
+    error {
+      code
+      __typename
+    }
+    removed
+    __typename
+  }
+}
+`,
 }
