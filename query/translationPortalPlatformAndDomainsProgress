@@ -14,3 +14,18 @@ query translationPortalPlatformAndDomainsProgress($locale: String!) {
     __typename
   }
 }
+
+fragment tapDomainNode on TAPDomainNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapPlatformNode on TAPPlatformNode {
+  ...tapContentWordCounts
+  id
+  slug
+  title
+  __typename
+}
