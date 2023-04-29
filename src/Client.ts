@@ -38,7 +38,7 @@ import Reply from './lib/messages/Reply'
 import {
   isTipsAndThanksSchema,
   isQuestionSchema,
-  TypeToClass,
+  TypeToMessageClass,
 } from './utils/messages'
 import TipsAndThanks from './lib/messages/TipsAndThanks'
 import getFeedbackReplies from './queries/getFeedbackReplies'
@@ -55,6 +55,7 @@ import { RecursivePartial } from './utils/types'
 import projectsAuthoredByUser from './queries/projectsAuthoredByUser'
 import getProfileWidgets from './queries/getProfileWidgets'
 import { UserStatistics } from './types/user-statistics'
+import getFeedbackRepliesPage from './queries/getFeedbackRepliesPage'
 
 export default class Client {
   #identifier?: string
@@ -264,7 +265,7 @@ export default class Client {
         } does not have a valid KAID`
       )
 
-    return json.data.loginWithPassword
+    return this
   }
 
   /**
@@ -309,8 +310,7 @@ export default class Client {
     return user
   }
 
-  // @TODO Should probably be renamed to `getUserAvatar`
-  async getAvatar(
+  async getUserAvatar(
     identifier: Parameters<typeof this.resolveCachedKaid>[0] | undefined = this
       .kaid ?? this.#identifier,
     type: 'svg' | 'png' = 'svg'
@@ -358,6 +358,17 @@ export default class Client {
     } as UserStatistics
   }
 
+  /**
+   * Gets a user's programs
+   *
+   * @rawEquivalent {@link queries!projectsAuthoredByUser}
+   *
+   * @example
+   * const client = new Client()
+   * for await (const programs of client.getUserPrograms('bhavjitChauhan')) {
+   *  console.log(programs.map(program => program.title))
+   * }
+   */
   async *getUserPrograms(
     identifier?: Parameters<typeof this.resolveCachedKaid>[0],
     sort: ListProgramSortOrder = ListProgramSortOrder.TOP,
@@ -404,8 +415,9 @@ export default class Client {
         program.client = this
         return program
       })
-      const nextCursor =
-        !json.data.user.programs.complete && json.data.user.programs.cursor
+      const nextCursor = !json.data.user.programs.complete
+        ? json.data.user.programs.cursor
+        : null
 
       return { programs, cursor: nextCursor }
     }
@@ -419,6 +431,16 @@ export default class Client {
     }
   }
 
+  /**
+   * Gets all of a user's programs
+   *
+   * @see {@link Client!Client.getUserPrograms}
+   *
+   * @example
+   * const client = new Client()
+   * const programs = await client.getAllUserPrograms('bhavjitChauhan')
+   * console.log(programs.map(program => program.title))
+   */
   async getAllUserPrograms(
     identifier?: Kaid | string | Email,
     sort: ListProgramSortOrder = ListProgramSortOrder.TOP,
@@ -649,7 +671,7 @@ export default class Client {
         RecursivePartial<BasicFeedbackSchema>)[]
 
       const messages = feedback.map((feedback) => {
-        const message = TypeToClass[type].fromSchema(feedback)
+        const message = TypeToMessageClass[type].fromSchema(feedback)
         message.client = this
         return message
       })
@@ -790,13 +812,81 @@ export default class Client {
   }
 
   /**
+   * Gets replies to a message
+   *
+   * @param identifier Feedback key or encrypted feedback key
+   *
+   * @rawEquivalent {@link queries!getFeedbackRepliesPage}
+   *
+   * @example
+   * const client = new Client()
+   * for await (const replies of client.getMessageReplies('ag5zfmtoYW4tYWNhZGVteXJBCxIIVXNlckRhdGEiHmthaWRfNjYzMzc5NDA2ODA0Nzc0MjA1NjU0NTUzNAwLEghGZWVkYmFjaxiAgJO6wamwCgw')) {
+   *  console.log(replies.map(reply => reply.text))
+   * }
+   */
+  async *getMessageReplies(
+    identifier: FeedbackKey | EncryptedFeedbackKey,
+    limit = 10
+  ) {
+    const variables = {
+      postKey: identifier,
+      cursor: null,
+      limit,
+    }
+
+    const getMessageRepliesPage = async (cursor?: string) => {
+      const response = await getFeedbackRepliesPage({
+        ...variables,
+        cursor,
+      })
+      const json = await Client.#resolveJsonReponse(response)
+
+      assertDataResponse(json)
+      if (!json.data.feedbackRepliesPaginated)
+        throw new Error('Replies not found')
+      if (
+        !json.data.feedbackRepliesPaginated.isComplete &&
+        !json.data.feedbackRepliesPaginated.cursor
+      )
+        throw new Error('Cursor not found')
+
+      const replySchemas = json.data.feedbackRepliesPaginated.feedback
+      if (!replySchemas) return { replies: [], cursor: null }
+
+      const replies = replySchemas.map((replySchema) => {
+        const reply = Reply.fromSchema(replySchema)
+        reply.client = this
+        return reply
+      })
+      const nextCursor = !json.data.feedbackRepliesPaginated.isComplete
+        ? json.data.feedbackRepliesPaginated.cursor
+        : null
+
+      return { replies, cursor: nextCursor }
+    }
+
+    let { replies, cursor } = await getMessageRepliesPage()
+    yield replies
+
+    while (cursor) {
+      ;({ replies, cursor } = await getMessageRepliesPage(cursor))
+      yield replies
+    }
+  }
+
+  /**
    * Gets all replies to a message
    *
    * @rawEquivalent {@link queries!getFeedbackReplies}
+   *
+   * @see {@link Client!Client.getMessageReplies}
+   *
+   * @example
+   * const client = new Client()
+   * const replies = await client.getAllMessageReplies('ag5zfmtoYW4tYWNhZGVteXJBCxIIVXNlckRhdGEiHmthaWRfNjYzMzc5NDA2ODA0Nzc0MjA1NjU0NTUzNAwLEghGZWVkYmFjaxiAgJO6wamwCgw'))
+   * console.log(replies.map(reply => reply.text))
    */
   async getAllMessageReplies(identifier: FeedbackKey | EncryptedFeedbackKey) {
-    identifier = await this.resolveCachedFeedbackKey(identifier)
-
     const response = await getFeedbackReplies(identifier)
     const json = await Client.#resolveJsonReponse(response)
 

@@ -1,4 +1,5 @@
 import fetch from 'cross-fetch'
+import { getLatestMutation, getLatestQuery } from './safelist'
 
 export interface TypedResponse<T> extends Response {
   json(): Promise<T>
@@ -35,5 +36,30 @@ export async function graphql<Variables, Response>(
   init?: RequestInit
 ): Promise<TypedResponse<Response>> {
   const body = { query, variables }
-  return await post<Response>(url, body, init)
+  const response = await post<Response>(url, body, init)
+  if (
+    response.status === 403 &&
+    (await response.text()).startsWith(
+      'routes._validatePermission: [unauthorized error] Operation not found in safelist'
+    )
+  ) {
+    const isQuery = query.startsWith('query'),
+      operationName = query.match(/^(?:query|mutation) (\w+)/)?.[1]
+    if (!operationName)
+      throw new Error(`An unknown query is no longer in the safelist`)
+    console.warn(
+      `The query for operation "${operationName}" is no longer in the safelist. Attempting to fetch the latest version from the safelist...`
+    )
+    const latestQuery = isQuery
+      ? await getLatestQuery(operationName)
+      : await getLatestMutation(operationName)
+
+    if (!latestQuery)
+      throw new Error(
+        `The query for operation "${operationName}" was not found in the safelist`
+      )
+
+    return await post<Response>(url, { ...body, query: latestQuery }, init)
+  }
+  return response
 }

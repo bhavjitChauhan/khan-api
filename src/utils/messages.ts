@@ -23,7 +23,10 @@ export function isReplySchema(
 export function isQuestionSchema(
   schema: BasicFeedbackSchema | QuestionFeedbackSchema | AnswerFeedbackSchema
 ): schema is QuestionFeedbackSchema {
-  return schema.feedbackType === FeedbackType.QUESTION
+  return (
+    schema.feedbackType === FeedbackType.QUESTION ||
+    schema.feedbackType === FeedbackType.PROJECT_HELP_QUESTION
+  )
 }
 
 export function isAnswerSchema(
@@ -32,7 +35,7 @@ export function isAnswerSchema(
   return schema.feedbackType === FeedbackType.ANSWER
 }
 
-export const TypeToClass = {
+export const TypeToMessageClass = {
   [MessageType.TipsAndThanks]: TipsAndThanks,
   [MessageType.Question]: Question,
   [MessageType.HelpRequest]: Question,

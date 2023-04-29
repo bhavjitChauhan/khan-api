@@ -104,7 +104,7 @@ export interface UserSchema<
    * Either Qualaroo ID or KAID
    *
    * @link https://github.com/kamens/gae_bingo
-   * 
+   *
    * @deprecated Since 2023-04-24
    */
   qualarooId: QualarooID | Kaid | null
@@ -375,7 +375,7 @@ export interface QuestionFeedbackSchema extends FeedbackSchemaBase {
         | 'upVoted'
       >[]
     | null
-  feedbackType: FeedbackType.QUESTION
+  feedbackType: FeedbackType.QUESTION | FeedbackType.PROJECT_HELP_QUESTION
   /**
    * Always `null`
    */
@@ -419,4 +419,11 @@ export interface QaExpandKeyInfoSchema {
   __typename: 'QaExpandKeyInfo'
   feedbackType: FeedbackType
   unencryptedKey: FeedbackKey
+}
+
+export interface RepliesSchema {
+  __typename: 'Replies'
+  cursor: string | null
+  feedback: BasicFeedbackSchema[] | null
+  isComplete: boolean
 }
