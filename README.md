@@ -17,6 +17,14 @@ Khan Academy's internal GraphQL API only allows a set of "safelisted" queries an
 
 ## Usage
 
+### [Khan API Library](https://github.com/bhavjitChauhan/khan-api/)
+
+Since version [0.6.0](https://github.com/bhavjitChauhan/khan-api/releases/tag/v0.6.0), the library will seemlessly fall back to using the safelist if any query is outdated.
+
+### Manual
+
+Get the latest `getFullUserProfile` query:
+
 ```js
 const GET_FULL_USER_PROFILE_QUERY = await fetch('https://cdn.jsdelivr.net/gh/bhavjitChauhan/khan-api@safelist/query/getFullUserProfile')
     .then((response) => response.text());
