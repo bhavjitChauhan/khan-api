@@ -5,10 +5,38 @@ query khanLibraryGetFolder($id: String!) {
   }
 }
 
+fragment BaseFolder on Folder {
+  id
+  name
+  kaLocale
+  __typename
+}
+
 fragment Folder on Folder {
   ...BaseFolder
   courses {
     ...PublishedCourseRevisionFragment
+    __typename
+  }
+  __typename
+}
+
+fragment PublishedCourseRevisionFragment on CourseRevision {
+  id
+  contentId
+  kaLocale
+  title
+  importable
+  hasUnpublishedChanges
+  published {
+    id
+    slug
+    title
+    listed
+    masteryEnabled
+    domainSlug
+    domainId: parentTopicId
+    courseSnapshotId
     __typename
   }
   __typename

@@ -1045,6 +1045,22 @@ fragment ArticleRevision on ArticleRevision {
   }
 }
 
+fragment AssessmentItemRevision on AssessmentItemRevision {
+  id
+  contentKind
+  contentId
+  sha
+  creationDate
+  name
+  authorNames
+  itemData
+  itemShapeType
+  perseusApiMajorVersion
+  requiresScreenOrMouse
+  tags
+  __typename
+}
+
 fragment ExerciseRevision on ExerciseRevision {
   id
   contentKind
@@ -1440,6 +1456,17 @@ fragment LearnableContentData on LearnableContent {
   }
   __typename
 }
+
+fragment MappedStandards on LearnableContent {
+  mappedStandards {
+    setId
+    id
+    standardId
+    description
+    __typename
+  }
+  __typename
+}
 `,
   ContentForPath: `query ContentForPath($path: String!, $countryCode: String!, $kaLocale: KALocale!) {
   publishedContentVersion(kaLocale: $kaLocale) {
@@ -1720,6 +1747,27 @@ fragment LearnableContentData on LearnableContent {
   __typename
 }
 
+fragment LearnableContentMetadata on LearnableContent {
+  id
+  canonicalUrl: defaultUrlPath
+  contentDescriptor
+  contentKind
+  slug
+  translatedTitle
+  parentTopic {
+    id
+    parent {
+      id
+      masteryEnabled
+      __typename
+    }
+    __typename
+  }
+  urlWithinCurationNode
+  translatedCustomTitleTag
+  __typename
+}
+
 fragment LessonData on Lesson {
   id
   relativeUrl
@@ -1731,6 +1779,17 @@ fragment LessonData on Lesson {
       ...LearnableContentMetadata
       __typename
     }
+    __typename
+  }
+  __typename
+}
+
+fragment MappedStandards on LearnableContent {
+  mappedStandards {
+    setId
+    id
+    standardId
+    description
     __typename
   }
   __typename
@@ -6313,6 +6372,106 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
   }
 }
 
+fragment userExerciseFields on UserExercise {
+  exerciseModel: exercise {
+    id
+    assessmentItemCount: numAssessmentItems
+    displayName
+    isQuiz
+    isSkillCheck
+    name
+    nodeSlug
+    progressKey
+    translatedDisplayName
+    relatedContent {
+      id
+      contentKind
+      kind
+      thumbnailUrl
+      translatedTitle
+      topicPaths {
+        path {
+          id
+          kind
+          slug
+          __typename
+        }
+        __typename
+      }
+      ... on Article {
+        kaUrl
+        nodeSlug
+        relativeUrl
+        slug
+        __typename
+      }
+      ... on Video {
+        duration
+        imageUrl
+        kaUrl
+        nodeSlug
+        relativeUrl
+        slug
+        translatedYoutubeId
+        __typename
+      }
+      __typename
+    }
+    relatedVideos {
+      contentKind
+      duration
+      id
+      imageUrl
+      kaUrl
+      kind
+      nodeSlug
+      progressKey
+      relativeUrl
+      slug
+      thumbnailUrl
+      translatedDescription
+      translatedTitle
+      translatedYoutubeId
+      __typename
+    }
+    problemTypes {
+      items {
+        id
+        live
+        sha
+        __typename
+      }
+      name
+      relatedVideos
+      __typename
+    }
+    translatedProblemTypes {
+      items {
+        id
+        live
+        sha
+        __typename
+      }
+      name
+      relatedVideos
+      __typename
+    }
+    __typename
+  }
+  exercise: exerciseName
+  fpmMasteryLevel
+  lastAttemptNumber
+  lastCountHints
+  lastDone
+  lastMasteryUpdate
+  longestStreak
+  maximumExerciseProgressDt: maximumExerciseProgressDate
+  streak
+  totalCorrect
+  totalDone
+  __typename
+}
+
 fragment userTaskFields on PracticeUserTask {
   cards {
     done
@@ -8959,44 +9118,6 @@ fragment CommonUserInfoFragment on User {
     __typename
   }
 }
-
-fragment gtp_checkpointFragment on Checkpoint {
-  id
-  stages {
-    numCreditedTasks
-    creditedTaskIds
-    goalTasks
-    stageIndex
-    stageDisplayNumber
-    startedAt
-    completedAt
-    incomingLevels {
-      name
-      level
-      __typename
-    }
-    focusAreas {
-      skillTitle
-      areaId
-      areaTitle
-      __typename
-    }
-    __typename
-  }
-  checkpointIndex
-  startedAt
-  completedAt
-  drillMode
-  isComplete
-  removedFromSchedule
-  hasDonePracticeTasks
-  numStages
-  canCreateNewStage
-  hasDonePracticeTasks
-  miniSectionStages
-  tmsTaskIds
-  __typename
-}
 `,
   gtp_getDescriptors: `query gtp_getDescriptors($examId: String!, $checkpointStr: String) {
   descriptorList(examId: $examId, requestedCheckpoint: $checkpointStr) {
@@ -9717,109 +9838,6 @@ fragment gtp_taskFragment on Task {
     __typename
   }
 }
-
-fragment gtp_checkpointFragment on Checkpoint {
-  id
-  stages {
-    numCreditedTasks
-    creditedTaskIds
-    goalTasks
-    stageIndex
-    stageDisplayNumber
-    startedAt
-    completedAt
-    incomingLevels {
-      name
-      level
-      __typename
-    }
-    focusAreas {
-      skillTitle
-      areaId
-      areaTitle
-      __typename
-    }
-    __typename
-  }
-  checkpointIndex
-  startedAt
-  completedAt
-  drillMode
-  isComplete
-  removedFromSchedule
-  hasDonePracticeTasks
-  numStages
-  canCreateNewStage
-  hasDonePracticeTasks
-  miniSectionStages
-  tmsTaskIds
-  __typename
-}
-
-fragment gtp_practiceTestFragment on PracticeTest {
-  id
-  practiceTestId
-  approxTestMins
-  testTitle
-  directions
-  formCode
-  hasStarted
-  completionStatus
-  completedAt
-  subScores {
-    name
-    score
-    __typename
-  }
-  sections {
-    sectionId
-    taskId
-    exerciseName
-    isScored
-    sectionTitle
-    numCorrect
-    numTotal
-    durationSeconds
-    breakDurationSeconds
-    hasUserGrading
-    completed
-    userProvidedScores {
-      score
-      minScore
-      maxScore
-      __typename
-    }
-    __typename
-  }
-  __typename
-}
-
-fragment gtp_tpudFragment on TestPrepUserData {
-  id
-  examId
-  currentStage
-  currentCheckpoint
-  targetScore
-  diagnosticsStates {
-    type
-    state
-    __typename
-  }
-  onboardingState
-  hasSeededSkillLevels
-  hasUnlockedDrillMode
-  scoreInfo {
-    minScore
-    maxScore
-    __typename
-  }
-  schedule {
-    examDate
-    practiceTestDates
-    __typename
-  }
-  __typename
-}
 `,
   gtp_onboardingStatus: `query gtp_onboardingStatus($examGroupId: String!) {
   egud(examGroupId: $examGroupId) {
@@ -10252,10 +10270,38 @@ fragment khanLibraryDomainRevision on DomainRevision {
   }
 }
 
+fragment BaseFolder on Folder {
+  id
+  name
+  kaLocale
+  __typename
+}
+
 fragment Folder on Folder {
   ...BaseFolder
   courses {
     ...PublishedCourseRevisionFragment
+    __typename
+  }
+  __typename
+}
+
+fragment PublishedCourseRevisionFragment on CourseRevision {
+  id
+  contentId
+  kaLocale
+  title
+  importable
+  hasUnpublishedChanges
+  published {
+    id
+    slug
+    title
+    listed
+    masteryEnabled
+    domainSlug
+    domainId: parentTopicId
+    courseSnapshotId
     __typename
   }
   __typename
@@ -10271,6 +10317,44 @@ fragment Folder on Folder {
   }
 }
 
+fragment tapArticleNode on TAPArticleNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapChallengeNode on TAPChallengeNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapContentItem on TAPContentItem {
+  id
+  contentKind
+  contentId
+  sha
+  isNativeContent
+  isUnlisted
+  slug
+  title
+  translatedTitle
+  __typename
+}
+
+fragment tapContentWordCounts on TAPContentWordCounts {
+  wordCount
+  translatableWordCount
+  translatedWordCount
+  translatedWordCount
+  approvedWordCount
+  __typename
+}
+
 fragment tapCourseNode on TAPCourseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -10279,6 +10363,87 @@ fragment tapCourseNode on TAPCourseNode {
     ...tapUnitNode
     __typename
   }
+  __typename
+}
+
+fragment tapExerciseNode on TAPExerciseNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapInteractiveNode on TAPInteractiveNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapLessonNode on TAPLessonNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapArticleNode
+    ...tapChallengeNode
+    ...tapExerciseNode
+    ...tapInteractiveNode
+    ...tapProjectNode
+    ...tapTalkthroughNode
+    ...tapVideoNode
+    __typename
+  }
+  __typename
+}
+
+fragment tapMetadataWordCounts on TAPMetadataWordCounts {
+  metadataWordCount
+  metadataTranslatableWordCount
+  metadataTranslatedWordCount
+  metadataApprovedWordCount
+  __typename
+}
+
+fragment tapProjectNode on TAPProjectNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapTalkthroughNode on TAPTalkthroughNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  isDubbed
+  isSubtitled
+  youtubeId
+  __typename
+}
+
+fragment tapUnitNode on TAPUnitNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapLessonNode
+    __typename
+  }
+  __typename
+}
+
+fragment tapVideoNode on TAPVideoNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  isDubbed
+  dubIsSubtitled
+  isSubtitled
+  translatedYoutubeId
+  youtubeId
   __typename
 }
 `,
@@ -13326,6 +13491,22 @@ fragment tapVideoNode on TAPVideoNode {
   }
 }
 
+fragment tapArticleNode on TAPArticleNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapChallengeNode on TAPChallengeNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
 fragment tapContentItem on TAPContentItem {
   id
   contentKind
@@ -13339,6 +13520,15 @@ fragment tapContentItem on TAPContentItem {
   __typename
 }
 
+fragment tapContentWordCounts on TAPContentWordCounts {
+  wordCount
+  translatableWordCount
+  translatedWordCount
+  translatedWordCount
+  approvedWordCount
+  __typename
+}
+
 fragment tapCourseNode on TAPCourseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13347,6 +13537,21 @@ fragment tapCourseNode on TAPCourseNode {
     ...tapUnitNode
     __typename
   }
+  __typename
+}
+
+fragment tapExerciseNode on TAPExerciseNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapInteractiveNode on TAPInteractiveNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
   __typename
 }
 
@@ -13375,6 +13580,24 @@ fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   __typename
 }
 
+fragment tapProjectNode on TAPProjectNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapTalkthroughNode on TAPTalkthroughNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  isDubbed
+  isSubtitled
+  youtubeId
+  __typename
+}
+
 fragment tapUnitNode on TAPUnitNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13383,6 +13606,18 @@ fragment tapUnitNode on TAPUnitNode {
     ...tapLessonNode
     __typename
   }
+  __typename
+}
+
+fragment tapVideoNode on TAPVideoNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  isDubbed
+  dubIsSubtitled
+  isSubtitled
+  translatedYoutubeId
+  youtubeId
   __typename
 }
 `,
@@ -13396,6 +13631,22 @@ fragment tapUnitNode on TAPUnitNode {
   }
 }
 
+fragment tapArticleNode on TAPArticleNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapChallengeNode on TAPChallengeNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
 fragment tapContentItem on TAPContentItem {
   id
   contentKind
@@ -13409,6 +13660,15 @@ fragment tapContentItem on TAPContentItem {
   __typename
 }
 
+fragment tapContentWordCounts on TAPContentWordCounts {
+  wordCount
+  translatableWordCount
+  translatedWordCount
+  translatedWordCount
+  approvedWordCount
+  __typename
+}
+
 fragment tapCourseNode on TAPCourseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13417,6 +13677,21 @@ fragment tapCourseNode on TAPCourseNode {
     ...tapUnitNode
     __typename
   }
+  __typename
+}
+
+fragment tapExerciseNode on TAPExerciseNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapInteractiveNode on TAPInteractiveNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
   __typename
 }
 
@@ -13445,6 +13720,24 @@ fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   __typename
 }
 
+fragment tapProjectNode on TAPProjectNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapTalkthroughNode on TAPTalkthroughNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  isDubbed
+  isSubtitled
+  youtubeId
+  __typename
+}
+
 fragment tapUnitNode on TAPUnitNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13453,6 +13746,18 @@ fragment tapUnitNode on TAPUnitNode {
     ...tapLessonNode
     __typename
   }
+  __typename
+}
+
+fragment tapVideoNode on TAPVideoNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  isDubbed
+  dubIsSubtitled
+  isSubtitled
+  translatedYoutubeId
+  youtubeId
   __typename
 }
 `,

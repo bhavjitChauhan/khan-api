@@ -14,6 +14,22 @@ mutation contentEditorEditExerciseProperties($sha: String!, $input: EditExercise
   }
 }
 
+fragment AssessmentItemRevision on AssessmentItemRevision {
+  id
+  contentKind
+  contentId
+  sha
+  creationDate
+  name
+  authorNames
+  itemData
+  itemShapeType
+  perseusApiMajorVersion
+  requiresScreenOrMouse
+  tags
+  __typename
+}
+
 fragment ExerciseRevision on ExerciseRevision {
   id
   contentKind
