@@ -199,3 +199,14 @@ fragment LearnableContentData on LearnableContent {
   }
   __typename
 }
+
+fragment MappedStandards on LearnableContent {
+  mappedStandards {
+    setId
+    id
+    standardId
+    description
+    __typename
+  }
+  __typename
+}

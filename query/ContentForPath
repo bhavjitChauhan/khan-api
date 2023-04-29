@@ -277,6 +277,27 @@ fragment LearnableContentData on LearnableContent {
   __typename
 }
 
+fragment LearnableContentMetadata on LearnableContent {
+  id
+  canonicalUrl: defaultUrlPath
+  contentDescriptor
+  contentKind
+  slug
+  translatedTitle
+  parentTopic {
+    id
+    parent {
+      id
+      masteryEnabled
+      __typename
+    }
+    __typename
+  }
+  urlWithinCurationNode
+  translatedCustomTitleTag
+  __typename
+}
+
 fragment LessonData on Lesson {
   id
   relativeUrl
@@ -288,6 +309,17 @@ fragment LessonData on Lesson {
       ...LearnableContentMetadata
       __typename
     }
+    __typename
+  }
+  __typename
+}
+
+fragment MappedStandards on LearnableContent {
+  mappedStandards {
+    setId
+    id
+    standardId
+    description
     __typename
   }
   __typename
