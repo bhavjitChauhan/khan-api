@@ -96,8 +96,10 @@ function sortDocumentFragments(str) {
     return str
 }
 
+const documentTypes = ['query', 'mutation', 'fragment']
 
 let failed = false
+
 
 console.log('Fetching homepage script...')
 const html = await fetch('https://www.khanacademy.org/').then(r => r.text())
@@ -179,8 +181,7 @@ let documents = scripts
         return true
     })
 
-const documentTypes = ['query', 'mutation', 'fragment'],
-    filteredDocuments = Object.fromEntries(documentTypes.map(type => [type, documents.filter(([, document]) => document.startsWith(type))]))
+const filteredDocuments = Object.fromEntries(documentTypes.map(type => [type, documents.filter(([, document]) => document.startsWith(type))]))
 
 
 console.log('Extracting fragments...')
@@ -261,13 +262,14 @@ for (const type of documentTypes) {
     for (const file of files) {
         let document = await readFile(`${type}/${file}`).then(buffer => buffer.toString())
         const neededFragments = [...document.matchAll(/\.\.\.(\w+)/g)].map(match => match[1]),
-            fragmentNames = [...document.matchAll(/fragment (\w+)/g)].map(match => match[1])
+            existingFragments = [...document.matchAll(/fragment (\w+)/g)].map(match => match[1])
 
         if (neededFragments.length === 0) continue
 
         let insertedFragmentCount = 0
-        for (const fragmentName of neededFragments) {
-            if (fragmentNames.includes(fragmentName)) continue
+        while (neededFragments.length > 0) {
+            const fragmentName = neededFragments.shift()
+            if (existingFragments.includes(fragmentName)) continue
 
             const fragment = documents.find(([operation]) => operation === fragmentName)
             if (!fragment) {
@@ -278,7 +280,11 @@ for (const type of documentTypes) {
             document += '\n' + fragment[1]
             insertedFragmentCount++
             totalInsertedFragmentCount++
+
+            const newNeededFragments = [...fragment[1].matchAll(/\.\.\.(\w+)/g)].map(match => match[1])
+            neededFragments.push(...newNeededFragments)
         }
+        
         const existingDocument = existingDocuments[type][extractOperation(document)]
         if (existingDocument && ((extractFragments(document)?.length ?? 0) < (extractFragments(existingDocument)?.length) ?? 0)) {
             console.warn(`Fragment count mismatch in ${type}/${file}`)
