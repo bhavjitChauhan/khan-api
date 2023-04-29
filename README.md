@@ -1,7 +1,5 @@
 # Khan API Safelist
 
-⚠️ **This branch is currently not updated automatically, queries and mutations may be outdated!**
-
 Safelisted GraphQL documents used by Khan Academy's internal API.
 
 <details open>
