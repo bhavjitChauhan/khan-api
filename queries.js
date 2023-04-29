@@ -9115,6 +9115,20 @@ fragment gtp_egudFragment on ExamGroupUserData {
     __typename
   }
 }
+
+fragment gtp_essayScoresFragment on EssayScores {
+  areas {
+    translatedTitle
+    essays {
+      examCompletionDate
+      score
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
 `,
   gtp_getExamGroupMetadata: `query gtp_getExamGroupMetadata($examGroupId: String!) {
   examGroup(examGroupId: $examGroupId) {
@@ -13336,6 +13350,23 @@ fragment tapCourseNode on TAPCourseNode {
   __typename
 }
 
+fragment tapLessonNode on TAPLessonNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapArticleNode
+    ...tapChallengeNode
+    ...tapExerciseNode
+    ...tapInteractiveNode
+    ...tapProjectNode
+    ...tapTalkthroughNode
+    ...tapVideoNode
+    __typename
+  }
+  __typename
+}
+
 fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataWordCount
   metadataTranslatableWordCount
@@ -13384,6 +13415,23 @@ fragment tapCourseNode on TAPCourseNode {
   fingerprint
   children {
     ...tapUnitNode
+    __typename
+  }
+  __typename
+}
+
+fragment tapLessonNode on TAPLessonNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapArticleNode
+    ...tapChallengeNode
+    ...tapExerciseNode
+    ...tapInteractiveNode
+    ...tapProjectNode
+    ...tapTalkthroughNode
+    ...tapVideoNode
     __typename
   }
   __typename
