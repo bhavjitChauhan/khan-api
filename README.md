@@ -12,8 +12,9 @@ A Khan Academy internal API client and wrapper for Node.js and the browser.
 
 <summary>Quick links</summary>
 
-- [Documentation](https://khan-api.bhavjit.com)
-- [API Reference](https://khan-api.bhavjit.com/reference)
+- [Documentation](https://khan-api.bhavjit.com "Khan API library documentation website")
+- [API Reference](https://khan-api.bhavjit.com/reference "Khan Academy internal API reference")
+- [Query Safelist](https://github.com/bhavjitChauhan/khan-api/tree/safelist "Khan Academy safelisted GraphQL queries repository")
 
 </details>
 
