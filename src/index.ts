@@ -28,6 +28,7 @@ export * from './lib/messages/Reply'
 export * from './utils/avatars'
 export * from './utils/programs'
 export * from './utils/messages'
+export * from './utils/safelist'
 export * from './utils/regexes'
 export * from './utils/resolvers'
 
