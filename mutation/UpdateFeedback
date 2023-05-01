@@ -34,15 +34,20 @@ mutation UpdateFeedback($feedbackKey: String!, $textContent: String!, $shownLowQ
       }
       fromVideoAuthor
       key
-      lowQualityScore
       notifyOnAnswer
       permalink
       qualityKind
       replyCount
       replyExpandKeys
-      showLowQualityNotice
       sumVotesIncremented
       upVoted
+      __typename
+    }
+    lowQualityResponse {
+      feedbackCode
+      feedbackChar
+      feedbackType
+      showLowQualityNotice
       __typename
     }
     error {

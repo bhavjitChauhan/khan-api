@@ -32,20 +32,20 @@ mutation AddFeedbackToDiscussion($focusKind: String, $focusId: String, $parentKe
       }
       fromVideoAuthor
       key
-      lowQualityScore
       notifyOnAnswer
       permalink
       qualityKind
       replyCount
       replyExpandKeys
-      showLowQualityNotice
       sumVotesIncremented
       upVoted
-      ... on LowQualityFeedback {
-        feedbackCode
-        feedbackChar
-        __typename
-      }
+      __typename
+    }
+    lowQualityResponse {
+      feedbackCode
+      feedbackChar
+      feedbackType
+      showLowQualityNotice
       __typename
     }
     error {
