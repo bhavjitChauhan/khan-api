@@ -130,20 +130,20 @@ export default {
       }
       fromVideoAuthor
       key
-      lowQualityScore
       notifyOnAnswer
       permalink
       qualityKind
       replyCount
       replyExpandKeys
-      showLowQualityNotice
       sumVotesIncremented
       upVoted
-      ... on LowQualityFeedback {
-        feedbackCode
-        feedbackChar
-        __typename
-      }
+      __typename
+    }
+    lowQualityResponse {
+      feedbackCode
+      feedbackChar
+      feedbackType
+      showLowQualityNotice
       __typename
     }
     error {
@@ -9537,15 +9537,20 @@ fragment AssignmentInfoFragment on Assignment {
       }
       fromVideoAuthor
       key
-      lowQualityScore
       notifyOnAnswer
       permalink
       qualityKind
       replyCount
       replyExpandKeys
-      showLowQualityNotice
       sumVotesIncremented
       upVoted
+      __typename
+    }
+    lowQualityResponse {
+      feedbackCode
+      feedbackChar
+      feedbackType
+      showLowQualityNotice
       __typename
     }
     error {
