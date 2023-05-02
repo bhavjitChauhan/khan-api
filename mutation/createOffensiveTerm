@@ -1,5 +1,5 @@
-mutation createOffensiveTerm($term: String!, $kaLocale: String) {
-  createNewOffensiveTerm(term: $term, kaLocale: $kaLocale) {
+mutation createOffensiveTerm($term: String!, $kaLocale: String, $isAiGuide: Boolean) {
+  createNewOffensiveTerm(term: $term, kaLocale: $kaLocale, isAiGuide: $isAiGuide) {
     offensiveTerm {
       id
       term
