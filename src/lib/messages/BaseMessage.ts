@@ -15,6 +15,7 @@ export interface IBaseMessage {
   encryptedKey?: string
   locked?: boolean
   key?: string
+  pinned?: boolean
   program?: Program
   score?: number
   selfFlagged?: boolean
@@ -54,6 +55,10 @@ export default abstract class BaseMessage
    * @rawEquivalent {@link types/schema!FeedbackSchemaBase.isLocked}
    */
   readonly locked?: boolean
+  /**
+   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.isPinned}
+   */
+  readonly pinned?: boolean
   /**
    * @rawEquivalent {@link types/schema!FeedbackSchemaBase.definitelyNotSpam}
    */
@@ -119,6 +124,7 @@ export default abstract class BaseMessage
       encryptedKey: schema.key,
       deleted: schema.appearsAsDeleted,
       locked: schema.isLocked,
+      pinned: schema.isPinned,
       verified: schema.definitelyNotSpam,
       score: schema.lowQualityScore,
       byVideoAuthor: schema.fromVideoAuthor,

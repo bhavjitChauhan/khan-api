@@ -10,6 +10,7 @@ export namespace FeedbackQuery {
   feedback(focusId: $topicId, cursor: $cursor, limit: $limit, feedbackType: $feedbackType, focusKind: $focusKind, sort: $currentSort, qaExpandKey: $qaExpandKey, answersLimit: 1) {
     feedback {
       isLocked
+      isPinned
       replyCount
       appearsAsDeleted
       author {
@@ -64,6 +65,8 @@ export namespace FeedbackQuery {
       ... on QuestionFeedback {
         hasAnswered
         answers {
+          isLocked
+          isPinned
           replyCount
           appearsAsDeleted
           author {
@@ -123,6 +126,8 @@ export namespace FeedbackQuery {
       }
       ... on AnswerFeedback {
         question {
+          isLocked
+          isPinned
           replyCount
           appearsAsDeleted
           author {
