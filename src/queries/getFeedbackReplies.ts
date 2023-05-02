@@ -8,6 +8,7 @@ export namespace GetFeedbackReplies {
   export const query = `query getFeedbackReplies($postKey: String!) {
   feedbackReplies(feedbackKey: $postKey) {
     isLocked
+    isPinned
     expandKey
     appearsAsDeleted
     author {
@@ -73,6 +74,7 @@ export namespace GetFeedbackReplies {
       | 'focusUrl'
       | 'fromVideoAuthor'
       | 'isLocked'
+      | 'isPinned'
       | 'key'
       | 'lowQualityScore'
       | 'notifyOnAnswer'

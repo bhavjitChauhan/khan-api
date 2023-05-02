@@ -12,6 +12,7 @@ export namespace GetFeedbackRepliesPage {
     isComplete
     feedback {
       isLocked
+      isPinned
       expandKey
       appearsAsDeleted
       author {
