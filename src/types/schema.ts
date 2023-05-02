@@ -307,6 +307,7 @@ export interface FeedbackSchemaBase {
   focusUrl: string
   fromVideoAuthor: boolean
   isLocked: boolean
+  isPinned: boolean
   /**
    * Encrypted ID
    */
@@ -363,6 +364,8 @@ export interface QuestionFeedbackSchema extends FeedbackSchemaBase {
         | 'focus'
         | 'focusUrl'
         | 'fromVideoAuthor'
+        | 'isLocked'
+        | 'isPinned'
         | 'key'
         | 'lowQualityScore'
         | 'notifyOnAnswer'
@@ -402,6 +405,8 @@ export interface AnswerFeedbackSchema extends FeedbackSchemaBase {
     | 'flags'
     | 'focusUrl'
     | 'fromVideoAuthor'
+    | 'isLocked'
+    | 'isPinned'
     | 'key'
     | 'lowQualityScore'
     | 'notifyOnAnswer'
