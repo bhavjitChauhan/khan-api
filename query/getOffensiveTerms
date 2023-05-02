@@ -1,5 +1,5 @@
-query getOffensiveTerms {
-  offensiveTerms {
+query getOffensiveTerms($isAiGuide: Boolean) {
+  offensiveTerms(isAiGuide: $isAiGuide) {
     id
     term
     __typename
