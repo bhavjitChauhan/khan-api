@@ -1,0 +1,35 @@
+query getGradesProgress($filters: DistrictCourseProgressFilters!) {
+  districtCourseProgressByGrade(filters: $filters) {
+    dateInfo {
+      from
+      upTo
+      lastUpdatedDate
+      __typename
+    }
+    rows {
+      gradeLevel {
+        id
+        name
+        sortIndex
+        __typename
+      }
+      info {
+        activeLearners
+        averageMinutes
+        averageSkillsLeveledToProficient
+        averageSkillsLeveledUp
+        averageSkillsWorkedOn
+        percent1to15
+        percent15to30
+        percent30plus
+        attemptedPercent
+        familiarPercent
+        proficientPercent
+        masteredPercent
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

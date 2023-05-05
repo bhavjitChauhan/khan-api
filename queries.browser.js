@@ -9118,44 +9118,6 @@ fragment CommonUserInfoFragment on User {
     __typename
   }
 }
-
-fragment gtp_checkpointFragment on Checkpoint {
-  id
-  stages {
-    numCreditedTasks
-    creditedTaskIds
-    goalTasks
-    stageIndex
-    stageDisplayNumber
-    startedAt
-    completedAt
-    incomingLevels {
-      name
-      level
-      __typename
-    }
-    focusAreas {
-      skillTitle
-      areaId
-      areaTitle
-      __typename
-    }
-    __typename
-  }
-  checkpointIndex
-  startedAt
-  completedAt
-  drillMode
-  isComplete
-  removedFromSchedule
-  hasDonePracticeTasks
-  numStages
-  canCreateNewStage
-  hasDonePracticeTasks
-  miniSectionStages
-  tmsTaskIds
-  __typename
-}
 `,
   gtp_getDescriptors: `query gtp_getDescriptors($examId: String!, $checkpointStr: String) {
   descriptorList(examId: $examId, requestedCheckpoint: $checkpointStr) {
@@ -9172,38 +9134,6 @@ fragment gtp_checkpointFragment on Checkpoint {
     __typename
   }
 }
-
-fragment gtp_egudFragment on ExamGroupUserData {
-  id
-  practiceDaysInfo {
-    day
-    hour
-    length
-    minute
-    __typename
-  }
-  selectedCutoffIdentifiers
-  selectedExams
-  initialSelectedExams
-  dailyActivityHistory {
-    date
-    activityHistory {
-      examsCompleted
-      problemsDone
-      secondsSpent
-      status
-      cta {
-        type
-        minutes
-        __typename
-      }
-      __typename
-    }
-    __typename
-  }
-  extendedTimeMultiplier
-  __typename
-}
 `,
   gtp_getEGUDViaExam: `query gtp_getEGUDViaExam($examId: String!) {
   exam(examId: $examId) {
@@ -9218,38 +9148,6 @@ fragment gtp_egudFragment on ExamGroupUserData {
     }
     __typename
   }
-}
-
-fragment gtp_egudFragment on ExamGroupUserData {
-  id
-  practiceDaysInfo {
-    day
-    hour
-    length
-    minute
-    __typename
-  }
-  selectedCutoffIdentifiers
-  selectedExams
-  initialSelectedExams
-  dailyActivityHistory {
-    date
-    activityHistory {
-      examsCompleted
-      problemsDone
-      secondsSpent
-      status
-      cta {
-        type
-        minutes
-        __typename
-      }
-      __typename
-    }
-    __typename
-  }
-  extendedTimeMultiplier
-  __typename
 }
 `,
   gtp_getEmailRemindersData: `query gtp_getEmailRemindersData($listName: String!) {
@@ -9285,60 +9183,12 @@ fragment gtp_egudFragment on ExamGroupUserData {
     __typename
   }
 }
-
-fragment gtp_examGroupMetadataFragment on ExamGroupMetadata {
-  id
-  testMaker
-  kaRelationshipToTestCopy
-  testMakerLogoImg
-  registrationUrl
-  __typename
-}
 `,
   gtp_getExamMetadata: `query gtp_getExamMetadata($examId: String!) {
   metadata(examId: $examId) {
     ...gtp_examMetadataFragment
     __typename
   }
-}
-
-fragment gtp_examMetadataFragment on ExamMetadata {
-  id
-  accommodationsUrl
-  accommodationsCopy
-  accommodationsOptions
-  numAvailableTests
-  offerFullTestDiagnostics
-  goalScoreContext
-  goalScoreResources {
-    url
-    description
-    __typename
-  }
-  skillLevelLabels {
-    skillLevel
-    label
-    __typename
-  }
-  examGroupMetadata {
-    examGroupId
-    exams {
-      examId
-      __typename
-    }
-    __typename
-  }
-  subExamMode
-  isPassFail
-  cutoffScoreSelectorContext
-  cutoffScoreDefaultText
-  passFailScoreCutoffs {
-    label
-    identifier
-    cutoffScoreThreshold
-    __typename
-  }
-  __typename
 }
 `,
   gtp_getExamOnboardingLessons: `query gtp_getExamOnboardingLessons($examId: String!) {
@@ -9558,131 +9408,6 @@ fragment gtp_examMetadataFragment on ExamMetadata {
     __typename
   }
 }
-
-fragment gtp_taskFragment on Task {
-  id
-  kaid
-  examId
-  taskType
-  secondsTaken
-  taskDurationSeconds
-  translatedTitle
-  creationDatetime
-  startDatetime
-  completed
-  receivedCredit
-  completionDatetime
-  stage
-  checkpoint
-  taskContent {
-    concepts {
-      item {
-        conceptId
-        translatedTitle
-        __typename
-      }
-      questions {
-        conceptId
-        translatedTitle
-        __typename
-      }
-      __typename
-    }
-    id
-    itemData
-    itemShapeType
-    skills {
-      item {
-        areaId
-        skillId
-        skillContentId
-        translatedTitle
-        __typename
-      }
-      questions {
-        areaId
-        skillId
-        skillContentId
-        translatedTitle
-        __typename
-      }
-      __typename
-    }
-    gradingMetadata {
-      instructions
-      promptTitle
-      responseTitle
-      minScore
-      maxScore
-      rubric {
-        article {
-          id
-          perseusContent
-          __typename
-        }
-        __typename
-      }
-      scoreExamples {
-        score
-        article {
-          id
-          perseusContent
-          __typename
-        }
-        __typename
-      }
-      __typename
-    }
-    __typename
-  }
-  taskState
-  taskStateHash
-  exerciseName
-  itemIds
-  areaId
-  areaTitle
-  ... on SkillTask {
-    skillId
-    skill {
-      description
-      __typename
-    }
-    level
-    incomingSkillLevelLabel {
-      label
-      skillLevel
-      __typename
-    }
-    outgoingSkillLevelLabel {
-      label
-      skillLevel
-      __typename
-    }
-    __typename
-  }
-  ... on TmsTask {
-    directions
-    extendedTaskState
-    startExtendedTimeDt
-    __typename
-  }
-  ... on TestSectionTask {
-    directions
-    __typename
-  }
-  ... on ExpressDiagnosticTask {
-    directions
-    skillLevels {
-      skillName
-      minLevel
-      maxLevel
-      level
-      __typename
-    }
-    __typename
-  }
-  __typename
-}
 `,
   gtp_getTestPrepHeaderInfo: `query gtp_getTestPrepHeaderInfo($examId: String!) {
   exam(examId: $examId) {
@@ -9707,131 +9432,6 @@ fragment gtp_taskFragment on Task {
     ...gtp_taskFragment
     __typename
   }
-}
-
-fragment gtp_taskFragment on Task {
-  id
-  kaid
-  examId
-  taskType
-  secondsTaken
-  taskDurationSeconds
-  translatedTitle
-  creationDatetime
-  startDatetime
-  completed
-  receivedCredit
-  completionDatetime
-  stage
-  checkpoint
-  taskContent {
-    concepts {
-      item {
-        conceptId
-        translatedTitle
-        __typename
-      }
-      questions {
-        conceptId
-        translatedTitle
-        __typename
-      }
-      __typename
-    }
-    id
-    itemData
-    itemShapeType
-    skills {
-      item {
-        areaId
-        skillId
-        skillContentId
-        translatedTitle
-        __typename
-      }
-      questions {
-        areaId
-        skillId
-        skillContentId
-        translatedTitle
-        __typename
-      }
-      __typename
-    }
-    gradingMetadata {
-      instructions
-      promptTitle
-      responseTitle
-      minScore
-      maxScore
-      rubric {
-        article {
-          id
-          perseusContent
-          __typename
-        }
-        __typename
-      }
-      scoreExamples {
-        score
-        article {
-          id
-          perseusContent
-          __typename
-        }
-        __typename
-      }
-      __typename
-    }
-    __typename
-  }
-  taskState
-  taskStateHash
-  exerciseName
-  itemIds
-  areaId
-  areaTitle
-  ... on SkillTask {
-    skillId
-    skill {
-      description
-      __typename
-    }
-    level
-    incomingSkillLevelLabel {
-      label
-      skillLevel
-      __typename
-    }
-    outgoingSkillLevelLabel {
-      label
-      skillLevel
-      __typename
-    }
-    __typename
-  }
-  ... on TmsTask {
-    directions
-    extendedTaskState
-    startExtendedTimeDt
-    __typename
-  }
-  ... on TestSectionTask {
-    directions
-    __typename
-  }
-  ... on ExpressDiagnosticTask {
-    directions
-    skillLevels {
-      skillName
-      minLevel
-      maxLevel
-      level
-      __typename
-    }
-    __typename
-  }
-  __typename
 }
 `,
   gtp_getTPUD: `query gtp_getTPUD($examId: String!) {
@@ -9861,109 +9461,6 @@ fragment gtp_taskFragment on Task {
     ...gtp_tpudFragment
     __typename
   }
-}
-
-fragment gtp_checkpointFragment on Checkpoint {
-  id
-  stages {
-    numCreditedTasks
-    creditedTaskIds
-    goalTasks
-    stageIndex
-    stageDisplayNumber
-    startedAt
-    completedAt
-    incomingLevels {
-      name
-      level
-      __typename
-    }
-    focusAreas {
-      skillTitle
-      areaId
-      areaTitle
-      __typename
-    }
-    __typename
-  }
-  checkpointIndex
-  startedAt
-  completedAt
-  drillMode
-  isComplete
-  removedFromSchedule
-  hasDonePracticeTasks
-  numStages
-  canCreateNewStage
-  hasDonePracticeTasks
-  miniSectionStages
-  tmsTaskIds
-  __typename
-}
-
-fragment gtp_practiceTestFragment on PracticeTest {
-  id
-  practiceTestId
-  approxTestMins
-  testTitle
-  directions
-  formCode
-  hasStarted
-  completionStatus
-  completedAt
-  subScores {
-    name
-    score
-    __typename
-  }
-  sections {
-    sectionId
-    taskId
-    exerciseName
-    isScored
-    sectionTitle
-    numCorrect
-    numTotal
-    durationSeconds
-    breakDurationSeconds
-    hasUserGrading
-    completed
-    userProvidedScores {
-      score
-      minScore
-      maxScore
-      __typename
-    }
-    __typename
-  }
-  __typename
-}
-
-fragment gtp_tpudFragment on TestPrepUserData {
-  id
-  examId
-  currentStage
-  currentCheckpoint
-  targetScore
-  diagnosticsStates {
-    type
-    state
-    __typename
-  }
-  onboardingState
-  hasSeededSkillLevels
-  hasUnlockedDrillMode
-  scoreInfo {
-    minScore
-    maxScore
-    __typename
-  }
-  schedule {
-    examDate
-    practiceTestDates
-    __typename
-  }
-  __typename
 }
 `,
   gtp_onboardingStatus: `query gtp_onboardingStatus($examGroupId: String!) {
@@ -15496,6 +14993,42 @@ fragment contentSearchLearnableContent on LearnableContent {
         endingFpmLevel
         masteryLevelChange
         pointsEarned
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  getGradesProgress: `query getGradesProgress($filters: DistrictCourseProgressFilters!) {
+  districtCourseProgressByGrade(filters: $filters) {
+    dateInfo {
+      from
+      upTo
+      lastUpdatedDate
+      __typename
+    }
+    rows {
+      gradeLevel {
+        id
+        name
+        sortIndex
+        __typename
+      }
+      info {
+        activeLearners
+        averageMinutes
+        averageSkillsLeveledToProficient
+        averageSkillsLeveledUp
+        averageSkillsWorkedOn
+        percent1to15
+        percent15to30
+        percent30plus
+        attemptedPercent
+        familiarPercent
+        proficientPercent
+        masteredPercent
         __typename
       }
       __typename
