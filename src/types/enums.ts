@@ -65,6 +65,7 @@ export enum FeedbackTypename {
 export enum FeedbackSort {
   TopVoted = 1,
   Recent = 2,
+  Trending = 5
 }
 
 export enum ListProgramSortOrder {
