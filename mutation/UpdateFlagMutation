@@ -9,7 +9,7 @@ mutation UpdateFlagMutation($flagName: String!, $description: String, $team: Str
       created
       rules {
         name
-        whitelist
+        isAllowRule
         context {
           name
           value
