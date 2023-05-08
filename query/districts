@@ -15,6 +15,7 @@ query districts($filter: String!) {
     lastRostered
     lastTestPull
     goLiveDate
+    region
     schoolYearDates {
       start {
         nthWeek
