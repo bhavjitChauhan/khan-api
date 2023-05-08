@@ -8,7 +8,7 @@ query FetchFlagsQuery {
     created
     rules {
       name
-      whitelist
+      isAllowRule
       context {
         name
         value
