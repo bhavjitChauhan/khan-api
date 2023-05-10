@@ -1,5 +1,5 @@
 mutation devadminTriggerAlarm($level: AlarmLevel!, $subject: String!, $contents: String) {
-  devadminTriggerAlarm(level: $level, subject: $subject, contents: $contents) {
+  devadminTriggerAlarmV2(level: $level, subjectLine: $subject, contents: $contents) {
     error {
       code
       __typename
