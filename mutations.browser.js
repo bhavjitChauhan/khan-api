@@ -86,8 +86,8 @@ mutations = {
   }
 }
 `,
-  addContentPermissionMutation: `mutation addContentPermissionMutation($userEmail: String!, $contentPermission: AddContentPermissionInput!) {
-  addContentPermission(userEmail: $userEmail, contentPermission: $contentPermission) {
+  addContentPermissionMutation: `mutation addContentPermissionMutation($userEmail: String!, $contentPermissions: [AddContentPermissionInput!]!) {
+  addContentPermissions(userEmail: $userEmail, contentPermissions: $contentPermissions) {
     error {
       code
       __typename
