@@ -1,0 +1,10 @@
+query guidePreferences {
+  user {
+    id
+    aiGuidePreferences {
+      readingLevel
+      __typename
+    }
+    __typename
+  }
+}
