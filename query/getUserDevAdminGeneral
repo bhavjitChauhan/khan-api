@@ -2,6 +2,7 @@ query getUserDevAdminGeneral($kaid: String!) {
   user(kaid: $kaid) {
     id
     age
+    aiGuideWaitlistStatus
     applePrimaryEmail
     appleId
     authEmails
