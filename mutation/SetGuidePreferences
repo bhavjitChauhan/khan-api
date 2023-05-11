@@ -1,0 +1,9 @@
+mutation SetGuidePreferences($readingLevel: AIGuideReadingLevel!) {
+  setPreferencesForUser(readingLevel: $readingLevel) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
