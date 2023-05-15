@@ -1,0 +1,9 @@
+query MappedStandardsForContent($contentDescriptor: String!, $locale: String, $region: String) {
+  standards: standardMappingsForContent(contentDescriptor: $contentDescriptor, locale: $locale, region: $region) {
+    setId
+    id
+    standardId
+    description
+    __typename
+  }
+}
