@@ -40,6 +40,7 @@ export async function resolveKaid(
   identifier: Kaid | string | Email | UserURL
 ): Promise<Kaid> {
   if (isKaid(identifier)) return identifier
+  if (isKaid(`kaid_${identifier}`)) return `kaid_${identifier}` as Kaid
 
   if (isUserURL(identifier)) {
     const match = identifier.match(UserURLRegex)
