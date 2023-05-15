@@ -304,6 +304,35 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     __typename
   }
 }
+
+fragment ArticleRevision on ArticleRevision {
+  id
+  contentId
+  contentKind
+  creationDate
+  sha
+  authorKey
+  customDescriptionTag
+  customTitleTag
+  description
+  descriptionHtml: description
+  doNotPublish
+  sourceKaLocale
+  sourceLanguage: sourceKaLocale
+  slug
+  readableId: slug
+  title
+  sponsored
+  thumbnailData
+  thumbnailCache
+  alternateSlugs
+  assessmentItemTags
+  authorNames
+  clarificationsEnabled
+  perseusContent
+  listed
+  __typename
+}
 `,
   articleEditorRedirectQuery: `query articleEditorRedirectQuery($contentId: String!) {
   articleRevisionById(id: $contentId) {
@@ -1234,6 +1263,191 @@ fragment contentEditorLearnableContent on LearnableContentRevision {
     ...LearnableContentData
     __typename
   }
+}
+
+fragment LearnableContentData on LearnableContent {
+  id
+  contentKind
+  slug
+  translatedTitle
+  ... on Article {
+    articleClarificationsEnabled: clarificationsEnabled
+    translatedDescription
+    translatedPerseusContent
+    __typename
+  }
+  ... on Challenge {
+    authorList {
+      name
+      __typename
+    }
+    canvasOnly
+    code
+    configVersion
+    defaultUrlPath
+    height
+    nodeSlug
+    translatedDescription
+    translatedTests
+    testStrings {
+      message
+      __typename
+    }
+    userAuthoredContentType
+    width
+    __typename
+  }
+  ... on Interactive {
+    authorList {
+      name
+      __typename
+    }
+    canvasOnly
+    code
+    configVersion
+    defaultUrlPath
+    height
+    nodeSlug
+    translatedDescription
+    userAuthoredContentType
+    width
+    __typename
+  }
+  ... on Project {
+    authorList {
+      name
+      __typename
+    }
+    canvasOnly
+    code
+    configVersion
+    defaultUrlPath
+    height
+    nodeSlug
+    translatedDescription
+    translatedProjectEval
+    translatedProjectEvalTips
+    userAuthoredContentType
+    width
+    __typename
+  }
+  ... on Talkthrough {
+    authorList {
+      name
+      __typename
+    }
+    canvasOnly
+    code
+    configVersion
+    defaultUrlPath
+    height
+    nodeSlug
+    playback
+    subtitles {
+      endTime
+      kaIsValid
+      startTime
+      text
+      __typename
+    }
+    translatedDescription
+    translatedMp3Url
+    userAuthoredContentType
+    width
+    youtubeId
+    __typename
+  }
+  ... on TopicQuiz {
+    index
+    exerciseLength
+    timeEstimate {
+      lowerBound
+      upperBound
+      __typename
+    }
+    coveredTutorials {
+      id
+      translatedTitle
+      relativeUrl
+      allLearnableContent {
+        id
+        contentKind
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  ... on TopicUnitTest {
+    exerciseLength
+    timeEstimate {
+      lowerBound
+      upperBound
+      __typename
+    }
+    coveredTutorials {
+      id
+      translatedTitle
+      relativeUrl
+      allLearnableContent {
+        id
+        contentKind
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  ... on Video {
+    authorNames
+    videoAuthorList: authorList {
+      name
+      __typename
+    }
+    clarificationsEnabled
+    dateAdded
+    description
+    downloadUrls
+    duration
+    imageUrl
+    kaUrl
+    kaUserLicense
+    keywords
+    readableId
+    sha
+    thumbnailUrls {
+      category
+      url
+      __typename
+    }
+    translatedDescriptionHtml
+    translatedYoutubeId
+    translatedYoutubeLang
+    youtubeId
+    augmentedTranscript
+    relativeUrl
+    descriptionHtml
+    nodeSlug
+    translatedDescription
+    translatedCustomTitleTag
+    subtitles {
+      endTime
+      kaIsValid
+      startTime
+      text
+      __typename
+    }
+    keyMoments {
+      startOffset
+      endOffset
+      label
+      __typename
+    }
+    educationalLevel
+    learningResourceType
+    __typename
+  }
+  __typename
 }
 `,
   ContentForPath: `query ContentForPath($path: String!, $countryCode: String!, $kaLocale: KALocale!) {
@@ -14680,6 +14894,39 @@ fragment SharedFeedbackFields on Feedback {
     ...VideoRevision
     __typename
   }
+}
+
+fragment VideoRevision on VideoRevision {
+  id
+  contentId
+  contentKind
+  creationDate
+  sha
+  authorKey
+  customDescriptionTag
+  customTitleTag
+  description
+  descriptionHtml: description
+  doNotPublish
+  sourceKaLocale
+  sourceLanguage: sourceKaLocale
+  slug
+  readableId: slug
+  title
+  sponsored
+  thumbnailCache
+  thumbnailData
+  alternateSlugs
+  assessmentItemTags
+  augmentedTranscript
+  authorNames
+  clarificationsEnabled
+  duration
+  kaUserLicense
+  keywords
+  youtubeId
+  listed
+  __typename
 }
 `,
   WhatNextPrompt: `query WhatNextPrompt($assignmentsPageSize: Int, $assignmentsOrderBy: AssignmentOrder!, $assignmentsDueAfter: DateTime!) {
