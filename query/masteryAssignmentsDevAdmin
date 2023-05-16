@@ -1,0 +1,55 @@
+query masteryAssignmentsDevAdmin($classCode: String!, $activeFilter: MasteryAssignmentActiveFilter, $curationNodeLevel: MasteryAssignmentCurationNodeLevel) {
+  classroom(classCode: $classCode) {
+    id
+    cacheId
+    masteryAssignments(activeFilter: $activeFilter, curationNodeLevel: $curationNodeLevel) {
+      id
+      type: curationNodeLevel
+      archivedDate
+      assignedDate
+      createdDate
+      dueDate
+      course {
+        id
+        translatedTitle
+        iconUrl
+        relativeUrl
+        __typename
+      }
+      isArchived
+      studentData {
+        kaid
+        status
+        assignedDate
+        completedDate
+        unassignedDate
+        __typename
+      }
+      studentProgress {
+        kaid
+        lastWorkedOn
+        currentMasteryV2 {
+          percentage
+          pointsEarned
+          pointsAvailable
+          __typename
+        }
+        __typename
+      }
+      unit {
+        id
+        translatedTitle
+        iconUrl
+        __typename
+      }
+      __typename
+    }
+    students: studentKaidsAndNicknames {
+      id
+      kaid
+      coachNickname
+      __typename
+    }
+    __typename
+  }
+}
