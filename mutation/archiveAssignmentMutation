@@ -1,0 +1,13 @@
+mutation archiveAssignmentMutation($id: ID!, $curationNodeLevel: MasteryAssignmentCurationNodeLevel!) {
+  archiveMasteryAssignments(archiveMasteryAssignmentsInputs: [{curationNodeLevel: $curationNodeLevel, id: $id}]) {
+    assignments {
+      id
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
