@@ -384,6 +384,7 @@ fragment InvitationsField on Invitation {
 `,
   CourseData: `fragment CourseData on Course {
   id
+  iconPath
   masteryEnabled
   relativeUrl
   slug
@@ -394,6 +395,45 @@ fragment InvitationsField on Invitation {
     relativeUrl
     slug
     translatedTitle
+    __typename
+  }
+  lowerToc
+  curation {
+    hideSubjectIntro
+    modules {
+      kind
+      untranslatedFields
+      ... on CourseIntroModule {
+        callToAction
+        description
+        link
+        title
+        video
+        __typename
+      }
+      ... on FeaturedContentModule {
+        contentItems {
+          kind
+          imageCredit
+          imageUrl
+          mobileImageUrl
+          subtitle
+          title
+          url
+          __typename
+        }
+        fullBleed
+        isBetterMoneyHabits
+        __typename
+      }
+      ... on ContentCarouselModule {
+        contentDescriptors
+        referrer
+        title
+        __typename
+      }
+      __typename
+    }
     __typename
   }
   __typename
