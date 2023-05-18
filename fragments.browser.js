@@ -436,6 +436,23 @@ fragment InvitationsField on Invitation {
     }
     __typename
   }
+  courseChallenge {
+    id
+    contentKind
+    slug
+    contentDescriptor
+    parentTopic {
+      id
+      parent {
+        id
+        masteryEnabled
+        __typename
+      }
+      __typename
+    }
+    urlWithinCurationNode
+    __typename
+  }
   __typename
 }
 `,
