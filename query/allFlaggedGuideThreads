@@ -1,5 +1,5 @@
-query allFlaggedGuideThreads($page: Int, $limit: Int) {
-  allFlaggedGuideThreads: allAiGuideThreads(moderationStatus: FLAGGED, page: $page, limit: $limit) {
+query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $page: Int, $limit: Int) {
+  allFlaggedGuideThreads: allAiGuideThreads(moderationStatus: FLAGGED, moderationCategory: $moderationCategory, page: $page, limit: $limit) {
     threads {
       id
       user {
