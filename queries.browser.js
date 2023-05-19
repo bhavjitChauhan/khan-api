@@ -15670,4 +15670,23 @@ fragment contentSearchLearnableContent on LearnableContent {
   }
 }
 `,
+  getCoachedClassrooms: `query getCoachedClassrooms {
+  user {
+    id
+    coachedClassrooms {
+      id
+      cacheId
+      name
+      students {
+        id
+        nickname
+        __typename
+      }
+      countStudents
+      __typename
+    }
+    __typename
+  }
+}
+`,
 }
