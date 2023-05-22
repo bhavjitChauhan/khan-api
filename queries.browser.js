@@ -15689,4 +15689,88 @@ fragment contentSearchLearnableContent on LearnableContent {
   }
 }
 `,
+  getDistrictCourseProgressByStudent: `query getDistrictCourseProgressByStudent($filters: DistrictCourseProgressFilters!, $studentKaid: String!, $getKmapTopics: Boolean!) {
+  districtCourseProgressByCourseForStudent(filters: $filters, studentKaid: $studentKaid) {
+    dateInfo {
+      lastUpdatedDate
+      from
+      upTo
+      __typename
+    }
+    rows {
+      course {
+        id
+        title
+        __typename
+      }
+      info {
+        averageMinutes
+        activeLearners
+        percent1to15
+        percent15to30
+        percent30plus
+        averageSkillsWorkedOn
+        averageSkillsLeveledUp
+        averageSkillsLeveledToProficient
+        attemptedPercent
+        familiarPercent
+        proficientPercent
+        masteredPercent
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  kmapTopics @include(if: $getKmapTopics) {
+    id
+    band
+    bandKey
+    strand
+    strandKey
+    title
+    __typename
+  }
+}
+`,
+  getProgressByTeacher: `query getProgressByTeacher($filters: DistrictCourseProgressFilters!) {
+  districtCourseProgressByTeacher(filters: $filters) {
+    dateInfo {
+      from
+      upTo
+      lastUpdatedDate
+      __typename
+    }
+    rows {
+      user {
+        id
+        kaid
+        userDistrictInfos {
+          id
+          displayNameForTeacher
+          __typename
+        }
+        __typename
+      }
+      info {
+        activeLearners
+        averageMinutes
+        averageSkillsLeveledToProficient
+        averageSkillsLeveledUp
+        averageSkillsWorkedOn
+        percent1to15
+        percent15to30
+        percent30plus
+        attemptedPercent
+        familiarPercent
+        proficientPercent
+        masteredPercent
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+`,
 }

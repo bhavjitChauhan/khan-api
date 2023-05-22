@@ -1,0 +1,43 @@
+query getDistrictCourseProgressByStudent($filters: DistrictCourseProgressFilters!, $studentKaid: String!, $getKmapTopics: Boolean!) {
+  districtCourseProgressByCourseForStudent(filters: $filters, studentKaid: $studentKaid) {
+    dateInfo {
+      lastUpdatedDate
+      from
+      upTo
+      __typename
+    }
+    rows {
+      course {
+        id
+        title
+        __typename
+      }
+      info {
+        averageMinutes
+        activeLearners
+        percent1to15
+        percent15to30
+        percent30plus
+        averageSkillsWorkedOn
+        averageSkillsLeveledUp
+        averageSkillsLeveledToProficient
+        attemptedPercent
+        familiarPercent
+        proficientPercent
+        masteredPercent
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  kmapTopics @include(if: $getKmapTopics) {
+    id
+    band
+    bandKey
+    strand
+    strandKey
+    title
+    __typename
+  }
+}
