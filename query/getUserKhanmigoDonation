@@ -1,0 +1,8 @@
+query getUserKhanmigoDonation($kaid: String!) {
+  khanmigoDonation(kaid: $kaid) {
+    donationAmount
+    donationStatus
+    lastModifiedDate
+    __typename
+  }
+}

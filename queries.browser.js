@@ -15773,4 +15773,13 @@ fragment contentSearchLearnableContent on LearnableContent {
   }
 }
 `,
+  getUserKhanmigoDonation: `query getUserKhanmigoDonation($kaid: String!) {
+  khanmigoDonation(kaid: $kaid) {
+    donationAmount
+    donationStatus
+    lastModifiedDate
+    __typename
+  }
+}
+`,
 }
