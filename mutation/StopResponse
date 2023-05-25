@@ -1,0 +1,9 @@
+mutation StopResponse($input: StopResponseInput!) {
+  stopResponse(input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
