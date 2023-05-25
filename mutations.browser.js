@@ -10337,4 +10337,14 @@ fragment entry on TeamPageEntryForEditing {
   }
 }
 `,
+  StopResponse: `mutation StopResponse($input: StopResponseInput!) {
+  stopResponse(input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
+`,
 }
