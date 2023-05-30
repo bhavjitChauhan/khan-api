@@ -1271,6 +1271,7 @@ fragment LearnableContentData on LearnableContent {
   slug
   translatedTitle
   ... on Article {
+    ...MappedStandards
     articleClarificationsEnabled: clarificationsEnabled
     translatedDescription
     translatedPerseusContent
@@ -1295,6 +1296,10 @@ fragment LearnableContentData on LearnableContent {
     }
     userAuthoredContentType
     width
+    __typename
+  }
+  ... on Exercise {
+    ...MappedStandards
     __typename
   }
   ... on Interactive {
@@ -1445,6 +1450,18 @@ fragment LearnableContentData on LearnableContent {
     }
     educationalLevel
     learningResourceType
+    ...MappedStandards
+    __typename
+  }
+  __typename
+}
+
+fragment MappedStandards on LearnableContent {
+  mappedStandards {
+    setId
+    id
+    standardId
+    description
     __typename
   }
   __typename
@@ -1601,6 +1618,7 @@ fragment LearnableContentData on LearnableContent {
   slug
   translatedTitle
   ... on Article {
+    ...MappedStandards
     articleClarificationsEnabled: clarificationsEnabled
     translatedDescription
     translatedPerseusContent
@@ -1625,6 +1643,10 @@ fragment LearnableContentData on LearnableContent {
     }
     userAuthoredContentType
     width
+    __typename
+  }
+  ... on Exercise {
+    ...MappedStandards
     __typename
   }
   ... on Interactive {
@@ -1775,6 +1797,7 @@ fragment LearnableContentData on LearnableContent {
     }
     educationalLevel
     learningResourceType
+    ...MappedStandards
     __typename
   }
   __typename
@@ -1812,6 +1835,17 @@ fragment LessonData on Lesson {
       ...LearnableContentMetadata
       __typename
     }
+    __typename
+  }
+  __typename
+}
+
+fragment MappedStandards on LearnableContent {
+  mappedStandards {
+    setId
+    id
+    standardId
+    description
     __typename
   }
   __typename
