@@ -1,0 +1,16 @@
+mutation createAIGuidePrompt($name: String!, $description: String!) {
+  createAIGuidePrompt(name: $name, description: $description) {
+    prompt {
+      id
+      name
+      description
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

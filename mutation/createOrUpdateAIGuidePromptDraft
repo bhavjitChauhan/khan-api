@@ -1,0 +1,21 @@
+mutation createOrUpdateAIGuidePromptDraft($promptName: String!, $hashBeforeUpdate: String, $newIsReadyForReview: Boolean!, $newReleaseNotes: String!, $newPromptText: String!) {
+  createOrUpdateAIGuidePromptDraft(promptName: $promptName, hashBeforeUpdate: $hashBeforeUpdate, newIsReadyForReview: $newIsReadyForReview, newReleaseNotes: $newReleaseNotes, newPromptText: $newPromptText) {
+    prompt {
+      id
+      draft {
+        hash
+        isReadyForReview
+        releaseNotes
+        promptText
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

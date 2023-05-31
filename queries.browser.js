@@ -15816,4 +15816,61 @@ fragment contentSearchLearnableContent on LearnableContent {
   }
 }
 `,
+  aiGuideDrafts: `query aiGuideDrafts {
+  aiGuidePrompts {
+    id
+    name
+    latestVersion {
+      id
+      versionNumber
+      __typename
+    }
+    draft {
+      hash
+      isReadyForReview
+      releaseNotes
+      promptText
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  aiGuidePrompt: `query aiGuidePrompt($name: String!) {
+  aiGuidePrompt(name: $name) {
+    id
+    name
+    description
+    versions {
+      id
+      versionNumber
+      releaseNotes
+      promptText
+      __typename
+    }
+    draft {
+      hash
+      isReadyForReview
+      releaseNotes
+      promptText
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  aiGuidePrompts: `query aiGuidePrompts {
+  aiGuidePrompts {
+    id
+    name
+    description
+    latestVersion {
+      id
+      versionNumber
+      __typename
+    }
+    __typename
+  }
+}
+`,
 }

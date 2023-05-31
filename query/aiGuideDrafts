@@ -1,0 +1,19 @@
+query aiGuideDrafts {
+  aiGuidePrompts {
+    id
+    name
+    latestVersion {
+      id
+      versionNumber
+      __typename
+    }
+    draft {
+      hash
+      isReadyForReview
+      releaseNotes
+      promptText
+      __typename
+    }
+    __typename
+  }
+}
