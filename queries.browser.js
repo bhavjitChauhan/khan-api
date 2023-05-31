@@ -15873,4 +15873,17 @@ fragment contentSearchLearnableContent on LearnableContent {
   }
 }
 `,
+  classroomStudentNames: `query classroomStudentNames($classroomDescriptor: String!) {
+  classroomByDescriptorV2(descriptor: $classroomDescriptor) {
+    id
+    cacheId
+    studentKaidsAndNicknames {
+      id
+      coachNickname
+      __typename
+    }
+    __typename
+  }
+}
+`,
 }
