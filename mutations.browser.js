@@ -10347,4 +10347,61 @@ fragment entry on TeamPageEntryForEditing {
   }
 }
 `,
+  createAIGuidePrompt: `mutation createAIGuidePrompt($name: String!, $description: String!) {
+  createAIGuidePrompt(name: $name, description: $description) {
+    prompt {
+      id
+      name
+      description
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  createOrUpdateAIGuidePromptDraft: `mutation createOrUpdateAIGuidePromptDraft($promptName: String!, $hashBeforeUpdate: String, $newIsReadyForReview: Boolean!, $newReleaseNotes: String!, $newPromptText: String!) {
+  createOrUpdateAIGuidePromptDraft(promptName: $promptName, hashBeforeUpdate: $hashBeforeUpdate, newIsReadyForReview: $newIsReadyForReview, newReleaseNotes: $newReleaseNotes, newPromptText: $newPromptText) {
+    prompt {
+      id
+      draft {
+        hash
+        isReadyForReview
+        releaseNotes
+        promptText
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  publishAIGuidePromptVersion: `mutation publishAIGuidePromptVersion($promptName: String!, $hash: String!) {
+  publishAIGuidePromptVersion(promptName: $promptName, hash: $hash) {
+    promptVersion {
+      id
+      versionNumber
+      releaseNotes
+      promptText
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
+`,
 }

@@ -1,0 +1,22 @@
+query aiGuidePrompt($name: String!) {
+  aiGuidePrompt(name: $name) {
+    id
+    name
+    description
+    versions {
+      id
+      versionNumber
+      releaseNotes
+      promptText
+      __typename
+    }
+    draft {
+      hash
+      isReadyForReview
+      releaseNotes
+      promptText
+      __typename
+    }
+    __typename
+  }
+}

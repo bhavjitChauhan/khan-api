@@ -1,0 +1,17 @@
+mutation publishAIGuidePromptVersion($promptName: String!, $hash: String!) {
+  publishAIGuidePromptVersion(promptName: $promptName, hash: $hash) {
+    promptVersion {
+      id
+      versionNumber
+      releaseNotes
+      promptText
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

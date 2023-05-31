@@ -1,0 +1,13 @@
+query aiGuidePrompts {
+  aiGuidePrompts {
+    id
+    name
+    description
+    latestVersion {
+      id
+      versionNumber
+      __typename
+    }
+    __typename
+  }
+}
