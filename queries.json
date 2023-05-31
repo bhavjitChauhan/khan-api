@@ -546,5 +546,6 @@
   "getUserKhanmigoDonation": "query getUserKhanmigoDonation($kaid: String!) {\n  khanmigoDonation(kaid: $kaid) {\n    donationAmount\n    donationStatus\n    lastModifiedDate\n    __typename\n  }\n}\n",
   "aiGuideDrafts": "query aiGuideDrafts {\n  aiGuidePrompts {\n    id\n    name\n    latestVersion {\n      id\n      versionNumber\n      __typename\n    }\n    draft {\n      hash\n      isReadyForReview\n      releaseNotes\n      promptText\n      __typename\n    }\n    __typename\n  }\n}\n",
   "aiGuidePrompt": "query aiGuidePrompt($name: String!) {\n  aiGuidePrompt(name: $name) {\n    id\n    name\n    description\n    versions {\n      id\n      versionNumber\n      releaseNotes\n      promptText\n      __typename\n    }\n    draft {\n      hash\n      isReadyForReview\n      releaseNotes\n      promptText\n      __typename\n    }\n    __typename\n  }\n}\n",
-  "aiGuidePrompts": "query aiGuidePrompts {\n  aiGuidePrompts {\n    id\n    name\n    description\n    latestVersion {\n      id\n      versionNumber\n      __typename\n    }\n    __typename\n  }\n}\n"
+  "aiGuidePrompts": "query aiGuidePrompts {\n  aiGuidePrompts {\n    id\n    name\n    description\n    latestVersion {\n      id\n      versionNumber\n      __typename\n    }\n    __typename\n  }\n}\n",
+  "classroomStudentNames": "query classroomStudentNames($classroomDescriptor: String!) {\n  classroomByDescriptorV2(descriptor: $classroomDescriptor) {\n    id\n    cacheId\n    studentKaidsAndNicknames {\n      id\n      coachNickname\n      __typename\n    }\n    __typename\n  }\n}\n"
 }
