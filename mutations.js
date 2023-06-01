@@ -10404,4 +10404,37 @@ fragment entry on TeamPageEntryForEditing {
   }
 }
 `,
+  editAssignmentMutation: `mutation editAssignmentMutation($id: ID!, $curationNodeLevel: MasteryAssignmentCurationNodeLevel!, $dueDate: DateTime!, $students: [ID]!) {
+  updateMasteryAssignment(updateMasteryAssignmentInput: {id: $id, curationNodeLevel: $curationNodeLevel, dueDate: $dueDate, studentKaids: $students}) {
+    assignment {
+      id
+      type: curationNodeLevel
+      dueDate
+      course {
+        id
+        translatedTitle
+        iconUrl
+        __typename
+      }
+      studentData {
+        kaid
+        status
+        __typename
+      }
+      unit {
+        id
+        translatedTitle
+        iconUrl
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
+`,
 }
