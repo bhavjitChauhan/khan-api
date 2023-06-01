@@ -8509,6 +8509,7 @@ fragment Badge on Badge {
   user(kaid: $kaid) {
     id
     age
+    aiGuideDisabledReason
     aiGuideWaitlistStatus
     applePrimaryEmail
     appleId
