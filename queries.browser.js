@@ -15887,4 +15887,17 @@ fragment contentSearchLearnableContent on LearnableContent {
   }
 }
 `,
+  getPrecachedDateRanges: `query getPrecachedDateRanges($districtID: String!) {
+  districtCourseProgressDates(districtID: $districtID) {
+    lastUpdatedDate
+    startDate: from
+    endDate: upTo
+    numDays
+    isCustom
+    isInProgress
+    rangeType
+    __typename
+  }
+}
+`,
 }
