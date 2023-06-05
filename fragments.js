@@ -451,6 +451,35 @@ fragment InvitationsField on Invitation {
       __typename
     }
     urlWithinCurationNode
+    exerciseLength
+    timeEstimate {
+      lowerBound
+      upperBound
+      __typename
+    }
+    __typename
+  }
+  masteryChallenge {
+    id
+    contentKind
+    slug
+    contentDescriptor
+    parentTopic {
+      id
+      parent {
+        id
+        masteryEnabled
+        __typename
+      }
+      __typename
+    }
+    urlWithinCurationNode
+    exerciseLength
+    timeEstimate {
+      lowerBound
+      upperBound
+      __typename
+    }
     __typename
   }
   __typename
