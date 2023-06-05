@@ -12,6 +12,7 @@ query guideTranscript($transcriptId: String!) {
       createdAt
       flagged
       flaggedCategories
+      responseWasStoppedByUser
       __typename
     }
     __typename

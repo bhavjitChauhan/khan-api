@@ -10170,6 +10170,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
       createdAt
       flagged
       flaggedCategories
+      responseWasStoppedByUser
       __typename
     }
     __typename
