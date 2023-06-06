@@ -8,6 +8,7 @@ query aiGuidePrompt($name: String!) {
       versionNumber
       releaseNotes
       promptText
+      configJSON
       __typename
     }
     draft {
@@ -15,6 +16,7 @@ query aiGuidePrompt($name: String!) {
       isReadyForReview
       releaseNotes
       promptText
+      configJSON
       __typename
     }
     __typename

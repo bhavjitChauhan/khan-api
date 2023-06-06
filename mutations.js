@@ -10364,8 +10364,8 @@ fragment entry on TeamPageEntryForEditing {
   }
 }
 `,
-  createOrUpdateAIGuidePromptDraft: `mutation createOrUpdateAIGuidePromptDraft($promptName: String!, $hashBeforeUpdate: String, $newIsReadyForReview: Boolean!, $newReleaseNotes: String!, $newPromptText: String!) {
-  createOrUpdateAIGuidePromptDraft(promptName: $promptName, hashBeforeUpdate: $hashBeforeUpdate, newIsReadyForReview: $newIsReadyForReview, newReleaseNotes: $newReleaseNotes, newPromptText: $newPromptText) {
+  createOrUpdateAIGuidePromptDraft: `mutation createOrUpdateAIGuidePromptDraft($promptName: String!, $hashBeforeUpdate: String, $newIsReadyForReview: Boolean!, $newReleaseNotes: String!, $newPromptText: String!, $newConfigJSON: JSONString!) {
+  createOrUpdateAIGuidePromptDraft(promptName: $promptName, hashBeforeUpdate: $hashBeforeUpdate, newIsReadyForReview: $newIsReadyForReview, newReleaseNotes: $newReleaseNotes, newPromptText: $newPromptText, newConfigJSON: $newConfigJSON) {
     prompt {
       id
       draft {
@@ -10373,6 +10373,7 @@ fragment entry on TeamPageEntryForEditing {
         isReadyForReview
         releaseNotes
         promptText
+        configJSON
         __typename
       }
       __typename
@@ -10393,6 +10394,7 @@ fragment entry on TeamPageEntryForEditing {
       versionNumber
       releaseNotes
       promptText
+      configJSON
       __typename
     }
     error {

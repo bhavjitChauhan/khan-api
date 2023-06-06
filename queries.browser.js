@@ -15877,6 +15877,7 @@ fragment contentSearchLearnableContent on LearnableContent {
       versionNumber
       releaseNotes
       promptText
+      configJSON
       __typename
     }
     draft {
@@ -15884,6 +15885,7 @@ fragment contentSearchLearnableContent on LearnableContent {
       isReadyForReview
       releaseNotes
       promptText
+      configJSON
       __typename
     }
     __typename
