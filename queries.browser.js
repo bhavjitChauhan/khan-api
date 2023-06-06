@@ -215,8 +215,8 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
   }
 }
 `,
-  allFlaggedGuideThreads: `query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $page: Int, $limit: Int) {
-  allFlaggedGuideThreads: allAiGuideThreads(moderationStatus: FLAGGED, moderationCategory: $moderationCategory, page: $page, limit: $limit) {
+  allFlaggedGuideThreads: `query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderationScore: Float, $page: Int, $limit: Int) {
+  allFlaggedGuideThreads: allAiGuideThreads(moderationStatus: FLAGGED, moderationCategory: $moderationCategory, minModerationScore: $moderationScore, page: $page, limit: $limit) {
     threads {
       id
       user {

@@ -7599,8 +7599,8 @@ fragment CourseRevisionStructure on CourseRevision {
   }
 }
 `,
-  populateCompleteSignup: `mutation populateCompleteSignup($token: String, $inviteId: String, $parent: Boolean) {
-  populateCompleteSignup(token: $token, inviteId: $inviteId, parent: $parent) {
+  populateCompleteSignup: `mutation populateCompleteSignup($token: String, $inviteId: String, $parent: Boolean, $hCaptchaResponseToken: String) {
+  populateCompleteSignup(token: $token, inviteId: $inviteId, parent: $parent, hCaptchaResponseToken: $hCaptchaResponseToken) {
     token
     inviteId
     isParent
