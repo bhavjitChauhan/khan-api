@@ -15742,6 +15742,7 @@ fragment contentSearchLearnableContent on LearnableContent {
       id
       cacheId
       name
+      descriptor
       students {
         id
         nickname

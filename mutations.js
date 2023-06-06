@@ -10439,4 +10439,14 @@ fragment entry on TeamPageEntryForEditing {
   }
 }
 `,
+  createMasteryAssignmentsMutation: `mutation createMasteryAssignmentsMutation($input: CreateMasteryAssignmentsInput!) {
+  createMasteryAssignments(input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
+`,
 }
