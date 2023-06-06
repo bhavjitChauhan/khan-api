@@ -5,6 +5,7 @@ query getCoachedClassrooms {
       id
       cacheId
       name
+      descriptor
       students {
         id
         nickname
