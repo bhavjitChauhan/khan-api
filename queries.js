@@ -15933,4 +15933,30 @@ fragment contentSearchLearnableContent on LearnableContent {
   }
 }
 `,
+  contentPermissionsReport_getUsersWithGrants: `query contentPermissionsReport_getUsersWithGrants($withRoles: [String!]) {
+  usersWithGrants(withRoles: $withRoles) {
+    id
+    kaid
+    email
+    nickname
+    grants {
+      role {
+        name
+        description
+        __typename
+      }
+      scope {
+        contentKind
+        curationNodeId
+        kaLocale
+        __typename
+      }
+      grantingUserEmail
+      permissionId
+      __typename
+    }
+    __typename
+  }
+}
+`,
 }
