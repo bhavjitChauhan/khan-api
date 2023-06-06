@@ -5,6 +5,7 @@ mutation publishAIGuidePromptVersion($promptName: String!, $hash: String!) {
       versionNumber
       releaseNotes
       promptText
+      configJSON
       __typename
     }
     error {
