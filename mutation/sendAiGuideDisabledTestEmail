@@ -1,0 +1,9 @@
+mutation sendAiGuideDisabledTestEmail($reason: ReasonForDisablingAIGuide!) {
+  sendAiGuideDisabledTestEmail(reason: $reason) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

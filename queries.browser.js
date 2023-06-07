@@ -15959,4 +15959,76 @@ fragment contentSearchLearnableContent on LearnableContent {
   }
 }
 `,
+  previewAiGuideDisabledEmailByUser: `query previewAiGuideDisabledEmailByUser($reason: ReasonForDisablingAIGuide!) {
+  preview: previewAiGuideDisabledEmail(reason: $reason) {
+    textContent
+    htmlContent
+    __typename
+  }
+}
+`,
+  previewAiGuideDisabledEmailGeneric: `query previewAiGuideDisabledEmailGeneric($reason: ReasonForDisablingAIGuide!) {
+  preview: previewAiGuideDisabledEmail(reason: $reason) {
+    textContent
+    htmlContent
+    __typename
+  }
+}
+`,
+  previewAiGuideDisabledEmailInsufficientDonation: `query previewAiGuideDisabledEmailInsufficientDonation($reason: ReasonForDisablingAIGuide!) {
+  preview: previewAiGuideDisabledEmail(reason: $reason) {
+    textContent
+    htmlContent
+    __typename
+  }
+}
+`,
+  previewAiGuideDisabledEmailLapsedDonation: `query previewAiGuideDisabledEmailLapsedDonation($reason: ReasonForDisablingAIGuide!) {
+  preview: previewAiGuideDisabledEmail(reason: $reason) {
+    textContent
+    htmlContent
+    __typename
+  }
+}
+`,
+  previewAiGuideDisabledEmailModeration: `query previewAiGuideDisabledEmailModeration($reason: ReasonForDisablingAIGuide!) {
+  preview: previewAiGuideDisabledEmail(reason: $reason) {
+    textContent
+    htmlContent
+    __typename
+  }
+}
+`,
+  previewAiGuideNotEligibleEmailModeration: `query previewAiGuideNotEligibleEmailModeration($reason: ReasonForDisablingAIGuide!) {
+  preview: previewAiGuideNotEligibleEmail(reason: $reason) {
+    textContent
+    htmlContent
+    __typename
+  }
+}
+`,
+  previewAiGuideNotEligibleEmailNotAnAdult: `query previewAiGuideNotEligibleEmailNotAnAdult($reason: ReasonForDisablingAIGuide!) {
+  preview: previewAiGuideNotEligibleEmail(reason: $reason) {
+    textContent
+    htmlContent
+    __typename
+  }
+}
+`,
+  previewAiGuideNotEligibleEmailTooManyChildren: `query previewAiGuideNotEligibleEmailTooManyChildren($reason: ReasonForDisablingAIGuide!) {
+  preview: previewAiGuideNotEligibleEmail(reason: $reason) {
+    textContent
+    htmlContent
+    __typename
+  }
+}
+`,
+  previewAiGuideNotEligibleEmailUnsupportedCountry: `query previewAiGuideNotEligibleEmailUnsupportedCountry($reason: ReasonForDisablingAIGuide!) {
+  preview: previewAiGuideNotEligibleEmail(reason: $reason) {
+    textContent
+    htmlContent
+    __typename
+  }
+}
+`,
 }

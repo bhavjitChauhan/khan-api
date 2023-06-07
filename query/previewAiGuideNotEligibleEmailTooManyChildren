@@ -1,0 +1,7 @@
+query previewAiGuideNotEligibleEmailTooManyChildren($reason: ReasonForDisablingAIGuide!) {
+  preview: previewAiGuideNotEligibleEmail(reason: $reason) {
+    textContent
+    htmlContent
+    __typename
+  }
+}

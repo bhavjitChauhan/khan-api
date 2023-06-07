@@ -10449,4 +10449,24 @@ fragment entry on TeamPageEntryForEditing {
   }
 }
 `,
+  sendAiGuideDisabledTestEmail: `mutation sendAiGuideDisabledTestEmail($reason: ReasonForDisablingAIGuide!) {
+  sendAiGuideDisabledTestEmail(reason: $reason) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  sendAiGuideNotEligibleTestEmail: `mutation sendAiGuideNotEligibleTestEmail($reason: ReasonForDisablingAIGuide!) {
+  sendAiGuideNotEligibleTestEmail(reason: $reason) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
+`,
 }
