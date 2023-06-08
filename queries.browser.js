@@ -16059,4 +16059,77 @@ fragment contentSearchLearnableContent on LearnableContent {
   }
 }
 `,
+  GetProgressByCourseForStudent: `query GetProgressByCourseForStudent($filters: TeacherOverviewReportFilters!, $studentKaid: String!) {
+  teacherOverviewByCourseForStudentReport(filters: $filters, studentKaid: $studentKaid) {
+    dateInfo {
+      from
+      upTo
+      lastUpdatedDate
+      __typename
+    }
+    rows {
+      course {
+        id
+        translatedTitle
+        __typename
+      }
+      info {
+        minutes
+        leveledToProficient
+        leveledUp
+        workedOn
+        attempted
+        familiar
+        proficient
+        mastered
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  GetProgressByStudent: `query GetProgressByStudent($filters: TeacherOverviewReportFilters!, $classDescriptor: String!) {
+  teacherOverviewByStudentReport(filters: $filters) {
+    dateInfo {
+      from
+      upTo
+      lastUpdatedDate
+      __typename
+    }
+    rows {
+      user {
+        id
+        kaid
+        __typename
+      }
+      info {
+        minutes
+        leveledToProficient
+        leveledUp
+        workedOn
+        attempted
+        familiar
+        proficient
+        mastered
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    studentKaidsAndNicknames {
+      id
+      kaid
+      coachNickname
+      __typename
+    }
+    __typename
+  }
+}
+`,
 }
