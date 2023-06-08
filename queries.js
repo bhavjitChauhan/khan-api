@@ -16132,4 +16132,22 @@ fragment contentSearchLearnableContent on LearnableContent {
   }
 }
 `,
+  getNonProfileKhanmigoEligibilityData: `query getNonProfileKhanmigoEligibilityData {
+  user {
+    id
+    isEnrolledInAIGuide
+    children {
+      id
+      classrooms {
+        id
+        cacheId
+        __typename
+      }
+      __typename
+    }
+    discussionBanned
+    __typename
+  }
+}
+`,
 }
