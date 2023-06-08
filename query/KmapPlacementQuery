@@ -87,6 +87,10 @@ query KmapPlacementQuery($classDescriptor: String!) {
     band
     strandKey
     bandKey
+    mapGrowthTest {
+      key
+      __typename
+    }
     __typename
   }
 }

@@ -4,6 +4,10 @@ query getDistrictInstructionalAreaQuery {
     key
     instructionalAreaName: strand
     instructionalAreaKey: strandKey
+    mapGrowthTest {
+      key
+      __typename
+    }
     __typename
   }
 }
