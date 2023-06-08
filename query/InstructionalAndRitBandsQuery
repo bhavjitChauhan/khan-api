@@ -9,6 +9,10 @@ query InstructionalAndRitBandsQuery {
     bandKey
     strand
     strandKey
+    mapGrowthTest {
+      key
+      __typename
+    }
     __typename
   }
 }

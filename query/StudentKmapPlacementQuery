@@ -85,6 +85,10 @@ query StudentKmapPlacementQuery($classDescriptor: String!, $studentKaid: String!
     band
     strandKey
     bandKey
+    mapGrowthTest {
+      key
+      __typename
+    }
     __typename
   }
 }

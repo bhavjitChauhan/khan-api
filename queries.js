@@ -3537,6 +3537,10 @@ fragment CourseProgress on SubjectProgress {
     bandGradeName
     bandKey
     strandKey
+    mapGrowthTest {
+      key
+      __typename
+    }
     learnableContentPage(pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}) {
       contents {
         exerciseID: id
@@ -5775,6 +5779,10 @@ fragment StudentField1 on StudentsPage {
     key
     instructionalAreaName: strand
     instructionalAreaKey: strandKey
+    mapGrowthTest {
+      key
+      __typename
+    }
     __typename
   }
 }
@@ -10312,6 +10320,10 @@ fragment gtp_tpudFragment on TestPrepUserData {
     bandKey
     strand
     strandKey
+    mapGrowthTest {
+      key
+      __typename
+    }
     __typename
   }
 }
@@ -10829,6 +10841,10 @@ fragment BaseFolder on Folder {
     band
     strandKey
     bandKey
+    mapGrowthTest {
+      key
+      __typename
+    }
     __typename
   }
 }
@@ -10919,6 +10935,10 @@ fragment BaseFolder on Folder {
     band
     strandKey
     bandKey
+    mapGrowthTest {
+      key
+      __typename
+    }
     __typename
   }
 }
@@ -10997,6 +11017,10 @@ fragment BaseFolder on Folder {
     bandKey
     strand
     strandKey
+    mapGrowthTest {
+      key
+      __typename
+    }
     __typename
   }
 }
@@ -13025,6 +13049,10 @@ fragment TranslatedContentFields on LearnableContent {
     band
     strandKey
     bandKey
+    mapGrowthTest {
+      key
+      __typename
+    }
     __typename
   }
 }
