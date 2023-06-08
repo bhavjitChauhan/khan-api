@@ -1,0 +1,30 @@
+query GetProgressByCourseForStudent($filters: TeacherOverviewReportFilters!, $studentKaid: String!) {
+  teacherOverviewByCourseForStudentReport(filters: $filters, studentKaid: $studentKaid) {
+    dateInfo {
+      from
+      upTo
+      lastUpdatedDate
+      __typename
+    }
+    rows {
+      course {
+        id
+        translatedTitle
+        __typename
+      }
+      info {
+        minutes
+        leveledToProficient
+        leveledUp
+        workedOn
+        attempted
+        familiar
+        proficient
+        mastered
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
