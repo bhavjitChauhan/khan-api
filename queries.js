@@ -1498,6 +1498,10 @@ fragment MappedStandards on LearnableContent {
         }
         __typename
       }
+      lesson {
+        ...LessonData
+        __typename
+      }
       content {
         ...LearnableContentData
         __typename
@@ -1526,6 +1530,10 @@ fragment MappedStandards on LearnableContent {
           }
           __typename
         }
+        __typename
+      }
+      lesson {
+        ...LessonData
         __typename
       }
       content {
