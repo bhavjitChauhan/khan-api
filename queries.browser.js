@@ -6946,6 +6946,7 @@ fragment userTaskFields on PracticeUserTask {
         ...InfoNotificationType
         ...ResponseFeedbackNotificationType
         ...GroupedBadgeNotificationType
+        ...UnitMasteryGoalCreatedNotificationType
       }
       pageInfo {
         nextCursor
@@ -7094,6 +7095,31 @@ fragment ThreadCreatedNotificationType on ThreadCreatedNotification {
   }
   threadId
   flagged
+  __typename
+}
+
+fragment UnitMasteryGoalCreatedNotificationType on UnitMasteryGoalCreatedNotification {
+  numAssignmentsCount: numAssignments
+  classroomInfo: classroom {
+    cacheId
+    id
+    coach {
+      id
+      nickname
+      __typename
+    }
+    __typename
+  }
+  unit {
+    id
+    iconUrl
+    parent {
+      id
+      iconUrl
+      __typename
+    }
+    __typename
+  }
   __typename
 }
 `,
