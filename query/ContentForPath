@@ -29,6 +29,10 @@ query ContentForPath($path: String!, $countryCode: String!, $kaLocale: KALocale!
         }
         __typename
       }
+      lesson {
+        ...LessonData
+        __typename
+      }
       content {
         ...LearnableContentData
         __typename
@@ -57,6 +61,10 @@ query ContentForPath($path: String!, $countryCode: String!, $kaLocale: KALocale!
           }
           __typename
         }
+        __typename
+      }
+      lesson {
+        ...LessonData
         __typename
       }
       content {
