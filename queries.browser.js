@@ -16226,4 +16226,12 @@ fragment contentSearchLearnableContent on LearnableContent {
   }
 }
 `,
+  previewAiGuideDisabledEmailTrialEnded: `query previewAiGuideDisabledEmailTrialEnded($reason: ReasonForDisablingAIGuide!) {
+  preview: previewAiGuideDisabledEmail(reason: $reason) {
+    textContent
+    htmlContent
+    __typename
+  }
+}
+`,
 }

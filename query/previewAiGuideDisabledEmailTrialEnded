@@ -1,0 +1,7 @@
+query previewAiGuideDisabledEmailTrialEnded($reason: ReasonForDisablingAIGuide!) {
+  preview: previewAiGuideDisabledEmail(reason: $reason) {
+    textContent
+    htmlContent
+    __typename
+  }
+}
