@@ -71,6 +71,7 @@ query getFullUserProfile($kaid: String, $username: String) {
       email
       __typename
     }
+    hasAccessToAIGuideTeacher
     tosAccepted
     shouldShowAgeCheck
     birthMonthYear
