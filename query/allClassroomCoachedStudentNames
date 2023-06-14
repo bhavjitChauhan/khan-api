@@ -1,0 +1,17 @@
+query allClassroomCoachedStudentNames {
+  user {
+    id
+    coachedClassrooms {
+      descriptor
+      cacheId
+      id
+      studentKaidsAndNicknames {
+        id
+        coachNickname
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
