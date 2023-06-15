@@ -281,6 +281,36 @@ mutations = {
     __typename
   }
 }
+
+fragment AssignmentInfoFragment on Assignment {
+  id
+  contents {
+    id
+    title
+    __typename
+  }
+  studentList {
+    id
+    cacheId
+    name
+    __typename
+  }
+  students {
+    id
+    kaid
+    __typename
+  }
+  coach {
+    id
+    kaid
+    __typename
+  }
+  startDate
+  dueDate
+  isDraft
+  subjectSlug
+  __typename
+}
 `,
   archiveSubjectMasteryAssignment: `mutation archiveSubjectMasteryAssignment($assignmentId: ID!) {
   archiveSubjectMasteryAssignments(ids: [$assignmentId]) {
@@ -7629,6 +7659,36 @@ fragment CourseRevisionStructure on CourseRevision {
     __typename
   }
 }
+
+fragment AssignmentInfoFragment on Assignment {
+  id
+  contents {
+    id
+    title
+    __typename
+  }
+  studentList {
+    id
+    cacheId
+    name
+    __typename
+  }
+  students {
+    id
+    kaid
+    __typename
+  }
+  coach {
+    id
+    kaid
+    __typename
+  }
+  startDate
+  dueDate
+  isDraft
+  subjectSlug
+  __typename
+}
 `,
   publishStandardMappings: `mutation publishStandardMappings($set: String!, $content: String!) {
   publishStandardMappings(setId: $set, contentDescriptor: $content) {
@@ -10401,6 +10461,16 @@ fragment entry on TeamPageEntryForEditing {
 `,
   sendAiGuideNotEligibleTestEmail: `mutation sendAiGuideNotEligibleTestEmail($reason: ReasonForDisablingAIGuide!) {
   sendAiGuideNotEligibleTestEmail(reason: $reason) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  BulkReviewThreadModeration: `mutation BulkReviewThreadModeration($threadIds: [String!]!) {
+  bulkReviewThreadModeration(threadIds: $threadIds) {
     error {
       code
       __typename

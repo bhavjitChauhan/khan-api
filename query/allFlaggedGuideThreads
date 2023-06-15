@@ -1,5 +1,6 @@
 query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderationScore: Float, $page: Int, $limit: Int) {
   allFlaggedGuideThreads: allAiGuideThreads(moderationStatus: FLAGGED, moderationCategory: $moderationCategory, minModerationScore: $moderationScore, page: $page, limit: $limit) {
+    cursor
     threads {
       id
       user {
@@ -45,6 +46,10 @@ query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderatio
         }
         __typename
       }
+      moderatorKAID
+      moderatorNickname
+      moderationReviewed
+      lastModerationReviewedDate
       __typename
     }
     __typename
