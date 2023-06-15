@@ -1,0 +1,20 @@
+query getMasteryAssignmentStudentProgress($classCode: String!, $descriptors: [MasteryAssignmentDescriptor!]!) {
+  classroom(classCode: $classCode) {
+    id
+    cacheId
+    masteryAssignments: masteryAssignmentsByDescriptors(descriptors: $descriptors) {
+      id
+      type: curationNodeLevel
+      studentProgress {
+        kaid
+        currentMasteryV2 {
+          percentage
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
