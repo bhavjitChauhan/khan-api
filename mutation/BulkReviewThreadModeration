@@ -1,0 +1,9 @@
+mutation BulkReviewThreadModeration($threadIds: [String!]!) {
+  bulkReviewThreadModeration(threadIds: $threadIds) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
