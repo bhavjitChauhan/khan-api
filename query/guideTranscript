@@ -4,6 +4,15 @@ query guideTranscript($transcriptId: String!) {
     summary
     lastUpdatedAt
     flagged
+    insights {
+      interests
+      topics
+      safety
+      confusing
+      understood
+      celebrate
+      __typename
+    }
     interactions {
       id
       answer
