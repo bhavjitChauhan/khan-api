@@ -1,0 +1,7 @@
+query CourseIntroCurationNode($id: String!) {
+  topicById(id: $id) {
+    id
+    relativeUrl
+    __typename
+  }
+}

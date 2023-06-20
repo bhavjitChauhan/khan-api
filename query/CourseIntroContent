@@ -1,0 +1,13 @@
+query CourseIntroContent($descriptor: String!) {
+  learnableContentByDescriptors(contentDescriptors: [$descriptor]) {
+    id
+    defaultUrlPath
+    contentKind
+    ... on Video {
+      duration
+      thumbnailUrl
+      __typename
+    }
+    __typename
+  }
+}

@@ -16324,4 +16324,26 @@ fragment contentSearchLearnableContent on LearnableContent {
   }
 }
 `,
+  CourseIntroContent: `query CourseIntroContent($descriptor: String!) {
+  learnableContentByDescriptors(contentDescriptors: [$descriptor]) {
+    id
+    defaultUrlPath
+    contentKind
+    ... on Video {
+      duration
+      thumbnailUrl
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  CourseIntroCurationNode: `query CourseIntroCurationNode($id: String!) {
+  topicById(id: $id) {
+    id
+    relativeUrl
+    __typename
+  }
+}
+`,
 }
