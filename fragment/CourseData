@@ -5,6 +5,10 @@ fragment CourseData on Course {
   relativeUrl
   slug
   translatedTitle
+  translatedDescription
+  isListedForLearners
+  translatedCustomTitleTag
+  contentKind
   parent {
     id
     contentKind
@@ -16,6 +20,15 @@ fragment CourseData on Course {
   lowerToc
   curation {
     hideSubjectIntro
+    hideCommunityQuestions
+    sponsorFooterAttribution {
+      footnoteHtml
+      imageBaselineAligned
+      imageCaption
+      imageUrl
+      taglineHtml
+      __typename
+    }
     modules {
       kind
       untranslatedFields
@@ -27,29 +40,20 @@ fragment CourseData on Course {
         video
         __typename
       }
-      ... on FeaturedContentModule {
-        contentItems {
-          kind
-          imageCredit
-          imageUrl
-          mobileImageUrl
-          subtitle
-          title
-          url
+      ... on ActionListModule {
+        actions {
+          text
+          URL: url
+          contentDescriptor
           __typename
         }
-        fullBleed
-        isBetterMoneyHabits
-        __typename
-      }
-      ... on ContentCarouselModule {
-        contentDescriptors
-        referrer
+        kind
         title
         __typename
       }
       __typename
     }
+    excludedChildren
     __typename
   }
   courseChallenge {

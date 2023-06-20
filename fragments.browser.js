@@ -389,6 +389,10 @@ fragment InvitationsField on Invitation {
   relativeUrl
   slug
   translatedTitle
+  translatedDescription
+  isListedForLearners
+  translatedCustomTitleTag
+  contentKind
   parent {
     id
     contentKind
@@ -400,6 +404,15 @@ fragment InvitationsField on Invitation {
   lowerToc
   curation {
     hideSubjectIntro
+    hideCommunityQuestions
+    sponsorFooterAttribution {
+      footnoteHtml
+      imageBaselineAligned
+      imageCaption
+      imageUrl
+      taglineHtml
+      __typename
+    }
     modules {
       kind
       untranslatedFields
@@ -411,29 +424,20 @@ fragment InvitationsField on Invitation {
         video
         __typename
       }
-      ... on FeaturedContentModule {
-        contentItems {
-          kind
-          imageCredit
-          imageUrl
-          mobileImageUrl
-          subtitle
-          title
-          url
+      ... on ActionListModule {
+        actions {
+          text
+          URL: url
+          contentDescriptor
           __typename
         }
-        fullBleed
-        isBetterMoneyHabits
-        __typename
-      }
-      ... on ContentCarouselModule {
-        contentDescriptors
-        referrer
+        kind
         title
         __typename
       }
       __typename
     }
+    excludedChildren
     __typename
   }
   courseChallenge {
@@ -1590,8 +1594,6 @@ fragment InvitationsField on Invitation {
   canonicalUrl: defaultUrlPath
   contentDescriptor
   contentKind
-  slug
-  translatedTitle
   parentTopic {
     id
     parent {
@@ -1601,8 +1603,12 @@ fragment InvitationsField on Invitation {
     }
     __typename
   }
-  urlWithinCurationNode
+  progressKey
+  slug
   translatedCustomTitleTag
+  translatedDescription
+  translatedTitle
+  urlWithinCurationNode
   __typename
 }
 `,
@@ -1639,6 +1645,7 @@ fragment InvitationsField on Invitation {
   id
   relativeUrl
   slug
+  translatedDescription
   translatedTitle
   key
   curatedChildren(includeUnlisted: false) {
@@ -1646,8 +1653,21 @@ fragment InvitationsField on Invitation {
       ...LearnableContentMetadata
       __typename
     }
+    ... on Exercise {
+      exerciseLength
+      isSkillCheck
+      sponsored
+      thumbnailUrl
+      timeEstimate {
+        lowerBound
+        upperBound
+        __typename
+      }
+      __typename
+    }
     __typename
   }
+  mappedStandardIds
   __typename
 }
 `,
@@ -1733,7 +1753,13 @@ fragment InvitationsField on Invitation {
 `,
   QuizMetadata: `fragment QuizMetadata on TopicQuiz {
   ...LearnableContentMetadata
+  exerciseLength
   index
+  timeEstimate {
+    lowerBound
+    upperBound
+    __typename
+  }
   __typename
 }
 `,
@@ -1902,16 +1928,27 @@ fragment InvitationsField on Invitation {
 `,
   UnitData: `fragment UnitData on Unit {
   id
+  iconPath
+  mappedStandardIds
   masteryEnabled
-  slug
-  translatedTitle
   relativeUrl
+  slug
+  isListedForLearners
+  translatedCustomTitleTag
+  translatedDescription
+  translatedTitle
   unlistedAncestorIds
   __typename
 }
 `,
   UnitTestMetadata: `fragment UnitTestMetadata on TopicUnitTest {
   ...LearnableContentMetadata
+  exerciseLength
+  timeEstimate {
+    lowerBound
+    upperBound
+    __typename
+  }
   __typename
 }
 `,

@@ -3,8 +3,6 @@ fragment LearnableContentMetadata on LearnableContent {
   canonicalUrl: defaultUrlPath
   contentDescriptor
   contentKind
-  slug
-  translatedTitle
   parentTopic {
     id
     parent {
@@ -14,7 +12,11 @@ fragment LearnableContentMetadata on LearnableContent {
     }
     __typename
   }
-  urlWithinCurationNode
+  progressKey
+  slug
   translatedCustomTitleTag
+  translatedDescription
+  translatedTitle
+  urlWithinCurationNode
   __typename
 }

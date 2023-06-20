@@ -1,5 +1,11 @@
 fragment QuizMetadata on TopicQuiz {
   ...LearnableContentMetadata
+  exerciseLength
   index
+  timeEstimate {
+    lowerBound
+    upperBound
+    __typename
+  }
   __typename
 }
