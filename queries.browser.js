@@ -10218,6 +10218,15 @@ fragment gtp_tpudFragment on TestPrepUserData {
     summary
     lastUpdatedAt
     flagged
+    insights {
+      interests
+      topics
+      safety
+      confusing
+      understood
+      celebrate
+      __typename
+    }
     interactions {
       id
       answer
@@ -10335,6 +10344,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
     }
     __typename
   }
+  hasAccessToAIGuideDev
 }
 `,
   hotlist: `query hotlist($curationNodeId: String, $onlyOfficialProjectSpinoffs: Boolean!, $sort: ListProgramSortOrder, $pageInfo: ListProgramsPageInfo) {
@@ -15873,6 +15883,17 @@ fragment contentSearchLearnableContent on LearnableContent {
   topicById(id: $id) {
     id
     relativeUrl
+    __typename
+  }
+}
+`,
+  getUserInterests: `query getUserInterests($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    aiGuideUserInterests {
+      interest
+      __typename
+    }
     __typename
   }
 }

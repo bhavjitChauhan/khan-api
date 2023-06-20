@@ -56,4 +56,5 @@ query homepageQueryV4($kaid: String, $username: String) {
     }
     __typename
   }
+  hasAccessToAIGuideDev
 }
