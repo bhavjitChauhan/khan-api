@@ -2,6 +2,7 @@ fragment LessonData on Lesson {
   id
   relativeUrl
   slug
+  translatedDescription
   translatedTitle
   key
   curatedChildren(includeUnlisted: false) {
@@ -9,7 +10,20 @@ fragment LessonData on Lesson {
       ...LearnableContentMetadata
       __typename
     }
+    ... on Exercise {
+      exerciseLength
+      isSkillCheck
+      sponsored
+      thumbnailUrl
+      timeEstimate {
+        lowerBound
+        upperBound
+        __typename
+      }
+      __typename
+    }
     __typename
   }
+  mappedStandardIds
   __typename
 }

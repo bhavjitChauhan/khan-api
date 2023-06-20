@@ -1,9 +1,14 @@
 fragment UnitData on Unit {
   id
+  iconPath
+  mappedStandardIds
   masteryEnabled
-  slug
-  translatedTitle
   relativeUrl
+  slug
+  isListedForLearners
+  translatedCustomTitleTag
+  translatedDescription
+  translatedTitle
   unlistedAncestorIds
   __typename
 }

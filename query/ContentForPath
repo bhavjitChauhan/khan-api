@@ -84,6 +84,10 @@ fragment CourseData on Course {
   relativeUrl
   slug
   translatedTitle
+  translatedDescription
+  isListedForLearners
+  translatedCustomTitleTag
+  contentKind
   parent {
     id
     contentKind
@@ -95,6 +99,15 @@ fragment CourseData on Course {
   lowerToc
   curation {
     hideSubjectIntro
+    hideCommunityQuestions
+    sponsorFooterAttribution {
+      footnoteHtml
+      imageBaselineAligned
+      imageCaption
+      imageUrl
+      taglineHtml
+      __typename
+    }
     modules {
       kind
       untranslatedFields
@@ -106,29 +119,20 @@ fragment CourseData on Course {
         video
         __typename
       }
-      ... on FeaturedContentModule {
-        contentItems {
-          kind
-          imageCredit
-          imageUrl
-          mobileImageUrl
-          subtitle
-          title
-          url
+      ... on ActionListModule {
+        actions {
+          text
+          URL: url
+          contentDescriptor
           __typename
         }
-        fullBleed
-        isBetterMoneyHabits
-        __typename
-      }
-      ... on ContentCarouselModule {
-        contentDescriptors
-        referrer
+        kind
         title
         __typename
       }
       __typename
     }
+    excludedChildren
     __typename
   }
   courseChallenge {
@@ -376,8 +380,6 @@ fragment LearnableContentMetadata on LearnableContent {
   canonicalUrl: defaultUrlPath
   contentDescriptor
   contentKind
-  slug
-  translatedTitle
   parentTopic {
     id
     parent {
@@ -387,8 +389,12 @@ fragment LearnableContentMetadata on LearnableContent {
     }
     __typename
   }
-  urlWithinCurationNode
+  progressKey
+  slug
   translatedCustomTitleTag
+  translatedDescription
+  translatedTitle
+  urlWithinCurationNode
   __typename
 }
 
@@ -396,6 +402,7 @@ fragment LessonData on Lesson {
   id
   relativeUrl
   slug
+  translatedDescription
   translatedTitle
   key
   curatedChildren(includeUnlisted: false) {
@@ -403,8 +410,21 @@ fragment LessonData on Lesson {
       ...LearnableContentMetadata
       __typename
     }
+    ... on Exercise {
+      exerciseLength
+      isSkillCheck
+      sponsored
+      thumbnailUrl
+      timeEstimate {
+        lowerBound
+        upperBound
+        __typename
+      }
+      __typename
+    }
     __typename
   }
+  mappedStandardIds
   __typename
 }
 
@@ -421,21 +441,38 @@ fragment MappedStandards on LearnableContent {
 
 fragment QuizMetadata on TopicQuiz {
   ...LearnableContentMetadata
+  exerciseLength
   index
+  timeEstimate {
+    lowerBound
+    upperBound
+    __typename
+  }
   __typename
 }
 
 fragment UnitData on Unit {
   id
+  iconPath
+  mappedStandardIds
   masteryEnabled
-  slug
-  translatedTitle
   relativeUrl
+  slug
+  isListedForLearners
+  translatedCustomTitleTag
+  translatedDescription
+  translatedTitle
   unlistedAncestorIds
   __typename
 }
 
 fragment UnitTestMetadata on TopicUnitTest {
   ...LearnableContentMetadata
+  exerciseLength
+  timeEstimate {
+    lowerBound
+    upperBound
+    __typename
+  }
   __typename
 }

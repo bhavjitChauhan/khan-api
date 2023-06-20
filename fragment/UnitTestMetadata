@@ -1,4 +1,10 @@
 fragment UnitTestMetadata on TopicUnitTest {
   ...LearnableContentMetadata
+  exerciseLength
+  timeEstimate {
+    lowerBound
+    upperBound
+    __typename
+  }
   __typename
 }
