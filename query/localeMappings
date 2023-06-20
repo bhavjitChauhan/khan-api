@@ -3,12 +3,8 @@ query localeMappings($includeEnglish: Boolean) {
     id
     kaLocale
     crowdinLocale
-    ... on Locale {
-      id
-      previewCmsEnabled
-      displayName
-      __typename
-    }
+    status
+    displayName
     __typename
   }
 }

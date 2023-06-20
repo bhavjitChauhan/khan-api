@@ -12,6 +12,7 @@ query getNonProfileKhanmigoEligibilityData {
       __typename
     }
     discussionBanned
+    age
     __typename
   }
 }
