@@ -21,6 +21,7 @@ query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderatio
         isK4dStudent
         isK4dTeacher
         isStudentOfFormalTeacherActor
+        aiGuideFlaggedInteractionsCount
         __typename
       }
       summary
