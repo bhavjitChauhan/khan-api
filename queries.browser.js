@@ -215,8 +215,8 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
   }
 }
 `,
-  allFlaggedGuideThreads: `query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderationScore: Float, $page: Int, $limit: Int) {
-  allFlaggedGuideThreads: allAiGuideThreads(moderationStatus: FLAGGED, moderationCategory: $moderationCategory, minModerationScore: $moderationScore, page: $page, limit: $limit) {
+  allFlaggedGuideThreads: `query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderationReviewStatus: ModerationReviewStatus, $moderationScore: Float, $page: Int, $limit: Int) {
+  allFlaggedGuideThreads: allAiGuideThreads(moderationCategory: $moderationCategory, moderationReviewStatus: $moderationReviewStatus, moderationStatus: FLAGGED, minModerationScore: $moderationScore, page: $page, limit: $limit) {
     cursor
     threads {
       id
@@ -14879,39 +14879,6 @@ fragment SharedFeedbackFields on Feedback {
     ...VideoRevision
     __typename
   }
-}
-
-fragment VideoRevision on VideoRevision {
-  id
-  contentId
-  contentKind
-  creationDate
-  sha
-  authorKey
-  customDescriptionTag
-  customTitleTag
-  description
-  descriptionHtml: description
-  doNotPublish
-  sourceKaLocale
-  sourceLanguage: sourceKaLocale
-  slug
-  readableId: slug
-  title
-  sponsored
-  thumbnailCache
-  thumbnailData
-  alternateSlugs
-  assessmentItemTags
-  augmentedTranscript
-  authorNames
-  clarificationsEnabled
-  duration
-  kaUserLicense
-  keywords
-  youtubeId
-  listed
-  __typename
 }
 `,
   WhatNextPrompt: `query WhatNextPrompt($assignmentsPageSize: Int, $assignmentsOrderBy: AssignmentOrder!, $assignmentsDueAfter: DateTime!) {

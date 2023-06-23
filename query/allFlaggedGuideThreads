@@ -1,5 +1,5 @@
-query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderationScore: Float, $page: Int, $limit: Int) {
-  allFlaggedGuideThreads: allAiGuideThreads(moderationStatus: FLAGGED, moderationCategory: $moderationCategory, minModerationScore: $moderationScore, page: $page, limit: $limit) {
+query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderationReviewStatus: ModerationReviewStatus, $moderationScore: Float, $page: Int, $limit: Int) {
+  allFlaggedGuideThreads: allAiGuideThreads(moderationCategory: $moderationCategory, moderationReviewStatus: $moderationReviewStatus, moderationStatus: FLAGGED, minModerationScore: $moderationScore, page: $page, limit: $limit) {
     cursor
     threads {
       id
