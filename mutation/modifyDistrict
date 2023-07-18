@@ -1,5 +1,5 @@
-mutation modifyDistrict($existingDistrictID: ID!, $newName: String, $offerings: [Offering!], $rosterSyncingEnabled: Boolean, $rosterID: String, $rosterSource: RosterSource, $nweaID: String, $ncesID: String, $isTest: Boolean, $sendTeacherActivationEmails: Boolean, $goLiveDate: Date, $kaLocale: String, $schoolYearDates: DistrictSchoolYearInput, $region: String) {
-  modifyDistrict(existingDistrictID: $existingDistrictID, newName: $newName, offerings: $offerings, rosterSyncingEnabled: $rosterSyncingEnabled, rosterID: $rosterID, rosterSource: $rosterSource, nweaID: $nweaID, ncesID: $ncesID, isTest: $isTest, sendTeacherActivationEmails: $sendTeacherActivationEmails, goLiveDate: $goLiveDate, kaLocale: $kaLocale, schoolYearDates: $schoolYearDates, region: $region) {
+mutation modifyDistrict($existingDistrictID: ID!, $newName: String, $offerings: [Offering!], $rosterSyncingEnabled: Boolean, $rosterID: String, $rosterSource: RosterSource, $nweaID: String, $ncesID: String, $isTest: Boolean, $sendTeacherActivationEmails: Boolean, $goLiveDate: Date, $kaLocale: String, $schoolYearDates: DistrictSchoolYearInput, $region: String, $khanmigoPreference: KhanmigoEnrollment, $khanmigoTotal: Int, $allOnGrades: [DistrictGradeLevel!], $allOffGrades: [DistrictGradeLevel!], $subsetGrades: [DistrictGradeLevel!], $khanmigoIncludeUserEmails: [String!], $khanmigoExcludeUserEmails: [String!], $khanmigoIncludeStudents: Boolean) {
+  modifyDistrict(existingDistrictID: $existingDistrictID, newName: $newName, offerings: $offerings, rosterSyncingEnabled: $rosterSyncingEnabled, rosterID: $rosterID, rosterSource: $rosterSource, nweaID: $nweaID, ncesID: $ncesID, isTest: $isTest, sendTeacherActivationEmails: $sendTeacherActivationEmails, goLiveDate: $goLiveDate, kaLocale: $kaLocale, schoolYearDates: $schoolYearDates, region: $region, khanmigoPreference: $khanmigoPreference, khanmigoTotal: $khanmigoTotal, allOnGrades: $allOnGrades, allOffGrades: $allOffGrades, subsetGrades: $subsetGrades, khanmigoIncludeUserEmails: $khanmigoIncludeUserEmails, khanmigoExcludeUserEmails: $khanmigoExcludeUserEmails, khanmigoIncludeStudents: $khanmigoIncludeStudents) {
     district {
       id
       rosterID
@@ -30,6 +30,42 @@ mutation modifyDistrict($existingDistrictID: ID!, $newName: String, $offerings: 
         __typename
       }
       region
+      khanmigoPreference
+      khanmigoIncludeStudents
+      khanmigoTotal
+      khanmigoIncludedUsers {
+        id
+        districtProvidedEmail
+        __typename
+      }
+      khanmigoExcludedUsers {
+        id
+        districtProvidedEmail
+        __typename
+      }
+      khanmigoGradeEnrollment {
+        id
+        districtID
+        allOnGrades {
+          id
+          name
+          sortIndex
+          __typename
+        }
+        allOffGrades {
+          id
+          name
+          sortIndex
+          __typename
+        }
+        subsetGrades {
+          id
+          name
+          sortIndex
+          __typename
+        }
+        __typename
+      }
       __typename
     }
     error {

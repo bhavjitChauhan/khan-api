@@ -1,18 +1,17 @@
-query StudentMasteryGoals($kaid: String, $isPast: Boolean!, $classDescriptor: String) {
+query StudentKMapGoals($kaid: String, $isPast: Boolean!, $classDescriptor: String) {
   user(kaid: $kaid) {
     id
     hasTakenKmapExam
-    masteryAssignments(isPast: $isPast, classroomDescriptor: $classDescriptor) {
+    courseMasteryAssignments(filter: KMAP, isPast: $isPast, classroomDescriptor: $classDescriptor) {
       id
-      curationNodeLevel
-      studentData {
+      activeStudentDataV2 {
         kaid
         assignedDate
         __typename
       }
       isKmap
       isPast
-      whyPast
+      whyPastV2
       whenPast
       whenCompleted
       classroom {
@@ -27,20 +26,13 @@ query StudentMasteryGoals($kaid: String, $isPast: Boolean!, $classDescriptor: St
         __typename
       }
       dueDate
-      course {
-        id
-        slug
-        domainSlug
-        translatedTitle
-        largeIconPath
-        parent {
-          id
-          translatedTitle
+      topic {
+        ... on KMapTopic {
+          strandKey
+          band
+          strand
           __typename
         }
-        __typename
-      }
-      unit {
         id
         slug
         domainSlug
@@ -48,7 +40,7 @@ query StudentMasteryGoals($kaid: String, $isPast: Boolean!, $classDescriptor: St
         largeIconPath
         __typename
       }
-      currentUserProgress {
+      currentUserProgressV2 {
         currentMasteryV2 {
           percentage
           pointsEarned

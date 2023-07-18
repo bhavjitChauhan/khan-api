@@ -4929,6 +4929,169 @@ fragment gtp_checkpointFragment on Checkpoint {
     __typename
   }
 }
+
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+
+fragment gtp_taskFragment on Task {
+  id
+  kaid
+  examId
+  taskType
+  secondsTaken
+  taskDurationSeconds
+  translatedTitle
+  creationDatetime
+  startDatetime
+  completed
+  receivedCredit
+  completionDatetime
+  stage
+  checkpoint
+  taskContent {
+    concepts {
+      item {
+        conceptId
+        translatedTitle
+        __typename
+      }
+      questions {
+        conceptId
+        translatedTitle
+        __typename
+      }
+      __typename
+    }
+    id
+    itemData
+    itemShapeType
+    skills {
+      item {
+        areaId
+        skillId
+        skillContentId
+        translatedTitle
+        __typename
+      }
+      questions {
+        areaId
+        skillId
+        skillContentId
+        translatedTitle
+        __typename
+      }
+      __typename
+    }
+    gradingMetadata {
+      instructions
+      promptTitle
+      responseTitle
+      minScore
+      maxScore
+      rubric {
+        article {
+          id
+          perseusContent
+          __typename
+        }
+        __typename
+      }
+      scoreExamples {
+        score
+        article {
+          id
+          perseusContent
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  taskState
+  taskStateHash
+  exerciseName
+  itemIds
+  areaId
+  areaTitle
+  ... on SkillTask {
+    skillId
+    skill {
+      description
+      __typename
+    }
+    level
+    incomingSkillLevelLabel {
+      label
+      skillLevel
+      __typename
+    }
+    outgoingSkillLevelLabel {
+      label
+      skillLevel
+      __typename
+    }
+    __typename
+  }
+  ... on TmsTask {
+    directions
+    extendedTaskState
+    startExtendedTimeDt
+    __typename
+  }
+  ... on TestSectionTask {
+    directions
+    __typename
+  }
+  ... on ExpressDiagnosticTask {
+    directions
+    skillLevels {
+      skillName
+      minLevel
+      maxLevel
+      level
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
 `,
   gtp_resetPracticeTestMutation: `mutation gtp_resetPracticeTestMutation($examId: String!, $taskId: String!) {
   resetPracticeTest(examId: $examId, taskId: $taskId) {
@@ -7277,8 +7440,8 @@ fragment CourseRevisionStructure on CourseRevision {
   }
 }
 `,
-  modifyDistrict: `mutation modifyDistrict($existingDistrictID: ID!, $newName: String, $offerings: [Offering!], $rosterSyncingEnabled: Boolean, $rosterID: String, $rosterSource: RosterSource, $nweaID: String, $ncesID: String, $isTest: Boolean, $sendTeacherActivationEmails: Boolean, $goLiveDate: Date, $kaLocale: String, $schoolYearDates: DistrictSchoolYearInput, $region: String) {
-  modifyDistrict(existingDistrictID: $existingDistrictID, newName: $newName, offerings: $offerings, rosterSyncingEnabled: $rosterSyncingEnabled, rosterID: $rosterID, rosterSource: $rosterSource, nweaID: $nweaID, ncesID: $ncesID, isTest: $isTest, sendTeacherActivationEmails: $sendTeacherActivationEmails, goLiveDate: $goLiveDate, kaLocale: $kaLocale, schoolYearDates: $schoolYearDates, region: $region) {
+  modifyDistrict: `mutation modifyDistrict($existingDistrictID: ID!, $newName: String, $offerings: [Offering!], $rosterSyncingEnabled: Boolean, $rosterID: String, $rosterSource: RosterSource, $nweaID: String, $ncesID: String, $isTest: Boolean, $sendTeacherActivationEmails: Boolean, $goLiveDate: Date, $kaLocale: String, $schoolYearDates: DistrictSchoolYearInput, $region: String, $khanmigoPreference: KhanmigoEnrollment, $khanmigoTotal: Int, $allOnGrades: [DistrictGradeLevel!], $allOffGrades: [DistrictGradeLevel!], $subsetGrades: [DistrictGradeLevel!], $khanmigoIncludeUserEmails: [String!], $khanmigoExcludeUserEmails: [String!], $khanmigoIncludeStudents: Boolean) {
+  modifyDistrict(existingDistrictID: $existingDistrictID, newName: $newName, offerings: $offerings, rosterSyncingEnabled: $rosterSyncingEnabled, rosterID: $rosterID, rosterSource: $rosterSource, nweaID: $nweaID, ncesID: $ncesID, isTest: $isTest, sendTeacherActivationEmails: $sendTeacherActivationEmails, goLiveDate: $goLiveDate, kaLocale: $kaLocale, schoolYearDates: $schoolYearDates, region: $region, khanmigoPreference: $khanmigoPreference, khanmigoTotal: $khanmigoTotal, allOnGrades: $allOnGrades, allOffGrades: $allOffGrades, subsetGrades: $subsetGrades, khanmigoIncludeUserEmails: $khanmigoIncludeUserEmails, khanmigoExcludeUserEmails: $khanmigoExcludeUserEmails, khanmigoIncludeStudents: $khanmigoIncludeStudents) {
     district {
       id
       rosterID
@@ -7309,6 +7472,42 @@ fragment CourseRevisionStructure on CourseRevision {
         __typename
       }
       region
+      khanmigoPreference
+      khanmigoIncludeStudents
+      khanmigoTotal
+      khanmigoIncludedUsers {
+        id
+        districtProvidedEmail
+        __typename
+      }
+      khanmigoExcludedUsers {
+        id
+        districtProvidedEmail
+        __typename
+      }
+      khanmigoGradeEnrollment {
+        id
+        districtID
+        allOnGrades {
+          id
+          name
+          sortIndex
+          __typename
+        }
+        allOffGrades {
+          id
+          name
+          sortIndex
+          __typename
+        }
+        subsetGrades {
+          id
+          name
+          sortIndex
+          __typename
+        }
+        __typename
+      }
       __typename
     }
     error {

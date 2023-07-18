@@ -16,6 +16,32 @@ query districts($filter: String!) {
     lastTestPull
     goLiveDate
     region
+    schools {
+      id
+      name
+      isKADSchool
+      isKmapSchool
+      khanmigoPreference
+      allOnGrades {
+        id
+        name
+        sortIndex
+        __typename
+      }
+      allOffGrades {
+        id
+        name
+        sortIndex
+        __typename
+      }
+      subsetGrades {
+        id
+        name
+        sortIndex
+        __typename
+      }
+      __typename
+    }
     schoolYearDates {
       start {
         nthWeek
@@ -33,6 +59,42 @@ query districts($filter: String!) {
     }
     schoolYearStart
     schoolYearEnd
+    khanmigoPreference
+    khanmigoIncludeStudents
+    khanmigoTotal
+    khanmigoIncludedUsers {
+      id
+      districtProvidedEmail
+      __typename
+    }
+    khanmigoExcludedUsers {
+      id
+      districtProvidedEmail
+      __typename
+    }
+    khanmigoGradeEnrollment {
+      id
+      districtID
+      allOnGrades {
+        id
+        name
+        sortIndex
+        __typename
+      }
+      allOffGrades {
+        id
+        name
+        sortIndex
+        __typename
+      }
+      subsetGrades {
+        id
+        name
+        sortIndex
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }
