@@ -2,6 +2,7 @@ fragment tapTranslationFreshness on TAPTranslationFreshness {
   lastStringsUpdateDate
   lastDubsUpdateDate
   lastSubtitlesUpdateDate
+  oldestSubtitlesDate
   updateDate
   __typename
 }
