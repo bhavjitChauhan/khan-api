@@ -1893,6 +1893,7 @@ fragment InvitationsField on Invitation {
   lastStringsUpdateDate
   lastDubsUpdateDate
   lastSubtitlesUpdateDate
+  oldestSubtitlesDate
   updateDate
   __typename
 }

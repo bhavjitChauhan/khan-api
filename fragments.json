@@ -68,7 +68,7 @@
   "tapPlatformNode": "fragment tapPlatformNode on TAPPlatformNode {\n  ...tapContentWordCounts\n  id\n  slug\n  title\n  __typename\n}\n",
   "tapProjectNode": "fragment tapProjectNode on TAPProjectNode {\n  ...tapContentItem\n  ...tapMetadataWordCounts\n  ...tapContentWordCounts\n  fingerprint\n  __typename\n}\n",
   "tapTalkthroughNode": "fragment tapTalkthroughNode on TAPTalkthroughNode {\n  ...tapContentItem\n  ...tapMetadataWordCounts\n  fingerprint\n  isDubbed\n  isSubtitled\n  youtubeId\n  __typename\n}\n",
-  "tapTranslationFreshness": "fragment tapTranslationFreshness on TAPTranslationFreshness {\n  lastStringsUpdateDate\n  lastDubsUpdateDate\n  lastSubtitlesUpdateDate\n  updateDate\n  __typename\n}\n",
+  "tapTranslationFreshness": "fragment tapTranslationFreshness on TAPTranslationFreshness {\n  lastStringsUpdateDate\n  lastDubsUpdateDate\n  lastSubtitlesUpdateDate\n  oldestSubtitlesDate\n  updateDate\n  __typename\n}\n",
   "tapUnitNode": "fragment tapUnitNode on TAPUnitNode {\n  ...tapContentItem\n  ...tapMetadataWordCounts\n  fingerprint\n  children {\n    ...tapLessonNode\n    __typename\n  }\n  __typename\n}\n",
   "tapVideoNode": "fragment tapVideoNode on TAPVideoNode {\n  ...tapContentItem\n  ...tapMetadataWordCounts\n  fingerprint\n  isDubbed\n  dubIsSubtitled\n  isSubtitled\n  translatedYoutubeId\n  youtubeId\n  __typename\n}\n",
   "UnitData": "fragment UnitData on Unit {\n  id\n  iconPath\n  mappedStandardIds\n  masteryEnabled\n  relativeUrl\n  slug\n  isListedForLearners\n  translatedCustomTitleTag\n  translatedDescription\n  translatedTitle\n  unlistedAncestorIds\n  __typename\n}\n",
