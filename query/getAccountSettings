@@ -28,6 +28,7 @@ query getAccountSettings($targetKaid: String) {
     username
     birthdate
     userLanguage
+    region
     soundOn
     muteVideos
     showCaptions
