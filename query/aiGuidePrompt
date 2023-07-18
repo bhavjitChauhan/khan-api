@@ -3,6 +3,11 @@ query aiGuidePrompt($name: String!) {
     id
     name
     description
+    questions {
+      id
+      questionText
+      __typename
+    }
     versions {
       id
       versionNumber

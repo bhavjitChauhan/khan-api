@@ -5,6 +5,7 @@ query getStudentSettings($kaid: String!) {
     username
     birthdate
     userLanguage
+    region
     soundOn
     muteVideos
     showCaptions

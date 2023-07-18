@@ -19,6 +19,10 @@ query KmapPlacementQuery($classDescriptor: String!) {
         ... on KMapTopic {
           strandKey
           bandKey
+          mapGrowthTest {
+            key
+            __typename
+          }
           __typename
         }
         __typename
@@ -58,6 +62,7 @@ query KmapPlacementQuery($classDescriptor: String!) {
             suggestedRitScoreBandKey
             __typename
           }
+          mapTestKey
           __typename
         }
         currentMathAssessment {
@@ -72,6 +77,7 @@ query KmapPlacementQuery($classDescriptor: String!) {
             suggestedRitScoreBandKey
             __typename
           }
+          mapTestKey
           __typename
         }
         __typename
