@@ -1,0 +1,9 @@
+query standardRegionsForRegionPickerQuery {
+  standardRegions {
+    standardRegion {
+      id
+      __typename
+    }
+    __typename
+  }
+}

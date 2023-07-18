@@ -1393,7 +1393,6 @@ fragment InvitationsField on Invitation {
   slug
   translatedTitle
   ... on Article {
-    ...MappedStandards
     articleClarificationsEnabled: clarificationsEnabled
     translatedDescription
     translatedPerseusContent
@@ -1418,10 +1417,6 @@ fragment InvitationsField on Invitation {
     }
     userAuthoredContentType
     width
-    __typename
-  }
-  ... on Exercise {
-    ...MappedStandards
     __typename
   }
   ... on Interactive {
@@ -1572,7 +1567,6 @@ fragment InvitationsField on Invitation {
     }
     educationalLevel
     learningResourceType
-    ...MappedStandards
     __typename
   }
   __typename

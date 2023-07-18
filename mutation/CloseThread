@@ -1,0 +1,9 @@
+mutation CloseThread($input: String!) {
+  closeThread(threadId: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

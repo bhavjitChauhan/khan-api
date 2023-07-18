@@ -1,0 +1,25 @@
+query GetSetOfStandards($setId: String!, $region: String) {
+  setOfStandards(setId: $setId, region: $region) {
+    id
+    name
+    standardRegionIds
+    standards {
+      id
+      standardId
+      description
+      children
+      mappedContent {
+        ... on LearnableContent {
+          id
+          contentKind
+          title
+          defaultUrlPath
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

@@ -26,6 +26,7 @@ query districtHomepage($districtID: String!, $schoolIDs: [ID!]) {
       course {
         id
         title
+        domainId: parentTopicId
         __typename
       }
       school {

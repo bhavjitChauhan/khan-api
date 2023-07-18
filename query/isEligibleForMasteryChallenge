@@ -1,0 +1,13 @@
+query isEligibleForMasteryChallenge($courseId: String!) {
+  user {
+    id
+    exerciseData {
+      masteryChallengeStatus(courseId: $courseId) {
+        isEligible
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
