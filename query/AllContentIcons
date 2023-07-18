@@ -1,0 +1,26 @@
+query AllContentIcons {
+  allDomains {
+    id
+    iconUrl
+    relativeUrl
+    courseChildren {
+      id
+      iconUrl
+      relativeUrl
+      unitChildren {
+        id
+        iconUrl
+        relativeUrl
+        lessonChildren {
+          id
+          iconUrl
+          relativeUrl
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
