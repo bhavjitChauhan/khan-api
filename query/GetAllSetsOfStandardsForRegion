@@ -1,0 +1,34 @@
+query GetAllSetsOfStandardsForRegion($isDiscoverable: Boolean, $regionSlug: String!) {
+  standardRegions(isDiscoverable: $isDiscoverable, slug: $regionSlug) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    standardRegion {
+      id
+      imageUrl
+      __typename
+    }
+    __typename
+  }
+  allSetsOfStandards(domain: "math", regionSlug: $regionSlug) {
+    id
+    name
+    courseEntities {
+      id
+      relativeUrl
+      standaloneTitle
+      __typename
+    }
+    standards {
+      id
+      setId
+      standardId
+      description
+      children
+      __typename
+    }
+    __typename
+  }
+}

@@ -310,35 +310,6 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     __typename
   }
 }
-
-fragment ArticleRevision on ArticleRevision {
-  id
-  contentId
-  contentKind
-  creationDate
-  sha
-  authorKey
-  customDescriptionTag
-  customTitleTag
-  description
-  descriptionHtml: description
-  doNotPublish
-  sourceKaLocale
-  sourceLanguage: sourceKaLocale
-  slug
-  readableId: slug
-  title
-  sponsored
-  thumbnailData
-  thumbnailCache
-  alternateSlugs
-  assessmentItemTags
-  authorNames
-  clarificationsEnabled
-  perseusContent
-  listed
-  __typename
-}
 `,
   articleEditorRedirectQuery: `query articleEditorRedirectQuery($contentId: String!) {
   articleRevisionById(id: $contentId) {
@@ -1270,208 +1241,6 @@ fragment contentEditorLearnableContent on LearnableContentRevision {
     __typename
   }
 }
-
-fragment LearnableContentData on LearnableContent {
-  id
-  contentKind
-  slug
-  translatedTitle
-  ... on Article {
-    ...MappedStandards
-    articleClarificationsEnabled: clarificationsEnabled
-    translatedDescription
-    translatedPerseusContent
-    __typename
-  }
-  ... on Challenge {
-    authorList {
-      name
-      __typename
-    }
-    canvasOnly
-    code
-    configVersion
-    defaultUrlPath
-    height
-    nodeSlug
-    translatedDescription
-    translatedTests
-    testStrings {
-      message
-      __typename
-    }
-    userAuthoredContentType
-    width
-    __typename
-  }
-  ... on Exercise {
-    ...MappedStandards
-    __typename
-  }
-  ... on Interactive {
-    authorList {
-      name
-      __typename
-    }
-    canvasOnly
-    code
-    configVersion
-    defaultUrlPath
-    height
-    nodeSlug
-    translatedDescription
-    userAuthoredContentType
-    width
-    __typename
-  }
-  ... on Project {
-    authorList {
-      name
-      __typename
-    }
-    canvasOnly
-    code
-    configVersion
-    defaultUrlPath
-    height
-    nodeSlug
-    translatedDescription
-    translatedProjectEval
-    translatedProjectEvalTips
-    userAuthoredContentType
-    width
-    __typename
-  }
-  ... on Talkthrough {
-    authorList {
-      name
-      __typename
-    }
-    canvasOnly
-    code
-    configVersion
-    defaultUrlPath
-    height
-    nodeSlug
-    playback
-    subtitles {
-      endTime
-      kaIsValid
-      startTime
-      text
-      __typename
-    }
-    translatedDescription
-    translatedMp3Url
-    userAuthoredContentType
-    width
-    youtubeId
-    __typename
-  }
-  ... on TopicQuiz {
-    index
-    exerciseLength
-    timeEstimate {
-      lowerBound
-      upperBound
-      __typename
-    }
-    coveredTutorials {
-      id
-      translatedTitle
-      relativeUrl
-      allLearnableContent {
-        id
-        contentKind
-        __typename
-      }
-      __typename
-    }
-    __typename
-  }
-  ... on TopicUnitTest {
-    exerciseLength
-    timeEstimate {
-      lowerBound
-      upperBound
-      __typename
-    }
-    coveredTutorials {
-      id
-      translatedTitle
-      relativeUrl
-      allLearnableContent {
-        id
-        contentKind
-        __typename
-      }
-      __typename
-    }
-    __typename
-  }
-  ... on Video {
-    authorNames
-    videoAuthorList: authorList {
-      name
-      __typename
-    }
-    clarificationsEnabled
-    dateAdded
-    description
-    downloadUrls
-    duration
-    imageUrl
-    kaUrl
-    kaUserLicense
-    keywords
-    readableId
-    sha
-    thumbnailUrls {
-      category
-      url
-      __typename
-    }
-    translatedDescriptionHtml
-    translatedYoutubeId
-    translatedYoutubeLang
-    youtubeId
-    augmentedTranscript
-    relativeUrl
-    descriptionHtml
-    nodeSlug
-    translatedDescription
-    translatedCustomTitleTag
-    subtitles {
-      endTime
-      kaIsValid
-      startTime
-      text
-      __typename
-    }
-    keyMoments {
-      startOffset
-      endOffset
-      label
-      __typename
-    }
-    educationalLevel
-    learningResourceType
-    ...MappedStandards
-    __typename
-  }
-  __typename
-}
-
-fragment MappedStandards on LearnableContent {
-  mappedStandards {
-    setId
-    id
-    standardId
-    description
-    __typename
-  }
-  __typename
-}
 `,
   ContentForPath: `query ContentForPath($path: String!, $countryCode: String!, $kaLocale: KALocale!) {
   publishedContentVersion(kaLocale: $kaLocale) {
@@ -1665,7 +1434,6 @@ fragment LearnableContentData on LearnableContent {
   slug
   translatedTitle
   ... on Article {
-    ...MappedStandards
     articleClarificationsEnabled: clarificationsEnabled
     translatedDescription
     translatedPerseusContent
@@ -1690,10 +1458,6 @@ fragment LearnableContentData on LearnableContent {
     }
     userAuthoredContentType
     width
-    __typename
-  }
-  ... on Exercise {
-    ...MappedStandards
     __typename
   }
   ... on Interactive {
@@ -1844,7 +1608,6 @@ fragment LearnableContentData on LearnableContent {
     }
     educationalLevel
     learningResourceType
-    ...MappedStandards
     __typename
   }
   __typename
@@ -1900,17 +1663,6 @@ fragment LessonData on Lesson {
     __typename
   }
   mappedStandardIds
-  __typename
-}
-
-fragment MappedStandards on LearnableContent {
-  mappedStandards {
-    setId
-    id
-    standardId
-    description
-    __typename
-  }
   __typename
 }
 
@@ -3383,6 +3135,7 @@ fragment CourseProgress on SubjectProgress {
       course {
         id
         title
+        domainId: parentTopicId
         __typename
       }
       school {
@@ -3449,6 +3202,7 @@ fragment CourseProgress on SubjectProgress {
       course {
         id
         title
+        domainId: parentTopicId
         __typename
       }
       school {
@@ -4881,6 +4635,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
   getClassList: `query getClassList {
   coach: user {
     id
+    nickname
     studentLists: coachedStudentLists {
       name
       id
@@ -5496,7 +5251,7 @@ fragment Badge on Badge {
   }
 }
 `,
-  getCourseProgress: `query getCourseProgress($filters: DistrictCourseProgressFilters!) {
+  getCourseProgress: `query getCourseProgress($filters: DistrictCourseProgressFilters!, $getKmapTopics: Boolean!) {
   districtCourseProgressByCourse(filters: $filters) {
     dateInfo {
       from
@@ -5508,6 +5263,7 @@ fragment Badge on Badge {
       course {
         id
         title
+        isKmap
         __typename
       }
       info {
@@ -5527,6 +5283,13 @@ fragment Badge on Badge {
       }
       __typename
     }
+    __typename
+  }
+  kmapTopics @include(if: $getKmapTopics) {
+    id
+    title
+    bandKey
+    strandKey
     __typename
   }
 }
@@ -6991,6 +6754,9 @@ fragment userTaskFields on PracticeUserTask {
         ...ResponseFeedbackNotificationType
         ...GroupedBadgeNotificationType
         ...UnitMasteryGoalCreatedNotificationType
+        ...UnitMasteryDueDateCreatedNotificationType
+        ...CourseMasteryDueDateCreatedNotificationType
+        ...MasteryGoalDueDateApproachingCreatedNotificationType
       }
       pageInfo {
         nextCursor
@@ -7076,6 +6842,17 @@ fragment CoachRequestNotificationType on CoachRequestNotification {
   __typename
 }
 
+fragment CourseMasteryDueDateCreatedNotificationType on CourseMasteryDueDateCreatedNotification {
+  dueDate
+  course {
+    id
+    iconUrl
+    translatedStandaloneTitle
+    __typename
+  }
+  __typename
+}
+
 fragment CourseMasteryGoalCreatedNotificationType on CourseMasteryGoalCreatedNotification {
   curationNodeIconURL
   curationNodeTranslatedTitle
@@ -7103,6 +6880,15 @@ fragment GroupedBadgeNotificationType on GroupedBadgeNotification {
 
 fragment InfoNotificationType on InfoNotification {
   notificationType
+  __typename
+}
+
+fragment MasteryGoalDueDateApproachingCreatedNotificationType on MasteryGoalDueDateApproachingCreatedNotification {
+  classroomInfo: classroom {
+    id
+    cacheId
+    __typename
+  }
   __typename
 }
 
@@ -7139,6 +6925,17 @@ fragment ThreadCreatedNotificationType on ThreadCreatedNotification {
   }
   threadId
   flagged
+  __typename
+}
+
+fragment UnitMasteryDueDateCreatedNotificationType on UnitMasteryDueDateCreatedNotification {
+  dueDate
+  unit {
+    id
+    iconUrl
+    translatedStandaloneTitle
+    __typename
+  }
   __typename
 }
 
@@ -8633,6 +8430,10 @@ fragment Badge on Badge {
     bio
     canAccessDistrictsHomepage
     canModifyCoaches
+    children {
+      id
+      __typename
+    }
     cleverDistrictId
     cleverId
     cleverLastSync
@@ -8707,6 +8508,7 @@ fragment Badge on Badge {
     }
     profileRoot
     programCount
+    region
     signupDataIfUnverified {
       email
       __typename
@@ -10251,10 +10053,9 @@ fragment gtp_tpudFragment on TestPrepUserData {
     insights {
       interests
       topics
+      offTopic
       safety
-      confusing
-      understood
-      celebrate
+      languages
       __typename
     }
     interactions {
@@ -15284,39 +15085,6 @@ fragment SharedFeedbackFields on Feedback {
     __typename
   }
 }
-
-fragment VideoRevision on VideoRevision {
-  id
-  contentId
-  contentKind
-  creationDate
-  sha
-  authorKey
-  customDescriptionTag
-  customTitleTag
-  description
-  descriptionHtml: description
-  doNotPublish
-  sourceKaLocale
-  sourceLanguage: sourceKaLocale
-  slug
-  readableId: slug
-  title
-  sponsored
-  thumbnailCache
-  thumbnailData
-  alternateSlugs
-  assessmentItemTags
-  augmentedTranscript
-  authorNames
-  clarificationsEnabled
-  duration
-  kaUserLicense
-  keywords
-  youtubeId
-  listed
-  __typename
-}
 `,
   WhatNextPrompt: `query WhatNextPrompt($assignmentsPageSize: Int, $assignmentsOrderBy: AssignmentOrder!, $assignmentsDueAfter: DateTime!) {
   user {
@@ -16358,6 +16126,192 @@ fragment contentSearchLearnableContent on LearnableContent {
     id
     aiGuideUserInterests {
       interest
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  GetAllSetsOfStandardsForRegion: `query GetAllSetsOfStandardsForRegion($isDiscoverable: Boolean, $regionSlug: String!) {
+  standardRegions(isDiscoverable: $isDiscoverable, slug: $regionSlug) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    standardRegion {
+      id
+      imageUrl
+      __typename
+    }
+    __typename
+  }
+  allSetsOfStandards(domain: "math", regionSlug: $regionSlug) {
+    id
+    name
+    courseEntities {
+      id
+      relativeUrl
+      standaloneTitle
+      __typename
+    }
+    standards {
+      id
+      setId
+      standardId
+      description
+      children
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  GetSetOfStandards: `query GetSetOfStandards($setId: String!, $region: String) {
+  setOfStandards(setId: $setId, region: $region) {
+    id
+    name
+    standardRegionIds
+    standards {
+      id
+      standardId
+      description
+      children
+      mappedContent {
+        ... on LearnableContent {
+          id
+          contentKind
+          title
+          defaultUrlPath
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  GetStandardRegionsForUS: `query GetStandardRegionsForUS($isDiscoverable: Boolean) {
+  standardRegions(isDiscoverable: $isDiscoverable) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    standardRegion {
+      id
+      slug
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  courseProgress: `query courseProgress($ids: [String!]!) {
+  user {
+    id
+    courseProgressesV2(courseIds: $ids) {
+      topic {
+        domainSlug
+        iconPath
+        id
+        slug
+        title
+        relativeUrl
+        __typename
+      }
+      unitProgresses {
+        lastWorkedOn
+        topic {
+          id
+          iconPath
+          title
+          relativeUrl
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  courseProgressQuery: `query courseProgressQuery($topicId: String!) {
+  user {
+    id
+    courseProgress(topicId: $topicId) {
+      currentMasteryV2 {
+        pointsEarned
+        __typename
+      }
+      unitProgresses {
+        currentMasteryV2 {
+          pointsEarned
+          __typename
+        }
+        unitId
+        __typename
+      }
+      __typename
+    }
+    exerciseData {
+      masteryChallengeStatus(courseId: $topicId) {
+        totalQuestions
+        isEligible
+        currentAttempt {
+          id
+          canResume
+          timeLeftSeconds
+          expirationTime
+          expirationPeriodHours
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    latestCourseChallengeAttempt(courseId: $topicId) {
+      id
+      numAttempted
+      numCorrect
+      completedDate
+      canResume
+      isCompleted
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  districtHasKhanmigo: `query districtHasKhanmigo($districtId: ID!) {
+  districtById(districtId: $districtId) {
+    id
+    hasKhanmigo
+    __typename
+  }
+}
+`,
+  isEligibleForMasteryChallenge: `query isEligibleForMasteryChallenge($courseId: String!) {
+  user {
+    id
+    exerciseData {
+      masteryChallengeStatus(courseId: $courseId) {
+        isEligible
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  standardRegionsForRegionPickerQuery: `query standardRegionsForRegionPickerQuery {
+  standardRegions {
+    standardRegion {
+      id
       __typename
     }
     __typename

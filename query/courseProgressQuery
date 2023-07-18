@@ -1,0 +1,46 @@
+query courseProgressQuery($topicId: String!) {
+  user {
+    id
+    courseProgress(topicId: $topicId) {
+      currentMasteryV2 {
+        pointsEarned
+        __typename
+      }
+      unitProgresses {
+        currentMasteryV2 {
+          pointsEarned
+          __typename
+        }
+        unitId
+        __typename
+      }
+      __typename
+    }
+    exerciseData {
+      masteryChallengeStatus(courseId: $topicId) {
+        totalQuestions
+        isEligible
+        currentAttempt {
+          id
+          canResume
+          timeLeftSeconds
+          expirationTime
+          expirationPeriodHours
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    latestCourseChallengeAttempt(courseId: $topicId) {
+      id
+      numAttempted
+      numCorrect
+      completedDate
+      canResume
+      isCompleted
+      __typename
+    }
+    __typename
+  }
+}

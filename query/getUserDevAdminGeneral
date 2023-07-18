@@ -11,6 +11,10 @@ query getUserDevAdminGeneral($kaid: String!) {
     bio
     canAccessDistrictsHomepage
     canModifyCoaches
+    children {
+      id
+      __typename
+    }
     cleverDistrictId
     cleverId
     cleverLastSync
@@ -85,6 +89,7 @@ query getUserDevAdminGeneral($kaid: String!) {
     }
     profileRoot
     programCount
+    region
     signupDataIfUnverified {
       email
       __typename

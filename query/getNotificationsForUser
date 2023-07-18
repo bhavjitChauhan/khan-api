@@ -25,6 +25,9 @@ query getNotificationsForUser($after: ID) {
         ...ResponseFeedbackNotificationType
         ...GroupedBadgeNotificationType
         ...UnitMasteryGoalCreatedNotificationType
+        ...UnitMasteryDueDateCreatedNotificationType
+        ...CourseMasteryDueDateCreatedNotificationType
+        ...MasteryGoalDueDateApproachingCreatedNotificationType
       }
       pageInfo {
         nextCursor
@@ -110,6 +113,17 @@ fragment CoachRequestNotificationType on CoachRequestNotification {
   __typename
 }
 
+fragment CourseMasteryDueDateCreatedNotificationType on CourseMasteryDueDateCreatedNotification {
+  dueDate
+  course {
+    id
+    iconUrl
+    translatedStandaloneTitle
+    __typename
+  }
+  __typename
+}
+
 fragment CourseMasteryGoalCreatedNotificationType on CourseMasteryGoalCreatedNotification {
   curationNodeIconURL
   curationNodeTranslatedTitle
@@ -137,6 +151,15 @@ fragment GroupedBadgeNotificationType on GroupedBadgeNotification {
 
 fragment InfoNotificationType on InfoNotification {
   notificationType
+  __typename
+}
+
+fragment MasteryGoalDueDateApproachingCreatedNotificationType on MasteryGoalDueDateApproachingCreatedNotification {
+  classroomInfo: classroom {
+    id
+    cacheId
+    __typename
+  }
   __typename
 }
 
@@ -173,6 +196,17 @@ fragment ThreadCreatedNotificationType on ThreadCreatedNotification {
   }
   threadId
   flagged
+  __typename
+}
+
+fragment UnitMasteryDueDateCreatedNotificationType on UnitMasteryDueDateCreatedNotification {
+  dueDate
+  unit {
+    id
+    iconUrl
+    translatedStandaloneTitle
+    __typename
+  }
   __typename
 }
 

@@ -4,6 +4,7 @@ query districtHomepageProgress($districtID: String!, $schoolIDs: [ID!], $mapOnly
       course {
         id
         title
+        domainId: parentTopicId
         __typename
       }
       school {

@@ -1,0 +1,29 @@
+query courseProgress($ids: [String!]!) {
+  user {
+    id
+    courseProgressesV2(courseIds: $ids) {
+      topic {
+        domainSlug
+        iconPath
+        id
+        slug
+        title
+        relativeUrl
+        __typename
+      }
+      unitProgresses {
+        lastWorkedOn
+        topic {
+          id
+          iconPath
+          title
+          relativeUrl
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

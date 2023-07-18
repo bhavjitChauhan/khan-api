@@ -7,10 +7,9 @@ query guideTranscript($transcriptId: String!) {
     insights {
       interests
       topics
+      offTopic
       safety
-      confusing
-      understood
-      celebrate
+      languages
       __typename
     }
     interactions {

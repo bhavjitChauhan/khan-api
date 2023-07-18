@@ -1,0 +1,15 @@
+query GetStandardRegionsForUS($isDiscoverable: Boolean) {
+  standardRegions(isDiscoverable: $isDiscoverable) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    standardRegion {
+      id
+      slug
+      __typename
+    }
+    __typename
+  }
+}

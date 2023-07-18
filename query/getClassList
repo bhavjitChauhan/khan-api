@@ -1,6 +1,7 @@
 query getClassList {
   coach: user {
     id
+    nickname
     studentLists: coachedStudentLists {
       name
       id
