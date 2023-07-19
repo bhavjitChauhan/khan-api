@@ -281,6 +281,36 @@ export default {
     __typename
   }
 }
+
+fragment AssignmentInfoFragment on Assignment {
+  id
+  contents {
+    id
+    title
+    __typename
+  }
+  studentList {
+    id
+    cacheId
+    name
+    __typename
+  }
+  students {
+    id
+    kaid
+    __typename
+  }
+  coach {
+    id
+    kaid
+    __typename
+  }
+  startDate
+  dueDate
+  isDraft
+  subjectSlug
+  __typename
+}
 `,
   archiveSubjectMasteryAssignment: `mutation archiveSubjectMasteryAssignment($assignmentId: ID!) {
   archiveSubjectMasteryAssignments(ids: [$assignmentId]) {
@@ -6887,8 +6917,8 @@ fragment CourseRevisionStructure on CourseRevision {
   }
 }
 `,
-  modifyDistrict: `mutation modifyDistrict($existingDistrictID: ID!, $newName: String, $offerings: [Offering!], $rosterSyncingEnabled: Boolean, $rosterID: String, $rosterSource: RosterSource, $nweaID: String, $ncesID: String, $isTest: Boolean, $sendTeacherActivationEmails: Boolean, $goLiveDate: Date, $kaLocale: String, $schoolYearDates: DistrictSchoolYearInput, $region: String, $khanmigoPreference: KhanmigoEnrollment, $khanmigoTotal: Int, $allOnGrades: [DistrictGradeLevel!], $allOffGrades: [DistrictGradeLevel!], $subsetGrades: [DistrictGradeLevel!], $khanmigoIncludeUserEmails: [String!], $khanmigoExcludeUserEmails: [String!], $khanmigoIncludeStudents: Boolean) {
-  modifyDistrict(existingDistrictID: $existingDistrictID, newName: $newName, offerings: $offerings, rosterSyncingEnabled: $rosterSyncingEnabled, rosterID: $rosterID, rosterSource: $rosterSource, nweaID: $nweaID, ncesID: $ncesID, isTest: $isTest, sendTeacherActivationEmails: $sendTeacherActivationEmails, goLiveDate: $goLiveDate, kaLocale: $kaLocale, schoolYearDates: $schoolYearDates, region: $region, khanmigoPreference: $khanmigoPreference, khanmigoTotal: $khanmigoTotal, allOnGrades: $allOnGrades, allOffGrades: $allOffGrades, subsetGrades: $subsetGrades, khanmigoIncludeUserEmails: $khanmigoIncludeUserEmails, khanmigoExcludeUserEmails: $khanmigoExcludeUserEmails, khanmigoIncludeStudents: $khanmigoIncludeStudents) {
+  modifyDistrict: `mutation modifyDistrict($existingDistrictID: ID!, $newName: String, $offerings: [Offering!], $rosterSyncingEnabled: Boolean, $rosterID: String, $rosterSource: RosterSource, $nweaID: String, $ncesID: String, $isTest: Boolean, $sendTeacherActivationEmails: Boolean, $goLiveDate: Date, $kaLocale: String, $schoolYearDates: DistrictSchoolYearInput, $region: String, $khanmigoPreference: KhanmigoEnrollment, $khanmigoTotal: Int, $allOnGrades: [DistrictGradeLevel!], $allOffGrades: [DistrictGradeLevel!], $subsetGrades: [DistrictGradeLevel!], $schoolKhanmigoPreferences: [DistrictKhanmigoSchool!], $khanmigoIncludeUserEmails: [String!], $khanmigoExcludeUserEmails: [String!], $khanmigoIncludeStudents: Boolean) {
+  modifyDistrict(existingDistrictID: $existingDistrictID, newName: $newName, offerings: $offerings, rosterSyncingEnabled: $rosterSyncingEnabled, rosterID: $rosterID, rosterSource: $rosterSource, nweaID: $nweaID, ncesID: $ncesID, isTest: $isTest, sendTeacherActivationEmails: $sendTeacherActivationEmails, goLiveDate: $goLiveDate, kaLocale: $kaLocale, schoolYearDates: $schoolYearDates, region: $region, khanmigoPreference: $khanmigoPreference, khanmigoTotal: $khanmigoTotal, allOnGrades: $allOnGrades, allOffGrades: $allOffGrades, subsetGrades: $subsetGrades, schoolKhanmigoPreferences: $schoolKhanmigoPreferences, khanmigoIncludeUserEmails: $khanmigoIncludeUserEmails, khanmigoExcludeUserEmails: $khanmigoExcludeUserEmails, khanmigoIncludeStudents: $khanmigoIncludeStudents) {
     district {
       id
       rosterID
@@ -7111,6 +7141,36 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
+}
+
+fragment AssignmentInfoFragment on Assignment {
+  id
+  contents {
+    id
+    title
+    __typename
+  }
+  studentList {
+    id
+    cacheId
+    name
+    __typename
+  }
+  students {
+    id
+    kaid
+    __typename
+  }
+  coach {
+    id
+    kaid
+    __typename
+  }
+  startDate
+  dueDate
+  isDraft
+  subjectSlug
+  __typename
 }
 `,
   publishStandardMappings: `mutation publishStandardMappings($set: String!, $content: String!) {
