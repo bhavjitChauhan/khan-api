@@ -1,6 +1,7 @@
 query GetSetOfStandards($setId: String!, $region: String) {
   setOfStandards(setId: $setId, region: $region) {
     id
+    isDiscoverable
     name
     standardRegionIds
     standards {

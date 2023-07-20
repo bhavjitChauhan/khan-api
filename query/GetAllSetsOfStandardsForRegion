@@ -8,6 +8,7 @@ query GetAllSetsOfStandardsForRegion($isDiscoverable: Boolean, $regionSlug: Stri
     standardRegion {
       id
       imageUrl
+      isDiscoverable
       __typename
     }
     __typename
