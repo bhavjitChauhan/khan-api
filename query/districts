@@ -59,6 +59,7 @@ query districts($filter: String!) {
     }
     schoolYearStart
     schoolYearEnd
+    hasKhanmigo
     khanmigoPreference
     khanmigoIncludeStudents
     khanmigoTotal

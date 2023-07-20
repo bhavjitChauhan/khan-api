@@ -3,6 +3,7 @@ query DistrictQuery($districtName: String!) {
     id
     name
     isTest
+    hasKhanmigo
     isKmapDistrict
     isK4dDistrict
     activeGrades {
