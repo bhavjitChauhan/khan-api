@@ -16058,11 +16058,18 @@ fragment contentSearchLearnableContent on LearnableContent {
     id
     courseProgress(topicId: $topicId) {
       currentMasteryV2 {
+        percentage
         pointsEarned
+        __typename
+      }
+      masteryMap {
+        progressKey
+        status
         __typename
       }
       unitProgresses {
         currentMasteryV2 {
+          percentage
           pointsEarned
           __typename
         }
