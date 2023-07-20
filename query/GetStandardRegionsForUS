@@ -7,6 +7,7 @@ query GetStandardRegionsForUS($isDiscoverable: Boolean) {
     }
     standardRegion {
       id
+      isDiscoverable
       slug
       __typename
     }
