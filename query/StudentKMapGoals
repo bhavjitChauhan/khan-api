@@ -31,6 +31,10 @@ query StudentKMapGoals($kaid: String, $isPast: Boolean!, $classDescriptor: Strin
           strandKey
           band
           strand
+          mapGrowthTest {
+            key
+            __typename
+          }
           __typename
         }
         id
