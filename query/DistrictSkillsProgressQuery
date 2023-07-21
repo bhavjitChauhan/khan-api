@@ -1,4 +1,4 @@
-query DistrictSkillsProgressQuery($districtID: String!, $filters: DistrictSkillsProgressFilters!, $courseID: String!) {
+query DistrictSkillsProgressQuery($districtID: String!, $filters: DistrictSkillsProgressFilters!, $courseID: String!, $region: String!) {
   districtSkillsProgress(districtID: $districtID, filters: $filters) {
     totalStudents
     numSkillsWorkedOn
@@ -6,7 +6,7 @@ query DistrictSkillsProgressQuery($districtID: String!, $filters: DistrictSkills
       exercise {
         id
         title
-        mappedStandards {
+        mappedStandards(region: $region) {
           id
           setId
           standardId
