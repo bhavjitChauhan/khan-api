@@ -17,6 +17,7 @@ query ClassroomByDescriptorQuery($descriptor: String!) {
     classroomDistrictInfo {
       id
       isNweaMapSynced
+      courseSISName
       __typename
     }
     testPrepExams {
