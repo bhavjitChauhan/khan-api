@@ -1661,7 +1661,6 @@ fragment InvitationsField on Invitation {
     }
     __typename
   }
-  mappedStandardIds
   __typename
 }
 `,
@@ -1924,7 +1923,6 @@ fragment InvitationsField on Invitation {
   UnitData: `fragment UnitData on Unit {
   id
   iconPath
-  mappedStandardIds
   masteryEnabled
   relativeUrl
   slug
