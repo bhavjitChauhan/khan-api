@@ -1,0 +1,8 @@
+query classroomCreatedOnQuery($classCode: String!) {
+  classroom(classCode: $classCode) {
+    cacheId
+    createdOn
+    id
+    __typename
+  }
+}
