@@ -24,6 +24,5 @@ fragment LessonData on Lesson {
     }
     __typename
   }
-  mappedStandardIds
   __typename
 }

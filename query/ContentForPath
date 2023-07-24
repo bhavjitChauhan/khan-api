@@ -418,7 +418,6 @@ fragment LessonData on Lesson {
     }
     __typename
   }
-  mappedStandardIds
   __typename
 }
 
@@ -437,7 +436,6 @@ fragment QuizMetadata on TopicQuiz {
 fragment UnitData on Unit {
   id
   iconPath
-  mappedStandardIds
   masteryEnabled
   relativeUrl
   slug

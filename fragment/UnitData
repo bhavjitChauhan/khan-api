@@ -1,7 +1,6 @@
 fragment UnitData on Unit {
   id
   iconPath
-  mappedStandardIds
   masteryEnabled
   relativeUrl
   slug
