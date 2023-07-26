@@ -31,6 +31,21 @@ query contentTabTwoLevelQuery($courseId: String!) {
       }
       __typename
     }
+    courseChallenge {
+      id
+      contentId
+      defaultUrlPath
+      description
+      kind
+      mappedStandardIds
+      title: translatedTitle
+      __typename
+    }
+    domain: parent {
+      id
+      contentKind
+      __typename
+    }
     __typename
   }
 }
