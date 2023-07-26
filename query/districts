@@ -65,6 +65,8 @@ query districts($filter: String!) {
     khanmigoTotal
     khanmigoTokenCapacity
     khanmigoTokenUsage
+    khanmigoStart
+    khanmigoEnd
     khanmigoIncludedUsers {
       id
       districtProvidedEmail
