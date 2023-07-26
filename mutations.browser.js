@@ -281,36 +281,6 @@ mutations = {
     __typename
   }
 }
-
-fragment AssignmentInfoFragment on Assignment {
-  id
-  contents {
-    id
-    title
-    __typename
-  }
-  studentList {
-    id
-    cacheId
-    name
-    __typename
-  }
-  students {
-    id
-    kaid
-    __typename
-  }
-  coach {
-    id
-    kaid
-    __typename
-  }
-  startDate
-  dueDate
-  isDraft
-  subjectSlug
-  __typename
-}
 `,
   archiveSubjectMasteryAssignment: `mutation archiveSubjectMasteryAssignment($assignmentId: ID!) {
   archiveSubjectMasteryAssignments(ids: [$assignmentId]) {
@@ -7470,8 +7440,8 @@ fragment CourseRevisionStructure on CourseRevision {
   }
 }
 `,
-  modifyDistrict: `mutation modifyDistrict($existingDistrictID: ID!, $newName: String, $offerings: [Offering!], $rosterSyncingEnabled: Boolean, $rosterID: String, $rosterSource: RosterSource, $nweaID: String, $ncesID: String, $isTest: Boolean, $sendTeacherActivationEmails: Boolean, $goLiveDate: Date, $kaLocale: String, $schoolYearDates: DistrictSchoolYearInput, $region: String, $khanmigoPreference: KhanmigoEnrollment, $khanmigoTotal: Int, $allOnGrades: [DistrictGradeLevel!], $allOffGrades: [DistrictGradeLevel!], $subsetGrades: [DistrictGradeLevel!], $schoolKhanmigoPreferences: [DistrictKhanmigoSchool!], $khanmigoIncludeUserEmails: [String!], $khanmigoExcludeUserEmails: [String!], $khanmigoIncludeStudents: Boolean) {
-  modifyDistrict(existingDistrictID: $existingDistrictID, newName: $newName, offerings: $offerings, rosterSyncingEnabled: $rosterSyncingEnabled, rosterID: $rosterID, rosterSource: $rosterSource, nweaID: $nweaID, ncesID: $ncesID, isTest: $isTest, sendTeacherActivationEmails: $sendTeacherActivationEmails, goLiveDate: $goLiveDate, kaLocale: $kaLocale, schoolYearDates: $schoolYearDates, region: $region, khanmigoPreference: $khanmigoPreference, khanmigoTotal: $khanmigoTotal, allOnGrades: $allOnGrades, allOffGrades: $allOffGrades, subsetGrades: $subsetGrades, schoolKhanmigoPreferences: $schoolKhanmigoPreferences, khanmigoIncludeUserEmails: $khanmigoIncludeUserEmails, khanmigoExcludeUserEmails: $khanmigoExcludeUserEmails, khanmigoIncludeStudents: $khanmigoIncludeStudents) {
+  modifyDistrict: `mutation modifyDistrict($existingDistrictID: ID!, $newName: String, $offerings: [Offering!], $rosterSyncingEnabled: Boolean, $rosterID: String, $rosterSource: RosterSource, $nweaID: String, $ncesID: String, $isTest: Boolean, $sendTeacherActivationEmails: Boolean, $goLiveDate: Date, $kaLocale: String, $schoolYearDates: DistrictSchoolYearInput, $region: String, $allOnGrades: [DistrictGradeLevel!], $allOffGrades: [DistrictGradeLevel!], $subsetGrades: [DistrictGradeLevel!], $schoolKhanmigoPreferences: [DistrictKhanmigoSchool!], $khanmigoPreference: KhanmigoEnrollment, $khanmigoTotal: Int, $khanmigoStartDate: Date, $khanmigoEndDate: Date, $khanmigoTokenCapacity: Int, $khanmigoIncludeUserEmails: [String!], $khanmigoExcludeUserEmails: [String!], $khanmigoIncludeStudents: Boolean) {
+  modifyDistrict(existingDistrictID: $existingDistrictID, newName: $newName, offerings: $offerings, rosterSyncingEnabled: $rosterSyncingEnabled, rosterID: $rosterID, rosterSource: $rosterSource, nweaID: $nweaID, ncesID: $ncesID, isTest: $isTest, sendTeacherActivationEmails: $sendTeacherActivationEmails, goLiveDate: $goLiveDate, kaLocale: $kaLocale, schoolYearDates: $schoolYearDates, region: $region, allOnGrades: $allOnGrades, allOffGrades: $allOffGrades, subsetGrades: $subsetGrades, schoolKhanmigoPreferences: $schoolKhanmigoPreferences, khanmigoPreference: $khanmigoPreference, khanmigoTotal: $khanmigoTotal, khanmigoStartDate: $khanmigoStartDate, khanmigoEndDate: $khanmigoEndDate, khanmigoTokenCapacity: $khanmigoTokenCapacity, khanmigoIncludeUserEmails: $khanmigoIncludeUserEmails, khanmigoExcludeUserEmails: $khanmigoExcludeUserEmails, khanmigoIncludeStudents: $khanmigoIncludeStudents) {
     district {
       id
       rosterID
@@ -7505,6 +7475,8 @@ fragment CourseRevisionStructure on CourseRevision {
       khanmigoPreference
       khanmigoIncludeStudents
       khanmigoTotal
+      khanmigoStart
+      khanmigoEnd
       khanmigoIncludedUsers {
         id
         districtProvidedEmail
@@ -7694,36 +7666,6 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-
-fragment AssignmentInfoFragment on Assignment {
-  id
-  contents {
-    id
-    title
-    __typename
-  }
-  studentList {
-    id
-    cacheId
-    name
-    __typename
-  }
-  students {
-    id
-    kaid
-    __typename
-  }
-  coach {
-    id
-    kaid
-    __typename
-  }
-  startDate
-  dueDate
-  isDraft
-  subjectSlug
-  __typename
 }
 `,
   publishStandardMappings: `mutation publishStandardMappings($set: String!, $content: String!) {
@@ -10519,6 +10461,16 @@ fragment entry on TeamPageEntryForEditing {
 `,
   CloseThread: `mutation CloseThread($input: String!) {
   closeThread(threadId: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  districtDryRunMutation: `mutation districtDryRunMutation($districtID: String!, $dryRun: Boolean!) {
+  provisionKhanmigoDistrict(districtID: $districtID, dryRun: $dryRun) {
     error {
       code
       __typename

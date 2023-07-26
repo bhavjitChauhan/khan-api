@@ -1,0 +1,17 @@
+query districtLastNKhanmigoJobs($districtId: ID!, $includedDryRun: Boolean!, $numJobs: Int!) {
+  districtById(districtId: $districtId) {
+    id
+    lastNKhanmigoJobs(includeDryRun: $includedDryRun, numJobs: $numJobs) {
+      createdAt
+      dryRunStatus
+      khanmigoAddedExcludedUsers
+      khanmigoAddedExplicitlyIncludedUsers
+      khanmigoAddedImlicitlyIncludedUsers
+      khanmigoAddedSchools
+      khanmigoAddedStudents
+      khanmigoAddedTeachers
+      __typename
+    }
+    __typename
+  }
+}
