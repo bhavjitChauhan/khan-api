@@ -3,13 +3,18 @@ query districtLastNKhanmigoJobs($districtId: ID!, $includedDryRun: Boolean!, $nu
     id
     lastNKhanmigoJobs(includeDryRun: $includedDryRun, numJobs: $numJobs) {
       createdAt
+      rosterSource
+      timeSpentSeconds
       dryRunStatus
-      khanmigoAddedExcludedUsers
-      khanmigoAddedExplicitlyIncludedUsers
-      khanmigoAddedImlicitlyIncludedUsers
-      khanmigoAddedSchools
-      khanmigoAddedStudents
-      khanmigoAddedTeachers
+      numStudents
+      numNewStudents
+      numRemovedStudents
+      numTeachers
+      numNewTeachers
+      numRemovedTeachers
+      khanmigoTotal
+      khanmigoAddedTotal
+      khanmigoRemovedTotal
       __typename
     }
     __typename
