@@ -13304,6 +13304,10 @@ fragment TranslatedContentFields on LearnableContent {
     bandGradeName
     bandKey
     strandKey
+    mapGrowthTest {
+      key
+      __typename
+    }
     learnableContentPage(pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}) {
       contents {
         exerciseID: id
