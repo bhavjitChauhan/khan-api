@@ -1,0 +1,9 @@
+mutation districtKhanmigoProvisioningMutation($districtID: String!, $dryRun: Boolean!) {
+  provisionKhanmigoDistrict(districtID: $districtID, dryRun: $dryRun) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
