@@ -47,6 +47,7 @@ mutation getOrCreateExerciseTask($input: GetOrCreateExerciseTaskInput!) {
             __typename
           }
           ... on SubjectChallengeTask {
+            contentKey
             promotionCriteria {
               name
               value
