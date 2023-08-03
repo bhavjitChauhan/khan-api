@@ -4,7 +4,6 @@ query GetSetOfStandards($setId: String!, $region: String) {
     isDiscoverable
     name
     standardRegionIds
-    courses
     standards {
       id
       standardId
@@ -16,14 +15,6 @@ query GetSetOfStandards($setId: String!, $region: String) {
           contentKind
           title
           defaultUrlPath
-          topicPaths {
-            path {
-              id
-              slug
-              __typename
-            }
-            __typename
-          }
           __typename
         }
         __typename
