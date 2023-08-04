@@ -1,22 +1,22 @@
-query contentTabThreeLevelQuery($courseId: String!) {
+query contentTabThreeLevelQuery($courseId: String!, $region: String!, $locale: String!) {
   courseById(id: $courseId) {
     id
     children: curatedChildren {
-      ...CourseFields
-      ...LessonAndChildrenFields
+      ...CourseFieldsThreeLevels
+      ...LessonAndChildrenFieldsThreeLevels
       ... on Unit {
         id
         description
         iconPath
         key
         kind
-        mappedStandardIds
+        mappedStandardIds(locale: $locale, region: $region)
         title: translatedTitle
         children: allOrderedChildren {
           __typename
-          ...LearnableContentFields
+          ...LearnableContentFieldsThreeLevels
           ...QuizAndTestFields
-          ...LessonAndChildrenFields
+          ...LessonAndChildrenFieldsThreeLevels
         }
         __typename
       }
@@ -28,7 +28,7 @@ query contentTabThreeLevelQuery($courseId: String!) {
       defaultUrlPath
       description
       kind
-      mappedStandardIds
+      mappedStandardIds(locale: $locale, region: $region)
       title: translatedTitle
       __typename
     }
@@ -41,43 +41,43 @@ query contentTabThreeLevelQuery($courseId: String!) {
   }
 }
 
-fragment CourseFields on Course {
+fragment CourseFieldsThreeLevels on Course {
   ... on Course {
     id
     description
     iconPath
     key
     kind
-    mappedStandardIds
+    mappedStandardIds(locale: $locale, region: $region)
     title: translatedTitle
     __typename
   }
   __typename
 }
 
-fragment LearnableContentFields on LearnableContent {
+fragment LearnableContentFieldsThreeLevels on LearnableContent {
   contentId
   description
   kind
-  mappedStandardIds
+  mappedStandardIds(locale: $locale, region: $region)
   nodeUrl: urlWithinTopic
   slug
   title: translatedTitle
   __typename
 }
 
-fragment LessonAndChildrenFields on Lesson {
+fragment LessonAndChildrenFieldsThreeLevels on Lesson {
   ... on Lesson {
     id
     description
     iconPath
     key
     kind
-    mappedStandardIds
+    mappedStandardIds(locale: $locale, region: $region)
     title: translatedTitle
     children {
       __typename
-      ...LearnableContentFields
+      ...LearnableContentFieldsThreeLevels
       ... on Video {
         duration
         imageUrl

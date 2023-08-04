@@ -1,4 +1,4 @@
-query contentTabTwoLevelQuery($courseId: String!) {
+query contentTabTwoLevelQuery($courseId: String!, $region: String!, $locale: String!) {
   courseById(id: $courseId) {
     id
     children: curatedChildren {
@@ -10,7 +10,7 @@ query contentTabTwoLevelQuery($courseId: String!) {
         iconPath
         key
         kind
-        mappedStandardIds
+        mappedStandardIds(locale: $locale, region: $region)
         title: translatedTitle
         children: allOrderedChildren {
           __typename
@@ -22,7 +22,7 @@ query contentTabTwoLevelQuery($courseId: String!) {
             iconPath
             key
             kind
-            mappedStandardIds
+            mappedStandardIds(locale: $locale, region: $region)
             title: translatedTitle
             __typename
           }
@@ -37,7 +37,7 @@ query contentTabTwoLevelQuery($courseId: String!) {
       defaultUrlPath
       description
       kind
-      mappedStandardIds
+      mappedStandardIds(locale: $locale, region: $region)
       title: translatedTitle
       __typename
     }
@@ -57,7 +57,7 @@ fragment CourseFields on Course {
     iconPath
     key
     kind
-    mappedStandardIds
+    mappedStandardIds(locale: $locale, region: $region)
     title: translatedTitle
     __typename
   }
@@ -68,7 +68,7 @@ fragment LearnableContentFields on LearnableContent {
   contentId
   description
   kind
-  mappedStandardIds
+  mappedStandardIds(locale: $locale, region: $region)
   nodeUrl: urlWithinTopic
   slug
   title: translatedTitle
@@ -82,7 +82,7 @@ fragment LessonAndChildrenFields on Lesson {
     iconPath
     key
     kind
-    mappedStandardIds
+    mappedStandardIds(locale: $locale, region: $region)
     title: translatedTitle
     children {
       __typename
