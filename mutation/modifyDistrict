@@ -70,6 +70,8 @@ mutation modifyDistrict($existingDistrictID: ID!, $newName: String, $offerings: 
       }
       __typename
     }
+    khanmigoIncludeUserMissingEmails
+    khanmigoExcludeUserMissingEmails
     error {
       code
       __typename
