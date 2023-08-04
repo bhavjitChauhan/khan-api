@@ -9542,6 +9542,20 @@ fragment gtp_egudFragment on ExamGroupUserData {
     __typename
   }
 }
+
+fragment gtp_essayScoresFragment on EssayScores {
+  areas {
+    translatedTitle
+    essays {
+      examCompletionDate
+      score
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
 `,
   gtp_getExamGroupMetadata: `query gtp_getExamGroupMetadata($examGroupId: String!) {
   examGroup(examGroupId: $examGroupId) {
@@ -15837,6 +15851,12 @@ fragment contentSearchLearnableContent on LearnableContent {
     id
     standardId
     description
+    relativeUrl
+    setOfStandards {
+      id
+      isDiscoverable
+      __typename
+    }
     __typename
   }
 }
@@ -16464,6 +16484,7 @@ fragment contentSearchLearnableContent on LearnableContent {
       standardId
       description
       children
+      relativeUrl
       mappedContent {
         ... on LearnableContent {
           id
