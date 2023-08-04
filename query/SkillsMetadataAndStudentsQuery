@@ -1,4 +1,4 @@
-query SkillsMetadataAndStudentsQuery($selectedMasteryCourseIds: [String]!, $classDescriptor: String!) {
+query SkillsMetadataAndStudentsQuery($selectedMasteryCourseIds: [String]!, $classDescriptor: String!, $region: String!, $locale: String!) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
     descriptor
@@ -22,7 +22,7 @@ query SkillsMetadataAndStudentsQuery($selectedMasteryCourseIds: [String]!, $clas
         translatedTitle
         translatedDescription
         defaultUrlPath
-        mappedStandards {
+        mappedStandards(region: $region, locale: $locale) {
           id
           standardId
           __typename

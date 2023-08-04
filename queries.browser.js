@@ -314,6 +314,35 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     __typename
   }
 }
+
+fragment ArticleRevision on ArticleRevision {
+  id
+  contentId
+  contentKind
+  creationDate
+  sha
+  authorKey
+  customDescriptionTag
+  customTitleTag
+  description
+  descriptionHtml: description
+  doNotPublish
+  sourceKaLocale
+  sourceLanguage: sourceKaLocale
+  slug
+  readableId: slug
+  title
+  sponsored
+  thumbnailData
+  thumbnailCache
+  alternateSlugs
+  assessmentItemTags
+  authorNames
+  clarificationsEnabled
+  perseusContent
+  listed
+  __typename
+}
 `,
   articleEditorRedirectQuery: `query articleEditorRedirectQuery($contentId: String!) {
   articleRevisionById(id: $contentId) {
@@ -1901,25 +1930,25 @@ fragment UnitTestMetadata on TopicUnitTest {
   }
 }
 `,
-  contentTabThreeLevelQuery: `query contentTabThreeLevelQuery($courseId: String!) {
+  contentTabThreeLevelQuery: `query contentTabThreeLevelQuery($courseId: String!, $region: String!, $locale: String!) {
   courseById(id: $courseId) {
     id
     children: curatedChildren {
-      ...CourseFields
-      ...LessonAndChildrenFields
+      ...CourseFieldsThreeLevels
+      ...LessonAndChildrenFieldsThreeLevels
       ... on Unit {
         id
         description
         iconPath
         key
         kind
-        mappedStandardIds
+        mappedStandardIds(locale: $locale, region: $region)
         title: translatedTitle
         children: allOrderedChildren {
           __typename
-          ...LearnableContentFields
+          ...LearnableContentFieldsThreeLevels
           ...QuizAndTestFields
-          ...LessonAndChildrenFields
+          ...LessonAndChildrenFieldsThreeLevels
         }
         __typename
       }
@@ -1931,7 +1960,7 @@ fragment UnitTestMetadata on TopicUnitTest {
       defaultUrlPath
       description
       kind
-      mappedStandardIds
+      mappedStandardIds(locale: $locale, region: $region)
       title: translatedTitle
       __typename
     }
@@ -1944,43 +1973,43 @@ fragment UnitTestMetadata on TopicUnitTest {
   }
 }
 
-fragment CourseFields on Course {
+fragment CourseFieldsThreeLevels on Course {
   ... on Course {
     id
     description
     iconPath
     key
     kind
-    mappedStandardIds
+    mappedStandardIds(locale: $locale, region: $region)
     title: translatedTitle
     __typename
   }
   __typename
 }
 
-fragment LearnableContentFields on LearnableContent {
+fragment LearnableContentFieldsThreeLevels on LearnableContent {
   contentId
   description
   kind
-  mappedStandardIds
+  mappedStandardIds(locale: $locale, region: $region)
   nodeUrl: urlWithinTopic
   slug
   title: translatedTitle
   __typename
 }
 
-fragment LessonAndChildrenFields on Lesson {
+fragment LessonAndChildrenFieldsThreeLevels on Lesson {
   ... on Lesson {
     id
     description
     iconPath
     key
     kind
-    mappedStandardIds
+    mappedStandardIds(locale: $locale, region: $region)
     title: translatedTitle
     children {
       __typename
-      ...LearnableContentFields
+      ...LearnableContentFieldsThreeLevels
       ... on Video {
         duration
         imageUrl
@@ -2018,7 +2047,7 @@ fragment QuizAndTestFields on LearnableContent {
   __typename
 }
 `,
-  contentTabTwoLevelQuery: `query contentTabTwoLevelQuery($courseId: String!) {
+  contentTabTwoLevelQuery: `query contentTabTwoLevelQuery($courseId: String!, $region: String!, $locale: String!) {
   courseById(id: $courseId) {
     id
     children: curatedChildren {
@@ -2030,7 +2059,7 @@ fragment QuizAndTestFields on LearnableContent {
         iconPath
         key
         kind
-        mappedStandardIds
+        mappedStandardIds(locale: $locale, region: $region)
         title: translatedTitle
         children: allOrderedChildren {
           __typename
@@ -2042,7 +2071,7 @@ fragment QuizAndTestFields on LearnableContent {
             iconPath
             key
             kind
-            mappedStandardIds
+            mappedStandardIds(locale: $locale, region: $region)
             title: translatedTitle
             __typename
           }
@@ -2057,7 +2086,7 @@ fragment QuizAndTestFields on LearnableContent {
       defaultUrlPath
       description
       kind
-      mappedStandardIds
+      mappedStandardIds(locale: $locale, region: $region)
       title: translatedTitle
       __typename
     }
@@ -2077,7 +2106,7 @@ fragment CourseFields on Course {
     iconPath
     key
     kind
-    mappedStandardIds
+    mappedStandardIds(locale: $locale, region: $region)
     title: translatedTitle
     __typename
   }
@@ -2088,7 +2117,7 @@ fragment LearnableContentFields on LearnableContent {
   contentId
   description
   kind
-  mappedStandardIds
+  mappedStandardIds(locale: $locale, region: $region)
   nodeUrl: urlWithinTopic
   slug
   title: translatedTitle
@@ -2102,7 +2131,7 @@ fragment LessonAndChildrenFields on Lesson {
     iconPath
     key
     kind
-    mappedStandardIds
+    mappedStandardIds(locale: $locale, region: $region)
     title: translatedTitle
     children {
       __typename
@@ -5410,8 +5439,8 @@ fragment Badge on Badge {
   }
 }
 `,
-  getContentForStandard: `query getContentForStandard($set: String!, $standard: String) {
-  contentForStandardMappings(setId: $set, standardId: $standard)
+  getContentForStandard: `query getContentForStandard($set: String!, $region: String, $standard: String) {
+  contentForStandardMappings(setId: $set, region: $region, standardId: $standard)
 }
 `,
   getContentItemProgressesForSatSkill: `query getContentItemProgressesForSatSkill($contentDescriptors: [String!]) {
@@ -9542,20 +9571,6 @@ fragment gtp_egudFragment on ExamGroupUserData {
     __typename
   }
 }
-
-fragment gtp_essayScoresFragment on EssayScores {
-  areas {
-    translatedTitle
-    essays {
-      examCompletionDate
-      score
-      maxScore
-      __typename
-    }
-    __typename
-  }
-  __typename
-}
 `,
   gtp_getExamGroupMetadata: `query gtp_getExamGroupMetadata($examGroupId: String!) {
   examGroup(examGroupId: $examGroupId) {
@@ -13033,7 +13048,7 @@ fragment ProblemAttemptFields on ProblemAttempt {
   }
 }
 `,
-  SkillsMetadataAndStudentsQuery: `query SkillsMetadataAndStudentsQuery($selectedMasteryCourseIds: [String]!, $classDescriptor: String!) {
+  SkillsMetadataAndStudentsQuery: `query SkillsMetadataAndStudentsQuery($selectedMasteryCourseIds: [String]!, $classDescriptor: String!, $region: String!, $locale: String!) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
     descriptor
@@ -13057,7 +13072,7 @@ fragment ProblemAttemptFields on ProblemAttempt {
         translatedTitle
         translatedDescription
         defaultUrlPath
-        mappedStandards {
+        mappedStandards(region: $region, locale: $locale) {
           id
           standardId
           __typename
@@ -13842,97 +13857,6 @@ fragment TranslatedContentFields on LearnableContent {
     __typename
   }
 }
-
-fragment tapArticleNode on TAPArticleNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapChallengeNode on TAPChallengeNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapContentItem on TAPContentItem {
-  id
-  contentKind
-  contentId
-  sha
-  isNativeContent
-  isUnlisted
-  slug
-  title
-  translatedTitle
-  __typename
-}
-
-fragment tapContentWordCounts on TAPContentWordCounts {
-  wordCount
-  translatableWordCount
-  translatedWordCount
-  translatedWordCount
-  approvedWordCount
-  __typename
-}
-
-fragment tapExerciseNode on TAPExerciseNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapInteractiveNode on TAPInteractiveNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapMetadataWordCounts on TAPMetadataWordCounts {
-  metadataWordCount
-  metadataTranslatableWordCount
-  metadataTranslatedWordCount
-  metadataApprovedWordCount
-  __typename
-}
-
-fragment tapProjectNode on TAPProjectNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapTalkthroughNode on TAPTalkthroughNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  isDubbed
-  isSubtitled
-  youtubeId
-  __typename
-}
-
-fragment tapVideoNode on TAPVideoNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  isDubbed
-  dubIsSubtitled
-  isSubtitled
-  translatedYoutubeId
-  youtubeId
-  __typename
-}
 `,
   translationPortalCourseContentProgress: `query translationPortalCourseContentProgress($courseId: String!, $contentLocale: String!) {
   courseTranslationProgress(courseId: $courseId, contentKALocale: $contentLocale) {
@@ -13943,136 +13867,6 @@ fragment tapVideoNode on TAPVideoNode {
     __typename
   }
 }
-
-fragment tapArticleNode on TAPArticleNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapChallengeNode on TAPChallengeNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapContentItem on TAPContentItem {
-  id
-  contentKind
-  contentId
-  sha
-  isNativeContent
-  isUnlisted
-  slug
-  title
-  translatedTitle
-  __typename
-}
-
-fragment tapContentWordCounts on TAPContentWordCounts {
-  wordCount
-  translatableWordCount
-  translatedWordCount
-  translatedWordCount
-  approvedWordCount
-  __typename
-}
-
-fragment tapCourseNode on TAPCourseNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  children {
-    ...tapUnitNode
-    __typename
-  }
-  __typename
-}
-
-fragment tapExerciseNode on TAPExerciseNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapInteractiveNode on TAPInteractiveNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapLessonNode on TAPLessonNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  children {
-    ...tapArticleNode
-    ...tapChallengeNode
-    ...tapExerciseNode
-    ...tapInteractiveNode
-    ...tapProjectNode
-    ...tapTalkthroughNode
-    ...tapVideoNode
-    __typename
-  }
-  __typename
-}
-
-fragment tapMetadataWordCounts on TAPMetadataWordCounts {
-  metadataWordCount
-  metadataTranslatableWordCount
-  metadataTranslatedWordCount
-  metadataApprovedWordCount
-  __typename
-}
-
-fragment tapProjectNode on TAPProjectNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapTalkthroughNode on TAPTalkthroughNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  isDubbed
-  isSubtitled
-  youtubeId
-  __typename
-}
-
-fragment tapUnitNode on TAPUnitNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  children {
-    ...tapLessonNode
-    __typename
-  }
-  __typename
-}
-
-fragment tapVideoNode on TAPVideoNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  isDubbed
-  dubIsSubtitled
-  isSubtitled
-  translatedYoutubeId
-  youtubeId
-  __typename
-}
 `,
   translationPortalCourseContentProgressCached: `query translationPortalCourseContentProgressCached($courseId: String!, $contentLocale: String!) {
   courseTranslationProgress(courseId: $courseId, contentKALocale: $contentLocale) {
@@ -14082,136 +13876,6 @@ fragment tapVideoNode on TAPVideoNode {
     }
     __typename
   }
-}
-
-fragment tapArticleNode on TAPArticleNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapChallengeNode on TAPChallengeNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapContentItem on TAPContentItem {
-  id
-  contentKind
-  contentId
-  sha
-  isNativeContent
-  isUnlisted
-  slug
-  title
-  translatedTitle
-  __typename
-}
-
-fragment tapContentWordCounts on TAPContentWordCounts {
-  wordCount
-  translatableWordCount
-  translatedWordCount
-  translatedWordCount
-  approvedWordCount
-  __typename
-}
-
-fragment tapCourseNode on TAPCourseNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  children {
-    ...tapUnitNode
-    __typename
-  }
-  __typename
-}
-
-fragment tapExerciseNode on TAPExerciseNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapInteractiveNode on TAPInteractiveNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapLessonNode on TAPLessonNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  children {
-    ...tapArticleNode
-    ...tapChallengeNode
-    ...tapExerciseNode
-    ...tapInteractiveNode
-    ...tapProjectNode
-    ...tapTalkthroughNode
-    ...tapVideoNode
-    __typename
-  }
-  __typename
-}
-
-fragment tapMetadataWordCounts on TAPMetadataWordCounts {
-  metadataWordCount
-  metadataTranslatableWordCount
-  metadataTranslatedWordCount
-  metadataApprovedWordCount
-  __typename
-}
-
-fragment tapProjectNode on TAPProjectNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapTalkthroughNode on TAPTalkthroughNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  isDubbed
-  isSubtitled
-  youtubeId
-  __typename
-}
-
-fragment tapUnitNode on TAPUnitNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  children {
-    ...tapLessonNode
-    __typename
-  }
-  __typename
-}
-
-fragment tapVideoNode on TAPVideoNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  isDubbed
-  dubIsSubtitled
-  isSubtitled
-  translatedYoutubeId
-  youtubeId
-  __typename
 }
 `,
   translationPortalCourseTitlesByIds: `query translationPortalCourseTitlesByIds($ids: [String]!) {
@@ -14260,66 +13924,12 @@ fragment tapVideoNode on TAPVideoNode {
     __typename
   }
 }
-
-fragment tapContentItem on TAPContentItem {
-  id
-  contentKind
-  contentId
-  sha
-  isNativeContent
-  isUnlisted
-  slug
-  title
-  translatedTitle
-  __typename
-}
-
-fragment tapContentWordCounts on TAPContentWordCounts {
-  wordCount
-  translatableWordCount
-  translatedWordCount
-  translatedWordCount
-  approvedWordCount
-  __typename
-}
-
-fragment tapDomainNode on TAPDomainNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapMetadataWordCounts on TAPMetadataWordCounts {
-  metadataWordCount
-  metadataTranslatableWordCount
-  metadataTranslatedWordCount
-  metadataApprovedWordCount
-  __typename
-}
-
-fragment tapPlatformNode on TAPPlatformNode {
-  ...tapContentWordCounts
-  id
-  slug
-  title
-  __typename
-}
 `,
   translationPortalTranslationFreshness: `query translationPortalTranslationFreshness {
   platformTranslationProgress {
     ...tapTranslationFreshness
     __typename
   }
-}
-
-fragment tapTranslationFreshness on TAPTranslationFreshness {
-  lastStringsUpdateDate
-  lastDubsUpdateDate
-  lastSubtitlesUpdateDate
-  oldestSubtitlesDate
-  updateDate
-  __typename
 }
 `,
   TranslationSearchQuery: `query TranslationSearchQuery($query: String!, $type: QueryType!) {
@@ -15395,6 +15005,39 @@ fragment SharedFeedbackFields on Feedback {
     ...VideoRevision
     __typename
   }
+}
+
+fragment VideoRevision on VideoRevision {
+  id
+  contentId
+  contentKind
+  creationDate
+  sha
+  authorKey
+  customDescriptionTag
+  customTitleTag
+  description
+  descriptionHtml: description
+  doNotPublish
+  sourceKaLocale
+  sourceLanguage: sourceKaLocale
+  slug
+  readableId: slug
+  title
+  sponsored
+  thumbnailCache
+  thumbnailData
+  alternateSlugs
+  assessmentItemTags
+  augmentedTranscript
+  authorNames
+  clarificationsEnabled
+  duration
+  kaUserLicense
+  keywords
+  youtubeId
+  listed
+  __typename
 }
 `,
   WhatNextPrompt: `query WhatNextPrompt($assignmentsPageSize: Int, $assignmentsOrderBy: AssignmentOrder!, $assignmentsDueAfter: DateTime!) {
@@ -16775,6 +16418,24 @@ fragment contentSearchLearnableContent on LearnableContent {
       khanmigoTotal
       khanmigoAddedTotal
       khanmigoRemovedTotal
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  getStandardsDataForLocaleRegionAndDomain: `query getStandardsDataForLocaleRegionAndDomain($locale: String, $region: String, $domain: String) {
+  allSetsOfStandards(locale: $locale, region: $region, domain: $domain) {
+    id
+    isDiscoverable
+    name
+    shortName
+    standards {
+      id
+      standardId
+      description
+      children
+      relativeUrl
       __typename
     }
     __typename

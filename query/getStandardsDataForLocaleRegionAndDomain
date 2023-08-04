@@ -1,0 +1,17 @@
+query getStandardsDataForLocaleRegionAndDomain($locale: String, $region: String, $domain: String) {
+  allSetsOfStandards(locale: $locale, region: $region, domain: $domain) {
+    id
+    isDiscoverable
+    name
+    shortName
+    standards {
+      id
+      standardId
+      description
+      children
+      relativeUrl
+      __typename
+    }
+    __typename
+  }
+}

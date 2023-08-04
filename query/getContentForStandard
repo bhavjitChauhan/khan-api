@@ -1,3 +1,3 @@
-query getContentForStandard($set: String!, $standard: String) {
-  contentForStandardMappings(setId: $set, standardId: $standard)
+query getContentForStandard($set: String!, $region: String, $standard: String) {
+  contentForStandardMappings(setId: $set, region: $region, standardId: $standard)
 }
