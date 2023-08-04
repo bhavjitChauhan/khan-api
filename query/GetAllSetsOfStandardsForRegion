@@ -28,6 +28,7 @@ query GetAllSetsOfStandardsForRegion($isDiscoverable: Boolean, $regionSlug: Stri
       standardId
       description
       children
+      relativeUrl
       mappedContent {
         ... on LearnableContent {
           id

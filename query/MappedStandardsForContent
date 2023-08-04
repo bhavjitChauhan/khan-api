@@ -4,6 +4,12 @@ query MappedStandardsForContent($contentDescriptor: String!, $locale: String, $r
     id
     standardId
     description
+    relativeUrl
+    setOfStandards {
+      id
+      isDiscoverable
+      __typename
+    }
     __typename
   }
 }
