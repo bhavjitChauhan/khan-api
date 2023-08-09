@@ -1,0 +1,23 @@
+mutation updateProduct($id: ID!, $input: MutateProductInput!) {
+  updateProduct(id: $id, input: $input) {
+    product {
+      id
+      name
+      isActive
+      isRecurring
+      description
+      extCampaignID
+      extProductID
+      classyValidationAmount
+      validationInterval
+      validationBillingCountries
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
