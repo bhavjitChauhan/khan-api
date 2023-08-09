@@ -1,0 +1,15 @@
+query product($id: ID) {
+  product(id: $id) {
+    id
+    name
+    isActive
+    isRecurring
+    description
+    extCampaignID
+    extProductID
+    classyValidationAmount
+    validationInterval
+    validationBillingCountries
+    __typename
+  }
+}
