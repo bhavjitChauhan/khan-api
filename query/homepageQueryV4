@@ -22,6 +22,16 @@ query homepageQueryV4($kaid: String, $username: String) {
     canViewTeachersAndClassrooms: actorHasUserScopedPermission(capability: CAN_VIEW_TEACHERS_AND_CLASSROOMS)
     isDistrictSynced
     isKmapSynced
+    userDistrictInfos {
+      id
+      currentMathAssessment {
+        id
+        mapTestKey
+        __typename
+      }
+      gradeLevel
+      __typename
+    }
     homepageModules {
       navigation {
         myCoursesEnabled
