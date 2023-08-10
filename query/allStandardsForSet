@@ -1,5 +1,5 @@
 query allStandardsForSet($setId: String!) {
-  setOfStandards(setId: $setId) {
+  setOfStandards(setId: $setId, region: "*") {
     id
     standards {
       id
