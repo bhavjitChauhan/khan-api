@@ -279,7 +279,7 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
 }
 `,
   allStandardsForSet: `query allStandardsForSet($setId: String!) {
-  setOfStandards(setId: $setId) {
+  setOfStandards(setId: $setId, region: "*") {
     id
     standards {
       id
@@ -313,35 +313,6 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     ...ArticleRevision
     __typename
   }
-}
-
-fragment ArticleRevision on ArticleRevision {
-  id
-  contentId
-  contentKind
-  creationDate
-  sha
-  authorKey
-  customDescriptionTag
-  customTitleTag
-  description
-  descriptionHtml: description
-  doNotPublish
-  sourceKaLocale
-  sourceLanguage: sourceKaLocale
-  slug
-  readableId: slug
-  title
-  sponsored
-  thumbnailData
-  thumbnailCache
-  alternateSlugs
-  assessmentItemTags
-  authorNames
-  clarificationsEnabled
-  perseusContent
-  listed
-  __typename
 }
 `,
   articleEditorRedirectQuery: `query articleEditorRedirectQuery($contentId: String!) {
@@ -4718,7 +4689,7 @@ fragment UserFields on User {
 }
 `,
   getAllSetsOfStandards: `query getAllSetsOfStandards($locale: String, $domain: String) {
-  sets: allSetsOfStandards(locale: $locale, domain: $domain) {
+  sets: allSetsOfStandards(locale: $locale, domain: $domain, region: "*") {
     id
     name
     shortName
@@ -7829,7 +7800,7 @@ fragment Badge on Badge {
 }
 `,
   getStandardsForContent: `query getStandardsForContent($setId: String!, $contentDescriptor: String!, $secondaryDescriptor: String) {
-  standards: editableStandardsForContent(setId: $setId, contentDescriptor: $contentDescriptor, secondaryDescriptor: $secondaryDescriptor) {
+  standards: editableStandardsForContent(setId: $setId, contentDescriptor: $contentDescriptor, secondaryDescriptor: $secondaryDescriptor, region: "*") {
     id
     standardId
     __typename
@@ -15074,39 +15045,6 @@ fragment SharedFeedbackFields on Feedback {
     ...VideoRevision
     __typename
   }
-}
-
-fragment VideoRevision on VideoRevision {
-  id
-  contentId
-  contentKind
-  creationDate
-  sha
-  authorKey
-  customDescriptionTag
-  customTitleTag
-  description
-  descriptionHtml: description
-  doNotPublish
-  sourceKaLocale
-  sourceLanguage: sourceKaLocale
-  slug
-  readableId: slug
-  title
-  sponsored
-  thumbnailCache
-  thumbnailData
-  alternateSlugs
-  assessmentItemTags
-  augmentedTranscript
-  authorNames
-  clarificationsEnabled
-  duration
-  kaUserLicense
-  keywords
-  youtubeId
-  listed
-  __typename
 }
 `,
   WhatNextPrompt: `query WhatNextPrompt($assignmentsPageSize: Int, $assignmentsOrderBy: AssignmentOrder!, $assignmentsDueAfter: DateTime!) {
