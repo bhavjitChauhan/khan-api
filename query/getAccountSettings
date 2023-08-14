@@ -24,6 +24,8 @@ query getAccountSettings($targetKaid: String) {
       __typename
     }
     hasSendableEmail
+    isEmailVerified
+    isTotpTwoFactorEnabled
     nickname
     username
     birthdate
