@@ -4540,6 +4540,8 @@ fragment UserFields on User {
       __typename
     }
     hasSendableEmail
+    isEmailVerified
+    isTotpTwoFactorEnabled
     nickname
     username
     birthdate
@@ -16523,6 +16525,7 @@ fragment contentSearchLearnableContent on LearnableContent {
       id
       standardId
       description
+      coverage
       children
       mappedContent {
         ... on LearnableContent {

@@ -8,6 +8,7 @@ query GetSetOfStandards($setId: String!, $region: String) {
       id
       standardId
       description
+      coverage
       children
       mappedContent {
         ... on LearnableContent {
