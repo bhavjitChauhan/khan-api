@@ -1564,6 +1564,15 @@ fragment CourseData on Course {
         title
         __typename
       }
+      ... on PartnershipDescriptionModule {
+        description
+        imageCaption
+        imageUrl
+        isOutro
+        partnerUrl
+        partnerUrlText
+        __typename
+      }
       __typename
     }
     excludedChildren
@@ -9545,20 +9554,6 @@ fragment gtp_egudFragment on ExamGroupUserData {
     ...gtp_essayScoresFragment
     __typename
   }
-}
-
-fragment gtp_essayScoresFragment on EssayScores {
-  areas {
-    translatedTitle
-    essays {
-      examCompletionDate
-      score
-      maxScore
-      __typename
-    }
-    __typename
-  }
-  __typename
 }
 `,
   gtp_getExamGroupMetadata: `query gtp_getExamGroupMetadata($examGroupId: String!) {
