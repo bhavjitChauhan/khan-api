@@ -435,6 +435,15 @@ fragment InvitationsField on Invitation {
         title
         __typename
       }
+      ... on PartnershipDescriptionModule {
+        description
+        imageCaption
+        imageUrl
+        isOutro
+        partnerUrl
+        partnerUrlText
+        __typename
+      }
       __typename
     }
     excludedChildren
