@@ -4740,7 +4740,7 @@ fragment UserFields on User {
 }
 `,
   getAllStandardsForContent: `query getAllStandardsForContent($contentDescriptor: String!) {
-  standards: editableStandardsForContent(contentDescriptor: $contentDescriptor) {
+  standards: editableStandardsForContent(contentDescriptor: $contentDescriptor, region: "*") {
     id
     standardId
     setId
@@ -5901,8 +5901,8 @@ fragment StudentField1 on StudentsPage {
   }
 }
 `,
-  getDescriptionForStandard: `query getDescriptionForStandard($setId: String!, $standardId: String!) {
-  publishedStandard(setId: $setId, standardId: $standardId) {
+  getDescriptionForStandard: `query getDescriptionForStandard($region: String!, $setId: String!, $standardId: String!) {
+  publishedStandard(region: $region, setId: $setId, standardId: $standardId) {
     id
     description
     __typename
