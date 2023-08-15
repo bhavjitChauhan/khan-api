@@ -38,7 +38,7 @@ query homepageQueryV4($kaid: String, $username: String) {
         interestedInSat
         interestedInLsat
         classes {
-          studentList {
+          classroom {
             id
             descriptor
             cacheId
@@ -49,6 +49,11 @@ query homepageQueryV4($kaid: String, $username: String) {
               __typename
             }
             signupCode
+            topics {
+              id
+              __typename
+            }
+            createdOn
             __typename
           }
           showAssignments
@@ -57,7 +62,7 @@ query homepageQueryV4($kaid: String, $username: String) {
           hasNonMapGoals
           isKmap
           isK4d
-          isActive
+          latestDueDate
           __typename
         }
         __typename
