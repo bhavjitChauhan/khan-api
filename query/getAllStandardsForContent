@@ -1,5 +1,5 @@
 query getAllStandardsForContent($contentDescriptor: String!) {
-  standards: editableStandardsForContent(contentDescriptor: $contentDescriptor) {
+  standards: editableStandardsForContent(contentDescriptor: $contentDescriptor, region: "*") {
     id
     standardId
     setId

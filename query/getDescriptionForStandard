@@ -1,5 +1,5 @@
-query getDescriptionForStandard($setId: String!, $standardId: String!) {
-  publishedStandard(setId: $setId, standardId: $standardId) {
+query getDescriptionForStandard($region: String!, $setId: String!, $standardId: String!) {
+  publishedStandard(region: $region, setId: $setId, standardId: $standardId) {
     id
     description
     __typename
