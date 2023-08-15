@@ -34,6 +34,12 @@ query getCoachExerciseReport($assignmentId: String!, $teacherKaid: String!) {
           numAttempted
           __typename
         }
+        assessmentItemsForAssessment {
+          id
+          contentId
+          itemData
+          __typename
+        }
         __typename
       }
       __typename
@@ -86,6 +92,11 @@ fragment ExerciseContentFields on LearnableContent {
       }
       __typename
     }
+    __typename
+  }
+  ... on LearnableCourseChallenge {
+    translatedTitle
+    exerciseLength
     __typename
   }
   __typename

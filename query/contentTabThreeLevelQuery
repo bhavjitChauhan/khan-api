@@ -30,6 +30,7 @@ query contentTabThreeLevelQuery($courseId: String!, $region: String!, $locale: S
       kind
       mappedStandardIds(locale: $locale, region: $region)
       title: translatedTitle
+      expectedDoNCount: exerciseLength
       __typename
     }
     domain: parent {
