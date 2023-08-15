@@ -1971,6 +1971,7 @@ fragment UnitTestMetadata on TopicUnitTest {
       kind
       mappedStandardIds(locale: $locale, region: $region)
       title: translatedTitle
+      expectedDoNCount: exerciseLength
       __typename
     }
     domain: parent {
@@ -2097,6 +2098,7 @@ fragment QuizAndTestFields on LearnableContent {
       kind
       mappedStandardIds(locale: $locale, region: $region)
       title: translatedTitle
+      expectedDoNCount: exerciseLength
       __typename
     }
     domain: parent {
@@ -5262,6 +5264,12 @@ fragment StudentField2 on StudentsPage {
           numAttempted
           __typename
         }
+        assessmentItemsForAssessment {
+          id
+          contentId
+          itemData
+          __typename
+        }
         __typename
       }
       __typename
@@ -5314,6 +5322,11 @@ fragment ExerciseContentFields on LearnableContent {
       }
       __typename
     }
+    __typename
+  }
+  ... on LearnableCourseChallenge {
+    translatedTitle
+    exerciseLength
     __typename
   }
   __typename
