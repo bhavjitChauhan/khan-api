@@ -361,7 +361,7 @@ export default class Client {
   /**
    * Gets a user's programs
    *
-   * @rawEquivalent {@link queries!projectsAuthoredByUser}
+   * @raw {@link queries!projectsAuthoredByUser}
    *
    * @example
    * const client = new Client()
@@ -816,7 +816,7 @@ export default class Client {
    *
    * @param identifier Feedback key or encrypted feedback key
    *
-   * @rawEquivalent {@link queries!getFeedbackRepliesPage}
+   * @raw {@link queries!getFeedbackRepliesPage}
    *
    * @example
    * const client = new Client()
@@ -877,7 +877,7 @@ export default class Client {
   /**
    * Gets all replies to a message
    *
-   * @rawEquivalent {@link queries!getFeedbackReplies}
+   * @raw {@link queries!getFeedbackReplies}
    *
    * @see {@link Client!Client.getMessageReplies}
    *

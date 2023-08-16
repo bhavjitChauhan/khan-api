@@ -12,7 +12,7 @@ import BaseMessage, { IBaseMessage } from './BaseMessage'
 import Reply from './Reply'
 
 /**
- * @rawEquivalent {@link types/enums!FeedbackType}
+ * @raw {@link types/enums!FeedbackType}
  */
 export enum MessageType {
   TipsAndThanks = FeedbackType.COMMENT,
@@ -35,15 +35,15 @@ export default class Message extends BaseMessage implements IMessage {
   static readonly Type = MessageType
 
   /**
-   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.sumVotesIncremented}
+   * @raw {@link types/schema!FeedbackSchemaBase.sumVotesIncremented}
    */
   readonly votes?: number
   /**
-   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.upVoted}
+   * @raw {@link types/schema!FeedbackSchemaBase.upVoted}
    */
   readonly selfUpvoted?: boolean
   /**
-   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.downVoted}
+   * @raw {@link types/schema!FeedbackSchemaBase.downVoted}
    */
   readonly selfDownvoted?: boolean
   readonly replyCount?: number

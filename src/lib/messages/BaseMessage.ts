@@ -28,53 +28,53 @@ export default abstract class BaseMessage
   implements IBaseMessage
 {
   /**
-   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.content}
+   * @raw {@link types/schema!FeedbackSchemaBase.content}
    */
   readonly text?: string
   readonly author?: User
   readonly program?: Program
   /**
-   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.date}
+   * @raw {@link types/schema!FeedbackSchemaBase.date}
    */
   readonly created?: Date
 
   /**
-   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.expandKey}
+   * @raw {@link types/schema!FeedbackSchemaBase.expandKey}
    */
   readonly key?: FeedbackKey
   /**
-   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.key}
+   * @raw {@link types/schema!FeedbackSchemaBase.key}
    */
   readonly encryptedKey?: EncryptedFeedbackKey
 
   /**
-   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.appearsAsDeleted}
+   * @raw {@link types/schema!FeedbackSchemaBase.appearsAsDeleted}
    */
   readonly deleted?: boolean
   /**
-   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.isLocked}
+   * @raw {@link types/schema!FeedbackSchemaBase.isLocked}
    */
   readonly locked?: boolean
   /**
-   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.isPinned}
+   * @raw {@link types/schema!FeedbackSchemaBase.isPinned}
    */
   readonly pinned?: boolean
   /**
-   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.definitelyNotSpam}
+   * @raw {@link types/schema!FeedbackSchemaBase.definitelyNotSpam}
    */
   readonly verified?: boolean
   /**
-   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.lowQualityScore}
+   * @raw {@link types/schema!FeedbackSchemaBase.lowQualityScore}
    */
   readonly score?: number
 
   /**
-   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.fromVideoAuthor}
+   * @raw {@link types/schema!FeedbackSchemaBase.fromVideoAuthor}
    */
   readonly byVideoAuthor?: boolean
 
   /**
-   * @rawEquivalent {@link types/schema!FeedbackSchemaBase.flaggedByUser}
+   * @raw {@link types/schema!FeedbackSchemaBase.flaggedByUser}
    */
   readonly selfFlagged?: boolean
 
