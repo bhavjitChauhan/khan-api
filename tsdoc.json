@@ -6,7 +6,7 @@
     "noStandardTags": false,
     "tagDefinitions": [
         {
-            "tagName": "@rawEquivalent",
+            "tagName": "@raw",
             "syntaxKind": "block"
         }
     ]

@@ -135,7 +135,7 @@ export namespace ProgramQuery {
  * Simple usage without error handling:
  * ```js
  * const response = await queries.programQuery({
- *  programId: '6058668928843776'
+ *   programId: '6058668928843776'
  * })
  * const json = await response.json()
  * const program = json.data.programById

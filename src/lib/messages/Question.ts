@@ -15,13 +15,13 @@ export interface IQuestion extends IMessage {
  * @remarks
  * Note that Help Requests are a type of Question.
  *
- * @rawEquivalent {@link types/schema!QuestionFeedbackSchema}
+ * @raw {@link types/schema!QuestionFeedbackSchema}
  */
 export default class Question extends Message implements IQuestion {
   readonly answerCount?: number
   readonly answers?: Answer[]
   /**
-   * @rawEquivalent {@link types/schema!QuestionFeedbackSchema.isOld}
+   * @raw {@link types/schema!QuestionFeedbackSchema.isOld}
    */
   readonly old?: boolean
 

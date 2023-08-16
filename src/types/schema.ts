@@ -31,7 +31,7 @@ import {
 export interface UserSchema<
   AvatarData = AvatarSchema,
   ProfileData = ProfileSchema,
-  ListProgramsData = ListProgramsSchema
+  ListProgramsData = ListProgramsSchema,
 > {
   __typename: 'User'
   actorHasUserScopedPermission: boolean
@@ -49,6 +49,7 @@ export interface UserSchema<
   email: string | null
   gaUserId: string | null
   hasAccessToAIGuideDev: boolean
+  hasAccessToAIGuideTeacher: boolean
   hasChildren: boolean | null
   hasClasses: boolean | null
   hasCoach: boolean | null
@@ -192,7 +193,7 @@ export interface UserStatisticsSchema {
 
 export interface ProgramSchema<
   // TypeScript doesn't like circular references, so default can't be `UserSchema`
-  UserData = unknown
+  UserData = unknown,
 > {
   __typename: 'Program'
   authorKaid: UserSchema['kaid']
