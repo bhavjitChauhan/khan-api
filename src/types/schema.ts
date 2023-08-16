@@ -49,6 +49,7 @@ export interface UserSchema<
   email: string | null
   gaUserId: string | null
   hasAccessToAIGuideDev: boolean
+  hasAccessToAIGuideTeacher: boolean
   hasChildren: boolean | null
   hasClasses: boolean | null
   hasCoach: boolean | null

@@ -18,6 +18,7 @@ import { RecursivePartial } from './utils/types'
 
 // There has to be a solution that doesn't require duplicating properties
 // Update: there is, but it's not worth it
+// Another update: what was it???
 export interface IUser {
   readonly self?: boolean
   readonly kaid?: Kaid | null
@@ -42,6 +43,8 @@ export interface IUser {
   readonly canMessageUsers?: boolean
   readonly canModifyCoaches?: boolean
 
+  readonly hasAccessToAIGuideDev?: boolean
+  readonly hasAccessToAIGuideTeacher?: boolean
   readonly hasChildren?: boolean
   readonly hasClasses?: boolean
   readonly hasCoach?: boolean
@@ -128,6 +131,8 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
   readonly canMessageUsers?: boolean
   readonly canModifyCoaches?: boolean
 
+  readonly hasAccessToAIGuideDev?: boolean
+  readonly hasAccessToAIGuideTeacher?: boolean
   readonly hasChildren?: boolean
   readonly hasClasses?: boolean
   readonly hasCoach?: boolean
@@ -214,6 +219,8 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
       canModifyCoaches: schema.canModifyCoaches ?? undefined,
       completedVideos: schema.countVideosCompleted,
       email: schema.email ?? undefined,
+      hasAccessToAIGuideDev: schema.hasAccessToAIGuideDev ?? undefined,
+      hasAccessToAIGuideTeacher: schema.hasAccessToAIGuideTeacher ?? undefined,
       hasChildren: schema.hasChildren ?? undefined,
       hasClasses: schema.hasClasses ?? undefined,
       hasCoach: schema.hasCoach ?? undefined,

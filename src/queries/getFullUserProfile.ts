@@ -80,6 +80,7 @@ export namespace GetFullUserProfile {
       email
       __typename
     }
+    hasAccessToAIGuideTeacher
     tosAccepted
     shouldShowAgeCheck
     birthMonthYear
@@ -116,6 +117,7 @@ export namespace GetFullUserProfile {
       | 'email'
       | 'gaUserId'
       | 'hasAccessToAIGuideDev'
+      | 'hasAccessToAIGuideTeacher'
       | 'hasChildren'
       | 'hasClasses'
       | 'hasCoach'
