@@ -56,6 +56,7 @@ import projectsAuthoredByUser from './queries/projectsAuthoredByUser'
 import getProfileWidgets from './queries/getProfileWidgets'
 import { UserStatistics } from './types/user-statistics'
 import getFeedbackRepliesPage from './queries/getFeedbackRepliesPage'
+import { hotlist } from './queries'
 
 export default class Client {
   #identifier?: string
@@ -483,6 +484,90 @@ export default class Client {
     }
 
     return program
+  }
+
+  /**
+   * Gets programs from the hotlist
+   *
+   * @raw {@link queries!hotlist}
+   *
+   * @example
+   * const client = new Client()
+   * for await (const programs of client.getHotlistPrograms()) {
+   *  console.log(programs.map(program => program.title))
+   * }
+   *
+   * @param official Whether to only get official project spinoffs
+   */
+  async *getHotlistPrograms(
+    sort = ListProgramSortOrder.HOT,
+    limit = 40,
+    official = false
+  ) {
+    const variables = {
+      onlyOfficialProjectSpinoffs: official,
+      sort,
+      pageInfo: {
+        cursor: null,
+        itemsPerPage: limit,
+      },
+    }
+
+    const getHotlistProgramsPage = async (cursor?: string) => {
+      const response = await hotlist({
+        ...variables,
+        pageInfo: {
+          ...variables.pageInfo,
+          cursor,
+        },
+      })
+      const json = await Client.#resolveJsonReponse(response)
+
+      assertDataResponse(json)
+      if (!json.data.listTopPrograms) throw new Error('Programs not found')
+      if (
+        !json.data.listTopPrograms.complete &&
+        !json.data.listTopPrograms.cursor
+      )
+        throw new Error('Cursor not found')
+
+      const programSchemas = json.data.listTopPrograms.programs
+
+      const programs = programSchemas.map((programSchema) => {
+        const program = Program.fromSchema(programSchema)
+        program.client = this
+        return program
+      })
+      const nextCursor = !json.data.listTopPrograms.complete
+        ? json.data.listTopPrograms.cursor
+        : null
+
+      return { programs, cursor: nextCursor }
+    }
+
+    let { programs, cursor } = await getHotlistProgramsPage()
+    yield programs
+
+    while (cursor) {
+      ;({ programs, cursor } = await getHotlistProgramsPage(cursor))
+      yield programs
+    }
+  }
+
+  async *getTopPrograms(limit = 40, official = false) {
+    yield* this.getHotlistPrograms(
+      ListProgramSortOrder.TOP,
+      limit,
+      official
+    ) as unknown as AsyncGenerator<Program[], void, unknown>
+  }
+
+  async *getRecentPrograms(limit = 40, official = false) {
+    yield* this.getHotlistPrograms(
+      ListProgramSortOrder.RECENT,
+      limit,
+      official
+    ) as unknown as AsyncGenerator<Program[], void, unknown>
   }
 
   /**
