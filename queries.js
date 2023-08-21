@@ -9530,20 +9530,6 @@ fragment gtp_egudFragment on ExamGroupUserData {
     __typename
   }
 }
-
-fragment gtp_essayScoresFragment on EssayScores {
-  areas {
-    translatedTitle
-    essays {
-      examCompletionDate
-      score
-      maxScore
-      __typename
-    }
-    __typename
-  }
-  __typename
-}
 `,
   gtp_getExamGroupMetadata: `query gtp_getExamGroupMetadata($examGroupId: String!) {
   examGroup(examGroupId: $examGroupId) {
@@ -11351,7 +11337,6 @@ fragment BaseFolder on Folder {
     slug
     parentTopic {
       id
-      slug
       __typename
     }
     __typename
