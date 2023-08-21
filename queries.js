@@ -16509,7 +16509,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-  allSetsOfStandards(domain: "math", regionSlug: $regionSlug) {
+  allSetsOfStandards(domain: "math", isDiscoverable: $isDiscoverable, regionSlug: $regionSlug) {
     id
     name
     courseEntities {
