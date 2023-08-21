@@ -1,0 +1,16 @@
+query GetStandardRegionsForCountry($country: String!, $isDiscoverable: Boolean) {
+  standardRegions(country: $country, isDiscoverable: $isDiscoverable) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    standardRegion {
+      id
+      isDiscoverable
+      slug
+      __typename
+    }
+    __typename
+  }
+}
