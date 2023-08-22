@@ -24,6 +24,7 @@ query aiGuidePrompt($name: String!) {
       configJSON
       __typename
     }
+    source
     __typename
   }
 }
