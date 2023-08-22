@@ -1,7 +1,6 @@
 query manticoreGetContentForDescriptors($contentDescriptors: [String!]!) {
   contentForDescriptors(descriptors: $contentDescriptors) {
     id
-    slug
     parentTopic {
       id
       __typename
