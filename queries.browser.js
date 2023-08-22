@@ -9568,20 +9568,6 @@ fragment gtp_egudFragment on ExamGroupUserData {
     __typename
   }
 }
-
-fragment gtp_essayScoresFragment on EssayScores {
-  areas {
-    translatedTitle
-    essays {
-      examCompletionDate
-      score
-      maxScore
-      __typename
-    }
-    __typename
-  }
-  __typename
-}
 `,
   gtp_getExamGroupMetadata: `query gtp_getExamGroupMetadata($examGroupId: String!) {
   examGroup(examGroupId: $examGroupId) {
@@ -11489,6 +11475,7 @@ fragment BaseFolder on Folder {
   manticoreGetContentForDescriptors: `query manticoreGetContentForDescriptors($contentDescriptors: [String!]!) {
   contentForDescriptors(descriptors: $contentDescriptors) {
     id
+    slug
     parentTopic {
       id
       __typename
