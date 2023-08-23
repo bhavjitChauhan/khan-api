@@ -3,9 +3,11 @@ query aiGuidePrompts {
     id
     name
     description
+    source
     latestVersion {
       id
       versionNumber
+      configJSON
       __typename
     }
     __typename
