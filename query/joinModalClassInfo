@@ -3,8 +3,6 @@ query joinModalClassInfo($classCode: String!) {
     id
     cacheId
     name
-    signupCode
-    includesDistrictOwnedData
     __typename
   }
 }
