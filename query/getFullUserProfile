@@ -48,6 +48,8 @@ query getFullUserProfile($kaid: String, $username: String) {
     homepageUrl
     isMidsignupPhantom
     includesDistrictOwnedData
+    includesKmapDistrictOwnedData
+    includesK4dDistrictOwnedData
     canAccessDistrictsHomepage
     preferredKaLocale {
       id
