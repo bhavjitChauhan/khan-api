@@ -1,0 +1,10 @@
+query TranslationEditor_GetContentForDescriptors($contentDescriptors: [String!]!) {
+  contentForDescriptors(descriptors: $contentDescriptors) {
+    id
+    parentTopic {
+      id
+      __typename
+    }
+    __typename
+  }
+}
