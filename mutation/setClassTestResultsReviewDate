@@ -1,0 +1,9 @@
+mutation setClassTestResultsReviewDate($classroomDescriptor: String!, $studentKaids: [String!]!, $reviewDate: DateTime!) {
+  setClassTestResultsReviewDate(classroomDescriptor: $classroomDescriptor, studentKaids: $studentKaids, reviewDate: $reviewDate) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

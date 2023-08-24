@@ -78,6 +78,7 @@ query KmapPlacementQuery($classDescriptor: String!) {
             __typename
           }
           mapTestKey
+          scoresReviewedDate
           __typename
         }
         __typename
