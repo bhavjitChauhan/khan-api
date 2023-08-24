@@ -70,6 +70,7 @@ query StudentKmapPlacementQuery($classDescriptor: String!, $studentKaid: String!
             suggestedRitScoreBandKey
             __typename
           }
+          scoresReviewedDate
           __typename
         }
         __typename

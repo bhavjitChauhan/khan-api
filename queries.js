@@ -11054,6 +11054,7 @@ fragment BaseFolder on Folder {
             __typename
           }
           mapTestKey
+          scoresReviewedDate
           __typename
         }
         __typename
@@ -13257,6 +13258,7 @@ fragment TranslatedContentFields on LearnableContent {
             suggestedRitScoreBandKey
             __typename
           }
+          scoresReviewedDate
           __typename
         }
         __typename
