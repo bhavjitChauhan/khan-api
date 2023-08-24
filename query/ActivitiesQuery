@@ -1,0 +1,29 @@
+query ActivitiesQuery {
+  courseById(id: "x1b615e2cf0b0f17f") {
+    id
+    unitChildren {
+      id
+      translatedTitle
+      lessonChildren {
+        id
+        iconUrl
+        translatedTitle
+        allLearnableContent {
+          id
+          slug
+          translatedTitle
+          defaultUrlPath
+          ... on AIGuideActivity {
+            persona
+            activityType
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
