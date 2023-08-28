@@ -3,12 +3,8 @@ query allProducts {
     id
     name
     isActive
-    isRecurring
     description
-    extCampaignID
     extProductID
-    classyValidationAmount
-    validationInterval
     validationBillingCountries
     __typename
   }
