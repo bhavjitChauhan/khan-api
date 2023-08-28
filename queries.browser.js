@@ -6494,6 +6494,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     isModerator: hasPermission(name: "can_moderate_users", scope: GLOBAL)
     isParent
     isTeacher
+    isFormalTeacher
     isDataCollectible
     isChild
     isOrphan
@@ -16950,6 +16951,14 @@ fragment contentSearchLearnableContent on LearnableContent {
       }
       __typename
     }
+    __typename
+  }
+}
+`,
+  hasCooldown: `query hasCooldown {
+  user {
+    id
+    hasCooldown
     __typename
   }
 }

@@ -1,0 +1,7 @@
+query hasCooldown {
+  user {
+    id
+    hasCooldown
+    __typename
+  }
+}
