@@ -1,0 +1,27 @@
+query getStudentExerciseContentReport_CourseChallenge($assignmentId: String!) {
+  student: user {
+    id
+    kaid
+    nickname
+    assignment(id: $assignmentId) {
+      id
+      assignedDate
+      contents {
+        id
+        translatedTitle
+        __typename
+      }
+      itemCompletionStates {
+        assessmentItemsForAssessment {
+          id
+          contentId
+          itemData
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
