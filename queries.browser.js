@@ -16123,6 +16123,7 @@ fragment contentSearchLearnableContent on LearnableContent {
       releaseNotes
       promptText
       configJSON
+      tokenCount
       __typename
     }
     draft {
@@ -16131,6 +16132,7 @@ fragment contentSearchLearnableContent on LearnableContent {
       releaseNotes
       promptText
       configJSON
+      tokenCount
       __typename
     }
     source
