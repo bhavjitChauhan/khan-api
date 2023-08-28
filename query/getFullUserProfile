@@ -16,6 +16,7 @@ query getFullUserProfile($kaid: String, $username: String) {
     isModerator: hasPermission(name: "can_moderate_users", scope: GLOBAL)
     isParent
     isTeacher
+    isFormalTeacher
     isDataCollectible
     isChild
     isOrphan

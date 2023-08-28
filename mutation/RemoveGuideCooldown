@@ -1,0 +1,9 @@
+mutation RemoveGuideCooldown($cooldown: RemoveCooldownInput!) {
+  removeCooldown(cooldown: $cooldown) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

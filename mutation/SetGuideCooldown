@@ -1,0 +1,9 @@
+mutation SetGuideCooldown($cooldown: SetCooldownInput!) {
+  setCooldown(cooldown: $cooldown) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

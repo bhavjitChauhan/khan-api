@@ -10645,4 +10645,24 @@ fragment entry on TeamPageEntryForEditing {
   }
 }
 `,
+  RemoveGuideCooldown: `mutation RemoveGuideCooldown($cooldown: RemoveCooldownInput!) {
+  removeCooldown(cooldown: $cooldown) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  SetGuideCooldown: `mutation SetGuideCooldown($cooldown: SetCooldownInput!) {
+  setCooldown(cooldown: $cooldown) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
+`,
 }
