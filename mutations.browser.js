@@ -10558,13 +10558,19 @@ fragment entry on TeamPageEntryForEditing {
       id
       name
       isActive
-      isRecurring
       description
-      extCampaignID
       extProductID
-      classyValidationAmount
-      validationInterval
       validationBillingCountries
+      prices {
+        currency
+        extProductID
+        id
+        recurringInterval
+        recurringIntervalCount
+        type
+        unitAmount
+        __typename
+      }
       __typename
     }
     error {
@@ -10582,13 +10588,19 @@ fragment entry on TeamPageEntryForEditing {
       id
       name
       isActive
-      isRecurring
       description
-      extCampaignID
       extProductID
-      classyValidationAmount
-      validationInterval
       validationBillingCountries
+      prices {
+        currency
+        extProductID
+        id
+        recurringInterval
+        recurringIntervalCount
+        type
+        unitAmount
+        __typename
+      }
       __typename
     }
     error {

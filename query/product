@@ -3,13 +3,19 @@ query product($id: ID) {
     id
     name
     isActive
-    isRecurring
     description
-    extCampaignID
     extProductID
-    classyValidationAmount
-    validationInterval
     validationBillingCountries
+    prices {
+      currency
+      extProductID
+      id
+      recurringInterval
+      recurringIntervalCount
+      type
+      unitAmount
+      __typename
+    }
     __typename
   }
 }
