@@ -1,0 +1,19 @@
+mutation addDistrictCourseProgressDateRange($districtID: String!, $dateRange: CustomDateRange!) {
+  addDistrictCourseProgressDateRange(districtID: $districtID, dateRange: $dateRange) {
+    dateRanges {
+      from
+      isCustom
+      isInProgress
+      lastUpdatedDate
+      numDays
+      rangeType
+      upTo
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
