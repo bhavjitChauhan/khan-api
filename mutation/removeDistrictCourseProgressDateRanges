@@ -1,0 +1,19 @@
+mutation removeDistrictCourseProgressDateRanges($districtID: String!, $dateRanges: [CustomDateRange!]!) {
+  removeDistrictCourseProgressDateRanges(districtID: $districtID, dateRanges: $dateRanges) {
+    dateRanges {
+      from
+      isCustom
+      isInProgress
+      lastUpdatedDate
+      numDays
+      rangeType
+      upTo
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
