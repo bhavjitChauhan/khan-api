@@ -16137,6 +16137,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     latestVersion {
       id
       versionNumber
+      tokenCount
       configJSON
       __typename
     }
