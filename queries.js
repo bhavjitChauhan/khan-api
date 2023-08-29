@@ -665,6 +665,7 @@ fragment AssignmentCsvData on Assignment {
     countStudents
     hasAssignments
     hasCourseMasteryGoals(filter: NO_KMAP)
+    hasMasteryAssignments
     classroomDistrictInfo {
       id
       isNweaMapSynced
