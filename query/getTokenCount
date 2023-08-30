@@ -1,0 +1,3 @@
+query getTokenCount($promptText: String!) {
+  getTokenCount(promptText: $promptText)
+}

@@ -9578,6 +9578,20 @@ fragment gtp_egudFragment on ExamGroupUserData {
     __typename
   }
 }
+
+fragment gtp_essayScoresFragment on EssayScores {
+  areas {
+    translatedTitle
+    essays {
+      examCompletionDate
+      score
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
 `,
   gtp_getExamGroupMetadata: `query gtp_getExamGroupMetadata($examGroupId: String!) {
   examGroup(examGroupId: $examGroupId) {
@@ -16969,6 +16983,36 @@ fragment contentSearchLearnableContent on LearnableContent {
     hasCooldown
     __typename
   }
+}
+`,
+  ContentCarouselContent: `query ContentCarouselContent($descriptors: [String!]!) {
+  learnableContentByDescriptors(contentDescriptors: $descriptors) {
+    id
+    translatedTitle
+    contentKind
+    thumbnailUrl
+    urlWithinCurationNode(ancestorId: "xf191fa455939c8e1")
+    ... on Video {
+      duration
+      __typename
+    }
+    parentTopic {
+      id
+      slug
+      translatedTitle
+      parent {
+        id
+        relativeUrl
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+`,
+  getTokenCount: `query getTokenCount($promptText: String!) {
+  getTokenCount(promptText: $promptText)
 }
 `,
 }
