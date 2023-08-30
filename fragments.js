@@ -444,6 +444,12 @@ fragment InvitationsField on Invitation {
         partnerUrlText
         __typename
       }
+      ... on ContentCarouselModule {
+        referrer
+        title
+        contentDescriptors
+        __typename
+      }
       __typename
     }
     excludedChildren
