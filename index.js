@@ -96,6 +96,28 @@ function sortDocumentFragments(str) {
     return str
 }
 
+/**
+ * Generates the hash from a GraphQL document (query, mutation, etc.).
+ * 
+ * @description
+ * This hash may be used to make Khan API requests GET requests instead of POST requests.
+ * 
+ * @author [Reginald-Gillespie](https://github.com/Reginald-Gillespie)
+ * 
+ * @example
+ * ```js
+ * const hash = hashDocument(GET_FULL_USER_PROFILE_QUERY)
+ * const variables = { username: 'sal' }
+ * const url = `https://www.khanacademy.org/api/internal/graphql/getFullUserProfile?hash=${hash}&variables=${encodeURIComponent(JSON.stringify(variables))}`
+ */
+function hashDocument(str) {
+    let hash = 5381,
+        i = str.length
+
+    while (i) hash = (hash * 33) ^ str.charCodeAt(--i)
+    return hash >>> 0
+}
+
 const documentTypes = ['query', 'mutation', 'fragment']
 
 let failed = false
@@ -284,7 +306,7 @@ for (const type of documentTypes) {
             const newNeededFragments = [...fragment[1].matchAll(/\.\.\.(\w+)/g)].map(match => match[1])
             neededFragments.push(...newNeededFragments)
         }
-        
+
         const existingDocument = existingDocuments[type][extractOperation(document)]
         if (existingDocument && ((extractFragments(document)?.length ?? 0) < (extractFragments(existingDocument)?.length) ?? 0)) {
             console.warn(`Fragment count mismatch in ${type}/${file}`)
@@ -333,6 +355,29 @@ for (const type of documentTypes) {
 
     const browser = format(`${fileNames[type]} = ${javascriptObjStr}`, { parser: 'babel', semi: false })
     await writeFile(fileNames[type] + '.browser.js', browser)
+
+    if (type === 'query') {
+        const hashes = {}
+        for (const operation in documents) {
+            const document = documents[operation]
+            hashes[operation] = hashDocument(document)
+        }
+        const hashesFormatted = format(JSON.stringify(hashes), { parser: 'json' })
+        await writeFile('hashes.json', hashesFormatted)
+
+        let hashesObjStr = '{'
+        for (const operation in hashes) {
+            const hash = hashes[operation]
+            hashesObjStr += `${operation}: ${hash},`
+        }
+        hashesObjStr += '}'
+
+        const hashesEsm = format('export default ' + hashesObjStr, { parser: 'babel', semi: false })
+        await writeFile('hashes.js', hashesEsm)
+
+        const hashesBrowser = format(`hashes = ${hashesObjStr}`, { parser: 'babel', semi: false })
+        await writeFile('hashes.browser.js', hashesBrowser)
+    }
 }
 
 console.log('Generated JSON and JavaScript files')
