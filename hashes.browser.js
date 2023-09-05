@@ -592,4 +592,5 @@ hashes = {
   hasCooldown: 2810410886,
   ContentCarouselContent: 938772199,
   getTokenCount: 712505166,
+  devadminStringTranslation: 2036983133,
 }

@@ -16639,4 +16639,14 @@ fragment contentSearchLearnableContent on LearnableContent {
   getTokenCount(promptText: $promptText)
 }
 `,
+  devadminStringTranslation: `query devadminStringTranslation($message: String!, $messageLocation: String!, $kaLocale: KALocale!) {
+  stringTranslation(message: $message, messageLocation: $messageLocation, kaLocale: $kaLocale, doAITranslationIfMissing: true) {
+    found
+    isAITranslated
+    isNewTranslation
+    translation
+    __typename
+  }
+}
+`,
 }
