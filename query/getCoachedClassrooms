@@ -6,9 +6,9 @@ query getCoachedClassrooms {
       cacheId
       name
       descriptor
-      students {
+      students: studentKaidsAndNicknames {
         id
-        nickname
+        nickname: coachNickname
         __typename
       }
       countStudents
