@@ -1,0 +1,10 @@
+mutation setCollectingInterests($kaid: String!, $collect: Boolean!) {
+  setCollectInterests(kaid: $kaid, collect: $collect) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
