@@ -5,6 +5,7 @@ query Content_GetRelatedAssessmentItems($exerciseId: String) {
       id
       itemShapeType
       itemData
+      problemType
       __typename
     }
     __typename
