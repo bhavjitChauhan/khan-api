@@ -1,10 +1,4 @@
 query homepageQueryV4($kaid: String, $username: String) {
-  flag(name: "lp_class_picker_via_gateway") {
-    id
-    name
-    isUserPassing
-    __typename
-  }
   actorUser: user {
     id
     isAIGuideEnabled
