@@ -1,0 +1,10 @@
+mutation deleteAllGuideInterests($kaid: String!) {
+  deleteInterests(kaid: $kaid) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
