@@ -1,8 +1,10 @@
 query getUserInterests($kaid: String!) {
   user(kaid: $kaid) {
     id
+    isCollectingInterests
     aiGuideUserInterests {
       interest
+      combinedKey
       __typename
     }
     __typename

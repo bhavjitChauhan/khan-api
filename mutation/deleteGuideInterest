@@ -1,0 +1,10 @@
+mutation deleteGuideInterest($kaid: String!, $key: String!) {
+  deleteInterest(kaid: $kaid, combinedKey: $key) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
