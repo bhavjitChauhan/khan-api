@@ -23,6 +23,7 @@ query masteryAssignments($classCode: String!) {
         iconUrl
         __typename
       }
+      studentProgressMedian
       __typename
     }
     students: studentKaidsAndNicknames {

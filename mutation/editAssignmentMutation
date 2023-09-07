@@ -21,6 +21,7 @@ mutation editAssignmentMutation($id: ID!, $curationNodeLevel: MasteryAssignmentC
         iconUrl
         __typename
       }
+      studentProgressMedian
       __typename
     }
     error {
