@@ -1,6 +1,7 @@
 query Content_GetRelatedAssessmentItems($exerciseId: String) {
   exerciseById(id: $exerciseId) {
     id
+    prerequisites
     assessmentItems {
       id
       itemShapeType

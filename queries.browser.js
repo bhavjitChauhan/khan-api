@@ -2166,6 +2166,7 @@ fragment QuizAndTestFields on LearnableContent {
   Content_GetRelatedAssessmentItems: `query Content_GetRelatedAssessmentItems($exerciseId: String) {
   exerciseById(id: $exerciseId) {
     id
+    prerequisites
     assessmentItems {
       id
       itemShapeType
@@ -9424,6 +9425,44 @@ fragment CommonUserInfoFragment on User {
     __typename
   }
 }
+
+fragment gtp_checkpointFragment on Checkpoint {
+  id
+  stages {
+    numCreditedTasks
+    creditedTaskIds
+    goalTasks
+    stageIndex
+    stageDisplayNumber
+    startedAt
+    completedAt
+    incomingLevels {
+      name
+      level
+      __typename
+    }
+    focusAreas {
+      skillTitle
+      areaId
+      areaTitle
+      __typename
+    }
+    __typename
+  }
+  checkpointIndex
+  startedAt
+  completedAt
+  drillMode
+  isComplete
+  removedFromSchedule
+  hasDonePracticeTasks
+  numStages
+  canCreateNewStage
+  hasDonePracticeTasks
+  miniSectionStages
+  tmsTaskIds
+  __typename
+}
 `,
   gtp_getDescriptors: `query gtp_getDescriptors($examId: String!, $checkpointStr: String) {
   descriptorList(examId: $examId, requestedCheckpoint: $checkpointStr) {
@@ -9767,6 +9806,109 @@ fragment CommonUserInfoFragment on User {
     ...gtp_tpudFragment
     __typename
   }
+}
+
+fragment gtp_checkpointFragment on Checkpoint {
+  id
+  stages {
+    numCreditedTasks
+    creditedTaskIds
+    goalTasks
+    stageIndex
+    stageDisplayNumber
+    startedAt
+    completedAt
+    incomingLevels {
+      name
+      level
+      __typename
+    }
+    focusAreas {
+      skillTitle
+      areaId
+      areaTitle
+      __typename
+    }
+    __typename
+  }
+  checkpointIndex
+  startedAt
+  completedAt
+  drillMode
+  isComplete
+  removedFromSchedule
+  hasDonePracticeTasks
+  numStages
+  canCreateNewStage
+  hasDonePracticeTasks
+  miniSectionStages
+  tmsTaskIds
+  __typename
+}
+
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+
+fragment gtp_tpudFragment on TestPrepUserData {
+  id
+  examId
+  currentStage
+  currentCheckpoint
+  targetScore
+  diagnosticsStates {
+    type
+    state
+    __typename
+  }
+  onboardingState
+  hasSeededSkillLevels
+  hasUnlockedDrillMode
+  scoreInfo {
+    minScore
+    maxScore
+    __typename
+  }
+  schedule {
+    examDate
+    practiceTestDates
+    __typename
+  }
+  __typename
 }
 `,
   gtp_onboardingStatus: `query gtp_onboardingStatus($examGroupId: String!) {
@@ -16511,6 +16653,21 @@ fragment contentSearchLearnableContent on LearnableContent {
   user {
     id
     isCollectingInterests
+    __typename
+  }
+}
+`,
+  Content_GetPrerequisiteExercises: `query Content_GetPrerequisiteExercises($slugs: [String!]!) {
+  exercisesBySlugs(slugs: $slugs) {
+    id
+    slug
+    translatedTitle
+    translatedDescription
+    mappedStandards {
+      id
+      standardId
+      __typename
+    }
     __typename
   }
 }

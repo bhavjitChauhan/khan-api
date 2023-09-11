@@ -1,0 +1,14 @@
+query Content_GetPrerequisiteExercises($slugs: [String!]!) {
+  exercisesBySlugs(slugs: $slugs) {
+    id
+    slug
+    translatedTitle
+    translatedDescription
+    mappedStandards {
+      id
+      standardId
+      __typename
+    }
+    __typename
+  }
+}
