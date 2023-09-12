@@ -56,6 +56,7 @@ query StudentKmapPlacementQuery($classDescriptor: String!, $studentKaid: String!
             suggestedRitScoreBandKey
             __typename
           }
+          mapTestKey
           __typename
         }
         currentMathAssessment {
@@ -70,6 +71,7 @@ query StudentKmapPlacementQuery($classDescriptor: String!, $studentKaid: String!
             suggestedRitScoreBandKey
             __typename
           }
+          mapTestKey
           scoresReviewedDate
           __typename
         }
