@@ -1,0 +1,7 @@
+query getKhanmigoEnabled($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    isAIGuideEnabled
+    __typename
+  }
+}
