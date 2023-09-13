@@ -1,6 +1,8 @@
 query getNonProfileKhanmigoEligibilityData {
   user {
     id
+    isAIGuideEnabled
+    aiGuideDisabledReason
     isEnrolledInAIGuide
     children {
       id
