@@ -281,36 +281,6 @@ export default {
     __typename
   }
 }
-
-fragment AssignmentInfoFragment on Assignment {
-  id
-  contents {
-    id
-    title
-    __typename
-  }
-  studentList {
-    id
-    cacheId
-    name
-    __typename
-  }
-  students {
-    id
-    kaid
-    __typename
-  }
-  coach {
-    id
-    kaid
-    __typename
-  }
-  startDate
-  dueDate
-  isDraft
-  subjectSlug
-  __typename
-}
 `,
   archiveSubjectMasteryAssignment: `mutation archiveSubjectMasteryAssignment($assignmentId: ID!) {
   archiveSubjectMasteryAssignments(ids: [$assignmentId]) {
@@ -4960,44 +4930,6 @@ fragment gtp_checkpointFragment on Checkpoint {
     __typename
   }
 }
-
-fragment gtp_practiceTestFragment on PracticeTest {
-  id
-  practiceTestId
-  approxTestMins
-  testTitle
-  directions
-  formCode
-  hasStarted
-  completionStatus
-  completedAt
-  subScores {
-    name
-    score
-    __typename
-  }
-  sections {
-    sectionId
-    taskId
-    exerciseName
-    isScored
-    sectionTitle
-    numCorrect
-    numTotal
-    durationSeconds
-    breakDurationSeconds
-    hasUserGrading
-    completed
-    userProvidedScores {
-      score
-      minScore
-      maxScore
-      __typename
-    }
-    __typename
-  }
-  __typename
-}
 `,
   gtp_resetPracticeTestMutation: `mutation gtp_resetPracticeTestMutation($examId: String!, $taskId: String!) {
   resetPracticeTest(examId: $examId, taskId: $taskId) {
@@ -6807,36 +6739,6 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-
-fragment AssignmentInfoFragment on Assignment {
-  id
-  contents {
-    id
-    title
-    __typename
-  }
-  studentList {
-    id
-    cacheId
-    name
-    __typename
-  }
-  students {
-    id
-    kaid
-    __typename
-  }
-  coach {
-    id
-    kaid
-    __typename
-  }
-  startDate
-  dueDate
-  isDraft
-  subjectSlug
-  __typename
 }
 `,
   publishStandardMappings: `mutation publishStandardMappings($set: String!, $content: String!) {
