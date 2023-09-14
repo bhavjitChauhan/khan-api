@@ -170,6 +170,7 @@ query getUserDevAdminGeneral($kaid: String!) {
       gradeLevel
       khanmigoShould
       khanmigoStatus
+      khanmigoReason
       __typename
     }
     walmartId
