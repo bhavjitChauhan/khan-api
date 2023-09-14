@@ -1,0 +1,12 @@
+query getMasteryAssignmentMedianProgress($classCode: String!, $id: ID!, $curationNodeLevel: MasteryAssignmentCurationNodeLevel!) {
+  classroom(classCode: $classCode) {
+    id
+    cacheId
+    masteryAssignments: masteryAssignmentsByDescriptors(descriptors: [{id: $id, curationNodeLevel: $curationNodeLevel}]) {
+      id
+      studentProgressMedian
+      __typename
+    }
+    __typename
+  }
+}
