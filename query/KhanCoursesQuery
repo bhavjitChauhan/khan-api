@@ -1,5 +1,5 @@
-query KhanCoursesQuery($districtId: ID!, $courseIdsToAdd: [String]!) {
-  studentListTopics {
+query KhanCoursesQuery($districtId: ID!, $courseIdsToAdd: [String]!, $region: String!) {
+  studentListTopics(region: $region) {
     translatedTitle
     topics {
       id
