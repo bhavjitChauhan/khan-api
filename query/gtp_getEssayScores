@@ -4,17 +4,3 @@ query gtp_getEssayScores($examId: String!) {
     __typename
   }
 }
-
-fragment gtp_essayScoresFragment on EssayScores {
-  areas {
-    translatedTitle
-    essays {
-      examCompletionDate
-      score
-      maxScore
-      __typename
-    }
-    __typename
-  }
-  __typename
-}
