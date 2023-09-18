@@ -1,0 +1,7 @@
+query learnableContentPathQuery($id: String!, $kind: String!) {
+  learnableContent(id: $id, kind: $kind) {
+    id
+    defaultUrlPath
+    __typename
+  }
+}
