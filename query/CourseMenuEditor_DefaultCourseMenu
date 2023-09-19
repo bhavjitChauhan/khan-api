@@ -1,5 +1,5 @@
-query CourseMenuEditor_DefaultCourseMenu {
-  defaultCourseMenu: learnMenuTopics {
+query CourseMenuEditor_DefaultCourseMenu($curriculum: String!) {
+  defaultCourseMenu: learnMenuTopics(curriculum: $curriculum) {
     identifier: slug
     translatedTitle
     href
