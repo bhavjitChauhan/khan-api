@@ -8660,8 +8660,8 @@ fragment Badge on Badge {
   }
 }
 `,
-  getTopics: `query getTopics($courseIdsToAdd: [String]!, $descriptor: String!, $fetchDistrictCourses: Boolean!) {
-  domains: studentListTopics {
+  getTopics: `query getTopics($courseIdsToAdd: [String]!, $descriptor: String!, $fetchDistrictCourses: Boolean!, $region: String!) {
+  domains: studentListTopics(region: $region) {
     slug: domainSlug
     title: translatedTitle
     subjects: topics {
@@ -9614,20 +9614,6 @@ fragment gtp_egudFragment on ExamGroupUserData {
     ...gtp_essayScoresFragment
     __typename
   }
-}
-
-fragment gtp_essayScoresFragment on EssayScores {
-  areas {
-    translatedTitle
-    essays {
-      examCompletionDate
-      score
-      maxScore
-      __typename
-    }
-    __typename
-  }
-  __typename
 }
 `,
   gtp_getExamGroupMetadata: `query gtp_getExamGroupMetadata($examGroupId: String!) {
