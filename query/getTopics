@@ -1,5 +1,5 @@
-query getTopics($courseIdsToAdd: [String]!, $descriptor: String!, $fetchDistrictCourses: Boolean!) {
-  domains: studentListTopics {
+query getTopics($courseIdsToAdd: [String]!, $descriptor: String!, $fetchDistrictCourses: Boolean!, $region: String!) {
+  domains: studentListTopics(region: $region) {
     slug: domainSlug
     title: translatedTitle
     subjects: topics {
