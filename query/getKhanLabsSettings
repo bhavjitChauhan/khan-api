@@ -6,12 +6,14 @@ query getKhanLabsSettings($targetKaid: String!) {
     isAIGuideEnabled
     aiGuideDisabledReason
     nickname
+    includesDistrictOwnedData
     children {
       id
       age
       nickname
       isAIGuideEnabled
       aiGuideDisabledReason
+      includesDistrictOwnedData
       __typename
     }
     hasKhanmigoViaClassy

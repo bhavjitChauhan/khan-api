@@ -314,6 +314,35 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     __typename
   }
 }
+
+fragment ArticleRevision on ArticleRevision {
+  id
+  contentId
+  contentKind
+  creationDate
+  sha
+  authorKey
+  customDescriptionTag
+  customTitleTag
+  description
+  descriptionHtml: description
+  doNotPublish
+  sourceKaLocale
+  sourceLanguage: sourceKaLocale
+  slug
+  readableId: slug
+  title
+  sponsored
+  thumbnailData
+  thumbnailCache
+  alternateSlugs
+  assessmentItemTags
+  authorNames
+  clarificationsEnabled
+  perseusContent
+  listed
+  __typename
+}
 `,
   articleEditorRedirectQuery: `query articleEditorRedirectQuery($contentId: String!) {
   articleRevisionById(id: $contentId) {
@@ -2996,7 +3025,7 @@ fragment LearnableContent on LearnableContent {
 }
 `,
   courseEditorSearchPublished: `query courseEditorSearchPublished($query: String!, $contentKinds: [String]) {
-  searchPage(query: $query, contentKinds: $contentKinds, numResults: 100) {
+  searchPage(query: $query, contentKinds: $contentKinds, numResults: 100, region: "*") {
     results {
       contentKind: kind
       contentId
@@ -4527,8 +4556,8 @@ fragment UserFields on User {
   }
 }
 `,
-  footerDomainsQuery: `query footerDomainsQuery($curriculum: String) {
-  footerDomains(curriculum: $curriculum) {
+  footerDomainsQuery: `query footerDomainsQuery($region: String) {
+  footerDomains(region: $region) {
     translatedTitle
     href
     __typename
@@ -4729,8 +4758,8 @@ fragment UserFields on User {
   }
 }
 `,
-  getAllSubject: `query getAllSubject {
-  domains: studentListTopics {
+  getAllSubject: `query getAllSubject($region: String!) {
+  domains: studentListTopics(region: $region) {
     subjects: topics {
       id
       slug
@@ -6806,12 +6835,14 @@ fragment userTaskFields on PracticeUserTask {
     isAIGuideEnabled
     aiGuideDisabledReason
     nickname
+    includesDistrictOwnedData
     children {
       id
       age
       nickname
       isAIGuideEnabled
       aiGuideDisabledReason
+      includesDistrictOwnedData
       __typename
     }
     hasKhanmigoViaClassy
@@ -11262,8 +11293,8 @@ fragment BaseFolder on Folder {
   }
 }
 `,
-  learnMenuTopicsQuery: `query learnMenuTopicsQuery($curriculum: String) {
-  learnMenuTopics(curriculum: $curriculum) {
+  learnMenuTopicsQuery: `query learnMenuTopicsQuery($region: String) {
+  learnMenuTopics(region: $region) {
     slug
     translatedTitle
     href
@@ -15447,6 +15478,39 @@ fragment SharedFeedbackFields on Feedback {
     ...VideoRevision
     __typename
   }
+}
+
+fragment VideoRevision on VideoRevision {
+  id
+  contentId
+  contentKind
+  creationDate
+  sha
+  authorKey
+  customDescriptionTag
+  customTitleTag
+  description
+  descriptionHtml: description
+  doNotPublish
+  sourceKaLocale
+  sourceLanguage: sourceKaLocale
+  slug
+  readableId: slug
+  title
+  sponsored
+  thumbnailCache
+  thumbnailData
+  alternateSlugs
+  assessmentItemTags
+  augmentedTranscript
+  authorNames
+  clarificationsEnabled
+  duration
+  kaUserLicense
+  keywords
+  youtubeId
+  listed
+  __typename
 }
 `,
   WhatNextPrompt: `query WhatNextPrompt($assignmentsPageSize: Int, $assignmentsOrderBy: AssignmentOrder!, $assignmentsDueAfter: DateTime!) {

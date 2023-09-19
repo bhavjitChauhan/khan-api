@@ -1,5 +1,5 @@
 query courseEditorSearchPublished($query: String!, $contentKinds: [String]) {
-  searchPage(query: $query, contentKinds: $contentKinds, numResults: 100) {
+  searchPage(query: $query, contentKinds: $contentKinds, numResults: 100, region: "*") {
     results {
       contentKind: kind
       contentId
