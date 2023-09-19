@@ -1,5 +1,5 @@
-query learnMenuTopicsQuery($curriculum: String) {
-  learnMenuTopics(curriculum: $curriculum) {
+query learnMenuTopicsQuery($region: String) {
+  learnMenuTopics(region: $region) {
     slug
     translatedTitle
     href

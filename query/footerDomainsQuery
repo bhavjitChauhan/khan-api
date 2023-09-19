@@ -1,5 +1,5 @@
-query footerDomainsQuery($curriculum: String) {
-  footerDomains(curriculum: $curriculum) {
+query footerDomainsQuery($region: String) {
+  footerDomains(region: $region) {
     translatedTitle
     href
     __typename

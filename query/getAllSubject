@@ -1,5 +1,5 @@
-query getAllSubject {
-  domains: studentListTopics {
+query getAllSubject($region: String!) {
+  domains: studentListTopics(region: $region) {
     subjects: topics {
       id
       slug
