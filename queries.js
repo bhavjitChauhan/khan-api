@@ -10694,32 +10694,18 @@ fragment gtp_tpudFragment on TestPrepUserData {
   }
 }
 `,
-  KhanCoursesQuery: `query KhanCoursesQuery($districtId: ID!, $courseIdsToAdd: [String]!, $region: String!) {
-  studentListTopics(region: $region) {
-    translatedTitle
-    topics {
-      id
-      key
-      translatedTitle
-      masteryEnabled
-      __typename
-    }
-    __typename
-  }
-  coursesByIds(ids: $courseIdsToAdd) {
-    id
-    key
-    translatedTitle
-    masteryEnabled
-    __typename
-  }
+  KhanCoursesQuery: `query KhanCoursesQuery($districtId: ID!) {
   districtById(districtId: $districtId) {
     id
-    curriculumAlignedCourses {
+    courses {
       id
       key
       translatedTitle
-      masteryEnabled
+      domain: parent {
+        id
+        translatedTitle
+        __typename
+      }
       __typename
     }
     __typename
