@@ -3,6 +3,7 @@ query guidePreferences {
     id
     aiGuidePreferences {
       readingLevel
+      guideLanguageCode
       __typename
     }
     __typename
