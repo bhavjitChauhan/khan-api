@@ -22,6 +22,10 @@ query getClassList {
         id
         isNweaMapSynced
         courseSISName
+        studentUserDistrictInfos {
+          id
+          __typename
+        }
         __typename
       }
       testPrepExams {
