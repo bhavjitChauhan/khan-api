@@ -3615,11 +3615,13 @@ fragment CourseProgress on SubjectProgress {
     khanmigoIncludedUsers {
       id
       districtProvidedEmail
+      primaryRole
       __typename
     }
     khanmigoExcludedUsers {
       id
       districtProvidedEmail
+      primaryRole
       __typename
     }
     khanmigoGradeEnrollment {
@@ -15517,6 +15519,39 @@ fragment SharedFeedbackFields on Feedback {
     ...VideoRevision
     __typename
   }
+}
+
+fragment VideoRevision on VideoRevision {
+  id
+  contentId
+  contentKind
+  creationDate
+  sha
+  authorKey
+  customDescriptionTag
+  customTitleTag
+  description
+  descriptionHtml: description
+  doNotPublish
+  sourceKaLocale
+  sourceLanguage: sourceKaLocale
+  slug
+  readableId: slug
+  title
+  sponsored
+  thumbnailCache
+  thumbnailData
+  alternateSlugs
+  assessmentItemTags
+  augmentedTranscript
+  authorNames
+  clarificationsEnabled
+  duration
+  kaUserLicense
+  keywords
+  youtubeId
+  listed
+  __typename
 }
 `,
   WhatNextPrompt: `query WhatNextPrompt($assignmentsPageSize: Int, $assignmentsOrderBy: AssignmentOrder!, $assignmentsDueAfter: DateTime!) {
