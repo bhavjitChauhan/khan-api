@@ -179,6 +179,7 @@ query getUserDevAdminGeneral($kaid: String!) {
     isK4dStudent
     isK4dTeacher
     isStudentOfFormalTeacherActor
+    stripeCustomerUrl
     __typename
   }
   coach: user(kaid: $kaid) {
