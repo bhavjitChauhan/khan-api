@@ -72,11 +72,13 @@ query districts($filter: String!) {
     khanmigoIncludedUsers {
       id
       districtProvidedEmail
+      primaryRole
       __typename
     }
     khanmigoExcludedUsers {
       id
       districtProvidedEmail
+      primaryRole
       __typename
     }
     khanmigoGradeEnrollment {
