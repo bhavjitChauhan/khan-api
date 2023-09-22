@@ -1,5 +1,5 @@
 query devadminStringTranslation($message: String!, $messageLocation: String!, $kaLocale: KALocale!) {
-  stringTranslation(message: $message, messageLocation: $messageLocation, kaLocale: $kaLocale, doAITranslationIfMissing: true) {
+  stringTranslation(message: $message, messageLocation: $messageLocation, kaLocale: $kaLocale) {
     found
     isAITranslated
     isNewTranslation
