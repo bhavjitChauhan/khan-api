@@ -31,6 +31,11 @@ query masteryAssignments($classCode: String!) {
       coachNickname
       __typename
     }
+    classroomDistrictInfo {
+      id
+      isNweaMapSynced
+      __typename
+    }
     __typename
   }
 }
