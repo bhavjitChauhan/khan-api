@@ -1420,6 +1420,7 @@ fragment InvitationsField on Invitation {
     }
     canvasOnly
     code
+    codeFormat
     configVersion
     defaultUrlPath
     height
@@ -1441,6 +1442,7 @@ fragment InvitationsField on Invitation {
     }
     canvasOnly
     code
+    codeFormat
     configVersion
     defaultUrlPath
     height
@@ -1457,6 +1459,7 @@ fragment InvitationsField on Invitation {
     }
     canvasOnly
     code
+    codeFormat
     configVersion
     defaultUrlPath
     height

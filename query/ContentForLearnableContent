@@ -27,6 +27,7 @@ fragment LearnableContentData on LearnableContent {
     }
     canvasOnly
     code
+    codeFormat
     configVersion
     defaultUrlPath
     height
@@ -48,6 +49,7 @@ fragment LearnableContentData on LearnableContent {
     }
     canvasOnly
     code
+    codeFormat
     configVersion
     defaultUrlPath
     height
@@ -64,6 +66,7 @@ fragment LearnableContentData on LearnableContent {
     }
     canvasOnly
     code
+    codeFormat
     configVersion
     defaultUrlPath
     height
