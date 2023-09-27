@@ -10356,8 +10356,8 @@ fragment entry on TeamPageEntryForEditing {
   }
 }
 `,
-  SetGuidePreferences: `mutation SetGuidePreferences($readingLevel: AIGuideReadingLevel!) {
-  setPreferencesForUser(readingLevel: $readingLevel) {
+  SetGuidePreferences: `mutation SetGuidePreferences($readingLevel: AIGuideReadingLevel, $guideLanguageCode: String) {
+  setPreferencesForUser(readingLevel: $readingLevel, guideLanguageCode: $guideLanguageCode) {
     error {
       code
       __typename
