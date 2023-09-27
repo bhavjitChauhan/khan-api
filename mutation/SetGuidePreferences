@@ -1,5 +1,5 @@
-mutation SetGuidePreferences($readingLevel: AIGuideReadingLevel!) {
-  setPreferencesForUser(readingLevel: $readingLevel) {
+mutation SetGuidePreferences($readingLevel: AIGuideReadingLevel, $guideLanguageCode: String) {
+  setPreferencesForUser(readingLevel: $readingLevel, guideLanguageCode: $guideLanguageCode) {
     error {
       code
       __typename
