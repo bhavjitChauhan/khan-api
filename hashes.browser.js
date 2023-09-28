@@ -353,7 +353,7 @@ hashes = {
   khanLibraryCourseStructure: 1775449498,
   khanLibraryGetDomainRevision: 3200697993,
   khanLibraryGetFolder: 1914455699,
-  khanLibraryGetFolderTranslationProgress: 1727747379,
+  khanLibraryGetFolderTranslationProgress: 736454641,
   khanLibraryGetLocalesLanguage: 831385895,
   khanLibraryGetMyGroup: 1126317092,
   khanLibraryGetOtherGroup: 3420262787,
@@ -598,4 +598,5 @@ hashes = {
   getKhanmigoEnabled: 4176239307,
   getMasteryAssignmentMedianProgress: 561902919,
   learnableContentPathQuery: 3026310104,
+  getStringTranslation: 805208817,
 }
