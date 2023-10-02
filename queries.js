@@ -5229,6 +5229,7 @@ fragment StudentField2 on StudentsPage {
     name
     key
     signupCode
+    countStudents
     classroomDistrictInfo {
       id
       teacherUserDistrictInfoIDs {
@@ -5265,6 +5266,7 @@ fragment StudentField2 on StudentsPage {
       key
       slug
       translatedStandaloneTitle
+      masteryEnabled
       __typename
     }
     isDistrictSynced

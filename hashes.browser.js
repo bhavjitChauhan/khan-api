@@ -167,7 +167,7 @@ hashes = {
   getClassroomRoster: 1774110414,
   getClassroomsAndPrimaryOffering: 2025992799,
   getClassSelector: 2133573289,
-  getClassSettings: 2461142317,
+  getClassSettings: 3421452724,
   getCoach: 2158904259,
   getCoachExerciseReport: 975361783,
   getCombinedBadges: 2548321639,
