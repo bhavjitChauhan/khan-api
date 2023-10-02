@@ -8735,6 +8735,10 @@ fragment Badge on Badge {
       title: translatedTitle
       iconPath
       domainSlug
+      masteryEnabled
+      subjectMasteryEnabled
+      isHighSchoolSubject
+      translatedStandaloneTitle
       __typename
     }
     __typename

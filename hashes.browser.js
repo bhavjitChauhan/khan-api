@@ -287,7 +287,7 @@ hashes = {
   getTopic: 1270909967,
   getTopicPathBreadcrumbs: 1204540076,
   GetTopicQuestionsQuery: 1784572375,
-  getTopics: 1169068725,
+  getTopics: 2207182578,
   getTransferAuthToken: 1644545392,
   getUserByUsernameOrEmail: 3296320128,
   getUserChangeLogsAsDevadmin: 2577762171,
