@@ -1860,6 +1860,7 @@ fragment InvitationsField on Invitation {
   ...tapMetadataWordCounts
   fingerprint
   children {
+    ...tapAIGuideActivityNode
     ...tapArticleNode
     ...tapChallengeNode
     ...tapExerciseNode
@@ -2186,6 +2187,13 @@ fragment InvitationsField on Invitation {
   title
   listed
   defaultUrlPath
+  __typename
+}
+`,
+  tapAIGuideActivityNode: `fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
   __typename
 }
 `,

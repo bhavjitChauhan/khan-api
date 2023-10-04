@@ -3,6 +3,7 @@ fragment tapLessonNode on TAPLessonNode {
   ...tapMetadataWordCounts
   fingerprint
   children {
+    ...tapAIGuideActivityNode
     ...tapArticleNode
     ...tapChallengeNode
     ...tapExerciseNode

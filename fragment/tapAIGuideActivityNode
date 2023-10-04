@@ -1,0 +1,6 @@
+fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  __typename
+}
