@@ -10187,4 +10187,25 @@ fragment entry on TeamPageEntryForEditing {
   }
 }
 `,
+  contentEditorEditChallenge: `mutation contentEditorEditChallenge($input: EditChallengeInput!, $sha: String!) {
+  editChallenge(input: $input, sha: $sha) {
+    challenge {
+      id
+      contentId
+      contentKind
+      listed
+      title
+      sha
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      conflictSha
+      __typename
+    }
+    __typename
+  }
+}
+`,
 }
