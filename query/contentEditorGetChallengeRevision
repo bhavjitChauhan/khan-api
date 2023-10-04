@@ -1,0 +1,13 @@
+query contentEditorGetChallengeRevision($id: String!) {
+  challengeRevisionById(id: $id) {
+    id
+    contentId
+    contentKind
+    description
+    listed
+    title
+    sha
+    code
+    __typename
+  }
+}
