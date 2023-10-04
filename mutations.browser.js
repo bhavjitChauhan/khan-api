@@ -10208,4 +10208,14 @@ fragment entry on TeamPageEntryForEditing {
   }
 }
 `,
+  sendAiGuideDisabledDuringDistrictActivationTestEmail: `mutation sendAiGuideDisabledDuringDistrictActivationTestEmail {
+  sendAiGuideDisabledDuringDistrictActivationTestEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
+`,
 }
