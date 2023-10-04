@@ -1,0 +1,9 @@
+mutation sendAiGuideDisabledDuringDistrictActivationTestEmail {
+  sendAiGuideDisabledDuringDistrictActivationTestEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
