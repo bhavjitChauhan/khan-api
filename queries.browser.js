@@ -15593,8 +15593,8 @@ fragment contentSearchLearnableContent on LearnableContent {
   }
 }
 `,
-  getDistrictCourseProgressByStudent: `query getDistrictCourseProgressByStudent($filters: DistrictCourseProgressFilters!, $studentKaid: String!, $getKmapTopics: Boolean!) {
-  districtCourseProgressByCourseForStudent(filters: $filters, studentKaid: $studentKaid) {
+  getDistrictCourseProgressByStudent: `query getDistrictCourseProgressByStudent($filters: DistrictCourseProgressFilters!, $studentKaid: String!, $getKmapTopics: Boolean!, $classroomDescriptor: String!) {
+  districtCourseProgressByCourseForStudent(filters: $filters, studentKaid: $studentKaid, classroomDescriptor: $classroomDescriptor) {
     dateInfo {
       lastUpdatedDate
       from
