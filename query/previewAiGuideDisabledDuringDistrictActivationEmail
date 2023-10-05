@@ -1,0 +1,7 @@
+query previewAiGuideDisabledDuringDistrictActivationEmail {
+  preview: previewAiGuideDisabledDuringDistrictActivationEmail {
+    textContent
+    htmlContent
+    __typename
+  }
+}
