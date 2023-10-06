@@ -62,6 +62,8 @@ export interface UserSchema<
    */
   id: Kaid | null
   includesDistrictOwnedData: boolean
+  includesK4dDistrictOwnedData: boolean
+  includesKmapDistrictOwnedData: boolean
   isAIGuideEnabled: boolean
   isActor: boolean
   isChild: boolean | null
@@ -71,6 +73,7 @@ export interface UserSchema<
   isCurator: boolean | null
   isDataCollectible: boolean | null
   isDeveloper: boolean | null
+  isFormalTeacher: boolean | null
   isMidsignupPhantom: boolean
   isModerator: boolean | null
   isOrphan: boolean | null

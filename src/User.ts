@@ -150,6 +150,7 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
   readonly parent?: boolean
   readonly orphan?: boolean
   readonly teacher?: boolean
+  readonly formalTeacher?: boolean
   readonly curator?: boolean
   readonly publisher?: boolean
   readonly creator?: boolean
@@ -237,6 +238,7 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
       publisher: schema.isPublisher ?? undefined,
       self: schema.isSelf ?? undefined,
       teacher: schema.isTeacher ?? undefined,
+      formalTeacher: schema.isFormalTeacher ?? undefined,
       joined: schema.joined ? new Date(schema.joined) : undefined,
       kaid:
         typeof schema.kaid === 'string' && isKaid(schema.kaid)
