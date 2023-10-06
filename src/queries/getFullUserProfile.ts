@@ -25,6 +25,7 @@ export namespace GetFullUserProfile {
     isModerator: hasPermission(name: "can_moderate_users", scope: GLOBAL)
     isParent
     isTeacher
+    isFormalTeacher
     isDataCollectible
     isChild
     isOrphan
@@ -57,6 +58,8 @@ export namespace GetFullUserProfile {
     homepageUrl
     isMidsignupPhantom
     includesDistrictOwnedData
+    includesKmapDistrictOwnedData
+    includesK4dDistrictOwnedData
     canAccessDistrictsHomepage
     preferredKaLocale {
       id
@@ -126,6 +129,8 @@ export namespace GetFullUserProfile {
       | 'homepageUrl'
       | 'id'
       | 'includesDistrictOwnedData'
+      | 'includesK4dDistrictOwnedData'
+      | 'includesKmapDistrictOwnedData'
       | 'isAIGuideEnabled'
       | 'isChild'
       | 'isCoachingLoggedInUser'
@@ -133,6 +138,7 @@ export namespace GetFullUserProfile {
       | 'isCurator'
       | 'isDataCollectible'
       | 'isDeveloper'
+      | 'isFormalTeacher'
       | 'isMidsignupPhantom'
       | 'isModerator'
       | 'isOrphan'
