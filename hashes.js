@@ -9,7 +9,7 @@ export default {
   allFlaggedGuideThreads: 1664282797,
   allStandardsForSet: 488832221,
   allTranslatableLocales: 1483041236,
-  articleEditorQuery: 3988343116,
+  articleEditorQuery: 1769933338,
   articleEditorRedirectQuery: 3211614119,
   articleForDiff: 3073443379,
   articleRevisionsForDiff: 4098633042,
