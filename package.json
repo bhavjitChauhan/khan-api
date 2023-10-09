@@ -1,6 +1,6 @@
 {
   "name": "@bhavjit/khan-api",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "A Khan Academy API client and wrapper",
   "keywords": [
     "khan-academy",
@@ -72,7 +72,6 @@
     },
     "browser": {
       "import": "./browser/esm/khan-api.js",
-      "require": null,
       "default": "./browser/iife/khan-api.js"
     },
     "default": "./node/esm/khan-api.mjs"
