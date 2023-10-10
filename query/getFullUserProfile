@@ -79,6 +79,7 @@ query getFullUserProfile($kaid: String, $username: String) {
     shouldShowAgeCheck
     birthMonthYear
     lastLoginCountry
+    region
     __typename
   }
   actorIsImpersonatingUser
