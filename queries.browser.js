@@ -16707,4 +16707,14 @@ fragment contentSearchLearnableContent on LearnableContent {
   }
 }
 `,
+  TranslationEditor_GetAIGuideActivityStrings: `query TranslationEditor_GetAIGuideActivityStrings($contentDescriptor: String!) {
+  contentForDescriptors(descriptors: [$contentDescriptor]) {
+    id
+    defaultUrlPath
+    listed
+    title
+    __typename
+  }
+}
+`,
 }

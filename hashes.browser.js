@@ -601,4 +601,5 @@ hashes = {
   getStringTranslation: 805208817,
   contentEditorGetChallengeRevision: 3887191537,
   previewAiGuideDisabledDuringDistrictActivationEmail: 14372042,
+  TranslationEditor_GetAIGuideActivityStrings: 1111700003,
 }
