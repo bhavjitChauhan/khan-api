@@ -1,7 +1,10 @@
 query StudentKmapPlacementQuery($classDescriptor: String!, $studentKaid: String!) {
   student: user(kaid: $studentKaid) {
     id
-    assignments: subjectMasteryAssignments(filter: KMAP, classroomDescriptor: $classDescriptor) {
+    assignments: subjectMasteryAssignments(
+      filter: KMAP
+      classroomDescriptor: $classDescriptor
+    ) {
       id
       studentListId
       activeStudentData {

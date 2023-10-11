@@ -2,7 +2,11 @@ query StudentKMapGoals($kaid: String, $isPast: Boolean!, $classDescriptor: Strin
   user(kaid: $kaid) {
     id
     hasTakenKmapExam
-    courseMasteryAssignments(filter: KMAP, isPast: $isPast, classroomDescriptor: $classDescriptor) {
+    courseMasteryAssignments(
+      filter: KMAP
+      isPast: $isPast
+      classroomDescriptor: $classDescriptor
+    ) {
       id
       activeStudentDataV2 {
         kaid

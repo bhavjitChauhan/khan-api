@@ -1,3 +1,9 @@
 query FetchVideoContentData($path: String!, $queryParams: String!, $isModal: Boolean, $followRedirects: Boolean, $countryCode: String!) {
-  contentJson: curatedVideoContentLibraryJson(path: $path, queryParams: $queryParams, isModal: $isModal, followRedirects: $followRedirects, countryCode: $countryCode)
+  contentJson: curatedVideoContentLibraryJson(
+    path: $path
+    queryParams: $queryParams
+    isModal: $isModal
+    followRedirects: $followRedirects
+    countryCode: $countryCode
+  )
 }

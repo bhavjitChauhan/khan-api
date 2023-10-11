@@ -1,5 +1,8 @@
 mutation removeDistrictCourseProgressDateRanges($districtID: String!, $dateRanges: [CustomDateRange!]!) {
-  removeDistrictCourseProgressDateRanges(districtID: $districtID, dateRanges: $dateRanges) {
+  removeDistrictCourseProgressDateRanges(
+    districtID: $districtID
+    dateRanges: $dateRanges
+  ) {
     dateRanges {
       from
       isCustom

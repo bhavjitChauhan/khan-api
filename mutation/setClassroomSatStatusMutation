@@ -1,5 +1,9 @@
 mutation setClassroomSatStatusMutation($classDescriptor: String!, $includeSat: Boolean!, $fromUpsell: Boolean) {
-  setClassroomSatStatus(classroomDescriptor: $classDescriptor, includeSat: $includeSat, fromUpsell: $fromUpsell) {
+  setClassroomSatStatus(
+    classroomDescriptor: $classDescriptor
+    includeSat: $includeSat
+    fromUpsell: $fromUpsell
+  ) {
     classroom {
       id
       cacheId

@@ -1,5 +1,9 @@
 mutation contentEditorMoveExerciseProblemType($sourceContentId: String!, $targetContentId: String!, $problemTypeName: String!) {
-  moveExerciseProblemType(sourceContentId: $sourceContentId, targetContentId: $targetContentId, problemTypeName: $problemTypeName) {
+  moveExerciseProblemType(
+    sourceContentId: $sourceContentId
+    targetContentId: $targetContentId
+    problemTypeName: $problemTypeName
+  ) {
     exercise {
       ...ExerciseRevision
       __typename
@@ -17,7 +21,6 @@ mutation contentEditorMoveExerciseProblemType($sourceContentId: String!, $target
     __typename
   }
 }
-
 fragment AssessmentItemRevision on AssessmentItemRevision {
   id
   contentKind
@@ -33,7 +36,6 @@ fragment AssessmentItemRevision on AssessmentItemRevision {
   tags
   __typename
 }
-
 fragment ExerciseRevision on ExerciseRevision {
   id
   contentKind

@@ -1,5 +1,9 @@
 mutation UpdateFeedback($feedbackKey: String!, $textContent: String!, $shownLowQualityNotice: Boolean) {
-  updateFeedback(feedbackKey: $feedbackKey, textContent: $textContent, shownLowQualityNotice: $shownLowQualityNotice) {
+  updateFeedback(
+    feedbackKey: $feedbackKey
+    textContent: $textContent
+    shownLowQualityNotice: $shownLowQualityNotice
+  ) {
     feedback {
       isLocked
       isPinned

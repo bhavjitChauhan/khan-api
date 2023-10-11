@@ -4,7 +4,6 @@ query khanLibraryGetDomainRevision($contentId: String!) {
     __typename
   }
 }
-
 fragment khanLibraryDomainRevision on DomainRevision {
   id
   sha

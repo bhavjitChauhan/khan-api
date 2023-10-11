@@ -13,7 +13,6 @@ mutation contentEditorCreateArticle($input: NewArticleInput!) {
     __typename
   }
 }
-
 fragment ArticleRevision on ArticleRevision {
   id
   contentId

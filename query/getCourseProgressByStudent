@@ -1,5 +1,10 @@
 query getCourseProgressByStudent($filters: DistrictCourseProgressFilters!, $classroomDescriptor: String!, $courseID: String!, $onlyStudentsWhoWorkedOnTheCourseNotForAClass: Boolean) {
-  districtCourseProgressByStudent(filters: $filters, courseID: $courseID, classroomDescriptor: $classroomDescriptor, onlyStudentsWhoWorkedOnTheCourseNotForAClass: $onlyStudentsWhoWorkedOnTheCourseNotForAClass) {
+  districtCourseProgressByStudent(
+    filters: $filters
+    courseID: $courseID
+    classroomDescriptor: $classroomDescriptor
+    onlyStudentsWhoWorkedOnTheCourseNotForAClass: $onlyStudentsWhoWorkedOnTheCourseNotForAClass
+  ) {
     dateInfo {
       from
       upTo

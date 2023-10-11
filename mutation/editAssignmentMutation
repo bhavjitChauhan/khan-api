@@ -1,5 +1,7 @@
 mutation editAssignmentMutation($id: ID!, $curationNodeLevel: MasteryAssignmentCurationNodeLevel!, $dueDate: DateTime!, $students: [ID]!) {
-  updateMasteryAssignment(updateMasteryAssignmentInput: {id: $id, curationNodeLevel: $curationNodeLevel, dueDate: $dueDate, studentKaids: $students}) {
+  updateMasteryAssignment(
+    updateMasteryAssignmentInput: {id: $id, curationNodeLevel: $curationNodeLevel, dueDate: $dueDate, studentKaids: $students}
+  ) {
     assignment {
       id
       type: curationNodeLevel

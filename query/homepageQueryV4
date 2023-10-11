@@ -12,8 +12,12 @@ query homepageQueryV4($kaid: String, $username: String) {
     isCoachedByActor
     isManagedByActor
     isAIGuideEnabled
-    canViewUserProgress: actorHasUserScopedPermission(capability: CAN_VIEW_USER_PROGRESS)
-    canViewTeachersAndClassrooms: actorHasUserScopedPermission(capability: CAN_VIEW_TEACHERS_AND_CLASSROOMS)
+    canViewUserProgress: actorHasUserScopedPermission(
+      capability: CAN_VIEW_USER_PROGRESS
+    )
+    canViewTeachersAndClassrooms: actorHasUserScopedPermission(
+      capability: CAN_VIEW_TEACHERS_AND_CLASSROOMS
+    )
     isDistrictSynced
     isKmapSynced
     userDistrictInfos {

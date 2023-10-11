@@ -1,7 +1,13 @@
 query UserAssignmentsPage($classroomDescriptor: String!, $dueAfterISO: DateTime, $pageSize: Int!, $cursor: ID) {
   user {
     id
-    assignmentsPage(dueAfter: $dueAfterISO, orderBy: DUE_DATE_ASC, pageSize: $pageSize, classroomDescriptor: $classroomDescriptor, after: $cursor) {
+    assignmentsPage(
+      dueAfter: $dueAfterISO
+      orderBy: DUE_DATE_ASC
+      pageSize: $pageSize
+      classroomDescriptor: $classroomDescriptor
+      after: $cursor
+    ) {
       assignments {
         ...AssignmentData
         __typename
@@ -15,7 +21,6 @@ query UserAssignmentsPage($classroomDescriptor: String!, $dueAfterISO: DateTime,
     __typename
   }
 }
-
 fragment AssignmentData on Assignment {
   id
   contents {

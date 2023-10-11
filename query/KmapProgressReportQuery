@@ -33,7 +33,10 @@ query KmapProgressReportQuery($classDescriptor: String!, $progressFrom: DateTime
     }
     __typename
   }
-  teacherKmapProgressReport: teacherMapProgressReport(classroomDescriptor: $classDescriptor, filters: {progressFrom: $progressFrom, progressUpTo: $progressUpTo}) {
+  teacherKmapProgressReport: teacherMapProgressReport(
+    classroomDescriptor: $classDescriptor
+    filters: {progressFrom: $progressFrom, progressUpTo: $progressUpTo}
+  ) {
     rows {
       studentKaidAndNickname: studentKaidsAndNickname {
         id

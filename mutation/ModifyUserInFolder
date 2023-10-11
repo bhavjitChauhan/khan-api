@@ -1,5 +1,9 @@
 mutation ModifyUserInFolder($folderId: ID!, $userKaid: String!, $operation: FolderEditOperation!) {
-  updateTeamKaidsInFolder(folderId: $folderId, kaid: $userKaid, operation: $operation) {
+  updateTeamKaidsInFolder(
+    folderId: $folderId
+    kaid: $userKaid
+    operation: $operation
+  ) {
     folder {
       id
       kaLocale

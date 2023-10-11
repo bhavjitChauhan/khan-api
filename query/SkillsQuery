@@ -1,5 +1,8 @@
 query SkillsQuery($classDescriptor: String!, $skillIds: [String]!, $studentKaid: String) {
-  teacherOverallProgressReport(classroomDescriptor: $classDescriptor, filters: {studentKaid: $studentKaid}) {
+  teacherOverallProgressReport(
+    classroomDescriptor: $classDescriptor
+    filters: {studentKaid: $studentKaid}
+  ) {
     skillsLevels(skillIds: $skillIds) {
       skillId
       studentLevels {

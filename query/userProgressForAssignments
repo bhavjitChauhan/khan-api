@@ -19,7 +19,6 @@ query userProgressForAssignments($contentDescriptors: [String!]!) {
     __typename
   }
 }
-
 fragment BasicContentItemProgress on ContentItemProgress {
   bestScore {
     numAttempted

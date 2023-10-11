@@ -4,7 +4,6 @@ query contentEditorGetVideoRevision($id: String!) {
     __typename
   }
 }
-
 fragment VideoRevision on VideoRevision {
   id
   contentId

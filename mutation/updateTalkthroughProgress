@@ -1,5 +1,7 @@
 mutation updateTalkthroughProgress($fullyWatched: Boolean!, $lastMsWatched: Float!, $lessonId: ID!, $msDuration: Int!, $msWatched: Float!, $programId: ID!, $updateProgress: Boolean!) {
-  updateTalkthroughProgress(input: {fullyWatched: $fullyWatched, lastMsWatched: $lastMsWatched, lessonId: $lessonId, msDuration: $msDuration, msWatched: $msWatched, programId: $programId, updateProgress: $updateProgress}) {
+  updateTalkthroughProgress(
+    input: {fullyWatched: $fullyWatched, lastMsWatched: $lastMsWatched, lessonId: $lessonId, msDuration: $msDuration, msWatched: $msWatched, programId: $programId, updateProgress: $updateProgress}
+  ) {
     actionResults {
       pointsEarned {
         points

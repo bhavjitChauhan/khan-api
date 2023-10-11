@@ -1,5 +1,9 @@
 query listClassroomPrograms($pageInfo: ListProgramsPageInfo, $classroomId: String!, $onlyOfficialProgramSpinoffs: Boolean!) {
-  listClassroomPrograms(pageInfo: $pageInfo, classroomId: $classroomId, onlyOfficialProgramSpinoffs: $onlyOfficialProgramSpinoffs) {
+  listClassroomPrograms(
+    pageInfo: $pageInfo
+    classroomId: $classroomId
+    onlyOfficialProgramSpinoffs: $onlyOfficialProgramSpinoffs
+  ) {
     complete
     cursor
     programs {

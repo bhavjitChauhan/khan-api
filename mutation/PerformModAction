@@ -1,5 +1,9 @@
 mutation PerformModAction($modAction: ModAction!, $entityKey: String!, $intoType: FeedbackType) {
-  performModAction(modAction: $modAction, entityKey: $entityKey, intoType: $intoType) {
+  performModAction(
+    modAction: $modAction
+    entityKey: $entityKey
+    intoType: $intoType
+  ) {
     error {
       code
       __typename

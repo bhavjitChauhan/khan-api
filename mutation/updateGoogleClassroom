@@ -1,5 +1,12 @@
 mutation updateGoogleClassroom($googleClassId: String!, $googleClassName: String!, $googleClassUrl: String!, $googleClassStudents: [GoogleClassStudent]!, $classroomKey: String!, $khanClassName: String) {
-  updateGoogleClassroom(googleClassId: $googleClassId, googleClassName: $googleClassName, googleClassUrl: $googleClassUrl, googleClassStudents: $googleClassStudents, classroomKey: $classroomKey, khanClassName: $khanClassName) {
+  updateGoogleClassroom(
+    googleClassId: $googleClassId
+    googleClassName: $googleClassName
+    googleClassUrl: $googleClassUrl
+    googleClassStudents: $googleClassStudents
+    classroomKey: $classroomKey
+    khanClassName: $khanClassName
+  ) {
     classroom {
       ...ClassroomData
       __typename
@@ -19,7 +26,6 @@ mutation updateGoogleClassroom($googleClassId: String!, $googleClassName: String
     __typename
   }
 }
-
 fragment ClassroomData on StudentList {
   cacheId
   id
@@ -32,12 +38,10 @@ fragment ClassroomData on StudentList {
   googleClassUrl
   __typename
 }
-
 fragment LinkedStudentData on LinkedGoogleClassStudent {
   email
   __typename
 }
-
 fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
   email
   nickname

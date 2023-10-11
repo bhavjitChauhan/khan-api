@@ -14,8 +14,19 @@ query ActiveDistrictQuery($districtName: String!, $from: DateTime, $upTo: DateTi
       name
       __typename
     }
-    activeCourseSISNumbers(from: $from, upTo: $upTo, schoolIds: $schoolIds, gradeLevels: $gradeLevels)
-    activeTeachers(from: $from, upTo: $upTo, schoolIds: $schoolIds, gradeLevels: $gradeLevels, courseSIS: $courseSIS) {
+    activeCourseSISNumbers(
+      from: $from
+      upTo: $upTo
+      schoolIds: $schoolIds
+      gradeLevels: $gradeLevels
+    )
+    activeTeachers(
+      from: $from
+      upTo: $upTo
+      schoolIds: $schoolIds
+      gradeLevels: $gradeLevels
+      courseSIS: $courseSIS
+    ) {
       id
       kaid
       displayNameForTeacher

@@ -1,14 +1,16 @@
 query UserAssignmentsForContent($classroomDescriptor: String!, $contentDescriptors: [String!]!) {
   user {
     id
-    assignmentDueNextForContentDescriptors(classroomDescriptor: $classroomDescriptor, contentDescriptors: $contentDescriptors) {
+    assignmentDueNextForContentDescriptors(
+      classroomDescriptor: $classroomDescriptor
+      contentDescriptors: $contentDescriptors
+    ) {
       ...AssignmentData
       __typename
     }
     __typename
   }
 }
-
 fragment AssignmentData on Assignment {
   id
   contents {

@@ -13,7 +13,6 @@ mutation contentEditorEditProject($sha: String!, $input: EditProjectInput!) {
     __typename
   }
 }
-
 fragment ProjectRevision on ProjectRevision {
   id
   contentId

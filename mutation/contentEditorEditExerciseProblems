@@ -1,5 +1,9 @@
 mutation contentEditorEditExerciseProblems($sha: String!, $input: EditExerciseProblemsInput!, $exerciseHasLintErrors: Boolean!) {
-  editExerciseProblems(sha: $sha, input: $input, exerciseHasLintErrors: $exerciseHasLintErrors) {
+  editExerciseProblems(
+    sha: $sha
+    input: $input
+    exerciseHasLintErrors: $exerciseHasLintErrors
+  ) {
     exercise {
       ...ExerciseRevision
       __typename
@@ -21,7 +25,6 @@ mutation contentEditorEditExerciseProblems($sha: String!, $input: EditExercisePr
     __typename
   }
 }
-
 fragment AssessmentItemRevision on AssessmentItemRevision {
   id
   contentKind
@@ -37,7 +40,6 @@ fragment AssessmentItemRevision on AssessmentItemRevision {
   tags
   __typename
 }
-
 fragment ExerciseRevision on ExerciseRevision {
   id
   contentKind

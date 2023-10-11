@@ -1,5 +1,7 @@
 mutation createAssignments($classDescriptors: [String!]!, $qualifiedContentDescriptorsList: [String!], $startDate: DateTime!, $dueDate: DateTime, $isDraft: Boolean, $studentKaids: [ID], $subjectSlug: String!, $questionSetType: ExerciseItemPickerStrategy) {
-  createAssignments(assignment: {classroomDescriptors: $classDescriptors, qualifiedContentDescriptorsList: $qualifiedContentDescriptorsList, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft, studentKaids: $studentKaids, subjectSlug: $subjectSlug, exerciseItemPickerStrategy: $questionSetType}) {
+  createAssignments(
+    assignment: {classroomDescriptors: $classDescriptors, qualifiedContentDescriptorsList: $qualifiedContentDescriptorsList, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft, studentKaids: $studentKaids, subjectSlug: $subjectSlug, exerciseItemPickerStrategy: $questionSetType}
+  ) {
     assignments {
       ...AssignmentInfoFragment
       __typename
@@ -7,7 +9,6 @@ mutation createAssignments($classDescriptors: [String!]!, $qualifiedContentDescr
     __typename
   }
 }
-
 fragment AssignmentInfoFragment on Assignment {
   id
   contents {

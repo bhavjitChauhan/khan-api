@@ -1,5 +1,8 @@
 mutation addContentPermissionMutation($userEmail: String!, $contentPermissions: [AddContentPermissionInput!]!) {
-  addContentPermissions(userEmail: $userEmail, contentPermissions: $contentPermissions) {
+  addContentPermissions(
+    userEmail: $userEmail
+    contentPermissions: $contentPermissions
+  ) {
     error {
       code
       __typename

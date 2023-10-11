@@ -1,5 +1,8 @@
 query SatPracticeByGradeQuery($districtName: String!, $schoolIds: [ID!], $gradeLevels: [DistrictGradeLevel!], $progressFrom: DateTime, $progressUpTo: DateTime) {
-  districtSatPracticeReportByGrade(districtName: $districtName, filters: {schoolIds: $schoolIds, gradeLevels: $gradeLevels, progressFrom: $progressFrom, progressUpTo: $progressUpTo}) {
+  districtSatPracticeReportByGrade(
+    districtName: $districtName
+    filters: {schoolIds: $schoolIds, gradeLevels: $gradeLevels, progressFrom: $progressFrom, progressUpTo: $progressUpTo}
+  ) {
     avgRow {
       avgPracticeMinutes
       avgMathPractice

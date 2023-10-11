@@ -1,5 +1,8 @@
 query GetNotationReadAloudsForAssessmentItem($assessmentItemID: ID!, $exerciseID: ID!) {
-  getNotationReadAloudsForAssessmentItem(assessmentItemID: $assessmentItemID, exerciseID: $exerciseID) {
+  getNotationReadAloudsForAssessmentItem(
+    assessmentItemID: $assessmentItemID
+    exerciseID: $exerciseID
+  ) {
     notationReadAlouds {
       assessmentItemId
       domainId

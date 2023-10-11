@@ -15,7 +15,6 @@ mutation getOrCreatePracticeTask($input: GetOrCreatePracticeTaskInput!) {
     __typename
   }
 }
-
 fragment userExerciseFields on UserExercise {
   exerciseModel: exercise {
     id
@@ -115,7 +114,6 @@ fragment userExerciseFields on UserExercise {
   totalDone
   __typename
 }
-
 fragment userTaskFields on PracticeUserTask {
   cards {
     done

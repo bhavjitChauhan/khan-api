@@ -1,5 +1,9 @@
 mutation CreateAssessmentItemTag($displayName: String!, $description: String!, $lessonId: String!) {
-  createAssessmentItemTag(displayName: $displayName, description: $description, lessonId: $lessonId) {
+  createAssessmentItemTag(
+    displayName: $displayName
+    description: $description
+    lessonId: $lessonId
+  ) {
     assessmentItemTag {
       ...AssessmentItemTagFields
       __typename
@@ -11,7 +15,6 @@ mutation CreateAssessmentItemTag($displayName: String!, $description: String!, $
     __typename
   }
 }
-
 fragment AssessmentItemTagFields on AssessmentItemTag {
   editId: id
   id: urlsafeTag

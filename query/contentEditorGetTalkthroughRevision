@@ -4,7 +4,6 @@ query contentEditorGetTalkthroughRevision($id: String!) {
     __typename
   }
 }
-
 fragment TalkthroughRevision on TalkthroughRevision {
   id
   contentId

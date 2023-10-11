@@ -76,7 +76,6 @@ query ContentForPath($path: String!, $countryCode: String!, $kaLocale: KALocale!
     __typename
   }
 }
-
 fragment CourseData on Course {
   id
   iconPath
@@ -198,7 +197,6 @@ fragment CourseData on Course {
   }
   __typename
 }
-
 fragment LearnableContentData on LearnableContent {
   id
   contentKind
@@ -386,7 +384,6 @@ fragment LearnableContentData on LearnableContent {
   }
   __typename
 }
-
 fragment LearnableContentMetadata on LearnableContent {
   id
   canonicalUrl: defaultUrlPath
@@ -409,7 +406,6 @@ fragment LearnableContentMetadata on LearnableContent {
   urlWithinCurationNode
   __typename
 }
-
 fragment LessonData on Lesson {
   id
   relativeUrl
@@ -438,7 +434,6 @@ fragment LessonData on Lesson {
   }
   __typename
 }
-
 fragment QuizMetadata on TopicQuiz {
   ...LearnableContentMetadata
   exerciseLength
@@ -450,7 +445,6 @@ fragment QuizMetadata on TopicQuiz {
   }
   __typename
 }
-
 fragment UnitData on Unit {
   id
   iconPath
@@ -464,7 +458,6 @@ fragment UnitData on Unit {
   unlistedAncestorIds
   __typename
 }
-
 fragment UnitTestMetadata on TopicUnitTest {
   ...LearnableContentMetadata
   exerciseLength

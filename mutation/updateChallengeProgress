@@ -1,5 +1,7 @@
 mutation updateChallengeProgress($programId: ID!, $lessonId: ID!, $stashedCode: String, $status: Int) {
-  updateChallengeProgress(input: {programId: $programId, lessonId: $lessonId, stashedCode: $stashedCode, status: $status}) {
+  updateChallengeProgress(
+    input: {programId: $programId, lessonId: $lessonId, stashedCode: $stashedCode, status: $status}
+  ) {
     actionResults {
       pointsEarned {
         points

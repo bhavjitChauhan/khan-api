@@ -7,7 +7,6 @@ mutation gtp_startExtendedTimeMode($taskType: String!, $taskId: ID!) {
     __typename
   }
 }
-
 fragment gtp_taskFragment on Task {
   id
   kaid

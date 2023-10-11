@@ -8,7 +8,6 @@ query getUserInfoForTopicProgressMastery($topicId: String!) {
     __typename
   }
 }
-
 fragment CommonContentItemProgressesFragment on ContentItemProgress {
   bestScore {
     numAttempted
@@ -24,7 +23,6 @@ fragment CommonContentItemProgressesFragment on ContentItemProgress {
   }
   __typename
 }
-
 fragment CommonUserInfoFragment on User {
   id
   curationItemProgress(topicId: $topicId) {

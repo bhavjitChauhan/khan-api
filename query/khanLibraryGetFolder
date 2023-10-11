@@ -4,14 +4,12 @@ query khanLibraryGetFolder($id: String!) {
     __typename
   }
 }
-
 fragment BaseFolder on Folder {
   id
   name
   kaLocale
   __typename
 }
-
 fragment Folder on Folder {
   ...BaseFolder
   courses {
@@ -20,7 +18,6 @@ fragment Folder on Folder {
   }
   __typename
 }
-
 fragment PublishedCourseRevisionFragment on CourseRevision {
   id
   contentId

@@ -1,5 +1,9 @@
 mutation UpdateGrants($kaid: ID!, $rolesToGrant: [RoleInput!]!, $roleIdsToRevoke: [ID!]!) {
-  revokeAndGrantRoles(kaid: $kaid, rolesToGrant: $rolesToGrant, roleIdsToRevoke: $roleIdsToRevoke) {
+  revokeAndGrantRoles(
+    kaid: $kaid
+    rolesToGrant: $rolesToGrant
+    roleIdsToRevoke: $roleIdsToRevoke
+  ) {
     userWithGrants {
       id
       grants {

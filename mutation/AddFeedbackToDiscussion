@@ -1,5 +1,13 @@
 mutation AddFeedbackToDiscussion($focusKind: String, $focusId: String, $parentKey: String, $textContent: String!, $feedbackType: FeedbackType!, $fromVideoAuthor: Boolean, $shownLowQualityNotice: Boolean) {
-  addFeedbackToDiscussion(focusKind: $focusKind, focusId: $focusId, parentKey: $parentKey, textContent: $textContent, feedbackType: $feedbackType, fromVideoAuthor: $fromVideoAuthor, shownLowQualityNotice: $shownLowQualityNotice) {
+  addFeedbackToDiscussion(
+    focusKind: $focusKind
+    focusId: $focusId
+    parentKey: $parentKey
+    textContent: $textContent
+    feedbackType: $feedbackType
+    fromVideoAuthor: $fromVideoAuthor
+    shownLowQualityNotice: $shownLowQualityNotice
+  ) {
     feedback {
       appearsAsDeleted
       author {

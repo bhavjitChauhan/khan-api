@@ -13,7 +13,6 @@ mutation contentEditorEditExerciseProperties($sha: String!, $input: EditExercise
     __typename
   }
 }
-
 fragment AssessmentItemRevision on AssessmentItemRevision {
   id
   contentKind
@@ -29,7 +28,6 @@ fragment AssessmentItemRevision on AssessmentItemRevision {
   tags
   __typename
 }
-
 fragment ExerciseRevision on ExerciseRevision {
   id
   contentKind

@@ -4,7 +4,6 @@ query courseEditorGetEditingCourseRevisions($ids: [String!]!) {
     __typename
   }
 }
-
 fragment FolderCourseRevisionFragment on CourseRevision {
   id
   contentId

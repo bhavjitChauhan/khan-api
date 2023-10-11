@@ -1,7 +1,12 @@
 query StandaloneUserAssignments($after: ID, $pageSize: Int, $kaid: String!, $classDescriptor: String!, $orderBy: AssignmentOrder!) {
   student: user(kaid: $kaid) {
     id
-    assignmentsPage(after: $after, pageSize: $pageSize, classroomDescriptor: $classDescriptor, orderBy: $orderBy) {
+    assignmentsPage(
+      after: $after
+      pageSize: $pageSize
+      classroomDescriptor: $classDescriptor
+      orderBy: $orderBy
+    ) {
       assignments {
         id
         contents {

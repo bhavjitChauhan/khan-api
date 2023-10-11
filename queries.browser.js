@@ -1,6 +1,10 @@
 queries = {
   activatedDistrictTeachers: `query activatedDistrictTeachers($districtName: String!, $pageSize: Int, $cursor: Int) {
-  activationReportByTeacher(districtName: $districtName, pageSize: $pageSize, cursor: $cursor) {
+  activationReportByTeacher(
+    districtName: $districtName
+    pageSize: $pageSize
+    cursor: $cursor
+  ) {
     rows {
       isActivated
       teacherKaid
@@ -9,8 +13,7 @@ queries = {
     }
     __typename
   }
-}
-`,
+}`,
   ActiveDistrictQuery: `query ActiveDistrictQuery($districtName: String!, $from: DateTime, $upTo: DateTime, $schoolIds: [ID!], $gradeLevels: [DistrictGradeLevel!], $courseSIS: [String!]) {
   district(districtName: $districtName) {
     id
@@ -27,8 +30,19 @@ queries = {
       name
       __typename
     }
-    activeCourseSISNumbers(from: $from, upTo: $upTo, schoolIds: $schoolIds, gradeLevels: $gradeLevels)
-    activeTeachers(from: $from, upTo: $upTo, schoolIds: $schoolIds, gradeLevels: $gradeLevels, courseSIS: $courseSIS) {
+    activeCourseSISNumbers(
+      from: $from
+      upTo: $upTo
+      schoolIds: $schoolIds
+      gradeLevels: $gradeLevels
+    )
+    activeTeachers(
+      from: $from
+      upTo: $upTo
+      schoolIds: $schoolIds
+      gradeLevels: $gradeLevels
+      courseSIS: $courseSIS
+    ) {
       id
       kaid
       displayNameForTeacher
@@ -36,8 +50,7 @@ queries = {
     }
     __typename
   }
-}
-`,
+}`,
   ActivitySessionsQuery: `query ActivitySessionsQuery($studentKaid: String!, $endDate: Date, $startDate: Date, $courseType: String, $activityKind: String, $after: ID, $pageSize: Int) {
   user(kaid: $studentKaid) {
     id
@@ -54,7 +67,12 @@ queries = {
       }
       __typename
     }
-    activityLog(endDate: $endDate, startDate: $startDate, courseType: $courseType, activityKind: $activityKind) {
+    activityLog(
+      endDate: $endDate
+      startDate: $startDate
+      courseType: $courseType
+      activityKind: $activityKind
+    ) {
       time {
         exerciseMinutes
         totalMinutes
@@ -116,7 +134,6 @@ queries = {
     __typename
   }
 }
-
 fragment ActivitySession on ActivitySession {
   id
   title
@@ -130,14 +147,12 @@ fragment ActivitySession on ActivitySession {
   skillType
   __typename
 }
-
 fragment ActivitySessionSkillLevels on SkillLevelChange {
   id
   before
   after
   __typename
-}
-`,
+}`,
   aiGuideEnrollments: `query aiGuideEnrollments($kaids: [String!]) {
   aiGuideEnrollments(kaids: $kaids) {
     enrollments {
@@ -163,16 +178,14 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     }
     __typename
   }
-}
-`,
+}`,
   aiGuideEnrollmentsMeta: `query aiGuideEnrollmentsMeta {
   aiGuideEnrollmentsMeta {
     countEnabled
     countEnrolled
     __typename
   }
-}
-`,
+}`,
   aiGuideInvitationInfo: `query aiGuideInvitationInfo($token: String!) {
   aiGuideInvitationInfo(token: $token) {
     digitalTermsOfServiceURL
@@ -213,10 +226,18 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     }
     __typename
   }
-}
-`,
+}`,
   allFlaggedGuideThreads: `query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderationReviewStatus: ModerationReviewStatus, $moderationScore: Float, $afterDate: DateTime, $beforeDate: DateTime, $page: Int, $limit: Int) {
-  allFlaggedGuideThreads: allAiGuideThreads(moderationCategory: $moderationCategory, moderationReviewStatus: $moderationReviewStatus, moderationStatus: FLAGGED, minModerationScore: $moderationScore, afterDate: $afterDate, beforeDate: $beforeDate, page: $page, limit: $limit) {
+  allFlaggedGuideThreads: allAiGuideThreads(
+    moderationCategory: $moderationCategory
+    moderationReviewStatus: $moderationReviewStatus
+    moderationStatus: FLAGGED
+    minModerationScore: $moderationScore
+    afterDate: $afterDate
+    beforeDate: $beforeDate
+    page: $page
+    limit: $limit
+  ) {
     cursor
     threads {
       id
@@ -276,8 +297,7 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     }
     __typename
   }
-}
-`,
+}`,
   allStandardsForSet: `query allStandardsForSet($setId: String!) {
   setOfStandards(setId: $setId, region: "*") {
     id
@@ -289,8 +309,7 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     }
     __typename
   }
-}
-`,
+}`,
   allTranslatableLocales: `query allTranslatableLocales {
   locales(includeEnglish: false) {
     id
@@ -299,8 +318,7 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     displayName
     __typename
   }
-}
-`,
+}`,
   articleEditorQuery: `query articleEditorQuery($contentId: String!) {
   contentEditingStatus {
     editingDisabled
@@ -314,7 +332,6 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     __typename
   }
 }
-
 fragment ArticleRevision on ArticleRevision {
   id
   contentId
@@ -342,8 +359,7 @@ fragment ArticleRevision on ArticleRevision {
   perseusContent
   listed
   __typename
-}
-`,
+}`,
   articleEditorRedirectQuery: `query articleEditorRedirectQuery($contentId: String!) {
   articleRevisionById(id: $contentId) {
     id
@@ -351,8 +367,7 @@ fragment ArticleRevision on ArticleRevision {
     sha
     __typename
   }
-}
-`,
+}`,
   articleForDiff: `query articleForDiff($sha: String!) {
   articleRevisionBySha(sha: $sha) {
     id
@@ -360,8 +375,7 @@ fragment ArticleRevision on ArticleRevision {
     perseusContent
     __typename
   }
-}
-`,
+}`,
   articleRevisionsForDiff: `query articleRevisionsForDiff($contentId: String!) {
   allArticleRevisionsById(id: $contentId) {
     revisions {
@@ -379,8 +393,7 @@ fragment ArticleRevision on ArticleRevision {
     hasMore
     __typename
   }
-}
-`,
+}`,
   assessmentItemForDiff: `query assessmentItemForDiff($sha: String!) {
   assessmentItemRevisionsBySHAs(shas: [$sha]) {
     id
@@ -388,8 +401,7 @@ fragment ArticleRevision on ArticleRevision {
     itemData
     __typename
   }
-}
-`,
+}`,
   assessmentItemRevisionsForDiff: `query assessmentItemRevisionsForDiff($contentId: String!) {
   allAssessmentItemRevisionsByID(contentId: $contentId) {
     id
@@ -403,8 +415,7 @@ fragment ArticleRevision on ArticleRevision {
     }
     __typename
   }
-}
-`,
+}`,
   assignmentCsvByClassQuery: `query assignmentCsvByClassQuery($classDescriptor: String!, $filters: CoachAssignmentFilters!, $orderBy: AssignmentOrder!, $after: ID, $teacherKaid: String!) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
@@ -423,7 +434,6 @@ fragment ArticleRevision on ArticleRevision {
     __typename
   }
 }
-
 fragment AssignmentCsvData on Assignment {
   assignedDate
   startDate
@@ -467,8 +477,7 @@ fragment AssignmentCsvData on Assignment {
     __typename
   }
   __typename
-}
-`,
+}`,
   assignmentCsvByIdQuery: `query assignmentCsvByIdQuery($assignmentId: String!, $teacherKaid: String!) {
   coach: user {
     id
@@ -479,7 +488,6 @@ fragment AssignmentCsvData on Assignment {
     __typename
   }
 }
-
 fragment AssignmentCsvData on Assignment {
   assignedDate
   startDate
@@ -523,8 +531,7 @@ fragment AssignmentCsvData on Assignment {
     __typename
   }
   __typename
-}
-`,
+}`,
   assignmentQueryForDevAdmin: `query assignmentQueryForDevAdmin($coachKaid: String!, $contentAssignmentId: String!) {
   coach: user(kaid: $coachKaid) {
     id
@@ -559,8 +566,7 @@ fragment AssignmentCsvData on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   availableKinds: `query availableKinds {
   permission {
     content {
@@ -572,8 +578,7 @@ fragment AssignmentCsvData on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   availableRoles: `query availableRoles {
   permission {
     content {
@@ -585,8 +590,7 @@ fragment AssignmentCsvData on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   avatarDataForProfile: `query avatarDataForProfile($kaid: String!) {
   user(kaid: $kaid) {
     id
@@ -597,8 +601,7 @@ fragment AssignmentCsvData on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   careersPageQuery: `query careersPageQuery {
   careers {
     departments {
@@ -621,8 +624,7 @@ fragment AssignmentCsvData on Assignment {
     promotion(promoName: $promoName)
     __typename
   }
-}
-`,
+}`,
   checkUsername: `query checkUsername($username: String!) {
   checkUsername(username: $username) {
     error {
@@ -631,8 +633,7 @@ fragment AssignmentCsvData on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   ClassCodeByClassIdQuery: `query ClassCodeByClassIdQuery($classId: String!) {
   user {
     id
@@ -653,8 +654,7 @@ fragment AssignmentCsvData on Assignment {
     descriptor
     __typename
   }
-}
-`,
+}`,
   ClassInfo: `query ClassInfo($classCode: String!) {
   joinByClassCodeInfo(classCode: $classCode) {
     id
@@ -664,8 +664,7 @@ fragment AssignmentCsvData on Assignment {
     includesDistrictOwnedData
     __typename
   }
-}
-`,
+}`,
   ClassroomByCode: `query ClassroomByCode($classCode: String!) {
   studentList(classCode: $classCode) {
     cacheId
@@ -676,8 +675,7 @@ fragment AssignmentCsvData on Assignment {
     name
     __typename
   }
-}
-`,
+}`,
   ClassroomByDescriptorQuery: `query ClassroomByDescriptorQuery($descriptor: String!) {
   classroomByDescriptor(descriptor: $descriptor) {
     id
@@ -748,8 +746,7 @@ fragment AssignmentCsvData on Assignment {
     isK4dClassroom
     __typename
   }
-}
-`,
+}`,
   ClassroomDistrictInfosQuery: `query ClassroomDistrictInfosQuery($kaid: String) {
   coach: user(kaid: $kaid) {
     id
@@ -773,8 +770,7 @@ fragment AssignmentCsvData on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   classroomHasCourseMasteryAssignments: `query classroomHasCourseMasteryAssignments($classroomDescriptor: String!) {
   classroomByDescriptorV2(descriptor: $classroomDescriptor) {
     id
@@ -826,8 +822,7 @@ fragment AssignmentCsvData on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   ClassUnitMasteryProgress: `query ClassUnitMasteryProgress($classDescriptor: String!, $topicId: String!, $teacherKaid: String!) {
   topicById(id: $topicId) {
     id
@@ -857,13 +852,17 @@ fragment AssignmentCsvData on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   CoachAssignments: `query CoachAssignments($classDescriptor: String!, $assignmentFilters: CoachAssignmentFilters, $orderBy: AssignmentOrder!, $pageSize: Int, $after: ID) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
     cacheId
-    assignmentsPage(filters: $assignmentFilters, orderBy: $orderBy, after: $after, pageSize: $pageSize) {
+    assignmentsPage(
+      filters: $assignmentFilters
+      orderBy: $orderBy
+      after: $after
+      pageSize: $pageSize
+    ) {
       assignments {
         id
         studentKaids
@@ -900,8 +899,7 @@ fragment AssignmentCsvData on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   coachDetails: `query coachDetails {
   user {
     id
@@ -923,16 +921,14 @@ fragment AssignmentCsvData on Assignment {
     publishEnabled
     __typename
   }
-}
-`,
+}`,
   contentEditingStatusQuery: `query contentEditingStatusQuery {
   contentEditingStatus {
     editingDisabled
     publishDisabled
     __typename
   }
-}
-`,
+}`,
   contentEditorArticleRevisions: `query contentEditorArticleRevisions($contentId: String!) {
   allArticleRevisionsById(id: $contentId) {
     revisions {
@@ -1020,7 +1016,6 @@ fragment contentEditorLearnableContent on LearnableContentRevision {
     __typename
   }
 }
-
 fragment ArticleRevision on ArticleRevision {
   id
   contentId
@@ -1048,15 +1043,13 @@ fragment ArticleRevision on ArticleRevision {
   perseusContent
   listed
   __typename
-}
-`,
+}`,
   contentEditorGetExerciseRevision: `query contentEditorGetExerciseRevision($id: String!) {
   exerciseRevisionById(id: $id) {
     ...ExerciseRevision
     __typename
   }
 }
-
 fragment AssessmentItemRevision on AssessmentItemRevision {
   id
   contentKind
@@ -1072,7 +1065,6 @@ fragment AssessmentItemRevision on AssessmentItemRevision {
   tags
   __typename
 }
-
 fragment ExerciseRevision on ExerciseRevision {
   id
   contentKind
@@ -1123,15 +1115,13 @@ fragment ExerciseRevision on ExerciseRevision {
   listed
   hasLintErrors
   __typename
-}
-`,
+}`,
   contentEditorGetProjectRevision: `query contentEditorGetProjectRevision($id: String!) {
   projectRevisionById(id: $id) {
     ...ProjectRevision
     __typename
   }
 }
-
 fragment ProjectRevision on ProjectRevision {
   id
   contentId
@@ -1140,8 +1130,7 @@ fragment ProjectRevision on ProjectRevision {
   sha
   listed
   __typename
-}
-`,
+}`,
   contentEditorGetPublishedExerciseProblems: `query contentEditorGetPublishedExerciseProblems($id: String!) {
   exerciseById(id: $id) {
     id
@@ -1152,15 +1141,13 @@ fragment ProjectRevision on ProjectRevision {
     }
     __typename
   }
-}
-`,
+}`,
   contentEditorGetTalkthroughRevision: `query contentEditorGetTalkthroughRevision($id: String!) {
   talkthroughRevisionById(id: $id) {
     ...TalkthroughRevision
     __typename
   }
 }
-
 fragment TalkthroughRevision on TalkthroughRevision {
   id
   contentId
@@ -1169,15 +1156,13 @@ fragment TalkthroughRevision on TalkthroughRevision {
   sha
   listed
   __typename
-}
-`,
+}`,
   contentEditorGetVideoRevision: `query contentEditorGetVideoRevision($id: String!) {
   videoRevisionById(id: $id) {
     ...VideoRevision
     __typename
   }
 }
-
 fragment VideoRevision on VideoRevision {
   id
   contentId
@@ -1209,10 +1194,13 @@ fragment VideoRevision on VideoRevision {
   youtubeId
   listed
   __typename
-}
-`,
+}`,
   contentEditorPublishGetContentStageItem: `query contentEditorPublishGetContentStageItem($kaLocale: KALocale!, $contentKind: String!, $contentId: String!) {
-  contentStageItem(kaLocale: $kaLocale, contentKind: $contentKind, contentId: $contentId) {
+  contentStageItem(
+    kaLocale: $kaLocale
+    contentKind: $contentKind
+    contentId: $contentId
+  ) {
     id
     sha
     sourceKaLocale
@@ -1220,8 +1208,7 @@ fragment VideoRevision on VideoRevision {
     doNotPublish
     __typename
   }
-}
-`,
+}`,
   contentEditorVideoRevisions: `query contentEditorVideoRevisions($contentId: String!) {
   allVideoRevisionsById(id: $contentId) {
     revisions {
@@ -1277,7 +1264,6 @@ fragment contentEditorLearnableContent on LearnableContentRevision {
     __typename
   }
 }
-
 fragment LearnableContentData on LearnableContent {
   id
   contentKind
@@ -1464,8 +1450,7 @@ fragment LearnableContentData on LearnableContent {
     __typename
   }
   __typename
-}
-`,
+}`,
   ContentForPath: `query ContentForPath($path: String!, $countryCode: String!, $kaLocale: KALocale!) {
   publishedContentVersion(kaLocale: $kaLocale) {
     contentVersion
@@ -1544,7 +1529,6 @@ fragment LearnableContentData on LearnableContent {
     __typename
   }
 }
-
 fragment CourseData on Course {
   id
   iconPath
@@ -1666,7 +1650,6 @@ fragment CourseData on Course {
   }
   __typename
 }
-
 fragment LearnableContentData on LearnableContent {
   id
   contentKind
@@ -1854,7 +1837,6 @@ fragment LearnableContentData on LearnableContent {
   }
   __typename
 }
-
 fragment LearnableContentMetadata on LearnableContent {
   id
   canonicalUrl: defaultUrlPath
@@ -1877,7 +1859,6 @@ fragment LearnableContentMetadata on LearnableContent {
   urlWithinCurationNode
   __typename
 }
-
 fragment LessonData on Lesson {
   id
   relativeUrl
@@ -1906,7 +1887,6 @@ fragment LessonData on Lesson {
   }
   __typename
 }
-
 fragment QuizMetadata on TopicQuiz {
   ...LearnableContentMetadata
   exerciseLength
@@ -1918,7 +1898,6 @@ fragment QuizMetadata on TopicQuiz {
   }
   __typename
 }
-
 fragment UnitData on Unit {
   id
   iconPath
@@ -1932,7 +1911,6 @@ fragment UnitData on Unit {
   unlistedAncestorIds
   __typename
 }
-
 fragment UnitTestMetadata on TopicUnitTest {
   ...LearnableContentMetadata
   exerciseLength
@@ -1942,17 +1920,17 @@ fragment UnitTestMetadata on TopicUnitTest {
     __typename
   }
   __typename
-}
-`,
+}`,
   ContentItemAssignmentStatusesQuery: `query ContentItemAssignmentStatusesQuery($classDescriptor: String!, $contentDescriptors: [String!]!) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
     cacheId
-    contentAssignmentStatuses: nonDraftAssignmentStatusesForContentDescriptors(contentDescriptors: $contentDescriptors)
+    contentAssignmentStatuses: nonDraftAssignmentStatusesForContentDescriptors(
+      contentDescriptors: $contentDescriptors
+    )
     __typename
   }
-}
-`,
+}`,
   contentTabThreeLevelQuery: `query contentTabThreeLevelQuery($courseId: String!, $region: String!, $locale: String!) {
   courseById(id: $courseId) {
     id
@@ -2050,7 +2028,6 @@ fragment LessonAndChildrenFieldsThreeLevels on Lesson {
   }
   __typename
 }
-
 fragment QuizAndTestFields on LearnableContent {
   ... on TopicQuiz {
     coveredTutorials {
@@ -2069,8 +2046,7 @@ fragment QuizAndTestFields on LearnableContent {
     __typename
   }
   __typename
-}
-`,
+}`,
   contentTabTwoLevelQuery: `query contentTabTwoLevelQuery($courseId: String!, $region: String!, $locale: String!) {
   courseById(id: $courseId) {
     id
@@ -2177,7 +2153,6 @@ fragment LessonAndChildrenFields on Lesson {
   }
   __typename
 }
-
 fragment QuizAndTestFields on LearnableContent {
   ... on TopicQuiz {
     coveredTutorials {
@@ -2196,8 +2171,7 @@ fragment QuizAndTestFields on LearnableContent {
     __typename
   }
   __typename
-}
-`,
+}`,
   Content_GetRelatedAssessmentItems: `query Content_GetRelatedAssessmentItems($exerciseId: String) {
   exerciseById(id: $exerciseId) {
     id
@@ -2211,8 +2185,7 @@ fragment QuizAndTestFields on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   courseChallengeAttemptQuery: `query courseChallengeAttemptQuery($topicId: String!) {
   user {
     id
@@ -2234,8 +2207,7 @@ fragment QuizAndTestFields on LearnableContent {
     id
     __typename
   }
-}
-`,
+}`,
   CourseEditorGetCourse: `query CourseEditorGetCourse($courseId: String!, $snapshotId: Int) {
   course(id: $courseId, snapshotId: $snapshotId) {
     ...CourseStructure
@@ -2371,15 +2343,13 @@ fragment CourseStructure on CourseRevision {
     courseSnapshotId
     __typename
   }
-}
-`,
+}`,
   courseEditorGetEditingCourseRevisions: `query courseEditorGetEditingCourseRevisions($ids: [String!]!) {
   courses(ids: $ids) {
     ...FolderCourseRevisionFragment
     __typename
   }
 }
-
 fragment FolderCourseRevisionFragment on CourseRevision {
   id
   contentId
@@ -2425,8 +2395,7 @@ fragment FolderCourseRevisionFragment on CourseRevision {
     __typename
   }
   __typename
-}
-`,
+}`,
   courseEditorGetEditingIdentity: `query courseEditorGetEditingIdentity($descriptors: [String!]!) {
   revisionsForDescriptors(descriptors: $descriptors) {
     ... on ContentRevision {
@@ -2449,8 +2418,7 @@ fragment FolderCourseRevisionFragment on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   courseEditorGetEditingRevisions: `query courseEditorGetEditingRevisions($descriptors: [String!]!) {
   revisionsForDescriptors(descriptors: $descriptors) {
     ... on ContentRevision {
@@ -2510,8 +2478,7 @@ fragment FolderCourseRevisionFragment on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   courseEditorGetEditingTitles: `query courseEditorGetEditingTitles($descriptors: [String!]!) {
   revisionsForDescriptors(descriptors: $descriptors) {
     ... on ContentRevision {
@@ -2526,8 +2493,7 @@ fragment FolderCourseRevisionFragment on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   courseEditorGetFolderCourses: `query courseEditorGetFolderCourses($ids: [String!]!) {
   courses(ids: $ids) {
     id
@@ -2536,8 +2502,7 @@ fragment FolderCourseRevisionFragment on CourseRevision {
     importable
     __typename
   }
-}
-`,
+}`,
   courseEditorGetFolderGroups: `query courseEditorGetFolderGroups {
   folderGroups {
     myFolders {
@@ -2558,15 +2523,13 @@ fragment LibraryFolder on Folder {
   kaLocale
   courseIds
   __typename
-}
-`,
+}`,
   courseEditorGetPublishedArticle: `query courseEditorGetPublishedArticle($contentId: String!) {
   articleById(id: $contentId) {
     ...LearnableContent
     __typename
   }
 }
-
 fragment LearnableContent on LearnableContent {
   id
   kind
@@ -2581,15 +2544,13 @@ fragment LearnableContent on LearnableContent {
     __typename
   }
   __typename
-}
-`,
+}`,
   courseEditorGetPublishedChallenge: `query courseEditorGetPublishedChallenge($contentId: String!) {
   challengeById(id: $contentId) {
     ...LearnableContent
     __typename
   }
 }
-
 fragment LearnableContent on LearnableContent {
   id
   kind
@@ -2604,8 +2565,7 @@ fragment LearnableContent on LearnableContent {
     __typename
   }
   __typename
-}
-`,
+}`,
   courseEditorGetPublishedCourseRevisions: `query courseEditorGetPublishedCourseRevisions($ids: [String!]!) {
   courses(ids: $ids) {
     id
@@ -2616,7 +2576,6 @@ fragment LearnableContent on LearnableContent {
     __typename
   }
 }
-
 fragment FolderCourseRevisionFragment on CourseRevision {
   id
   contentId
@@ -2662,8 +2621,7 @@ fragment FolderCourseRevisionFragment on CourseRevision {
     __typename
   }
   __typename
-}
-`,
+}`,
   courseEditorGetPublishedEntities: `query courseEditorGetPublishedEntities($descriptors: [String!]!) {
   contentForDescriptors(descriptors: $descriptors) {
     id
@@ -2709,15 +2667,13 @@ fragment FolderCourseRevisionFragment on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   courseEditorGetPublishedExercise: `query courseEditorGetPublishedExercise($contentId: String!) {
   exerciseById(id: $contentId) {
     ...LearnableContent
     __typename
   }
 }
-
 fragment LearnableContent on LearnableContent {
   id
   kind
@@ -2732,8 +2688,7 @@ fragment LearnableContent on LearnableContent {
     __typename
   }
   __typename
-}
-`,
+}`,
   courseEditorGetPublishedIdentity: `query courseEditorGetPublishedIdentity($descriptors: [String!]!) {
   contentForDescriptors(descriptors: $descriptors) {
     id
@@ -2748,15 +2703,13 @@ fragment LearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   courseEditorGetPublishedInteractive: `query courseEditorGetPublishedInteractive($contentId: String!) {
   interactiveById(id: $contentId) {
     ...LearnableContent
     __typename
   }
 }
-
 fragment LearnableContent on LearnableContent {
   id
   kind
@@ -2771,15 +2724,13 @@ fragment LearnableContent on LearnableContent {
     __typename
   }
   __typename
-}
-`,
+}`,
   courseEditorGetPublishedProject: `query courseEditorGetPublishedProject($contentId: String!) {
   projectById(id: $contentId) {
     ...LearnableContent
     __typename
   }
 }
-
 fragment LearnableContent on LearnableContent {
   id
   kind
@@ -2794,15 +2745,13 @@ fragment LearnableContent on LearnableContent {
     __typename
   }
   __typename
-}
-`,
+}`,
   courseEditorGetPublishedTalkthrough: `query courseEditorGetPublishedTalkthrough($contentId: String!) {
   talkthroughById(id: $contentId) {
     ...LearnableContent
     __typename
   }
 }
-
 fragment LearnableContent on LearnableContent {
   id
   kind
@@ -2817,8 +2766,7 @@ fragment LearnableContent on LearnableContent {
     __typename
   }
   __typename
-}
-`,
+}`,
   courseEditorGetPublishedTitlesForCurationIDs: `query courseEditorGetPublishedTitlesForCurationIDs($ids: [String!]!) {
   topicsById(ids: $ids) {
     id
@@ -2827,8 +2775,7 @@ fragment LearnableContent on LearnableContent {
     translatedTitle
     __typename
   }
-}
-`,
+}`,
   courseEditorGetPublishedTitlesForDescriptors: `query courseEditorGetPublishedTitlesForDescriptors($descriptors: [String!]!) {
   contentForDescriptors(descriptors: $descriptors) {
     id
@@ -2837,8 +2784,7 @@ fragment LearnableContent on LearnableContent {
     translatedTitle
     __typename
   }
-}
-`,
+}`,
   courseEditorGetPublishedTopic: `query courseEditorGetPublishedTopic($contentId: String!) {
   topicById(id: $contentId) {
     id
@@ -2847,8 +2793,7 @@ fragment LearnableContent on LearnableContent {
     relativeUrl
     __typename
   }
-}
-`,
+}`,
   courseEditorGetPublishedTopicChildren: `query courseEditorGetPublishedTopicChildren($ids: [String!]!) {
   topicsById(ids: $ids) {
     id
@@ -2867,8 +2812,7 @@ fragment LearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   courseEditorGetPublishedTopicPathsForCurationIDs: `query courseEditorGetPublishedTopicPathsForCurationIDs($ids: [String!]!) {
   topicsById(ids: $ids) {
     id
@@ -2896,8 +2840,7 @@ fragment LearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   courseEditorGetPublishedTopicPathsForDescriptors: `query courseEditorGetPublishedTopicPathsForDescriptors($descriptors: [String!]!) {
   contentForDescriptors(descriptors: $descriptors) {
     id
@@ -2925,8 +2868,7 @@ fragment LearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   courseEditorGetPublishedTopicQuiz: `query courseEditorGetPublishedTopicQuiz($slug: String!) {
   topicQuiz(slug: $slug) {
     id
@@ -2935,32 +2877,28 @@ fragment LearnableContent on LearnableContent {
     defaultUrlPath
     __typename
   }
-}
-`,
+}`,
   courseEditorGetPublishedTopicSlugById: `query courseEditorGetPublishedTopicSlugById($id: String!) {
   topicById(id: $id) {
     id
     slug
     __typename
   }
-}
-`,
+}`,
   courseEditorGetPublishedTopicStandardIds: `query courseEditorGetPublishedTopicStandardIds($slug: String!, $locale: String!) {
   topic(slug: $slug) {
     id
     mappedStandardIds(locale: $locale)
     __typename
   }
-}
-`,
+}`,
   courseEditorGetPublishedTopicsTitles: `query courseEditorGetPublishedTopicsTitles($ids: [String!]!) {
   topicsById(ids: $ids) {
     id
     title
     __typename
   }
-}
-`,
+}`,
   courseEditorGetPublishedTopicUnitTest: `query courseEditorGetPublishedTopicUnitTest($slug: String!) {
   topicUnitTest(slug: $slug) {
     id
@@ -2969,15 +2907,13 @@ fragment LearnableContent on LearnableContent {
     defaultUrlPath
     __typename
   }
-}
-`,
+}`,
   courseEditorGetPublishedVideo: `query courseEditorGetPublishedVideo($contentId: String!) {
   videoById(contentId: $contentId) {
     ...LearnableContent
     __typename
   }
 }
-
 fragment LearnableContent on LearnableContent {
   id
   kind
@@ -2992,23 +2928,25 @@ fragment LearnableContent on LearnableContent {
     __typename
   }
   __typename
-}
-`,
+}`,
   courseEditorGetStatus: `query courseEditorGetStatus {
   contentEditingStatus {
     publishEnabled
     __typename
   }
-}
-`,
+}`,
   courseEditorGetSyncOperationsSummary: `query courseEditorGetSyncOperationsSummary($sourceId: String!, $sourceSnapshotId: Int!, $targetId: String!, $targetOperationId: Int!) {
-  syncOperationsSummary(sourceId: $sourceId, sourceSnapshotId: $sourceSnapshotId, targetId: $targetId, targetOperationId: $targetOperationId) {
+  syncOperationsSummary(
+    sourceId: $sourceId
+    sourceSnapshotId: $sourceSnapshotId
+    targetId: $targetId
+    targetOperationId: $targetOperationId
+  ) {
     type
     count
     __typename
   }
-}
-`,
+}`,
   CourseEditorIsLinkedCourseInSync: `query CourseEditorIsLinkedCourseInSync($sourceId: String!, $sourceSnapshotId: Int!, $targetId: String!, $targetOperationId: Int!) {
   isLinkedCourseInSync(sourceId: $sourceId, sourceSnapshotId: $sourceSnapshotId, targetId: $targetId, targetOperationId: $targetOperationId)
 }
@@ -3028,10 +2966,14 @@ fragment LearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   courseEditorSearchPublished: `query courseEditorSearchPublished($query: String!, $contentKinds: [String]) {
-  searchPage(query: $query, contentKinds: $contentKinds, numResults: 100, region: "*") {
+  searchPage(
+    query: $query
+    contentKinds: $contentKinds
+    numResults: 100
+    region: "*"
+  ) {
     results {
       contentKind: kind
       contentId
@@ -3051,8 +2993,7 @@ fragment LearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   CourseEditor_MobileRegions: `query CourseEditor_MobileRegions {
   curricula: curriculums {
     key
@@ -3061,8 +3002,7 @@ fragment LearnableContent on LearnableContent {
     region
     __typename
   }
-}
-`,
+}`,
   CourseMenuEditorQuery: `query CourseMenuEditorQuery {
   curricula: curriculums(includeEmptyCurriculum: true) {
     key
@@ -3073,7 +3013,6 @@ fragment LearnableContent on LearnableContent {
     __typename
   }
 }
-
 fragment CourseMenuRevisionFields on CourseMenuRevision {
   id
   sha
@@ -3094,8 +3033,7 @@ fragment CourseMenuRevisionFields on CourseMenuRevision {
     __typename
   }
   __typename
-}
-`,
+}`,
   CourseMenuEditor_ContentStageItems: `query CourseMenuEditor_ContentStageItems($kaLocale: KALocale!, $descriptors: [String!]!) {
   contentStageItems(kaLocale: $kaLocale, contentDescriptors: $descriptors) {
     id
@@ -3103,8 +3041,7 @@ fragment CourseMenuRevisionFields on CourseMenuRevision {
     isModified
     __typename
   }
-}
-`,
+}`,
   CourseMenuEditor_DefaultCourseMenu: `query CourseMenuEditor_DefaultCourseMenu($curriculum: String!) {
   defaultCourseMenu: learnMenuTopics(curriculum: $curriculum) {
     identifier: slug
@@ -3122,8 +3059,7 @@ fragment CourseMenuRevisionFields on CourseMenuRevision {
     }
     __typename
   }
-}
-`,
+}`,
   courseProgresses: `query courseProgresses($courseIds: [String!]!) {
   user {
     id
@@ -3134,7 +3070,6 @@ fragment CourseMenuRevisionFields on CourseMenuRevision {
     __typename
   }
 }
-
 fragment CourseProgress on SubjectProgress {
   topic {
     domainSlug
@@ -3163,8 +3098,7 @@ fragment CourseProgress on SubjectProgress {
     __typename
   }
   __typename
-}
-`,
+}`,
   CoursesUnitsQuery: `query CoursesUnitsQuery($selectedMasteryCourseIds: [String]!) {
   coursesByIds(ids: $selectedMasteryCourseIds) {
     id
@@ -3181,10 +3115,13 @@ fragment CourseProgress on SubjectProgress {
     }
     __typename
   }
-}
-`,
+}`,
   csvReportStatus: `query csvReportStatus($kaid: String!, $districtID: String!) {
-  getLastNAdminReportsForUser(kaid: $kaid, districtID: $districtID, topNResults: 1) {
+  getLastNAdminReportsForUser(
+    kaid: $kaid
+    districtID: $districtID
+    topNResults: 1
+  ) {
     adminReports {
       id
       kaid
@@ -3221,8 +3158,7 @@ fragment CourseProgress on SubjectProgress {
     }
     __typename
   }
-}
-`,
+}`,
   curationNodePublishedInfo: `query curationNodePublishedInfo($contentId: String!) {
   publishedInfo: topicById(id: $contentId) {
     id
@@ -3270,8 +3206,7 @@ fragment CourseProgress on SubjectProgress {
     name
     __typename
   }
-}
-`,
+}`,
   digitalSatAuthTransfer: `query digitalSatAuthTransfer {
   user {
     id
@@ -3290,8 +3225,7 @@ fragment CourseProgress on SubjectProgress {
     }
     __typename
   }
-}
-`,
+}`,
   DisplayNameQuery: `query DisplayNameQuery($kaid: String!) {
   user(kaid: $kaid) {
     id
@@ -3302,10 +3236,12 @@ fragment CourseProgress on SubjectProgress {
     }
     __typename
   }
-}
-`,
+}`,
   DistrictActivationByGradeLevelContainerUsingNewService: `query DistrictActivationByGradeLevelContainerUsingNewService($districtId: ID!, $schoolIds: [ID!]) {
-  activationReportByGradeLevel: activationReportByGradeLevelPortedToGo(districtId: $districtId, schoolIds: $schoolIds) {
+  activationReportByGradeLevel: activationReportByGradeLevelPortedToGo(
+    districtId: $districtId
+    schoolIds: $schoolIds
+  ) {
     rows {
       gradeLevel {
         id
@@ -3329,10 +3265,12 @@ fragment CourseProgress on SubjectProgress {
     }
     __typename
   }
-}
-`,
+}`,
   DistrictActivationBySchoolContainerUsingNewService: `query DistrictActivationBySchoolContainerUsingNewService($districtId: ID!, $schoolIds: [ID!]) {
-  activationReportBySchool: activationReportBySchoolPortedToGo(districtId: $districtId, schoolIds: $schoolIds) {
+  activationReportBySchool: activationReportBySchoolPortedToGo(
+    districtId: $districtId
+    schoolIds: $schoolIds
+  ) {
     rows {
       school {
         id
@@ -3355,10 +3293,15 @@ fragment CourseProgress on SubjectProgress {
     }
     __typename
   }
-}
-`,
+}`,
   DistrictActivationByTeacherContainer: `query DistrictActivationByTeacherContainer($districtName: String!, $schoolIds: [ID!], $teacherIDs: [ID!], $pageSize: Int, $cursor: Int) {
-  activationReportByTeacher(districtName: $districtName, schoolIds: $schoolIds, teacherIDs: $teacherIDs, pageSize: $pageSize, cursor: $cursor) {
+  activationReportByTeacher(
+    districtName: $districtName
+    schoolIds: $schoolIds
+    teacherIDs: $teacherIDs
+    pageSize: $pageSize
+    cursor: $cursor
+  ) {
     rows {
       teacherId
       teacherName
@@ -3371,16 +3314,14 @@ fragment CourseProgress on SubjectProgress {
     updatedAt
     __typename
   }
-}
-`,
+}`,
   DistrictGradeLevelsQuery: `query DistrictGradeLevelsQuery {
   userFacingGradeLevels {
     id
     name
     __typename
   }
-}
-`,
+}`,
   districtHomepage: `query districtHomepage($districtID: String!, $schoolIDs: [ID!]) {
   districtHomepage(districtID: $districtID, schoolIDs: $schoolIDs) {
     dateInfo {
@@ -3468,8 +3409,7 @@ fragment CourseProgress on SubjectProgress {
     }
     __typename
   }
-}
-`,
+}`,
   districtHomepageProgress: `query districtHomepageProgress($districtID: String!, $schoolIDs: [ID!], $mapOnly: Boolean) {
   districtHomepage(districtID: $districtID, schoolIDs: $schoolIDs) {
     top5CourseSchool {
@@ -3515,12 +3455,10 @@ fragment CourseProgress on SubjectProgress {
     }
     __typename
   }
-}
-`,
+}`,
   DistrictPrimaryOfferingAsTeacher: `query DistrictPrimaryOfferingAsTeacher {
   districtPrimaryOfferingAsTeacher
-}
-`,
+}`,
   DistrictQuery: `query DistrictQuery($districtName: String!) {
   district(districtName: $districtName) {
     id
@@ -3545,8 +3483,7 @@ fragment CourseProgress on SubjectProgress {
     }
     __typename
   }
-}
-`,
+}`,
   districts: `query districts($filter: String!) {
   districts(filter: $filter) {
     id
@@ -3655,8 +3592,7 @@ fragment CourseProgress on SubjectProgress {
     }
     __typename
   }
-}
-`,
+}`,
   DistrictSkillsMAPProgressQuery: `query DistrictSkillsMAPProgressQuery($districtID: String!, $filters: DistrictSkillsMAPProgressFilters!, $region: String!) {
   districtSkillsMAPProgress(districtID: $districtID, filters: $filters) {
     totalStudents
@@ -3693,7 +3629,9 @@ fragment CourseProgress on SubjectProgress {
       key
       __typename
     }
-    learnableContentPage(pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}) {
+    learnableContentPage(
+      pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}
+    ) {
       contents {
         exerciseID: id
         __typename
@@ -3702,8 +3640,7 @@ fragment CourseProgress on SubjectProgress {
     }
     __typename
   }
-}
-`,
+}`,
   DistrictSkillsProgressQuery: `query DistrictSkillsProgressQuery($districtID: String!, $filters: DistrictSkillsProgressFilters!, $courseID: String!, $region: String!) {
   districtSkillsProgress(districtID: $districtID, filters: $filters) {
     totalStudents
@@ -3735,7 +3672,9 @@ fragment CourseProgress on SubjectProgress {
     unitChildren {
       unitID: id
       unitTitle: translatedTitle
-      learnableContentPage(pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}) {
+      learnableContentPage(
+        pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}
+      ) {
         contents {
           exerciseID: id
           __typename
@@ -3746,8 +3685,7 @@ fragment CourseProgress on SubjectProgress {
     }
     __typename
   }
-}
-`,
+}`,
   districtsMetrics: `query districtsMetrics($filter: String!) {
   districts(filter: $filter) {
     id
@@ -3762,16 +3700,24 @@ fragment CourseProgress on SubjectProgress {
 }
 `,
   DistrictStudentsWithSkillProgressQuery: `query DistrictStudentsWithSkillProgressQuery($districtID: String!, $filters: DistrictStudentsWithSkillProgressFilters, $masteryLevel: UpdatedMasteryLevel!, $skillId: String!) {
-  districtStudentsWithSkillProgress(districtID: $districtID, masteryLevel: $masteryLevel, skillId: $skillId, filters: $filters) {
+  districtStudentsWithSkillProgress(
+    districtID: $districtID
+    masteryLevel: $masteryLevel
+    skillId: $skillId
+    filters: $filters
+  ) {
     id
     kaid
     displayNameForTeacher
     __typename
   }
-}
-`,
+}`,
   districtTeachers: `query districtTeachers($districtName: String!, $pageSize: Int, $cursor: Int) {
-  activationReportByTeacher(districtName: $districtName, pageSize: $pageSize, cursor: $cursor) {
+  activationReportByTeacher(
+    districtName: $districtName
+    pageSize: $pageSize
+    cursor: $cursor
+  ) {
     rows {
       teacherId
       teacherName
@@ -3779,8 +3725,7 @@ fragment CourseProgress on SubjectProgress {
     }
     __typename
   }
-}
-`,
+}`,
   DistrictWithRosterJobs: `query DistrictWithRosterJobs($districtId: ID!, $numJobs: Int!) {
   districtById(districtId: $districtId) {
     id
@@ -3812,8 +3757,7 @@ fragment CourseProgress on SubjectProgress {
     }
     __typename
   }
-}
-`,
+}`,
   domainRevision: `query domainRevision($id: String!) {
   domainRevision: domainRevisionById(id: $id) {
     contentKind
@@ -3901,7 +3845,6 @@ fragment CourseProgress on SubjectProgress {
     __typename
   }
 }
-
 fragment entry on TeamPageEntryForEditing {
   id
   isPet
@@ -3928,8 +3871,7 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
   __typename
-}
-`,
+}`,
   EduOrgsInfo: `query EduOrgsInfo($postalCode: String!) {
   eduOrganizations(postalCode: $postalCode) {
     keyId: id
@@ -3947,8 +3889,7 @@ fragment entry on TeamPageEntryForEditing {
     title
     __typename
   }
-}
-`,
+}`,
   exerciseEditorGetAllExerciseRevisions: `query exerciseEditorGetAllExerciseRevisions {
   allExerciseRevisions {
     id
@@ -3956,8 +3897,7 @@ fragment entry on TeamPageEntryForEditing {
     title
     __typename
   }
-}
-`,
+}`,
   exerciseEditorGetAllVideoRevisions: `query exerciseEditorGetAllVideoRevisions {
   allVideoRevisions {
     id
@@ -3965,12 +3905,10 @@ fragment entry on TeamPageEntryForEditing {
     title
     __typename
   }
-}
-`,
+}`,
   ExtractPerseusStrings: `query ExtractPerseusStrings($perseusJson: String!) {
   extractPerseusStrings(perseusJson: $perseusJson)
-}
-`,
+}`,
   FeedbackAnswers: `query FeedbackAnswers($parentKey: String!) {
   feedbackByKey(key: $parentKey) {
     ... on QuestionFeedback {
@@ -4024,10 +3962,15 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   feedbackForAuthor: `query feedbackForAuthor($kaid: String!, $feedbackType: FeedbackType!, $cursor: String, $limit: Int, $sort: Int) {
-  feedbackForAuthor(kaid: $kaid, feedbackType: $feedbackType, cursor: $cursor, limit: $limit, sort: $sort) {
+  feedbackForAuthor(
+    kaid: $kaid
+    feedbackType: $feedbackType
+    cursor: $cursor
+    limit: $limit
+    sort: $sort
+  ) {
     feedback {
       replyCount
       appearsAsDeleted
@@ -4088,10 +4031,18 @@ fragment entry on TeamPageEntryForEditing {
     cursor
     __typename
   }
-}
-`,
+}`,
   feedbackQuery: `query feedbackQuery($topicId: String!, $focusKind: String!, $cursor: String, $limit: Int, $feedbackType: FeedbackType!, $currentSort: Int, $qaExpandKey: String) {
-  feedback(focusId: $topicId, cursor: $cursor, limit: $limit, feedbackType: $feedbackType, focusKind: $focusKind, sort: $currentSort, qaExpandKey: $qaExpandKey, answersLimit: 1) {
+  feedback(
+    focusId: $topicId
+    cursor: $cursor
+    limit: $limit
+    feedbackType: $feedbackType
+    focusKind: $focusKind
+    sort: $currentSort
+    qaExpandKey: $qaExpandKey
+    answersLimit: 1
+  ) {
     feedback {
       isLocked
       isPinned
@@ -4274,20 +4225,34 @@ fragment entry on TeamPageEntryForEditing {
     sortedByDate
     __typename
   }
-}
-`,
+}`,
   FetchArticleContentData: `query FetchArticleContentData($path: String!, $queryParams: String!, $isModal: Boolean, $followRedirects: Boolean, $countryCode: String!) {
-  contentJson: curatedArticleContentLibraryJson(path: $path, queryParams: $queryParams, isModal: $isModal, followRedirects: $followRedirects, countryCode: $countryCode)
-}
-`,
+  contentJson: curatedArticleContentLibraryJson(
+    path: $path
+    queryParams: $queryParams
+    isModal: $isModal
+    followRedirects: $followRedirects
+    countryCode: $countryCode
+  )
+}`,
   FetchContentData: `query FetchContentData($path: String!, $queryParams: String!, $isModal: Boolean, $followRedirects: Boolean, $countryCode: String!) {
-  contentJson: curatedContentLibraryJson(path: $path, queryParams: $queryParams, isModal: $isModal, followRedirects: $followRedirects, countryCode: $countryCode)
-}
-`,
+  contentJson: curatedContentLibraryJson(
+    path: $path
+    queryParams: $queryParams
+    isModal: $isModal
+    followRedirects: $followRedirects
+    countryCode: $countryCode
+  )
+}`,
   FetchExerciseContentData: `query FetchExerciseContentData($path: String!, $queryParams: String!, $isModal: Boolean, $followRedirects: Boolean, $countryCode: String!) {
-  contentJson: curatedExerciseContentLibraryJson(path: $path, queryParams: $queryParams, isModal: $isModal, followRedirects: $followRedirects, countryCode: $countryCode)
-}
-`,
+  contentJson: curatedExerciseContentLibraryJson(
+    path: $path
+    queryParams: $queryParams
+    isModal: $isModal
+    followRedirects: $followRedirects
+    countryCode: $countryCode
+  )
+}`,
   FetchFlagsQuery: `query FetchFlagsQuery {
   flags {
     id
@@ -4311,13 +4276,23 @@ fragment entry on TeamPageEntryForEditing {
 }
 `,
   FetchProgrammingContentData: `query FetchProgrammingContentData($path: String!, $queryParams: String!, $isModal: Boolean, $followRedirects: Boolean, $countryCode: String!) {
-  contentJson: curatedProgrammingContentLibraryJson(path: $path, queryParams: $queryParams, isModal: $isModal, followRedirects: $followRedirects, countryCode: $countryCode)
-}
-`,
+  contentJson: curatedProgrammingContentLibraryJson(
+    path: $path
+    queryParams: $queryParams
+    isModal: $isModal
+    followRedirects: $followRedirects
+    countryCode: $countryCode
+  )
+}`,
   FetchVideoContentData: `query FetchVideoContentData($path: String!, $queryParams: String!, $isModal: Boolean, $followRedirects: Boolean, $countryCode: String!) {
-  contentJson: curatedVideoContentLibraryJson(path: $path, queryParams: $queryParams, isModal: $isModal, followRedirects: $followRedirects, countryCode: $countryCode)
-}
-`,
+  contentJson: curatedVideoContentLibraryJson(
+    path: $path
+    queryParams: $queryParams
+    isModal: $isModal
+    followRedirects: $followRedirects
+    countryCode: $countryCode
+  )
+}`,
   findUsers: `query findUsers($identifier: String) {
   usersSearch(identifier: $identifier) {
     users {
@@ -4570,8 +4545,7 @@ fragment UserFields on User {
     href
     __typename
   }
-}
-`,
+}`,
   getAccountSettings: `query getAccountSettings($targetKaid: String) {
   actor: user {
     id
@@ -4691,8 +4665,7 @@ fragment UserFields on User {
     classyCampaignId
     __typename
   }
-}
-`,
+}`,
   getAIGuideWaitlistStatus: `query getAIGuideWaitlistStatus {
   user {
     id
@@ -4746,8 +4719,7 @@ fragment UserFields on User {
     teamKaids
     __typename
   }
-}
-`,
+}`,
   getAllSetsOfStandards: `query getAllSetsOfStandards($locale: String, $domain: String) {
   sets: allSetsOfStandards(locale: $locale, domain: $domain, region: "*") {
     id
@@ -4755,8 +4727,7 @@ fragment UserFields on User {
     shortName
     __typename
   }
-}
-`,
+}`,
   getAllStandardsForContent: `query getAllStandardsForContent($contentDescriptor: String!) {
   standards: editableStandardsForContent(contentDescriptor: $contentDescriptor, region: "*") {
     id
@@ -4828,8 +4799,7 @@ fragment UserFields on User {
     }
     __typename
   }
-}
-`,
+}`,
   getAssessmentItems: `query getAssessmentItems($exerciseName: String) {
   exercise(name: $exerciseName) {
     id
@@ -4840,15 +4810,13 @@ fragment UserFields on User {
     }
     __typename
   }
-}
-`,
+}`,
   GetAssessmentItemTags: `query GetAssessmentItemTags {
   assessmentItemTags(filter: ALL) {
     ...AssessmentItemTagFields
     __typename
   }
 }
-
 fragment AssessmentItemTagFields on AssessmentItemTag {
   editId: id
   id: urlsafeTag
@@ -4856,8 +4824,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
   description
   relatedContentId: lessonId
   __typename
-}
-`,
+}`,
   GetAuthors: `query GetAuthors {
   allAuthorOptions {
     id
@@ -4865,8 +4832,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
     key
     __typename
   }
-}
-`,
+}`,
   GetAvatars: `query GetAvatars {
   user {
     id
@@ -4887,8 +4853,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
     }
     __typename
   }
-}
-`,
+}`,
   getChildrenForDevadmin: `query getChildrenForDevadmin($kaid: String!) {
   user(kaid: $kaid) {
     id
@@ -4916,8 +4881,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
     }
     __typename
   }
-}
-`,
+}`,
   getChildrenOfTopic: `query getChildrenOfTopic($id: String!) {
   topic: topicById(id: $id) {
     id
@@ -4946,8 +4910,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
     }
     __typename
   }
-}
-`,
+}`,
   getChronomancerStatus: `query getChronomancerStatus {
   chronomancer {
     mode
@@ -4959,8 +4922,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
     }
     __typename
   }
-}
-`,
+}`,
   getClassesAndStudents: `query getClassesAndStudents {
   coach: user {
     id
@@ -4980,8 +4942,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
     }
     __typename
   }
-}
-`,
+}`,
   getClassList: `query getClassList {
   coach: user {
     id
@@ -5176,7 +5137,6 @@ fragment InvitationsField on Invitation {
   accepted
   __typename
 }
-
 fragment StudentField2 on StudentsPage {
   students {
     kaid
@@ -5189,8 +5149,7 @@ fragment StudentField2 on StudentsPage {
   }
   nextCursor
   __typename
-}
-`,
+}`,
   getClassroomsAndPrimaryOffering: `query getClassroomsAndPrimaryOffering {
   districtPrimaryOfferingAsTeacher
   coach: user {
@@ -5273,8 +5232,7 @@ fragment StudentField2 on StudentsPage {
     isK4dClassroom
     __typename
   }
-}
-`,
+}`,
   getCoach: `query getCoach {
   coach: user {
     id
@@ -5403,8 +5361,7 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
   __typename
-}
-`,
+}`,
   getCombinedBadges: `query getCombinedBadges($kaid: String, $spotlightBadgeSlug: String!) {
   user(kaid: $kaid) {
     id
@@ -5487,7 +5444,10 @@ fragment Badge on Badge {
 }
 `,
   getContentAssignmentChangesQuery: `query getContentAssignmentChangesQuery($assignmentID: ID!, $maxNumChanges: Int!) {
-  contentAssignmentChanges(assignmentID: $assignmentID, maxNumChanges: $maxNumChanges) {
+  contentAssignmentChanges(
+    assignmentID: $assignmentID
+    maxNumChanges: $maxNumChanges
+  ) {
     assignmentID
     type
     timestamp
@@ -5499,13 +5459,17 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getContentAssignmentsForCoachAsDevadmin: `query getContentAssignmentsForCoachAsDevadmin($after: ID, $assignmentFilters: CoachAssignmentFilters, $classDescriptor: String!, $orderBy: AssignmentOrder!, $pageSize: Int) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
     cacheId
-    assignmentsPage(filters: $assignmentFilters, orderBy: $orderBy, after: $after, pageSize: $pageSize) {
+    assignmentsPage(
+      filters: $assignmentFilters
+      orderBy: $orderBy
+      after: $after
+      pageSize: $pageSize
+    ) {
       assignments {
         id
         createdDate
@@ -5536,12 +5500,10 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getContentForStandard: `query getContentForStandard($set: String!, $region: String, $standard: String) {
   contentForStandardMappings(setId: $set, region: $region, standardId: $standard)
-}
-`,
+}`,
   getContentItemProgressesForSatSkill: `query getContentItemProgressesForSatSkill($contentDescriptors: [String!]) {
   user {
     id
@@ -5594,10 +5556,12 @@ fragment Badge on Badge {
     translatedTitle
     __typename
   }
-}
-`,
+}`,
   getCourseMasteryAssignmentChangesQuery: `query getCourseMasteryAssignmentChangesQuery($assignmentID: ID!, $maxNumChanges: Int!) {
-  courseMasteryAssignmentChanges(assignmentID: $assignmentID, maxNumChanges: $maxNumChanges) {
+  courseMasteryAssignmentChanges(
+    assignmentID: $assignmentID
+    maxNumChanges: $maxNumChanges
+  ) {
     assignmentID
     type
     timestamp
@@ -5609,8 +5573,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getCourseMasteryAssignmentsForCoachAsDevAdmin: `query getCourseMasteryAssignmentsForCoachAsDevAdmin($descriptor: String!) {
   classroomByDescriptor(descriptor: $descriptor) {
     id
@@ -5620,7 +5583,9 @@ fragment Badge on Badge {
       coachNickname
       __typename
     }
-    courseMasteryAssignments: subjectMasteryAssignments(activeFilter: ACTIVE_OR_ARCHIVED) {
+    courseMasteryAssignments: subjectMasteryAssignments(
+      activeFilter: ACTIVE_OR_ARCHIVED
+    ) {
       id
       assignedDate
       createdDate
@@ -5665,8 +5630,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getCourseProgress: `query getCourseProgress($filters: DistrictCourseProgressFilters!, $getKmapTopics: Boolean!) {
   districtCourseProgressByCourse(filters: $filters) {
     dateInfo {
@@ -5708,8 +5672,7 @@ fragment Badge on Badge {
     strandKey
     __typename
   }
-}
-`,
+}`,
   getCourseProgressByClassroom: `query getCourseProgressByClassroom($filters: DistrictCourseProgressFilters!, $courseID: String!) {
   districtCourseProgressByClassroom(filters: $filters, courseID: $courseID) {
     dateInfo {
@@ -5745,8 +5708,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getCourseProgressBySchool: `query getCourseProgressBySchool($filters: DistrictCourseProgressFilters!, $courseID: String) {
   districtCourseProgressBySchool(filters: $filters, courseID: $courseID) {
     dateInfo {
@@ -5780,10 +5742,14 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getCourseProgressByStudent: `query getCourseProgressByStudent($filters: DistrictCourseProgressFilters!, $classroomDescriptor: String!, $courseID: String!, $onlyStudentsWhoWorkedOnTheCourseNotForAClass: Boolean) {
-  districtCourseProgressByStudent(filters: $filters, courseID: $courseID, classroomDescriptor: $classroomDescriptor, onlyStudentsWhoWorkedOnTheCourseNotForAClass: $onlyStudentsWhoWorkedOnTheCourseNotForAClass) {
+  districtCourseProgressByStudent(
+    filters: $filters
+    courseID: $courseID
+    classroomDescriptor: $classroomDescriptor
+    onlyStudentsWhoWorkedOnTheCourseNotForAClass: $onlyStudentsWhoWorkedOnTheCourseNotForAClass
+  ) {
     dateInfo {
       from
       upTo
@@ -5820,8 +5786,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getCreateMasteryAssignmentsFormData: `query getCreateMasteryAssignmentsFormData($classroomDescriptor: String!, $coursesIds: [String]!) {
   classroomByDescriptorV2(descriptor: $classroomDescriptor) {
     id
@@ -5850,16 +5815,14 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getCustomRedirect: `query getCustomRedirect($redirectFrom: String!) {
   customRedirect(redirectFrom: $redirectFrom) {
     id
     redirectTo
     __typename
   }
-}
-`,
+}`,
   getCustomRedirects: `query getCustomRedirects {
   customRedirects {
     id
@@ -5938,7 +5901,6 @@ fragment InvitationsField on Invitation {
   accepted
   __typename
 }
-
 fragment StudentField1 on StudentsPage {
   students {
     kaid
@@ -5951,16 +5913,14 @@ fragment StudentField1 on StudentsPage {
   }
   nextCursor
   __typename
-}
-`,
+}`,
   getDatastoreUserData: `query getDatastoreUserData($examGroupId: String!, $kaid: String) {
   examGroup(examGroupId: $examGroupId) {
     id
     datastoreUserData(kaid: $kaid)
     __typename
   }
-}
-`,
+}`,
   getDaysUntilClassIsDeletedQuery: `query getDaysUntilClassIsDeletedQuery($classDescriptor: String!) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
@@ -5972,24 +5932,21 @@ fragment StudentField1 on StudentsPage {
     }
     __typename
   }
-}
-`,
+}`,
   getDescriptionForStandard: `query getDescriptionForStandard($region: String!, $setId: String!, $standardId: String!) {
   publishedStandard(region: $region, setId: $setId, standardId: $standardId) {
     id
     description
     __typename
   }
-}
-`,
+}`,
   getDistrictCourses: `query getDistrictCourses($districtName: String!) {
   district(districtName: $districtName) {
     id
     activeCourseSISNumbers
     __typename
   }
-}
-`,
+}`,
   getDistrictGrades: `query getDistrictGrades($districtName: String!) {
   district(districtName: $districtName) {
     id
@@ -6001,8 +5958,7 @@ fragment StudentField1 on StudentsPage {
     }
     __typename
   }
-}
-`,
+}`,
   getDistrictInstructionalAreaQuery: `query getDistrictInstructionalAreaQuery {
   kmapTopics {
     id
@@ -6015,8 +5971,7 @@ fragment StudentField1 on StudentsPage {
     }
     __typename
   }
-}
-`,
+}`,
   getDistrictInternalAdmins: `query getDistrictInternalAdmins($districtID: String!) {
   getDistrictInternalAdmins(districtID: $districtID) {
     id
@@ -6025,8 +5980,7 @@ fragment StudentField1 on StudentsPage {
     districtProvidedEmail
     __typename
   }
-}
-`,
+}`,
   getDistrictSchools: `query getDistrictSchools($districtName: String!) {
   district(districtName: $districtName) {
     id
@@ -6037,8 +5991,7 @@ fragment StudentField1 on StudentsPage {
     }
     __typename
   }
-}
-`,
+}`,
   getDistrictSchoolsAndType: `query getDistrictSchoolsAndType($districtName: String!) {
   district(districtName: $districtName) {
     id
@@ -6051,10 +6004,13 @@ fragment StudentField1 on StudentsPage {
     }
     __typename
   }
-}
-`,
+}`,
   getDistrictTeachers: `query getDistrictTeachers($districtName: String!, $pageSize: Int, $cursor: Int) {
-  activationReportByTeacher(districtName: $districtName, pageSize: $pageSize, cursor: $cursor) {
+  activationReportByTeacher(
+    districtName: $districtName
+    pageSize: $pageSize
+    cursor: $cursor
+  ) {
     rows {
       isActivated
       teacherKaid
@@ -6063,8 +6019,7 @@ fragment StudentField1 on StudentsPage {
     }
     __typename
   }
-}
-`,
+}`,
   getDomainsForStandardsEditor: `query getDomainsForStandardsEditor {
   allDomains {
     id
@@ -6074,8 +6029,7 @@ fragment StudentField1 on StudentsPage {
     kind
     __typename
   }
-}
-`,
+}`,
   getDonationAskByID: `query getDonationAskByID($id: String!) {
   donationAskByID(id: $id) {
     id
@@ -6107,10 +6061,11 @@ fragment StudentField1 on StudentsPage {
     }
     __typename
   }
-}
-`,
+}`,
   getEduOrganizationsForRegion: `query getEduOrganizationsForRegion($country: String!, $postalCode: String, $administrativeAreaLevel1: String, $administrativeAreaLevel2: String, $locality: String) {
-  eduOrganizationsForRegion(filters: {country: $country, postalCode: $postalCode, administrativeAreaLevel1: $administrativeAreaLevel1, administrativeAreaLevel2: $administrativeAreaLevel2, locality: $locality}) {
+  eduOrganizationsForRegion(
+    filters: {country: $country, postalCode: $postalCode, administrativeAreaLevel1: $administrativeAreaLevel1, administrativeAreaLevel2: $administrativeAreaLevel2, locality: $locality}
+  ) {
     id
     name
     country
@@ -6120,8 +6075,7 @@ fragment StudentField1 on StudentsPage {
     locality
     __typename
   }
-}
-`,
+}`,
   getEligibleLearnStormCampaign: `query getEligibleLearnStormCampaign {
   learnStormActiveEligibleCampaign {
     id
@@ -6164,8 +6118,7 @@ fragment StudentField1 on StudentsPage {
     }
     __typename
   }
-}
-`,
+}`,
   getEmailSettings: `query getEmailSettings($targetKaid: String) {
   actor: user {
     id
@@ -6446,8 +6399,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     trackingDocumentUrl
     __typename
   }
-}
-`,
+}`,
   getFeedbackReplies: `query getFeedbackReplies($postKey: String!) {
   feedbackReplies(feedbackKey: $postKey) {
     isLocked
@@ -6489,8 +6441,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     upVoted
     __typename
   }
-}
-`,
+}`,
   getFeedbackRepliesPage: `query getFeedbackRepliesPage($postKey: String!, $cursor: String, $limit: Int!) {
   feedbackRepliesPaginated(feedbackKey: $postKey, cursor: $cursor, limit: $limit) {
     cursor
@@ -6537,8 +6488,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     }
     __typename
   }
-}
-`,
+}`,
   getFlag: `query getFlag($name: String!) {
   flag(name: $name) {
     id
@@ -6546,8 +6496,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     isUserPassing
     __typename
   }
-}
-`,
+}`,
   getFlagsSummary: `query getFlagsSummary {
   flags {
     id
@@ -6555,8 +6504,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     isUserPassing
     __typename
   }
-}
-`,
+}`,
   getFpmMasteryForTopic: `query getFpmMasteryForTopic($topicId: String!) {
   user {
     id
@@ -6576,8 +6524,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     }
     __typename
   }
-}
-`,
+}`,
   getFullUserProfile: `query getFullUserProfile($kaid: String, $username: String) {
   user(kaid: $kaid, username: $username) {
     id
@@ -6619,7 +6566,10 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     noColorInVideos
     newNotificationCount
     canHellban: hasPermission(name: "can_ban_users", scope: GLOBAL)
-    canMessageUsers: hasPermission(name: "can_send_moderator_messages", scope: GLOBAL)
+    canMessageUsers: hasPermission(
+      name: "can_send_moderator_messages"
+      scope: GLOBAL
+    )
     isSelf: isActor
     hasStudents: hasCoachees
     hasClasses
@@ -6665,8 +6615,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
   actorIsImpersonatingUser
   isAIGuideEnabled
   hasAccessToAIGuideDev
-}
-`,
+}`,
   getInfoForTotalStudentCountQuery: `query getInfoForTotalStudentCountQuery {
   coach: user {
     id
@@ -6674,8 +6623,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     coachInvitationsCount
     __typename
   }
-}
-`,
+}`,
   getInitialDataForPrePhantomUser: `query getInitialDataForPrePhantomUser($exerciseId: ID!, $input: AssessmentItemInput!) {
   assessmentItem(input: $input) {
     item {
@@ -6700,7 +6648,6 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     __typename
   }
 }
-
 fragment userExerciseFields on UserExercise {
   exerciseModel: exercise {
     id
@@ -6800,7 +6747,6 @@ fragment userExerciseFields on UserExercise {
   totalDone
   __typename
 }
-
 fragment userTaskFields on PracticeUserTask {
   cards {
     done
@@ -6852,8 +6798,7 @@ fragment userTaskFields on PracticeUserTask {
     __typename
   }
   __typename
-}
-`,
+}`,
   getIsClassCleverLibrarySynced: `query getIsClassCleverLibrarySynced($classDescriptor: String!) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
@@ -6861,8 +6806,7 @@ fragment userTaskFields on PracticeUserTask {
     isCleverLibrarySynced
     __typename
   }
-}
-`,
+}`,
   getIsDistrictSynced: `query getIsDistrictSynced($classDescriptor: String!) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
@@ -6870,8 +6814,7 @@ fragment userTaskFields on PracticeUserTask {
     isDistrictSynced
     __typename
   }
-}
-`,
+}`,
   getItemsForExercise: `query getItemsForExercise($id: String!) {
   exercise: exerciseById(id: $id) {
     id
@@ -6889,8 +6832,7 @@ fragment userTaskFields on PracticeUserTask {
     }
     __typename
   }
-}
-`,
+}`,
   getKhanLabsSettings: `query getKhanLabsSettings($targetKaid: String!) {
   user(kaid: $targetKaid) {
     id
@@ -6946,8 +6888,7 @@ fragment userTaskFields on PracticeUserTask {
     }
     __typename
   }
-}
-`,
+}`,
   getLearnStormCampaign: `query getLearnStormCampaign($id: ID!) {
   campaign: learnStormCampaign(id: $id) {
     id
@@ -6975,8 +6916,7 @@ fragment userTaskFields on PracticeUserTask {
     bannerVisible
     __typename
   }
-}
-`,
+}`,
   getLearnStormCampaignDataForEnrollment: `query getLearnStormCampaignDataForEnrollment {
   learnStormActiveEligibleCampaign {
     id
@@ -6995,8 +6935,7 @@ fragment userTaskFields on PracticeUserTask {
     }
     __typename
   }
-}
-`,
+}`,
   getLearnStormCampaigns: `query getLearnStormCampaigns {
   learnStormCampaigns {
     id
@@ -7004,8 +6943,7 @@ fragment userTaskFields on PracticeUserTask {
     live
     __typename
   }
-}
-`,
+}`,
   getLearnStormDashboard: `query getLearnStormDashboard($classDescriptor: String!) {
   coach: user {
     id
@@ -7053,8 +6991,7 @@ fragment userTaskFields on PracticeUserTask {
     userChosenRoles
     __typename
   }
-}
-`,
+}`,
   GetMappersSuggestions: `query GetMappersSuggestions($kaid: String!) {
   mappersSuggestions(studentKaid: $kaid) {
     unit {
@@ -7095,8 +7032,7 @@ fragment userTaskFields on PracticeUserTask {
     }
     __typename
   }
-}
-`,
+}`,
   getModerationLogs: `query getModerationLogs($limit: Int!, $cursor: String!) {
   moderationLogs(limit: $limit, cursor: $cursor) {
     moderationLogs {
@@ -7119,8 +7055,7 @@ fragment userTaskFields on PracticeUserTask {
     nextCursor
     __typename
   }
-}
-`,
+}`,
   getModerationResult: `query getModerationResult($input: String!) {
   getModerationResult(input: $input) {
     categories
@@ -7128,10 +7063,12 @@ fragment userTaskFields on PracticeUserTask {
     flagged
     __typename
   }
-}
-`,
+}`,
   GetNotationReadAloudsForAssessmentItem: `query GetNotationReadAloudsForAssessmentItem($assessmentItemID: ID!, $exerciseID: ID!) {
-  getNotationReadAloudsForAssessmentItem(assessmentItemID: $assessmentItemID, exerciseID: $exerciseID) {
+  getNotationReadAloudsForAssessmentItem(
+    assessmentItemID: $assessmentItemID
+    exerciseID: $exerciseID
+  ) {
     notationReadAlouds {
       assessmentItemId
       domainId
@@ -7149,8 +7086,7 @@ fragment userTaskFields on PracticeUserTask {
     }
     __typename
   }
-}
-`,
+}`,
   getNotificationsForUser: `query getNotificationsForUser($after: ID) {
   user {
     id
@@ -7315,7 +7251,6 @@ fragment MasteryGoalDueDateApproachingCreatedNotificationType on MasteryGoalDueD
   }
   __typename
 }
-
 fragment ModeratorNotificationType on ModeratorNotification {
   text
   __typename
@@ -7402,7 +7337,6 @@ fragment UnitMasteryGoalCreatedNotificationType on UnitMasteryGoalCreatedNotific
     __typename
   }
 }
-
 fragment clarificationFragment on OfficialClarification {
   id
   text
@@ -7410,15 +7344,13 @@ fragment clarificationFragment on OfficialClarification {
   closeTimestamp
   youtubeId
   __typename
-}
-`,
+}`,
   getOfficialClarificationsWithReporter: `query getOfficialClarificationsWithReporter($youtubeId: String!) {
   officialClarifications(youtubeId: $youtubeId) {
     ...clarificationFragmentWithReporter
     __typename
   }
-}
-`,
+}`,
   getPendingStudentsAsDevadmin: `query getPendingStudentsAsDevadmin($kaid: String!) {
   coach: user(kaid: $kaid) {
     id
@@ -7442,8 +7374,7 @@ fragment clarificationFragment on OfficialClarification {
     }
     __typename
   }
-}
-`,
+}`,
   getProfileWidgetPrograms: `query getProfileWidgetPrograms($kaid: String!) {
   user(kaid: $kaid) {
     id
@@ -7465,8 +7396,7 @@ fragment clarificationFragment on OfficialClarification {
     }
     __typename
   }
-}
-`,
+}`,
   getProfileWidgets: `query getProfileWidgets($kaid: String!) {
   user(kaid: $kaid) {
     id
@@ -7521,16 +7451,14 @@ fragment clarificationFragment on OfficialClarification {
     }
     __typename
   }
-}
-`,
+}`,
   getPromoForUser: `query getPromoForUser($promoName: String!) {
   user {
     id
     promotion(promoName: $promoName)
     __typename
   }
-}
-`,
+}`,
   getPublicBadgesForProfiles: `query getPublicBadgesForProfiles($kaid: String) {
   user(kaid: $kaid) {
     id
@@ -7576,8 +7504,7 @@ fragment Badge on Badge {
     youtubeId
     __typename
   }
-}
-`,
+}`,
   getResources: `query getResources {
   coachResourcesCurationPage {
     curationData
@@ -7591,8 +7518,7 @@ fragment Badge on Badge {
     description
     __typename
   }
-}
-`,
+}`,
   getSailthruNewsletters: `query getSailthruNewsletters($targetKaid: String) {
   target: user(kaid: $targetKaid) {
     id
@@ -7673,8 +7599,7 @@ fragment Badge on Badge {
     skillId
     __typename
   }
-}
-`,
+}`,
   getSATLandingPageVideo: `query getSATLandingPageVideo($id: String!) {
   video(id: $id) {
     id
@@ -7686,8 +7611,7 @@ fragment Badge on Badge {
     youtubeId
     __typename
   }
-}
-`,
+}`,
   getSatSkill: `query getSatSkill($skillId: String!) {
   satSkill(skillId: $skillId) {
     name
@@ -7753,8 +7677,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getSatStudent: `query getSatStudent($kaid: String!, $domain: SatDomain, $startDate: Date, $endDate: Date) {
   coach: user {
     id
@@ -7836,8 +7759,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getSatStudentRecentActivity: `query getSatStudentRecentActivity($kaid: String!, $domain: SatDomain, $startDate: Date, $endDate: Date) {
   coach: user {
     id
@@ -7852,8 +7774,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getSatStudentRecommendedTasks: `query getSatStudentRecommendedTasks($kaid: String!, $domain: SatDomain, $startDate: Date, $endDate: Date) {
   coach: user {
     id
@@ -7873,8 +7794,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getSettingsPageData: `query getSettingsPageData($targetKaid: String) {
   target: user(kaid: $targetKaid) {
     id
@@ -7915,8 +7835,7 @@ fragment Badge on Badge {
     deletion: isDeletion
     __typename
   }
-}
-`,
+}`,
   getStandardsDataForLocaleAndDomain: `query getStandardsDataForLocaleAndDomain($locale: String, $domain: String) {
   allSetsOfStandards(locale: $locale, domain: $domain) {
     id
@@ -7934,13 +7853,17 @@ fragment Badge on Badge {
 }
 `,
   getStandardsForContent: `query getStandardsForContent($setId: String!, $contentDescriptor: String!, $secondaryDescriptor: String) {
-  standards: editableStandardsForContent(setId: $setId, contentDescriptor: $contentDescriptor, secondaryDescriptor: $secondaryDescriptor, region: "*") {
+  standards: editableStandardsForContent(
+    setId: $setId
+    contentDescriptor: $contentDescriptor
+    secondaryDescriptor: $secondaryDescriptor
+    region: "*"
+  ) {
     id
     standardId
     __typename
   }
-}
-`,
+}`,
   GetStaticContent: `query GetStaticContent {
   allLicenseOptions {
     id
@@ -7955,8 +7878,7 @@ fragment Badge on Badge {
     name
     __typename
   }
-}
-`,
+}`,
   getStripeSubscriptionForEditing: `query getStripeSubscriptionForEditing($subscriptionId: String!) {
   simplifiedStripeSubscription(subscriptionId: $subscriptionId) {
     id
@@ -7981,8 +7903,7 @@ fragment Badge on Badge {
     profileRoot
     __typename
   }
-}
-`,
+}`,
   getStudentExerciseContentReport_Exercise: `query getStudentExerciseContentReport_Exercise($assignmentId: String!, $slug: String) {
   exercise(name: $slug) {
     id
@@ -8006,8 +7927,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getStudentExerciseContentReport_TopicQuiz: `query getStudentExerciseContentReport_TopicQuiz($assignmentId: String!, $slug: String) {
   topicQuiz(slug: $slug) {
     id
@@ -8035,8 +7955,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getStudentExerciseContentReport_TopicUnitTest: `query getStudentExerciseContentReport_TopicUnitTest($assignmentId: String!, $slug: String) {
   topicUnitTest(slug: $slug) {
     id
@@ -8064,18 +7983,21 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getStudentListEmailSubscriptions: `query getStudentListEmailSubscriptions($studentListId: String!) {
   coach: user {
     id
     emailSubscriptions {
-      coachReportSubscription: classroomEmailSubscriptionForClassroomID(classroomID: $studentListId) {
+      coachReportSubscription: classroomEmailSubscriptionForClassroomID(
+        classroomID: $studentListId
+      ) {
         checked
         token
         __typename
       }
-      satCoachReportSubscription: satClassroomEmailSubscriptionForClassroomID(classroomID: $studentListId) {
+      satCoachReportSubscription: satClassroomEmailSubscriptionForClassroomID(
+        classroomID: $studentListId
+      ) {
         checked
         token
         __typename
@@ -8084,8 +8006,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getStudents: `query getStudents($classDescriptor: String!) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
@@ -8124,8 +8045,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getStudentsForMappers: `query getStudentsForMappers {
   user {
     id
@@ -8175,8 +8095,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getStudentsPerCoach: `query getStudentsPerCoach($coachKaid: String, $after: Int, $pageSize: Int) {
   coach: user(kaid: $coachKaid) {
     id
@@ -8195,8 +8114,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getStudentUserStatus: `query getStudentUserStatus {
   user {
     id
@@ -8220,20 +8138,17 @@ fragment Badge on Badge {
     kaIsValid
     __typename
   }
-}
-`,
+}`,
   getSuggestedUsername: `query getSuggestedUsername($requestedUsername: String!) {
   suggestedUsername(requestedUsername: $requestedUsername)
-}
-`,
+}`,
   GetSuggestionsSource: `query GetSuggestionsSource($version: String!) {
   queryCounts(version: $version) {
     name
     count
     __typename
   }
-}
-`,
+}`,
   getTeacherCampaign: `query getTeacherCampaign($id: String!) {
   teacherCampaign(id: $id) {
     id
@@ -8291,8 +8206,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getTeacherCampaignDataForResponsePage: `query getTeacherCampaignDataForResponsePage($id: ID!, $stepId: ID!) {
   coach: user {
     id
@@ -8459,8 +8373,7 @@ fragment Badge on Badge {
     live
     __typename
   }
-}
-`,
+}`,
   getTeamPage: `query getTeamPage($name: TeamPageName!) {
   teamPage(name: $name) {
     entries {
@@ -8485,8 +8398,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getTestPrepProgressReport: `query getTestPrepProgressReport($classDescriptor: String!, $filters: TestPrepProgressReportFilters) {
   testPrepProgressReport(classroomDescriptor: $classDescriptor, filters: $filters) {
     teacherKaid
@@ -8519,8 +8431,7 @@ fragment Badge on Badge {
     youtubeId
     __typename
   }
-}
-`,
+}`,
   getTopic: `query getTopic($slug: String!) {
   topic(slug: $slug) {
     id
@@ -8555,7 +8466,17 @@ fragment Badge on Badge {
 }
 `,
   GetTopicQuestionsQuery: `query GetTopicQuestionsQuery($topicId: String!, $cursor: String, $limit: Int, $feedbackType: FeedbackType, $forceInTutorial: Boolean, $minAnswers: Int, $maxAnswers: Int) {
-  topicQuestions(topicID: $topicId, topicSlug: "", cursor: $cursor, limit: $limit, feedbackType: $feedbackType, forceInTutorial: $forceInTutorial, minAnswers: $minAnswers, maxAnswers: $maxAnswers, answersLimit: 1) {
+  topicQuestions(
+    topicID: $topicId
+    topicSlug: ""
+    cursor: $cursor
+    limit: $limit
+    feedbackType: $feedbackType
+    forceInTutorial: $forceInTutorial
+    minAnswers: $minAnswers
+    maxAnswers: $maxAnswers
+    answersLimit: 1
+  ) {
     feedback {
       isLocked
       isPinned
@@ -8722,8 +8643,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getTopics: `query getTopics($courseIdsToAdd: [String]!, $descriptor: String!, $fetchDistrictCourses: Boolean!, $region: String!) {
   domains: studentListTopics(region: $region) {
     slug: domainSlug
@@ -8767,8 +8687,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getTransferAuthToken: `query getTransferAuthToken {
   user {
     id
@@ -8788,7 +8707,12 @@ fragment Badge on Badge {
   getUserChangeLogsAsDevadmin: `query getUserChangeLogsAsDevadmin($after: ID, $actorKaid: String, $targetKaid: String, $pageSize: Int) {
   user {
     id
-    userSettingsChangeLogsPage(actorKaid: $actorKaid, targetKaid: $targetKaid, pageSize: $pageSize, after: $after) {
+    userSettingsChangeLogsPage(
+      actorKaid: $actorKaid
+      targetKaid: $targetKaid
+      pageSize: $pageSize
+      after: $after
+    ) {
       logs {
         id
         actorKaid
@@ -8810,8 +8734,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getUserCoaches: `query getUserCoaches($kaid: String!) {
   user(kaid: $kaid) {
     id
@@ -9073,8 +8996,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getUserHasUsedProduct: `query getUserHasUsedProduct($examGroupId: String!, $kaid: String!) {
   examGroup(examGroupId: $examGroupId) {
     id
@@ -9102,8 +9024,7 @@ fragment Badge on Badge {
     actorHasUserScopedPermission(capability: CAN_VIEW_USER_IDENTITY)
     __typename
   }
-}
-`,
+}`,
   getUserInfoForLinking: `query getUserInfoForLinking($userDistrictInfoUuid: ID!) {
   userDistrictInfo(uuid: $userDistrictInfoUuid) {
     id
@@ -9121,8 +9042,7 @@ fragment Badge on Badge {
     classlinkId
     __typename
   }
-}
-`,
+}`,
   getUserInfoForSubjectProgress: `query getUserInfoForSubjectProgress($topicId: String!) {
   user {
     id
@@ -9142,8 +9062,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getUserInfoForTopicProgressMastery: `query getUserInfoForTopicProgressMastery($topicId: String!) {
   user {
     contentItemProgresses(queryBy: {parentTopicId: $topicId}) {
@@ -9154,7 +9073,6 @@ fragment Badge on Badge {
     __typename
   }
 }
-
 fragment CommonContentItemProgressesFragment on ContentItemProgress {
   bestScore {
     numAttempted
@@ -9170,7 +9088,6 @@ fragment CommonContentItemProgressesFragment on ContentItemProgress {
   }
   __typename
 }
-
 fragment CommonUserInfoFragment on User {
   id
   curationItemProgress(topicId: $topicId) {
@@ -9196,8 +9113,7 @@ fragment CommonUserInfoFragment on User {
     __typename
   }
   __typename
-}
-`,
+}`,
   getUserInfoForTopicProgressNonMastery: `query getUserInfoForTopicProgressNonMastery($topicId: String!) {
   user {
     contentItemProgresses(queryBy: {parentTopicId: $topicId}) {
@@ -9218,7 +9134,6 @@ fragment CommonUserInfoFragment on User {
     __typename
   }
 }
-
 fragment CommonContentItemProgressesFragment on ContentItemProgress {
   bestScore {
     numAttempted
@@ -9234,7 +9149,6 @@ fragment CommonContentItemProgressesFragment on ContentItemProgress {
   }
   __typename
 }
-
 fragment CommonUserInfoFragment on User {
   id
   curationItemProgress(topicId: $topicId) {
@@ -9260,8 +9174,7 @@ fragment CommonUserInfoFragment on User {
     __typename
   }
   __typename
-}
-`,
+}`,
   getUserProgressDump: `query getUserProgressDump($kaid: String!, $problemLogCursor: ID, $videoProgressesCursor: ID, $pageSize: Int, $startDt: DateTime, $endDt: DateTime) {
   user(kaid: $kaid) {
     id
@@ -9355,16 +9268,14 @@ fragment CommonUserInfoFragment on User {
     soundOn
     __typename
   }
-}
-`,
+}`,
   getUserSoundPref: `query getUserSoundPref {
   user {
     id
     soundOn
     __typename
   }
-}
-`,
+}`,
   getUsersWithGrants: `query getUsersWithGrants($withRoles: [String!]) {
   usersWithGrants(withRoles: $withRoles) {
     id
@@ -9383,8 +9294,7 @@ fragment CommonUserInfoFragment on User {
     }
     __typename
   }
-}
-`,
+}`,
   getUsersWithGrantsForEmail: `query getUsersWithGrantsForEmail($email: String!) {
   usersWithGrants(email: $email) {
     id
@@ -9401,8 +9311,7 @@ fragment CommonUserInfoFragment on User {
     }
     __typename
   }
-}
-`,
+}`,
   getVideo: `query getVideo($contentId: String!) {
   videoById(contentId: $contentId) {
     id
@@ -9448,8 +9357,7 @@ fragment CommonUserInfoFragment on User {
     augmentedTranscript
     __typename
   }
-}
-`,
+}`,
   getVideoListAndLocalesForLiteLocale: `query getVideoListAndLocalesForLiteLocale($kaLocale: String!) {
   videoListingForLocale(kaLocale: $kaLocale) {
     title
@@ -9482,8 +9390,7 @@ fragment CommonUserInfoFragment on User {
     }
     __typename
   }
-}
-`,
+}`,
   getVideoNameForTeacherCampaignPreview: `query getVideoNameForTeacherCampaignPreview($id: String!) {
   video(id: $id) {
     id
@@ -9511,8 +9418,7 @@ fragment CommonUserInfoFragment on User {
     slug
     __typename
   }
-}
-`,
+}`,
   GetWalmartProfile: `query GetWalmartProfile($profileKeyName: String!) {
   walmartProfile(profileKeyName: $profileKeyName) {
     walmartId
@@ -9876,8 +9782,7 @@ fragment gtp_examMetadataFragment on ExamMetadata {
     }
     __typename
   }
-}
-`,
+}`,
   gtp_getHubPageData: `query gtp_getHubPageData($examId: String!) {
   metadata(examId: $examId) {
     id
@@ -9910,8 +9815,7 @@ fragment gtp_examMetadataFragment on ExamMetadata {
     }
     __typename
   }
-}
-`,
+}`,
   gtp_getOnboardingContentProgress: `query gtp_getOnboardingContentProgress($lessonId: String!) {
   user {
     id
@@ -10124,8 +10028,7 @@ fragment gtp_taskFragment on Task {
     }
     __typename
   }
-}
-`,
+}`,
   gtp_getTestSectionTasks: `query gtp_getTestSectionTasks($examId: String!, $taskId: String!) {
   testSectionTasks(examId: $examId, taskId: $taskId) {
     ...gtp_taskFragment
@@ -10414,8 +10317,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
     }
     __typename
   }
-}
-`,
+}`,
   gtp_relatedContent: `query gtp_relatedContent($taskType: String!, $taskId: String!) {
   relatedContent(taskType: $taskType, taskId: $taskId) {
     id
@@ -10507,8 +10409,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
     }
     __typename
   }
-}
-`,
+}`,
   guideTranscripts: `query guideTranscripts($kaid: String!, $cursor: String) {
   aiGuideThreads(kaid: $kaid, cursor: $cursor) {
     threads {
@@ -10521,16 +10422,14 @@ fragment gtp_tpudFragment on TestPrepUserData {
     cursor
     __typename
   }
-}
-`,
+}`,
   hasChangedAvatar: `query hasChangedAvatar($kaid: String!) {
   user(kaid: $kaid) {
     id
     hasChangedAvatar
     __typename
   }
-}
-`,
+}`,
   hasUsedTestPrepProductQuery: `query hasUsedTestPrepProductQuery($examGroupId: String!) {
   examGroup(examGroupId: $examGroupId) {
     id
@@ -10551,8 +10450,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
     }
     __typename
   }
-}
-`,
+}`,
   homepageQueryV4: `query homepageQueryV4($kaid: String, $username: String) {
   actorUser: user {
     id
@@ -10567,8 +10465,12 @@ fragment gtp_tpudFragment on TestPrepUserData {
     isCoachedByActor
     isManagedByActor
     isAIGuideEnabled
-    canViewUserProgress: actorHasUserScopedPermission(capability: CAN_VIEW_USER_PROGRESS)
-    canViewTeachersAndClassrooms: actorHasUserScopedPermission(capability: CAN_VIEW_TEACHERS_AND_CLASSROOMS)
+    canViewUserProgress: actorHasUserScopedPermission(
+      capability: CAN_VIEW_USER_PROGRESS
+    )
+    canViewTeachersAndClassrooms: actorHasUserScopedPermission(
+      capability: CAN_VIEW_TEACHERS_AND_CLASSROOMS
+    )
     isDistrictSynced
     isKmapSynced
     userDistrictInfos {
@@ -10621,8 +10523,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
     __typename
   }
   hasAccessToAIGuideDev
-}
-`,
+}`,
   hotlist: `query hotlist($curationNodeId: String, $onlyOfficialProjectSpinoffs: Boolean!, $sort: ListProgramSortOrder, $pageInfo: ListProgramsPageInfo) {
   listTopPrograms(curationNodeId: $curationNodeId, onlyOfficialProjectSpinoffs: $onlyOfficialProjectSpinoffs, sort: $sort, pageInfo: $pageInfo) {
     complete
@@ -10660,8 +10561,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
     }
     __typename
   }
-}
-`,
+}`,
   isActivityAccessibleForProfiles: `query isActivityAccessibleForProfiles {
   user {
     id
@@ -10685,8 +10585,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
 `,
   isCourseEditableByCurrentUser: `query isCourseEditableByCurrentUser($courseId: String!) {
   isCourseEditableByCurrentUser(courseId: $courseId)
-}
-`,
+}`,
   isDigitalSatStudent: `query isDigitalSatStudent {
   user {
     id
@@ -10700,8 +10599,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
     }
     __typename
   }
-}
-`,
+}`,
   isEmailInClass: `query isEmailInClass($email: String!, $classCode: String!) {
   isEmailInClass(email: $email, classCode: $classCode) {
     inClass
@@ -10719,16 +10617,14 @@ fragment gtp_tpudFragment on TestPrepUserData {
     discussionBanned
     __typename
   }
-}
-`,
+}`,
   isSatStudent: `query isSatStudent {
   user {
     id
     isSatStudent
     __typename
   }
-}
-`,
+}`,
   IssueFormGetExerciseId: `query IssueFormGetExerciseId($exerciseName: String!) {
   exercise(name: $exerciseName) {
     id
@@ -10761,8 +10657,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
     }
     __typename
   }
-}
-`,
+}`,
   khanLibraryCourseStructure: `query khanLibraryCourseStructure($id: String!) {
   courseById(id: $id) {
     id
@@ -10802,15 +10697,13 @@ fragment gtp_tpudFragment on TestPrepUserData {
     }
     __typename
   }
-}
-`,
+}`,
   khanLibraryGetDomainRevision: `query khanLibraryGetDomainRevision($contentId: String!) {
   domainRevisionById(id: $contentId) {
     ...khanLibraryDomainRevision
     __typename
   }
 }
-
 fragment khanLibraryDomainRevision on DomainRevision {
   id
   sha
@@ -10821,22 +10714,19 @@ fragment khanLibraryDomainRevision on DomainRevision {
     __typename
   }
   __typename
-}
-`,
+}`,
   khanLibraryGetFolder: `query khanLibraryGetFolder($id: String!) {
   folderById(id: $id) {
     ...Folder
     __typename
   }
 }
-
 fragment BaseFolder on Folder {
   id
   name
   kaLocale
   __typename
 }
-
 fragment Folder on Folder {
   ...BaseFolder
   courses {
@@ -10845,7 +10735,6 @@ fragment Folder on Folder {
   }
   __typename
 }
-
 fragment PublishedCourseRevisionFragment on CourseRevision {
   id
   contentId
@@ -10865,8 +10754,7 @@ fragment PublishedCourseRevisionFragment on CourseRevision {
     __typename
   }
   __typename
-}
-`,
+}`,
   khanLibraryGetFolderTranslationProgress: `query khanLibraryGetFolderTranslationProgress($folderId: String!) {
   folderTranslationProgress(folderId: $folderId) {
     courses {
@@ -10876,14 +10764,12 @@ fragment PublishedCourseRevisionFragment on CourseRevision {
     __typename
   }
 }
-
 fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
   __typename
 }
-
 fragment tapArticleNode on TAPArticleNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -10891,7 +10777,6 @@ fragment tapArticleNode on TAPArticleNode {
   fingerprint
   __typename
 }
-
 fragment tapChallengeNode on TAPChallengeNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -10899,7 +10784,6 @@ fragment tapChallengeNode on TAPChallengeNode {
   fingerprint
   __typename
 }
-
 fragment tapContentItem on TAPContentItem {
   id
   contentKind
@@ -10912,7 +10796,6 @@ fragment tapContentItem on TAPContentItem {
   translatedTitle
   __typename
 }
-
 fragment tapContentWordCounts on TAPContentWordCounts {
   wordCount
   translatableWordCount
@@ -10921,7 +10804,6 @@ fragment tapContentWordCounts on TAPContentWordCounts {
   approvedWordCount
   __typename
 }
-
 fragment tapCourseNode on TAPCourseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -10932,7 +10814,6 @@ fragment tapCourseNode on TAPCourseNode {
   }
   __typename
 }
-
 fragment tapExerciseNode on TAPExerciseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -10940,14 +10821,12 @@ fragment tapExerciseNode on TAPExerciseNode {
   fingerprint
   __typename
 }
-
 fragment tapInteractiveNode on TAPInteractiveNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
   __typename
 }
-
 fragment tapLessonNode on TAPLessonNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -10965,7 +10844,6 @@ fragment tapLessonNode on TAPLessonNode {
   }
   __typename
 }
-
 fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataWordCount
   metadataTranslatableWordCount
@@ -10973,7 +10851,6 @@ fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataApprovedWordCount
   __typename
 }
-
 fragment tapProjectNode on TAPProjectNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -10981,7 +10858,6 @@ fragment tapProjectNode on TAPProjectNode {
   fingerprint
   __typename
 }
-
 fragment tapTalkthroughNode on TAPTalkthroughNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -10991,7 +10867,6 @@ fragment tapTalkthroughNode on TAPTalkthroughNode {
   youtubeId
   __typename
 }
-
 fragment tapUnitNode on TAPUnitNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -11002,7 +10877,6 @@ fragment tapUnitNode on TAPUnitNode {
   }
   __typename
 }
-
 fragment tapVideoNode on TAPVideoNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -11013,8 +10887,7 @@ fragment tapVideoNode on TAPVideoNode {
   translatedYoutubeId
   youtubeId
   __typename
-}
-`,
+}`,
   khanLibraryGetLocalesLanguage: `query khanLibraryGetLocalesLanguage {
   localesForLanguagePicker(includeEnglish: true, includeFake: false) {
     id
@@ -11022,8 +10895,7 @@ fragment tapVideoNode on TAPVideoNode {
     displayName
     __typename
   }
-}
-`,
+}`,
   khanLibraryGetMyGroup: `query khanLibraryGetMyGroup {
   folderGroups {
     myFolders {
@@ -11033,14 +10905,12 @@ fragment tapVideoNode on TAPVideoNode {
     __typename
   }
 }
-
 fragment BaseFolder on Folder {
   id
   name
   kaLocale
   __typename
-}
-`,
+}`,
   khanLibraryGetOtherGroup: `query khanLibraryGetOtherGroup {
   folderGroups {
     otherFolders {
@@ -11055,29 +10925,25 @@ fragment BaseFolder on Folder {
     __typename
   }
 }
-
 fragment BaseFolder on Folder {
   id
   name
   kaLocale
   __typename
-}
-`,
+}`,
   khanLibraryGetStatus: `query khanLibraryGetStatus {
   contentEditingStatus {
     editingEnabled
     __typename
   }
-}
-`,
+}`,
   khanLibraryHasCourseEditorRole: `query khanLibraryHasCourseEditorRole {
   user {
     id
     hasPermission(name: "can_edit_courses")
     __typename
   }
-}
-`,
+}`,
   KmapPlacementQuery: `query KmapPlacementQuery($classDescriptor: String!) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     signupCode
@@ -11180,8 +11046,7 @@ fragment BaseFolder on Folder {
     }
     __typename
   }
-}
-`,
+}`,
   KmapPlacementStudentListAdminQuery: `query KmapPlacementStudentListAdminQuery($classDescriptor: String!) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
@@ -11274,8 +11139,7 @@ fragment BaseFolder on Folder {
     }
     __typename
   }
-}
-`,
+}`,
   KmapProgressReportQuery: `query KmapProgressReportQuery($classDescriptor: String!, $progressFrom: DateTime, $progressUpTo: DateTime) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
@@ -11311,7 +11175,10 @@ fragment BaseFolder on Folder {
     }
     __typename
   }
-  teacherKmapProgressReport: teacherMapProgressReport(classroomDescriptor: $classDescriptor, filters: {progressFrom: $progressFrom, progressUpTo: $progressUpTo}) {
+  teacherKmapProgressReport: teacherMapProgressReport(
+    classroomDescriptor: $classDescriptor
+    filters: {progressFrom: $progressFrom, progressUpTo: $progressUpTo}
+  ) {
     rows {
       studentKaidAndNickname: studentKaidsAndNickname {
         id
@@ -11328,8 +11195,7 @@ fragment BaseFolder on Folder {
     }
     __typename
   }
-}
-`,
+}`,
   KmapTopicsQuery: `query KmapTopicsQuery {
   kmapTopics {
     id
@@ -11356,8 +11222,7 @@ fragment BaseFolder on Folder {
     }
     __typename
   }
-}
-`,
+}`,
   learnMenuTopicsQuery: `query learnMenuTopicsQuery($region: String) {
   learnMenuTopics(region: $region) {
     slug
@@ -11376,8 +11241,7 @@ fragment BaseFolder on Folder {
     }
     __typename
   }
-}
-`,
+}`,
   LintTranslationsFE: `query LintTranslationsFE($translations: [TranslationLinterInput!]!) {
   lintTranslations(translations: $translations) {
     status
@@ -11385,10 +11249,13 @@ fragment BaseFolder on Folder {
     correction
     __typename
   }
-}
-`,
+}`,
   listClassroomPrograms: `query listClassroomPrograms($pageInfo: ListProgramsPageInfo, $classroomId: String!, $onlyOfficialProgramSpinoffs: Boolean!) {
-  listClassroomPrograms(pageInfo: $pageInfo, classroomId: $classroomId, onlyOfficialProgramSpinoffs: $onlyOfficialProgramSpinoffs) {
+  listClassroomPrograms(
+    pageInfo: $pageInfo
+    classroomId: $classroomId
+    onlyOfficialProgramSpinoffs: $onlyOfficialProgramSpinoffs
+  ) {
     complete
     cursor
     programs {
@@ -11405,8 +11272,7 @@ fragment BaseFolder on Folder {
     }
     __typename
   }
-}
-`,
+}`,
   ListRoleChangeRecords: `query ListRoleChangeRecords($kaid: String!) {
   listRoleChangeRecords(targetKaid: $kaid) {
     roleChangeRecords {
@@ -11426,8 +11292,7 @@ fragment BaseFolder on Folder {
     }
     __typename
   }
-}
-`,
+}`,
   listTopProgramSpinoffs: `query listTopProgramSpinoffs($pageInfo: ListProgramsPageInfo, $from: SpinoffOrigin!, $sort: ListProgramSortOrder) {
   listTopProgramSpinoffs(pageInfo: $pageInfo, from: $from, sort: $sort) {
     complete
@@ -11454,8 +11319,7 @@ fragment BaseFolder on Folder {
     defaultUrlPath
     __typename
   }
-}
-`,
+}`,
   localeMappings: `query localeMappings($includeEnglish: Boolean) {
   locales(includeEnglish: $includeEnglish) {
     id
@@ -11465,8 +11329,7 @@ fragment BaseFolder on Folder {
     displayName
     __typename
   }
-}
-`,
+}`,
   localesForFlagRuleQuery: `query localesForFlagRuleQuery {
   localesForLanguagePicker(includeEnglish: false, includeFake: false) {
     id
@@ -11493,8 +11356,7 @@ fragment BaseFolder on Folder {
     kaLocale
     __typename
   }
-}
-`,
+}`,
   localesForLangPickerQuery: `query localesForLangPickerQuery {
   localesForLanguagePicker(includeEnglish: true, includeFake: false) {
     id
@@ -11502,23 +11364,20 @@ fragment BaseFolder on Folder {
     kaLocale
     __typename
   }
-}
-`,
+}`,
   LocalesForStandardsEditor: `query LocalesForStandardsEditor {
   locales(includeEnglish: true, includeFake: false, liveOnly: true) {
     id
     displayName
     __typename
   }
-}
-`,
+}`,
   LocalesIncludingEnglish: `query LocalesIncludingEnglish {
   locales(includeEnglish: true) {
     id
     __typename
   }
-}
-`,
+}`,
   loggedInUserQuery: `query loggedInUserQuery {
   user {
     id
@@ -11545,8 +11404,7 @@ fragment BaseFolder on Folder {
     username
     __typename
   }
-}
-`,
+}`,
   ManageFolders_CoursesInFolder: `query ManageFolders_CoursesInFolder($folderID: String!) {
   folderById(id: $folderID) {
     id
@@ -11558,8 +11416,7 @@ fragment BaseFolder on Folder {
     }
     __typename
   }
-}
-`,
+}`,
   ManageFolders_UsersInFolder: `query ManageFolders_UsersInFolder($kaids: [String!]!) {
   users(kaids: $kaids) {
     id
@@ -11569,8 +11426,7 @@ fragment BaseFolder on Folder {
     nickname
     __typename
   }
-}
-`,
+}`,
   manticoreEditorGetVideo: `query manticoreEditorGetVideo($enVideoSlug: String!) {
   video(id: $enVideoSlug) {
     id
@@ -11589,8 +11445,7 @@ fragment BaseFolder on Folder {
     listed
     __typename
   }
-}
-`,
+}`,
   manticoreGetContentForDescriptors: `query manticoreGetContentForDescriptors($contentDescriptors: [String!]!) {
   contentForDescriptors(descriptors: $contentDescriptors) {
     id
@@ -11643,8 +11498,7 @@ fragment BaseFolder on Folder {
     }
     __typename
   }
-}
-`,
+}`,
   masteryTowerCurrentLeaderboardQuery: `query masteryTowerCurrentLeaderboardQuery($classDescriptor: String!) {
   classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
@@ -11662,8 +11516,7 @@ fragment BaseFolder on Folder {
     }
     __typename
   }
-}
-`,
+}`,
   masteryTowerCurrentSessionQuery: `query masteryTowerCurrentSessionQuery($classDescriptor: String!) {
   classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
@@ -11731,8 +11584,7 @@ fragment BaseFolder on Folder {
     }
     __typename
   }
-}
-`,
+}`,
   masteryTowerPreviousWeekLeaderboardQuery: `query masteryTowerPreviousWeekLeaderboardQuery($classDescriptor: String!) {
   classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
@@ -11762,8 +11614,7 @@ fragment BaseFolder on Folder {
     }
     __typename
   }
-}
-`,
+}`,
   ModFeedbackByIDQuery: `query ModFeedbackByIDQuery($feedbackID: ID!, $kaid: String) {
   feedbackByID(feedbackID: $feedbackID, kaid: $kaid) {
     replyCount
@@ -11925,10 +11776,15 @@ fragment BaseFolder on Folder {
     }
     __typename
   }
-}
-`,
+}`,
   ModFeedbackForAuthorQuery: `query ModFeedbackForAuthorQuery($kaid: String!, $feedbackType: FeedbackType!, $cursor: String, $limit: Int, $sort: Int) {
-  feedbackForAuthor(kaid: $kaid, feedbackType: $feedbackType, cursor: $cursor, limit: $limit, sort: $sort) {
+  feedbackForAuthor(
+    kaid: $kaid
+    feedbackType: $feedbackType
+    cursor: $cursor
+    limit: $limit
+    sort: $sort
+  ) {
     feedback {
       replyCount
       appearsAsDeleted
@@ -12094,8 +11950,7 @@ fragment BaseFolder on Folder {
     cursor
     __typename
   }
-}
-`,
+}`,
   MoveTypeModalAllExerciseRevisions: `query MoveTypeModalAllExerciseRevisions {
   allExerciseRevisions {
     id
@@ -12103,8 +11958,7 @@ fragment BaseFolder on Folder {
     title
     __typename
   }
-}
-`,
+}`,
   MyCourses: `query MyCourses {
   classPicker {
     enabled
@@ -12166,7 +12020,6 @@ fragment BaseFolder on Folder {
     __typename
   }
 }
-
 fragment CourseProgress on SubjectProgress {
   topic {
     domainSlug
@@ -12195,8 +12048,7 @@ fragment CourseProgress on SubjectProgress {
     __typename
   }
   __typename
-}
-`,
+}`,
   MyCoursesViaGateway: `query MyCoursesViaGateway {
   classPicker {
     enabled
@@ -12295,8 +12147,7 @@ fragment CourseProgress on SubjectProgress {
     hasPermission(name: $name, scope: $scope)
     __typename
   }
-}
-`,
+}`,
   notTranslatedQuery: `query notTranslatedQuery($kaLocale: String!) {
   user {
     id
@@ -12375,176 +12226,154 @@ fragment CourseProgress on SubjectProgress {
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewAiGuideEnrolledEmail: `query previewAiGuideEnrolledEmail {
   preview: previewAiGuideEnrolledEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewAiGuideThreadFlaggedEmail: `query previewAiGuideThreadFlaggedEmail {
   preview: previewChildAiGuideThreadFlaggedEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewChildAddedCoachEmail: `query previewChildAddedCoachEmail {
   preview: previewChildAddedCoachEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewDistrictsCSVReportReadyForDownloadEmail: `query previewDistrictsCSVReportReadyForDownloadEmail {
   preview: previewDistrictsCSVReportReadyForDownloadEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewExistingParentClaimManagedStudentEmail: `query previewExistingParentClaimManagedStudentEmail {
   preview: previewExistingParentClaimManagedStudentEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewNewAssignmentEmail: `query previewNewAssignmentEmail {
   preview: previewNewAssignmentEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewParentChildInviteEmail: `query previewParentChildInviteEmail {
   preview: previewParentChildInviteEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewParentReportEmail: `query previewParentReportEmail {
   preview: previewParentReportEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewSampleEmail: `query previewSampleEmail {
   preview: previewSampleEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewTeacherReportEmail: `query previewTeacherReportEmail {
   preview: previewTeacherReportEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewTeacherStudentInviteEmail: `query previewTeacherStudentInviteEmail {
   preview: previewTeacherStudentInviteEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewTestPrepMissedPracticeExamEmail: `query previewTestPrepMissedPracticeExamEmail {
   preview: previewTestPrepMissedPracticeExamEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewTestPrepPracticeExamEmail: `query previewTestPrepPracticeExamEmail {
   preview: previewTestPrepPracticeExamEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewTestPrepRealExamCongratsEmail: `query previewTestPrepRealExamCongratsEmail {
   preview: previewTestPrepRealExamCongratsEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewTestPrepScheduledPracticeEmail: `query previewTestPrepScheduledPracticeEmail {
   preview: previewTestPrepScheduledPracticeEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewUnderAgeGateParentApproveEmail: `query previewUnderAgeGateParentApproveEmail {
   preview: previewUnderAgeGateParentApproveEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewUnderAgeGateParentReminderEmail: `query previewUnderAgeGateParentReminderEmail {
   preview: previewUnderAgeGateParentReminderEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewUnregisteredParentClaimManagedStudentEmail: `query previewUnregisteredParentClaimManagedStudentEmail {
   preview: previewUnregisteredParentClaimManagedStudentEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewWaitlistAddedEmail: `query previewWaitlistAddedEmail {
   preview: previewWaitlistAddedEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewWaitlistApprovedEmail: `query previewWaitlistApprovedEmail {
   preview: previewWaitlistApprovedEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewWaitlistApprovedReminderEmail: `query previewWaitlistApprovedReminderEmail {
   preview: previewWaitlistApprovedReminderEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   ProblemAttemptsByStudent: `query ProblemAttemptsByStudent($studentKaids: [String], $contentDescriptor: String!, $progressAfter: DateTime) {
   students: users(kaids: $studentKaids) {
     id
@@ -12578,8 +12407,7 @@ fragment ProblemAttemptFields on ProblemAttempt {
   timeDone
   attemptStates
   __typename
-}
-`,
+}`,
   profilePermissions: `query profilePermissions($kaid: String, $username: String) {
   user(kaid: $kaid, username: $username) {
     id
@@ -12742,8 +12570,7 @@ fragment ProblemAttemptFields on ProblemAttempt {
     }
     __typename
   }
-}
-`,
+}`,
   ProgressByTeacherQuery: `query ProgressByTeacherQuery($districtName: String!, $schoolIds: [ID!], $gradeLevels: [DistrictGradeLevel!], $teacherIds: [ID!], $progressFrom: DateTime, $progressUpTo: DateTime, $orderBy: ReportByTeacherSortableColumn, $orderDir: OrderDir, $kmapStrandId: ID, $pageSize: Int, $cursor: Int) {
   districtProgressReportByTeacher(districtName: $districtName, filters: {schoolIds: $schoolIds, gradeLevels: $gradeLevels, teacherIds: $teacherIds, progressFrom: $progressFrom, progressUpTo: $progressUpTo, kmapStrandId: $kmapStrandId}, orderBy: $orderBy, orderDir: $orderDir, pageSize: $pageSize, cursor: $cursor) {
     avgRow {
@@ -12819,10 +12646,13 @@ fragment ProblemAttemptFields on ProblemAttempt {
     isForCourse
     __typename
   }
-}
-`,
+}`,
   PublishList: `query PublishList($limit: Int, $queuedFilter: PublishListFilter, $kaLocaleFilter: KALocale) {
-  publishList(limit: $limit, queuedFilter: $queuedFilter, kaLocaleFilter: $kaLocaleFilter) {
+  publishList(
+    limit: $limit
+    queuedFilter: $queuedFilter
+    kaLocaleFilter: $kaLocaleFilter
+  ) {
     statuses {
       id
       commitSha: publishedContentVersion
@@ -12855,16 +12685,14 @@ fragment ProblemAttemptFields on ProblemAttempt {
     }
     __typename
   }
-}
-`,
+}`,
   QAExpandKeyInfo: `query QAExpandKeyInfo($encryptedKey: String) {
   qaExpandKeyInfo(encryptedQaExpandKey: $encryptedKey) {
     feedbackType
     unencryptedKey
     __typename
   }
-}
-`,
+}`,
   querySchoolAffiliation: `query querySchoolAffiliation {
   coach: user {
     id
@@ -12880,8 +12708,7 @@ fragment ProblemAttemptFields on ProblemAttempt {
     tosForFormalTeacherStatus
     __typename
   }
-}
-`,
+}`,
   quizAndUnitTestAttemptsQuery: `query quizAndUnitTestAttemptsQuery($topicId: String!) {
   user {
     id
@@ -12906,8 +12733,7 @@ fragment ProblemAttemptFields on ProblemAttempt {
     }
     __typename
   }
-}
-`,
+}`,
   satMissionData: `query satMissionData {
   curator: actorRoleScopes(role: CREATOR) {
     contentKind
@@ -12932,7 +12758,10 @@ fragment ProblemAttemptFields on ProblemAttempt {
 }
 `,
   SatPracticeByGradeQuery: `query SatPracticeByGradeQuery($districtName: String!, $schoolIds: [ID!], $gradeLevels: [DistrictGradeLevel!], $progressFrom: DateTime, $progressUpTo: DateTime) {
-  districtSatPracticeReportByGrade(districtName: $districtName, filters: {schoolIds: $schoolIds, gradeLevels: $gradeLevels, progressFrom: $progressFrom, progressUpTo: $progressUpTo}) {
+  districtSatPracticeReportByGrade(
+    districtName: $districtName
+    filters: {schoolIds: $schoolIds, gradeLevels: $gradeLevels, progressFrom: $progressFrom, progressUpTo: $progressUpTo}
+  ) {
     avgRow {
       avgPracticeMinutes
       avgMathPractice
@@ -12953,10 +12782,16 @@ fragment ProblemAttemptFields on ProblemAttempt {
     }
     __typename
   }
-}
-`,
+}`,
   SatPracticeBySchoolQuery: `query SatPracticeBySchoolQuery($districtName: String!, $schoolIds: [ID!], $gradeLevels: [DistrictGradeLevel!], $progressFrom: DateTime, $progressUpTo: DateTime, $orderBy: BySchoolSortableColumn, $orderDir: OrderDir, $pageSize: Int, $cursor: Int) {
-  districtSatPracticeReportBySchool(districtName: $districtName, filters: {schoolIds: $schoolIds, gradeLevels: $gradeLevels, progressFrom: $progressFrom, progressUpTo: $progressUpTo}, orderBy: $orderBy, orderDir: $orderDir, pageSize: $pageSize, cursor: $cursor) {
+  districtSatPracticeReportBySchool(
+    districtName: $districtName
+    filters: {schoolIds: $schoolIds, gradeLevels: $gradeLevels, progressFrom: $progressFrom, progressUpTo: $progressUpTo}
+    orderBy: $orderBy
+    orderDir: $orderDir
+    pageSize: $pageSize
+    cursor: $cursor
+  ) {
     avgRow {
       avgPracticeMinutes
       avgMathPractice
@@ -12977,10 +12812,16 @@ fragment ProblemAttemptFields on ProblemAttempt {
     totalCount
     __typename
   }
-}
-`,
+}`,
   SatPracticeByTeacherQuery: `query SatPracticeByTeacherQuery($districtName: String!, $schoolIds: [ID!], $teacherIds: [ID!], $gradeLevels: [DistrictGradeLevel!], $progressFrom: DateTime, $progressUpTo: DateTime, $orderBy: ByTeacherSortableColumn, $orderDir: OrderDir, $pageSize: Int, $cursor: Int) {
-  districtSatPracticeReportByTeacher(districtName: $districtName, filters: {schoolIds: $schoolIds, teacherIds: $teacherIds, gradeLevels: $gradeLevels, progressFrom: $progressFrom, progressUpTo: $progressUpTo}, orderBy: $orderBy, orderDir: $orderDir, pageSize: $pageSize, cursor: $cursor) {
+  districtSatPracticeReportByTeacher(
+    districtName: $districtName
+    filters: {schoolIds: $schoolIds, teacherIds: $teacherIds, gradeLevels: $gradeLevels, progressFrom: $progressFrom, progressUpTo: $progressUpTo}
+    orderBy: $orderBy
+    orderDir: $orderDir
+    pageSize: $pageSize
+    cursor: $cursor
+  ) {
     avgRow {
       avgPracticeMinutes
       avgMathPractice
@@ -13002,8 +12843,7 @@ fragment ProblemAttemptFields on ProblemAttempt {
     totalCount
     __typename
   }
-}
-`,
+}`,
   searchDonors: `query searchDonors($filterBy: DonorOrProspectFilterType!, $search: String!) {
   donorOrProspectsByKind(filterBy: $filterBy, search: $search) {
     id
@@ -13024,8 +12864,7 @@ fragment ProblemAttemptFields on ProblemAttempt {
     }
     __typename
   }
-}
-`,
+}`,
   seoMetadataQuery: `query seoMetadataQuery($examGroupId: String!) {
   examGroup(examGroupId: $examGroupId) {
     id
@@ -13095,8 +12934,7 @@ fragment ProblemAttemptFields on ProblemAttempt {
     }
     __typename
   }
-}
-`,
+}`,
   siteEditorCourseProperties: `query siteEditorCourseProperties($id: String!) {
   course(id: $id) {
     id
@@ -13181,8 +13019,7 @@ fragment ProblemAttemptFields on ProblemAttempt {
     }
     __typename
   }
-}
-`,
+}`,
   SkillsMetadataAndStudentsQuery: `query SkillsMetadataAndStudentsQuery($selectedMasteryCourseIds: [String]!, $classDescriptor: String!, $region: String!, $locale: String!) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
@@ -13229,10 +13066,12 @@ fragment ProblemAttemptFields on ProblemAttempt {
     }
     __typename
   }
-}
-`,
+}`,
   SkillsQuery: `query SkillsQuery($classDescriptor: String!, $skillIds: [String]!, $studentKaid: String) {
-  teacherOverallProgressReport(classroomDescriptor: $classDescriptor, filters: {studentKaid: $studentKaid}) {
+  teacherOverallProgressReport(
+    classroomDescriptor: $classDescriptor
+    filters: {studentKaid: $studentKaid}
+  ) {
     skillsLevels(skillIds: $skillIds) {
       skillId
       studentLevels {
@@ -13244,12 +13083,16 @@ fragment ProblemAttemptFields on ProblemAttempt {
     }
     __typename
   }
-}
-`,
+}`,
   StandaloneUserAssignments: `query StandaloneUserAssignments($after: ID, $pageSize: Int, $kaid: String!, $classDescriptor: String!, $orderBy: AssignmentOrder!) {
   student: user(kaid: $kaid) {
     id
-    assignmentsPage(after: $after, pageSize: $pageSize, classroomDescriptor: $classDescriptor, orderBy: $orderBy) {
+    assignmentsPage(
+      after: $after
+      pageSize: $pageSize
+      classroomDescriptor: $classDescriptor
+      orderBy: $orderBy
+    ) {
       assignments {
         id
         contents {
@@ -13293,12 +13136,14 @@ fragment TranslatedContentFields on LearnableContent {
   translatedTitle
   defaultUrlPath
   __typename
-}
-`,
+}`,
   StudentKmapPlacementQuery: `query StudentKmapPlacementQuery($classDescriptor: String!, $studentKaid: String!) {
   student: user(kaid: $studentKaid) {
     id
-    assignments: subjectMasteryAssignments(filter: KMAP, classroomDescriptor: $classDescriptor) {
+    assignments: subjectMasteryAssignments(
+      filter: KMAP
+      classroomDescriptor: $classDescriptor
+    ) {
       id
       studentListId
       activeStudentData {
@@ -13391,8 +13236,7 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   studentListByClassCode: `query studentListByClassCode($classCode: String!) {
   joinByClassCodeInfo(classCode: $classCode) {
     id
@@ -13407,8 +13251,7 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   StudentListHasAssignments: `query StudentListHasAssignments($classDescriptor: String!) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
@@ -13417,8 +13260,7 @@ fragment TranslatedContentFields on LearnableContent {
     hasCourseMasteryGoals
     __typename
   }
-}
-`,
+}`,
   StudentListsQuery: `query StudentListsQuery {
   coach: user {
     id
@@ -13437,8 +13279,7 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   StudentMasteryGoals: `query StudentMasteryGoals($kaid: String, $isPast: Boolean!, $classDescriptor: String) {
   user(kaid: $kaid) {
     id
@@ -13502,8 +13343,7 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   studentPageByDescriptorQuery: `query studentPageByDescriptorQuery($classDescriptor: String!) {
   coach: user {
     id
@@ -13532,10 +13372,14 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   StudentSkillsProgressKADQuery: `query StudentSkillsProgressKADQuery($studentKaid: String!, $progressFrom: DateTime!, $progressUpTo: DateTime!, $courseID: String!) {
-  districtStudentsSkillsProgressForCourses(studentKaid: $studentKaid, progressFrom: $progressFrom, progressUpTo: $progressUpTo, courseID: $courseID) {
+  districtStudentsSkillsProgressForCourses(
+    studentKaid: $studentKaid
+    progressFrom: $progressFrom
+    progressUpTo: $progressUpTo
+    courseID: $courseID
+  ) {
     exercise {
       id
       title
@@ -13559,7 +13403,9 @@ fragment TranslatedContentFields on LearnableContent {
     unitChildren {
       unitID: id
       unitTitle: translatedTitle
-      learnableContentPage(pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}) {
+      learnableContentPage(
+        pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}
+      ) {
         contents {
           exerciseID: id
           __typename
@@ -13570,10 +13416,15 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   StudentSkillsProgressMAPQuery: `query StudentSkillsProgressMAPQuery($studentKaid: String!, $progressFrom: DateTime!, $progressUpTo: DateTime!, $bands: [String!], $strandKey: String) {
-  districtStudentsSkillsProgressForCourses(studentKaid: $studentKaid, progressFrom: $progressFrom, progressUpTo: $progressUpTo, bands: $bands, strandKey: $strandKey) {
+  districtStudentsSkillsProgressForCourses(
+    studentKaid: $studentKaid
+    progressFrom: $progressFrom
+    progressUpTo: $progressUpTo
+    bands: $bands
+    strandKey: $strandKey
+  ) {
     exercise {
       id
       title
@@ -13602,7 +13453,9 @@ fragment TranslatedContentFields on LearnableContent {
       key
       __typename
     }
-    learnableContentPage(pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}) {
+    learnableContentPage(
+      pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}
+    ) {
       contents {
         exerciseID: id
         __typename
@@ -13611,8 +13464,7 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   StudentSubjectMasteryGoals: `query StudentSubjectMasteryGoals {
   user {
     id
@@ -13655,8 +13507,7 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   TranscriptQuery: `query TranscriptQuery($videoId: String!) {
   videoById(contentId: $videoId) {
     id
@@ -13677,12 +13528,10 @@ fragment TranslatedContentFields on LearnableContent {
     transferAuthToken
     __typename
   }
-}
-`,
+}`,
   translationEditorEditableByUser: `query translationEditorEditableByUser($contentId: String!, $contentKind: String!) {
   isEditableByCurrentUser(contentId: $contentId, contentKind: $contentKind)
-}
-`,
+}`,
   translationEditorPermissions: `query translationEditorPermissions {
   curator: actorRoleScopes(role: CURATOR) {
     locale
@@ -13698,8 +13547,7 @@ fragment TranslatedContentFields on LearnableContent {
     displayName
     __typename
   }
-}
-`,
+}`,
   translationEditorTalkthroughById: `query translationEditorTalkthroughById($id: String!) {
   talkthroughById(id: $id) {
     id
@@ -13709,8 +13557,7 @@ fragment TranslatedContentFields on LearnableContent {
     listed
     __typename
   }
-}
-`,
+}`,
   translationEditorTalkthroughRevisionById: `query translationEditorTalkthroughRevisionById($id: String!) {
   talkthroughRevisionById(id: $id) {
     id
@@ -13719,8 +13566,7 @@ fragment TranslatedContentFields on LearnableContent {
     youtubeID
     __typename
   }
-}
-`,
+}`,
   TranslationEditor_GetAllDubs: `query TranslationEditor_GetAllDubs {
   allDubs {
     sourceYouTubeId
@@ -13742,15 +13588,13 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   TranslationEditor_GetArticleID: `query TranslationEditor_GetArticleID($slug: String!) {
   article(slug: $slug) {
     id
     __typename
   }
-}
-`,
+}`,
   TranslationEditor_GetArticleStrings: `query TranslationEditor_GetArticleStrings($articleId: String!) {
   articleStrings(articleId: $articleId) {
     title
@@ -13770,15 +13614,13 @@ fragment TranslatedContentFields on LearnableContent {
     listed
     __typename
   }
-}
-`,
+}`,
   TranslationEditor_GetChallengeID: `query TranslationEditor_GetChallengeID($slug: String!) {
   challenge(slug: $slug) {
     id
     __typename
   }
-}
-`,
+}`,
   TranslationEditor_GetCourseStrings: `query TranslationEditor_GetCourseStrings($courseId: String!) {
   courseStrings(courseId: $courseId) {
     id
@@ -13790,8 +13632,7 @@ fragment TranslatedContentFields on LearnableContent {
     translatedDescription
     __typename
   }
-}
-`,
+}`,
   TranslationEditor_GetCurationNodeID: `query TranslationEditor_GetCurationNodeID($slug: String!) {
   topic(slug: $slug) {
     id
@@ -13812,15 +13653,13 @@ fragment TranslatedContentFields on LearnableContent {
     translatedDescription
     __typename
   }
-}
-`,
+}`,
   TranslationEditor_GetExerciseID: `query TranslationEditor_GetExerciseID($slug: String!) {
   exercise(name: $slug) {
     id
     __typename
   }
-}
-`,
+}`,
   TranslationEditor_GetExerciseStrings: `query TranslationEditor_GetExerciseStrings($exerciseId: String!) {
   exerciseStrings(exerciseId: $exerciseId) {
     orderedProblemTypes {
@@ -13853,8 +13692,7 @@ fragment TranslatedContentFields on LearnableContent {
     listed
     __typename
   }
-}
-`,
+}`,
   TranslationEditor_GetPlatformStrings: `query TranslationEditor_GetPlatformStrings($category: String!) {
   platformStrings(category: $category) {
     title
@@ -13865,8 +13703,7 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   TranslationEditor_GetProgramStrings: `query TranslationEditor_GetProgramStrings($programKind: ProgramStringsKind!, $programId: String!, $contentDescriptor: String!) {
   programStrings(programKind: $programKind, programId: $programId) {
     title
@@ -13883,15 +13720,13 @@ fragment TranslatedContentFields on LearnableContent {
     listed
     __typename
   }
-}
-`,
+}`,
   TranslationEditor_GetProjectID: `query TranslationEditor_GetProjectID($slug: String!) {
   project(slug: $slug) {
     id
     __typename
   }
-}
-`,
+}`,
   TranslationEditor_GetVideosByIDs: `query TranslationEditor_GetVideosByIDs($ids: [String!]!) {
   videosByIds(ids: $ids) {
     id
@@ -13908,8 +13743,7 @@ fragment TranslatedContentFields on LearnableContent {
     urlWithinTopic
     __typename
   }
-}
-`,
+}`,
   TranslationEditor_GetVideoTranslationStatus: `query TranslationEditor_GetVideoTranslationStatus($kaLocale: String!) {
   allVideoTranslationProgressForKaLocale(kaLocale: $kaLocale) {
     id
@@ -13942,8 +13776,7 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   TranslationPipelineQuery: `query TranslationPipelineQuery {
   crowdinLocales
   currentPipelines {
@@ -13978,8 +13811,7 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   translationPortalContentProgress: `query translationPortalContentProgress($contentDescriptors: [String!]!, $contentLocale: String!) {
   contentTranslationProgress(contentDescriptors: $contentDescriptors, contentKALocale: $contentLocale) {
     content {
@@ -14537,16 +14369,14 @@ fragment tapTranslationFreshness on TAPTranslationFreshness {
     description
     __typename
   }
-}
-`,
+}`,
   translationsVideosGetVideos: `query translationsVideosGetVideos($youtubeIds: [String!]!) {
   videosByYoutubeIds(youtubeIds: $youtubeIds) {
     id
     contentId
     __typename
   }
-}
-`,
+}`,
   unitProgressForSubject: `query unitProgressForSubject($subjectId: String!) {
   topicById(id: $subjectId) {
     id
@@ -14615,10 +14445,13 @@ fragment tapTranslationFreshness on TAPTranslationFreshness {
     }
     __typename
   }
-}
-`,
+}`,
   unprocessedAIGuideWaitlistEntries: `query unprocessedAIGuideWaitlistEntries($cursor: String, $eligibility: Boolean, $stableRandomOrder: Boolean) {
-  unprocessedAIGuideWaitlistEntries(cursor: $cursor, eligibility: $eligibility, stableRandomOrder: $stableRandomOrder) {
+  unprocessedAIGuideWaitlistEntries(
+    cursor: $cursor
+    eligibility: $eligibility
+    stableRandomOrder: $stableRandomOrder
+  ) {
     cursor
     entries {
       id
@@ -14653,15 +14486,13 @@ fragment tapTranslationFreshness on TAPTranslationFreshness {
     }
     __typename
   }
-}
-`,
+}`,
   UntranslatedContentCheck: `query UntranslatedContentCheck($path: String!, $countryCode: String!) {
   contentRoute(path: $path, countryCode: $countryCode) {
     resolvedPath
     __typename
   }
-}
-`,
+}`,
   UserAfterUDIDeactivationQuery: `query UserAfterUDIDeactivationQuery($kaid: String!) {
   user(kaid: $kaid) {
     id
@@ -14679,13 +14510,20 @@ fragment tapTranslationFreshness on TAPTranslationFreshness {
     }
     __typename
   }
-}
-`,
+}`,
   UserAssignments: `query UserAssignments($after: ID, $dueAfter: DateTime, $dueBefore: DateTime, $pageSize: Int, $orderBy: AssignmentOrder!, $studentListId: String, $coachKaid: String) {
   user {
     id
     kaid
-    assignmentsPage(after: $after, dueAfter: $dueAfter, dueBefore: $dueBefore, pageSize: $pageSize, orderBy: $orderBy, studentListId: $studentListId, coachKaid: $coachKaid) {
+    assignmentsPage(
+      after: $after
+      dueAfter: $dueAfter
+      dueBefore: $dueBefore
+      pageSize: $pageSize
+      orderBy: $orderBy
+      studentListId: $studentListId
+      coachKaid: $coachKaid
+    ) {
       assignments {
         id
         key
@@ -14772,19 +14610,20 @@ fragment ContentFields on LearnableContent {
     __typename
   }
   __typename
-}
-`,
+}`,
   UserAssignmentsForContent: `query UserAssignmentsForContent($classroomDescriptor: String!, $contentDescriptors: [String!]!) {
   user {
     id
-    assignmentDueNextForContentDescriptors(classroomDescriptor: $classroomDescriptor, contentDescriptors: $contentDescriptors) {
+    assignmentDueNextForContentDescriptors(
+      classroomDescriptor: $classroomDescriptor
+      contentDescriptors: $contentDescriptors
+    ) {
       ...AssignmentData
       __typename
     }
     __typename
   }
 }
-
 fragment AssignmentData on Assignment {
   id
   contents {
@@ -14859,12 +14698,17 @@ fragment AssignmentData on Assignment {
   }
   unitId
   __typename
-}
-`,
+}`,
   UserAssignmentsPage: `query UserAssignmentsPage($classroomDescriptor: String!, $dueAfterISO: DateTime, $pageSize: Int!, $cursor: ID) {
   user {
     id
-    assignmentsPage(dueAfter: $dueAfterISO, orderBy: DUE_DATE_ASC, pageSize: $pageSize, classroomDescriptor: $classroomDescriptor, after: $cursor) {
+    assignmentsPage(
+      dueAfter: $dueAfterISO
+      orderBy: DUE_DATE_ASC
+      pageSize: $pageSize
+      classroomDescriptor: $classroomDescriptor
+      after: $cursor
+    ) {
       assignments {
         ...AssignmentData
         __typename
@@ -14878,7 +14722,6 @@ fragment AssignmentData on Assignment {
     __typename
   }
 }
-
 fragment AssignmentData on Assignment {
   id
   contents {
@@ -14953,8 +14796,7 @@ fragment AssignmentData on Assignment {
   }
   unitId
   __typename
-}
-`,
+}`,
   UserClassroomsInfo: `query UserClassroomsInfo($teacherKaid: String) {
   user(kaid: $teacherKaid) {
     id
@@ -14978,8 +14820,7 @@ fragment AssignmentData on Assignment {
     nickname
     __typename
   }
-}
-`,
+}`,
   userDistrictInfoByEmailAndClassCode: `query userDistrictInfoByEmailAndClassCode($email: String!, $classCode: String!) {
   userDistrictInfoByEmailAndClassCode(email: $email, classCode: $classCode) {
     error {
@@ -15064,8 +14905,7 @@ fragment AssignmentData on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   UserDowngradedQuery: `query UserDowngradedQuery {
   user {
     id
@@ -15082,8 +14922,7 @@ fragment AssignmentData on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   UserEmailsQuery: `query UserEmailsQuery {
   user {
     id
@@ -15099,16 +14938,14 @@ fragment AssignmentData on Assignment {
     hasCoach
     __typename
   }
-}
-`,
+}`,
   UserHasDismissedQuery: `query UserHasDismissedQuery($itemName: String!) {
   dismissedItem(itemName: $itemName) {
     id
     isDismissed
     __typename
   }
-}
-`,
+}`,
   UserNextUpcomingAssignment: `query UserNextUpcomingAssignment {
   user {
     id
@@ -15123,7 +14960,6 @@ fragment AssignmentData on Assignment {
     __typename
   }
 }
-
 fragment Classroom on StudentList {
   cacheId
   coachKaid
@@ -15132,8 +14968,7 @@ fragment Classroom on StudentList {
   id
   name
   __typename
-}
-`,
+}`,
   UserPermissionsByEmail: `query UserPermissionsByEmail($email: String!) {
   user(email: $email) {
     id
@@ -15152,8 +14987,7 @@ fragment Classroom on StudentList {
     }
     __typename
   }
-}
-`,
+}`,
   UserPermissionsForContent: `query UserPermissionsForContent {
   user {
     id
@@ -15161,8 +14995,7 @@ fragment Classroom on StudentList {
     canCurate: hasPermission(name: "can_curate_tags", scope: ANY_ON_CURRENT_LOCALE)
     __typename
   }
-}
-`,
+}`,
   userProgressForAssignments: `query userProgressForAssignments($contentDescriptors: [String!]!) {
   user {
     id
@@ -15184,7 +15017,6 @@ fragment Classroom on StudentList {
     __typename
   }
 }
-
 fragment BasicContentItemProgress on ContentItemProgress {
   bestScore {
     numAttempted
@@ -15201,8 +15033,7 @@ fragment BasicContentItemProgress on ContentItemProgress {
     __typename
   }
   __typename
-}
-`,
+}`,
   userProgressForLesson: `query userProgressForLesson($lessonId: String!, $unitId: String!, $masteryEnabled: Boolean!) {
   user {
     id
@@ -15240,7 +15071,6 @@ fragment BasicContentItemProgress on ContentItemProgress {
     __typename
   }
 }
-
 fragment BasicContentItemProgress on ContentItemProgress {
   bestScore {
     numAttempted
@@ -15257,8 +15087,7 @@ fragment BasicContentItemProgress on ContentItemProgress {
     __typename
   }
   __typename
-}
-`,
+}`,
   userProgressForPrograms: `query userProgressForPrograms($contentDescriptors: [String!]!) {
   user {
     id
@@ -15292,8 +15121,7 @@ fragment BasicContentItemProgress on ContentItemProgress {
     }
     __typename
   }
-}
-`,
+}`,
   userSpinoffsOfProgram: `query userSpinoffsOfProgram($spinoffOrigin: SpinoffOrigin!, $pageInfo: ListProgramsPageInfo, $sort: ListProgramSortOrder) {
   user {
     id
@@ -15332,8 +15160,7 @@ fragment BasicContentItemProgress on ContentItemProgress {
     }
     __typename
   }
-}
-`,
+}`,
   userSummaryQuery: `query userSummaryQuery($kaid: String!) {
   userSummary(kaid: $kaid) {
     answers {
@@ -15458,8 +15285,7 @@ fragment SharedFeedbackFields on Feedback {
     translatedTitle
     __typename
   }
-}
-`,
+}`,
   validateAiGuideToken: `query validateAiGuideToken($token: String!) {
   validateAiGuideToken(token: $token) {
     kaid
@@ -15491,8 +15317,7 @@ fragment SharedFeedbackFields on Feedback {
     email
     __typename
   }
-}
-`,
+}`,
   videoByReadableId: `query videoByReadableId($videoId: String!) {
   video(id: $videoId) {
     id
@@ -15573,7 +15398,6 @@ fragment SharedFeedbackFields on Feedback {
     __typename
   }
 }
-
 fragment VideoRevision on VideoRevision {
   id
   contentId
@@ -15605,8 +15429,7 @@ fragment VideoRevision on VideoRevision {
   youtubeId
   listed
   __typename
-}
-`,
+}`,
   WhatNextPrompt: `query WhatNextPrompt($assignmentsPageSize: Int, $assignmentsOrderBy: AssignmentOrder!, $assignmentsDueAfter: DateTime!) {
   user {
     id
@@ -15796,8 +15619,7 @@ fragment UnitProgressFields on UnitProgress {
     }
     __typename
   }
-}
-`,
+}`,
   contentSearchArticle: `query contentSearchArticle($contentId: String!) {
   articleById(id: $contentId) {
     ...contentSearchLearnableContent
@@ -16042,8 +15864,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   guidePreferences: `query guidePreferences {
   user {
     id
@@ -16054,10 +15875,13 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   MappedStandardsForContent: `query MappedStandardsForContent($contentDescriptor: String!, $locale: String, $region: String) {
-  standards: standardMappingsForContent(contentDescriptor: $contentDescriptor, locale: $locale, region: $region) {
+  standards: standardMappingsForContent(
+    contentDescriptor: $contentDescriptor
+    locale: $locale
+    region: $region
+  ) {
     setId
     id
     standardId
@@ -16070,13 +15894,15 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   masteryAssignmentsDevAdmin: `query masteryAssignmentsDevAdmin($classCode: String!, $activeFilter: MasteryAssignmentActiveFilter, $curationNodeLevel: MasteryAssignmentCurationNodeLevel) {
   classroom(classCode: $classCode) {
     id
     cacheId
-    masteryAssignments(activeFilter: $activeFilter, curationNodeLevel: $curationNodeLevel) {
+    masteryAssignments(
+      activeFilter: $activeFilter
+      curationNodeLevel: $curationNodeLevel
+    ) {
       id
       type: curationNodeLevel
       archivedDate
@@ -16126,10 +15952,12 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   unitMasteryAssignmentChanges: `query unitMasteryAssignmentChanges($assignmentID: ID!, $maxNumChanges: Int!) {
-  unitMasteryAssignmentChanges(assignmentID: $assignmentID, maxNumChanges: $maxNumChanges) {
+  unitMasteryAssignmentChanges(
+    assignmentID: $assignmentID
+    maxNumChanges: $maxNumChanges
+  ) {
     assignmentID
     type
     timestamp
@@ -16141,8 +15969,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   getCoachedClassrooms: `query getCoachedClassrooms {
   user {
     id
@@ -16161,10 +15988,13 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   getDistrictCourseProgressByStudent: `query getDistrictCourseProgressByStudent($filters: DistrictCourseProgressFilters!, $studentKaid: String!, $getKmapTopics: Boolean!, $classroomDescriptor: String!) {
-  districtCourseProgressByCourseForStudent(filters: $filters, studentKaid: $studentKaid, classroomDescriptor: $classroomDescriptor) {
+  districtCourseProgressByCourseForStudent(
+    filters: $filters
+    studentKaid: $studentKaid
+    classroomDescriptor: $classroomDescriptor
+  ) {
     dateInfo {
       lastUpdatedDate
       from
@@ -16205,8 +16035,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     title
     __typename
   }
-}
-`,
+}`,
   getProgressByTeacher: `query getProgressByTeacher($filters: DistrictCourseProgressFilters!) {
   districtCourseProgressByTeacher(filters: $filters) {
     dateInfo {
@@ -16245,8 +16074,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   getUserKhanmigoDonation: `query getUserKhanmigoDonation($kaid: String!) {
   khanmigoDonation(kaid: $kaid) {
     donationAmount
@@ -16254,8 +16082,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     lastModifiedDate
     __typename
   }
-}
-`,
+}`,
   aiGuideDrafts: `query aiGuideDrafts {
   aiGuidePrompts {
     id
@@ -16350,8 +16177,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     rangeType
     __typename
   }
-}
-`,
+}`,
   contentPermissionsReport_getUsersWithGrants: `query contentPermissionsReport_getUsersWithGrants($withRoles: [String!]) {
   usersWithGrants(withRoles: $withRoles) {
     id
@@ -16376,82 +16202,75 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   previewAiGuideDisabledEmailByUser: `query previewAiGuideDisabledEmailByUser($reason: ReasonForDisablingAIGuide!) {
   preview: previewAiGuideDisabledEmail(reason: $reason) {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewAiGuideDisabledEmailGeneric: `query previewAiGuideDisabledEmailGeneric($reason: ReasonForDisablingAIGuide!) {
   preview: previewAiGuideDisabledEmail(reason: $reason) {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewAiGuideDisabledEmailInsufficientDonation: `query previewAiGuideDisabledEmailInsufficientDonation($reason: ReasonForDisablingAIGuide!) {
   preview: previewAiGuideDisabledEmail(reason: $reason) {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewAiGuideDisabledEmailLapsedDonation: `query previewAiGuideDisabledEmailLapsedDonation($reason: ReasonForDisablingAIGuide!) {
   preview: previewAiGuideDisabledEmail(reason: $reason) {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewAiGuideDisabledEmailModeration: `query previewAiGuideDisabledEmailModeration($reason: ReasonForDisablingAIGuide!) {
   preview: previewAiGuideDisabledEmail(reason: $reason) {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewAiGuideNotEligibleEmailModeration: `query previewAiGuideNotEligibleEmailModeration($reason: ReasonForDisablingAIGuide!) {
   preview: previewAiGuideNotEligibleEmail(reason: $reason) {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewAiGuideNotEligibleEmailNotAnAdult: `query previewAiGuideNotEligibleEmailNotAnAdult($reason: ReasonForDisablingAIGuide!) {
   preview: previewAiGuideNotEligibleEmail(reason: $reason) {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewAiGuideNotEligibleEmailTooManyChildren: `query previewAiGuideNotEligibleEmailTooManyChildren($reason: ReasonForDisablingAIGuide!) {
   preview: previewAiGuideNotEligibleEmail(reason: $reason) {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   previewAiGuideNotEligibleEmailUnsupportedCountry: `query previewAiGuideNotEligibleEmailUnsupportedCountry($reason: ReasonForDisablingAIGuide!) {
   preview: previewAiGuideNotEligibleEmail(reason: $reason) {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   GetProgressByCourseForStudent: `query GetProgressByCourseForStudent($filters: TeacherOverviewReportFilters!, $studentKaid: String!) {
-  teacherOverviewByCourseForStudentReport(filters: $filters, studentKaid: $studentKaid) {
+  teacherOverviewByCourseForStudentReport(
+    filters: $filters
+    studentKaid: $studentKaid
+  ) {
     dateInfo {
       from
       upTo
@@ -16479,8 +16298,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   GetProgressByStudent: `query GetProgressByStudent($filters: TeacherOverviewReportFilters!, $classDescriptor: String!) {
   teacherOverviewByStudentReport(filters: $filters) {
     dateInfo {
@@ -16521,8 +16339,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   getNonProfileKhanmigoEligibilityData: `query getNonProfileKhanmigoEligibilityData {
   user {
     id
@@ -16541,10 +16358,12 @@ fragment contentSearchLearnableContent on LearnableContent {
     age
     __typename
   }
-}
-`,
+}`,
   GetProgressBySkillForStudentForCourse: `query GetProgressBySkillForStudentForCourse($filters: TeacherOverviewReportFilters!, $studentKaid: String!, $courseId: String!) {
-  teacherOverviewBySkillForStudentForCourseReport(filters: $filters, studentKaid: $studentKaid) {
+  teacherOverviewBySkillForStudentForCourseReport(
+    filters: $filters
+    studentKaid: $studentKaid
+  ) {
     dateInfo {
       from
       upTo
@@ -16583,16 +16402,14 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   previewAiGuideDisabledEmailTrialEnded: `query previewAiGuideDisabledEmailTrialEnded($reason: ReasonForDisablingAIGuide!) {
   preview: previewAiGuideDisabledEmail(reason: $reason) {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   allClassroomCoachedStudentNames: `query allClassroomCoachedStudentNames {
   user {
     id
@@ -16617,8 +16434,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     htmlContent
     __typename
   }
-}
-`,
+}`,
   getMasteryAssignmentStudentProgress: `query getMasteryAssignmentStudentProgress($classCode: String!, $descriptors: [MasteryAssignmentDescriptor!]!) {
   classroom(classCode: $classCode) {
     id
@@ -16638,8 +16454,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   CourseIntroContent: `query CourseIntroContent($descriptor: String!) {
   learnableContentByDescriptors(contentDescriptors: [$descriptor]) {
     id
@@ -16652,16 +16467,14 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   CourseIntroCurationNode: `query CourseIntroCurationNode($id: String!) {
   topicById(id: $id) {
     id
     relativeUrl
     __typename
   }
-}
-`,
+}`,
   getUserInterests: `query getUserInterests($kaid: String!) {
   user(kaid: $kaid) {
     id
@@ -16673,8 +16486,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   GetAllSetsOfStandardsForRegion: `query GetAllSetsOfStandardsForRegion($isDiscoverable: Boolean, $regionSlug: String!) {
   standardRegions(isDiscoverable: $isDiscoverable, slug: $regionSlug) {
     error {
@@ -16690,7 +16502,11 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-  allSetsOfStandards(domain: "math", isDiscoverable: $isDiscoverable, regionSlug: $regionSlug) {
+  allSetsOfStandards(
+    domain: "math"
+    isDiscoverable: $isDiscoverable
+    regionSlug: $regionSlug
+  ) {
     id
     name
     courseEntities {
@@ -16720,8 +16536,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   GetSetOfStandards: `query GetSetOfStandards($setId: String!, $region: String) {
   setOfStandards(setId: $setId, region: $region) {
     id
@@ -16850,16 +16665,14 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   districtHasKhanmigo: `query districtHasKhanmigo($districtId: ID!) {
   districtById(districtId: $districtId) {
     id
     hasKhanmigo
     __typename
   }
-}
-`,
+}`,
   isEligibleForMasteryChallenge: `query isEligibleForMasteryChallenge($courseId: String!) {
   user {
     id
@@ -16872,8 +16685,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   standardRegionsForRegionPickerQuery: `query standardRegionsForRegionPickerQuery {
   standardRegions {
     standardRegion {
@@ -16882,8 +16694,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   AllContentIcons: `query AllContentIcons {
   allDomains {
     id
@@ -16915,7 +16726,11 @@ fragment contentSearchLearnableContent on LearnableContent {
   user(kaid: $kaid) {
     id
     hasTakenKmapExam
-    courseMasteryAssignments(filter: KMAP, isPast: $isPast, classroomDescriptor: $classDescriptor) {
+    courseMasteryAssignments(
+      filter: KMAP
+      isPast: $isPast
+      classroomDescriptor: $classDescriptor
+    ) {
       id
       activeStudentDataV2 {
         kaid
@@ -16970,8 +16785,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   classroomCreatedOnQuery: `query classroomCreatedOnQuery($classCode: String!) {
   classroom(classCode: $classCode) {
     cacheId
@@ -16979,8 +16793,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     id
     __typename
   }
-}
-`,
+}`,
   districtLastNKhanmigoJobs: `query districtLastNKhanmigoJobs($districtId: ID!, $includedDryRun: Boolean!, $numJobs: Int!) {
   districtById(districtId: $districtId) {
     id
@@ -17002,8 +16815,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   getStandardsDataForLocaleRegionAndDomain: `query getStandardsDataForLocaleRegionAndDomain($locale: String, $region: String, $domain: String) {
   allSetsOfStandards(locale: $locale, region: $region, domain: $domain) {
     id
@@ -17020,8 +16832,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   allProducts: `query allProducts {
   allProducts {
     id
@@ -17032,8 +16843,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     validationBillingCountries
     __typename
   }
-}
-`,
+}`,
   product: `query product($id: ID) {
   product(id: $id) {
     id
@@ -17054,8 +16864,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   GetStandardRegionsForCountry: `query GetStandardRegionsForCountry($country: String!, $isDiscoverable: Boolean) {
   standardRegions(country: $country, isDiscoverable: $isDiscoverable) {
     error {
@@ -17082,8 +16891,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   ActivitiesQuery: `query ActivitiesQuery {
   courseById(id: "x1b615e2cf0b0f17f") {
     id
@@ -17140,8 +16948,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   hasCooldown: `query hasCooldown {
   user {
     id
@@ -17174,30 +16981,30 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   getTokenCount: `query getTokenCount($promptText: String!) {
   getTokenCount(promptText: $promptText)
-}
-`,
+}`,
   devadminStringTranslation: `query devadminStringTranslation($message: String!, $messageLocation: String!, $kaLocale: KALocale!) {
-  stringTranslation(message: $message, messageLocation: $messageLocation, kaLocale: $kaLocale) {
+  stringTranslation(
+    message: $message
+    messageLocation: $messageLocation
+    kaLocale: $kaLocale
+  ) {
     found
     isAITranslated
     isNewTranslation
     translation
     __typename
   }
-}
-`,
+}`,
   getInterestsCollectionStatus: `query getInterestsCollectionStatus {
   user {
     id
     isCollectingInterests
     __typename
   }
-}
-`,
+}`,
   Content_GetPrerequisiteExercises: `query Content_GetPrerequisiteExercises($slugs: [String!]!) {
   exercisesBySlugs(slugs: $slugs) {
     id
@@ -17211,8 +17018,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   getKhanmigoEnabled: `query getKhanmigoEnabled($kaid: String!) {
   user(kaid: $kaid) {
     id
@@ -17225,23 +17031,23 @@ fragment contentSearchLearnableContent on LearnableContent {
   classroom(classCode: $classCode) {
     id
     cacheId
-    masteryAssignments: masteryAssignmentsByDescriptors(descriptors: [{id: $id, curationNodeLevel: $curationNodeLevel}]) {
+    masteryAssignments: masteryAssignmentsByDescriptors(
+      descriptors: [{id: $id, curationNodeLevel: $curationNodeLevel}]
+    ) {
       id
       studentProgressMedian
       __typename
     }
     __typename
   }
-}
-`,
+}`,
   learnableContentPathQuery: `query learnableContentPathQuery($id: String!, $kind: String!) {
   learnableContent(id: $id, kind: $kind) {
     id
     defaultUrlPath
     __typename
   }
-}
-`,
+}`,
   getStringTranslation: `query getStringTranslation($message: String!, $messageContext: String, $messageLocation: String!, $kaLocale: KALocale!) {
   stringTranslation(message: $message, messageContext: $messageContext, messageLocation: $messageLocation, kaLocale: $kaLocale) {
     translation
@@ -17264,16 +17070,14 @@ fragment contentSearchLearnableContent on LearnableContent {
     code
     __typename
   }
-}
-`,
+}`,
   previewAiGuideDisabledDuringDistrictActivationEmail: `query previewAiGuideDisabledDuringDistrictActivationEmail {
   preview: previewAiGuideDisabledDuringDistrictActivationEmail {
     textContent
     htmlContent
     __typename
   }
-}
-`,
+}`,
   TranslationEditor_GetAIGuideActivityStrings: `query TranslationEditor_GetAIGuideActivityStrings($contentDescriptor: String!) {
   contentForDescriptors(descriptors: [$contentDescriptor]) {
     id
@@ -17282,6 +17086,5 @@ fragment contentSearchLearnableContent on LearnableContent {
     title
     __typename
   }
-}
-`,
+}`,
 }

@@ -1,5 +1,11 @@
 mutation gtp_updateTask($taskId: ID!, $taskType: String!, $newTaskState: JSONString!, $newTaskStateHash: ID!, $prevTaskStateHash: ID) {
-  updateTask(taskId: $taskId, taskType: $taskType, newTaskState: $newTaskState, newTaskStateHash: $newTaskStateHash, prevTaskStateHash: $prevTaskStateHash) {
+  updateTask(
+    taskId: $taskId
+    taskType: $taskType
+    newTaskState: $newTaskState
+    newTaskStateHash: $newTaskStateHash
+    prevTaskStateHash: $prevTaskStateHash
+  ) {
     task {
       ...gtp_taskFragment
       __typename
@@ -16,7 +22,6 @@ mutation gtp_updateTask($taskId: ID!, $taskType: String!, $newTaskState: JSONStr
     __typename
   }
 }
-
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {
@@ -48,7 +53,6 @@ fragment gtp_egudFragment on ExamGroupUserData {
   extendedTimeMultiplier
   __typename
 }
-
 fragment gtp_taskFragment on Task {
   id
   kaid

@@ -1,5 +1,9 @@
 query getDistrictCourseProgressByStudent($filters: DistrictCourseProgressFilters!, $studentKaid: String!, $getKmapTopics: Boolean!, $classroomDescriptor: String!) {
-  districtCourseProgressByCourseForStudent(filters: $filters, studentKaid: $studentKaid, classroomDescriptor: $classroomDescriptor) {
+  districtCourseProgressByCourseForStudent(
+    filters: $filters
+    studentKaid: $studentKaid
+    classroomDescriptor: $classroomDescriptor
+  ) {
     dateInfo {
       lastUpdatedDate
       from

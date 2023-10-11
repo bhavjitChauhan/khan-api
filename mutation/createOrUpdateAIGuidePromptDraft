@@ -1,5 +1,12 @@
 mutation createOrUpdateAIGuidePromptDraft($promptName: String!, $hashBeforeUpdate: String, $newIsReadyForReview: Boolean!, $newReleaseNotes: String!, $newPromptText: String!, $newConfigJSON: JSONString!) {
-  createOrUpdateAIGuidePromptDraft(promptName: $promptName, hashBeforeUpdate: $hashBeforeUpdate, newIsReadyForReview: $newIsReadyForReview, newReleaseNotes: $newReleaseNotes, newPromptText: $newPromptText, newConfigJSON: $newConfigJSON) {
+  createOrUpdateAIGuidePromptDraft(
+    promptName: $promptName
+    hashBeforeUpdate: $hashBeforeUpdate
+    newIsReadyForReview: $newIsReadyForReview
+    newReleaseNotes: $newReleaseNotes
+    newPromptText: $newPromptText
+    newConfigJSON: $newConfigJSON
+  ) {
     prompt {
       id
       draft {

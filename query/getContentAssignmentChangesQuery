@@ -1,5 +1,8 @@
 query getContentAssignmentChangesQuery($assignmentID: ID!, $maxNumChanges: Int!) {
-  contentAssignmentChanges(assignmentID: $assignmentID, maxNumChanges: $maxNumChanges) {
+  contentAssignmentChanges(
+    assignmentID: $assignmentID
+    maxNumChanges: $maxNumChanges
+  ) {
     assignmentID
     type
     timestamp

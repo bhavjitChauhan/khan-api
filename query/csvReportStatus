@@ -1,5 +1,9 @@
 query csvReportStatus($kaid: String!, $districtID: String!) {
-  getLastNAdminReportsForUser(kaid: $kaid, districtID: $districtID, topNResults: 1) {
+  getLastNAdminReportsForUser(
+    kaid: $kaid
+    districtID: $districtID
+    topNResults: 1
+  ) {
     adminReports {
       id
       kaid
