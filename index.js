@@ -73,7 +73,7 @@ function sortDocumentFragments(str) {
         // fragments = parts.slice(1).map(fragment => `fragment ${fragment}`)
         fragments = [...new Set(parts.slice(1).map(fragment => `fragment ${fragment}`))]
 
-    str = `${query}\n\n${fragments.sort((fragmentA, fragmentB) => {
+    str = `${query.replace(/\n+$/g, '')}\n\n${fragments.sort((fragmentA, fragmentB) => {
         const operationA = fragmentA.match(/^fragment (\w+)/)?.[1],
             operationB = fragmentB.match(/^fragment (\w+)/)?.[1]
 
