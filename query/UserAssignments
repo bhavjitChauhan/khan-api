@@ -2,7 +2,15 @@ query UserAssignments($after: ID, $dueAfter: DateTime, $dueBefore: DateTime, $pa
   user {
     id
     kaid
-    assignmentsPage(after: $after, dueAfter: $dueAfter, dueBefore: $dueBefore, pageSize: $pageSize, orderBy: $orderBy, studentListId: $studentListId, coachKaid: $coachKaid) {
+    assignmentsPage(
+      after: $after
+      dueAfter: $dueAfter
+      dueBefore: $dueBefore
+      pageSize: $pageSize
+      orderBy: $orderBy
+      studentListId: $studentListId
+      coachKaid: $coachKaid
+    ) {
       assignments {
         id
         key

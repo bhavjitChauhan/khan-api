@@ -1,5 +1,9 @@
 mutation linkThirdPartyOAuth($oauthType: ThirdPartyOAuthType!, $password: String!, $accessToken: String!) {
-  linkThirdPartyAuth(oauthType: $oauthType, password: $password, accessToken: $accessToken) {
+  linkThirdPartyAuth(
+    oauthType: $oauthType
+    password: $password
+    accessToken: $accessToken
+  ) {
     user {
       id
       kaid

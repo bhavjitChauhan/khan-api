@@ -1,5 +1,11 @@
 mutation updateProfile($avatarName: String, $bio: String, $profileAccessLevel: ProfileAccessLevel, $nickname: String, $username: String) {
-  setSettings(avatarName: $avatarName, bio: $bio, nickname: $nickname, username: $username, profileAccessLevel: $profileAccessLevel) {
+  setSettings(
+    avatarName: $avatarName
+    bio: $bio
+    nickname: $nickname
+    username: $username
+    profileAccessLevel: $profileAccessLevel
+  ) {
     user {
       id
       avatar {

@@ -1,5 +1,11 @@
 query feedbackForAuthor($kaid: String!, $feedbackType: FeedbackType!, $cursor: String, $limit: Int, $sort: Int) {
-  feedbackForAuthor(kaid: $kaid, feedbackType: $feedbackType, cursor: $cursor, limit: $limit, sort: $sort) {
+  feedbackForAuthor(
+    kaid: $kaid
+    feedbackType: $feedbackType
+    cursor: $cursor
+    limit: $limit
+    sort: $sort
+  ) {
     feedback {
       replyCount
       appearsAsDeleted

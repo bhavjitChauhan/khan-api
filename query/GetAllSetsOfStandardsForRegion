@@ -13,7 +13,11 @@ query GetAllSetsOfStandardsForRegion($isDiscoverable: Boolean, $regionSlug: Stri
     }
     __typename
   }
-  allSetsOfStandards(domain: "math", isDiscoverable: $isDiscoverable, regionSlug: $regionSlug) {
+  allSetsOfStandards(
+    domain: "math"
+    isDiscoverable: $isDiscoverable
+    regionSlug: $regionSlug
+  ) {
     id
     name
     courseEntities {

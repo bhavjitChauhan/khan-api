@@ -1,5 +1,8 @@
 mutation createClassroomMutation($classroomName: String!, $subscribeToUpdates: Boolean) {
-  createClassroom(classroomName: $classroomName, subscribeToUpdates: $subscribeToUpdates) {
+  createClassroom(
+    classroomName: $classroomName
+    subscribeToUpdates: $subscribeToUpdates
+  ) {
     classroom {
       id
       cacheId

@@ -1,5 +1,8 @@
 mutation UpdateKMapPlacementMutation($classDescriptor: String!, $studentMapGoals: [StudentMapGoalsInput]!) {
-  updateMapGoals(classroomDescriptor: $classDescriptor, studentMapGoals: $studentMapGoals) {
+  updateMapGoals(
+    classroomDescriptor: $classDescriptor
+    studentMapGoals: $studentMapGoals
+  ) {
     assignments {
       id
       __typename

@@ -1,5 +1,8 @@
 mutation updateAssignments($ids: [ID]!, $startDate: DateTime, $dueDate: DateTime) {
-  updateAssignments(ids: $ids, assignment: {startDate: $startDate, dueDate: $dueDate}) {
+  updateAssignments(
+    ids: $ids
+    assignment: {startDate: $startDate, dueDate: $dueDate}
+  ) {
     assignments {
       id
       contents {

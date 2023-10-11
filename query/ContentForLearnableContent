@@ -8,7 +8,6 @@ query ContentForLearnableContent($id: String!, $kind: String!, $kaLocale: KALoca
     __typename
   }
 }
-
 fragment LearnableContentData on LearnableContent {
   id
   contentKind

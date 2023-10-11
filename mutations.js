@@ -52,8 +52,7 @@ export default {
     }
     __typename
   }
-}
-`,
+}`,
   addCoach: `mutation addCoach($studentKaid: String!, $coachEmail: String!) {
   addCoach(studentKaid: $studentKaid, coachEmail: $coachEmail) {
     coach {
@@ -84,20 +83,29 @@ export default {
     }
     __typename
   }
-}
-`,
+}`,
   addContentPermissionMutation: `mutation addContentPermissionMutation($userEmail: String!, $contentPermissions: [AddContentPermissionInput!]!) {
-  addContentPermissions(userEmail: $userEmail, contentPermissions: $contentPermissions) {
+  addContentPermissions(
+    userEmail: $userEmail
+    contentPermissions: $contentPermissions
+  ) {
     error {
       code
       __typename
     }
     __typename
   }
-}
-`,
+}`,
   AddFeedbackToDiscussion: `mutation AddFeedbackToDiscussion($focusKind: String, $focusId: String, $parentKey: String, $textContent: String!, $feedbackType: FeedbackType!, $fromVideoAuthor: Boolean, $shownLowQualityNotice: Boolean) {
-  addFeedbackToDiscussion(focusKind: $focusKind, focusId: $focusId, parentKey: $parentKey, textContent: $textContent, feedbackType: $feedbackType, fromVideoAuthor: $fromVideoAuthor, shownLowQualityNotice: $shownLowQualityNotice) {
+  addFeedbackToDiscussion(
+    focusKind: $focusKind
+    focusId: $focusId
+    parentKey: $parentKey
+    textContent: $textContent
+    feedbackType: $feedbackType
+    fromVideoAuthor: $fromVideoAuthor
+    shownLowQualityNotice: $shownLowQualityNotice
+  ) {
     feedback {
       appearsAsDeleted
       author {
@@ -152,8 +160,7 @@ export default {
     }
     __typename
   }
-}
-`,
+}`,
   AddFlagMutation: `mutation AddFlagMutation($flagName: String!, $description: String!, $team: String!, $rules: [RuleInput!]!) {
   addFlag(name: $flagName, description: $description, team: $team, rules: $rules) {
     flag {
@@ -215,8 +222,7 @@ export default {
     }
     __typename
   }
-}
-`,
+}`,
   addParents: `mutation addParents($parentEmail: String!) {
   addParents(parentEmail: $parentEmail) {
     parent {
@@ -242,8 +248,7 @@ export default {
     }
     __typename
   }
-}
-`,
+}`,
   AddUserNote: `mutation AddUserNote($kaid: String!, $text: String!) {
   addUserNote(kaid: $kaid, text: $text) {
     error
@@ -259,8 +264,7 @@ export default {
     }
     __typename
   }
-}
-`,
+}`,
   aiGuideEnrollViaInvitation: `mutation aiGuideEnrollViaInvitation($input: AIGuideEnrollViaInvitationInput!) {
   aiGuideEnrollViaInvitation(input: $input) {
     error {
@@ -281,7 +285,6 @@ export default {
     __typename
   }
 }
-
 fragment AssignmentInfoFragment on Assignment {
   id
   contents {
@@ -310,8 +313,7 @@ fragment AssignmentInfoFragment on Assignment {
   isDraft
   subjectSlug
   __typename
-}
-`,
+}`,
   archiveSubjectMasteryAssignment: `mutation archiveSubjectMasteryAssignment($assignmentId: ID!) {
   archiveSubjectMasteryAssignments(ids: [$assignmentId]) {
     assignments {
@@ -320,8 +322,7 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   attemptProblem: `mutation attemptProblem($input: AttemptProblemInput!) {
   attemptProblem(attempt: $input) {
     result {
@@ -418,7 +419,6 @@ fragment AssignmentInfoFragment on Assignment {
     __typename
   }
 }
-
 fragment userExerciseFields on UserExercise {
   exerciseModel: exercise {
     id
@@ -517,15 +517,13 @@ fragment userExerciseFields on UserExercise {
   totalCorrect
   totalDone
   __typename
-}
-`,
+}`,
   AuthCookieMutation: `mutation AuthCookieMutation {
   refreshAuthCookies {
     error
     __typename
   }
-}
-`,
+}`,
   awardBadgesToUser: `mutation awardBadgesToUser($kaid: String!, $badges: [String]!, $fromDevAdmin: Boolean) {
   forceAwardBadges(awardeeKaid: $kaid, badgeNames: $badges, fromDevAdmin: $fromDevAdmin) {
     errors {
@@ -544,8 +542,7 @@ fragment userExerciseFields on UserExercise {
     }
     __typename
   }
-}
-`,
+}`,
   BulkInsertOrUpdateDub: `mutation BulkInsertOrUpdateDub($input: [DubInsertOrUpdateInputEntry!]!) {
   bulkInsertOrUpdateDub(dubInputEntryList: $input) {
     errors {
@@ -561,8 +558,7 @@ fragment userExerciseFields on UserExercise {
     }
     __typename
   }
-}
-`,
+}`,
   BulkPerformModAction: `mutation BulkPerformModAction($bulkModAction: BulkModAction!, $entityKeys: [String!]) {
   bulkPerformModAction(modAction: $bulkModAction, entityKeys: $entityKeys) {
     error {
@@ -583,8 +579,7 @@ fragment userExerciseFields on UserExercise {
     }
     __typename
   }
-}
-`,
+}`,
   cancelStripeSubscription: `mutation cancelStripeSubscription($customerId: String!, $subscriptionId: String!) {
   cancelStripeSubscription(customerId: $customerId, subscriptionId: $subscriptionId) {
     error {
@@ -608,8 +603,7 @@ fragment userExerciseFields on UserExercise {
     }
     __typename
   }
-}
-`,
+}`,
   changeNickname: `mutation changeNickname($nickname: String!, $kaid: String!) {
   setSettings(nickname: $nickname, kaid: $kaid) {
     user {
@@ -623,8 +617,7 @@ fragment userExerciseFields on UserExercise {
     }
     __typename
   }
-}
-`,
+}`,
   changeUsername: `mutation changeUsername($username: String!, $kaid: String!) {
   setSettings(username: $username, kaid: $kaid) {
     user {
@@ -643,8 +636,7 @@ fragment userExerciseFields on UserExercise {
     }
     __typename
   }
-}
-`,
+}`,
   changeVerificationEmailMutation: `mutation changeVerificationEmailMutation($email: String!) {
   changeVerificationEmail(email: $email) {
     email
@@ -654,8 +646,7 @@ fragment userExerciseFields on UserExercise {
     }
     __typename
   }
-}
-`,
+}`,
   classroomProgressReset: `mutation classroomProgressReset($classroomDescriptor: String!) {
   classroomProgressReset(classroomDescriptor: $classroomDescriptor) {
     error {
@@ -664,8 +655,7 @@ fragment userExerciseFields on UserExercise {
     }
     __typename
   }
-}
-`,
+}`,
   classroomProgressUpdate: `mutation classroomProgressUpdate($classroomDescriptor: String!) {
   classroomProgressUpdate(classroomDescriptor: $classroomDescriptor) {
     error {
@@ -690,22 +680,19 @@ fragment userExerciseFields on UserExercise {
     }
     __typename
   }
-}
-`,
+}`,
   clearRecommendationFor321ContentItem: `mutation clearRecommendationFor321ContentItem($contentDescriptor: String!, $unitId: String!) {
   clearRecommendation(contentDescriptor: $contentDescriptor, unitId: $unitId) {
     wasSuccessful
     __typename
   }
-}
-`,
+}`,
   clearRecommendationForContentItemWeb: `mutation clearRecommendationForContentItemWeb($contentDescriptor: String!, $unitId: String!) {
   clearRecommendation(contentDescriptor: $contentDescriptor, unitId: $unitId) {
     wasSuccessful
     __typename
   }
-}
-`,
+}`,
   cleverCreateAccountWithEmailV2Mutation: `mutation cleverCreateAccountWithEmailV2Mutation($transferToken: String!, $email: String!, $birthdate: Date) {
   cleverCreateAccountWithEmailV2(transferToken: $transferToken, email: $email, birthdate: $birthdate) {
     error {
@@ -754,8 +741,7 @@ fragment userExerciseFields on UserExercise {
     }
     __typename
   }
-}
-`,
+}`,
   completeInfoStep: `mutation completeInfoStep($stepId: ID!) {
   teacherCampaignInfoStepMarkComplete(stepId: $stepId) {
     progress {
@@ -808,7 +794,6 @@ fragment userExerciseFields on UserExercise {
     __typename
   }
 }
-
 fragment ArticleRevision on ArticleRevision {
   id
   contentId
@@ -836,8 +821,7 @@ fragment ArticleRevision on ArticleRevision {
   perseusContent
   listed
   __typename
-}
-`,
+}`,
   contentEditorCreateExercise: `mutation contentEditorCreateExercise($input: NewExerciseInput!) {
   createExercise(input: $input) {
     exercise {
@@ -853,7 +837,6 @@ fragment ArticleRevision on ArticleRevision {
     __typename
   }
 }
-
 fragment AssessmentItemRevision on AssessmentItemRevision {
   id
   contentKind
@@ -869,7 +852,6 @@ fragment AssessmentItemRevision on AssessmentItemRevision {
   tags
   __typename
 }
-
 fragment ExerciseRevision on ExerciseRevision {
   id
   contentKind
@@ -920,8 +902,7 @@ fragment ExerciseRevision on ExerciseRevision {
   listed
   hasLintErrors
   __typename
-}
-`,
+}`,
   contentEditorCreateVideo: `mutation contentEditorCreateVideo($input: NewVideoInput!) {
   createVideo(input: $input) {
     video {
@@ -937,7 +918,6 @@ fragment ExerciseRevision on ExerciseRevision {
     __typename
   }
 }
-
 fragment VideoRevision on VideoRevision {
   id
   contentId
@@ -969,8 +949,7 @@ fragment VideoRevision on VideoRevision {
   youtubeId
   listed
   __typename
-}
-`,
+}`,
   contentEditorEditArticle: `mutation contentEditorEditArticle($sha: String!, $input: EditArticleInput!) {
   editArticle(sha: $sha, input: $input) {
     article {
@@ -986,7 +965,6 @@ fragment VideoRevision on VideoRevision {
     __typename
   }
 }
-
 fragment ArticleRevision on ArticleRevision {
   id
   contentId
@@ -1014,10 +992,13 @@ fragment ArticleRevision on ArticleRevision {
   perseusContent
   listed
   __typename
-}
-`,
+}`,
   contentEditorEditExerciseProblems: `mutation contentEditorEditExerciseProblems($sha: String!, $input: EditExerciseProblemsInput!, $exerciseHasLintErrors: Boolean!) {
-  editExerciseProblems(sha: $sha, input: $input, exerciseHasLintErrors: $exerciseHasLintErrors) {
+  editExerciseProblems(
+    sha: $sha
+    input: $input
+    exerciseHasLintErrors: $exerciseHasLintErrors
+  ) {
     exercise {
       ...ExerciseRevision
       __typename
@@ -1039,7 +1020,6 @@ fragment ArticleRevision on ArticleRevision {
     __typename
   }
 }
-
 fragment AssessmentItemRevision on AssessmentItemRevision {
   id
   contentKind
@@ -1055,7 +1035,6 @@ fragment AssessmentItemRevision on AssessmentItemRevision {
   tags
   __typename
 }
-
 fragment ExerciseRevision on ExerciseRevision {
   id
   contentKind
@@ -1106,8 +1085,7 @@ fragment ExerciseRevision on ExerciseRevision {
   listed
   hasLintErrors
   __typename
-}
-`,
+}`,
   contentEditorEditExerciseProperties: `mutation contentEditorEditExerciseProperties($sha: String!, $input: EditExercisePropertiesInput!) {
   editExerciseProperties(sha: $sha, input: $input) {
     exercise {
@@ -1123,7 +1101,6 @@ fragment ExerciseRevision on ExerciseRevision {
     __typename
   }
 }
-
 fragment AssessmentItemRevision on AssessmentItemRevision {
   id
   contentKind
@@ -1139,7 +1116,6 @@ fragment AssessmentItemRevision on AssessmentItemRevision {
   tags
   __typename
 }
-
 fragment ExerciseRevision on ExerciseRevision {
   id
   contentKind
@@ -1190,8 +1166,7 @@ fragment ExerciseRevision on ExerciseRevision {
   listed
   hasLintErrors
   __typename
-}
-`,
+}`,
   contentEditorEditProject: `mutation contentEditorEditProject($sha: String!, $input: EditProjectInput!) {
   editProject(sha: $sha, input: $input) {
     project {
@@ -1207,7 +1182,6 @@ fragment ExerciseRevision on ExerciseRevision {
     __typename
   }
 }
-
 fragment ProjectRevision on ProjectRevision {
   id
   contentId
@@ -1216,8 +1190,7 @@ fragment ProjectRevision on ProjectRevision {
   sha
   listed
   __typename
-}
-`,
+}`,
   contentEditorEditTalkthrough: `mutation contentEditorEditTalkthrough($sha: String!, $input: EditTalkthroughInput!) {
   editTalkthrough(sha: $sha, input: $input) {
     talkthrough {
@@ -1233,7 +1206,6 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }
-
 fragment TalkthroughRevision on TalkthroughRevision {
   id
   contentId
@@ -1242,8 +1214,7 @@ fragment TalkthroughRevision on TalkthroughRevision {
   sha
   listed
   __typename
-}
-`,
+}`,
   contentEditorEditVideo: `mutation contentEditorEditVideo($sha: String!, $input: EditVideoInput!) {
   editVideo(sha: $sha, input: $input) {
     video {
@@ -1259,7 +1230,6 @@ fragment TalkthroughRevision on TalkthroughRevision {
     __typename
   }
 }
-
 fragment VideoRevision on VideoRevision {
   id
   contentId
@@ -1291,10 +1261,13 @@ fragment VideoRevision on VideoRevision {
   youtubeId
   listed
   __typename
-}
-`,
+}`,
   contentEditorMoveExerciseProblemType: `mutation contentEditorMoveExerciseProblemType($sourceContentId: String!, $targetContentId: String!, $problemTypeName: String!) {
-  moveExerciseProblemType(sourceContentId: $sourceContentId, targetContentId: $targetContentId, problemTypeName: $problemTypeName) {
+  moveExerciseProblemType(
+    sourceContentId: $sourceContentId
+    targetContentId: $targetContentId
+    problemTypeName: $problemTypeName
+  ) {
     exercise {
       ...ExerciseRevision
       __typename
@@ -1312,7 +1285,6 @@ fragment VideoRevision on VideoRevision {
     __typename
   }
 }
-
 fragment AssessmentItemRevision on AssessmentItemRevision {
   id
   contentKind
@@ -1328,7 +1300,6 @@ fragment AssessmentItemRevision on AssessmentItemRevision {
   tags
   __typename
 }
-
 fragment ExerciseRevision on ExerciseRevision {
   id
   contentKind
@@ -1379,8 +1350,7 @@ fragment ExerciseRevision on ExerciseRevision {
   listed
   hasLintErrors
   __typename
-}
-`,
+}`,
   contentEditorPreviewYouTubeThumbnail: `mutation contentEditorPreviewYouTubeThumbnail($objectName: String!, $titleText: String!) {
   previewYouTubeThumbnail(objectName: $objectName, titleText: $titleText, width: 160, height: 90) {
     src
@@ -1422,7 +1392,10 @@ fragment ExerciseRevision on ExerciseRevision {
 }
 `,
   contentEditorStartPublish: `mutation contentEditorStartPublish($title: String, $contentDescriptors: [String!]!) {
-  startPublishForContentDescriptors(title: $title, contentDescriptors: $contentDescriptors) {
+  startPublishForContentDescriptors(
+    title: $title
+    contentDescriptors: $contentDescriptors
+  ) {
     publishStatus {
       id
       queued
@@ -1435,8 +1408,7 @@ fragment ExerciseRevision on ExerciseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   contentEditorUploadContentImage: `mutation contentEditorUploadContentImage($imageBase64: String!) {
   uploadContentImage(imageBase64: $imageBase64) {
     url
@@ -3573,7 +3545,6 @@ fragment CourseStructure on CourseRevision {
     __typename
   }
 }
-
 fragment CourseMenuRevisionFields on CourseMenuRevision {
   id
   sha
@@ -3594,8 +3565,7 @@ fragment CourseMenuRevisionFields on CourseMenuRevision {
     __typename
   }
   __typename
-}
-`,
+}`,
   CourseMenuEditor_EditCourseMenuRevision: `mutation CourseMenuEditor_EditCourseMenuRevision($sha: String!, $updatedCourseMenu: EditCourseMenuInput!) {
   editCourseMenu(sha: $sha, input: $updatedCourseMenu) {
     courseMenu {
@@ -3609,7 +3579,6 @@ fragment CourseMenuRevisionFields on CourseMenuRevision {
     __typename
   }
 }
-
 fragment CourseMenuRevisionFields on CourseMenuRevision {
   id
   sha
@@ -3630,10 +3599,13 @@ fragment CourseMenuRevisionFields on CourseMenuRevision {
     __typename
   }
   __typename
-}
-`,
+}`,
   CreateAssessmentItemTag: `mutation CreateAssessmentItemTag($displayName: String!, $description: String!, $lessonId: String!) {
-  createAssessmentItemTag(displayName: $displayName, description: $description, lessonId: $lessonId) {
+  createAssessmentItemTag(
+    displayName: $displayName
+    description: $description
+    lessonId: $lessonId
+  ) {
     assessmentItemTag {
       ...AssessmentItemTagFields
       __typename
@@ -3645,7 +3617,6 @@ fragment CourseMenuRevisionFields on CourseMenuRevision {
     __typename
   }
 }
-
 fragment AssessmentItemTagFields on AssessmentItemTag {
   editId: id
   id: urlsafeTag
@@ -3653,10 +3624,11 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
   description
   relatedContentId: lessonId
   __typename
-}
-`,
+}`,
   createAssignments: `mutation createAssignments($classDescriptors: [String!]!, $qualifiedContentDescriptorsList: [String!], $startDate: DateTime!, $dueDate: DateTime, $isDraft: Boolean, $studentKaids: [ID], $subjectSlug: String!, $questionSetType: ExerciseItemPickerStrategy) {
-  createAssignments(assignment: {classroomDescriptors: $classDescriptors, qualifiedContentDescriptorsList: $qualifiedContentDescriptorsList, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft, studentKaids: $studentKaids, subjectSlug: $subjectSlug, exerciseItemPickerStrategy: $questionSetType}) {
+  createAssignments(
+    assignment: {classroomDescriptors: $classDescriptors, qualifiedContentDescriptorsList: $qualifiedContentDescriptorsList, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft, studentKaids: $studentKaids, subjectSlug: $subjectSlug, exerciseItemPickerStrategy: $questionSetType}
+  ) {
     assignments {
       ...AssignmentInfoFragment
       __typename
@@ -3664,7 +3636,6 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
     __typename
   }
 }
-
 fragment AssignmentInfoFragment on Assignment {
   id
   contents {
@@ -3693,8 +3664,7 @@ fragment AssignmentInfoFragment on Assignment {
   isDraft
   subjectSlug
   __typename
-}
-`,
+}`,
   createChildMutation: `mutation createChildMutation($birthdate: Date!, $username: String!, $password: String!, $nickname: String) {
   createChild(birthdate: $birthdate, username: $username, password: $password, nickname: $nickname) {
     child {
@@ -3712,7 +3682,10 @@ fragment AssignmentInfoFragment on Assignment {
 }
 `,
   createClassroomMutation: `mutation createClassroomMutation($classroomName: String!, $subscribeToUpdates: Boolean) {
-  createClassroom(classroomName: $classroomName, subscribeToUpdates: $subscribeToUpdates) {
+  createClassroom(
+    classroomName: $classroomName
+    subscribeToUpdates: $subscribeToUpdates
+  ) {
     classroom {
       id
       cacheId
@@ -3728,10 +3701,11 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   CreateCourseMasteryAssignmentsMutation: `mutation CreateCourseMasteryAssignmentsMutation($classDescriptors: [String!]!, $studentKaids: [ID!]!, $topicId: String!, $dueDate: DateTime!) {
-  createCourseMasteryAssignments(assignments: {classroomDescriptors: $classDescriptors, studentKaids: $studentKaids, courseId: $topicId, dueDate: $dueDate}) {
+  createCourseMasteryAssignments(
+    assignments: {classroomDescriptors: $classDescriptors, studentKaids: $studentKaids, courseId: $topicId, dueDate: $dueDate}
+  ) {
     assignments {
       id
       createdDate
@@ -3740,8 +3714,7 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   createCurationPageRevisionMutation: `mutation createCurationPageRevisionMutation($input: NewCurationPageInput!) {
   createCurationPage(input: $input) {
     curationPage {
@@ -3781,10 +3754,21 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   createDistrict: `mutation createDistrict($name: String!, $offerings: [Offering!]!, $rosterSource: RosterSource!, $isTest: Boolean!, $rosterID: String!, $nweaID: String!, $ncesID: String, $sendEmails: Boolean!, $goLiveDate: Date!, $schoolYearDates: DistrictSchoolYearInput!, $region: String) {
-  createDistrict(name: $name, offerings: $offerings, isTest: $isTest, rosterID: $rosterID, rosterSource: $rosterSource, nweaID: $nweaID, ncesID: $ncesID, sendTeacherActivationEmails: $sendEmails, goLiveDate: $goLiveDate, schoolYearDates: $schoolYearDates, region: $region) {
+  createDistrict(
+    name: $name
+    offerings: $offerings
+    isTest: $isTest
+    rosterID: $rosterID
+    rosterSource: $rosterSource
+    nweaID: $nweaID
+    ncesID: $ncesID
+    sendTeacherActivationEmails: $sendEmails
+    goLiveDate: $goLiveDate
+    schoolYearDates: $schoolYearDates
+    region: $region
+  ) {
     error {
       code
       __typename
@@ -3796,10 +3780,15 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   createGoogleClassroom: `mutation createGoogleClassroom($googleClassId: String!, $googleClassName: String!, $googleClassUrl: String!, $googleClassStudents: [GoogleClassStudent]!, $khanClassName: String) {
-  createGoogleClassroom(googleClassId: $googleClassId, googleClassName: $googleClassName, googleClassUrl: $googleClassUrl, googleClassStudents: $googleClassStudents, khanClassName: $khanClassName) {
+  createGoogleClassroom(
+    googleClassId: $googleClassId
+    googleClassName: $googleClassName
+    googleClassUrl: $googleClassUrl
+    googleClassStudents: $googleClassStudents
+    khanClassName: $khanClassName
+  ) {
     classroom {
       ...ClassroomData
       __typename
@@ -3819,7 +3808,6 @@ fragment AssignmentInfoFragment on Assignment {
     __typename
   }
 }
-
 fragment ClassroomData on StudentList {
   cacheId
   id
@@ -3832,12 +3820,10 @@ fragment ClassroomData on StudentList {
   googleClassUrl
   __typename
 }
-
 fragment LinkedStudentData on LinkedGoogleClassStudent {
   email
   __typename
 }
-
 fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
   email
   nickname
@@ -3846,8 +3832,7 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     __typename
   }
   __typename
-}
-`,
+}`,
   createInitialClassroom: `mutation createInitialClassroom($classroomName: String!) {
   createClassroom(classroomName: $classroomName, autoGenerated: true) {
     classroom {
@@ -3883,8 +3868,7 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     }
     __typename
   }
-}
-`,
+}`,
   createProgram: `mutation createProgram($title: String!, $userAuthoredContentType: UserAuthoredContentType!, $revision: ProgramRevisionInput!, $curationNodeSlug: String!) {
   createProgram(title: $title, userAuthoredContentType: $userAuthoredContentType, revision: $revision, curationNodeSlug: $curationNodeSlug) {
     program {
@@ -3927,8 +3911,7 @@ fragment Program on Program {
     }
     __typename
   }
-}
-`,
+}`,
   CreateTeamPageEntryMutation: `mutation CreateTeamPageEntryMutation($content: TeamPageEntryInput!, $entryType: TeamPageEntryType!) {
   createTeamPageEntry(content: $content, entryType: $entryType) {
     entry {
@@ -3942,7 +3925,6 @@ fragment Program on Program {
     __typename
   }
 }
-
 fragment entry on TeamPageEntryForEditing {
   id
   isPet
@@ -3969,8 +3951,7 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
   __typename
-}
-`,
+}`,
   DeactivateUDIMutation: `mutation DeactivateUDIMutation($uuid: ID!) {
   deactivateUserDistrictInfo: deactivateUserDistrictInfoV2(uuid: $uuid) {
     exists
@@ -3979,8 +3960,7 @@ fragment entry on TeamPageEntryForEditing {
     kaid
     __typename
   }
-}
-`,
+}`,
   deleteAllContentPermissions: `mutation deleteAllContentPermissions($kaid: String!) {
   deleteAllContentPermissions(kaid: $kaid) {
     error {
@@ -3989,8 +3969,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   DeleteAssessmentItemTag: `mutation DeleteAssessmentItemTag($id: String!) {
   deleteAssessmentItemTag(id: $id) {
     error {
@@ -3999,8 +3978,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   deleteClassroomMutation: `mutation deleteClassroomMutation($classroomId: String!) {
   deleteClassroom(classroomId: $classroomId) {
     error {
@@ -4009,8 +3987,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   deleteCleverTeacherRequest: `mutation deleteCleverTeacherRequest($studentIdentifier: ID!) {
   deleteCleverTeacherRequest(studentIdentifier: $studentIdentifier) {
     coach: user {
@@ -4024,8 +4001,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   deleteCoachMutation: `mutation deleteCoachMutation($coachKaid: ID!, $studentKaid: String) {
   removeCoach(coachKaid: $coachKaid, studentKaid: $studentKaid) {
     wasSuccessful
@@ -4046,8 +4022,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   deleteContentPermission: `mutation deleteContentPermission($userKaid: String!, $permissionId: String!) {
   deleteContentPermission(userKaid: $userKaid, contentPermissionId: $permissionId) {
     error {
@@ -4056,8 +4031,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   deleteCustomRedirect: `mutation deleteCustomRedirect($from: String!) {
   deleteCustomRedirect(redirectFrom: $from) {
     error {
@@ -4098,8 +4072,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   deleteEmailInvitation: `mutation deleteEmailInvitation($studentEmail: String!) {
   deleteEmailInvite(studentEmail: $studentEmail) {
     coach: user {
@@ -4113,8 +4086,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   deleteEmailInvite: `mutation deleteEmailInvite($childEmail: String!) {
   deleteEmailInvite(studentEmail: $childEmail) {
     user {
@@ -4158,8 +4130,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   deleteParentRequest: `mutation deleteParentRequest($childEmail: String!) {
   deleteCoachRequest(studentEmail: $childEmail) {
     user {
@@ -4189,8 +4160,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   deleteProgram: `mutation deleteProgram($programID: ID!) {
   deleteProgram(programID: $programID) {
     error {
@@ -4215,8 +4185,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   DevadminDeleteAuthor: `mutation DevadminDeleteAuthor($id: ID!) {
   deleteAuthorOption(id: $id) {
     error {
@@ -4225,8 +4194,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   devadminTriggerAlarm: `mutation devadminTriggerAlarm($level: AlarmLevel!, $subject: String!, $contents: String) {
   devadminTriggerAlarmV2(level: $level, subjectLine: $subject, contents: $contents) {
     error {
@@ -4246,8 +4214,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   disconnectClever: `mutation disconnectClever($kaid: String!) {
   devadminDisconnectClever(kaid: $kaid) {
     error {
@@ -4256,8 +4223,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   DismissItemMutation: `mutation DismissItemMutation($itemName: String!, $expires: DateTime) {
   dismissItem(itemName: $itemName, expires: $expires) {
     error {
@@ -4271,8 +4237,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   districtRoster: `mutation districtRoster($districtID: String!, $force: Boolean!) {
   rosterDistrict(districtID: $districtID, force: $force) {
     error {
@@ -4281,8 +4246,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   DoGeneralAICompletion: `mutation DoGeneralAICompletion($prompt: String!, $model: String, $temperature: Float, $maxTokens: Int, $stop: [String!]) {
   doGeneralAICompletion(input: {prompt: $prompt, model: $model, temperature: $temperature, maxTokens: $maxTokens, stop: $stop}) {
     completion {
@@ -4298,7 +4262,11 @@ fragment entry on TeamPageEntryForEditing {
 }
 `,
   editClassroomSatStatusMutation: `mutation editClassroomSatStatusMutation($classDescriptor: String!, $includeSat: Boolean!, $fromUpsell: Boolean) {
-  setClassroomSatStatus(classroomDescriptor: $classDescriptor, includeSat: $includeSat, fromUpsell: $fromUpsell) {
+  setClassroomSatStatus(
+    classroomDescriptor: $classDescriptor
+    includeSat: $includeSat
+    fromUpsell: $fromUpsell
+  ) {
     classroom {
       id
       cacheId
@@ -4311,8 +4279,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   EditModifyCoachesCapability: `mutation EditModifyCoachesCapability($targetKaid: String!, $allow: Boolean!) {
   setModifyCoachesCapability(targetKaid: $targetKaid, allow: $allow) {
     target {
@@ -4329,7 +4296,11 @@ fragment entry on TeamPageEntryForEditing {
 }
 `,
   EditNotationReadAloudsForAssessmentItem: `mutation EditNotationReadAloudsForAssessmentItem($assessmentItemID: ID!, $exerciseID: ID!, $notationMap: String!) {
-  editNotationReadAloudsForAssessmentItem(assessmentItemID: $assessmentItemID, exerciseID: $exerciseID, notationMap: $notationMap) {
+  editNotationReadAloudsForAssessmentItem(
+    assessmentItemID: $assessmentItemID
+    exerciseID: $exerciseID
+    notationMap: $notationMap
+  ) {
     updatedNotations {
       assessmentItemId
       domainId
@@ -4348,8 +4319,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   EnableAIGuide: `mutation EnableAIGuide($kaid: String!) {
   enableAIGuide(kaid: $kaid) {
     error {
@@ -4388,8 +4358,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   enrollMultipleInAIGuide: `mutation enrollMultipleInAIGuide($kaids: [String!], $enrollmentGroup: AIGuideEnrollmentGroup!) {
   enrollMultipleInAIGuide(kaids: $kaids, enrollmentGroup: $enrollmentGroup) {
     error {
@@ -4399,8 +4368,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   exchangeGoogleCodeForIDTokenMutation: `mutation exchangeGoogleCodeForIDTokenMutation($code: String!, $redirectURI: String!) {
   exchangeGoogleCodeForIDToken(code: $code, redirectURI: $redirectURI) {
     idToken
@@ -4410,8 +4378,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   FlagPostMutation: `mutation FlagPostMutation($flag: String!, $entityKey: String!, $justification: String) {
   flagEntity(flag: $flag, entityKey: $entityKey, justification: $justification) {
     error {
@@ -4420,8 +4387,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   forgotPassword: `mutation forgotPassword($email: String!) {
   forgotPassword(email: $email) {
     error {
@@ -4451,8 +4417,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   formalTeacherStatusMutation: `mutation formalTeacherStatusMutation($tosForFormalTeacherStatus: Boolean) {
   setSettings(tosForFormalTeacherStatus: $tosForFormalTeacherStatus) {
     user {
@@ -4462,8 +4427,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   GetEmailFromToken: `mutation GetEmailFromToken($token: String!) {
   getEmailFromLinkAccountToken(token: $token) {
     email
@@ -4591,7 +4555,6 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }
-
 fragment exerciseTaskUserExerciseFields on UserExercise {
   exerciseModel: exercise {
     id
@@ -4690,8 +4653,7 @@ fragment exerciseTaskUserExerciseFields on UserExercise {
   totalCorrect
   totalDone
   __typename
-}
-`,
+}`,
   getOrCreatePracticeTask: `mutation getOrCreatePracticeTask($input: GetOrCreatePracticeTaskInput!) {
   getOrCreatePracticeTask(input: $input) {
     result {
@@ -4709,7 +4671,6 @@ fragment exerciseTaskUserExerciseFields on UserExercise {
     __typename
   }
 }
-
 fragment userExerciseFields on UserExercise {
   exerciseModel: exercise {
     id
@@ -4809,7 +4770,6 @@ fragment userExerciseFields on UserExercise {
   totalDone
   __typename
 }
-
 fragment userTaskFields on PracticeUserTask {
   cards {
     done
@@ -4861,10 +4821,13 @@ fragment userTaskFields on PracticeUserTask {
     __typename
   }
   __typename
-}
-`,
+}`,
   GetOrCreateReadAloud: `mutation GetOrCreateReadAloud($assessmentItemID: ID!, $exerciseID: ID!, $perseusSerializedState: String) {
-  getOrCreateReadAloud(assessmentItemID: $assessmentItemID, exerciseID: $exerciseID, perseusSerializedState: $perseusSerializedState) {
+  getOrCreateReadAloud(
+    assessmentItemID: $assessmentItemID
+    exerciseID: $exerciseID
+    perseusSerializedState: $perseusSerializedState
+  ) {
     readAloud
     error {
       code
@@ -4873,8 +4836,7 @@ fragment userTaskFields on PracticeUserTask {
     }
     __typename
   }
-}
-`,
+}`,
   gtp_completeOnboardingMutation: `mutation gtp_completeOnboardingMutation($examId: String!) {
   completeOnboarding(examId: $examId) {
     tpud {
@@ -4884,8 +4846,7 @@ fragment userTaskFields on PracticeUserTask {
     }
     __typename
   }
-}
-`,
+}`,
   gtp_createNewStageMutation: `mutation gtp_createNewStageMutation($examId: String!, $stageIndex: Int!) {
   createNewStage(examId: $examId, stageIndex: $stageIndex) {
     checkpoints {
@@ -4900,15 +4861,13 @@ fragment userTaskFields on PracticeUserTask {
     }
     __typename
   }
-}
-`,
+}`,
   gtp_deleteDataMutation: `mutation gtp_deleteDataMutation($examGroupId: String!) {
   deleteData(examGroupId: $examGroupId) {
     success
     __typename
   }
-}
-`,
+}`,
   gtp_getOrCreateTestPrepTaskByDescriptor: `mutation gtp_getOrCreateTestPrepTaskByDescriptor($examId: String!, $taskType: String!, $exerciseName: String!, $skillId: String, $level: String) {
   getOrCreateTestPrepTaskByDescriptor(examId: $examId, taskType: $taskType, exerciseName: $exerciseName, skillId: $skillId, level: $level) {
     task {
@@ -5103,8 +5062,7 @@ fragment gtp_taskFragment on Task {
     }
     __typename
   }
-}
-`,
+}`,
   gtp_startExpressTask: `mutation gtp_startExpressTask($taskType: String!, $taskId: ID!) {
   startTask(taskType: $taskType, taskId: $taskId) {
     descriptorList {
@@ -5134,7 +5092,6 @@ fragment gtp_taskFragment on Task {
     __typename
   }
 }
-
 fragment gtp_taskFragment on Task {
   id
   kaid
@@ -5258,8 +5215,7 @@ fragment gtp_taskFragment on Task {
     __typename
   }
   __typename
-}
-`,
+}`,
   gtp_startExtendedTimeMode: `mutation gtp_startExtendedTimeMode($taskType: String!, $taskId: ID!) {
   startExtendedTimeMode(taskType: $taskType, taskId: $taskId) {
     task {
@@ -5269,7 +5225,6 @@ fragment gtp_taskFragment on Task {
     __typename
   }
 }
-
 fragment gtp_taskFragment on Task {
   id
   kaid
@@ -5393,8 +5348,7 @@ fragment gtp_taskFragment on Task {
     __typename
   }
   __typename
-}
-`,
+}`,
   gtp_startStage: `mutation gtp_startStage($examId: String!) {
   startStage(examId: $examId) {
     checkpoints {
@@ -5403,8 +5357,7 @@ fragment gtp_taskFragment on Task {
     }
     __typename
   }
-}
-`,
+}`,
   gtp_startTask: `mutation gtp_startTask($taskType: String!, $taskId: ID!) {
   startTask(taskType: $taskType, taskId: $taskId) {
     descriptorList {
@@ -5429,7 +5382,6 @@ fragment gtp_taskFragment on Task {
     __typename
   }
 }
-
 fragment gtp_taskFragment on Task {
   id
   kaid
@@ -5553,10 +5505,15 @@ fragment gtp_taskFragment on Task {
     __typename
   }
   __typename
-}
-`,
+}`,
   gtp_submitExpressTask: `mutation gtp_submitExpressTask($taskId: ID!, $taskType: String!, $newTaskState: JSONString!, $newTaskStateHash: ID!, $prevTaskStateHash: ID) {
-  submitTask(taskId: $taskId, taskType: $taskType, newTaskState: $newTaskState, newTaskStateHash: $newTaskStateHash, prevTaskStateHash: $prevTaskStateHash) {
+  submitTask(
+    taskId: $taskId
+    taskType: $taskType
+    newTaskState: $newTaskState
+    newTaskStateHash: $newTaskStateHash
+    prevTaskStateHash: $prevTaskStateHash
+  ) {
     checkpoints {
       ...gtp_checkpointFragment
       __typename
@@ -5586,7 +5543,6 @@ fragment gtp_taskFragment on Task {
     __typename
   }
 }
-
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {
@@ -5618,7 +5574,6 @@ fragment gtp_egudFragment on ExamGroupUserData {
   extendedTimeMultiplier
   __typename
 }
-
 fragment gtp_taskFragment on Task {
   id
   kaid
@@ -5742,10 +5697,15 @@ fragment gtp_taskFragment on Task {
     __typename
   }
   __typename
-}
-`,
+}`,
   gtp_submitTask: `mutation gtp_submitTask($taskId: ID!, $taskType: String!, $newTaskState: JSONString!, $newTaskStateHash: ID!, $prevTaskStateHash: ID) {
-  submitTask(taskId: $taskId, taskType: $taskType, newTaskState: $newTaskState, newTaskStateHash: $newTaskStateHash, prevTaskStateHash: $prevTaskStateHash) {
+  submitTask(
+    taskId: $taskId
+    taskType: $taskType
+    newTaskState: $newTaskState
+    newTaskStateHash: $newTaskStateHash
+    prevTaskStateHash: $prevTaskStateHash
+  ) {
     checkpoints {
       ...gtp_checkpointFragment
       __typename
@@ -5779,7 +5739,6 @@ fragment gtp_taskFragment on Task {
     __typename
   }
 }
-
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {
@@ -5811,7 +5770,6 @@ fragment gtp_egudFragment on ExamGroupUserData {
   extendedTimeMultiplier
   __typename
 }
-
 fragment gtp_essayScoresFragment on EssayScores {
   areas {
     translatedTitle
@@ -5825,7 +5783,6 @@ fragment gtp_essayScoresFragment on EssayScores {
   }
   __typename
 }
-
 fragment gtp_taskFragment on Task {
   id
   kaid
@@ -5949,10 +5906,17 @@ fragment gtp_taskFragment on Task {
     __typename
   }
   __typename
-}
-`,
+}`,
   gtp_updateExamGroupSettingsV2: `mutation gtp_updateExamGroupSettingsV2($examGroupId: String!, $practiceDaysInfo: [PracticeDaysInput!], $selectedCutoffs: [String!], $selectedExams: [String!], $extendedTimeMultiplier: Float, $exams: [ExamSettingsInput], $enableGtpSetupPage: Boolean) {
-  updateExamGroupSettings(examGroupId: $examGroupId, practiceDaysInfo: $practiceDaysInfo, selectedCutoffs: $selectedCutoffs, selectedExams: $selectedExams, extendedTimeMultiplier: $extendedTimeMultiplier, exams: $exams, enableGtpSetupPage: $enableGtpSetupPage) {
+  updateExamGroupSettings(
+    examGroupId: $examGroupId
+    practiceDaysInfo: $practiceDaysInfo
+    selectedCutoffs: $selectedCutoffs
+    selectedExams: $selectedExams
+    extendedTimeMultiplier: $extendedTimeMultiplier
+    exams: $exams
+    enableGtpSetupPage: $enableGtpSetupPage
+  ) {
     egud {
       ...gtp_egudFragment
       __typename
@@ -5983,7 +5947,6 @@ fragment gtp_taskFragment on Task {
     __typename
   }
 }
-
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {
@@ -6014,8 +5977,7 @@ fragment gtp_egudFragment on ExamGroupUserData {
   }
   extendedTimeMultiplier
   __typename
-}
-`,
+}`,
   gtp_updateSubscriptionByToken: `mutation gtp_updateSubscriptionByToken($token: String!, $subscribe: Boolean!) {
   updateSubscriptionByToken(token: $token, subscribe: $subscribe) {
     success
@@ -6024,7 +5986,13 @@ fragment gtp_egudFragment on ExamGroupUserData {
 }
 `,
   gtp_updateTask: `mutation gtp_updateTask($taskId: ID!, $taskType: String!, $newTaskState: JSONString!, $newTaskStateHash: ID!, $prevTaskStateHash: ID) {
-  updateTask(taskId: $taskId, taskType: $taskType, newTaskState: $newTaskState, newTaskStateHash: $newTaskStateHash, prevTaskStateHash: $prevTaskStateHash) {
+  updateTask(
+    taskId: $taskId
+    taskType: $taskType
+    newTaskState: $newTaskState
+    newTaskStateHash: $newTaskStateHash
+    prevTaskStateHash: $prevTaskStateHash
+  ) {
     task {
       ...gtp_taskFragment
       __typename
@@ -6041,7 +6009,6 @@ fragment gtp_egudFragment on ExamGroupUserData {
     __typename
   }
 }
-
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {
@@ -6073,7 +6040,6 @@ fragment gtp_egudFragment on ExamGroupUserData {
   extendedTimeMultiplier
   __typename
 }
-
 fragment gtp_taskFragment on Task {
   id
   kaid
@@ -6197,8 +6163,7 @@ fragment gtp_taskFragment on Task {
     __typename
   }
   __typename
-}
-`,
+}`,
   hideProgramEverywhere: `mutation hideProgramEverywhere($programID: ID!, $hide: Boolean!) {
   hideProgramEverywhere(programID: $programID, hide: $hide) {
     error {
@@ -6208,8 +6173,7 @@ fragment gtp_taskFragment on Task {
     }
     __typename
   }
-}
-`,
+}`,
   hideProgramFromHotlist: `mutation hideProgramFromHotlist($programID: ID!, $hide: Boolean!) {
   hideProgramFromHotlist(programID: $programID, hide: $hide) {
     error {
@@ -6219,8 +6183,7 @@ fragment gtp_taskFragment on Task {
     }
     __typename
   }
-}
-`,
+}`,
   impersonateUserMutation: `mutation impersonateUserMutation($kaid: String!, $reason: String!) {
   impersonateUser(kaid: $kaid, reason: $reason) {
     error {
@@ -6246,8 +6209,7 @@ fragment gtp_taskFragment on Task {
     }
     __typename
   }
-}
-`,
+}`,
   InviteChildToJoinKAMutation: `mutation InviteChildToJoinKAMutation($childEmail: String!) {
   inviteChild(childEmail: $childEmail) {
     childInvite {
@@ -6288,8 +6250,7 @@ fragment gtp_taskFragment on Task {
     errors
     __typename
   }
-}
-`,
+}`,
   joinStudentMutationForModal: `mutation joinStudentMutationForModal($classCode: String!) {
   joinStudent(classCode: $classCode) {
     isDistrictSynced
@@ -6310,14 +6271,12 @@ fragment gtp_taskFragment on Task {
     __typename
   }
 }
-
 fragment BaseFolder on Folder {
   id
   name
   kaLocale
   __typename
 }
-
 fragment Folder on Folder {
   ...BaseFolder
   courses {
@@ -6326,7 +6285,6 @@ fragment Folder on Folder {
   }
   __typename
 }
-
 fragment PublishedCourseRevisionFragment on CourseRevision {
   id
   contentId
@@ -6346,15 +6304,13 @@ fragment PublishedCourseRevisionFragment on CourseRevision {
     __typename
   }
   __typename
-}
-`,
+}`,
   khanLibraryCopyCourse: `mutation khanLibraryCopyCourse($input: CopyCourse!) {
   course: copyCourse(inputData: $input) {
     ...CourseRevisionStructure
     __typename
   }
 }
-
 fragment CourseRevisionStructure on CourseRevision {
   id
   contentId
@@ -6394,15 +6350,13 @@ fragment CourseRevisionStructure on CourseRevision {
     __typename
   }
   __typename
-}
-`,
+}`,
   khanLibraryCreateCourse: `mutation khanLibraryCreateCourse($input: CreateDefaultCourse!) {
   course: createDefaultCourse(inputData: $input) {
     ...CourseRevisionStructure
     __typename
   }
 }
-
 fragment CourseRevisionStructure on CourseRevision {
   id
   contentId
@@ -6442,8 +6396,7 @@ fragment CourseRevisionStructure on CourseRevision {
     __typename
   }
   __typename
-}
-`,
+}`,
   khanLibraryEditDomain: `mutation khanLibraryEditDomain($sha: String!, $input: EditDomainInput!) {
   editDomain(sha: $sha, input: $input) {
     domain {
@@ -6459,7 +6412,6 @@ fragment CourseRevisionStructure on CourseRevision {
     __typename
   }
 }
-
 fragment khanLibraryDomainRevision on DomainRevision {
   id
   sha
@@ -6470,15 +6422,13 @@ fragment khanLibraryDomainRevision on DomainRevision {
     __typename
   }
   __typename
-}
-`,
+}`,
   khanLibraryLinkCourse: `mutation khanLibraryLinkCourse($input: CreateLinkedCourse!) {
   course: createLinkedCourse(inputData: $input) {
     ...CourseRevisionStructure
     __typename
   }
 }
-
 fragment CourseRevisionStructure on CourseRevision {
   id
   contentId
@@ -6518,8 +6468,7 @@ fragment CourseRevisionStructure on CourseRevision {
     __typename
   }
   __typename
-}
-`,
+}`,
   learnStormCampaignEnroll: `mutation learnStormCampaignEnroll($campaignId: ID!) {
   learnStormEnroll(campaignId: $campaignId) {
     error {
@@ -6532,15 +6481,16 @@ fragment CourseRevisionStructure on CourseRevision {
 }
 `,
   learnStormCampaignUpdate: `mutation learnStormCampaignUpdate($id: ID!, $live: Boolean!, $eligibleLocale: String!, $eligibleCountryCodes: [String]!, $campaignName: String!, $promoSite: String!, $growthMindsetUrl: String!, $certificateUrl: String!, $signupStartDate: DateTime!, $startDate: DateTime!, $stopDate: DateTime!, $bannerEnrollmentHeader: String!, $bannerEnrollmentCopy: String!, $bannerBeforeHeader: String!, $bannerBeforeCopy: String!, $bannerDuringHeader: String!, $bannerDuringCopy: String!, $bannerAfterHeader: String!, $bannerAfterCopy: String!, $shutdownDate: DateTime!, $bannerVisible: Boolean!) {
-  learnStormCampaignUpdate(campaign: {id: $id, live: $live, eligibleKALocale: $eligibleLocale, eligibleCountryCodes: $eligibleCountryCodes, campaignName: $campaignName, promoSite: $promoSite, growthMindsetURL: $growthMindsetUrl, certificateURL: $certificateUrl, signupStartDate: $signupStartDate, startDate: $startDate, stopDate: $stopDate, shutdownDate: $shutdownDate, bannerEnrollmentHeader: $bannerEnrollmentHeader, bannerEnrollmentCopy: $bannerEnrollmentCopy, bannerBeforeHeader: $bannerBeforeHeader, bannerBeforeCopy: $bannerBeforeCopy, bannerDuringHeader: $bannerDuringHeader, bannerDuringCopy: $bannerDuringCopy, bannerAfterHeader: $bannerAfterHeader, bannerAfterCopy: $bannerAfterCopy, bannerVisible: $bannerVisible}) {
+  learnStormCampaignUpdate(
+    campaign: {id: $id, live: $live, eligibleKALocale: $eligibleLocale, eligibleCountryCodes: $eligibleCountryCodes, campaignName: $campaignName, promoSite: $promoSite, growthMindsetURL: $growthMindsetUrl, certificateURL: $certificateUrl, signupStartDate: $signupStartDate, startDate: $startDate, stopDate: $stopDate, shutdownDate: $shutdownDate, bannerEnrollmentHeader: $bannerEnrollmentHeader, bannerEnrollmentCopy: $bannerEnrollmentCopy, bannerBeforeHeader: $bannerBeforeHeader, bannerBeforeCopy: $bannerBeforeCopy, bannerDuringHeader: $bannerDuringHeader, bannerDuringCopy: $bannerDuringCopy, bannerAfterHeader: $bannerAfterHeader, bannerAfterCopy: $bannerAfterCopy, bannerVisible: $bannerVisible}
+  ) {
     campaign {
       id
       __typename
     }
     __typename
   }
-}
-`,
+}`,
   learnStormEnroll: `mutation learnStormEnroll($campaignId: ID!) {
   learnStormEnroll(campaignId: $campaignId) {
     error {
@@ -6550,8 +6500,7 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   linkAppleAccountMutation: `mutation linkAppleAccountMutation($authCode: String!, $state: String!) {
   linkAppleAccount(authCode: $authCode, state: $state) {
     error {
@@ -6588,8 +6537,7 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   LinkEmailByToken: `mutation LinkEmailByToken($token: String!) {
   verifyLinkedEmail(token: $token) {
     email
@@ -6628,7 +6576,11 @@ fragment CourseRevisionStructure on CourseRevision {
 }
 `,
   linkThirdPartyOAuth: `mutation linkThirdPartyOAuth($oauthType: ThirdPartyOAuthType!, $password: String!, $accessToken: String!) {
-  linkThirdPartyAuth(oauthType: $oauthType, password: $password, accessToken: $accessToken) {
+  linkThirdPartyAuth(
+    oauthType: $oauthType
+    password: $password
+    accessToken: $accessToken
+  ) {
     user {
       id
       kaid
@@ -6640,8 +6592,7 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   LinkUDIToUserMutation: `mutation LinkUDIToUserMutation($uuid: ID!, $kaid: ID!) {
   linkUserDistrictInfoV2(uuid: $uuid, kaid: $kaid, method: DEVADMIN) {
     succeeded
@@ -6676,8 +6627,7 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   linkUserByClassCodeMutation: `mutation linkUserByClassCodeMutation($email: String!, $classCode: String!) {
   linkUserByClassCodeV2(email: $email, classCode: $classCode) {
     succeeded
@@ -6698,8 +6648,7 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   loginWithAppleAuthCodeAndState: `mutation loginWithAppleAuthCodeAndState($authCode: String!, $state: String!, $userData: AppleUserData, $role: UserRole) {
   loginWithAppleAuthCodeAndState(authCode: $authCode, state: $state, userData: $userData, role: $role) {
     error {
@@ -6814,10 +6763,16 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   loginWithGoogleMutation: `mutation loginWithGoogleMutation($token: String!, $birthdate: String, $linkClever: Boolean, $role: UserRole, $cleverTransferToken: String, $inviteId: String) {
-  loginWithGoogle(token: $token, birthdate: $birthdate, linkClever: $linkClever, role: $role, cleverTransferToken: $cleverTransferToken, inviteId: $inviteId) {
+  loginWithGoogle(
+    token: $token
+    birthdate: $birthdate
+    linkClever: $linkClever
+    role: $role
+    cleverTransferToken: $cleverTransferToken
+    inviteId: $inviteId
+  ) {
     user {
       id
       kaid
@@ -6840,8 +6795,7 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   loginWithPasswordMutation: `mutation loginWithPasswordMutation($identifier: String!, $password: String!) {
   loginWithPassword(identifier: $identifier, password: $password) {
     user {
@@ -6873,18 +6827,22 @@ fragment CourseRevisionStructure on CourseRevision {
     continueUrl
     __typename
   }
-}
-`,
+}`,
   mapContentToStandard: `mutation mapContentToStandard($setId: String!, $standardId: String!, $descriptor: String!, $secondary: String, $delete: Boolean!) {
-  mapContentToStandard(setId: $setId, standardId: $standardId, contentDescriptor: $descriptor, secondaryDescriptor: $secondary, delete: $delete) {
+  mapContentToStandard(
+    setId: $setId
+    standardId: $standardId
+    contentDescriptor: $descriptor
+    secondaryDescriptor: $secondary
+    delete: $delete
+  ) {
     error {
       code
       __typename
     }
     __typename
   }
-}
-`,
+}`,
   markAIGuideWaitlistEntryEligible: `mutation markAIGuideWaitlistEntryEligible($kaid: String!) {
   markAIGuideWaitlistEntryEligible(kaid: $kaid) {
     error {
@@ -6894,8 +6852,7 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   markAIGuideWaitlistEntryIneligible: `mutation markAIGuideWaitlistEntryIneligible($kaid: String!) {
   markAIGuideWaitlistEntryIneligible(kaid: $kaid) {
     error {
@@ -6905,8 +6862,7 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   markPromoAsSeen: `mutation markPromoAsSeen($promoName: String!, $kaid: String!) {
   recordPromo(promoName: $promoName, kaid: $kaid) {
     registrationSuccess
@@ -6916,10 +6872,36 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   modifyDistrict: `mutation modifyDistrict($existingDistrictID: ID!, $newName: String, $offerings: [Offering!], $rosterSyncingEnabled: Boolean, $rosterID: String, $rosterSource: RosterSource, $nweaID: String, $ncesID: String, $isTest: Boolean, $sendTeacherActivationEmails: Boolean, $goLiveDate: Date, $kaLocale: String, $schoolYearDates: DistrictSchoolYearInput, $region: String, $allOnGrades: [DistrictGradeLevel!], $allOffGrades: [DistrictGradeLevel!], $subsetGrades: [DistrictGradeLevel!], $schoolKhanmigoPreferences: [DistrictKhanmigoSchool!], $khanmigoPreference: KhanmigoEnrollment, $khanmigoTotal: Int, $khanmigoStartDate: Date, $khanmigoEndDate: Date, $khanmigoTokenCapacity: Int, $khanmigoIncludeUserEmails: [String!], $khanmigoExcludeUserEmails: [String!], $khanmigoIncludeStudents: Boolean) {
-  modifyDistrict(existingDistrictID: $existingDistrictID, newName: $newName, offerings: $offerings, rosterSyncingEnabled: $rosterSyncingEnabled, rosterID: $rosterID, rosterSource: $rosterSource, nweaID: $nweaID, ncesID: $ncesID, isTest: $isTest, sendTeacherActivationEmails: $sendTeacherActivationEmails, goLiveDate: $goLiveDate, kaLocale: $kaLocale, schoolYearDates: $schoolYearDates, region: $region, allOnGrades: $allOnGrades, allOffGrades: $allOffGrades, subsetGrades: $subsetGrades, schoolKhanmigoPreferences: $schoolKhanmigoPreferences, khanmigoPreference: $khanmigoPreference, khanmigoTotal: $khanmigoTotal, khanmigoStartDate: $khanmigoStartDate, khanmigoEndDate: $khanmigoEndDate, khanmigoTokenCapacity: $khanmigoTokenCapacity, khanmigoIncludeUserEmails: $khanmigoIncludeUserEmails, khanmigoExcludeUserEmails: $khanmigoExcludeUserEmails, khanmigoIncludeStudents: $khanmigoIncludeStudents) {
+  modifyDistrict(
+    existingDistrictID: $existingDistrictID
+    newName: $newName
+    offerings: $offerings
+    rosterSyncingEnabled: $rosterSyncingEnabled
+    rosterID: $rosterID
+    rosterSource: $rosterSource
+    nweaID: $nweaID
+    ncesID: $ncesID
+    isTest: $isTest
+    sendTeacherActivationEmails: $sendTeacherActivationEmails
+    goLiveDate: $goLiveDate
+    kaLocale: $kaLocale
+    schoolYearDates: $schoolYearDates
+    region: $region
+    allOnGrades: $allOnGrades
+    allOffGrades: $allOffGrades
+    subsetGrades: $subsetGrades
+    schoolKhanmigoPreferences: $schoolKhanmigoPreferences
+    khanmigoPreference: $khanmigoPreference
+    khanmigoTotal: $khanmigoTotal
+    khanmigoStartDate: $khanmigoStartDate
+    khanmigoEndDate: $khanmigoEndDate
+    khanmigoTokenCapacity: $khanmigoTokenCapacity
+    khanmigoIncludeUserEmails: $khanmigoIncludeUserEmails
+    khanmigoExcludeUserEmails: $khanmigoExcludeUserEmails
+    khanmigoIncludeStudents: $khanmigoIncludeStudents
+  ) {
     district {
       id
       rosterID
@@ -6998,10 +6980,13 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   ModifyUserInFolder: `mutation ModifyUserInFolder($folderId: ID!, $userKaid: String!, $operation: FolderEditOperation!) {
-  updateTeamKaidsInFolder(folderId: $folderId, kaid: $userKaid, operation: $operation) {
+  updateTeamKaidsInFolder(
+    folderId: $folderId
+    kaid: $userKaid
+    operation: $operation
+  ) {
     folder {
       id
       kaLocale
@@ -7016,8 +7001,7 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   mppDevadminSignURLForImageUpload: `mutation mppDevadminSignURLForImageUpload($contentType: ImageContentType!) {
   signURLForImageUpload(contentType: $contentType) {
     result {
@@ -7031,8 +7015,7 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   notifyAnswer: `mutation notifyAnswer($key: String!, $notifyOnAnswer: Boolean!) {
   modifyNotifyOnAnswer(feedbackKey: $key, notifyOnAnswer: $notifyOnAnswer) {
     feedback {
@@ -7043,8 +7026,7 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   optOutOfTeacherCampaign: `mutation optOutOfTeacherCampaign($campaignId: ID!) {
   teacherCampaignOptOut(campaignId: $campaignId) {
     teacherCampaignProgress {
@@ -7065,8 +7047,7 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   passwordChangeSupportMutation: `mutation passwordChangeSupportMutation($kaid: String!, $password: String!) {
   passwordChangeSupport(kaid: $kaid, password: $password) {
     error {
@@ -7075,18 +7056,20 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   PerformModAction: `mutation PerformModAction($modAction: ModAction!, $entityKey: String!, $intoType: FeedbackType) {
-  performModAction(modAction: $modAction, entityKey: $entityKey, intoType: $intoType) {
+  performModAction(
+    modAction: $modAction
+    entityKey: $entityKey
+    intoType: $intoType
+  ) {
     error {
       code
       __typename
     }
     __typename
   }
-}
-`,
+}`,
   populateCompleteSignup: `mutation populateCompleteSignup($token: String, $inviteId: String, $parent: Boolean, $hCaptchaResponseToken: String) {
   populateCompleteSignup(token: $token, inviteId: $inviteId, parent: $parent, hCaptchaResponseToken: $hCaptchaResponseToken) {
     token
@@ -7124,8 +7107,7 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   PresignURLForTeamPageImageUpload: `mutation PresignURLForTeamPageImageUpload($filename: String!) {
   presignURLForTeamPageImageUpload(filename: $filename) {
     presignedPutURL
@@ -7136,10 +7118,12 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   publishAssignment: `mutation publishAssignment($assignmentId: ID!, $startDate: DateTime!) {
-  updateAssignment(id: $assignmentId, assignment: {isDraft: false, startDate: $startDate}) {
+  updateAssignment(
+    id: $assignmentId
+    assignment: {isDraft: false, startDate: $startDate}
+  ) {
     assignment {
       ...AssignmentInfoFragment
       __typename
@@ -7147,7 +7131,6 @@ fragment CourseRevisionStructure on CourseRevision {
     __typename
   }
 }
-
 fragment AssignmentInfoFragment on Assignment {
   id
   contents {
@@ -7176,8 +7159,7 @@ fragment AssignmentInfoFragment on Assignment {
   isDraft
   subjectSlug
   __typename
-}
-`,
+}`,
   publishStandardMappings: `mutation publishStandardMappings($set: String!, $content: String!) {
   publishStandardMappings(setId: $set, contentDescriptor: $content) {
     published {
@@ -7195,8 +7177,7 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   PublishTeamPageEntry: `mutation PublishTeamPageEntry($entryId: ID!) {
   publishTeamPageEntry(entryId: $entryId) {
     updatedEntry {
@@ -7210,7 +7191,6 @@ fragment AssignmentInfoFragment on Assignment {
     __typename
   }
 }
-
 fragment entry on TeamPageEntryForEditing {
   id
   isPet
@@ -7237,8 +7217,7 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
   __typename
-}
-`,
+}`,
   PullTestResultForDistrict: `mutation PullTestResultForDistrict($districtID: String!, $force: Boolean!) {
   pullTestResultForDistrict(districtID: $districtID, force: $force) {
     error {
@@ -7247,8 +7226,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   readNotification: `mutation readNotification($key: String!) {
   readNotification(key: $key) {
     error {
@@ -7257,8 +7235,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   reauthWithAppleMutation: `mutation reauthWithAppleMutation($authCode: String!, $state: String!) {
   reauthWithApple(authCode: $authCode, state: $state) {
     error {
@@ -7330,8 +7307,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   removeParents: `mutation removeParents($childKaid: String!, $parentKaid: String!) {
   removeParents(childKaid: $childKaid, parentKaid: $parentKaid) {
     error {
@@ -7340,8 +7316,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   removeStudentsFromClassrooms: `mutation removeStudentsFromClassrooms($kaids: [ID!]!, $classroomIds: [ID!]!) {
   removeStudentsFromClassrooms(kaids: $kaids, classroomIds: $classroomIds) {
     coach {
@@ -7351,8 +7326,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   removeThirdPartyAuth: `mutation removeThirdPartyAuth($oauthType: ThirdPartyOAuthType!) {
   removeThirdPartyAuth(oauthType: $oauthType) {
     error {
@@ -7371,8 +7345,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   renameStudentListMutation: `mutation renameStudentListMutation($listId: ID!, $name: String!) {
   renameStudentList(listId: $listId, name: $name) {
     studentList {
@@ -7387,10 +7360,23 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   requestAdminReportCSV: `mutation requestAdminReportCSV($kaid: ID!, $districtID: ID!, $reportType: AdminReportType!, $startDate: DateTime!, $endDate: DateTime!, $schools: [String!]!, $grades: [String!], $teacherKaids: [String!], $courseSISValues: [String!], $courseID: String, $strandKey: String, $bands: [String!], $notifyByEmail: Boolean!) {
-  requestAdminReportCSV(kaid: $kaid, districtID: $districtID, reportType: $reportType, startDate: $startDate, endDate: $endDate, schools: $schools, teacherKaids: $teacherKaids, grades: $grades, courseSISValues: $courseSISValues, courseID: $courseID, strandKey: $strandKey, bands: $bands, notifyByEmail: $notifyByEmail) {
+  requestAdminReportCSV(
+    kaid: $kaid
+    districtID: $districtID
+    reportType: $reportType
+    startDate: $startDate
+    endDate: $endDate
+    schools: $schools
+    teacherKaids: $teacherKaids
+    grades: $grades
+    courseSISValues: $courseSISValues
+    courseID: $courseID
+    strandKey: $strandKey
+    bands: $bands
+    notifyByEmail: $notifyByEmail
+  ) {
     adminReport {
       id
       status
@@ -7402,8 +7388,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   requestAuthEmail: `mutation requestAuthEmail($authEmail: String!) {
   requestAuthEmail(authEmail: $authEmail) {
     user {
@@ -7453,8 +7438,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   resendUnderAgeGateApprovalEmailForDevadmin: `mutation resendUnderAgeGateApprovalEmailForDevadmin($kaid: String!) {
   resendUnderAgeGateApprovalEmail(kaid: $kaid) {
     error {
@@ -7463,8 +7447,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   resendUnderAgeGateApprovalEmailForLogin: `mutation resendUnderAgeGateApprovalEmailForLogin {
   resendUnderAgeGateApprovalEmail {
     error {
@@ -7483,8 +7466,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   resetPassword: `mutation resetPassword($token: String!, $password: String!) {
   resetPassword(token: $token, password: $password) {
     error {
@@ -7531,18 +7513,19 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   scheduleUserDeletionMutation: `mutation scheduleUserDeletionMutation($targetKaid: String!, $keepActivityIfNecessary: Boolean) {
-  scheduleUserDeletion(targetKaid: $targetKaid, keepActivityIfNecessary: $keepActivityIfNecessary) {
+  scheduleUserDeletion(
+    targetKaid: $targetKaid
+    keepActivityIfNecessary: $keepActivityIfNecessary
+  ) {
     error {
       code
       __typename
     }
     __typename
   }
-}
-`,
+}`,
   sendAgingParentTestEmail: `mutation sendAgingParentTestEmail {
   sendAgingParentTestEmail {
     error {
@@ -7551,8 +7534,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendAiGuideEnrolledTestEmail: `mutation sendAiGuideEnrolledTestEmail {
   sendAiGuideEnrolledTestEmail {
     error {
@@ -7561,8 +7543,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendAiGuideThreadFlaggedTestEmail: `mutation sendAiGuideThreadFlaggedTestEmail {
   sendChildAiGuideThreadFlaggedTestEmail {
     error {
@@ -7571,8 +7552,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendChildAddedCoachTestEmail: `mutation sendChildAddedCoachTestEmail {
   sendChildAddedCoachTestEmail {
     error {
@@ -7581,8 +7561,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendExistingParentClaimManagedStudentTestEmail: `mutation sendExistingParentClaimManagedStudentTestEmail {
   sendExistingParentClaimManagedStudentTestEmail {
     error {
@@ -7591,8 +7570,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendKmapActivationEmailForTeacherMutation: `mutation sendKmapActivationEmailForTeacherMutation($districtEmail: String!) {
   sendKmapActivationEmailForTeacher(districtEmail: $districtEmail) {
     emailSent
@@ -7602,8 +7580,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendModMessageMutation: `mutation sendModMessageMutation($kaid: String!, $message: String!) {
   sendModMessage(kaid: $kaid, message: $message) {
     error {
@@ -7612,8 +7589,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendNewAssignmentTestEmail: `mutation sendNewAssignmentTestEmail {
   sendNewAssignmentTestEmail {
     error {
@@ -7622,8 +7598,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendParentChildInviteTestEmail: `mutation sendParentChildInviteTestEmail {
   sendParentChildInviteTestEmail {
     error {
@@ -7632,8 +7607,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendParentReportTestEmail: `mutation sendParentReportTestEmail {
   sendParentReportTestEmail {
     error {
@@ -7642,16 +7616,14 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendSampleTestEmail: `mutation sendSampleTestEmail {
   sendSampleTestEmail {
     emailsSent
     errorMessages
     __typename
   }
-}
-`,
+}`,
   sendTeacherReportTestEmail: `mutation sendTeacherReportTestEmail {
   sendTeacherReportTestEmail {
     error {
@@ -7660,8 +7632,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendTeacherStudentInviteTestEmail: `mutation sendTeacherStudentInviteTestEmail {
   sendTeacherStudentInviteTestEmail {
     error {
@@ -7670,8 +7641,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendUnderAgeGateParentApproveTestEmail: `mutation sendUnderAgeGateParentApproveTestEmail {
   sendUnderAgeGateParentApproveTestEmail {
     error {
@@ -7680,8 +7650,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendUnderAgeGateParentReminderTestEmail: `mutation sendUnderAgeGateParentReminderTestEmail {
   sendUnderAgeGateParentReminderTestEmail {
     error {
@@ -7690,8 +7659,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendUnregisteredParentClaimManagedStudentTestEmail: `mutation sendUnregisteredParentClaimManagedStudentTestEmail {
   sendUnregisteredParentClaimManagedStudentTestEmail {
     error {
@@ -7700,8 +7668,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendWaitlistAddedTestEmail: `mutation sendWaitlistAddedTestEmail {
   sendWaitlistAddedTestEmail {
     error {
@@ -7710,8 +7677,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendWaitlistApprovedReminderTestEmail: `mutation sendWaitlistApprovedReminderTestEmail {
   sendWaitlistApprovedReminderTestEmail {
     error {
@@ -7720,8 +7686,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendWaitlistApprovedTestEmail: `mutation sendWaitlistApprovedTestEmail {
   sendWaitlistApprovedTestEmail {
     error {
@@ -7730,8 +7695,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   SetAccessibility: `mutation SetAccessibility($kaid: String!, $hideVisual: Boolean!, $prefersReducedMotion: Boolean!, $noColorInVideos: Boolean!) {
   setSettings(kaid: $kaid, hideVisual: $hideVisual, prefersReducedMotion: $prefersReducedMotion, noColorInVideos: $noColorInVideos) {
     user {
@@ -7757,8 +7721,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   setAffiliataionCountryCode: `mutation setAffiliataionCountryCode($countryCode: String!) {
   userSettingsSetAffiliationCountryCode(countryCode: $countryCode) {
     error {
@@ -7767,8 +7730,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   SetAIGuideInteractionReaction: `mutation SetAIGuideInteractionReaction($interactionId: ID!, $reaction: String, $note: String, $rewrittenResponse: String, $rating: Int, $sentiment: String) {
   setAIGuideInteractionReaction(interactionId: $interactionId, reaction: $reaction, note: $note, rewrittenResponse: $rewrittenResponse, rating: $rating, sentiment: $sentiment) {
     error {
@@ -7809,8 +7771,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   setBirthdateForUser: `mutation setBirthdateForUser($kaid: String!, $birthdate: String) {
   setSettings(kaid: $kaid, birthdate: $birthdate) {
     errors {
@@ -7819,8 +7780,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   setChronomancerMode: `mutation setChronomancerMode($mode: ChronomancerMode!) {
   setChronomancerMode(mode: $mode) {
     chronomancer {
@@ -7840,10 +7800,12 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   setClassroomCoursesMutation: `mutation setClassroomCoursesMutation($classDescriptor: String!, $courseKeys: [String!]!) {
-  setClassroomCourses(classroomDescriptor: $classDescriptor, courseKeys: $courseKeys) {
+  setClassroomCourses(
+    classroomDescriptor: $classDescriptor
+    courseKeys: $courseKeys
+  ) {
     classroom {
       id
       cacheId
@@ -7872,8 +7834,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   setClassroomMasteryTowersGoal: `mutation setClassroomMasteryTowersGoal($classDescriptor: String!, $weeklyGoal: Int!) {
   setClassroomMasteryTowersGoal(classDescriptor: $classDescriptor, weeklyGoal: $weeklyGoal) {
     error {
@@ -7885,7 +7846,11 @@ fragment entry on TeamPageEntryForEditing {
 }
 `,
   setClassroomSatStatusMutation: `mutation setClassroomSatStatusMutation($classDescriptor: String!, $includeSat: Boolean!, $fromUpsell: Boolean) {
-  setClassroomSatStatus(classroomDescriptor: $classDescriptor, includeSat: $includeSat, fromUpsell: $fromUpsell) {
+  setClassroomSatStatus(
+    classroomDescriptor: $classDescriptor
+    includeSat: $includeSat
+    fromUpsell: $fromUpsell
+  ) {
     classroom {
       id
       cacheId
@@ -7899,20 +7864,25 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   SetClassroomTestPrepExams: `mutation SetClassroomTestPrepExams($classDescriptor: String!, $examIds: [String!]!) {
-  setClassroomTestPrepExams(classroomDescriptor: $classDescriptor, examIds: $examIds) {
+  setClassroomTestPrepExams(
+    classroomDescriptor: $classDescriptor
+    examIds: $examIds
+  ) {
     error {
       code
       __typename
     }
     __typename
   }
-}
-`,
+}`,
   SetCleverInfo: `mutation SetCleverInfo($cleverDistrictId: String!, $cleverId: String!, $kaid: String!) {
-  setCleverInfoAsAdmin(cleverDistrictId: $cleverDistrictId, cleverId: $cleverId, kaid: $kaid) {
+  setCleverInfoAsAdmin(
+    cleverDistrictId: $cleverDistrictId
+    cleverId: $cleverId
+    kaid: $kaid
+  ) {
     error {
       code
       __typename
@@ -7925,8 +7895,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   setCustomRedirect: `mutation setCustomRedirect($from: String!, $to: String!) {
   setCustomRedirect(redirectFrom: $from, redirectTo: $to) {
     error {
@@ -7963,8 +7932,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   setHasFormalTeacherStatus: `mutation setHasFormalTeacherStatus($tosForFormalTeacherStatus: Boolean) {
   setSettings(tosForFormalTeacherStatus: $tosForFormalTeacherStatus) {
     user {
@@ -8029,8 +7997,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   setParent: `mutation setParent($parentEmail: String!) {
   setParent(parentEmail: $parentEmail) {
     error {
@@ -8054,8 +8021,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   setPrimaryEmailMutation: `mutation setPrimaryEmailMutation($email: String!) {
   setPrimaryEmail(email: $email) {
     error {
@@ -8084,8 +8050,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   SetPromotionMutation: `mutation SetPromotionMutation($promoName: String!) {
   recordPromo(promoName: $promoName) {
     error {
@@ -8097,7 +8062,21 @@ fragment entry on TeamPageEntryForEditing {
 }
 `,
   setSettingsMutationWithErrors: `mutation setSettingsMutationWithErrors($kaid: String!, $nickname: String, $username: String, $soundOn: Boolean, $muteVideos: Boolean, $showCaptions: Boolean, $playbackRate: PlaybackRate, $userLanguage: String, $region: String, $birthdate: String, $hideVisual: Boolean, $prefersReducedMotion: Boolean, $noColorInVideos: Boolean) {
-  setSettings(kaid: $kaid, nickname: $nickname, username: $username, soundOn: $soundOn, muteVideos: $muteVideos, showCaptions: $showCaptions, playbackRate: $playbackRate, userLanguage: $userLanguage, region: $region, birthdate: $birthdate, hideVisual: $hideVisual, prefersReducedMotion: $prefersReducedMotion, noColorInVideos: $noColorInVideos) {
+  setSettings(
+    kaid: $kaid
+    nickname: $nickname
+    username: $username
+    soundOn: $soundOn
+    muteVideos: $muteVideos
+    showCaptions: $showCaptions
+    playbackRate: $playbackRate
+    userLanguage: $userLanguage
+    region: $region
+    birthdate: $birthdate
+    hideVisual: $hideVisual
+    prefersReducedMotion: $prefersReducedMotion
+    noColorInVideos: $noColorInVideos
+  ) {
     user {
       id
       nickname
@@ -8119,8 +8098,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   setTeacherAffiliation: `mutation setTeacherAffiliation($tosForFormalTeacherStatus: Boolean, $countryCode: String!, $eduorgKeyId: ID!) {
   setSettings(tosForFormalTeacherStatus: $tosForFormalTeacherStatus) {
     user {
@@ -8211,8 +8189,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   SetVideo: `mutation SetVideo($kaid: String!, $muteVideos: Boolean!, $showCaptions: Boolean!, $playbackRate: PlaybackRate!) {
   setSettings(kaid: $kaid, muteVideos: $muteVideos, showCaptions: $showCaptions, playbackRate: $playbackRate) {
     user {
@@ -8231,7 +8208,11 @@ fragment entry on TeamPageEntryForEditing {
 }
 `,
   SetWalmartInfo: `mutation SetWalmartInfo($kaid: String!, $walmartId: String, $walmartDivision: String) {
-  setWalmartInfoAsAdmin(walmartId: $walmartId, walmartDivision: $walmartDivision, kaid: $kaid) {
+  setWalmartInfoAsAdmin(
+    walmartId: $walmartId
+    walmartDivision: $walmartDivision
+    kaid: $kaid
+  ) {
     error {
       code
       __typename
@@ -8244,8 +8225,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   setWalmartInfoToJoinMutation: `mutation setWalmartInfoToJoinMutation($profileKeyName: String!) {
   setWalmartInfo(profileKeyName: $profileKeyName) {
     error {
@@ -8308,8 +8288,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   signupDistrictsWithPasswordMutation: `mutation signupDistrictsWithPasswordMutation($email: String!, $password: String!, $firstname: String!, $lastname: String!, $role: UserRole, $birthdate: Date) {
   signupDistrictsWithPassword(email: $email, password: $password, firstname: $firstname, lastname: $lastname, role: $role, birthdate: $birthdate) {
     user {
@@ -8368,8 +8347,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   signupUnderAgeGateMutation: `mutation signupUnderAgeGateMutation($username: String!, $password: String!, $birthdate: Date!, $parentEmail: String!, $signupCodes: [String]) {
   signupUnderAgeGate(username: $username, password: $password, birthdate: $birthdate, parentEmail: $parentEmail, signupCodes: $signupCodes) {
     user {
@@ -8425,8 +8403,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   siteEditorStartPublish: `mutation siteEditorStartPublish($title: String, $contentDescriptors: [String!]!) {
   startPublishForContentDescriptors(title: $title, contentDescriptors: $contentDescriptors) {
     publishStatus {
@@ -8489,15 +8466,13 @@ fragment Program on Program {
     }
     __typename
   }
-}
-`,
+}`,
   submitStory: `mutation submitStory($story: SubmitStoryInput!) {
   submitStory(story: $story) {
     success
     __typename
   }
-}
-`,
+}`,
   submitTeacherCampaignResponse: `mutation submitTeacherCampaignResponse($urlEncodedStepKey: ID!, $exerciseNo: Int!, $text: [String]!) {
   teacherCampaignExerciseComplete(urlEncodedStepKey: $urlEncodedStepKey, exerciseNo: $exerciseNo, text: $text) {
     ok
@@ -8518,8 +8493,7 @@ fragment Program on Program {
     }
     __typename
   }
-}
-`,
+}`,
   transferAuthMutation: `mutation transferAuthMutation($key: String!) {
   transferAuth(key: $key) {
     error {
@@ -8574,8 +8548,7 @@ fragment Program on Program {
     }
     __typename
   }
-}
-`,
+}`,
   translationEditorSignURLForTalkthroughMP3Upload: `mutation translationEditorSignURLForTalkthroughMP3Upload($kaLocale: KALocale!, $youtubeID: String!) {
   signURLForTalkthroughMP3Upload(kaLocale: $kaLocale, youtubeID: $youtubeID) {
     uploadURL
@@ -8586,8 +8559,7 @@ fragment Program on Program {
     }
     __typename
   }
-}
-`,
+}`,
   UnbanUserMutation: `mutation UnbanUserMutation($targetKaid: String!) {
   unhellbanUser(targetKaid: $targetKaid) {
     error {
@@ -8596,8 +8568,7 @@ fragment Program on Program {
     }
     __typename
   }
-}
-`,
+}`,
   UnderAgeGateParentApproval: `mutation UnderAgeGateParentApproval($username: String!) {
   underAgeGateParentApproval(username: $username) {
     error {
@@ -8639,15 +8610,18 @@ fragment Program on Program {
 }
 `,
   underAgeGateParentApprovalByTokenMutation: `mutation underAgeGateParentApprovalByTokenMutation($tosAccepted: Boolean!, $underAgeGateUsername: String, $parentApproveToken: String) {
-  underAgeGateParentApprovalByToken(tosAccepted: $tosAccepted, underAgeGateUsername: $underAgeGateUsername, parentApproveToken: $parentApproveToken) {
+  underAgeGateParentApprovalByToken(
+    tosAccepted: $tosAccepted
+    underAgeGateUsername: $underAgeGateUsername
+    parentApproveToken: $parentApproveToken
+  ) {
     error {
       code
       __typename
     }
     __typename
   }
-}
-`,
+}`,
   unlinkAuthEmail: `mutation unlinkAuthEmail($authEmail: String!) {
   unlinkEmail(authEmail: $authEmail) {
     user {
@@ -8671,10 +8645,14 @@ fragment Program on Program {
     }
     __typename
   }
-}
-`,
+}`,
   UpdateAssessmentItemTag: `mutation UpdateAssessmentItemTag($id: String!, $displayName: String!, $description: String!, $lessonId: String!) {
-  updateAssessmentItemTag(id: $id, displayName: $displayName, description: $description, lessonId: $lessonId) {
+  updateAssessmentItemTag(
+    id: $id
+    displayName: $displayName
+    description: $description
+    lessonId: $lessonId
+  ) {
     assessmentItemTag {
       ...AssessmentItemTagFields
       __typename
@@ -8686,7 +8664,6 @@ fragment Program on Program {
     __typename
   }
 }
-
 fragment AssessmentItemTagFields on AssessmentItemTag {
   editId: id
   id: urlsafeTag
@@ -8694,10 +8671,12 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
   description
   relatedContentId: lessonId
   __typename
-}
-`,
+}`,
   updateAssignment: `mutation updateAssignment($assignmentId: ID!, $studentKaids: [ID], $contentDescriptors: [String], $startDate: DateTime, $dueDate: DateTime, $isDraft: Boolean) {
-  updateAssignment(id: $assignmentId, assignment: {studentKaids: $studentKaids, contentDescriptors: $contentDescriptors, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft}) {
+  updateAssignment(
+    id: $assignmentId
+    assignment: {studentKaids: $studentKaids, contentDescriptors: $contentDescriptors, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft}
+  ) {
     assignment {
       ...AssignmentInfoFragment
       __typename
@@ -8705,7 +8684,6 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
     __typename
   }
 }
-
 fragment AssignmentInfoFragment on Assignment {
   id
   contents {
@@ -8734,10 +8712,12 @@ fragment AssignmentInfoFragment on Assignment {
   isDraft
   subjectSlug
   __typename
-}
-`,
+}`,
   updateAssignments: `mutation updateAssignments($ids: [ID]!, $startDate: DateTime, $dueDate: DateTime) {
-  updateAssignments(ids: $ids, assignment: {startDate: $startDate, dueDate: $dueDate}) {
+  updateAssignments(
+    ids: $ids
+    assignment: {startDate: $startDate, dueDate: $dueDate}
+  ) {
     assignments {
       id
       contents {
@@ -8773,10 +8753,11 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   updateChallengeProgress: `mutation updateChallengeProgress($programId: ID!, $lessonId: ID!, $stashedCode: String, $status: Int) {
-  updateChallengeProgress(input: {programId: $programId, lessonId: $lessonId, stashedCode: $stashedCode, status: $status}) {
+  updateChallengeProgress(
+    input: {programId: $programId, lessonId: $lessonId, stashedCode: $stashedCode, status: $status}
+  ) {
     actionResults {
       pointsEarned {
         points
@@ -8821,8 +8802,7 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   UpdateCoachNicknameForStudent: `mutation UpdateCoachNicknameForStudent($nickname: String, $studentKaid: String!) {
   updateCoachNicknameForStudent(nickname: $nickname, studentKaid: $studentKaid) {
     error {
@@ -8831,18 +8811,19 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   updateContentPermission: `mutation updateContentPermission($userKaid: String!, $id: String!, $role: String!, $locale: String!, $topic: String!, $kind: String!, $canPublish: Boolean!) {
-  updateContentPermission(userKaid: $userKaid, contentPermission: {id: $id, role: $role, locale: $locale, topic: $topic, kind: $kind, canPublish: $canPublish}) {
+  updateContentPermission(
+    userKaid: $userKaid
+    contentPermission: {id: $id, role: $role, locale: $locale, topic: $topic, kind: $kind, canPublish: $canPublish}
+  ) {
     error {
       code
       __typename
     }
     __typename
   }
-}
-`,
+}`,
   updateCurationPageRevisionMutation: `mutation updateCurationPageRevisionMutation($sha: String!, $input: EditCurationPageInput!) {
   editCurationPage(sha: $sha, input: $input) {
     curationPage {
@@ -8993,7 +8974,11 @@ fragment AssignmentInfoFragment on Assignment {
 }
 `,
   UpdateFeedback: `mutation UpdateFeedback($feedbackKey: String!, $textContent: String!, $shownLowQualityNotice: Boolean) {
-  updateFeedback(feedbackKey: $feedbackKey, textContent: $textContent, shownLowQualityNotice: $shownLowQualityNotice) {
+  updateFeedback(
+    feedbackKey: $feedbackKey
+    textContent: $textContent
+    shownLowQualityNotice: $shownLowQualityNotice
+  ) {
     feedback {
       isLocked
       isPinned
@@ -9050,8 +9035,7 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   UpdateFlagMutation: `mutation UpdateFlagMutation($flagName: String!, $description: String, $team: String, $expires: String, $rules: [RuleInput!]!) {
   updateFlag(name: $flagName, description: $description, team: $team, expires: $expires, rules: $rules) {
     flag {
@@ -9078,7 +9062,14 @@ fragment AssignmentInfoFragment on Assignment {
 }
 `,
   updateGoogleClassroom: `mutation updateGoogleClassroom($googleClassId: String!, $googleClassName: String!, $googleClassUrl: String!, $googleClassStudents: [GoogleClassStudent]!, $classroomKey: String!, $khanClassName: String) {
-  updateGoogleClassroom(googleClassId: $googleClassId, googleClassName: $googleClassName, googleClassUrl: $googleClassUrl, googleClassStudents: $googleClassStudents, classroomKey: $classroomKey, khanClassName: $khanClassName) {
+  updateGoogleClassroom(
+    googleClassId: $googleClassId
+    googleClassName: $googleClassName
+    googleClassUrl: $googleClassUrl
+    googleClassStudents: $googleClassStudents
+    classroomKey: $classroomKey
+    khanClassName: $khanClassName
+  ) {
     classroom {
       ...ClassroomData
       __typename
@@ -9098,7 +9089,6 @@ fragment AssignmentInfoFragment on Assignment {
     __typename
   }
 }
-
 fragment ClassroomData on StudentList {
   cacheId
   id
@@ -9111,12 +9101,10 @@ fragment ClassroomData on StudentList {
   googleClassUrl
   __typename
 }
-
 fragment LinkedStudentData on LinkedGoogleClassStudent {
   email
   __typename
 }
-
 fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
   email
   nickname
@@ -9125,10 +9113,13 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     __typename
   }
   __typename
-}
-`,
+}`,
   UpdateGrants: `mutation UpdateGrants($kaid: ID!, $rolesToGrant: [RoleInput!]!, $roleIdsToRevoke: [ID!]!) {
-  revokeAndGrantRoles(kaid: $kaid, rolesToGrant: $rolesToGrant, roleIdsToRevoke: $roleIdsToRevoke) {
+  revokeAndGrantRoles(
+    kaid: $kaid
+    rolesToGrant: $rolesToGrant
+    roleIdsToRevoke: $roleIdsToRevoke
+  ) {
     userWithGrants {
       id
       grants {
@@ -9143,8 +9134,7 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     }
     __typename
   }
-}
-`,
+}`,
   updateInteractiveProgress: `mutation updateInteractiveProgress($programId: ID!, $lessonId: ID!) {
   updateInteractiveProgress(input: {programId: $programId, lessonId: $lessonId}) {
     actionResults {
@@ -9184,18 +9174,19 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     }
     __typename
   }
-}
-`,
+}`,
   UpdateKMapPlacementMutation: `mutation UpdateKMapPlacementMutation($classDescriptor: String!, $studentMapGoals: [StudentMapGoalsInput]!) {
-  updateMapGoals(classroomDescriptor: $classDescriptor, studentMapGoals: $studentMapGoals) {
+  updateMapGoals(
+    classroomDescriptor: $classDescriptor
+    studentMapGoals: $studentMapGoals
+  ) {
     assignments {
       id
       __typename
     }
     __typename
   }
-}
-`,
+}`,
   updateMuteVideosSetting: `mutation updateMuteVideosSetting($muteVideos: Boolean!) {
   setSettings(muteVideos: $muteVideos) {
     user {
@@ -9219,8 +9210,7 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     }
     __typename
   }
-}
-`,
+}`,
   updatePlaybackRateSetting: `mutation updatePlaybackRateSetting($playbackRate: PlaybackRate!) {
   setSettings(playbackRate: $playbackRate) {
     user {
@@ -9233,7 +9223,13 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
 }
 `,
   updateProfile: `mutation updateProfile($avatarName: String, $bio: String, $profileAccessLevel: ProfileAccessLevel, $nickname: String, $username: String) {
-  setSettings(avatarName: $avatarName, bio: $bio, nickname: $nickname, username: $username, profileAccessLevel: $profileAccessLevel) {
+  setSettings(
+    avatarName: $avatarName
+    bio: $bio
+    nickname: $nickname
+    username: $username
+    profileAccessLevel: $profileAccessLevel
+  ) {
     user {
       id
       avatar {
@@ -9256,8 +9252,7 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     }
     __typename
   }
-}
-`,
+}`,
   updateProgram: `mutation updateProgram($programId: ID!, $title: String, $revision: ProgramRevisionInput!) {
   updateProgram(programId: $programId, title: $title, revision: $revision) {
     program {
@@ -9306,7 +9301,9 @@ fragment Program on Program {
 }
 `,
   updateProjectProgress: `mutation updateProjectProgress($programId: ID!, $lessonId: ID!, $stashedCode: String, $status: Int) {
-  updateProjectProgress(input: {programId: $programId, lessonId: $lessonId, stashedCode: $stashedCode, status: $status}) {
+  updateProjectProgress(
+    input: {programId: $programId, lessonId: $lessonId, stashedCode: $stashedCode, status: $status}
+  ) {
     actionResults {
       pointsEarned {
         points
@@ -9351,8 +9348,7 @@ fragment Program on Program {
     }
     __typename
   }
-}
-`,
+}`,
   updateRewards: `mutation updateRewards {
   checkForNewRewards {
     newBadges {
@@ -9441,7 +9437,9 @@ fragment Program on Program {
 }
 `,
   UpdateSubjectMasteryAssignmentMutation: `mutation UpdateSubjectMasteryAssignmentMutation($id: ID!, $studentKaids: [ID]!, $dueDate: DateTime!) {
-  updateSubjectMasteryAssignment(updateSubjectMasteryAssignmentInput: {id: $id, studentKaids: $studentKaids, dueDate: $dueDate}) {
+  updateSubjectMasteryAssignment(
+    updateSubjectMasteryAssignmentInput: {id: $id, studentKaids: $studentKaids, dueDate: $dueDate}
+  ) {
     assignment {
       id
       dueDate
@@ -9449,8 +9447,7 @@ fragment Program on Program {
     }
     __typename
   }
-}
-`,
+}`,
   updateSubscriptionByToken: `mutation updateSubscriptionByToken($token: String!, $subscribe: Boolean!) {
   updateSubscriptionByToken(token: $token, subscribe: $subscribe) {
     success
@@ -9467,10 +9464,11 @@ fragment Program on Program {
     }
     __typename
   }
-}
-`,
+}`,
   updateTalkthroughProgress: `mutation updateTalkthroughProgress($fullyWatched: Boolean!, $lastMsWatched: Float!, $lessonId: ID!, $msDuration: Int!, $msWatched: Float!, $programId: ID!, $updateProgress: Boolean!) {
-  updateTalkthroughProgress(input: {fullyWatched: $fullyWatched, lastMsWatched: $lastMsWatched, lessonId: $lessonId, msDuration: $msDuration, msWatched: $msWatched, programId: $programId, updateProgress: $updateProgress}) {
+  updateTalkthroughProgress(
+    input: {fullyWatched: $fullyWatched, lastMsWatched: $lastMsWatched, lessonId: $lessonId, msDuration: $msDuration, msWatched: $msWatched, programId: $programId, updateProgress: $updateProgress}
+  ) {
     actionResults {
       pointsEarned {
         points
@@ -9515,8 +9513,7 @@ fragment Program on Program {
     }
     __typename
   }
-}
-`,
+}`,
   updateTeacherCampaignProgress: `mutation updateTeacherCampaignProgress($campaignId: ID!) {
   teacherCampaignProgressUpdate(campaignId: $campaignId) {
     progress: teacherCampaignProgress {
@@ -9541,7 +9538,6 @@ fragment Program on Program {
     __typename
   }
 }
-
 fragment entry on TeamPageEntryForEditing {
   id
   isPet
@@ -9568,10 +9564,12 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
   __typename
-}
-`,
+}`,
   updateUnderAgeGateParentEmailAsAdminMutation: `mutation updateUnderAgeGateParentEmailAsAdminMutation($parentEmail: String!, $childKaid: String!) {
-  updateUnderAgeGateParentEmailAsAdmin(parentEmail: $parentEmail, childKaid: $childKaid) {
+  updateUnderAgeGateParentEmailAsAdmin(
+    parentEmail: $parentEmail
+    childKaid: $childKaid
+  ) {
     user {
       id
       kaid
@@ -9587,8 +9585,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   updateUnderAgeGateParentEmailMutation: `mutation updateUnderAgeGateParentEmailMutation($parentEmail: String!) {
   updateUnderAgeGateParentEmail(parentEmail: $parentEmail) {
     user {
@@ -9656,8 +9653,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   updateUserVideoProgress: `mutation updateUserVideoProgress($input: UserVideoProgressInput!) {
   updateUserVideoProgress(videoProgressUpdate: $input) {
     videoItemProgress {
@@ -9724,8 +9720,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   userExerciseCacheMutations: `mutation userExerciseCacheMutations($kaid: String!) {
   clearUserExerciseCache(kaid: $kaid) {
     error {
@@ -9734,8 +9729,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   VoteEntityMutation: `mutation VoteEntityMutation($postKey: String!, $voteType: Int!) {
   voteEntity(entityKey: $postKey, voteType: $voteType) {
     error {
@@ -9744,8 +9738,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   ForceLinkEmail: `mutation ForceLinkEmail($email: String!, $kaid: String!) {
   forceLinkEmail(email: $email, kaid: $kaid) {
     error {
@@ -9754,8 +9747,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   UnlinkEmailForSupport: `mutation UnlinkEmailForSupport($email: String!, $kaid: String!) {
   unlinkEmailForSupport(email: $email, kaid: $kaid) {
     error {
@@ -9765,8 +9757,7 @@ fragment entry on TeamPageEntryForEditing {
     removed
     __typename
   }
-}
-`,
+}`,
   DisableAIGuide: `mutation DisableAIGuide($kaid: String!) {
   disableAIGuide(kaid: $kaid, reason: DISABLED_BY_USER) {
     error {
@@ -9789,7 +9780,10 @@ fragment entry on TeamPageEntryForEditing {
 }
 `,
   SetContentEditingStatus: `mutation SetContentEditingStatus($publishEnabled: Boolean, $editingEnabled: Boolean) {
-  setContentEditingStatus(publishEnabled: $publishEnabled, editingEnabled: $editingEnabled) {
+  setContentEditingStatus(
+    publishEnabled: $publishEnabled
+    editingEnabled: $editingEnabled
+  ) {
     contentEditingStatus {
       editingEnabled
       publishEnabled
@@ -9801,8 +9795,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   SetGuidePreferences: `mutation SetGuidePreferences($readingLevel: AIGuideReadingLevel, $guideLanguageCode: String) {
   setPreferencesForUser(readingLevel: $readingLevel, guideLanguageCode: $guideLanguageCode) {
     error {
@@ -9814,7 +9807,9 @@ fragment entry on TeamPageEntryForEditing {
 }
 `,
   archiveAssignmentMutation: `mutation archiveAssignmentMutation($id: ID!, $curationNodeLevel: MasteryAssignmentCurationNodeLevel!) {
-  archiveMasteryAssignments(archiveMasteryAssignmentsInputs: [{curationNodeLevel: $curationNodeLevel, id: $id}]) {
+  archiveMasteryAssignments(
+    archiveMasteryAssignmentsInputs: [{curationNodeLevel: $curationNodeLevel, id: $id}]
+  ) {
     assignments {
       id
       __typename
@@ -9825,8 +9820,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   StopResponse: `mutation StopResponse($input: StopResponseInput!) {
   stopResponse(input: $input) {
     error {
@@ -9855,7 +9849,14 @@ fragment entry on TeamPageEntryForEditing {
 }
 `,
   createOrUpdateAIGuidePromptDraft: `mutation createOrUpdateAIGuidePromptDraft($promptName: String!, $hashBeforeUpdate: String, $newIsReadyForReview: Boolean!, $newReleaseNotes: String!, $newPromptText: String!, $newConfigJSON: JSONString!) {
-  createOrUpdateAIGuidePromptDraft(promptName: $promptName, hashBeforeUpdate: $hashBeforeUpdate, newIsReadyForReview: $newIsReadyForReview, newReleaseNotes: $newReleaseNotes, newPromptText: $newPromptText, newConfigJSON: $newConfigJSON) {
+  createOrUpdateAIGuidePromptDraft(
+    promptName: $promptName
+    hashBeforeUpdate: $hashBeforeUpdate
+    newIsReadyForReview: $newIsReadyForReview
+    newReleaseNotes: $newReleaseNotes
+    newPromptText: $newPromptText
+    newConfigJSON: $newConfigJSON
+  ) {
     prompt {
       id
       draft {
@@ -9876,8 +9877,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   publishAIGuidePromptVersion: `mutation publishAIGuidePromptVersion($promptName: String!, $hash: String!) {
   publishAIGuidePromptVersion(promptName: $promptName, hash: $hash) {
     promptVersion {
@@ -9895,10 +9895,11 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   editAssignmentMutation: `mutation editAssignmentMutation($id: ID!, $curationNodeLevel: MasteryAssignmentCurationNodeLevel!, $dueDate: DateTime!, $students: [ID]!) {
-  updateMasteryAssignment(updateMasteryAssignmentInput: {id: $id, curationNodeLevel: $curationNodeLevel, dueDate: $dueDate, studentKaids: $students}) {
+  updateMasteryAssignment(
+    updateMasteryAssignmentInput: {id: $id, curationNodeLevel: $curationNodeLevel, dueDate: $dueDate, studentKaids: $students}
+  ) {
     assignment {
       id
       type: curationNodeLevel
@@ -9929,8 +9930,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   createMasteryAssignmentsMutation: `mutation createMasteryAssignmentsMutation($input: CreateMasteryAssignmentsInput!) {
   createMasteryAssignments(input: $input) {
     error {
@@ -9939,8 +9939,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendAiGuideDisabledTestEmail: `mutation sendAiGuideDisabledTestEmail($reason: ReasonForDisablingAIGuide!) {
   sendAiGuideDisabledTestEmail(reason: $reason) {
     error {
@@ -9949,8 +9948,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendAiGuideNotEligibleTestEmail: `mutation sendAiGuideNotEligibleTestEmail($reason: ReasonForDisablingAIGuide!) {
   sendAiGuideNotEligibleTestEmail(reason: $reason) {
     error {
@@ -9959,8 +9957,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   BulkReviewThreadModeration: `mutation BulkReviewThreadModeration($threadIds: [String!]!) {
   bulkReviewThreadModeration(threadIds: $threadIds) {
     error {
@@ -9969,8 +9966,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   CloseThread: `mutation CloseThread($input: String!) {
   closeThread(threadId: $input) {
     error {
@@ -9979,8 +9975,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   districtDryRunMutation: `mutation districtDryRunMutation($districtID: String!, $dryRun: Boolean!) {
   provisionKhanmigoDistrict(districtID: $districtID, dryRun: $dryRun) {
     error {
@@ -9999,8 +9994,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   createProduct: `mutation createProduct($input: MutateProductInput!) {
   createProduct(input: $input) {
     product {
@@ -10029,8 +10023,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   updateProduct: `mutation updateProduct($id: ID!, $input: MutateProductInput!) {
   updateProduct(id: $id, input: $input) {
     product {
@@ -10059,8 +10052,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   EnableAIGuideDevadmin: `mutation EnableAIGuideDevadmin($kaid: String!) {
   enableAIGuide(kaid: $kaid) {
     error {
@@ -10070,20 +10062,27 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   setClassTestResultsReviewDate: `mutation setClassTestResultsReviewDate($classroomDescriptor: String!, $studentKaids: [String!]!, $reviewDate: DateTime!) {
-  setClassTestResultsReviewDate(classroomDescriptor: $classroomDescriptor, studentKaids: $studentKaids, reviewDate: $reviewDate) {
+  setClassTestResultsReviewDate(
+    classroomDescriptor: $classroomDescriptor
+    studentKaids: $studentKaids
+    reviewDate: $reviewDate
+  ) {
     error {
       code
       __typename
     }
     __typename
   }
-}
-`,
+}`,
   createStripeSession: `mutation createStripeSession($priceID: String!, $paymentFrequency: PaymentFrequency!, $cancelURL: String!, $successURL: String!) {
-  createStripeSession(priceID: $priceID, paymentFrequency: $paymentFrequency, cancelURL: $cancelURL, successURL: $successURL) {
+  createStripeSession(
+    priceID: $priceID
+    paymentFrequency: $paymentFrequency
+    cancelURL: $cancelURL
+    successURL: $successURL
+  ) {
     redirectURL
     error {
       code
@@ -10092,8 +10091,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   RemoveGuideCooldown: `mutation RemoveGuideCooldown($cooldown: RemoveCooldownInput!) {
   removeCooldown(cooldown: $cooldown) {
     error {
@@ -10102,8 +10100,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   SetGuideCooldown: `mutation SetGuideCooldown($cooldown: SetCooldownInput!) {
   setCooldown(cooldown: $cooldown) {
     error {
@@ -10112,10 +10109,12 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   addDistrictCourseProgressDateRange: `mutation addDistrictCourseProgressDateRange($districtID: String!, $dateRange: CustomDateRange!) {
-  addDistrictCourseProgressDateRange(districtID: $districtID, dateRange: $dateRange) {
+  addDistrictCourseProgressDateRange(
+    districtID: $districtID
+    dateRange: $dateRange
+  ) {
     dateRanges {
       from
       isCustom
@@ -10132,10 +10131,12 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   removeDistrictCourseProgressDateRanges: `mutation removeDistrictCourseProgressDateRanges($districtID: String!, $dateRanges: [CustomDateRange!]!) {
-  removeDistrictCourseProgressDateRanges(districtID: $districtID, dateRanges: $dateRanges) {
+  removeDistrictCourseProgressDateRanges(
+    districtID: $districtID
+    dateRanges: $dateRanges
+  ) {
     dateRanges {
       from
       isCustom
@@ -10152,8 +10153,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   setCollectingInterests: `mutation setCollectingInterests($kaid: String!, $collect: Boolean!) {
   setCollectInterests(kaid: $kaid, collect: $collect) {
     error {
@@ -10174,8 +10174,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   deleteGuideInterest: `mutation deleteGuideInterest($kaid: String!, $key: String!) {
   deleteInterest(kaid: $kaid, combinedKey: $key) {
     error {
@@ -10185,8 +10184,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   contentEditorEditChallenge: `mutation contentEditorEditChallenge($input: EditChallengeInput!, $sha: String!) {
   editChallenge(input: $input, sha: $sha) {
     challenge {
@@ -10206,8 +10204,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   sendAiGuideDisabledDuringDistrictActivationTestEmail: `mutation sendAiGuideDisabledDuringDistrictActivationTestEmail {
   sendAiGuideDisabledDuringDistrictActivationTestEmail {
     error {
@@ -10216,6 +10213,5 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
 }

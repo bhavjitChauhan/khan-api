@@ -1,5 +1,9 @@
 mutation underAgeGateParentApprovalByTokenMutation($tosAccepted: Boolean!, $underAgeGateUsername: String, $parentApproveToken: String) {
-  underAgeGateParentApprovalByToken(tosAccepted: $tosAccepted, underAgeGateUsername: $underAgeGateUsername, parentApproveToken: $parentApproveToken) {
+  underAgeGateParentApprovalByToken(
+    tosAccepted: $tosAccepted
+    underAgeGateUsername: $underAgeGateUsername
+    parentApproveToken: $parentApproveToken
+  ) {
     error {
       code
       __typename

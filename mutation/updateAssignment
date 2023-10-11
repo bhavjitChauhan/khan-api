@@ -1,5 +1,8 @@
 mutation updateAssignment($assignmentId: ID!, $studentKaids: [ID], $contentDescriptors: [String], $startDate: DateTime, $dueDate: DateTime, $isDraft: Boolean) {
-  updateAssignment(id: $assignmentId, assignment: {studentKaids: $studentKaids, contentDescriptors: $contentDescriptors, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft}) {
+  updateAssignment(
+    id: $assignmentId
+    assignment: {studentKaids: $studentKaids, contentDescriptors: $contentDescriptors, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft}
+  ) {
     assignment {
       ...AssignmentInfoFragment
       __typename
@@ -7,7 +10,6 @@ mutation updateAssignment($assignmentId: ID!, $studentKaids: [ID], $contentDescr
     __typename
   }
 }
-
 fragment AssignmentInfoFragment on Assignment {
   id
   contents {

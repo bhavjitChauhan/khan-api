@@ -1,5 +1,13 @@
 mutation gtp_updateExamGroupSettingsV2($examGroupId: String!, $practiceDaysInfo: [PracticeDaysInput!], $selectedCutoffs: [String!], $selectedExams: [String!], $extendedTimeMultiplier: Float, $exams: [ExamSettingsInput], $enableGtpSetupPage: Boolean) {
-  updateExamGroupSettings(examGroupId: $examGroupId, practiceDaysInfo: $practiceDaysInfo, selectedCutoffs: $selectedCutoffs, selectedExams: $selectedExams, extendedTimeMultiplier: $extendedTimeMultiplier, exams: $exams, enableGtpSetupPage: $enableGtpSetupPage) {
+  updateExamGroupSettings(
+    examGroupId: $examGroupId
+    practiceDaysInfo: $practiceDaysInfo
+    selectedCutoffs: $selectedCutoffs
+    selectedExams: $selectedExams
+    extendedTimeMultiplier: $extendedTimeMultiplier
+    exams: $exams
+    enableGtpSetupPage: $enableGtpSetupPage
+  ) {
     egud {
       ...gtp_egudFragment
       __typename
@@ -30,7 +38,6 @@ mutation gtp_updateExamGroupSettingsV2($examGroupId: String!, $practiceDaysInfo:
     __typename
   }
 }
-
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {

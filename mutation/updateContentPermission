@@ -1,5 +1,8 @@
 mutation updateContentPermission($userKaid: String!, $id: String!, $role: String!, $locale: String!, $topic: String!, $kind: String!, $canPublish: Boolean!) {
-  updateContentPermission(userKaid: $userKaid, contentPermission: {id: $id, role: $role, locale: $locale, topic: $topic, kind: $kind, canPublish: $canPublish}) {
+  updateContentPermission(
+    userKaid: $userKaid
+    contentPermission: {id: $id, role: $role, locale: $locale, topic: $topic, kind: $kind, canPublish: $canPublish}
+  ) {
     error {
       code
       __typename

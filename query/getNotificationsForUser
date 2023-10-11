@@ -162,7 +162,6 @@ fragment MasteryGoalDueDateApproachingCreatedNotificationType on MasteryGoalDueD
   }
   __typename
 }
-
 fragment ModeratorNotificationType on ModeratorNotification {
   text
   __typename

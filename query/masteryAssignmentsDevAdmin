@@ -2,7 +2,10 @@ query masteryAssignmentsDevAdmin($classCode: String!, $activeFilter: MasteryAssi
   classroom(classCode: $classCode) {
     id
     cacheId
-    masteryAssignments(activeFilter: $activeFilter, curationNodeLevel: $curationNodeLevel) {
+    masteryAssignments(
+      activeFilter: $activeFilter
+      curationNodeLevel: $curationNodeLevel
+    ) {
       id
       type: curationNodeLevel
       archivedDate

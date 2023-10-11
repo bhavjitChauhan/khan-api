@@ -1,5 +1,9 @@
 mutation EditNotationReadAloudsForAssessmentItem($assessmentItemID: ID!, $exerciseID: ID!, $notationMap: String!) {
-  editNotationReadAloudsForAssessmentItem(assessmentItemID: $assessmentItemID, exerciseID: $exerciseID, notationMap: $notationMap) {
+  editNotationReadAloudsForAssessmentItem(
+    assessmentItemID: $assessmentItemID
+    exerciseID: $exerciseID
+    notationMap: $notationMap
+  ) {
     updatedNotations {
       assessmentItemId
       domainId

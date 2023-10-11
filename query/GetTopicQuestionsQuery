@@ -1,5 +1,15 @@
 query GetTopicQuestionsQuery($topicId: String!, $cursor: String, $limit: Int, $feedbackType: FeedbackType, $forceInTutorial: Boolean, $minAnswers: Int, $maxAnswers: Int) {
-  topicQuestions(topicID: $topicId, topicSlug: "", cursor: $cursor, limit: $limit, feedbackType: $feedbackType, forceInTutorial: $forceInTutorial, minAnswers: $minAnswers, maxAnswers: $maxAnswers, answersLimit: 1) {
+  topicQuestions(
+    topicID: $topicId
+    topicSlug: ""
+    cursor: $cursor
+    limit: $limit
+    feedbackType: $feedbackType
+    forceInTutorial: $forceInTutorial
+    minAnswers: $minAnswers
+    maxAnswers: $maxAnswers
+    answersLimit: 1
+  ) {
     feedback {
       isLocked
       isPinned

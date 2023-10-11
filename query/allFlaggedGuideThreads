@@ -1,5 +1,14 @@
 query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderationReviewStatus: ModerationReviewStatus, $moderationScore: Float, $afterDate: DateTime, $beforeDate: DateTime, $page: Int, $limit: Int) {
-  allFlaggedGuideThreads: allAiGuideThreads(moderationCategory: $moderationCategory, moderationReviewStatus: $moderationReviewStatus, moderationStatus: FLAGGED, minModerationScore: $moderationScore, afterDate: $afterDate, beforeDate: $beforeDate, page: $page, limit: $limit) {
+  allFlaggedGuideThreads: allAiGuideThreads(
+    moderationCategory: $moderationCategory
+    moderationReviewStatus: $moderationReviewStatus
+    moderationStatus: FLAGGED
+    minModerationScore: $moderationScore
+    afterDate: $afterDate
+    beforeDate: $beforeDate
+    page: $page
+    limit: $limit
+  ) {
     cursor
     threads {
       id

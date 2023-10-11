@@ -1,5 +1,9 @@
 query PublishList($limit: Int, $queuedFilter: PublishListFilter, $kaLocaleFilter: KALocale) {
-  publishList(limit: $limit, queuedFilter: $queuedFilter, kaLocaleFilter: $kaLocaleFilter) {
+  publishList(
+    limit: $limit
+    queuedFilter: $queuedFilter
+    kaLocaleFilter: $kaLocaleFilter
+  ) {
     statuses {
       id
       commitSha: publishedContentVersion

@@ -1,5 +1,11 @@
 mutation gtp_submitExpressTask($taskId: ID!, $taskType: String!, $newTaskState: JSONString!, $newTaskStateHash: ID!, $prevTaskStateHash: ID) {
-  submitTask(taskId: $taskId, taskType: $taskType, newTaskState: $newTaskState, newTaskStateHash: $newTaskStateHash, prevTaskStateHash: $prevTaskStateHash) {
+  submitTask(
+    taskId: $taskId
+    taskType: $taskType
+    newTaskState: $newTaskState
+    newTaskStateHash: $newTaskStateHash
+    prevTaskStateHash: $prevTaskStateHash
+  ) {
     checkpoints {
       ...gtp_checkpointFragment
       __typename
@@ -29,7 +35,6 @@ mutation gtp_submitExpressTask($taskId: ID!, $taskType: String!, $newTaskState: 
     __typename
   }
 }
-
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {
@@ -61,7 +66,6 @@ fragment gtp_egudFragment on ExamGroupUserData {
   extendedTimeMultiplier
   __typename
 }
-
 fragment gtp_taskFragment on Task {
   id
   kaid

@@ -1,5 +1,8 @@
 query unitMasteryAssignmentChanges($assignmentID: ID!, $maxNumChanges: Int!) {
-  unitMasteryAssignmentChanges(assignmentID: $assignmentID, maxNumChanges: $maxNumChanges) {
+  unitMasteryAssignmentChanges(
+    assignmentID: $assignmentID
+    maxNumChanges: $maxNumChanges
+  ) {
     assignmentID
     type
     timestamp

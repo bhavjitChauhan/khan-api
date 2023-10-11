@@ -1,5 +1,12 @@
 mutation loginWithGoogleMutation($token: String!, $birthdate: String, $linkClever: Boolean, $role: UserRole, $cleverTransferToken: String, $inviteId: String) {
-  loginWithGoogle(token: $token, birthdate: $birthdate, linkClever: $linkClever, role: $role, cleverTransferToken: $cleverTransferToken, inviteId: $inviteId) {
+  loginWithGoogle(
+    token: $token
+    birthdate: $birthdate
+    linkClever: $linkClever
+    role: $role
+    cleverTransferToken: $cleverTransferToken
+    inviteId: $inviteId
+  ) {
     user {
       id
       kaid

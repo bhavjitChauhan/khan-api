@@ -1,5 +1,8 @@
 query GetProgressBySkillForStudentForCourse($filters: TeacherOverviewReportFilters!, $studentKaid: String!, $courseId: String!) {
-  teacherOverviewBySkillForStudentForCourseReport(filters: $filters, studentKaid: $studentKaid) {
+  teacherOverviewBySkillForStudentForCourseReport(
+    filters: $filters
+    studentKaid: $studentKaid
+  ) {
     dateInfo {
       from
       upTo

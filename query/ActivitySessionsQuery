@@ -14,7 +14,12 @@ query ActivitySessionsQuery($studentKaid: String!, $endDate: Date, $startDate: D
       }
       __typename
     }
-    activityLog(endDate: $endDate, startDate: $startDate, courseType: $courseType, activityKind: $activityKind) {
+    activityLog(
+      endDate: $endDate
+      startDate: $startDate
+      courseType: $courseType
+      activityKind: $activityKind
+    ) {
       time {
         exerciseMinutes
         totalMinutes
@@ -76,7 +81,6 @@ query ActivitySessionsQuery($studentKaid: String!, $endDate: Date, $startDate: D
     __typename
   }
 }
-
 fragment ActivitySession on ActivitySession {
   id
   title
@@ -90,7 +94,6 @@ fragment ActivitySession on ActivitySession {
   skillType
   __typename
 }
-
 fragment ActivitySessionSkillLevels on SkillLevelChange {
   id
   before

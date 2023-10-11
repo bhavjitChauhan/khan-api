@@ -1,5 +1,9 @@
 mutation SetCleverInfo($cleverDistrictId: String!, $cleverId: String!, $kaid: String!) {
-  setCleverInfoAsAdmin(cleverDistrictId: $cleverDistrictId, cleverId: $cleverId, kaid: $kaid) {
+  setCleverInfoAsAdmin(
+    cleverDistrictId: $cleverDistrictId
+    cleverId: $cleverId
+    kaid: $kaid
+  ) {
     error {
       code
       __typename

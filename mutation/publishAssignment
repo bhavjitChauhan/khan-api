@@ -1,5 +1,8 @@
 mutation publishAssignment($assignmentId: ID!, $startDate: DateTime!) {
-  updateAssignment(id: $assignmentId, assignment: {isDraft: false, startDate: $startDate}) {
+  updateAssignment(
+    id: $assignmentId
+    assignment: {isDraft: false, startDate: $startDate}
+  ) {
     assignment {
       ...AssignmentInfoFragment
       __typename
@@ -7,7 +10,6 @@ mutation publishAssignment($assignmentId: ID!, $startDate: DateTime!) {
     __typename
   }
 }
-
 fragment AssignmentInfoFragment on Assignment {
   id
   contents {

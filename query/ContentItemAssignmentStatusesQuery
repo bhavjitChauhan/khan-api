@@ -2,7 +2,9 @@ query ContentItemAssignmentStatusesQuery($classDescriptor: String!, $contentDesc
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
     cacheId
-    contentAssignmentStatuses: nonDraftAssignmentStatusesForContentDescriptors(contentDescriptors: $contentDescriptors)
+    contentAssignmentStatuses: nonDraftAssignmentStatusesForContentDescriptors(
+      contentDescriptors: $contentDescriptors
+    )
     __typename
   }
 }

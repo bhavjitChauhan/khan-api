@@ -7,7 +7,9 @@ query getCourseMasteryAssignmentsForCoachAsDevAdmin($descriptor: String!) {
       coachNickname
       __typename
     }
-    courseMasteryAssignments: subjectMasteryAssignments(activeFilter: ACTIVE_OR_ARCHIVED) {
+    courseMasteryAssignments: subjectMasteryAssignments(
+      activeFilter: ACTIVE_OR_ARCHIVED
+    ) {
       id
       assignedDate
       createdDate

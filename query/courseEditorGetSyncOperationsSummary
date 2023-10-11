@@ -1,5 +1,10 @@
 query courseEditorGetSyncOperationsSummary($sourceId: String!, $sourceSnapshotId: Int!, $targetId: String!, $targetOperationId: Int!) {
-  syncOperationsSummary(sourceId: $sourceId, sourceSnapshotId: $sourceSnapshotId, targetId: $targetId, targetOperationId: $targetOperationId) {
+  syncOperationsSummary(
+    sourceId: $sourceId
+    sourceSnapshotId: $sourceSnapshotId
+    targetId: $targetId
+    targetOperationId: $targetOperationId
+  ) {
     type
     count
     __typename

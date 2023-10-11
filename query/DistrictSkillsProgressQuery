@@ -29,7 +29,9 @@ query DistrictSkillsProgressQuery($districtID: String!, $filters: DistrictSkills
     unitChildren {
       unitID: id
       unitTitle: translatedTitle
-      learnableContentPage(pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}) {
+      learnableContentPage(
+        pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}
+      ) {
         contents {
           exerciseID: id
           __typename

@@ -1,5 +1,8 @@
 query DistrictActivationBySchoolContainerUsingNewService($districtId: ID!, $schoolIds: [ID!]) {
-  activationReportBySchool: activationReportBySchoolPortedToGo(districtId: $districtId, schoolIds: $schoolIds) {
+  activationReportBySchool: activationReportBySchoolPortedToGo(
+    districtId: $districtId
+    schoolIds: $schoolIds
+  ) {
     rows {
       school {
         id

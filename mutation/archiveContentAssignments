@@ -7,7 +7,6 @@ mutation archiveContentAssignments($assignmentIds: [ID]!) {
     __typename
   }
 }
-
 fragment AssignmentInfoFragment on Assignment {
   id
   contents {

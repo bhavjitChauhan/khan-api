@@ -1,5 +1,12 @@
 query SatPracticeByTeacherQuery($districtName: String!, $schoolIds: [ID!], $teacherIds: [ID!], $gradeLevels: [DistrictGradeLevel!], $progressFrom: DateTime, $progressUpTo: DateTime, $orderBy: ByTeacherSortableColumn, $orderDir: OrderDir, $pageSize: Int, $cursor: Int) {
-  districtSatPracticeReportByTeacher(districtName: $districtName, filters: {schoolIds: $schoolIds, teacherIds: $teacherIds, gradeLevels: $gradeLevels, progressFrom: $progressFrom, progressUpTo: $progressUpTo}, orderBy: $orderBy, orderDir: $orderDir, pageSize: $pageSize, cursor: $cursor) {
+  districtSatPracticeReportByTeacher(
+    districtName: $districtName
+    filters: {schoolIds: $schoolIds, teacherIds: $teacherIds, gradeLevels: $gradeLevels, progressFrom: $progressFrom, progressUpTo: $progressUpTo}
+    orderBy: $orderBy
+    orderDir: $orderDir
+    pageSize: $pageSize
+    cursor: $cursor
+  ) {
     avgRow {
       avgPracticeMinutes
       avgMathPractice

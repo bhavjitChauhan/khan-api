@@ -1,5 +1,11 @@
 mutation mapContentToStandard($setId: String!, $standardId: String!, $descriptor: String!, $secondary: String, $delete: Boolean!) {
-  mapContentToStandard(setId: $setId, standardId: $standardId, contentDescriptor: $descriptor, secondaryDescriptor: $secondary, delete: $delete) {
+  mapContentToStandard(
+    setId: $setId
+    standardId: $standardId
+    contentDescriptor: $descriptor
+    secondaryDescriptor: $secondary
+    delete: $delete
+  ) {
     error {
       code
       __typename

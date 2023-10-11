@@ -16,7 +16,6 @@ query assignmentCsvByClassQuery($classDescriptor: String!, $filters: CoachAssign
     __typename
   }
 }
-
 fragment AssignmentCsvData on Assignment {
   assignedDate
   startDate

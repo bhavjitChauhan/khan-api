@@ -1,5 +1,8 @@
 mutation setClassroomCoursesMutation($classDescriptor: String!, $courseKeys: [String!]!) {
-  setClassroomCourses(classroomDescriptor: $classDescriptor, courseKeys: $courseKeys) {
+  setClassroomCourses(
+    classroomDescriptor: $classDescriptor
+    courseKeys: $courseKeys
+  ) {
     classroom {
       id
       cacheId

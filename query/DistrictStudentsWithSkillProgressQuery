@@ -1,5 +1,10 @@
 query DistrictStudentsWithSkillProgressQuery($districtID: String!, $filters: DistrictStudentsWithSkillProgressFilters, $masteryLevel: UpdatedMasteryLevel!, $skillId: String!) {
-  districtStudentsWithSkillProgress(districtID: $districtID, masteryLevel: $masteryLevel, skillId: $skillId, filters: $filters) {
+  districtStudentsWithSkillProgress(
+    districtID: $districtID
+    masteryLevel: $masteryLevel
+    skillId: $skillId
+    filters: $filters
+  ) {
     id
     kaid
     displayNameForTeacher

@@ -1,3 +1,9 @@
 query FetchProgrammingContentData($path: String!, $queryParams: String!, $isModal: Boolean, $followRedirects: Boolean, $countryCode: String!) {
-  contentJson: curatedProgrammingContentLibraryJson(path: $path, queryParams: $queryParams, isModal: $isModal, followRedirects: $followRedirects, countryCode: $countryCode)
+  contentJson: curatedProgrammingContentLibraryJson(
+    path: $path
+    queryParams: $queryParams
+    isModal: $isModal
+    followRedirects: $followRedirects
+    countryCode: $countryCode
+  )
 }

@@ -1,5 +1,8 @@
 mutation addDistrictCourseProgressDateRange($districtID: String!, $dateRange: CustomDateRange!) {
-  addDistrictCourseProgressDateRange(districtID: $districtID, dateRange: $dateRange) {
+  addDistrictCourseProgressDateRange(
+    districtID: $districtID
+    dateRange: $dateRange
+  ) {
     dateRanges {
       from
       isCustom

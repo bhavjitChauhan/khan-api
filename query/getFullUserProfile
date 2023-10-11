@@ -39,7 +39,10 @@ query getFullUserProfile($kaid: String, $username: String) {
     noColorInVideos
     newNotificationCount
     canHellban: hasPermission(name: "can_ban_users", scope: GLOBAL)
-    canMessageUsers: hasPermission(name: "can_send_moderator_messages", scope: GLOBAL)
+    canMessageUsers: hasPermission(
+      name: "can_send_moderator_messages"
+      scope: GLOBAL
+    )
     isSelf: isActor
     hasStudents: hasCoachees
     hasClasses

@@ -11,15 +11,13 @@ export default {
   eventTimestamp
   skillType
   __typename
-}
-`,
+}`,
   ActivitySessionSkillLevels: `fragment ActivitySessionSkillLevels on SkillLevelChange {
   id
   before
   after
   __typename
-}
-`,
+}`,
   ArticleRevision: `fragment ArticleRevision on ArticleRevision {
   id
   contentId
@@ -47,8 +45,7 @@ export default {
   perseusContent
   listed
   __typename
-}
-`,
+}`,
   AssessmentItemRevision: `fragment AssessmentItemRevision on AssessmentItemRevision {
   id
   contentKind
@@ -63,8 +60,7 @@ export default {
   requiresScreenOrMouse
   tags
   __typename
-}
-`,
+}`,
   AssessmentItemTagFields: `fragment AssessmentItemTagFields on AssessmentItemTag {
   editId: id
   id: urlsafeTag
@@ -72,8 +68,7 @@ export default {
   description
   relatedContentId: lessonId
   __typename
-}
-`,
+}`,
   AssignmentCsvData: `fragment AssignmentCsvData on Assignment {
   assignedDate
   startDate
@@ -117,8 +112,7 @@ export default {
     __typename
   }
   __typename
-}
-`,
+}`,
   AssignmentData: `fragment AssignmentData on Assignment {
   id
   contents {
@@ -193,8 +187,7 @@ export default {
   }
   unitId
   __typename
-}
-`,
+}`,
   AssignmentInfoFragment: `fragment AssignmentInfoFragment on Assignment {
   id
   contents {
@@ -223,8 +216,7 @@ export default {
   isDraft
   subjectSlug
   __typename
-}
-`,
+}`,
   Badge: `fragment Badge on Badge {
   badgeCategory
   description
@@ -252,8 +244,7 @@ export default {
   name
   kaLocale
   __typename
-}
-`,
+}`,
   BasicContentItemProgress: `fragment BasicContentItemProgress on ContentItemProgress {
   bestScore {
     numAttempted
@@ -270,8 +261,7 @@ export default {
     __typename
   }
   __typename
-}
-`,
+}`,
   clarificationFragment: `fragment clarificationFragment on OfficialClarification {
   id
   text
@@ -279,8 +269,7 @@ export default {
   closeTimestamp
   youtubeId
   __typename
-}
-`,
+}`,
   Classroom: `fragment Classroom on StudentList {
   cacheId
   coachKaid
@@ -289,8 +278,7 @@ export default {
   id
   name
   __typename
-}
-`,
+}`,
   ClassroomData: `fragment ClassroomData on StudentList {
   cacheId
   id
@@ -302,8 +290,7 @@ export default {
   googleClassName
   googleClassUrl
   __typename
-}
-`,
+}`,
   CleverCoachRequestField: `fragment CleverCoachRequestField on CleverCoachRequest {
   id
   email: studentIdentifier
@@ -321,8 +308,7 @@ fragment InvitationsField on Invitation {
   email
   accepted
   __typename
-}
-`,
+}`,
   CommonContentItemProgressesFragment: `fragment CommonContentItemProgressesFragment on ContentItemProgress {
   bestScore {
     numAttempted
@@ -337,8 +323,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   CommonUserInfoFragment: `fragment CommonUserInfoFragment on User {
   id
   curationItemProgress(topicId: $topicId) {
@@ -364,8 +349,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   contentEditorContentRevision: `fragment contentEditorContentRevision on ContentRevision {
   id
   cacheId: sha
@@ -502,8 +486,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   CourseFields: `fragment CourseFields on Course {
   ... on Course {
     id
@@ -538,8 +521,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   CourseProgress: `fragment CourseProgress on SubjectProgress {
   topic {
     domainSlug
@@ -568,8 +550,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   CourseRevisionStructure: `fragment CourseRevisionStructure on CourseRevision {
   id
   contentId
@@ -609,8 +590,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   CourseStructure: `fragment CourseStructure on CourseRevision {
   id
   contentId
@@ -799,8 +779,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   ExerciseRevision: `fragment ExerciseRevision on ExerciseRevision {
   id
   contentKind
@@ -851,8 +830,7 @@ fragment InvitationsField on Invitation {
   listed
   hasLintErrors
   __typename
-}
-`,
+}`,
   exerciseTaskUserExerciseFields: `fragment exerciseTaskUserExerciseFields on UserExercise {
   exerciseModel: exercise {
     id
@@ -951,8 +929,7 @@ fragment InvitationsField on Invitation {
   totalCorrect
   totalDone
   __typename
-}
-`,
+}`,
   Folder: `fragment Folder on Folder {
   ...BaseFolder
   courses {
@@ -960,8 +937,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   FolderCourseRevisionFragment: `fragment FolderCourseRevisionFragment on CourseRevision {
   id
   contentId
@@ -1007,8 +983,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   gtp_checkpointFragment: `fragment gtp_checkpointFragment on Checkpoint {
   id
   stages {
@@ -1083,8 +1058,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   gtp_egudFragment: `fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {
@@ -1115,8 +1089,7 @@ fragment InvitationsField on Invitation {
   }
   extendedTimeMultiplier
   __typename
-}
-`,
+}`,
   gtp_essayScoresFragment: `fragment gtp_essayScoresFragment on EssayScores {
   areas {
     translatedTitle
@@ -1129,8 +1102,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   gtp_examGroupMetadataFragment: `fragment gtp_examGroupMetadataFragment on ExamGroupMetadata {
   id
   testMaker
@@ -1138,8 +1110,7 @@ fragment InvitationsField on Invitation {
   testMakerLogoImg
   registrationUrl
   __typename
-}
-`,
+}`,
   gtp_examMetadataFragment: `fragment gtp_examMetadataFragment on ExamMetadata {
   id
   accommodationsUrl
@@ -1177,8 +1148,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   gtp_expressDescriptorsNumAttemptedFragment: `fragment gtp_expressDescriptorsNumAttemptedFragment on ExpressDiagnosticTaskDescriptor {
   numAttempted
   __typename
@@ -1345,8 +1315,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   gtp_tpudFragment: `fragment gtp_tpudFragment on TestPrepUserData {
   id
   examId
@@ -1384,8 +1353,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   LearnableContent: `fragment LearnableContent on LearnableContent {
   id
   kind
@@ -1400,8 +1368,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   LearnableContentData: `fragment LearnableContentData on LearnableContent {
   id
   contentKind
@@ -1588,8 +1555,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   LearnableContentFields: `fragment LearnableContentFields on LearnableContent {
   contentId
   description
@@ -1622,8 +1588,7 @@ fragment InvitationsField on Invitation {
   translatedTitle
   urlWithinCurationNode
   __typename
-}
-`,
+}`,
   LessonAndChildrenFields: `fragment LessonAndChildrenFields on Lesson {
   ... on Lesson {
     id
@@ -1680,13 +1645,11 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   LinkedStudentData: `fragment LinkedStudentData on LinkedGoogleClassStudent {
   email
   __typename
-}
-`,
+}`,
   MappedStandards: `fragment MappedStandards on LearnableContent {
   mappedStandards {
     setId
@@ -1719,8 +1682,7 @@ fragment InvitationsField on Invitation {
   sha
   listed
   __typename
-}
-`,
+}`,
   PublishedCourseRevisionFragment: `fragment PublishedCourseRevisionFragment on CourseRevision {
   id
   contentId
@@ -1740,8 +1702,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   QuizAndTestFields: `fragment QuizAndTestFields on LearnableContent {
   ... on TopicQuiz {
     coveredTutorials {
@@ -1760,8 +1721,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   QuizMetadata: `fragment QuizMetadata on TopicQuiz {
   ...LearnableContentMetadata
   exerciseLength
@@ -1772,8 +1732,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   TalkthroughRevision: `fragment TalkthroughRevision on TalkthroughRevision {
   id
   contentId
@@ -1782,24 +1741,21 @@ fragment InvitationsField on Invitation {
   sha
   listed
   __typename
-}
-`,
+}`,
   tapArticleNode: `fragment tapArticleNode on TAPArticleNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   ...tapContentWordCounts
   fingerprint
   __typename
-}
-`,
+}`,
   tapChallengeNode: `fragment tapChallengeNode on TAPChallengeNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   ...tapContentWordCounts
   fingerprint
   __typename
-}
-`,
+}`,
   tapContentItem: `fragment tapContentItem on TAPContentItem {
   id
   contentKind
@@ -1811,8 +1767,7 @@ fragment InvitationsField on Invitation {
   title
   translatedTitle
   __typename
-}
-`,
+}`,
   tapContentWordCounts: `fragment tapContentWordCounts on TAPContentWordCounts {
   wordCount
   translatableWordCount
@@ -1820,8 +1775,7 @@ fragment InvitationsField on Invitation {
   translatedWordCount
   approvedWordCount
   __typename
-}
-`,
+}`,
   tapCourseNode: `fragment tapCourseNode on TAPCourseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -1831,30 +1785,26 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   tapDomainNode: `fragment tapDomainNode on TAPDomainNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
   __typename
-}
-`,
+}`,
   tapExerciseNode: `fragment tapExerciseNode on TAPExerciseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   ...tapContentWordCounts
   fingerprint
   __typename
-}
-`,
+}`,
   tapInteractiveNode: `fragment tapInteractiveNode on TAPInteractiveNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
   __typename
-}
-`,
+}`,
   tapLessonNode: `fragment tapLessonNode on TAPLessonNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -1871,32 +1821,28 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   tapMetadataWordCounts: `fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataWordCount
   metadataTranslatableWordCount
   metadataTranslatedWordCount
   metadataApprovedWordCount
   __typename
-}
-`,
+}`,
   tapPlatformNode: `fragment tapPlatformNode on TAPPlatformNode {
   ...tapContentWordCounts
   id
   slug
   title
   __typename
-}
-`,
+}`,
   tapProjectNode: `fragment tapProjectNode on TAPProjectNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   ...tapContentWordCounts
   fingerprint
   __typename
-}
-`,
+}`,
   tapTalkthroughNode: `fragment tapTalkthroughNode on TAPTalkthroughNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -1905,8 +1851,7 @@ fragment InvitationsField on Invitation {
   isSubtitled
   youtubeId
   __typename
-}
-`,
+}`,
   tapTranslationFreshness: `fragment tapTranslationFreshness on TAPTranslationFreshness {
   lastStringsUpdateDate
   lastDubsUpdateDate
@@ -1914,8 +1859,7 @@ fragment InvitationsField on Invitation {
   oldestSubtitlesDate
   updateDate
   __typename
-}
-`,
+}`,
   tapUnitNode: `fragment tapUnitNode on TAPUnitNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -1925,8 +1869,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   tapVideoNode: `fragment tapVideoNode on TAPVideoNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -1937,8 +1880,7 @@ fragment InvitationsField on Invitation {
   translatedYoutubeId
   youtubeId
   __typename
-}
-`,
+}`,
   UnitData: `fragment UnitData on Unit {
   id
   iconPath
@@ -1951,8 +1893,7 @@ fragment InvitationsField on Invitation {
   translatedTitle
   unlistedAncestorIds
   __typename
-}
-`,
+}`,
   UnitTestMetadata: `fragment UnitTestMetadata on TopicUnitTest {
   ...LearnableContentMetadata
   exerciseLength
@@ -1962,8 +1903,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   UnlinkedStudentData: `fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
   email
   nickname
@@ -1972,8 +1912,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   userExerciseFields: `fragment userExerciseFields on UserExercise {
   exerciseModel: exercise {
     id
@@ -2072,8 +2011,7 @@ fragment InvitationsField on Invitation {
   totalCorrect
   totalDone
   __typename
-}
-`,
+}`,
   UserFields: `fragment UserFields on User {
   id
   kaid
@@ -2146,8 +2084,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   VideoRevision: `fragment VideoRevision on VideoRevision {
   id
   contentId
@@ -2179,8 +2116,7 @@ fragment InvitationsField on Invitation {
   youtubeId
   listed
   __typename
-}
-`,
+}`,
   contentSearchLearnableContent: `fragment contentSearchLearnableContent on LearnableContent {
   id
   slug
@@ -2195,6 +2131,5 @@ fragment InvitationsField on Invitation {
   ...tapMetadataWordCounts
   fingerprint
   __typename
-}
-`,
+}`,
 }

@@ -12,7 +12,6 @@ query UserNextUpcomingAssignment {
     __typename
   }
 }
-
 fragment Classroom on StudentList {
   cacheId
   coachKaid

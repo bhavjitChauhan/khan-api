@@ -1,5 +1,9 @@
 query unprocessedAIGuideWaitlistEntries($cursor: String, $eligibility: Boolean, $stableRandomOrder: Boolean) {
-  unprocessedAIGuideWaitlistEntries(cursor: $cursor, eligibility: $eligibility, stableRandomOrder: $stableRandomOrder) {
+  unprocessedAIGuideWaitlistEntries(
+    cursor: $cursor
+    eligibility: $eligibility
+    stableRandomOrder: $stableRandomOrder
+  ) {
     cursor
     entries {
       id

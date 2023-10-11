@@ -34,7 +34,9 @@ query DistrictSkillsMAPProgressQuery($districtID: String!, $filters: DistrictSki
       key
       __typename
     }
-    learnableContentPage(pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}) {
+    learnableContentPage(
+      pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}
+    ) {
       contents {
         exerciseID: id
         __typename
