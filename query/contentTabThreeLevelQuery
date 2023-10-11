@@ -42,8 +42,6 @@ query contentTabThreeLevelQuery($courseId: String!, $region: String!, $locale: S
   }
 }
 
-
-
 fragment CourseFieldsThreeLevels on Course {
   ... on Course {
     id
