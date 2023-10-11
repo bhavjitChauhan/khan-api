@@ -11,7 +11,6 @@ query findUsers($identifier: String) {
     __typename
   }
 }
-
 fragment UserFields on User {
   id
   kaid

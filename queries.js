@@ -645,8 +645,7 @@ fragment AssignmentCsvData on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   ClassDescriptorByClassCodeQuery: `query ClassDescriptorByClassCodeQuery($classCode: String!) {
   studentList(classCode: $classCode) {
     id
@@ -2214,7 +2213,6 @@ fragment QuizAndTestFields on LearnableContent {
     __typename
   }
 }
-
 fragment CourseStructure on CourseRevision {
   id
   contentId
@@ -2333,8 +2331,7 @@ fragment CourseStructure on CourseRevision {
     __typename
   }
   __typename
-}
-`,
+}`,
   courseEditorGetCourseEntity: `query courseEditorGetCourseEntity($id: String!) {
   courseById(id: $id) {
     id
@@ -2948,9 +2945,13 @@ fragment LearnableContent on LearnableContent {
   }
 }`,
   CourseEditorIsLinkedCourseInSync: `query CourseEditorIsLinkedCourseInSync($sourceId: String!, $sourceSnapshotId: Int!, $targetId: String!, $targetOperationId: Int!) {
-  isLinkedCourseInSync(sourceId: $sourceId, sourceSnapshotId: $sourceSnapshotId, targetId: $targetId, targetOperationId: $targetOperationId)
-}
-`,
+  isLinkedCourseInSync(
+    sourceId: $sourceId
+    sourceSnapshotId: $sourceSnapshotId
+    targetId: $targetId
+    targetOperationId: $targetOperationId
+  )
+}`,
   courseEditorSearchEditing: `query courseEditorSearchEditing($text: String!, $filters: [EditingSearchFilter!]) {
   searchEditingContent(text: $text, filters: $filters, limit: 100) {
     ... on ContentRevision {
@@ -4306,7 +4307,6 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }
-
 fragment UserFields on User {
   id
   kaid
@@ -4326,8 +4326,7 @@ fragment UserFields on User {
     __typename
   }
   __typename
-}
-`,
+}`,
   findUsersByIp: `query findUsersByIp($ip: String!, $usersCursor: ID, $pageSize: Int) {
   usersSearchByIpPage(ip: $ip, after: $usersCursor, pageSize: $pageSize) {
     users {
@@ -4357,8 +4356,7 @@ fragment UserFields on User {
     totalCount
     __typename
   }
-}
-`,
+}`,
   FlaggedFeedback: `query FlaggedFeedback($feedbackType: FeedbackType, $page: Int, $sort: ModerationSortOrder, $limit: Int, $kaLocale: String) {
   flaggedFeedback(feedbackType: $feedbackType, page: $page, sort: $sort, limit: $limit, kaLocale: $kaLocale) {
     feedback {
@@ -4651,8 +4649,7 @@ fragment UserFields on User {
     __typename
   }
   sessionHash
-}
-`,
+}`,
   getActiveDonationAsks: `query getActiveDonationAsks {
   activeDonationAsks {
     id
@@ -4729,14 +4726,16 @@ fragment UserFields on User {
   }
 }`,
   getAllStandardsForContent: `query getAllStandardsForContent($contentDescriptor: String!) {
-  standards: editableStandardsForContent(contentDescriptor: $contentDescriptor, region: "*") {
+  standards: editableStandardsForContent(
+    contentDescriptor: $contentDescriptor
+    region: "*"
+  ) {
     id
     standardId
     setId
     __typename
   }
-}
-`,
+}`,
   getAllSubject: `query getAllSubject($region: String!) {
   domains: studentListTopics(region: $region) {
     subjects: topics {
@@ -4770,8 +4769,7 @@ fragment UserFields on User {
     nextCursor
     __typename
   }
-}
-`,
+}`,
   getArticleForTeacherCampaignExtraCredit: `query getArticleForTeacherCampaignExtraCredit($slug: String!) {
   article(slug: $slug) {
     nodeUrl: urlWithinTopic
@@ -4781,8 +4779,7 @@ fragment UserFields on User {
     slug
     __typename
   }
-}
-`,
+}`,
   getAssessmentItem: `query getAssessmentItem($input: AssessmentItemInput!) {
   assessmentItem(input: $input) {
     item {
@@ -6148,7 +6145,6 @@ fragment StudentField1 on StudentsPage {
     __typename
   }
 }
-
 fragment EmailSubscriptionFields on EmailSubscriptions {
   allEmailSubscription {
     checked
@@ -6189,8 +6185,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     __typename
   }
   __typename
-}
-`,
+}`,
   getEmailSettingsByToken: `query getEmailSettingsByToken($token: String!) {
   emailSettingsFromUnsubscribeToken(token: $token) {
     isChild
@@ -6206,7 +6201,6 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     __typename
   }
 }
-
 fragment EmailSubscriptionFields on EmailSubscriptions {
   allEmailSubscription {
     checked
@@ -6247,8 +6241,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     __typename
   }
   __typename
-}
-`,
+}`,
   getEotCCCardDetails: `query getEotCCCardDetails($taskId: String!, $topicId: String!) {
   user {
     id
@@ -6855,8 +6848,7 @@ fragment userTaskFields on PracticeUserTask {
     hasKhanmigoViaStripe
     __typename
   }
-}
-`,
+}`,
   getLastSecond: `query getLastSecond($readableVideoId: String!) {
   user {
     id
@@ -6923,8 +6915,7 @@ fragment userTaskFields on PracticeUserTask {
     campaignName
     __typename
   }
-}
-`,
+}`,
   getLearnStormCampaignEnrollmentStatus: `query getLearnStormCampaignEnrollmentStatus($campaignId: ID!) {
   learnStormCampaignEnrollmentStatus(id: $campaignId) {
     isEnrolled
@@ -7533,8 +7524,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getSailthruNewslettersByToken: `query getSailthruNewslettersByToken($token: String!) {
   emailSettingsFromUnsubscribeToken(token: $token) {
     emailSubscriptions {
@@ -7548,8 +7538,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getSatClass: `query getSatClass($classDescriptor: String!, $coachKaid: String, $domain: SatDomain, $startDate: Date, $endDate: Date) {
   coach: user(kaid: $coachKaid) {
     id
@@ -7806,8 +7795,7 @@ fragment Badge on Badge {
     isEnrolledInAIGuide
     __typename
   }
-}
-`,
+}`,
   getSettingsPageDataByToken: `query getSettingsPageDataByToken($token: String!, $targetKaid: String) {
   target: user(kaid: $targetKaid) {
     id
@@ -7823,8 +7811,7 @@ fragment Badge on Badge {
     email
     __typename
   }
-}
-`,
+}`,
   GetStandardMappingEdits: `query GetStandardMappingEdits($setId: String!) {
   standardMappingEdits(setId: $setId) {
     id
@@ -8364,8 +8351,7 @@ fragment Badge on Badge {
     }
     __typename
   }
-}
-`,
+}`,
   getTeacherCampaigns: `query getTeacherCampaigns {
   teacherCampaigns {
     id
@@ -8694,8 +8680,7 @@ fragment Badge on Badge {
     transferAuthToken
     __typename
   }
-}
-`,
+}`,
   getUserByUsernameOrEmail: `query getUserByUsernameOrEmail($username: String, $email: String) {
   user(username: $username, email: $email) {
     id
@@ -9426,8 +9411,7 @@ fragment CommonUserInfoFragment on User {
     continueUrl
     __typename
   }
-}
-`,
+}`,
   gtp_getCheckpoints: `query gtp_getCheckpoints($examId: String!) {
   checkpoints(examId: $examId) {
     ...gtp_checkpointFragment
@@ -10436,8 +10420,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
     actorHasUsedProduct
     __typename
   }
-}
-`,
+}`,
   hellbanActionsyQuery: `query hellbanActionsyQuery($kaid: String!) {
   userSummary(kaid: $kaid) {
     hellbanActions {
@@ -10763,130 +10746,6 @@ fragment PublishedCourseRevisionFragment on CourseRevision {
     }
     __typename
   }
-}
-fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  __typename
-}
-fragment tapArticleNode on TAPArticleNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-fragment tapChallengeNode on TAPChallengeNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-fragment tapContentItem on TAPContentItem {
-  id
-  contentKind
-  contentId
-  sha
-  isNativeContent
-  isUnlisted
-  slug
-  title
-  translatedTitle
-  __typename
-}
-fragment tapContentWordCounts on TAPContentWordCounts {
-  wordCount
-  translatableWordCount
-  translatedWordCount
-  translatedWordCount
-  approvedWordCount
-  __typename
-}
-fragment tapCourseNode on TAPCourseNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  children {
-    ...tapUnitNode
-    __typename
-  }
-  __typename
-}
-fragment tapExerciseNode on TAPExerciseNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-fragment tapInteractiveNode on TAPInteractiveNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  __typename
-}
-fragment tapLessonNode on TAPLessonNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  children {
-    ...tapAIGuideActivityNode
-    ...tapArticleNode
-    ...tapChallengeNode
-    ...tapExerciseNode
-    ...tapInteractiveNode
-    ...tapProjectNode
-    ...tapTalkthroughNode
-    ...tapVideoNode
-    __typename
-  }
-  __typename
-}
-fragment tapMetadataWordCounts on TAPMetadataWordCounts {
-  metadataWordCount
-  metadataTranslatableWordCount
-  metadataTranslatedWordCount
-  metadataApprovedWordCount
-  __typename
-}
-fragment tapProjectNode on TAPProjectNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-fragment tapTalkthroughNode on TAPTalkthroughNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  isDubbed
-  isSubtitled
-  youtubeId
-  __typename
-}
-fragment tapUnitNode on TAPUnitNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  children {
-    ...tapLessonNode
-    __typename
-  }
-  __typename
-}
-fragment tapVideoNode on TAPVideoNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  isDubbed
-  dubIsSubtitled
-  isSubtitled
-  translatedYoutubeId
-  youtubeId
-  __typename
 }`,
   khanLibraryGetLocalesLanguage: `query khanLibraryGetLocalesLanguage {
   localesForLanguagePicker(includeEnglish: true, includeFake: false) {
@@ -11347,8 +11206,7 @@ fragment BaseFolder on Folder {
     displayName
     __typename
   }
-}
-`,
+}`,
   localesForLangDropdownQuery: `query localesForLangDropdownQuery {
   localesForLanguagePicker(includeEnglish: true, includeFake: false) {
     id
@@ -13813,7 +13671,10 @@ fragment TranslatedContentFields on LearnableContent {
   }
 }`,
   translationPortalContentProgress: `query translationPortalContentProgress($contentDescriptors: [String!]!, $contentLocale: String!) {
-  contentTranslationProgress(contentDescriptors: $contentDescriptors, contentKALocale: $contentLocale) {
+  contentTranslationProgress(
+    contentDescriptors: $contentDescriptors
+    contentKALocale: $contentLocale
+  ) {
     content {
       ...tapAIGuideActivityNode
       ...tapArticleNode
@@ -13827,106 +13688,7 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
-}
-
-fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapArticleNode on TAPArticleNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapChallengeNode on TAPChallengeNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapContentItem on TAPContentItem {
-  id
-  contentKind
-  contentId
-  sha
-  isNativeContent
-  isUnlisted
-  slug
-  title
-  translatedTitle
-  __typename
-}
-
-fragment tapContentWordCounts on TAPContentWordCounts {
-  wordCount
-  translatableWordCount
-  translatedWordCount
-  translatedWordCount
-  approvedWordCount
-  __typename
-}
-
-fragment tapExerciseNode on TAPExerciseNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapInteractiveNode on TAPInteractiveNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapMetadataWordCounts on TAPMetadataWordCounts {
-  metadataWordCount
-  metadataTranslatableWordCount
-  metadataTranslatedWordCount
-  metadataApprovedWordCount
-  __typename
-}
-
-fragment tapProjectNode on TAPProjectNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapTalkthroughNode on TAPTalkthroughNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  isDubbed
-  isSubtitled
-  youtubeId
-  __typename
-}
-
-fragment tapVideoNode on TAPVideoNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  isDubbed
-  dubIsSubtitled
-  isSubtitled
-  translatedYoutubeId
-  youtubeId
-  __typename
-}
-`,
+}`,
   translationPortalCourseContentProgress: `query translationPortalCourseContentProgress($courseId: String!, $contentLocale: String!) {
   courseTranslationProgress(courseId: $courseId, contentKALocale: $contentLocale) {
     course {
@@ -13935,146 +13697,7 @@ fragment tapVideoNode on TAPVideoNode {
     }
     __typename
   }
-}
-
-fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapArticleNode on TAPArticleNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapChallengeNode on TAPChallengeNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapContentItem on TAPContentItem {
-  id
-  contentKind
-  contentId
-  sha
-  isNativeContent
-  isUnlisted
-  slug
-  title
-  translatedTitle
-  __typename
-}
-
-fragment tapContentWordCounts on TAPContentWordCounts {
-  wordCount
-  translatableWordCount
-  translatedWordCount
-  translatedWordCount
-  approvedWordCount
-  __typename
-}
-
-fragment tapCourseNode on TAPCourseNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  children {
-    ...tapUnitNode
-    __typename
-  }
-  __typename
-}
-
-fragment tapExerciseNode on TAPExerciseNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapInteractiveNode on TAPInteractiveNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapLessonNode on TAPLessonNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  children {
-    ...tapAIGuideActivityNode
-    ...tapArticleNode
-    ...tapChallengeNode
-    ...tapExerciseNode
-    ...tapInteractiveNode
-    ...tapProjectNode
-    ...tapTalkthroughNode
-    ...tapVideoNode
-    __typename
-  }
-  __typename
-}
-
-fragment tapMetadataWordCounts on TAPMetadataWordCounts {
-  metadataWordCount
-  metadataTranslatableWordCount
-  metadataTranslatedWordCount
-  metadataApprovedWordCount
-  __typename
-}
-
-fragment tapProjectNode on TAPProjectNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapTalkthroughNode on TAPTalkthroughNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  isDubbed
-  isSubtitled
-  youtubeId
-  __typename
-}
-
-fragment tapUnitNode on TAPUnitNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  children {
-    ...tapLessonNode
-    __typename
-  }
-  __typename
-}
-
-fragment tapVideoNode on TAPVideoNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  isDubbed
-  dubIsSubtitled
-  isSubtitled
-  translatedYoutubeId
-  youtubeId
-  __typename
-}
-`,
+}`,
   translationPortalCourseContentProgressCached: `query translationPortalCourseContentProgressCached($courseId: String!, $contentLocale: String!) {
   courseTranslationProgress(courseId: $courseId, contentKALocale: $contentLocale) {
     course {
@@ -14083,146 +13706,7 @@ fragment tapVideoNode on TAPVideoNode {
     }
     __typename
   }
-}
-
-fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapArticleNode on TAPArticleNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapChallengeNode on TAPChallengeNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapContentItem on TAPContentItem {
-  id
-  contentKind
-  contentId
-  sha
-  isNativeContent
-  isUnlisted
-  slug
-  title
-  translatedTitle
-  __typename
-}
-
-fragment tapContentWordCounts on TAPContentWordCounts {
-  wordCount
-  translatableWordCount
-  translatedWordCount
-  translatedWordCount
-  approvedWordCount
-  __typename
-}
-
-fragment tapCourseNode on TAPCourseNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  children {
-    ...tapUnitNode
-    __typename
-  }
-  __typename
-}
-
-fragment tapExerciseNode on TAPExerciseNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapInteractiveNode on TAPInteractiveNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapLessonNode on TAPLessonNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  children {
-    ...tapAIGuideActivityNode
-    ...tapArticleNode
-    ...tapChallengeNode
-    ...tapExerciseNode
-    ...tapInteractiveNode
-    ...tapProjectNode
-    ...tapTalkthroughNode
-    ...tapVideoNode
-    __typename
-  }
-  __typename
-}
-
-fragment tapMetadataWordCounts on TAPMetadataWordCounts {
-  metadataWordCount
-  metadataTranslatableWordCount
-  metadataTranslatedWordCount
-  metadataApprovedWordCount
-  __typename
-}
-
-fragment tapProjectNode on TAPProjectNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapTalkthroughNode on TAPTalkthroughNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  isDubbed
-  isSubtitled
-  youtubeId
-  __typename
-}
-
-fragment tapUnitNode on TAPUnitNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  children {
-    ...tapLessonNode
-    __typename
-  }
-  __typename
-}
-
-fragment tapVideoNode on TAPVideoNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  isDubbed
-  dubIsSubtitled
-  isSubtitled
-  translatedYoutubeId
-  youtubeId
-  __typename
-}
-`,
+}`,
   translationPortalCourseTitlesByIds: `query translationPortalCourseTitlesByIds($ids: [String]!) {
   topicsById(ids: $ids) {
     id
@@ -14231,8 +13715,7 @@ fragment tapVideoNode on TAPVideoNode {
     courseSnapshotId
     __typename
   }
-}
-`,
+}`,
   translationPortalFolders: `query translationPortalFolders {
   folderGroups {
     myFolders {
@@ -14251,8 +13734,7 @@ fragment tapVideoNode on TAPVideoNode {
     }
     __typename
   }
-}
-`,
+}`,
   translationPortalPlatformAndDomainsProgress: `query translationPortalPlatformAndDomainsProgress($locale: String!) {
   domainsTranslationProgress(contentKALocale: $locale) {
     domains {
@@ -14268,69 +13750,13 @@ fragment tapVideoNode on TAPVideoNode {
     }
     __typename
   }
-}
-
-fragment tapContentItem on TAPContentItem {
-  id
-  contentKind
-  contentId
-  sha
-  isNativeContent
-  isUnlisted
-  slug
-  title
-  translatedTitle
-  __typename
-}
-
-fragment tapContentWordCounts on TAPContentWordCounts {
-  wordCount
-  translatableWordCount
-  translatedWordCount
-  translatedWordCount
-  approvedWordCount
-  __typename
-}
-
-fragment tapDomainNode on TAPDomainNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapMetadataWordCounts on TAPMetadataWordCounts {
-  metadataWordCount
-  metadataTranslatableWordCount
-  metadataTranslatedWordCount
-  metadataApprovedWordCount
-  __typename
-}
-
-fragment tapPlatformNode on TAPPlatformNode {
-  ...tapContentWordCounts
-  id
-  slug
-  title
-  __typename
-}
-`,
+}`,
   translationPortalTranslationFreshness: `query translationPortalTranslationFreshness {
   platformTranslationProgress {
     ...tapTranslationFreshness
     __typename
   }
-}
-
-fragment tapTranslationFreshness on TAPTranslationFreshness {
-  lastStringsUpdateDate
-  lastDubsUpdateDate
-  lastSubtitlesUpdateDate
-  oldestSubtitlesDate
-  updateDate
-  __typename
-}
-`,
+}`,
   TranslationSearchQuery: `query TranslationSearchQuery($query: String!, $type: QueryType!) {
   stringSearch(query: $query, type: $type) {
     snapshotId
@@ -14844,8 +14270,7 @@ fragment AssignmentData on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   UserDistrictInfosQuery: `query UserDistrictInfosQuery($email: String, $rosterID: String) {
   userDistrictInfos(email: $email, rosterID: $rosterID) {
     id
@@ -15326,8 +14751,7 @@ fragment SharedFeedbackFields on Feedback {
     contentId
     __typename
   }
-}
-`,
+}`,
   videoByYoutubeId: `query videoByYoutubeId($youtubeId: String!) {
   video: videoByYoutubeId(youtubeId: $youtubeId) {
     id
@@ -15383,8 +14807,7 @@ fragment SharedFeedbackFields on Feedback {
     contentId
     __typename
   }
-}
-`,
+}`,
   videoEditorQuery: `query videoEditorQuery($contentId: String!) {
   contentEditingStatus {
     editingDisabled
@@ -15626,7 +15049,6 @@ fragment UnitProgressFields on UnitProgress {
     __typename
   }
 }
-
 fragment contentSearchLearnableContent on LearnableContent {
   id
   slug
@@ -15634,15 +15056,13 @@ fragment contentSearchLearnableContent on LearnableContent {
   listed
   defaultUrlPath
   __typename
-}
-`,
+}`,
   contentSearchChallenge: `query contentSearchChallenge($contentId: String!) {
   challengeById(id: $contentId) {
     ...contentSearchLearnableContent
     __typename
   }
 }
-
 fragment contentSearchLearnableContent on LearnableContent {
   id
   slug
@@ -15650,8 +15070,7 @@ fragment contentSearchLearnableContent on LearnableContent {
   listed
   defaultUrlPath
   __typename
-}
-`,
+}`,
   contentSearchCourse: `query contentSearchCourse($contentId: String!) {
   courseById(id: $contentId) {
     id
@@ -15663,15 +15082,13 @@ fragment contentSearchLearnableContent on LearnableContent {
     linkedCourseStructure
     __typename
   }
-}
-`,
+}`,
   contentSearchExercise: `query contentSearchExercise($contentId: String!) {
   exerciseById(id: $contentId) {
     ...contentSearchLearnableContent
     __typename
   }
 }
-
 fragment contentSearchLearnableContent on LearnableContent {
   id
   slug
@@ -15679,15 +15096,13 @@ fragment contentSearchLearnableContent on LearnableContent {
   listed
   defaultUrlPath
   __typename
-}
-`,
+}`,
   contentSearchInteractive: `query contentSearchInteractive($contentId: String!) {
   interactiveById(id: $contentId) {
     ...contentSearchLearnableContent
     __typename
   }
 }
-
 fragment contentSearchLearnableContent on LearnableContent {
   id
   slug
@@ -15695,15 +15110,13 @@ fragment contentSearchLearnableContent on LearnableContent {
   listed
   defaultUrlPath
   __typename
-}
-`,
+}`,
   contentSearchProject: `query contentSearchProject($contentId: String!) {
   projectById(id: $contentId) {
     ...contentSearchLearnableContent
     __typename
   }
 }
-
 fragment contentSearchLearnableContent on LearnableContent {
   id
   slug
@@ -15711,8 +15124,7 @@ fragment contentSearchLearnableContent on LearnableContent {
   listed
   defaultUrlPath
   __typename
-}
-`,
+}`,
   contentSearchPrototype: `query contentSearchPrototype($queryString: String!) {
   contentSearch(queryString: $queryString) {
     results {
@@ -15729,15 +15141,13 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   contentSearchTalkthrough: `query contentSearchTalkthrough($contentId: String!) {
   talkthroughById(id: $contentId) {
     ...contentSearchLearnableContent
     __typename
   }
 }
-
 fragment contentSearchLearnableContent on LearnableContent {
   id
   slug
@@ -15745,15 +15155,13 @@ fragment contentSearchLearnableContent on LearnableContent {
   listed
   defaultUrlPath
   __typename
-}
-`,
+}`,
   contentSearchVideo: `query contentSearchVideo($contentId: String!) {
   videoById(contentId: $contentId) {
     ...contentSearchLearnableContent
     __typename
   }
 }
-
 fragment contentSearchLearnableContent on LearnableContent {
   id
   slug
@@ -15761,8 +15169,7 @@ fragment contentSearchLearnableContent on LearnableContent {
   listed
   defaultUrlPath
   __typename
-}
-`,
+}`,
   videoByReadableID: `query videoByReadableID($id: String!) {
   video(id: $id) {
     id
@@ -15828,8 +15235,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   getGradesProgress: `query getGradesProgress($filters: DistrictCourseProgressFilters!) {
   districtCourseProgressByGrade(filters: $filters) {
     dateInfo {
@@ -16564,8 +15970,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   GetStandardRegionsForUS: `query GetStandardRegionsForUS($isDiscoverable: Boolean) {
   standardRegions(isDiscoverable: $isDiscoverable) {
     error {

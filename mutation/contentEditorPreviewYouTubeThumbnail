@@ -1,5 +1,10 @@
 mutation contentEditorPreviewYouTubeThumbnail($objectName: String!, $titleText: String!) {
-  previewYouTubeThumbnail(objectName: $objectName, titleText: $titleText, width: 160, height: 90) {
+  previewYouTubeThumbnail(
+    objectName: $objectName
+    titleText: $titleText
+    width: 160
+    height: 90
+  ) {
     src
     error {
       code

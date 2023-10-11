@@ -1,5 +1,8 @@
 mutation loginWithClasslink($classlinkCode: String, $useDevClasslinkClient: Boolean) {
-  loginWithClasslink(classlinkCode: $classlinkCode, useDevClasslinkClient: $useDevClasslinkClient) {
+  loginWithClasslink(
+    classlinkCode: $classlinkCode
+    useDevClasslinkClient: $useDevClasslinkClient
+  ) {
     user {
       id
       kaid

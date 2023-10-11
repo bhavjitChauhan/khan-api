@@ -709,8 +709,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   EmailSubscriptionFields: `fragment EmailSubscriptionFields on EmailSubscriptions {
   allEmailSubscription {
     checked
@@ -751,8 +750,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   entry: `fragment entry on TeamPageEntryForEditing {
   id
   isPet
@@ -2031,8 +2029,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   userTaskFields: `fragment userTaskFields on PracticeUserTask {
   cards {
     done
@@ -2124,8 +2121,7 @@ fragment InvitationsField on Invitation {
   listed
   defaultUrlPath
   __typename
-}
-`,
+}`,
   tapAIGuideActivityNode: `fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
   ...tapContentItem
   ...tapMetadataWordCounts

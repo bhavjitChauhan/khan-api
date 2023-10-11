@@ -7,7 +7,6 @@ mutation CourseEditorEditChangeLog($input: EditItemChangeLog!) {
     __typename
   }
 }
-
 fragment CourseStructure on CourseRevision {
   id
   contentId

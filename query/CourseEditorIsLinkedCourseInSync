@@ -1,3 +1,8 @@
 query CourseEditorIsLinkedCourseInSync($sourceId: String!, $sourceSnapshotId: Int!, $targetId: String!, $targetOperationId: Int!) {
-  isLinkedCourseInSync(sourceId: $sourceId, sourceSnapshotId: $sourceSnapshotId, targetId: $targetId, targetOperationId: $targetOperationId)
+  isLinkedCourseInSync(
+    sourceId: $sourceId
+    sourceSnapshotId: $sourceSnapshotId
+    targetId: $targetId
+    targetOperationId: $targetOperationId
+  )
 }

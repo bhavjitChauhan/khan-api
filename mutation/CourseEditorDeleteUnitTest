@@ -7,7 +7,6 @@ mutation CourseEditorDeleteUnitTest($input: DeleteUnitTest!) {
     __typename
   }
 }
-
 fragment CourseStructure on CourseRevision {
   id
   contentId

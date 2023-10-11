@@ -1,5 +1,8 @@
 mutation SetGuidePreferences($readingLevel: AIGuideReadingLevel, $guideLanguageCode: String) {
-  setPreferencesForUser(readingLevel: $readingLevel, guideLanguageCode: $guideLanguageCode) {
+  setPreferencesForUser(
+    readingLevel: $readingLevel
+    guideLanguageCode: $guideLanguageCode
+  ) {
     error {
       code
       __typename

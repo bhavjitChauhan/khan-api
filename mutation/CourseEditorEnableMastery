@@ -7,7 +7,6 @@ mutation CourseEditorEnableMastery($input: EnableMastery!) {
     __typename
   }
 }
-
 fragment CourseStructure on CourseRevision {
   id
   contentId
