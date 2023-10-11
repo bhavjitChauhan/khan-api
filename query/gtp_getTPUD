@@ -26,6 +26,7 @@ query gtp_getTPUD($examId: String!) {
     __typename
   }
 }
+
 fragment gtp_checkpointFragment on Checkpoint {
   id
   stages {

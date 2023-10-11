@@ -92,6 +92,8 @@ query WhatNextPrompt($assignmentsPageSize: Int, $assignmentsOrderBy: AssignmentO
   }
 }
 
+
+
 fragment TopicFields on Topic {
   contentId: id
   id

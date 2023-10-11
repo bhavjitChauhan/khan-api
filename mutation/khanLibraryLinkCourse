@@ -4,6 +4,7 @@ mutation khanLibraryLinkCourse($input: CreateLinkedCourse!) {
     __typename
   }
 }
+
 fragment CourseRevisionStructure on CourseRevision {
   id
   contentId

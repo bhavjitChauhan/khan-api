@@ -13,6 +13,7 @@ mutation contentEditorCreateExercise($input: NewExerciseInput!) {
     __typename
   }
 }
+
 fragment AssessmentItemRevision on AssessmentItemRevision {
   id
   contentKind

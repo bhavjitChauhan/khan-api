@@ -8,6 +8,7 @@ query courseProgresses($courseIds: [String!]!) {
     __typename
   }
 }
+
 fragment CourseProgress on SubjectProgress {
   topic {
     domainSlug

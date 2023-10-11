@@ -11,6 +11,7 @@ mutation khanLibraryAddCourseToFolder($folderId: String!, $courseId: String!) {
     __typename
   }
 }
+
 fragment BaseFolder on Folder {
   id
   name

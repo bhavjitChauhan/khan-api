@@ -4,6 +4,7 @@ mutation CourseEditorSyncLinkedCourse($input: SyncCourse!) {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId

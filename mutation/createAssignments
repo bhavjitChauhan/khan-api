@@ -9,6 +9,7 @@ mutation createAssignments($classDescriptors: [String!]!, $qualifiedContentDescr
     __typename
   }
 }
+
 fragment AssignmentInfoFragment on Assignment {
   id
   contents {

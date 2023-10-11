@@ -134,6 +134,7 @@ export default {
     __typename
   }
 }
+
 fragment ActivitySession on ActivitySession {
   id
   title
@@ -331,6 +332,7 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     __typename
   }
 }
+
 fragment ArticleRevision on ArticleRevision {
   id
   contentId
@@ -433,6 +435,7 @@ fragment ArticleRevision on ArticleRevision {
     __typename
   }
 }
+
 fragment AssignmentCsvData on Assignment {
   assignedDate
   startDate
@@ -487,6 +490,7 @@ fragment AssignmentCsvData on Assignment {
     __typename
   }
 }
+
 fragment AssignmentCsvData on Assignment {
   assignedDate
   startDate
@@ -942,6 +946,7 @@ fragment AssignmentCsvData on Assignment {
     __typename
   }
 }
+
 fragment contentEditorContentRevision on ContentRevision {
   id
   cacheId: sha
@@ -986,6 +991,7 @@ fragment contentEditorLearnableContent on LearnableContentRevision {
     __typename
   }
 }
+
 fragment contentEditorContentRevision on ContentRevision {
   id
   cacheId: sha
@@ -1006,6 +1012,7 @@ fragment contentEditorLearnableContent on LearnableContentRevision {
     __typename
   }
 }
+
 fragment ArticleRevision on ArticleRevision {
   id
   contentId
@@ -1040,6 +1047,7 @@ fragment ArticleRevision on ArticleRevision {
     __typename
   }
 }
+
 fragment AssessmentItemRevision on AssessmentItemRevision {
   id
   contentKind
@@ -1112,6 +1120,7 @@ fragment ExerciseRevision on ExerciseRevision {
     __typename
   }
 }
+
 fragment ProjectRevision on ProjectRevision {
   id
   contentId
@@ -1138,6 +1147,7 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }
+
 fragment TalkthroughRevision on TalkthroughRevision {
   id
   contentId
@@ -1153,6 +1163,7 @@ fragment TalkthroughRevision on TalkthroughRevision {
     __typename
   }
 }
+
 fragment VideoRevision on VideoRevision {
   id
   contentId
@@ -1219,6 +1230,7 @@ fragment VideoRevision on VideoRevision {
     __typename
   }
 }
+
 fragment contentEditorContentRevision on ContentRevision {
   id
   cacheId: sha
@@ -1250,6 +1262,7 @@ fragment contentEditorLearnableContent on LearnableContentRevision {
     __typename
   }
 }
+
 fragment LearnableContentData on LearnableContent {
   id
   contentKind
@@ -1515,6 +1528,7 @@ fragment LearnableContentData on LearnableContent {
     __typename
   }
 }
+
 fragment CourseData on Course {
   id
   iconPath
@@ -1961,6 +1975,8 @@ fragment UnitTestMetadata on TopicUnitTest {
   }
 }
 
+
+
 fragment CourseFieldsThreeLevels on Course {
   ... on Course {
     id
@@ -2086,6 +2102,8 @@ fragment QuizAndTestFields on LearnableContent {
   }
 }
 
+
+
 fragment CourseFields on Course {
   ... on Course {
     id
@@ -2200,6 +2218,7 @@ fragment QuizAndTestFields on LearnableContent {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId
@@ -2334,6 +2353,7 @@ fragment CourseStructure on CourseRevision {
     __typename
   }
 }
+
 fragment FolderCourseRevisionFragment on CourseRevision {
   id
   contentId
@@ -2501,6 +2521,8 @@ fragment FolderCourseRevisionFragment on CourseRevision {
   }
 }
 
+
+
 fragment LibraryFolder on Folder {
   id
   name
@@ -2514,6 +2536,7 @@ fragment LibraryFolder on Folder {
     __typename
   }
 }
+
 fragment LearnableContent on LearnableContent {
   id
   kind
@@ -2535,6 +2558,7 @@ fragment LearnableContent on LearnableContent {
     __typename
   }
 }
+
 fragment LearnableContent on LearnableContent {
   id
   kind
@@ -2560,6 +2584,7 @@ fragment LearnableContent on LearnableContent {
     __typename
   }
 }
+
 fragment FolderCourseRevisionFragment on CourseRevision {
   id
   contentId
@@ -2658,6 +2683,7 @@ fragment FolderCourseRevisionFragment on CourseRevision {
     __typename
   }
 }
+
 fragment LearnableContent on LearnableContent {
   id
   kind
@@ -2694,6 +2720,7 @@ fragment LearnableContent on LearnableContent {
     __typename
   }
 }
+
 fragment LearnableContent on LearnableContent {
   id
   kind
@@ -2715,6 +2742,7 @@ fragment LearnableContent on LearnableContent {
     __typename
   }
 }
+
 fragment LearnableContent on LearnableContent {
   id
   kind
@@ -2736,6 +2764,7 @@ fragment LearnableContent on LearnableContent {
     __typename
   }
 }
+
 fragment LearnableContent on LearnableContent {
   id
   kind
@@ -2898,6 +2927,7 @@ fragment LearnableContent on LearnableContent {
     __typename
   }
 }
+
 fragment LearnableContent on LearnableContent {
   id
   kind
@@ -3001,6 +3031,7 @@ fragment LearnableContent on LearnableContent {
     __typename
   }
 }
+
 fragment CourseMenuRevisionFields on CourseMenuRevision {
   id
   sha
@@ -3058,6 +3089,7 @@ fragment CourseMenuRevisionFields on CourseMenuRevision {
     __typename
   }
 }
+
 fragment CourseProgress on SubjectProgress {
   topic {
     domainSlug
@@ -3825,6 +3857,7 @@ fragment CourseProgress on SubjectProgress {
     __typename
   }
 }
+
 fragment entry on TeamPageEntryForEditing {
   id
   isPet
@@ -4284,6 +4317,7 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }
+
 fragment UserFields on User {
   id
   kaid
@@ -4792,6 +4826,7 @@ fragment UserFields on User {
     __typename
   }
 }
+
 fragment AssessmentItemTagFields on AssessmentItemTag {
   editId: id
   id: urlsafeTag
@@ -5093,6 +5128,8 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
   }
 }
 
+
+
 fragment CleverCoachRequestField on CleverCoachRequest {
   id
   email: studentIdentifier
@@ -5280,6 +5317,8 @@ fragment StudentField2 on StudentsPage {
   }
 }
 
+
+
 fragment ExerciseContentFields on LearnableContent {
   id
   kind
@@ -5356,6 +5395,7 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }
+
 fragment Badge on Badge {
   badgeCategory
   description
@@ -5850,6 +5890,8 @@ fragment Badge on Badge {
   }
 }
 
+
+
 fragment CleverCoachRequestField on CleverCoachRequest {
   id
   email: studentIdentifier
@@ -6114,6 +6156,7 @@ fragment StudentField1 on StudentsPage {
     __typename
   }
 }
+
 fragment EmailSubscriptionFields on EmailSubscriptions {
   allEmailSubscription {
     checked
@@ -6170,6 +6213,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     __typename
   }
 }
+
 fragment EmailSubscriptionFields on EmailSubscriptions {
   allEmailSubscription {
     checked
@@ -6606,6 +6650,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     __typename
   }
 }
+
 fragment userExerciseFields on UserExercise {
   exerciseModel: exercise {
     id
@@ -7081,6 +7126,8 @@ fragment userTaskFields on PracticeUserTask {
   }
 }
 
+
+
 fragment AssignmentCreatedNotificationType on AssignmentCreatedNotification {
   numAssignments
   contentTitle
@@ -7289,6 +7336,7 @@ fragment UnitMasteryGoalCreatedNotificationType on UnitMasteryGoalCreatedNotific
     __typename
   }
 }
+
 fragment clarificationFragment on OfficialClarification {
   id
   text
@@ -7424,6 +7472,7 @@ fragment clarificationFragment on OfficialClarification {
     __typename
   }
 }
+
 fragment Badge on Badge {
   badgeCategory
   description
@@ -9004,6 +9053,7 @@ fragment Badge on Badge {
     __typename
   }
 }
+
 fragment CommonContentItemProgressesFragment on ContentItemProgress {
   bestScore {
     numAttempted
@@ -9065,6 +9115,7 @@ fragment CommonUserInfoFragment on User {
     __typename
   }
 }
+
 fragment CommonContentItemProgressesFragment on ContentItemProgress {
   bestScore {
     numAttempted
@@ -9369,6 +9420,7 @@ fragment CommonUserInfoFragment on User {
     __typename
   }
 }
+
 fragment gtp_checkpointFragment on Checkpoint {
   id
   stages {
@@ -9420,6 +9472,7 @@ fragment gtp_checkpointFragment on Checkpoint {
     __typename
   }
 }
+
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {
@@ -9465,6 +9518,7 @@ fragment gtp_egudFragment on ExamGroupUserData {
     __typename
   }
 }
+
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {
@@ -9517,6 +9571,7 @@ fragment gtp_egudFragment on ExamGroupUserData {
     __typename
   }
 }
+
 fragment gtp_essayScoresFragment on EssayScores {
   areas {
     translatedTitle
@@ -9540,6 +9595,7 @@ fragment gtp_essayScoresFragment on EssayScores {
     __typename
   }
 }
+
 fragment gtp_examGroupMetadataFragment on ExamGroupMetadata {
   id
   testMaker
@@ -9554,6 +9610,7 @@ fragment gtp_examGroupMetadataFragment on ExamGroupMetadata {
     __typename
   }
 }
+
 fragment gtp_examMetadataFragment on ExamMetadata {
   id
   accommodationsUrl
@@ -9802,6 +9859,7 @@ fragment gtp_examMetadataFragment on ExamMetadata {
     __typename
   }
 }
+
 fragment gtp_taskFragment on Task {
   id
   kaid
@@ -9949,6 +10007,7 @@ fragment gtp_taskFragment on Task {
     __typename
   }
 }
+
 fragment gtp_taskFragment on Task {
   id
   kaid
@@ -10101,6 +10160,7 @@ fragment gtp_taskFragment on Task {
     __typename
   }
 }
+
 fragment gtp_checkpointFragment on Checkpoint {
   id
   stages {
@@ -10610,6 +10670,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
     __typename
   }
 }
+
 fragment khanLibraryDomainRevision on DomainRevision {
   id
   sha
@@ -10627,6 +10688,7 @@ fragment khanLibraryDomainRevision on DomainRevision {
     __typename
   }
 }
+
 fragment BaseFolder on Folder {
   id
   name
@@ -10670,6 +10732,7 @@ fragment PublishedCourseRevisionFragment on CourseRevision {
     __typename
   }
 }
+
 fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -10811,6 +10874,7 @@ fragment tapVideoNode on TAPVideoNode {
     __typename
   }
 }
+
 fragment BaseFolder on Folder {
   id
   name
@@ -10831,6 +10895,7 @@ fragment BaseFolder on Folder {
     __typename
   }
 }
+
 fragment BaseFolder on Folder {
   id
   name
@@ -11918,6 +11983,7 @@ fragment BaseFolder on Folder {
     __typename
   }
 }
+
 fragment CourseProgress on SubjectProgress {
   topic {
     domainSlug
@@ -12008,6 +12074,7 @@ fragment CourseProgress on SubjectProgress {
     __typename
   }
 }
+
 
 fragment CourseProgress on SubjectProgress {
   topic {
@@ -12294,6 +12361,8 @@ fragment CourseProgress on SubjectProgress {
     __typename
   }
 }
+
+
 
 fragment ProblemAttemptFields on ProblemAttempt {
   kaid
@@ -13019,6 +13088,8 @@ fragment ProblemAttemptFields on ProblemAttempt {
   }
 }
 
+
+
 fragment TranslatedContentFields on LearnableContent {
   id
   kind
@@ -13719,6 +13790,7 @@ fragment TranslatedContentFields on LearnableContent {
     __typename
   }
 }
+
 fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13815,6 +13887,7 @@ fragment tapVideoNode on TAPVideoNode {
     __typename
   }
 }
+
 fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13948,6 +14021,7 @@ fragment tapVideoNode on TAPVideoNode {
     __typename
   }
 }
+
 fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -14116,6 +14190,7 @@ fragment tapVideoNode on TAPVideoNode {
     __typename
   }
 }
+
 fragment tapContentItem on TAPContentItem {
   id
   contentKind
@@ -14162,6 +14237,7 @@ fragment tapPlatformNode on TAPPlatformNode {
     __typename
   }
 }
+
 fragment tapTranslationFreshness on TAPTranslationFreshness {
   lastStringsUpdateDate
   lastDubsUpdateDate
@@ -14414,6 +14490,8 @@ fragment tapTranslationFreshness on TAPTranslationFreshness {
   }
 }
 
+
+
 fragment ContentFields on LearnableContent {
   contentId: id
   id
@@ -14462,6 +14540,7 @@ fragment ContentFields on LearnableContent {
     __typename
   }
 }
+
 fragment AssignmentData on Assignment {
   id
   contents {
@@ -14560,6 +14639,7 @@ fragment AssignmentData on Assignment {
     __typename
   }
 }
+
 fragment AssignmentData on Assignment {
   id
   contents {
@@ -14794,6 +14874,7 @@ fragment AssignmentData on Assignment {
     __typename
   }
 }
+
 fragment Classroom on StudentList {
   cacheId
   coachKaid
@@ -14851,6 +14932,7 @@ fragment Classroom on StudentList {
     __typename
   }
 }
+
 fragment BasicContentItemProgress on ContentItemProgress {
   bestScore {
     numAttempted
@@ -14905,6 +14987,7 @@ fragment BasicContentItemProgress on ContentItemProgress {
     __typename
   }
 }
+
 fragment BasicContentItemProgress on ContentItemProgress {
   bestScore {
     numAttempted
@@ -15089,6 +15172,8 @@ fragment BasicContentItemProgress on ContentItemProgress {
   }
 }
 
+
+
 fragment SharedFeedbackFields on Feedback {
   __typename
   appearsAsDeleted
@@ -15226,6 +15311,7 @@ fragment SharedFeedbackFields on Feedback {
     __typename
   }
 }
+
 fragment VideoRevision on VideoRevision {
   id
   contentId
@@ -15352,6 +15438,8 @@ fragment VideoRevision on VideoRevision {
   }
 }
 
+
+
 fragment TopicFields on Topic {
   contentId: id
   id
@@ -15456,6 +15544,7 @@ fragment UnitProgressFields on UnitProgress {
     __typename
   }
 }
+
 fragment contentSearchLearnableContent on LearnableContent {
   id
   slug
@@ -15470,6 +15559,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     __typename
   }
 }
+
 fragment contentSearchLearnableContent on LearnableContent {
   id
   slug
@@ -15496,6 +15586,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     __typename
   }
 }
+
 fragment contentSearchLearnableContent on LearnableContent {
   id
   slug
@@ -15510,6 +15601,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     __typename
   }
 }
+
 fragment contentSearchLearnableContent on LearnableContent {
   id
   slug
@@ -15524,6 +15616,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     __typename
   }
 }
+
 fragment contentSearchLearnableContent on LearnableContent {
   id
   slug
@@ -15555,6 +15648,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     __typename
   }
 }
+
 fragment contentSearchLearnableContent on LearnableContent {
   id
   slug
@@ -15569,6 +15663,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     __typename
   }
 }
+
 fragment contentSearchLearnableContent on LearnableContent {
   id
   slug

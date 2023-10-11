@@ -4,6 +4,7 @@ query contentEditorGetProjectRevision($id: String!) {
     __typename
   }
 }
+
 fragment ProjectRevision on ProjectRevision {
   id
   contentId

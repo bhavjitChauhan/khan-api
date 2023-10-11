@@ -11,6 +11,7 @@ mutation CreateTeamPageEntryMutation($content: TeamPageEntryInput!, $entryType: 
     __typename
   }
 }
+
 fragment entry on TeamPageEntryForEditing {
   id
   isPet

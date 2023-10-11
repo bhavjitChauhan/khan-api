@@ -26,6 +26,7 @@ mutation updateGoogleClassroom($googleClassId: String!, $googleClassName: String
     __typename
   }
 }
+
 fragment ClassroomData on StudentList {
   cacheId
   id

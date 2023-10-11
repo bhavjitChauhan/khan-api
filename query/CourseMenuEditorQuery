@@ -8,6 +8,7 @@ query CourseMenuEditorQuery {
     __typename
   }
 }
+
 fragment CourseMenuRevisionFields on CourseMenuRevision {
   id
   sha

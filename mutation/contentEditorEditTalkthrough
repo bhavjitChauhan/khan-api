@@ -13,6 +13,7 @@ mutation contentEditorEditTalkthrough($sha: String!, $input: EditTalkthroughInpu
     __typename
   }
 }
+
 fragment TalkthroughRevision on TalkthroughRevision {
   id
   contentId

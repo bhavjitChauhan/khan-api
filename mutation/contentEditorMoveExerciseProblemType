@@ -21,6 +21,7 @@ mutation contentEditorMoveExerciseProblemType($sourceContentId: String!, $target
     __typename
   }
 }
+
 fragment AssessmentItemRevision on AssessmentItemRevision {
   id
   contentKind

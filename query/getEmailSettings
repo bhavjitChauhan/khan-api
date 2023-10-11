@@ -27,6 +27,7 @@ query getEmailSettings($targetKaid: String) {
     __typename
   }
 }
+
 fragment EmailSubscriptionFields on EmailSubscriptions {
   allEmailSubscription {
     checked

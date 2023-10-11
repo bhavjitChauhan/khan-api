@@ -4,6 +4,7 @@ mutation khanLibraryCopyCourse($input: CopyCourse!) {
     __typename
   }
 }
+
 fragment CourseRevisionStructure on CourseRevision {
   id
   contentId

@@ -4,6 +4,7 @@ query courseEditorGetPublishedProject($contentId: String!) {
     __typename
   }
 }
+
 fragment LearnableContent on LearnableContent {
   id
   kind

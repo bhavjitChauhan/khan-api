@@ -39,6 +39,8 @@ query getNotificationsForUser($after: ID) {
   }
 }
 
+
+
 fragment AssignmentCreatedNotificationType on AssignmentCreatedNotification {
   numAssignments
   contentTitle

@@ -11,6 +11,7 @@ mutation UpdateTeamPageEntry($entryId: ID!, $content: TeamPageEntryInput!) {
     __typename
   }
 }
+
 fragment entry on TeamPageEntryForEditing {
   id
   isPet

@@ -4,6 +4,7 @@ query GetAssessmentItemTags {
     __typename
   }
 }
+
 fragment AssessmentItemTagFields on AssessmentItemTag {
   editId: id
   id: urlsafeTag

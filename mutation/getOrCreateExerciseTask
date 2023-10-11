@@ -113,6 +113,7 @@ mutation getOrCreateExerciseTask($input: GetOrCreateExerciseTaskInput!) {
     __typename
   }
 }
+
 fragment exerciseTaskUserExerciseFields on UserExercise {
   exerciseModel: exercise {
     id

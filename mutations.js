@@ -276,6 +276,7 @@ export default {
     __typename
   }
 }
+
 fragment AssignmentInfoFragment on Assignment {
   id
   contents {
@@ -410,6 +411,7 @@ fragment AssignmentInfoFragment on Assignment {
     __typename
   }
 }
+
 fragment userExerciseFields on UserExercise {
   exerciseModel: exercise {
     id
@@ -797,6 +799,7 @@ fragment userExerciseFields on UserExercise {
     __typename
   }
 }
+
 fragment ArticleRevision on ArticleRevision {
   id
   contentId
@@ -840,6 +843,7 @@ fragment ArticleRevision on ArticleRevision {
     __typename
   }
 }
+
 fragment AssessmentItemRevision on AssessmentItemRevision {
   id
   contentKind
@@ -921,6 +925,7 @@ fragment ExerciseRevision on ExerciseRevision {
     __typename
   }
 }
+
 fragment VideoRevision on VideoRevision {
   id
   contentId
@@ -968,6 +973,7 @@ fragment VideoRevision on VideoRevision {
     __typename
   }
 }
+
 fragment ArticleRevision on ArticleRevision {
   id
   contentId
@@ -1023,6 +1029,7 @@ fragment ArticleRevision on ArticleRevision {
     __typename
   }
 }
+
 fragment AssessmentItemRevision on AssessmentItemRevision {
   id
   contentKind
@@ -1104,6 +1111,7 @@ fragment ExerciseRevision on ExerciseRevision {
     __typename
   }
 }
+
 fragment AssessmentItemRevision on AssessmentItemRevision {
   id
   contentKind
@@ -1185,6 +1193,7 @@ fragment ExerciseRevision on ExerciseRevision {
     __typename
   }
 }
+
 fragment ProjectRevision on ProjectRevision {
   id
   contentId
@@ -1209,6 +1218,7 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }
+
 fragment TalkthroughRevision on TalkthroughRevision {
   id
   contentId
@@ -1233,6 +1243,7 @@ fragment TalkthroughRevision on TalkthroughRevision {
     __typename
   }
 }
+
 fragment VideoRevision on VideoRevision {
   id
   contentId
@@ -1288,6 +1299,7 @@ fragment VideoRevision on VideoRevision {
     __typename
   }
 }
+
 fragment AssessmentItemRevision on AssessmentItemRevision {
   id
   contentKind
@@ -1445,6 +1457,7 @@ fragment ExerciseRevision on ExerciseRevision {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId
@@ -1573,6 +1586,7 @@ fragment CourseStructure on CourseRevision {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId
@@ -1701,6 +1715,7 @@ fragment CourseStructure on CourseRevision {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId
@@ -1829,6 +1844,7 @@ fragment CourseStructure on CourseRevision {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId
@@ -1957,6 +1973,7 @@ fragment CourseStructure on CourseRevision {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId
@@ -2085,6 +2102,7 @@ fragment CourseStructure on CourseRevision {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId
@@ -2213,6 +2231,7 @@ fragment CourseStructure on CourseRevision {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId
@@ -2341,6 +2360,7 @@ fragment CourseStructure on CourseRevision {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId
@@ -2469,6 +2489,7 @@ fragment CourseStructure on CourseRevision {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId
@@ -2597,6 +2618,7 @@ fragment CourseStructure on CourseRevision {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId
@@ -2725,6 +2747,7 @@ fragment CourseStructure on CourseRevision {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId
@@ -2853,6 +2876,7 @@ fragment CourseStructure on CourseRevision {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId
@@ -2981,6 +3005,7 @@ fragment CourseStructure on CourseRevision {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId
@@ -3109,6 +3134,7 @@ fragment CourseStructure on CourseRevision {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId
@@ -3262,6 +3288,7 @@ fragment CourseStructure on CourseRevision {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId
@@ -3387,6 +3414,7 @@ fragment CourseStructure on CourseRevision {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId
@@ -3519,6 +3547,7 @@ fragment CourseStructure on CourseRevision {
     __typename
   }
 }
+
 fragment CourseMenuRevisionFields on CourseMenuRevision {
   id
   sha
@@ -3553,6 +3582,7 @@ fragment CourseMenuRevisionFields on CourseMenuRevision {
     __typename
   }
 }
+
 fragment CourseMenuRevisionFields on CourseMenuRevision {
   id
   sha
@@ -3591,6 +3621,7 @@ fragment CourseMenuRevisionFields on CourseMenuRevision {
     __typename
   }
 }
+
 fragment AssessmentItemTagFields on AssessmentItemTag {
   editId: id
   id: urlsafeTag
@@ -3610,6 +3641,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
     __typename
   }
 }
+
 fragment AssignmentInfoFragment on Assignment {
   id
   contents {
@@ -3785,6 +3817,7 @@ fragment AssignmentInfoFragment on Assignment {
     __typename
   }
 }
+
 fragment ClassroomData on StudentList {
   cacheId
   id
@@ -3863,6 +3896,7 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     __typename
   }
 }
+
 fragment Program on Program {
   id
   latestRevision {
@@ -3903,6 +3937,7 @@ fragment Program on Program {
     __typename
   }
 }
+
 fragment entry on TeamPageEntryForEditing {
   id
   isPet
@@ -4527,6 +4562,7 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }
+
 fragment exerciseTaskUserExerciseFields on UserExercise {
   exerciseModel: exercise {
     id
@@ -4643,6 +4679,7 @@ fragment exerciseTaskUserExerciseFields on UserExercise {
     __typename
   }
 }
+
 fragment userExerciseFields on UserExercise {
   exerciseModel: exercise {
     id
@@ -4834,6 +4871,7 @@ fragment userTaskFields on PracticeUserTask {
     __typename
   }
 }
+
 fragment gtp_checkpointFragment on Checkpoint {
   id
   stages {
@@ -4896,6 +4934,7 @@ fragment gtp_checkpointFragment on Checkpoint {
     __typename
   }
 }
+
 fragment gtp_practiceTestFragment on PracticeTest {
   id
   practiceTestId
@@ -5075,6 +5114,7 @@ fragment gtp_taskFragment on Task {
     __typename
   }
 }
+
 fragment gtp_practiceTestFragment on PracticeTest {
   id
   practiceTestId
@@ -5167,6 +5207,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
     __typename
   }
 }
+
 fragment gtp_practiceTestFragment on PracticeTest {
   id
   practiceTestId
@@ -5337,6 +5378,7 @@ fragment gtp_taskFragment on Task {
     __typename
   }
 }
+
 fragment gtp_taskFragment on Task {
   id
   kaid
@@ -5470,6 +5512,7 @@ fragment gtp_taskFragment on Task {
     __typename
   }
 }
+
 fragment gtp_checkpointFragment on Checkpoint {
   id
   stages {
@@ -5531,6 +5574,7 @@ fragment gtp_checkpointFragment on Checkpoint {
     __typename
   }
 }
+
 fragment gtp_practiceTestFragment on PracticeTest {
   id
   practiceTestId
@@ -5729,6 +5773,7 @@ fragment gtp_taskFragment on Task {
     __typename
   }
 }
+
 fragment gtp_checkpointFragment on Checkpoint {
   id
   stages {
@@ -6025,6 +6070,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
     __typename
   }
 }
+
 fragment gtp_checkpointFragment on Checkpoint {
   id
   stages {
@@ -6333,6 +6379,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
     __typename
   }
 }
+
 fragment gtp_checkpointFragment on Checkpoint {
   id
   stages {
@@ -6494,6 +6541,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
     __typename
   }
 }
+
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {
@@ -6779,6 +6827,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
     __typename
   }
 }
+
 fragment BaseFolder on Folder {
   id
   name
@@ -6819,6 +6868,7 @@ fragment PublishedCourseRevisionFragment on CourseRevision {
     __typename
   }
 }
+
 fragment CourseRevisionStructure on CourseRevision {
   id
   contentId
@@ -6865,6 +6915,7 @@ fragment CourseRevisionStructure on CourseRevision {
     __typename
   }
 }
+
 fragment CourseRevisionStructure on CourseRevision {
   id
   contentId
@@ -6920,6 +6971,7 @@ fragment CourseRevisionStructure on CourseRevision {
     __typename
   }
 }
+
 fragment khanLibraryDomainRevision on DomainRevision {
   id
   sha
@@ -6937,6 +6989,7 @@ fragment khanLibraryDomainRevision on DomainRevision {
     __typename
   }
 }
+
 fragment CourseRevisionStructure on CourseRevision {
   id
   contentId
@@ -7645,6 +7698,7 @@ fragment CourseRevisionStructure on CourseRevision {
     __typename
   }
 }
+
 fragment AssignmentInfoFragment on Assignment {
   id
   contents {
@@ -7705,6 +7759,7 @@ fragment AssignmentInfoFragment on Assignment {
     __typename
   }
 }
+
 fragment entry on TeamPageEntryForEditing {
   id
   isPet
@@ -8981,6 +9036,7 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }
+
 fragment Program on Program {
   id
   latestRevision {
@@ -9207,6 +9263,7 @@ fragment Program on Program {
     __typename
   }
 }
+
 fragment AssessmentItemTagFields on AssessmentItemTag {
   editId: id
   id: urlsafeTag
@@ -9227,6 +9284,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
     __typename
   }
 }
+
 fragment AssignmentInfoFragment on Assignment {
   id
   contents {
@@ -9628,6 +9686,7 @@ fragment AssignmentInfoFragment on Assignment {
     __typename
   }
 }
+
 fragment ClassroomData on StudentList {
   cacheId
   id
@@ -9804,6 +9863,7 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     __typename
   }
 }
+
 fragment Program on Program {
   id
   latestRevision {
@@ -10072,6 +10132,7 @@ fragment Program on Program {
     __typename
   }
 }
+
 fragment entry on TeamPageEntryForEditing {
   id
   isPet

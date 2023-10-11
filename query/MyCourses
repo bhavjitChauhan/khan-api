@@ -59,6 +59,7 @@ query MyCourses {
     __typename
   }
 }
+
 fragment CourseProgress on SubjectProgress {
   topic {
     domainSlug

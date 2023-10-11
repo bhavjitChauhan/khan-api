@@ -94,6 +94,7 @@ mutation attemptProblem($input: AttemptProblemInput!) {
     __typename
   }
 }
+
 fragment userExerciseFields on UserExercise {
   exerciseModel: exercise {
     id

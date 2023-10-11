@@ -35,6 +35,7 @@ mutation gtp_submitExpressTask($taskId: ID!, $taskType: String!, $newTaskState: 
     __typename
   }
 }
+
 fragment gtp_checkpointFragment on Checkpoint {
   id
   stages {

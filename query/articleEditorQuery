@@ -11,6 +11,7 @@ query articleEditorQuery($contentId: String!) {
     __typename
   }
 }
+
 fragment ArticleRevision on ArticleRevision {
   id
   contentId

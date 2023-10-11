@@ -22,6 +22,7 @@ query getInitialDataForPrePhantomUser($exerciseId: ID!, $input: AssessmentItemIn
     __typename
   }
 }
+
 fragment userExerciseFields on UserExercise {
   exerciseModel: exercise {
     id

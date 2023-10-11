@@ -4,6 +4,7 @@ query CourseEditorGetCourse($courseId: String!, $snapshotId: Int) {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId

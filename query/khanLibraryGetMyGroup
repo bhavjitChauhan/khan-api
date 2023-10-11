@@ -7,6 +7,7 @@ query khanLibraryGetMyGroup {
     __typename
   }
 }
+
 fragment BaseFolder on Folder {
   id
   name

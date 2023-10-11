@@ -11,6 +11,7 @@ mutation CourseMenuEditor_EditCourseMenuRevision($sha: String!, $updatedCourseMe
     __typename
   }
 }
+
 fragment CourseMenuRevisionFields on CourseMenuRevision {
   id
   sha
