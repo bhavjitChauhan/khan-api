@@ -60,7 +60,6 @@ query MyCoursesViaGateway {
   }
 }
 
-
 fragment CourseProgress on SubjectProgress {
   topic {
     domainSlug
