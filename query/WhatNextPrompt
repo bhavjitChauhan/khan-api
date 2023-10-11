@@ -2,7 +2,11 @@ query WhatNextPrompt($assignmentsPageSize: Int, $assignmentsOrderBy: AssignmentO
   user {
     id
     kaid
-    assignmentsPage(pageSize: $assignmentsPageSize, orderBy: $assignmentsOrderBy, dueAfter: $assignmentsDueAfter) {
+    assignmentsPage(
+      pageSize: $assignmentsPageSize
+      orderBy: $assignmentsOrderBy
+      dueAfter: $assignmentsDueAfter
+    ) {
       assignments {
         id
         contents {

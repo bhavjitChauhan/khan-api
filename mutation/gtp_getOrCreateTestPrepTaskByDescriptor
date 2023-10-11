@@ -1,5 +1,11 @@
 mutation gtp_getOrCreateTestPrepTaskByDescriptor($examId: String!, $taskType: String!, $exerciseName: String!, $skillId: String, $level: String) {
-  getOrCreateTestPrepTaskByDescriptor(examId: $examId, taskType: $taskType, exerciseName: $exerciseName, skillId: $skillId, level: $level) {
+  getOrCreateTestPrepTaskByDescriptor(
+    examId: $examId
+    taskType: $taskType
+    exerciseName: $exerciseName
+    skillId: $skillId
+    level: $level
+  ) {
     task {
       ...gtp_taskFragment
       __typename
@@ -11,7 +17,6 @@ mutation gtp_getOrCreateTestPrepTaskByDescriptor($examId: String!, $taskType: St
     __typename
   }
 }
-
 fragment gtp_practiceTestFragment on PracticeTest {
   id
   practiceTestId
@@ -49,7 +54,6 @@ fragment gtp_practiceTestFragment on PracticeTest {
   }
   __typename
 }
-
 fragment gtp_taskFragment on Task {
   id
   kaid

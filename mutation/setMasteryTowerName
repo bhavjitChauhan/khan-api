@@ -1,5 +1,8 @@
 mutation setMasteryTowerName($classDescriptor: String!, $leaderboardName: String!) {
-  setMasteryTowerName(classDescriptor: $classDescriptor, leaderboardName: $leaderboardName) {
+  setMasteryTowerName(
+    classDescriptor: $classDescriptor
+    leaderboardName: $leaderboardName
+  ) {
     error {
       code
       __typename

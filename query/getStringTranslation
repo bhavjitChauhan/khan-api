@@ -1,5 +1,10 @@
 query getStringTranslation($message: String!, $messageContext: String, $messageLocation: String!, $kaLocale: KALocale!) {
-  stringTranslation(message: $message, messageContext: $messageContext, messageLocation: $messageLocation, kaLocale: $kaLocale) {
+  stringTranslation(
+    message: $message
+    messageContext: $messageContext
+    messageLocation: $messageLocation
+    kaLocale: $kaLocale
+  ) {
     translation
     found
     isAITranslated

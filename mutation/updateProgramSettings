@@ -1,5 +1,11 @@
 mutation updateProgramSettings($programId: ID!, $height: Int!, $width: Int!, $category: ProgramCategoryInput, $description: String) {
-  updateProgramSettings(programId: $programId, height: $height, width: $width, category: $category, description: $description) {
+  updateProgramSettings(
+    programId: $programId
+    height: $height
+    width: $width
+    category: $category
+    description: $description
+  ) {
     program {
       id
       height

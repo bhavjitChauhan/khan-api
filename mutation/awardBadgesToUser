@@ -1,5 +1,9 @@
 mutation awardBadgesToUser($kaid: String!, $badges: [String]!, $fromDevAdmin: Boolean) {
-  forceAwardBadges(awardeeKaid: $kaid, badgeNames: $badges, fromDevAdmin: $fromDevAdmin) {
+  forceAwardBadges(
+    awardeeKaid: $kaid
+    badgeNames: $badges
+    fromDevAdmin: $fromDevAdmin
+  ) {
     errors {
       badgeName
       __typename

@@ -1,5 +1,10 @@
 mutation createProgram($title: String!, $userAuthoredContentType: UserAuthoredContentType!, $revision: ProgramRevisionInput!, $curationNodeSlug: String!) {
-  createProgram(title: $title, userAuthoredContentType: $userAuthoredContentType, revision: $revision, curationNodeSlug: $curationNodeSlug) {
+  createProgram(
+    title: $title
+    userAuthoredContentType: $userAuthoredContentType
+    revision: $revision
+    curationNodeSlug: $curationNodeSlug
+  ) {
     program {
       ...Program
       __typename
@@ -12,7 +17,6 @@ mutation createProgram($title: String!, $userAuthoredContentType: UserAuthoredCo
     __typename
   }
 }
-
 fragment Program on Program {
   id
   latestRevision {

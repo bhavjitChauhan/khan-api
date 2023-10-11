@@ -7,8 +7,7 @@ export default {
     }
     __typename
   }
-}
-`,
+}`,
   acceptCoachRequestFromNotifMutation: `mutation acceptCoachRequestFromNotifMutation($coachKaid: String!) {
   acceptCoachRequest(coachKaid: $coachKaid) {
     error {
@@ -17,8 +16,7 @@ export default {
     }
     __typename
   }
-}
-`,
+}`,
   acceptCoachRequestMutation: `mutation acceptCoachRequestMutation($coachKaid: String!, $studentKaid: String) {
   acceptCoachRequest(coachKaid: $coachKaid, studentKaid: $studentKaid) {
     error {
@@ -27,8 +25,7 @@ export default {
     }
     __typename
   }
-}
-`,
+}`,
   AcceptTOS: `mutation AcceptTOS {
   acceptTos {
     error {
@@ -37,8 +34,7 @@ export default {
     }
     __typename
   }
-}
-`,
+}`,
   accountTransitionMutation: `mutation accountTransitionMutation($targetKaid: String!, $childOrAdult: String!) {
   accountTransition(targetKaid: $targetKaid, childOrAdult: $childOrAdult) {
     user {
@@ -69,8 +65,7 @@ export default {
     }
     __typename
   }
-}
-`,
+}`,
   addCoachAsAdminMutation: `mutation addCoachAsAdminMutation($studentKaid: String!, $coachKaid: String!) {
   addCoachAsAdmin(studentKaid: $studentKaid, coachKaid: $coachKaid) {
     coach {
@@ -184,8 +179,7 @@ export default {
     }
     __typename
   }
-}
-`,
+}`,
   AddMappersSuggestions: `mutation AddMappersSuggestions($kaid: String!, $categories: [AddMappersCategoryInput]!) {
   addMappersCategories(studentKaid: $kaid, categories: $categories) {
     mappersSuggestions {
@@ -208,8 +202,7 @@ export default {
     }
     __typename
   }
-}
-`,
+}`,
   addParent: `mutation addParent($childKaid: String!, $parentKaid: String!) {
   setParentAsAdmin(childKaid: $childKaid, parentKaid: $parentKaid) {
     user {
@@ -237,8 +230,7 @@ export default {
     }
     __typename
   }
-}
-`,
+}`,
   addStudentsToClassrooms: `mutation addStudentsToClassrooms($kaids: [ID!]!, $classroomIds: [ID!]!) {
   addStudentsToClassrooms(kaids: $kaids, classroomIds: $classroomIds) {
     coach {
@@ -274,8 +266,7 @@ export default {
     }
     __typename
   }
-}
-`,
+}`,
   archiveContentAssignments: `mutation archiveContentAssignments($assignmentIds: [ID]!) {
   archiveAssignments(ids: $assignmentIds) {
     assignments {
@@ -284,6 +275,35 @@ export default {
     }
     __typename
   }
+}
+fragment AssignmentInfoFragment on Assignment {
+  id
+  contents {
+    id
+    title
+    __typename
+  }
+  studentList {
+    id
+    cacheId
+    name
+    __typename
+  }
+  students {
+    id
+    kaid
+    __typename
+  }
+  coach {
+    id
+    kaid
+    __typename
+  }
+  startDate
+  dueDate
+  isDraft
+  subjectSlug
+  __typename
 }`,
   archiveSubjectMasteryAssignment: `mutation archiveSubjectMasteryAssignment($assignmentId: ID!) {
   archiveSubjectMasteryAssignments(ids: [$assignmentId]) {
@@ -496,15 +516,18 @@ fragment userExerciseFields on UserExercise {
   }
 }`,
   awardBadgesToUser: `mutation awardBadgesToUser($kaid: String!, $badges: [String]!, $fromDevAdmin: Boolean) {
-  forceAwardBadges(awardeeKaid: $kaid, badgeNames: $badges, fromDevAdmin: $fromDevAdmin) {
+  forceAwardBadges(
+    awardeeKaid: $kaid
+    badgeNames: $badges
+    fromDevAdmin: $fromDevAdmin
+  ) {
     errors {
       badgeName
       __typename
     }
     __typename
   }
-}
-`,
+}`,
   BanUserMutation: `mutation BanUserMutation($targetKaid: String!, $banReason: String!) {
   hellbanUser(targetKaid: $targetKaid, hellbanReason: $banReason) {
     error {
@@ -539,8 +562,7 @@ fragment userExerciseFields on UserExercise {
     }
     __typename
   }
-}
-`,
+}`,
   cancelPayPalRecurringDonation: `mutation cancelPayPalRecurringDonation($paypalProfileID: String!) {
   cancelPayPalRecurringDonation(paypalProfileID: $paypalProfileID) {
     success
@@ -641,8 +663,7 @@ fragment userExerciseFields on UserExercise {
     }
     __typename
   }
-}
-`,
+}`,
   clearBrandNewNotifications: `mutation clearBrandNewNotifications {
   clearBrandNewNotifications {
     error {
@@ -665,7 +686,11 @@ fragment userExerciseFields on UserExercise {
   }
 }`,
   cleverCreateAccountWithEmailV2Mutation: `mutation cleverCreateAccountWithEmailV2Mutation($transferToken: String!, $email: String!, $birthdate: Date) {
-  cleverCreateAccountWithEmailV2(transferToken: $transferToken, email: $email, birthdate: $birthdate) {
+  cleverCreateAccountWithEmailV2(
+    transferToken: $transferToken
+    email: $email
+    birthdate: $birthdate
+  ) {
     error {
       code
       __typename
@@ -687,8 +712,7 @@ fragment userExerciseFields on UserExercise {
     }
     __typename
   }
-}
-`,
+}`,
   cleverDistrictsSignupV2Mutation: `mutation cleverDistrictsSignupV2Mutation($udiUuid: String!, $cleverId: String!) {
   cleverDistrictsSignupV2(udiUuid: $udiUuid, cleverId: $cleverId) {
     error {
@@ -724,7 +748,17 @@ fragment userExerciseFields on UserExercise {
   }
 }`,
   completeSignupMutation: `mutation completeSignupMutation($nickname: String!, $password: String!, $username: String!, $birthdate: Date, $inviteId: String, $isParent: Boolean, $isTeacher: Boolean, $token: String, $continueUrl: String) {
-  completeSignup(nickname: $nickname, password: $password, username: $username, birthdate: $birthdate, inviteId: $inviteId, isParent: $isParent, isTeacher: $isTeacher, token: $token, continueUrl: $continueUrl) {
+  completeSignup(
+    nickname: $nickname
+    password: $password
+    username: $username
+    birthdate: $birthdate
+    inviteId: $inviteId
+    isParent: $isParent
+    isTeacher: $isTeacher
+    token: $token
+    continueUrl: $continueUrl
+  ) {
     user {
       id
       kaid
@@ -747,8 +781,7 @@ fragment userExerciseFields on UserExercise {
     }
     __typename
   }
-}
-`,
+}`,
   contentEditorCreateArticle: `mutation contentEditorCreateArticle($input: NewArticleInput!) {
   createArticle(input: $input) {
     article {
@@ -3607,7 +3640,12 @@ fragment AssignmentInfoFragment on Assignment {
   __typename
 }`,
   createChildMutation: `mutation createChildMutation($birthdate: Date!, $username: String!, $password: String!, $nickname: String) {
-  createChild(birthdate: $birthdate, username: $username, password: $password, nickname: $nickname) {
+  createChild(
+    birthdate: $birthdate
+    username: $username
+    password: $password
+    nickname: $nickname
+  ) {
     child {
       id
       nickname
@@ -3620,8 +3658,7 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   createClassroomMutation: `mutation createClassroomMutation($classroomName: String!, $subscribeToUpdates: Boolean) {
   createClassroom(
     classroomName: $classroomName
@@ -3684,8 +3721,7 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   createCustomBadge: `mutation createCustomBadge($input: CreateCustomBadgeInput) {
   createCustomBadge(input: $input) {
     error {
@@ -3784,8 +3820,7 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     }
     __typename
   }
-}
-`,
+}`,
   createOffensiveTerm: `mutation createOffensiveTerm($term: String!, $kaLocale: String, $isAiGuide: Boolean) {
   createNewOffensiveTerm(term: $term, kaLocale: $kaLocale, isAiGuide: $isAiGuide) {
     offensiveTerm {
@@ -3795,8 +3830,7 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     }
     __typename
   }
-}
-`,
+}`,
   createOfficialClarification: `mutation createOfficialClarification($clarification: CreateOfficialClarificationInput!) {
   createOfficialClarification(clarification: $clarification) {
     newClarification {
@@ -3811,7 +3845,12 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
   }
 }`,
   createProgram: `mutation createProgram($title: String!, $userAuthoredContentType: UserAuthoredContentType!, $revision: ProgramRevisionInput!, $curationNodeSlug: String!) {
-  createProgram(title: $title, userAuthoredContentType: $userAuthoredContentType, revision: $revision, curationNodeSlug: $curationNodeSlug) {
+  createProgram(
+    title: $title
+    userAuthoredContentType: $userAuthoredContentType
+    revision: $revision
+    curationNodeSlug: $curationNodeSlug
+  ) {
     program {
       ...Program
       __typename
@@ -3824,7 +3863,6 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     __typename
   }
 }
-
 fragment Program on Program {
   id
   latestRevision {
@@ -3836,8 +3874,7 @@ fragment Program on Program {
   url
   userAuthoredContentType
   __typename
-}
-`,
+}`,
   createStudentAccounts: `mutation createStudentAccounts($studentListKey: String, $students: [CreateStudentsInput]!) {
   createStudents(students: $students, studentListKey: $studentListKey) {
     students {
@@ -3948,8 +3985,7 @@ fragment entry on TeamPageEntryForEditing {
     wasSuccessful
     __typename
   }
-}
-`,
+}`,
   deleteCoachRequest: `mutation deleteCoachRequest($studentEmail: String!) {
   deleteCoachRequest(studentEmail: $studentEmail) {
     coach: user {
@@ -3985,8 +4021,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   deleteDonationAsk: `mutation deleteDonationAsk($id: String!) {
   deleteDonationAsk(id: $id) {
     success
@@ -3996,8 +4031,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   DeleteDub: `mutation DeleteDub($input: String!) {
   deleteDub(sourceYouTubeId: $input) {
     error {
@@ -4047,22 +4081,19 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   DeleteFlagMutation: `mutation DeleteFlagMutation($flagName: String!) {
   removeFlag(name: $flagName) {
     wasSuccess
     __typename
   }
-}
-`,
+}`,
   deleteOffensiveTerm: `mutation deleteOffensiveTerm($id: ID!) {
   deleteOffensiveTerm(id: $id) {
     success
     __typename
   }
-}
-`,
+}`,
   deleteOfficialClarification: `mutation deleteOfficialClarification($id: ID!) {
   deleteOfficialClarification(id: $id) {
     error {
@@ -4091,8 +4122,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   DeletePostMutation: `mutation DeletePostMutation($postKey: String!) {
   hideFeedback(feedbackKey: $postKey) {
     error {
@@ -4111,8 +4141,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   DevadminCreateAuthor: `mutation DevadminCreateAuthor($name: String!) {
   createAuthorOption(name: $name) {
     author {
@@ -4137,15 +4166,18 @@ fragment entry on TeamPageEntryForEditing {
   }
 }`,
   devadminTriggerAlarm: `mutation devadminTriggerAlarm($level: AlarmLevel!, $subject: String!, $contents: String) {
-  devadminTriggerAlarmV2(level: $level, subjectLine: $subject, contents: $contents) {
+  devadminTriggerAlarmV2(
+    level: $level
+    subjectLine: $subject
+    contents: $contents
+  ) {
     error {
       code
       __typename
     }
     __typename
   }
-}
-`,
+}`,
   disableAIGuide: `mutation disableAIGuide($kaid: String!) {
   disableAIGuide(kaid: $kaid, reason: MODERATION) {
     error {
@@ -4272,13 +4304,17 @@ fragment entry on TeamPageEntryForEditing {
   }
 }`,
   encodeAppleLoginState: `mutation encodeAppleLoginState($action: Action!, $continueUrl: String!, $role: UserRole, $signupCodes: [String]) {
-  encodeAppleLoginState(action: $action, continueUrl: $continueUrl, role: $role, signupCodes: $signupCodes) {
+  encodeAppleLoginState(
+    action: $action
+    continueUrl: $continueUrl
+    role: $role
+    signupCodes: $signupCodes
+  ) {
     redirectUri
     state
     __typename
   }
-}
-`,
+}`,
   endMasteryTowerSession: `mutation endMasteryTowerSession($classDescriptor: String!) {
   endMasteryTowerSession(classDescriptor: $classDescriptor) {
     error {
@@ -4287,8 +4323,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   enrollInAIGuide: `mutation enrollInAIGuide($kaid: String!, $enrollmentGroup: AIGuideEnrollmentGroup!) {
   enrollInAIGuide(kaid: $kaid, enrollmentGroup: $enrollmentGroup) {
     error {
@@ -4337,8 +4372,7 @@ fragment entry on TeamPageEntryForEditing {
     devOnlyLink
     __typename
   }
-}
-`,
+}`,
   ForgotPasswordMutation: `mutation ForgotPasswordMutation($email: String!) {
   forgotPassword(email: $email) {
     error {
@@ -4347,8 +4381,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   forgotPasswordSupport: `mutation forgotPasswordSupport($kaid: String!, $email: String!) {
   forgotPasswordSupport(kaid: $kaid, email: $email) {
     error {
@@ -4800,6 +4833,43 @@ fragment userTaskFields on PracticeUserTask {
     }
     __typename
   }
+}
+fragment gtp_checkpointFragment on Checkpoint {
+  id
+  stages {
+    numCreditedTasks
+    creditedTaskIds
+    goalTasks
+    stageIndex
+    stageDisplayNumber
+    startedAt
+    completedAt
+    incomingLevels {
+      name
+      level
+      __typename
+    }
+    focusAreas {
+      skillTitle
+      areaId
+      areaTitle
+      __typename
+    }
+    __typename
+  }
+  checkpointIndex
+  startedAt
+  completedAt
+  drillMode
+  isComplete
+  removedFromSchedule
+  hasDonePracticeTasks
+  numStages
+  canCreateNewStage
+  hasDonePracticeTasks
+  miniSectionStages
+  tmsTaskIds
+  __typename
 }`,
   gtp_deleteDataMutation: `mutation gtp_deleteDataMutation($examGroupId: String!) {
   deleteData(examGroupId: $examGroupId) {
@@ -4808,7 +4878,13 @@ fragment userTaskFields on PracticeUserTask {
   }
 }`,
   gtp_getOrCreateTestPrepTaskByDescriptor: `mutation gtp_getOrCreateTestPrepTaskByDescriptor($examId: String!, $taskType: String!, $exerciseName: String!, $skillId: String, $level: String) {
-  getOrCreateTestPrepTaskByDescriptor(examId: $examId, taskType: $taskType, exerciseName: $exerciseName, skillId: $skillId, level: $level) {
+  getOrCreateTestPrepTaskByDescriptor(
+    examId: $examId
+    taskType: $taskType
+    exerciseName: $exerciseName
+    skillId: $skillId
+    level: $level
+  ) {
     task {
       ...gtp_taskFragment
       __typename
@@ -4820,7 +4896,6 @@ fragment userTaskFields on PracticeUserTask {
     __typename
   }
 }
-
 fragment gtp_practiceTestFragment on PracticeTest {
   id
   practiceTestId
@@ -4858,7 +4933,6 @@ fragment gtp_practiceTestFragment on PracticeTest {
   }
   __typename
 }
-
 fragment gtp_taskFragment on Task {
   id
   kaid
@@ -4982,8 +5056,7 @@ fragment gtp_taskFragment on Task {
     __typename
   }
   __typename
-}
-`,
+}`,
   gtp_resetPracticeTestMutation: `mutation gtp_resetPracticeTestMutation($examId: String!, $taskId: String!) {
   resetPracticeTest(examId: $examId, taskId: $taskId) {
     error {
@@ -5001,6 +5074,69 @@ fragment gtp_taskFragment on Task {
     }
     __typename
   }
+}
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+fragment gtp_tpudFragment on TestPrepUserData {
+  id
+  examId
+  currentStage
+  currentCheckpoint
+  targetScore
+  diagnosticsStates {
+    type
+    state
+    __typename
+  }
+  onboardingState
+  hasSeededSkillLevels
+  hasUnlockedDrillMode
+  scoreInfo {
+    minScore
+    maxScore
+    __typename
+  }
+  schedule {
+    examDate
+    practiceTestDates
+    __typename
+  }
+  __typename
 }`,
   gtp_startExpressTask: `mutation gtp_startExpressTask($taskType: String!, $taskId: ID!) {
   startTask(taskType: $taskType, taskId: $taskId) {
@@ -5030,6 +5166,43 @@ fragment gtp_taskFragment on Task {
     }
     __typename
   }
+}
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
 }
 fragment gtp_taskFragment on Task {
   id
@@ -5296,6 +5469,43 @@ fragment gtp_taskFragment on Task {
     }
     __typename
   }
+}
+fragment gtp_checkpointFragment on Checkpoint {
+  id
+  stages {
+    numCreditedTasks
+    creditedTaskIds
+    goalTasks
+    stageIndex
+    stageDisplayNumber
+    startedAt
+    completedAt
+    incomingLevels {
+      name
+      level
+      __typename
+    }
+    focusAreas {
+      skillTitle
+      areaId
+      areaTitle
+      __typename
+    }
+    __typename
+  }
+  checkpointIndex
+  startedAt
+  completedAt
+  drillMode
+  isComplete
+  removedFromSchedule
+  hasDonePracticeTasks
+  numStages
+  canCreateNewStage
+  hasDonePracticeTasks
+  miniSectionStages
+  tmsTaskIds
+  __typename
 }`,
   gtp_startTask: `mutation gtp_startTask($taskType: String!, $taskId: ID!) {
   startTask(taskType: $taskType, taskId: $taskId) {
@@ -5320,6 +5530,43 @@ fragment gtp_taskFragment on Task {
     }
     __typename
   }
+}
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
 }
 fragment gtp_taskFragment on Task {
   id
@@ -5482,6 +5729,43 @@ fragment gtp_taskFragment on Task {
     __typename
   }
 }
+fragment gtp_checkpointFragment on Checkpoint {
+  id
+  stages {
+    numCreditedTasks
+    creditedTaskIds
+    goalTasks
+    stageIndex
+    stageDisplayNumber
+    startedAt
+    completedAt
+    incomingLevels {
+      name
+      level
+      __typename
+    }
+    focusAreas {
+      skillTitle
+      areaId
+      areaTitle
+      __typename
+    }
+    __typename
+  }
+  checkpointIndex
+  startedAt
+  completedAt
+  drillMode
+  isComplete
+  removedFromSchedule
+  hasDonePracticeTasks
+  numStages
+  canCreateNewStage
+  hasDonePracticeTasks
+  miniSectionStages
+  tmsTaskIds
+  __typename
+}
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {
@@ -5511,6 +5795,43 @@ fragment gtp_egudFragment on ExamGroupUserData {
     __typename
   }
   extendedTimeMultiplier
+  __typename
+}
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
+      maxScore
+      __typename
+    }
+    __typename
+  }
   __typename
 }
 fragment gtp_taskFragment on Task {
@@ -5633,6 +5954,32 @@ fragment gtp_taskFragment on Task {
       level
       __typename
     }
+    __typename
+  }
+  __typename
+}
+fragment gtp_tpudFragment on TestPrepUserData {
+  id
+  examId
+  currentStage
+  currentCheckpoint
+  targetScore
+  diagnosticsStates {
+    type
+    state
+    __typename
+  }
+  onboardingState
+  hasSeededSkillLevels
+  hasUnlockedDrillMode
+  scoreInfo {
+    minScore
+    maxScore
+    __typename
+  }
+  schedule {
+    examDate
+    practiceTestDates
     __typename
   }
   __typename
@@ -5678,6 +6025,43 @@ fragment gtp_taskFragment on Task {
     __typename
   }
 }
+fragment gtp_checkpointFragment on Checkpoint {
+  id
+  stages {
+    numCreditedTasks
+    creditedTaskIds
+    goalTasks
+    stageIndex
+    stageDisplayNumber
+    startedAt
+    completedAt
+    incomingLevels {
+      name
+      level
+      __typename
+    }
+    focusAreas {
+      skillTitle
+      areaId
+      areaTitle
+      __typename
+    }
+    __typename
+  }
+  checkpointIndex
+  startedAt
+  completedAt
+  drillMode
+  isComplete
+  removedFromSchedule
+  hasDonePracticeTasks
+  numStages
+  canCreateNewStage
+  hasDonePracticeTasks
+  miniSectionStages
+  tmsTaskIds
+  __typename
+}
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {
@@ -5715,6 +6099,43 @@ fragment gtp_essayScoresFragment on EssayScores {
     essays {
       examCompletionDate
       score
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
       maxScore
       __typename
     }
@@ -5845,6 +6266,32 @@ fragment gtp_taskFragment on Task {
     __typename
   }
   __typename
+}
+fragment gtp_tpudFragment on TestPrepUserData {
+  id
+  examId
+  currentStage
+  currentCheckpoint
+  targetScore
+  diagnosticsStates {
+    type
+    state
+    __typename
+  }
+  onboardingState
+  hasSeededSkillLevels
+  hasUnlockedDrillMode
+  scoreInfo {
+    minScore
+    maxScore
+    __typename
+  }
+  schedule {
+    examDate
+    practiceTestDates
+    __typename
+  }
+  __typename
 }`,
   gtp_updateExamGroupSettingsV2: `mutation gtp_updateExamGroupSettingsV2($examGroupId: String!, $practiceDaysInfo: [PracticeDaysInput!], $selectedCutoffs: [String!], $selectedExams: [String!], $extendedTimeMultiplier: Float, $exams: [ExamSettingsInput], $enableGtpSetupPage: Boolean) {
   updateExamGroupSettings(
@@ -5886,6 +6333,43 @@ fragment gtp_taskFragment on Task {
     __typename
   }
 }
+fragment gtp_checkpointFragment on Checkpoint {
+  id
+  stages {
+    numCreditedTasks
+    creditedTaskIds
+    goalTasks
+    stageIndex
+    stageDisplayNumber
+    startedAt
+    completedAt
+    incomingLevels {
+      name
+      level
+      __typename
+    }
+    focusAreas {
+      skillTitle
+      areaId
+      areaTitle
+      __typename
+    }
+    __typename
+  }
+  checkpointIndex
+  startedAt
+  completedAt
+  drillMode
+  isComplete
+  removedFromSchedule
+  hasDonePracticeTasks
+  numStages
+  canCreateNewStage
+  hasDonePracticeTasks
+  miniSectionStages
+  tmsTaskIds
+  __typename
+}
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {
@@ -5916,14 +6400,76 @@ fragment gtp_egudFragment on ExamGroupUserData {
   }
   extendedTimeMultiplier
   __typename
+}
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+fragment gtp_tpudFragment on TestPrepUserData {
+  id
+  examId
+  currentStage
+  currentCheckpoint
+  targetScore
+  diagnosticsStates {
+    type
+    state
+    __typename
+  }
+  onboardingState
+  hasSeededSkillLevels
+  hasUnlockedDrillMode
+  scoreInfo {
+    minScore
+    maxScore
+    __typename
+  }
+  schedule {
+    examDate
+    practiceTestDates
+    __typename
+  }
+  __typename
 }`,
   gtp_updateSubscriptionByToken: `mutation gtp_updateSubscriptionByToken($token: String!, $subscribe: Boolean!) {
   updateSubscriptionByToken(token: $token, subscribe: $subscribe) {
     success
     __typename
   }
-}
-`,
+}`,
   gtp_updateTask: `mutation gtp_updateTask($taskId: ID!, $taskType: String!, $newTaskState: JSONString!, $newTaskStateHash: ID!, $prevTaskStateHash: ID) {
   updateTask(
     taskId: $taskId
@@ -6102,6 +6648,32 @@ fragment gtp_taskFragment on Task {
     __typename
   }
   __typename
+}
+fragment gtp_tpudFragment on TestPrepUserData {
+  id
+  examId
+  currentStage
+  currentCheckpoint
+  targetScore
+  diagnosticsStates {
+    type
+    state
+    __typename
+  }
+  onboardingState
+  hasSeededSkillLevels
+  hasUnlockedDrillMode
+  scoreInfo {
+    minScore
+    maxScore
+    __typename
+  }
+  schedule {
+    examDate
+    practiceTestDates
+    __typename
+  }
+  __typename
 }`,
   hideProgramEverywhere: `mutation hideProgramEverywhere($programID: ID!, $hide: Boolean!) {
   hideProgramEverywhere(programID: $programID, hide: $hide) {
@@ -6131,8 +6703,7 @@ fragment gtp_taskFragment on Task {
     }
     __typename
   }
-}
-`,
+}`,
   InsertOrUpdateDub: `mutation InsertOrUpdateDub($input: DubInsertOrUpdateInputEntry!) {
   insertOrUpdateDub(dubInputEntry: $input) {
     error {
@@ -6164,8 +6735,7 @@ fragment gtp_taskFragment on Task {
     }
     __typename
   }
-}
-`,
+}`,
   joinAIGuideWaitlist: `mutation joinAIGuideWaitlist {
   joinAIGuideWaitlist {
     error {
@@ -6182,8 +6752,7 @@ fragment gtp_taskFragment on Task {
     errors
     __typename
   }
-}
-`,
+}`,
   joinStudentMutation: `mutation joinStudentMutation($classCode: String!) {
   joinStudent(classCode: $classCode) {
     errors
@@ -6453,8 +7022,7 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   linkCleverAccountV2Mutation: `mutation linkCleverAccountV2Mutation($transferToken: String!) {
   linkCleverAccountV2(transferToken: $transferToken) {
     error {
@@ -6463,8 +7031,7 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   linkCurrentUserToUDIByUUIDMutation: `mutation linkCurrentUserToUDIByUUIDMutation($uuid: ID!, $loginType: String!, $method: UserDistrictInfoActivationMethod) {
   linkCurrentUserToUDIByUUID(uuid: $uuid, loginType: $loginType, method: $method) {
     succeeded
@@ -6495,8 +7062,7 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   linkThirdPartyAccountMutation: `mutation linkThirdPartyAccountMutation($loginType: String!, $token: String!) {
   linkThirdPartyAccount(loginType: $loginType, token: $token) {
     error {
@@ -6510,8 +7076,7 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   linkThirdPartyOAuth: `mutation linkThirdPartyOAuth($oauthType: ThirdPartyOAuthType!, $password: String!, $accessToken: String!) {
   linkThirdPartyAuth(
     oauthType: $oauthType
@@ -6574,8 +7139,7 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   linkUserByClassCodeV2: `mutation linkUserByClassCodeV2($email: String!, $classCode: String!) {
   linkUserByClassCodeV2(email: $email, classCode: $classCode) {
     succeeded
@@ -6587,7 +7151,12 @@ fragment CourseRevisionStructure on CourseRevision {
   }
 }`,
   loginWithAppleAuthCodeAndState: `mutation loginWithAppleAuthCodeAndState($authCode: String!, $state: String!, $userData: AppleUserData, $role: UserRole) {
-  loginWithAppleAuthCodeAndState(authCode: $authCode, state: $state, userData: $userData, role: $role) {
+  loginWithAppleAuthCodeAndState(
+    authCode: $authCode
+    state: $state
+    userData: $userData
+    role: $role
+  ) {
     error {
       code
       accessToken
@@ -6611,8 +7180,7 @@ fragment CourseRevisionStructure on CourseRevision {
     isFirstLogin
     __typename
   }
-}
-`,
+}`,
   loginWithClasslink: `mutation loginWithClasslink($classlinkCode: String, $useDevClasslinkClient: Boolean) {
   loginWithClasslink(
     classlinkCode: $classlinkCode
@@ -6643,7 +7211,13 @@ fragment CourseRevisionStructure on CourseRevision {
   }
 }`,
   loginWithCleverMutation: `mutation loginWithCleverMutation($code: String!, $reauth: Boolean!, $fromDevApp: Boolean!, $isMap: Boolean!, $referrerUrl: String!) {
-  loginWithClever(code: $code, reauth: $reauth, fromDevApp: $fromDevApp, isMap: $isMap, referrerUrl: $referrerUrl) {
+  loginWithClever(
+    code: $code
+    reauth: $reauth
+    fromDevApp: $fromDevApp
+    isMap: $isMap
+    referrerUrl: $referrerUrl
+  ) {
     error {
       code
       cleverUserInfo {
@@ -6676,8 +7250,7 @@ fragment CourseRevisionStructure on CourseRevision {
     transferToken
     __typename
   }
-}
-`,
+}`,
   loginWithFacebookMutation: `mutation loginWithFacebookMutation($token: String!, $role: UserRole, $inviteId: String) {
   loginWithFacebook(token: $token, role: $role, inviteId: $inviteId) {
     user {
@@ -7008,7 +7581,12 @@ fragment CourseRevisionStructure on CourseRevision {
   }
 }`,
   populateCompleteSignup: `mutation populateCompleteSignup($token: String, $inviteId: String, $parent: Boolean, $hCaptchaResponseToken: String) {
-  populateCompleteSignup(token: $token, inviteId: $inviteId, parent: $parent, hCaptchaResponseToken: $hCaptchaResponseToken) {
+  populateCompleteSignup(
+    token: $token
+    inviteId: $inviteId
+    parent: $parent
+    hCaptchaResponseToken: $hCaptchaResponseToken
+  ) {
     token
     inviteId
     isParent
@@ -7026,8 +7604,7 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-`,
+}`,
   postloginJoinStudentMutation: `mutation postloginJoinStudentMutation($classCode: String!) {
   joinStudent(classCode: $classCode) {
     error {
@@ -7067,6 +7644,35 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
+}
+fragment AssignmentInfoFragment on Assignment {
+  id
+  contents {
+    id
+    title
+    __typename
+  }
+  studentList {
+    id
+    cacheId
+    name
+    __typename
+  }
+  students {
+    id
+    kaid
+    __typename
+  }
+  coach {
+    id
+    kaid
+    __typename
+  }
+  startDate
+  dueDate
+  isDraft
+  subjectSlug
+  __typename
 }`,
   publishStandardMappings: `mutation publishStandardMappings($set: String!, $content: String!) {
   publishStandardMappings(setId: $set, contentDescriptor: $content) {
@@ -7158,8 +7764,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   reauthWithPasswordMutation: `mutation reauthWithPasswordMutation($password: String!) {
   reauthWithPassword(password: $password) {
     error {
@@ -7182,8 +7787,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   rejectCoachRequestFromNotifMutation: `mutation rejectCoachRequestFromNotifMutation($coachKaid: String!) {
   deleteCoachRequestAsStudent(coachKaid: $coachKaid) {
     error {
@@ -7192,8 +7796,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   rejectCoachRequestMutation: `mutation rejectCoachRequestMutation($coachKaid: String!, $studentKaid: String) {
   deleteCoachRequestAsStudent(coachKaid: $coachKaid, studentKaid: $studentKaid) {
     error {
@@ -7202,8 +7805,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   removeCoachees: `mutation removeCoachees($coachKaid: String!, $studentKaids: [String]!) {
   removeCoachees(coachKaid: $coachKaid, studentKaids: $studentKaids) {
     removedKaids
@@ -7332,8 +7934,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   resendInvitationMutation: `mutation resendInvitationMutation($coacheeEmail: String!) {
   resendInvitation(coacheeEmail: $coacheeEmail) {
     error {
@@ -7379,8 +7980,7 @@ fragment entry on TeamPageEntryForEditing {
     identifier
     __typename
   }
-}
-`,
+}`,
   RestartTask: `mutation RestartTask($key: String!) {
   restartTask(input: {key: $key}) {
     error {
@@ -7639,15 +8239,21 @@ fragment entry on TeamPageEntryForEditing {
   }
 }`,
   SetAIGuideInteractionReaction: `mutation SetAIGuideInteractionReaction($interactionId: ID!, $reaction: String, $note: String, $rewrittenResponse: String, $rating: Int, $sentiment: String) {
-  setAIGuideInteractionReaction(interactionId: $interactionId, reaction: $reaction, note: $note, rewrittenResponse: $rewrittenResponse, rating: $rating, sentiment: $sentiment) {
+  setAIGuideInteractionReaction(
+    interactionId: $interactionId
+    reaction: $reaction
+    note: $note
+    rewrittenResponse: $rewrittenResponse
+    rating: $rating
+    sentiment: $sentiment
+  ) {
     error {
       code
       __typename
     }
     __typename
   }
-}
-`,
+}`,
   SetBasicSettings: `mutation SetBasicSettings($kaid: String!, $nickname: String, $username: String, $soundOn: Boolean, $userLanguage: String, $region: String, $birthdate: String) {
   setSettings(
     kaid: $kaid
@@ -7750,15 +8356,17 @@ fragment entry on TeamPageEntryForEditing {
   }
 }`,
   setClassroomMasteryTowersGoal: `mutation setClassroomMasteryTowersGoal($classDescriptor: String!, $weeklyGoal: Int!) {
-  setClassroomMasteryTowersGoal(classDescriptor: $classDescriptor, weeklyGoal: $weeklyGoal) {
+  setClassroomMasteryTowersGoal(
+    classDescriptor: $classDescriptor
+    weeklyGoal: $weeklyGoal
+  ) {
     error {
       code
       __typename
     }
     __typename
   }
-}
-`,
+}`,
   setClassroomSatStatusMutation: `mutation setClassroomSatStatusMutation($classDescriptor: String!, $includeSat: Boolean!, $fromUpsell: Boolean) {
   setClassroomSatStatus(
     classroomDescriptor: $classDescriptor
@@ -7824,8 +8432,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   setEduorgAffiliationMutation: `mutation setEduorgAffiliationMutation($eduorgKeyId: ID!) {
   setEduorgAffiliation(eduorgKeyId: $eduorgKeyId) {
     user {
@@ -7862,7 +8469,10 @@ fragment entry on TeamPageEntryForEditing {
   }
 }`,
   setInitialClassroomCourses: `mutation setInitialClassroomCourses($classDescriptor: String!, $courseKeys: [String!]!) {
-  setClassroomCourses(classroomDescriptor: $classDescriptor, courseKeys: $courseKeys) {
+  setClassroomCourses(
+    classroomDescriptor: $classDescriptor
+    courseKeys: $courseKeys
+  ) {
     classroom {
       id
       cacheId
@@ -7870,18 +8480,19 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   setMasteryTowerName: `mutation setMasteryTowerName($classDescriptor: String!, $leaderboardName: String!) {
-  setMasteryTowerName(classDescriptor: $classDescriptor, leaderboardName: $leaderboardName) {
+  setMasteryTowerName(
+    classDescriptor: $classDescriptor
+    leaderboardName: $leaderboardName
+  ) {
     error {
       code
       __typename
     }
     __typename
   }
-}
-`,
+}`,
   setModifyCoachesCapability: `mutation setModifyCoachesCapability($targetKaid: String!, $allow: Boolean!) {
   setModifyCoachesCapability(targetKaid: $targetKaid, allow: $allow) {
     target {
@@ -7895,8 +8506,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   SetModifyCoachesCapbilityMutation: `mutation SetModifyCoachesCapbilityMutation($targetKaid: String!, $allow: Boolean!) {
   setModifyCoachesCapability(targetKaid: $targetKaid, allow: $allow) {
     target {
@@ -7951,8 +8561,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   SetProfilePrograms: `mutation SetProfilePrograms($kaid: String!, $programKeys: [String!]!) {
   setProfilePrograms(kaid: $kaid, programKeys: $programKeys) {
     error {
@@ -7970,8 +8579,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   setSettingsMutationWithErrors: `mutation setSettingsMutationWithErrors($kaid: String!, $nickname: String, $username: String, $soundOn: Boolean, $muteVideos: Boolean, $showCaptions: Boolean, $playbackRate: PlaybackRate, $userLanguage: String, $region: String, $birthdate: String, $hideVisual: Boolean, $prefersReducedMotion: Boolean, $noColorInVideos: Boolean) {
   setSettings(
     kaid: $kaid
@@ -8083,8 +8691,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   SetUserHomepageAdmin: `mutation SetUserHomepageAdmin($homepage: UserHomepage!, $kaid: String) {
   setUserHomepage(homepage: $homepage, kaid: $kaid) {
     error {
@@ -8153,7 +8760,13 @@ fragment entry on TeamPageEntryForEditing {
   }
 }`,
   signupAdultWithPasswordMutation: `mutation signupAdultWithPasswordMutation($email: String!, $password: String!, $firstname: String!, $lastname: String!, $role: UserRole!) {
-  signupAdultWithPassword(email: $email, password: $password, firstname: $firstname, lastname: $lastname, role: $role) {
+  signupAdultWithPassword(
+    email: $email
+    password: $password
+    firstname: $firstname
+    lastname: $lastname
+    role: $role
+  ) {
     user {
       id
       kaid
@@ -8175,8 +8788,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   signupDistrictsWithClasslink: `mutation signupDistrictsWithClasslink($options: ClasslinkSignupOptions) {
   signupDistrictsWithClasslink(options: $options) {
     user {
@@ -8202,7 +8814,14 @@ fragment entry on TeamPageEntryForEditing {
   }
 }`,
   signupDistrictsWithPasswordMutation: `mutation signupDistrictsWithPasswordMutation($email: String!, $password: String!, $firstname: String!, $lastname: String!, $role: UserRole, $birthdate: Date) {
-  signupDistrictsWithPassword(email: $email, password: $password, firstname: $firstname, lastname: $lastname, role: $role, birthdate: $birthdate) {
+  signupDistrictsWithPassword(
+    email: $email
+    password: $password
+    firstname: $firstname
+    lastname: $lastname
+    role: $role
+    birthdate: $birthdate
+  ) {
     user {
       id
       kaid
@@ -8224,10 +8843,15 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   signupLearnerWithPasswordMutation: `mutation signupLearnerWithPasswordMutation($email: String!, $password: String!, $firstname: String!, $lastname: String!, $birthdate: Date!) {
-  signupLearnerWithPassword(email: $email, password: $password, firstname: $firstname, lastname: $lastname, birthdate: $birthdate) {
+  signupLearnerWithPassword(
+    email: $email
+    password: $password
+    firstname: $firstname
+    lastname: $lastname
+    birthdate: $birthdate
+  ) {
     user {
       id
       kaid
@@ -8249,8 +8873,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   signupResendVerificationEmailMutation: `mutation signupResendVerificationEmailMutation {
   signupResendVerificationEmail {
     error {
@@ -8261,7 +8884,13 @@ fragment entry on TeamPageEntryForEditing {
   }
 }`,
   signupUnderAgeGateMutation: `mutation signupUnderAgeGateMutation($username: String!, $password: String!, $birthdate: Date!, $parentEmail: String!, $signupCodes: [String]) {
-  signupUnderAgeGate(username: $username, password: $password, birthdate: $birthdate, parentEmail: $parentEmail, signupCodes: $signupCodes) {
+  signupUnderAgeGate(
+    username: $username
+    password: $password
+    birthdate: $birthdate
+    parentEmail: $parentEmail
+    signupCodes: $signupCodes
+  ) {
     user {
       id
       kaid
@@ -8289,8 +8918,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   SignupWithWalmartMutation: `mutation SignupWithWalmartMutation($profileKeyName: String!, $email: String!) {
   signupWithWalmart(profileKeyName: $profileKeyName, email: $email) {
     error {
@@ -8316,7 +8944,10 @@ fragment entry on TeamPageEntryForEditing {
   }
 }`,
   siteEditorStartPublish: `mutation siteEditorStartPublish($title: String, $contentDescriptors: [String!]!) {
-  startPublishForContentDescriptors(title: $title, contentDescriptors: $contentDescriptors) {
+  startPublishForContentDescriptors(
+    title: $title
+    contentDescriptors: $contentDescriptors
+  ) {
     publishStatus {
       id
       queued
@@ -8329,10 +8960,15 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   spinOffProgram: `mutation spinOffProgram($originProgramOrContentId: String!, $originProgramKind: SpinoffOriginKind!, $originRevisionId: ID, $title: String!, $revision: ProgramRevisionInput!, $curationNodeSlug: String!) {
-  spinOffProgram(origin: {programOrContentId: $originProgramOrContentId, kind: $originProgramKind}, originRevisionId: $originRevisionId, title: $title, revision: $revision, curationNodeSlug: $curationNodeSlug) {
+  spinOffProgram(
+    origin: {programOrContentId: $originProgramOrContentId, kind: $originProgramKind}
+    originRevisionId: $originRevisionId
+    title: $title
+    revision: $revision
+    curationNodeSlug: $curationNodeSlug
+  ) {
     program {
       ...Program
       __typename
@@ -8345,7 +8981,6 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }
-
 fragment Program on Program {
   id
   latestRevision {
@@ -8357,8 +8992,7 @@ fragment Program on Program {
   url
   userAuthoredContentType
   __typename
-}
-`,
+}`,
   startMasteryTowerSession: `mutation startMasteryTowerSession($classDescriptor: String!) {
   startMasteryTowerSession(classDescriptor: $classDescriptor) {
     error {
@@ -8367,8 +9001,7 @@ fragment Program on Program {
     }
     __typename
   }
-}
-`,
+}`,
   stopCoachingStudents: `mutation stopCoachingStudents($kaids: [ID!]!) {
   stopCoachingStudents(studentKaids: $kaids) {
     errors {
@@ -8385,12 +9018,15 @@ fragment Program on Program {
   }
 }`,
   submitTeacherCampaignResponse: `mutation submitTeacherCampaignResponse($urlEncodedStepKey: ID!, $exerciseNo: Int!, $text: [String]!) {
-  teacherCampaignExerciseComplete(urlEncodedStepKey: $urlEncodedStepKey, exerciseNo: $exerciseNo, text: $text) {
+  teacherCampaignExerciseComplete(
+    urlEncodedStepKey: $urlEncodedStepKey
+    exerciseNo: $exerciseNo
+    text: $text
+  ) {
     ok
     __typename
   }
-}
-`,
+}`,
   teacherCampaignUpdate: `mutation teacherCampaignUpdate($campaign: TeacherCampaignUpdateInput!) {
   teacherCampaignUpdate(campaign: $campaign) {
     campaign {
@@ -8413,8 +9049,7 @@ fragment Program on Program {
     }
     __typename
   }
-}
-`,
+}`,
   transferCleverAuthMutation: `mutation transferCleverAuthMutation($transferToken: String!, $reauth: Boolean!) {
   transferCleverAuth(transferToken: $transferToken, reauth: $reauth) {
     error {
@@ -8449,8 +9084,7 @@ fragment Program on Program {
     transferToken
     __typename
   }
-}
-`,
+}`,
   translationEditorEditTalkthrough: `mutation translationEditorEditTalkthrough($sha: String!, $input: EditTalkthroughInput!) {
   editTalkthrough(sha: $sha, input: $input) {
     error {
@@ -8518,8 +9152,7 @@ fragment Program on Program {
     }
     __typename
   }
-}
-`,
+}`,
   underAgeGateParentApprovalByTokenMutation: `mutation underAgeGateParentApprovalByTokenMutation($tosAccepted: Boolean!, $underAgeGateUsername: String, $parentApproveToken: String) {
   underAgeGateParentApprovalByToken(
     tosAccepted: $tosAccepted
@@ -8763,8 +9396,7 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   updateCustomBadge: `mutation updateCustomBadge($input: UpdateCustomBadgeInput) {
   updateCustomBadge(input: $input) {
     error {
@@ -8774,8 +9406,7 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   updateDistrictGoLiveDate: `mutation updateDistrictGoLiveDate($districtID: String!, $goLiveDate: Date!) {
   updateDistrictGoLiveDate(districtID: $districtID, goLiveDate: $goLiveDate) {
     error {
@@ -8784,8 +9415,7 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   updateDistrictRosterDistrictAdmins: `mutation updateDistrictRosterDistrictAdmins($districtID: String!, $enable: Boolean!) {
   updateDistrictRosterDistrictAdmins(districtID: $districtID, enable: $enable) {
     district {
@@ -8799,8 +9429,7 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   updateDistrictRosterSyncing: `mutation updateDistrictRosterSyncing($districtID: String!, $sync: Boolean!) {
   updateDistrictRosterSyncing(districtID: $districtID, sync: $sync) {
     district {
@@ -8814,8 +9443,7 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   updateDistrictTeacherActivationEmails: `mutation updateDistrictTeacherActivationEmails($districtID: String!, $enable: Boolean!) {
   updateDistrictTeacherActivationEmails(districtID: $districtID, enable: $enable) {
     district {
@@ -8829,8 +9457,7 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   updateDomainRevisionMutation: `mutation updateDomainRevisionMutation($sha: String!, $input: EditDomainInput!) {
   editDomain(sha: $sha, input: $input) {
     domain {
@@ -8859,8 +9486,7 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   updateDonationAsk: `mutation updateDonationAsk($donationAsk: DonationAskInput) {
   updateDonationAsk(donationAsk: $donationAsk) {
     success
@@ -8870,8 +9496,7 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   updateDonationAskActiveState: `mutation updateDonationAskActiveState($donationAsk: DonationAskActivityInput) {
   updateDonationAskActiveState(donationAsk: $donationAsk) {
     success
@@ -8881,8 +9506,7 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   UpdateFeedback: `mutation UpdateFeedback($feedbackKey: String!, $textContent: String!, $shownLowQualityNotice: Boolean) {
   updateFeedback(
     feedbackKey: $feedbackKey
@@ -8947,7 +9571,13 @@ fragment AssignmentInfoFragment on Assignment {
   }
 }`,
   UpdateFlagMutation: `mutation UpdateFlagMutation($flagName: String!, $description: String, $team: String, $expires: String, $rules: [RuleInput!]!) {
-  updateFlag(name: $flagName, description: $description, team: $team, expires: $expires, rules: $rules) {
+  updateFlag(
+    name: $flagName
+    description: $description
+    team: $team
+    expires: $expires
+    rules: $rules
+  ) {
     flag {
       id
       name
@@ -8969,8 +9599,7 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
-}
-`,
+}`,
   updateGoogleClassroom: `mutation updateGoogleClassroom($googleClassId: String!, $googleClassName: String!, $googleClassUrl: String!, $googleClassStudents: [GoogleClassStudent]!, $classroomKey: String!, $khanClassName: String) {
   updateGoogleClassroom(
     googleClassId: $googleClassId
@@ -9106,8 +9735,7 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     }
     __typename
   }
-}
-`,
+}`,
   updateOfficialClarification: `mutation updateOfficialClarification($id: ID!, $clarification: UpdateOfficialClarificationInput!) {
   updateOfficialClarification(id: $id, clarification: $clarification) {
     updatedClarification {
@@ -9130,8 +9758,7 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     }
     __typename
   }
-}
-`,
+}`,
   updateProfile: `mutation updateProfile($avatarName: String, $bio: String, $profileAccessLevel: ProfileAccessLevel, $nickname: String, $username: String) {
   setSettings(
     avatarName: $avatarName
@@ -9177,7 +9804,6 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     __typename
   }
 }
-
 fragment Program on Program {
   id
   latestRevision {
@@ -9189,10 +9815,15 @@ fragment Program on Program {
   url
   userAuthoredContentType
   __typename
-}
-`,
+}`,
   updateProgramSettings: `mutation updateProgramSettings($programId: ID!, $height: Int!, $width: Int!, $category: ProgramCategoryInput, $description: String) {
-  updateProgramSettings(programId: $programId, height: $height, width: $width, category: $category, description: $description) {
+  updateProgramSettings(
+    programId: $programId
+    height: $height
+    width: $width
+    category: $category
+    description: $description
+  ) {
     program {
       id
       height
@@ -9208,8 +9839,7 @@ fragment Program on Program {
     }
     __typename
   }
-}
-`,
+}`,
   updateProjectProgress: `mutation updateProjectProgress($programId: ID!, $lessonId: ID!, $stashedCode: String, $status: Int) {
   updateProjectProgress(
     input: {programId: $programId, lessonId: $lessonId, stashedCode: $stashedCode, status: $status}
@@ -9271,8 +9901,7 @@ fragment Program on Program {
     }
     __typename
   }
-}
-`,
+}`,
   UpdateRolesAndHomepage: `mutation UpdateRolesAndHomepage($roles: [UserRole]!, $homepage: UserHomepage!) {
   updateRolesAndHomepageSettings(roles: $roles, homepage: $homepage) {
     user {
@@ -9298,8 +9927,7 @@ fragment Program on Program {
     }
     __typename
   }
-}
-`,
+}`,
   updateStory: `mutation updateStory($key: ID!, $story: UpdateStoryInput!) {
   updateStory(key: $key, story: $story) {
     success
@@ -9733,8 +10361,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   createAIGuidePrompt: `mutation createAIGuidePrompt($name: String!, $description: String!) {
   createAIGuidePrompt(name: $name, description: $description) {
     prompt {
@@ -9750,8 +10377,7 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-`,
+}`,
   createOrUpdateAIGuidePromptDraft: `mutation createOrUpdateAIGuidePromptDraft($promptName: String!, $hashBeforeUpdate: String, $newIsReadyForReview: Boolean!, $newReleaseNotes: String!, $newPromptText: String!, $newConfigJSON: JSONString!) {
   createOrUpdateAIGuidePromptDraft(
     promptName: $promptName

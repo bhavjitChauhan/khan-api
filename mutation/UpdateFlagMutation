@@ -1,5 +1,11 @@
 mutation UpdateFlagMutation($flagName: String!, $description: String, $team: String, $expires: String, $rules: [RuleInput!]!) {
-  updateFlag(name: $flagName, description: $description, team: $team, expires: $expires, rules: $rules) {
+  updateFlag(
+    name: $flagName
+    description: $description
+    team: $team
+    expires: $expires
+    rules: $rules
+  ) {
     flag {
       id
       name

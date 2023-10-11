@@ -1,5 +1,8 @@
 mutation siteEditorStartPublish($title: String, $contentDescriptors: [String!]!) {
-  startPublishForContentDescriptors(title: $title, contentDescriptors: $contentDescriptors) {
+  startPublishForContentDescriptors(
+    title: $title
+    contentDescriptors: $contentDescriptors
+  ) {
     publishStatus {
       id
       queued

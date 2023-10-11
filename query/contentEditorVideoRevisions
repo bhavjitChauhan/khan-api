@@ -18,14 +18,12 @@ query contentEditorVideoRevisions($contentId: String!) {
     __typename
   }
 }
-
 fragment contentEditorContentRevision on ContentRevision {
   id
   cacheId: sha
   creationDate
   __typename
 }
-
 fragment contentEditorLearnableContent on LearnableContentRevision {
   doNotPublish
   listed

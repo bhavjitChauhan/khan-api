@@ -5,7 +5,11 @@ query getUserProgressDump($kaid: String!, $problemLogCursor: ID, $videoProgresse
     email
     lastLoginLocale
     rawLogs {
-      videoProgressesPage(startDt: $startDt, endDt: $endDt, after: $videoProgressesCursor) {
+      videoProgressesPage(
+        startDt: $startDt
+        endDt: $endDt
+        after: $videoProgressesCursor
+      ) {
         videoProgresses {
           completed
           lastSecondWatched
@@ -31,7 +35,12 @@ query getUserProgressDump($kaid: String!, $problemLogCursor: ID, $videoProgresse
         }
         __typename
       }
-      problemLogsPage(startDt: $startDt, endDt: $endDt, after: $problemLogCursor, pageSize: $pageSize) {
+      problemLogsPage(
+        startDt: $startDt
+        endDt: $endDt
+        after: $problemLogCursor
+        pageSize: $pageSize
+      ) {
         problemLogs {
           correct
           countAttempts

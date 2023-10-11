@@ -4,7 +4,6 @@ query gtp_getCheckpoints($examId: String!) {
     __typename
   }
 }
-
 fragment gtp_checkpointFragment on Checkpoint {
   id
   stages {

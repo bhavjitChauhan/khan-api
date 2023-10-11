@@ -4,7 +4,6 @@ query gtp_getEGUD($examGroupId: String!) {
     __typename
   }
 }
-
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {

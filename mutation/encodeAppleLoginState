@@ -1,5 +1,10 @@
 mutation encodeAppleLoginState($action: Action!, $continueUrl: String!, $role: UserRole, $signupCodes: [String]) {
-  encodeAppleLoginState(action: $action, continueUrl: $continueUrl, role: $role, signupCodes: $signupCodes) {
+  encodeAppleLoginState(
+    action: $action
+    continueUrl: $continueUrl
+    role: $role
+    signupCodes: $signupCodes
+  ) {
     redirectUri
     state
     __typename

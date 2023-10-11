@@ -1,5 +1,11 @@
 mutation signupUnderAgeGateMutation($username: String!, $password: String!, $birthdate: Date!, $parentEmail: String!, $signupCodes: [String]) {
-  signupUnderAgeGate(username: $username, password: $password, birthdate: $birthdate, parentEmail: $parentEmail, signupCodes: $signupCodes) {
+  signupUnderAgeGate(
+    username: $username
+    password: $password
+    birthdate: $birthdate
+    parentEmail: $parentEmail
+    signupCodes: $signupCodes
+  ) {
     user {
       id
       kaid

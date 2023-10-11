@@ -1,5 +1,15 @@
 mutation completeSignupMutation($nickname: String!, $password: String!, $username: String!, $birthdate: Date, $inviteId: String, $isParent: Boolean, $isTeacher: Boolean, $token: String, $continueUrl: String) {
-  completeSignup(nickname: $nickname, password: $password, username: $username, birthdate: $birthdate, inviteId: $inviteId, isParent: $isParent, isTeacher: $isTeacher, token: $token, continueUrl: $continueUrl) {
+  completeSignup(
+    nickname: $nickname
+    password: $password
+    username: $username
+    birthdate: $birthdate
+    inviteId: $inviteId
+    isParent: $isParent
+    isTeacher: $isTeacher
+    token: $token
+    continueUrl: $continueUrl
+  ) {
     user {
       id
       kaid

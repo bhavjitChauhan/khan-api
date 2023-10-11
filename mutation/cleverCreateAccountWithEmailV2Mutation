@@ -1,5 +1,9 @@
 mutation cleverCreateAccountWithEmailV2Mutation($transferToken: String!, $email: String!, $birthdate: Date) {
-  cleverCreateAccountWithEmailV2(transferToken: $transferToken, email: $email, birthdate: $birthdate) {
+  cleverCreateAccountWithEmailV2(
+    transferToken: $transferToken
+    email: $email
+    birthdate: $birthdate
+  ) {
     error {
       code
       __typename

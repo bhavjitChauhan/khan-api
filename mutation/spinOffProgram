@@ -1,5 +1,11 @@
 mutation spinOffProgram($originProgramOrContentId: String!, $originProgramKind: SpinoffOriginKind!, $originRevisionId: ID, $title: String!, $revision: ProgramRevisionInput!, $curationNodeSlug: String!) {
-  spinOffProgram(origin: {programOrContentId: $originProgramOrContentId, kind: $originProgramKind}, originRevisionId: $originRevisionId, title: $title, revision: $revision, curationNodeSlug: $curationNodeSlug) {
+  spinOffProgram(
+    origin: {programOrContentId: $originProgramOrContentId, kind: $originProgramKind}
+    originRevisionId: $originRevisionId
+    title: $title
+    revision: $revision
+    curationNodeSlug: $curationNodeSlug
+  ) {
     program {
       ...Program
       __typename
@@ -12,7 +18,6 @@ mutation spinOffProgram($originProgramOrContentId: String!, $originProgramKind: 
     __typename
   }
 }
-
 fragment Program on Program {
   id
   latestRevision {

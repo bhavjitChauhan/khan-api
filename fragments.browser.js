@@ -237,8 +237,7 @@ fragments = {
   relativeUrl
   slug
   __typename
-}
-`,
+}`,
   BaseFolder: `fragment BaseFolder on Folder {
   id
   name
@@ -355,8 +354,7 @@ fragment InvitationsField on Invitation {
   cacheId: sha
   creationDate
   __typename
-}
-`,
+}`,
   contentEditorLearnableContent: `fragment contentEditorLearnableContent on LearnableContentRevision {
   doNotPublish
   listed
@@ -364,8 +362,7 @@ fragment InvitationsField on Invitation {
   title
   description
   __typename
-}
-`,
+}`,
   CourseData: `fragment CourseData on Course {
   id
   iconPath
@@ -1018,8 +1015,7 @@ fragment InvitationsField on Invitation {
   miniSectionStages
   tmsTaskIds
   __typename
-}
-`,
+}`,
   gtp_descriptorFragment: `fragment gtp_descriptorFragment on TaskDescriptor {
   id
   examId
@@ -1150,8 +1146,7 @@ fragment InvitationsField on Invitation {
   gtp_expressDescriptorsNumAttemptedFragment: `fragment gtp_expressDescriptorsNumAttemptedFragment on ExpressDiagnosticTaskDescriptor {
   numAttempted
   __typename
-}
-`,
+}`,
   gtp_practiceTestFragment: `fragment gtp_practiceTestFragment on PracticeTest {
   id
   practiceTestId
@@ -1188,8 +1183,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   gtp_taskFragment: `fragment gtp_taskFragment on Task {
   id
   kaid
@@ -1339,8 +1333,7 @@ fragment InvitationsField on Invitation {
     __typename
   }
   __typename
-}
-`,
+}`,
   khanLibraryDomainRevision: `fragment khanLibraryDomainRevision on DomainRevision {
   id
   sha
@@ -1670,8 +1663,7 @@ fragment InvitationsField on Invitation {
   url
   userAuthoredContentType
   __typename
-}
-`,
+}`,
   ProjectRevision: `fragment ProjectRevision on ProjectRevision {
   id
   contentId
