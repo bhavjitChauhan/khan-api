@@ -38,10 +38,12 @@ fragment ClassroomData on StudentList {
   googleClassUrl
   __typename
 }
+
 fragment LinkedStudentData on LinkedGoogleClassStudent {
   email
   __typename
 }
+
 fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
   email
   nickname

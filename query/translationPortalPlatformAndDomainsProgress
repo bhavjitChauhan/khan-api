@@ -27,6 +27,7 @@ fragment tapContentItem on TAPContentItem {
   translatedTitle
   __typename
 }
+
 fragment tapContentWordCounts on TAPContentWordCounts {
   wordCount
   translatableWordCount
@@ -35,12 +36,14 @@ fragment tapContentWordCounts on TAPContentWordCounts {
   approvedWordCount
   __typename
 }
+
 fragment tapDomainNode on TAPDomainNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
   __typename
 }
+
 fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataWordCount
   metadataTranslatableWordCount
@@ -48,6 +51,7 @@ fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataApprovedWordCount
   __typename
 }
+
 fragment tapPlatformNode on TAPPlatformNode {
   ...tapContentWordCounts
   id

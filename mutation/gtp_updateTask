@@ -54,6 +54,7 @@ fragment gtp_egudFragment on ExamGroupUserData {
   extendedTimeMultiplier
   __typename
 }
+
 fragment gtp_taskFragment on Task {
   id
   kaid
@@ -178,6 +179,7 @@ fragment gtp_taskFragment on Task {
   }
   __typename
 }
+
 fragment gtp_tpudFragment on TestPrepUserData {
   id
   examId

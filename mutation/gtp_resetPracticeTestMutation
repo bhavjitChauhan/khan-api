@@ -54,6 +54,7 @@ fragment gtp_practiceTestFragment on PracticeTest {
   }
   __typename
 }
+
 fragment gtp_tpudFragment on TestPrepUserData {
   id
   examId

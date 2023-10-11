@@ -115,6 +115,7 @@ fragment userExerciseFields on UserExercise {
   totalDone
   __typename
 }
+
 fragment userTaskFields on PracticeUserTask {
   cards {
     done

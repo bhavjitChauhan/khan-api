@@ -18,6 +18,7 @@ fragment BaseFolder on Folder {
   kaLocale
   __typename
 }
+
 fragment Folder on Folder {
   ...BaseFolder
   courses {
@@ -26,6 +27,7 @@ fragment Folder on Folder {
   }
   __typename
 }
+
 fragment PublishedCourseRevisionFragment on CourseRevision {
   id
   contentId
