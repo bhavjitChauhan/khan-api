@@ -255,7 +255,7 @@ for (const type of documentTypes) {
 
     for (let [operation, document] of filteredDocuments[type]) {
         if (type === 'query' || type === 'mutation')
-            document = sortDocumentFragments(document)
+            document = formatDocument(sortDocumentFragments(document))
         if (!document) {
             failed = true
             console.warn(`${operation} document is null`)
@@ -312,7 +312,7 @@ for (const type of documentTypes) {
         if (existingDocument && ((extractFragments(document)?.length ?? 0) < (extractFragments(existingDocument)?.length) ?? 0)) {
             console.warn(`Fragment count mismatch in ${type}/${file}`)
         } else {
-            document = sortDocumentFragments(document)
+            document = formatDocument(sortDocumentFragments(document))
             await writeFile(`${type}/${file}`, document)
         }
         // console.log(`Inserted ${insertedFragmentCount} fragments in ${type}/${file}`)
