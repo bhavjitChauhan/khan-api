@@ -261,6 +261,7 @@ for (const type of documentTypes) {
             console.warn(`${operation} document is null`)
             continue
         }
+        document = document.replace(/\n+$/g, '')
         await writeFile(`${type}/${operation}`, document)
         writtenDocumentCount++
     }
