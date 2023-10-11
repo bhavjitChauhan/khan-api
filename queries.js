@@ -12060,7 +12060,6 @@ fragment CourseProgress on SubjectProgress {
   }
 }
 
-
 fragment CourseProgress on SubjectProgress {
   topic {
     domainSlug
