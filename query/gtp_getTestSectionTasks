@@ -4,6 +4,7 @@ query gtp_getTestSectionTasks($examId: String!, $taskId: String!) {
     __typename
   }
 }
+
 fragment gtp_taskFragment on Task {
   id
   kaid

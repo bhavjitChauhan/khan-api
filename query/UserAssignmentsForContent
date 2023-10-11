@@ -11,6 +11,7 @@ query UserAssignmentsForContent($classroomDescriptor: String!, $contentDescripto
     __typename
   }
 }
+
 fragment AssignmentData on Assignment {
   id
   contents {

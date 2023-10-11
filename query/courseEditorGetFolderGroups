@@ -12,6 +12,8 @@ query courseEditorGetFolderGroups {
   }
 }
 
+
+
 fragment LibraryFolder on Folder {
   id
   name

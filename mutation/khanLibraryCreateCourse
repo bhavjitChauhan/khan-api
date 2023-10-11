@@ -4,6 +4,7 @@ mutation khanLibraryCreateCourse($input: CreateDefaultCourse!) {
     __typename
   }
 }
+
 fragment CourseRevisionStructure on CourseRevision {
   id
   contentId

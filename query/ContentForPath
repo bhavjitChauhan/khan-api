@@ -76,6 +76,7 @@ query ContentForPath($path: String!, $countryCode: String!, $kaLocale: KALocale!
     __typename
   }
 }
+
 fragment CourseData on Course {
   id
   iconPath

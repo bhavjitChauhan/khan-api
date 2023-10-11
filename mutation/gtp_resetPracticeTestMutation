@@ -16,6 +16,7 @@ mutation gtp_resetPracticeTestMutation($examId: String!, $taskId: String!) {
     __typename
   }
 }
+
 fragment gtp_practiceTestFragment on PracticeTest {
   id
   practiceTestId

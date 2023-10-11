@@ -25,6 +25,7 @@ mutation contentEditorEditExerciseProblems($sha: String!, $input: EditExercisePr
     __typename
   }
 }
+
 fragment AssessmentItemRevision on AssessmentItemRevision {
   id
   contentKind

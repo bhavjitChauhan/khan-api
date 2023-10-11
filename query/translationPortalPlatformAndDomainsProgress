@@ -14,6 +14,7 @@ query translationPortalPlatformAndDomainsProgress($locale: String!) {
     __typename
   }
 }
+
 fragment tapContentItem on TAPContentItem {
   id
   contentKind

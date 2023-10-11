@@ -13,6 +13,7 @@ mutation gtp_createNewStageMutation($examId: String!, $stageIndex: Int!) {
     __typename
   }
 }
+
 fragment gtp_checkpointFragment on Checkpoint {
   id
   stages {

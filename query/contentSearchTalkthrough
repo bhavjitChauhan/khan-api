@@ -4,6 +4,7 @@ query contentSearchTalkthrough($contentId: String!) {
     __typename
   }
 }
+
 fragment contentSearchLearnableContent on LearnableContent {
   id
   slug

@@ -8,6 +8,7 @@ query EditableTeamPageEntries {
     __typename
   }
 }
+
 fragment entry on TeamPageEntryForEditing {
   id
   isPet

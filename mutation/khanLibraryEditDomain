@@ -13,6 +13,7 @@ mutation khanLibraryEditDomain($sha: String!, $input: EditDomainInput!) {
     __typename
   }
 }
+
 fragment khanLibraryDomainRevision on DomainRevision {
   id
   sha

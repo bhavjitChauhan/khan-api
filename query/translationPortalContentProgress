@@ -17,6 +17,7 @@ query translationPortalContentProgress($contentDescriptors: [String!]!, $content
     __typename
   }
 }
+
 fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
   ...tapContentItem
   ...tapMetadataWordCounts

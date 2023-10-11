@@ -13,6 +13,7 @@ mutation contentEditorEditArticle($sha: String!, $input: EditArticleInput!) {
     __typename
   }
 }
+
 fragment ArticleRevision on ArticleRevision {
   id
   contentId

@@ -4,6 +4,7 @@ query contentEditorGetArticleRevision($id: String!) {
     __typename
   }
 }
+
 fragment ArticleRevision on ArticleRevision {
   id
   contentId

@@ -13,6 +13,7 @@ mutation contentEditorCreateVideo($input: NewVideoInput!) {
     __typename
   }
 }
+
 fragment VideoRevision on VideoRevision {
   id
   contentId

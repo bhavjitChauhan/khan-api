@@ -10,6 +10,7 @@ mutation publishAssignment($assignmentId: ID!, $startDate: DateTime!) {
     __typename
   }
 }
+
 fragment AssignmentInfoFragment on Assignment {
   id
   contents {

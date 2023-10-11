@@ -28,6 +28,7 @@ query contentEditorExerciseRevisions($contentId: String!) {
     __typename
   }
 }
+
 fragment contentEditorContentRevision on ContentRevision {
   id
   cacheId: sha

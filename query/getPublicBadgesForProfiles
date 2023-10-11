@@ -11,6 +11,7 @@ query getPublicBadgesForProfiles($kaid: String) {
     __typename
   }
 }
+
 fragment Badge on Badge {
   badgeCategory
   description

@@ -4,6 +4,7 @@ query getOfficialClarifications($youtubeId: String!) {
     __typename
   }
 }
+
 fragment clarificationFragment on OfficialClarification {
   id
   text

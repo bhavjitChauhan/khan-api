@@ -35,6 +35,7 @@ query userProgressForLesson($lessonId: String!, $unitId: String!, $masteryEnable
     __typename
   }
 }
+
 fragment BasicContentItemProgress on ContentItemProgress {
   bestScore {
     numAttempted

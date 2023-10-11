@@ -11,6 +11,7 @@ query videoEditorQuery($contentId: String!) {
     __typename
   }
 }
+
 fragment VideoRevision on VideoRevision {
   id
   contentId

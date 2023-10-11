@@ -81,6 +81,7 @@ query ActivitySessionsQuery($studentKaid: String!, $endDate: Date, $startDate: D
     __typename
   }
 }
+
 fragment ActivitySession on ActivitySession {
   id
   title

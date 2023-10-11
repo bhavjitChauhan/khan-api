@@ -10,6 +10,7 @@ mutation updateAssignment($assignmentId: ID!, $studentKaids: [ID], $contentDescr
     __typename
   }
 }
+
 fragment AssignmentInfoFragment on Assignment {
   id
   contents {

@@ -4,6 +4,7 @@ query contentEditorGetExerciseRevision($id: String!) {
     __typename
   }
 }
+
 fragment AssessmentItemRevision on AssessmentItemRevision {
   id
   contentKind

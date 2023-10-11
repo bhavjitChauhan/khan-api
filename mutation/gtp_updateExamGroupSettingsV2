@@ -38,6 +38,7 @@ mutation gtp_updateExamGroupSettingsV2($examGroupId: String!, $practiceDaysInfo:
     __typename
   }
 }
+
 fragment gtp_checkpointFragment on Checkpoint {
   id
   stages {

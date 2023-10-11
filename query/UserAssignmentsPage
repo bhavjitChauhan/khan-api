@@ -21,6 +21,7 @@ query UserAssignmentsPage($classroomDescriptor: String!, $dueAfterISO: DateTime,
     __typename
   }
 }
+
 fragment AssignmentData on Assignment {
   id
   contents {

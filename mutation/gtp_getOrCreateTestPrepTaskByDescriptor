@@ -17,6 +17,7 @@ mutation gtp_getOrCreateTestPrepTaskByDescriptor($examId: String!, $taskType: St
     __typename
   }
 }
+
 fragment gtp_practiceTestFragment on PracticeTest {
   id
   practiceTestId

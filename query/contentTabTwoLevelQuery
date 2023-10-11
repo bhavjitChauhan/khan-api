@@ -51,6 +51,8 @@ query contentTabTwoLevelQuery($courseId: String!, $region: String!, $locale: Str
   }
 }
 
+
+
 fragment CourseFields on Course {
   ... on Course {
     id

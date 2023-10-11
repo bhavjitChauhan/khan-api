@@ -4,6 +4,7 @@ query khanLibraryGetFolder($id: String!) {
     __typename
   }
 }
+
 fragment BaseFolder on Folder {
   id
   name

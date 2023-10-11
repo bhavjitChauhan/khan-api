@@ -7,6 +7,7 @@ mutation CourseEditorAddUnit($input: AddUnit!) {
     __typename
   }
 }
+
 fragment CourseStructure on CourseRevision {
   id
   contentId

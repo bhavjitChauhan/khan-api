@@ -63,6 +63,8 @@ query UserAssignments($after: ID, $dueAfter: DateTime, $dueBefore: DateTime, $pa
   }
 }
 
+
+
 fragment ContentFields on LearnableContent {
   contentId: id
   id
