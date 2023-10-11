@@ -7307,8 +7307,7 @@ fragment UnitMasteryGoalCreatedNotificationType on UnitMasteryGoalCreatedNotific
     __typename
   }
   __typename
-}
-`,
+}`,
   getOffensiveTerms: `query getOffensiveTerms($isAiGuide: Boolean) {
   offensiveTerms(isAiGuide: $isAiGuide) {
     id
