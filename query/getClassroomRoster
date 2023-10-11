@@ -84,6 +84,7 @@ fragment InvitationsField on Invitation {
   accepted
   __typename
 }
+
 fragment StudentField2 on StudentsPage {
   students {
     kaid

@@ -24,6 +24,7 @@ fragment CommonContentItemProgressesFragment on ContentItemProgress {
   }
   __typename
 }
+
 fragment CommonUserInfoFragment on User {
   id
   curationItemProgress(topicId: $topicId) {

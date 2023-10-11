@@ -73,6 +73,7 @@ fragment gtp_checkpointFragment on Checkpoint {
   tmsTaskIds
   __typename
 }
+
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {
@@ -104,6 +105,7 @@ fragment gtp_egudFragment on ExamGroupUserData {
   extendedTimeMultiplier
   __typename
 }
+
 fragment gtp_practiceTestFragment on PracticeTest {
   id
   practiceTestId
@@ -141,6 +143,7 @@ fragment gtp_practiceTestFragment on PracticeTest {
   }
   __typename
 }
+
 fragment gtp_taskFragment on Task {
   id
   kaid
@@ -265,6 +268,7 @@ fragment gtp_taskFragment on Task {
   }
   __typename
 }
+
 fragment gtp_tpudFragment on TestPrepUserData {
   id
   examId

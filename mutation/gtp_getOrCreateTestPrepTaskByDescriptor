@@ -55,6 +55,7 @@ fragment gtp_practiceTestFragment on PracticeTest {
   }
   __typename
 }
+
 fragment gtp_taskFragment on Task {
   id
   kaid

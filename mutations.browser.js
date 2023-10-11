@@ -859,6 +859,7 @@ fragment AssessmentItemRevision on AssessmentItemRevision {
   tags
   __typename
 }
+
 fragment ExerciseRevision on ExerciseRevision {
   id
   contentKind
@@ -1045,6 +1046,7 @@ fragment AssessmentItemRevision on AssessmentItemRevision {
   tags
   __typename
 }
+
 fragment ExerciseRevision on ExerciseRevision {
   id
   contentKind
@@ -1127,6 +1129,7 @@ fragment AssessmentItemRevision on AssessmentItemRevision {
   tags
   __typename
 }
+
 fragment ExerciseRevision on ExerciseRevision {
   id
   contentKind
@@ -1315,6 +1318,7 @@ fragment AssessmentItemRevision on AssessmentItemRevision {
   tags
   __typename
 }
+
 fragment ExerciseRevision on ExerciseRevision {
   id
   contentKind
@@ -3830,10 +3834,12 @@ fragment ClassroomData on StudentList {
   googleClassUrl
   __typename
 }
+
 fragment LinkedStudentData on LinkedGoogleClassStudent {
   email
   __typename
 }
+
 fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
   email
   nickname
@@ -4779,6 +4785,7 @@ fragment userExerciseFields on UserExercise {
   totalDone
   __typename
 }
+
 fragment userTaskFields on PracticeUserTask {
   cards {
     done
@@ -4972,6 +4979,7 @@ fragment gtp_practiceTestFragment on PracticeTest {
   }
   __typename
 }
+
 fragment gtp_taskFragment on Task {
   id
   kaid
@@ -5152,6 +5160,7 @@ fragment gtp_practiceTestFragment on PracticeTest {
   }
   __typename
 }
+
 fragment gtp_tpudFragment on TestPrepUserData {
   id
   examId
@@ -5245,6 +5254,7 @@ fragment gtp_practiceTestFragment on PracticeTest {
   }
   __typename
 }
+
 fragment gtp_taskFragment on Task {
   id
   kaid
@@ -5612,6 +5622,7 @@ fragment gtp_practiceTestFragment on PracticeTest {
   }
   __typename
 }
+
 fragment gtp_taskFragment on Task {
   id
   kaid
@@ -5811,6 +5822,7 @@ fragment gtp_checkpointFragment on Checkpoint {
   tmsTaskIds
   __typename
 }
+
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {
@@ -5842,6 +5854,7 @@ fragment gtp_egudFragment on ExamGroupUserData {
   extendedTimeMultiplier
   __typename
 }
+
 fragment gtp_practiceTestFragment on PracticeTest {
   id
   practiceTestId
@@ -5879,6 +5892,7 @@ fragment gtp_practiceTestFragment on PracticeTest {
   }
   __typename
 }
+
 fragment gtp_taskFragment on Task {
   id
   kaid
@@ -6003,6 +6017,7 @@ fragment gtp_taskFragment on Task {
   }
   __typename
 }
+
 fragment gtp_tpudFragment on TestPrepUserData {
   id
   examId
@@ -6108,6 +6123,7 @@ fragment gtp_checkpointFragment on Checkpoint {
   tmsTaskIds
   __typename
 }
+
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {
@@ -6139,6 +6155,7 @@ fragment gtp_egudFragment on ExamGroupUserData {
   extendedTimeMultiplier
   __typename
 }
+
 fragment gtp_essayScoresFragment on EssayScores {
   areas {
     translatedTitle
@@ -6152,6 +6169,7 @@ fragment gtp_essayScoresFragment on EssayScores {
   }
   __typename
 }
+
 fragment gtp_practiceTestFragment on PracticeTest {
   id
   practiceTestId
@@ -6189,6 +6207,7 @@ fragment gtp_practiceTestFragment on PracticeTest {
   }
   __typename
 }
+
 fragment gtp_taskFragment on Task {
   id
   kaid
@@ -6313,6 +6332,7 @@ fragment gtp_taskFragment on Task {
   }
   __typename
 }
+
 fragment gtp_tpudFragment on TestPrepUserData {
   id
   examId
@@ -6417,6 +6437,7 @@ fragment gtp_checkpointFragment on Checkpoint {
   tmsTaskIds
   __typename
 }
+
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {
@@ -6448,6 +6469,7 @@ fragment gtp_egudFragment on ExamGroupUserData {
   extendedTimeMultiplier
   __typename
 }
+
 fragment gtp_practiceTestFragment on PracticeTest {
   id
   practiceTestId
@@ -6485,6 +6507,7 @@ fragment gtp_practiceTestFragment on PracticeTest {
   }
   __typename
 }
+
 fragment gtp_tpudFragment on TestPrepUserData {
   id
   examId
@@ -6573,6 +6596,7 @@ fragment gtp_egudFragment on ExamGroupUserData {
   extendedTimeMultiplier
   __typename
 }
+
 fragment gtp_taskFragment on Task {
   id
   kaid
@@ -6697,6 +6721,7 @@ fragment gtp_taskFragment on Task {
   }
   __typename
 }
+
 fragment gtp_tpudFragment on TestPrepUserData {
   id
   examId
@@ -6834,6 +6859,7 @@ fragment BaseFolder on Folder {
   kaLocale
   __typename
 }
+
 fragment Folder on Folder {
   ...BaseFolder
   courses {
@@ -6842,6 +6868,7 @@ fragment Folder on Folder {
   }
   __typename
 }
+
 fragment PublishedCourseRevisionFragment on CourseRevision {
   id
   contentId
@@ -9699,10 +9726,12 @@ fragment ClassroomData on StudentList {
   googleClassUrl
   __typename
 }
+
 fragment LinkedStudentData on LinkedGoogleClassStudent {
   email
   __typename
 }
+
 fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
   email
   nickname

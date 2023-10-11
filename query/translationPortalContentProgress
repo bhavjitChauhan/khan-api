@@ -24,6 +24,7 @@ fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
   fingerprint
   __typename
 }
+
 fragment tapArticleNode on TAPArticleNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -31,6 +32,7 @@ fragment tapArticleNode on TAPArticleNode {
   fingerprint
   __typename
 }
+
 fragment tapChallengeNode on TAPChallengeNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -38,6 +40,7 @@ fragment tapChallengeNode on TAPChallengeNode {
   fingerprint
   __typename
 }
+
 fragment tapContentItem on TAPContentItem {
   id
   contentKind
@@ -50,6 +53,7 @@ fragment tapContentItem on TAPContentItem {
   translatedTitle
   __typename
 }
+
 fragment tapContentWordCounts on TAPContentWordCounts {
   wordCount
   translatableWordCount
@@ -58,6 +62,7 @@ fragment tapContentWordCounts on TAPContentWordCounts {
   approvedWordCount
   __typename
 }
+
 fragment tapExerciseNode on TAPExerciseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -65,12 +70,14 @@ fragment tapExerciseNode on TAPExerciseNode {
   fingerprint
   __typename
 }
+
 fragment tapInteractiveNode on TAPInteractiveNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
   __typename
 }
+
 fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataWordCount
   metadataTranslatableWordCount
@@ -78,6 +85,7 @@ fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataApprovedWordCount
   __typename
 }
+
 fragment tapProjectNode on TAPProjectNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -85,6 +93,7 @@ fragment tapProjectNode on TAPProjectNode {
   fingerprint
   __typename
 }
+
 fragment tapTalkthroughNode on TAPTalkthroughNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -94,6 +103,7 @@ fragment tapTalkthroughNode on TAPTalkthroughNode {
   youtubeId
   __typename
 }
+
 fragment tapVideoNode on TAPVideoNode {
   ...tapContentItem
   ...tapMetadataWordCounts

@@ -95,6 +95,7 @@ fragment ActivitySession on ActivitySession {
   skillType
   __typename
 }
+
 fragment ActivitySessionSkillLevels on SkillLevelChange {
   id
   before

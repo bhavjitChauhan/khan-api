@@ -22,6 +22,7 @@ fragment contentEditorContentRevision on ContentRevision {
   creationDate
   __typename
 }
+
 fragment contentEditorLearnableContent on LearnableContentRevision {
   doNotPublish
   listed

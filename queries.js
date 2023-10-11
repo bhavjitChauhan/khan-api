@@ -148,6 +148,7 @@ fragment ActivitySession on ActivitySession {
   skillType
   __typename
 }
+
 fragment ActivitySessionSkillLevels on SkillLevelChange {
   id
   before
@@ -953,6 +954,7 @@ fragment contentEditorContentRevision on ContentRevision {
   creationDate
   __typename
 }
+
 fragment contentEditorLearnableContent on LearnableContentRevision {
   doNotPublish
   listed
@@ -998,6 +1000,7 @@ fragment contentEditorContentRevision on ContentRevision {
   creationDate
   __typename
 }
+
 fragment contentEditorLearnableContent on LearnableContentRevision {
   doNotPublish
   listed
@@ -1063,6 +1066,7 @@ fragment AssessmentItemRevision on AssessmentItemRevision {
   tags
   __typename
 }
+
 fragment ExerciseRevision on ExerciseRevision {
   id
   contentKind
@@ -1237,6 +1241,7 @@ fragment contentEditorContentRevision on ContentRevision {
   creationDate
   __typename
 }
+
 fragment contentEditorLearnableContent on LearnableContentRevision {
   doNotPublish
   listed
@@ -1650,6 +1655,7 @@ fragment CourseData on Course {
   }
   __typename
 }
+
 fragment LearnableContentData on LearnableContent {
   id
   contentKind
@@ -1837,6 +1843,7 @@ fragment LearnableContentData on LearnableContent {
   }
   __typename
 }
+
 fragment LearnableContentMetadata on LearnableContent {
   id
   canonicalUrl: defaultUrlPath
@@ -1859,6 +1866,7 @@ fragment LearnableContentMetadata on LearnableContent {
   urlWithinCurationNode
   __typename
 }
+
 fragment LessonData on Lesson {
   id
   relativeUrl
@@ -1887,6 +1895,7 @@ fragment LessonData on Lesson {
   }
   __typename
 }
+
 fragment QuizMetadata on TopicQuiz {
   ...LearnableContentMetadata
   exerciseLength
@@ -1898,6 +1907,7 @@ fragment QuizMetadata on TopicQuiz {
   }
   __typename
 }
+
 fragment UnitData on Unit {
   id
   iconPath
@@ -1911,6 +1921,7 @@ fragment UnitData on Unit {
   unlistedAncestorIds
   __typename
 }
+
 fragment UnitTestMetadata on TopicUnitTest {
   ...LearnableContentMetadata
   exerciseLength
@@ -2028,6 +2039,7 @@ fragment LessonAndChildrenFieldsThreeLevels on Lesson {
   }
   __typename
 }
+
 fragment QuizAndTestFields on LearnableContent {
   ... on TopicQuiz {
     coveredTutorials {
@@ -2153,6 +2165,7 @@ fragment LessonAndChildrenFields on Lesson {
   }
   __typename
 }
+
 fragment QuizAndTestFields on LearnableContent {
   ... on TopicQuiz {
     coveredTutorials {
@@ -5140,6 +5153,7 @@ fragment InvitationsField on Invitation {
   accepted
   __typename
 }
+
 fragment StudentField2 on StudentsPage {
   students {
     kaid
@@ -5898,6 +5912,7 @@ fragment InvitationsField on Invitation {
   accepted
   __typename
 }
+
 fragment StudentField1 on StudentsPage {
   students {
     kaid
@@ -6738,6 +6753,7 @@ fragment userExerciseFields on UserExercise {
   totalDone
   __typename
 }
+
 fragment userTaskFields on PracticeUserTask {
   cards {
     done
@@ -7237,6 +7253,7 @@ fragment MasteryGoalDueDateApproachingCreatedNotificationType on MasteryGoalDueD
   }
   __typename
 }
+
 fragment ModeratorNotificationType on ModeratorNotification {
   text
   __typename
@@ -9054,6 +9071,7 @@ fragment CommonContentItemProgressesFragment on ContentItemProgress {
   }
   __typename
 }
+
 fragment CommonUserInfoFragment on User {
   id
   curationItemProgress(topicId: $topicId) {
@@ -9116,6 +9134,7 @@ fragment CommonContentItemProgressesFragment on ContentItemProgress {
   }
   __typename
 }
+
 fragment CommonUserInfoFragment on User {
   id
   curationItemProgress(topicId: $topicId) {
@@ -10183,6 +10202,7 @@ fragment gtp_checkpointFragment on Checkpoint {
   tmsTaskIds
   __typename
 }
+
 fragment gtp_practiceTestFragment on PracticeTest {
   id
   practiceTestId
@@ -10220,6 +10240,7 @@ fragment gtp_practiceTestFragment on PracticeTest {
   }
   __typename
 }
+
 fragment gtp_tpudFragment on TestPrepUserData {
   id
   examId
@@ -10680,6 +10701,7 @@ fragment BaseFolder on Folder {
   kaLocale
   __typename
 }
+
 fragment Folder on Folder {
   ...BaseFolder
   courses {
@@ -10688,6 +10710,7 @@ fragment Folder on Folder {
   }
   __typename
 }
+
 fragment PublishedCourseRevisionFragment on CourseRevision {
   id
   contentId
@@ -10724,6 +10747,7 @@ fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
   fingerprint
   __typename
 }
+
 fragment tapArticleNode on TAPArticleNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -10731,6 +10755,7 @@ fragment tapArticleNode on TAPArticleNode {
   fingerprint
   __typename
 }
+
 fragment tapChallengeNode on TAPChallengeNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -10738,6 +10763,7 @@ fragment tapChallengeNode on TAPChallengeNode {
   fingerprint
   __typename
 }
+
 fragment tapContentItem on TAPContentItem {
   id
   contentKind
@@ -10750,6 +10776,7 @@ fragment tapContentItem on TAPContentItem {
   translatedTitle
   __typename
 }
+
 fragment tapContentWordCounts on TAPContentWordCounts {
   wordCount
   translatableWordCount
@@ -10758,6 +10785,7 @@ fragment tapContentWordCounts on TAPContentWordCounts {
   approvedWordCount
   __typename
 }
+
 fragment tapCourseNode on TAPCourseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -10768,6 +10796,7 @@ fragment tapCourseNode on TAPCourseNode {
   }
   __typename
 }
+
 fragment tapExerciseNode on TAPExerciseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -10775,12 +10804,14 @@ fragment tapExerciseNode on TAPExerciseNode {
   fingerprint
   __typename
 }
+
 fragment tapInteractiveNode on TAPInteractiveNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
   __typename
 }
+
 fragment tapLessonNode on TAPLessonNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -10798,6 +10829,7 @@ fragment tapLessonNode on TAPLessonNode {
   }
   __typename
 }
+
 fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataWordCount
   metadataTranslatableWordCount
@@ -10805,6 +10837,7 @@ fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataApprovedWordCount
   __typename
 }
+
 fragment tapProjectNode on TAPProjectNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -10812,6 +10845,7 @@ fragment tapProjectNode on TAPProjectNode {
   fingerprint
   __typename
 }
+
 fragment tapTalkthroughNode on TAPTalkthroughNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -10821,6 +10855,7 @@ fragment tapTalkthroughNode on TAPTalkthroughNode {
   youtubeId
   __typename
 }
+
 fragment tapUnitNode on TAPUnitNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -10831,6 +10866,7 @@ fragment tapUnitNode on TAPUnitNode {
   }
   __typename
 }
+
 fragment tapVideoNode on TAPVideoNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -12088,8 +12124,7 @@ fragment CourseProgress on SubjectProgress {
     __typename
   }
   __typename
-}
-`,
+}`,
   NamedPermissionCheck: `query NamedPermissionCheck($name: String!, $scope: Scope) {
   user {
     id
@@ -13777,6 +13812,7 @@ fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
   fingerprint
   __typename
 }
+
 fragment tapArticleNode on TAPArticleNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13784,6 +13820,7 @@ fragment tapArticleNode on TAPArticleNode {
   fingerprint
   __typename
 }
+
 fragment tapChallengeNode on TAPChallengeNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13791,6 +13828,7 @@ fragment tapChallengeNode on TAPChallengeNode {
   fingerprint
   __typename
 }
+
 fragment tapContentItem on TAPContentItem {
   id
   contentKind
@@ -13803,6 +13841,7 @@ fragment tapContentItem on TAPContentItem {
   translatedTitle
   __typename
 }
+
 fragment tapContentWordCounts on TAPContentWordCounts {
   wordCount
   translatableWordCount
@@ -13811,6 +13850,7 @@ fragment tapContentWordCounts on TAPContentWordCounts {
   approvedWordCount
   __typename
 }
+
 fragment tapExerciseNode on TAPExerciseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13818,12 +13858,14 @@ fragment tapExerciseNode on TAPExerciseNode {
   fingerprint
   __typename
 }
+
 fragment tapInteractiveNode on TAPInteractiveNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
   __typename
 }
+
 fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataWordCount
   metadataTranslatableWordCount
@@ -13831,6 +13873,7 @@ fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataApprovedWordCount
   __typename
 }
+
 fragment tapProjectNode on TAPProjectNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13838,6 +13881,7 @@ fragment tapProjectNode on TAPProjectNode {
   fingerprint
   __typename
 }
+
 fragment tapTalkthroughNode on TAPTalkthroughNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13847,6 +13891,7 @@ fragment tapTalkthroughNode on TAPTalkthroughNode {
   youtubeId
   __typename
 }
+
 fragment tapVideoNode on TAPVideoNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13874,6 +13919,7 @@ fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
   fingerprint
   __typename
 }
+
 fragment tapArticleNode on TAPArticleNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13881,6 +13927,7 @@ fragment tapArticleNode on TAPArticleNode {
   fingerprint
   __typename
 }
+
 fragment tapChallengeNode on TAPChallengeNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13888,6 +13935,7 @@ fragment tapChallengeNode on TAPChallengeNode {
   fingerprint
   __typename
 }
+
 fragment tapContentItem on TAPContentItem {
   id
   contentKind
@@ -13900,6 +13948,7 @@ fragment tapContentItem on TAPContentItem {
   translatedTitle
   __typename
 }
+
 fragment tapContentWordCounts on TAPContentWordCounts {
   wordCount
   translatableWordCount
@@ -13908,6 +13957,7 @@ fragment tapContentWordCounts on TAPContentWordCounts {
   approvedWordCount
   __typename
 }
+
 fragment tapCourseNode on TAPCourseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13918,6 +13968,7 @@ fragment tapCourseNode on TAPCourseNode {
   }
   __typename
 }
+
 fragment tapExerciseNode on TAPExerciseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13925,12 +13976,14 @@ fragment tapExerciseNode on TAPExerciseNode {
   fingerprint
   __typename
 }
+
 fragment tapInteractiveNode on TAPInteractiveNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
   __typename
 }
+
 fragment tapLessonNode on TAPLessonNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13948,6 +14001,7 @@ fragment tapLessonNode on TAPLessonNode {
   }
   __typename
 }
+
 fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataWordCount
   metadataTranslatableWordCount
@@ -13955,6 +14009,7 @@ fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataApprovedWordCount
   __typename
 }
+
 fragment tapProjectNode on TAPProjectNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13962,6 +14017,7 @@ fragment tapProjectNode on TAPProjectNode {
   fingerprint
   __typename
 }
+
 fragment tapTalkthroughNode on TAPTalkthroughNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13971,6 +14027,7 @@ fragment tapTalkthroughNode on TAPTalkthroughNode {
   youtubeId
   __typename
 }
+
 fragment tapUnitNode on TAPUnitNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -13981,6 +14038,7 @@ fragment tapUnitNode on TAPUnitNode {
   }
   __typename
 }
+
 fragment tapVideoNode on TAPVideoNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -14008,6 +14066,7 @@ fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
   fingerprint
   __typename
 }
+
 fragment tapArticleNode on TAPArticleNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -14015,6 +14074,7 @@ fragment tapArticleNode on TAPArticleNode {
   fingerprint
   __typename
 }
+
 fragment tapChallengeNode on TAPChallengeNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -14022,6 +14082,7 @@ fragment tapChallengeNode on TAPChallengeNode {
   fingerprint
   __typename
 }
+
 fragment tapContentItem on TAPContentItem {
   id
   contentKind
@@ -14034,6 +14095,7 @@ fragment tapContentItem on TAPContentItem {
   translatedTitle
   __typename
 }
+
 fragment tapContentWordCounts on TAPContentWordCounts {
   wordCount
   translatableWordCount
@@ -14042,6 +14104,7 @@ fragment tapContentWordCounts on TAPContentWordCounts {
   approvedWordCount
   __typename
 }
+
 fragment tapCourseNode on TAPCourseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -14052,6 +14115,7 @@ fragment tapCourseNode on TAPCourseNode {
   }
   __typename
 }
+
 fragment tapExerciseNode on TAPExerciseNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -14059,12 +14123,14 @@ fragment tapExerciseNode on TAPExerciseNode {
   fingerprint
   __typename
 }
+
 fragment tapInteractiveNode on TAPInteractiveNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
   __typename
 }
+
 fragment tapLessonNode on TAPLessonNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -14082,6 +14148,7 @@ fragment tapLessonNode on TAPLessonNode {
   }
   __typename
 }
+
 fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataWordCount
   metadataTranslatableWordCount
@@ -14089,6 +14156,7 @@ fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataApprovedWordCount
   __typename
 }
+
 fragment tapProjectNode on TAPProjectNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -14096,6 +14164,7 @@ fragment tapProjectNode on TAPProjectNode {
   fingerprint
   __typename
 }
+
 fragment tapTalkthroughNode on TAPTalkthroughNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -14105,6 +14174,7 @@ fragment tapTalkthroughNode on TAPTalkthroughNode {
   youtubeId
   __typename
 }
+
 fragment tapUnitNode on TAPUnitNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -14115,6 +14185,7 @@ fragment tapUnitNode on TAPUnitNode {
   }
   __typename
 }
+
 fragment tapVideoNode on TAPVideoNode {
   ...tapContentItem
   ...tapMetadataWordCounts
@@ -14183,6 +14254,7 @@ fragment tapContentItem on TAPContentItem {
   translatedTitle
   __typename
 }
+
 fragment tapContentWordCounts on TAPContentWordCounts {
   wordCount
   translatableWordCount
@@ -14191,12 +14263,14 @@ fragment tapContentWordCounts on TAPContentWordCounts {
   approvedWordCount
   __typename
 }
+
 fragment tapDomainNode on TAPDomainNode {
   ...tapContentItem
   ...tapMetadataWordCounts
   fingerprint
   __typename
 }
+
 fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataWordCount
   metadataTranslatableWordCount
@@ -14204,6 +14278,7 @@ fragment tapMetadataWordCounts on TAPMetadataWordCounts {
   metadataApprovedWordCount
   __typename
 }
+
 fragment tapPlatformNode on TAPPlatformNode {
   ...tapContentWordCounts
   id

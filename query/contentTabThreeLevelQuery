@@ -95,6 +95,7 @@ fragment LessonAndChildrenFieldsThreeLevels on Lesson {
   }
   __typename
 }
+
 fragment QuizAndTestFields on LearnableContent {
   ... on TopicQuiz {
     coveredTutorials {
