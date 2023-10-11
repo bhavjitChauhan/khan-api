@@ -7,7 +7,6 @@ mutation CourseEditorEditCourseIntro($input: EditCourseIntro!) {
     __typename
   }
 }
-
 fragment CourseStructure on CourseRevision {
   id
   contentId

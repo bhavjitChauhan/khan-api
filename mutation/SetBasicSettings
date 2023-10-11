@@ -1,5 +1,13 @@
 mutation SetBasicSettings($kaid: String!, $nickname: String, $username: String, $soundOn: Boolean, $userLanguage: String, $region: String, $birthdate: String) {
-  setSettings(kaid: $kaid, nickname: $nickname, username: $username, soundOn: $soundOn, userLanguage: $userLanguage, region: $region, birthdate: $birthdate) {
+  setSettings(
+    kaid: $kaid
+    nickname: $nickname
+    username: $username
+    soundOn: $soundOn
+    userLanguage: $userLanguage
+    region: $region
+    birthdate: $birthdate
+  ) {
     user {
       id
       nickname

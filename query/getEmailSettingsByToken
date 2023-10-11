@@ -13,7 +13,6 @@ query getEmailSettingsByToken($token: String!) {
     __typename
   }
 }
-
 fragment EmailSubscriptionFields on EmailSubscriptions {
   allEmailSubscription {
     checked

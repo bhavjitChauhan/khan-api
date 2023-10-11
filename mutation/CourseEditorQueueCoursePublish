@@ -1,5 +1,10 @@
 mutation CourseEditorQueueCoursePublish($courseId: String!, $snapshotId: String!, $contentDescriptors: [String!]!, $title: String!) {
-  startPublishForCourse(courseId: $courseId, snapshotId: $snapshotId, contentDescriptors: $contentDescriptors, title: $title) {
+  startPublishForCourse(
+    courseId: $courseId
+    snapshotId: $snapshotId
+    contentDescriptors: $contentDescriptors
+    title: $title
+  ) {
     success
     publishStatus {
       id

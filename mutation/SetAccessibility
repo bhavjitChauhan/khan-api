@@ -1,5 +1,10 @@
 mutation SetAccessibility($kaid: String!, $hideVisual: Boolean!, $prefersReducedMotion: Boolean!, $noColorInVideos: Boolean!) {
-  setSettings(kaid: $kaid, hideVisual: $hideVisual, prefersReducedMotion: $prefersReducedMotion, noColorInVideos: $noColorInVideos) {
+  setSettings(
+    kaid: $kaid
+    hideVisual: $hideVisual
+    prefersReducedMotion: $prefersReducedMotion
+    noColorInVideos: $noColorInVideos
+  ) {
     user {
       id
       hideVisual
