@@ -234,7 +234,7 @@ export default {
   getModerationLogs: 2267071906,
   getModerationResult: 3043772591,
   GetNotationReadAloudsForAssessmentItem: 2518928772,
-  getNotificationsForUser: 99728219,
+  getNotificationsForUser: 1610638385,
   getOffensiveTerms: 1905088201,
   getOfficialClarifications: 2738769843,
   getOfficialClarificationsWithReporter: 163305754,
