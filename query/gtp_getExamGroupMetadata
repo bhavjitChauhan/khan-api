@@ -8,7 +8,6 @@ query gtp_getExamGroupMetadata($examGroupId: String!) {
     __typename
   }
 }
-
 fragment gtp_examGroupMetadataFragment on ExamGroupMetadata {
   id
   testMaker

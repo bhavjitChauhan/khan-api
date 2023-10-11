@@ -1,5 +1,11 @@
 query FlaggedFeedback($feedbackType: FeedbackType, $page: Int, $sort: ModerationSortOrder, $limit: Int, $kaLocale: String) {
-  flaggedFeedback(feedbackType: $feedbackType, page: $page, sort: $sort, limit: $limit, kaLocale: $kaLocale) {
+  flaggedFeedback(
+    feedbackType: $feedbackType
+    page: $page
+    sort: $sort
+    limit: $limit
+    kaLocale: $kaLocale
+  ) {
     feedback {
       author {
         id

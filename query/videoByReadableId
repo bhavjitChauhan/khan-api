@@ -1,9 +1,0 @@
-query videoByReadableId($videoId: String!) {
-  video(id: $videoId) {
-    id
-    title
-    youtubeId
-    contentId
-    __typename
-  }
-}

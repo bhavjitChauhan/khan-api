@@ -1,5 +1,9 @@
 mutation submitTeacherCampaignResponse($urlEncodedStepKey: ID!, $exerciseNo: Int!, $text: [String]!) {
-  teacherCampaignExerciseComplete(urlEncodedStepKey: $urlEncodedStepKey, exerciseNo: $exerciseNo, text: $text) {
+  teacherCampaignExerciseComplete(
+    urlEncodedStepKey: $urlEncodedStepKey
+    exerciseNo: $exerciseNo
+    text: $text
+  ) {
     ok
     __typename
   }

@@ -1,5 +1,8 @@
 mutation setClassroomMasteryTowersGoal($classDescriptor: String!, $weeklyGoal: Int!) {
-  setClassroomMasteryTowersGoal(classDescriptor: $classDescriptor, weeklyGoal: $weeklyGoal) {
+  setClassroomMasteryTowersGoal(
+    classDescriptor: $classDescriptor
+    weeklyGoal: $weeklyGoal
+  ) {
     error {
       code
       __typename

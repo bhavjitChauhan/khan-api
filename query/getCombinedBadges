@@ -21,7 +21,6 @@ query getCombinedBadges($kaid: String, $spotlightBadgeSlug: String!) {
     __typename
   }
 }
-
 fragment Badge on Badge {
   badgeCategory
   description

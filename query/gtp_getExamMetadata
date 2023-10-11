@@ -4,7 +4,6 @@ query gtp_getExamMetadata($examId: String!) {
     __typename
   }
 }
-
 fragment gtp_examMetadataFragment on ExamMetadata {
   id
   accommodationsUrl

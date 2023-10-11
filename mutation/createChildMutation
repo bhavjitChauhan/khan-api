@@ -1,5 +1,10 @@
 mutation createChildMutation($birthdate: Date!, $username: String!, $password: String!, $nickname: String) {
-  createChild(birthdate: $birthdate, username: $username, password: $password, nickname: $nickname) {
+  createChild(
+    birthdate: $birthdate
+    username: $username
+    password: $password
+    nickname: $nickname
+  ) {
     child {
       id
       nickname

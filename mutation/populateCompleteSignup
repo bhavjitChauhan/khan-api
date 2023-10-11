@@ -1,5 +1,10 @@
 mutation populateCompleteSignup($token: String, $inviteId: String, $parent: Boolean, $hCaptchaResponseToken: String) {
-  populateCompleteSignup(token: $token, inviteId: $inviteId, parent: $parent, hCaptchaResponseToken: $hCaptchaResponseToken) {
+  populateCompleteSignup(
+    token: $token
+    inviteId: $inviteId
+    parent: $parent
+    hCaptchaResponseToken: $hCaptchaResponseToken
+  ) {
     token
     inviteId
     isParent
