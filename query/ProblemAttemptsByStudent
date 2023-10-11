@@ -22,8 +22,6 @@ query ProblemAttemptsByStudent($studentKaids: [String], $contentDescriptor: Stri
   }
 }
 
-
-
 fragment ProblemAttemptFields on ProblemAttempt {
   kaid
   correct

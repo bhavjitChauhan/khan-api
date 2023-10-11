@@ -66,8 +66,6 @@ query getClassroomRoster($classDescriptor: String!, $teacherKaid: String!, $afte
   }
 }
 
-
-
 fragment CleverCoachRequestField on CleverCoachRequest {
   id
   email: studentIdentifier

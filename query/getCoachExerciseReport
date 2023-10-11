@@ -48,8 +48,6 @@ query getCoachExerciseReport($assignmentId: String!, $teacherKaid: String!) {
   }
 }
 
-
-
 fragment ExerciseContentFields on LearnableContent {
   id
   kind

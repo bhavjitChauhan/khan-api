@@ -44,8 +44,6 @@ query StandaloneUserAssignments($after: ID, $pageSize: Int, $kaid: String!, $cla
   }
 }
 
-
-
 fragment TranslatedContentFields on LearnableContent {
   id
   kind

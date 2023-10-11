@@ -1975,8 +1975,6 @@ fragment UnitTestMetadata on TopicUnitTest {
   }
 }
 
-
-
 fragment CourseFieldsThreeLevels on Course {
   ... on Course {
     id
@@ -2101,8 +2099,6 @@ fragment QuizAndTestFields on LearnableContent {
     __typename
   }
 }
-
-
 
 fragment CourseFields on Course {
   ... on Course {
@@ -2520,8 +2516,6 @@ fragment FolderCourseRevisionFragment on CourseRevision {
     __typename
   }
 }
-
-
 
 fragment LibraryFolder on Folder {
   id
@@ -5128,8 +5122,6 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
   }
 }
 
-
-
 fragment CleverCoachRequestField on CleverCoachRequest {
   id
   email: studentIdentifier
@@ -5316,8 +5308,6 @@ fragment StudentField2 on StudentsPage {
     __typename
   }
 }
-
-
 
 fragment ExerciseContentFields on LearnableContent {
   id
@@ -5889,8 +5879,6 @@ fragment Badge on Badge {
     __typename
   }
 }
-
-
 
 fragment CleverCoachRequestField on CleverCoachRequest {
   id
@@ -7125,8 +7113,6 @@ fragment userTaskFields on PracticeUserTask {
     __typename
   }
 }
-
-
 
 fragment AssignmentCreatedNotificationType on AssignmentCreatedNotification {
   numAssignments
@@ -12362,8 +12348,6 @@ fragment CourseProgress on SubjectProgress {
   }
 }
 
-
-
 fragment ProblemAttemptFields on ProblemAttempt {
   kaid
   correct
@@ -13087,8 +13071,6 @@ fragment ProblemAttemptFields on ProblemAttempt {
     __typename
   }
 }
-
-
 
 fragment TranslatedContentFields on LearnableContent {
   id
@@ -14490,8 +14472,6 @@ fragment tapTranslationFreshness on TAPTranslationFreshness {
   }
 }
 
-
-
 fragment ContentFields on LearnableContent {
   contentId: id
   id
@@ -15172,8 +15152,6 @@ fragment BasicContentItemProgress on ContentItemProgress {
   }
 }
 
-
-
 fragment SharedFeedbackFields on Feedback {
   __typename
   appearsAsDeleted
@@ -15437,8 +15415,6 @@ fragment VideoRevision on VideoRevision {
     __typename
   }
 }
-
-
 
 fragment TopicFields on Topic {
   contentId: id
