@@ -10,6 +10,7 @@ query getChildrenForDevadmin($kaid: String!) {
       kaid
       nickname
       username
+      grassrootsKhanmigoIneligibleReasons
       __typename
     }
     unmanagedChildren {
@@ -21,6 +22,7 @@ query getChildrenForDevadmin($kaid: String!) {
       kaid
       nickname
       username
+      grassrootsKhanmigoIneligibleReasons
       __typename
     }
     __typename
