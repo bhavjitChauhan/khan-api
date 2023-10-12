@@ -10812,7 +10812,10 @@ fragment entry on TeamPageEntryForEditing {
       contentKind
       listed
       title
+      description
+      code
       sha
+      doNotPublish
       __typename
     }
     error {
