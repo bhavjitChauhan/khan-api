@@ -4883,6 +4883,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
       kaid
       nickname
       username
+      grassrootsKhanmigoIneligibleReasons
       __typename
     }
     unmanagedChildren {
@@ -4894,6 +4895,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
       kaid
       nickname
       username
+      grassrootsKhanmigoIneligibleReasons
       __typename
     }
     __typename
