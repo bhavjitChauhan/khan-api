@@ -8,6 +8,7 @@ query contentEditorGetChallengeRevision($id: String!) {
     title
     sha
     code
+    doNotPublish
     __typename
   }
 }

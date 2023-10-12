@@ -599,7 +599,7 @@ export default {
   getMasteryAssignmentMedianProgress: 2047782189,
   learnableContentPathQuery: 1734560818,
   getStringTranslation: 2218244061,
-  contentEditorGetChallengeRevision: 1817178587,
+  contentEditorGetChallengeRevision: 3714739190,
   previewAiGuideDisabledDuringDistrictActivationEmail: 3622096416,
   TranslationEditor_GetAIGuideActivityStrings: 3594501385,
 }

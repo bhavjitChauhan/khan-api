@@ -6,7 +6,10 @@ mutation contentEditorEditChallenge($input: EditChallengeInput!, $sha: String!) 
       contentKind
       listed
       title
+      description
+      code
       sha
+      doNotPublish
       __typename
     }
     error {
