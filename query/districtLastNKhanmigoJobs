@@ -12,6 +12,12 @@ query districtLastNKhanmigoJobs($districtId: ID!, $includedDryRun: Boolean!, $nu
       khanmigoTeachers
       khanmigoAddedTeachers
       khanmigoRemovedTeachers
+      khanmigoSchoolAdmins
+      khanmigoAddedSchoolAdmins
+      khanmigoRemovedSchoolAdmins
+      khanmigoDistrictAdmins
+      khanmigoAddedDistrictAdmins
+      khanmigoRemovedDistrictAdmins
       khanmigoTotal
       khanmigoAddedTotal
       khanmigoRemovedTotal
