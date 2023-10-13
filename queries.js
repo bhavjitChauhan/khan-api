@@ -16759,6 +16759,12 @@ fragment contentSearchLearnableContent on LearnableContent {
       khanmigoTeachers
       khanmigoAddedTeachers
       khanmigoRemovedTeachers
+      khanmigoSchoolAdmins
+      khanmigoAddedSchoolAdmins
+      khanmigoRemovedSchoolAdmins
+      khanmigoDistrictAdmins
+      khanmigoAddedDistrictAdmins
+      khanmigoRemovedDistrictAdmins
       khanmigoTotal
       khanmigoAddedTotal
       khanmigoRemovedTotal
