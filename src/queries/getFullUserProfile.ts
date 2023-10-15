@@ -48,7 +48,10 @@ export namespace GetFullUserProfile {
     noColorInVideos
     newNotificationCount
     canHellban: hasPermission(name: "can_ban_users", scope: GLOBAL)
-    canMessageUsers: hasPermission(name: "can_send_moderator_messages", scope: GLOBAL)
+    canMessageUsers: hasPermission(
+      name: "can_send_moderator_messages"
+      scope: GLOBAL
+    )
     isSelf: isActor
     hasStudents: hasCoachees
     hasClasses
@@ -88,13 +91,13 @@ export namespace GetFullUserProfile {
     shouldShowAgeCheck
     birthMonthYear
     lastLoginCountry
+    region
     __typename
   }
   actorIsImpersonatingUser
   isAIGuideEnabled
   hasAccessToAIGuideDev
-}
-` as const
+}` as const
 
   export interface Variables {
     kaid?: Kaid | null
@@ -161,6 +164,7 @@ export namespace GetFullUserProfile {
       | 'prefersReducedMotion'
       | 'profile'
       | 'profileRoot'
+      | 'region'
       | 'shouldShowAgeCheck'
       | 'showCaptions'
       | 'signupDataIfUnverified'
