@@ -29,8 +29,7 @@ export namespace LoginWithPasswordMutation {
     }
     __typename
   }
-}
-` as const
+}` as const
 
   export interface Variables {
     /** Email or username */

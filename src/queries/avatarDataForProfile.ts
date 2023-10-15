@@ -15,8 +15,7 @@ export namespace AvatarDataForProfile {
     }
     __typename
   }
-}
-` as const
+}` as const
 
   export interface Variables {
     kaid: Kaid

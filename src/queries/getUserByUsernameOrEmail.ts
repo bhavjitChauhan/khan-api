@@ -13,8 +13,7 @@ export namespace GetUserByUsernameOrEmail {
     kaid
     __typename
   }
-}
-` as const
+}` as const
 
   export interface Variables {
     username?: string

@@ -7,7 +7,12 @@ import { graphql } from '../utils/fetch'
 export namespace Hotlist {
   export const query =
     `query hotlist($curationNodeId: String, $onlyOfficialProjectSpinoffs: Boolean!, $sort: ListProgramSortOrder, $pageInfo: ListProgramsPageInfo) {
-  listTopPrograms(curationNodeId: $curationNodeId, onlyOfficialProjectSpinoffs: $onlyOfficialProjectSpinoffs, sort: $sort, pageInfo: $pageInfo) {
+  listTopPrograms(
+    curationNodeId: $curationNodeId
+    onlyOfficialProjectSpinoffs: $onlyOfficialProjectSpinoffs
+    sort: $sort
+    pageInfo: $pageInfo
+  ) {
     complete
     cursor
     programs {
@@ -24,8 +29,7 @@ export namespace Hotlist {
     }
     __typename
   }
-}
-` as const
+}` as const
 
   export interface Variables {
     curationNodeId?: string | null

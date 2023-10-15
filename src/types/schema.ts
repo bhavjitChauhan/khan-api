@@ -112,6 +112,7 @@ export interface UserSchema<
    * @deprecated Since 2023-04-24
    */
   qualarooId: QualarooID | Kaid | null
+  region: null | unknown
   shouldShowAgeCheck: boolean | null
   showCaptions: boolean | null
   signupDataIfUnverified: null | unknown

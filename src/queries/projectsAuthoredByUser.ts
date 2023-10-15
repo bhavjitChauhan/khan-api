@@ -29,8 +29,7 @@ export namespace ProjectsAuthoredByUser {
     }
     __typename
   }
-}
-` as const
+}` as const
 
   export interface Variables {
     kaid: Kaid
