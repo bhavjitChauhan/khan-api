@@ -52,8 +52,7 @@ export namespace GetFeedbackRepliesPage {
     }
     __typename
   }
-}
-` as const
+}` as const
 
   export interface Variables {
     postKey: FeedbackKey | EncryptedFeedbackKey
