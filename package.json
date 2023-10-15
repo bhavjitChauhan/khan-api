@@ -72,7 +72,9 @@
     },
     "browser": {
       "import": "./browser/esm/khan-api.js",
-      "default": "./browser/iife/khan-api.js"
+      "require": "./browser/esm/khan-api.js",
+      "script": "./browser/iife/khan-api.js",
+      "default": "./browser/esm/khan-api.js"
     },
     "default": "./node/esm/khan-api.mjs"
   },
