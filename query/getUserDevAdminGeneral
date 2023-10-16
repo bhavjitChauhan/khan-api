@@ -3,7 +3,6 @@ query getUserDevAdminGeneral($kaid: String!) {
     id
     age
     aiGuideDisabledReason
-    aiGuideWaitlistStatus
     applePrimaryEmail
     appleId
     authEmails
