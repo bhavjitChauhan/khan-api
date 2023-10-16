@@ -1385,6 +1385,7 @@ fragment InvitationsField on Invitation {
     nodeSlug
     translatedDescription
     translatedTests
+    testsFormat
     testStrings {
       message
       __typename

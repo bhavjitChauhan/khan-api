@@ -23,6 +23,7 @@ fragment LearnableContentData on LearnableContent {
     nodeSlug
     translatedDescription
     translatedTests
+    testsFormat
     testStrings {
       message
       __typename
