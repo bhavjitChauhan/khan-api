@@ -8759,7 +8759,6 @@ fragment Badge on Badge {
     id
     age
     aiGuideDisabledReason
-    aiGuideWaitlistStatus
     applePrimaryEmail
     appleId
     authEmails
