@@ -3573,6 +3573,9 @@ fragment CourseProgress on SubjectProgress {
     hasKhanmigo
     khanmigoPreference
     khanmigoIncludeStudents
+    khanmigoStudents
+    khanmigoAdmins
+    khanmigoTeachers
     khanmigoTotal
     khanmigoUDIsShould
     khanmigoUDIsHave
@@ -16312,6 +16315,8 @@ fragment contentSearchLearnableContent on LearnableContent {
       __typename
     }
     age
+    hasKhanmigoViaClassy
+    hasKhanmigoViaStripe
     __typename
   }
 }`,

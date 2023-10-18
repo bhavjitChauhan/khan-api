@@ -62,6 +62,9 @@ query districts($filter: String!) {
     hasKhanmigo
     khanmigoPreference
     khanmigoIncludeStudents
+    khanmigoStudents
+    khanmigoAdmins
+    khanmigoTeachers
     khanmigoTotal
     khanmigoUDIsShould
     khanmigoUDIsHave
