@@ -14,6 +14,8 @@ query getNonProfileKhanmigoEligibilityData {
       __typename
     }
     age
+    hasKhanmigoViaClassy
+    hasKhanmigoViaStripe
     __typename
   }
 }
