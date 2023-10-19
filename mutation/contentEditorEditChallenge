@@ -10,6 +10,7 @@ mutation contentEditorEditChallenge($input: EditChallengeInput!, $sha: String!) 
       code
       sha
       doNotPublish
+      tests
       __typename
     }
     error {
