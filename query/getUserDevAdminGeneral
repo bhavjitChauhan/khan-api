@@ -64,8 +64,6 @@ query getUserDevAdminGeneral($kaid: String!) {
       username
       __typename
     }
-    mobileNumber
-    mobileNumberVerified
     nickname
     parents {
       id
