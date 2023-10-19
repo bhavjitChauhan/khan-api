@@ -1,5 +1,5 @@
-mutation contentEditorEditProject($sha: String!, $input: EditProjectInput!) {
-  editProject(sha: $sha, input: $input) {
+mutation csEditorEditProject($input: EditProjectInput!, $sha: String!) {
+  editProject(input: $input, sha: $sha) {
     project {
       ...ProjectRevision
       __typename

@@ -1670,8 +1670,12 @@ fragment InvitationsField on Invitation {
   contentId
   contentKind
   slug
-  sha
+  description
   listed
+  title
+  sha
+  code
+  doNotPublish
   __typename
 }`,
   PublishedCourseRevisionFragment: `fragment PublishedCourseRevisionFragment on CourseRevision {
