@@ -4877,6 +4877,44 @@ fragment userTaskFields on PracticeUserTask {
     }
     __typename
   }
+}
+
+fragment gtp_checkpointFragment on Checkpoint {
+  id
+  stages {
+    numCreditedTasks
+    creditedTaskIds
+    goalTasks
+    stageIndex
+    stageDisplayNumber
+    startedAt
+    completedAt
+    incomingLevels {
+      name
+      level
+      __typename
+    }
+    focusAreas {
+      skillTitle
+      areaId
+      areaTitle
+      __typename
+    }
+    __typename
+  }
+  checkpointIndex
+  startedAt
+  completedAt
+  drillMode
+  isComplete
+  removedFromSchedule
+  hasDonePracticeTasks
+  numStages
+  canCreateNewStage
+  hasDonePracticeTasks
+  miniSectionStages
+  tmsTaskIds
+  __typename
 }`,
   gtp_deleteDataMutation: `mutation gtp_deleteDataMutation($examGroupId: String!) {
   deleteData(examGroupId: $examGroupId) {
@@ -4902,6 +4940,169 @@ fragment userTaskFields on PracticeUserTask {
     }
     __typename
   }
+}
+
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+
+fragment gtp_taskFragment on Task {
+  id
+  kaid
+  examId
+  taskType
+  secondsTaken
+  taskDurationSeconds
+  translatedTitle
+  creationDatetime
+  startDatetime
+  completed
+  receivedCredit
+  completionDatetime
+  stage
+  checkpoint
+  taskContent {
+    concepts {
+      item {
+        conceptId
+        translatedTitle
+        __typename
+      }
+      questions {
+        conceptId
+        translatedTitle
+        __typename
+      }
+      __typename
+    }
+    id
+    itemData
+    itemShapeType
+    skills {
+      item {
+        areaId
+        skillId
+        skillContentId
+        translatedTitle
+        __typename
+      }
+      questions {
+        areaId
+        skillId
+        skillContentId
+        translatedTitle
+        __typename
+      }
+      __typename
+    }
+    gradingMetadata {
+      instructions
+      promptTitle
+      responseTitle
+      minScore
+      maxScore
+      rubric {
+        article {
+          id
+          perseusContent
+          __typename
+        }
+        __typename
+      }
+      scoreExamples {
+        score
+        article {
+          id
+          perseusContent
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  taskState
+  taskStateHash
+  exerciseName
+  itemIds
+  areaId
+  areaTitle
+  ... on SkillTask {
+    skillId
+    skill {
+      description
+      __typename
+    }
+    level
+    incomingSkillLevelLabel {
+      label
+      skillLevel
+      __typename
+    }
+    outgoingSkillLevelLabel {
+      label
+      skillLevel
+      __typename
+    }
+    __typename
+  }
+  ... on TmsTask {
+    directions
+    extendedTaskState
+    startExtendedTimeDt
+    __typename
+  }
+  ... on TestSectionTask {
+    directions
+    __typename
+  }
+  ... on ExpressDiagnosticTask {
+    directions
+    skillLevels {
+      skillName
+      minLevel
+      maxLevel
+      level
+      __typename
+    }
+    __typename
+  }
+  __typename
 }`,
   gtp_resetPracticeTestMutation: `mutation gtp_resetPracticeTestMutation($examId: String!, $taskId: String!) {
   resetPracticeTest(examId: $examId, taskId: $taskId) {
@@ -4920,6 +5121,71 @@ fragment userTaskFields on PracticeUserTask {
     }
     __typename
   }
+}
+
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+
+fragment gtp_tpudFragment on TestPrepUserData {
+  id
+  examId
+  currentStage
+  currentCheckpoint
+  targetScore
+  diagnosticsStates {
+    type
+    state
+    __typename
+  }
+  onboardingState
+  hasSeededSkillLevels
+  hasUnlockedDrillMode
+  scoreInfo {
+    minScore
+    maxScore
+    __typename
+  }
+  schedule {
+    examDate
+    practiceTestDates
+    __typename
+  }
+  __typename
 }`,
   gtp_startExpressTask: `mutation gtp_startExpressTask($taskType: String!, $taskId: ID!) {
   startTask(taskType: $taskType, taskId: $taskId) {
@@ -4949,6 +5215,44 @@ fragment userTaskFields on PracticeUserTask {
     }
     __typename
   }
+}
+
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
 }
 
 fragment gtp_taskFragment on Task {
@@ -5217,6 +5521,44 @@ fragment gtp_taskFragment on Task {
     }
     __typename
   }
+}
+
+fragment gtp_checkpointFragment on Checkpoint {
+  id
+  stages {
+    numCreditedTasks
+    creditedTaskIds
+    goalTasks
+    stageIndex
+    stageDisplayNumber
+    startedAt
+    completedAt
+    incomingLevels {
+      name
+      level
+      __typename
+    }
+    focusAreas {
+      skillTitle
+      areaId
+      areaTitle
+      __typename
+    }
+    __typename
+  }
+  checkpointIndex
+  startedAt
+  completedAt
+  drillMode
+  isComplete
+  removedFromSchedule
+  hasDonePracticeTasks
+  numStages
+  canCreateNewStage
+  hasDonePracticeTasks
+  miniSectionStages
+  tmsTaskIds
+  __typename
 }`,
   gtp_startTask: `mutation gtp_startTask($taskType: String!, $taskId: ID!) {
   startTask(taskType: $taskType, taskId: $taskId) {
@@ -5241,6 +5583,44 @@ fragment gtp_taskFragment on Task {
     }
     __typename
   }
+}
+
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
 }
 
 fragment gtp_taskFragment on Task {
@@ -5405,6 +5785,44 @@ fragment gtp_taskFragment on Task {
   }
 }
 
+fragment gtp_checkpointFragment on Checkpoint {
+  id
+  stages {
+    numCreditedTasks
+    creditedTaskIds
+    goalTasks
+    stageIndex
+    stageDisplayNumber
+    startedAt
+    completedAt
+    incomingLevels {
+      name
+      level
+      __typename
+    }
+    focusAreas {
+      skillTitle
+      areaId
+      areaTitle
+      __typename
+    }
+    __typename
+  }
+  checkpointIndex
+  startedAt
+  completedAt
+  drillMode
+  isComplete
+  removedFromSchedule
+  hasDonePracticeTasks
+  numStages
+  canCreateNewStage
+  hasDonePracticeTasks
+  miniSectionStages
+  tmsTaskIds
+  __typename
+}
+
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {
@@ -5434,6 +5852,44 @@ fragment gtp_egudFragment on ExamGroupUserData {
     __typename
   }
   extendedTimeMultiplier
+  __typename
+}
+
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
+      maxScore
+      __typename
+    }
+    __typename
+  }
   __typename
 }
 
@@ -5560,6 +6016,33 @@ fragment gtp_taskFragment on Task {
     __typename
   }
   __typename
+}
+
+fragment gtp_tpudFragment on TestPrepUserData {
+  id
+  examId
+  currentStage
+  currentCheckpoint
+  targetScore
+  diagnosticsStates {
+    type
+    state
+    __typename
+  }
+  onboardingState
+  hasSeededSkillLevels
+  hasUnlockedDrillMode
+  scoreInfo {
+    minScore
+    maxScore
+    __typename
+  }
+  schedule {
+    examDate
+    practiceTestDates
+    __typename
+  }
+  __typename
 }`,
   gtp_submitTask: `mutation gtp_submitTask($taskId: ID!, $taskType: String!, $newTaskState: JSONString!, $newTaskStateHash: ID!, $prevTaskStateHash: ID) {
   submitTask(
@@ -5601,6 +6084,44 @@ fragment gtp_taskFragment on Task {
     }
     __typename
   }
+}
+
+fragment gtp_checkpointFragment on Checkpoint {
+  id
+  stages {
+    numCreditedTasks
+    creditedTaskIds
+    goalTasks
+    stageIndex
+    stageDisplayNumber
+    startedAt
+    completedAt
+    incomingLevels {
+      name
+      level
+      __typename
+    }
+    focusAreas {
+      skillTitle
+      areaId
+      areaTitle
+      __typename
+    }
+    __typename
+  }
+  checkpointIndex
+  startedAt
+  completedAt
+  drillMode
+  isComplete
+  removedFromSchedule
+  hasDonePracticeTasks
+  numStages
+  canCreateNewStage
+  hasDonePracticeTasks
+  miniSectionStages
+  tmsTaskIds
+  __typename
 }
 
 fragment gtp_egudFragment on ExamGroupUserData {
@@ -5649,6 +6170,44 @@ fragment gtp_essayScoresFragment on EssayScores {
   __typename
 }
 
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+
 fragment gtp_taskFragment on Task {
   id
   kaid
@@ -5772,6 +6331,33 @@ fragment gtp_taskFragment on Task {
     __typename
   }
   __typename
+}
+
+fragment gtp_tpudFragment on TestPrepUserData {
+  id
+  examId
+  currentStage
+  currentCheckpoint
+  targetScore
+  diagnosticsStates {
+    type
+    state
+    __typename
+  }
+  onboardingState
+  hasSeededSkillLevels
+  hasUnlockedDrillMode
+  scoreInfo {
+    minScore
+    maxScore
+    __typename
+  }
+  schedule {
+    examDate
+    practiceTestDates
+    __typename
+  }
+  __typename
 }`,
   gtp_updateExamGroupSettingsV2: `mutation gtp_updateExamGroupSettingsV2($examGroupId: String!, $practiceDaysInfo: [PracticeDaysInput!], $selectedCutoffs: [String!], $selectedExams: [String!], $extendedTimeMultiplier: Float, $exams: [ExamSettingsInput], $enableGtpSetupPage: Boolean) {
   updateExamGroupSettings(
@@ -5814,6 +6400,44 @@ fragment gtp_taskFragment on Task {
   }
 }
 
+fragment gtp_checkpointFragment on Checkpoint {
+  id
+  stages {
+    numCreditedTasks
+    creditedTaskIds
+    goalTasks
+    stageIndex
+    stageDisplayNumber
+    startedAt
+    completedAt
+    incomingLevels {
+      name
+      level
+      __typename
+    }
+    focusAreas {
+      skillTitle
+      areaId
+      areaTitle
+      __typename
+    }
+    __typename
+  }
+  checkpointIndex
+  startedAt
+  completedAt
+  drillMode
+  isComplete
+  removedFromSchedule
+  hasDonePracticeTasks
+  numStages
+  canCreateNewStage
+  hasDonePracticeTasks
+  miniSectionStages
+  tmsTaskIds
+  __typename
+}
+
 fragment gtp_egudFragment on ExamGroupUserData {
   id
   practiceDaysInfo {
@@ -5843,6 +6467,71 @@ fragment gtp_egudFragment on ExamGroupUserData {
     __typename
   }
   extendedTimeMultiplier
+  __typename
+}
+
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+
+fragment gtp_tpudFragment on TestPrepUserData {
+  id
+  examId
+  currentStage
+  currentCheckpoint
+  targetScore
+  diagnosticsStates {
+    type
+    state
+    __typename
+  }
+  onboardingState
+  hasSeededSkillLevels
+  hasUnlockedDrillMode
+  scoreInfo {
+    minScore
+    maxScore
+    __typename
+  }
+  schedule {
+    examDate
+    practiceTestDates
+    __typename
+  }
   __typename
 }`,
   gtp_updateSubscriptionByToken: `mutation gtp_updateSubscriptionByToken($token: String!, $subscribe: Boolean!) {
@@ -6028,6 +6717,33 @@ fragment gtp_taskFragment on Task {
       level
       __typename
     }
+    __typename
+  }
+  __typename
+}
+
+fragment gtp_tpudFragment on TestPrepUserData {
+  id
+  examId
+  currentStage
+  currentCheckpoint
+  targetScore
+  diagnosticsStates {
+    type
+    state
+    __typename
+  }
+  onboardingState
+  hasSeededSkillLevels
+  hasUnlockedDrillMode
+  scoreInfo {
+    minScore
+    maxScore
+    __typename
+  }
+  schedule {
+    examDate
+    practiceTestDates
     __typename
   }
   __typename
