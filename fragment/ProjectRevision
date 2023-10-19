@@ -3,7 +3,11 @@ fragment ProjectRevision on ProjectRevision {
   contentId
   contentKind
   slug
-  sha
+  description
   listed
+  title
+  sha
+  code
+  doNotPublish
   __typename
 }
