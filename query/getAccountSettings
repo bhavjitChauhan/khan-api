@@ -50,7 +50,6 @@ query getAccountSettings($targetKaid: String) {
     googlePrimaryEmail
     facebookId
     facebookPrimaryEmail
-    mobileNumber
     canAccessDistrictsHomepage
     userChosenRoles
     homepage
