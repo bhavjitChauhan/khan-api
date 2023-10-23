@@ -1136,6 +1136,7 @@ fragment ProjectRevision on ProjectRevision {
   sha
   code
   doNotPublish
+  projectEval
   __typename
 }`,
   contentEditorGetPublishedExerciseProblems: `query contentEditorGetPublishedExerciseProblems($id: String!) {
