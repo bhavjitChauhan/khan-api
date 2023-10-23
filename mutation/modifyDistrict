@@ -1,4 +1,4 @@
-mutation modifyDistrict($existingDistrictID: ID!, $newName: String, $offerings: [Offering!], $rosterSyncingEnabled: Boolean, $rosterID: String, $rosterSource: RosterSource, $nweaID: String, $ncesID: String, $isTest: Boolean, $sendTeacherActivationEmails: Boolean, $goLiveDate: Date, $kaLocale: String, $schoolYearDates: DistrictSchoolYearInput, $region: String, $allOnGrades: [DistrictGradeLevel!], $allOffGrades: [DistrictGradeLevel!], $subsetGrades: [DistrictGradeLevel!], $schoolKhanmigoPreferences: [DistrictKhanmigoSchool!], $khanmigoPreference: KhanmigoEnrollment, $khanmigoTotal: Int, $khanmigoStartDate: Date, $khanmigoEndDate: Date, $khanmigoTokenCapacity: Int, $khanmigoIncludeUserEmails: [String!], $khanmigoExcludeUserEmails: [String!], $khanmigoIncludeStudents: Boolean) {
+mutation modifyDistrict($existingDistrictID: ID!, $newName: String, $offerings: [Offering!], $rosterSyncingEnabled: Boolean, $rosterID: String, $rosterSource: RosterSource, $nweaID: String, $ncesID: String, $isTest: Boolean, $sendTeacherActivationEmails: Boolean, $goLiveDate: Date, $kaLocale: String, $schoolYearDates: DistrictSchoolYearInput, $region: String, $allOnGrades: [DistrictGradeLevel!], $allOffGrades: [DistrictGradeLevel!], $subsetGrades: [DistrictGradeLevel!], $schoolKhanmigoPreferences: [DistrictKhanmigoSchool!], $khanmigoPreference: KhanmigoEnrollment, $khanmigoAdmins: Int, $khanmigoTeachers: Int, $khanmigoStudents: Int, $khanmigoStartDate: Date, $khanmigoEndDate: Date, $khanmigoTokenCapacity: Int, $khanmigoIncludeUserEmails: [String!], $khanmigoExcludeUserEmails: [String!], $khanmigoIncludeStudents: Boolean) {
   modifyDistrict(
     existingDistrictID: $existingDistrictID
     newName: $newName
@@ -19,7 +19,9 @@ mutation modifyDistrict($existingDistrictID: ID!, $newName: String, $offerings: 
     subsetGrades: $subsetGrades
     schoolKhanmigoPreferences: $schoolKhanmigoPreferences
     khanmigoPreference: $khanmigoPreference
-    khanmigoTotal: $khanmigoTotal
+    khanmigoAdmins: $khanmigoAdmins
+    khanmigoTeachers: $khanmigoTeachers
+    khanmigoStudents: $khanmigoStudents
     khanmigoStartDate: $khanmigoStartDate
     khanmigoEndDate: $khanmigoEndDate
     khanmigoTokenCapacity: $khanmigoTokenCapacity
@@ -59,7 +61,9 @@ mutation modifyDistrict($existingDistrictID: ID!, $newName: String, $offerings: 
       region
       khanmigoPreference
       khanmigoIncludeStudents
-      khanmigoTotal
+      khanmigoAdmins
+      khanmigoTeachers
+      khanmigoStudents
       khanmigoStart
       khanmigoEnd
       khanmigoIncludedUsers {
