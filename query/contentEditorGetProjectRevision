@@ -16,5 +16,6 @@ fragment ProjectRevision on ProjectRevision {
   sha
   code
   doNotPublish
+  projectEval
   __typename
 }

@@ -41,7 +41,7 @@ export default {
   contentEditorExerciseRevisions: 2306046782,
   contentEditorGetArticleRevision: 3559639684,
   contentEditorGetExerciseRevision: 3310282651,
-  contentEditorGetProjectRevision: 405295435,
+  contentEditorGetProjectRevision: 1768177162,
   contentEditorGetPublishedExerciseProblems: 5629970,
   contentEditorGetTalkthroughRevision: 3542112347,
   contentEditorGetVideoRevision: 2393012597,

@@ -1676,6 +1676,7 @@ fragment InvitationsField on Invitation {
   sha
   code
   doNotPublish
+  projectEval
   __typename
 }`,
   PublishedCourseRevisionFragment: `fragment PublishedCourseRevisionFragment on CourseRevision {
