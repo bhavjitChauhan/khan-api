@@ -1,0 +1,14 @@
+mutation createEssaySession($initialText: String!, $essayInstructions: String!, $studentGradeLevel: Int!) {
+  createEssaySession(
+    essayInstructions: $essayInstructions
+    initialText: $initialText
+    studentGradeLevel: $studentGradeLevel
+  ) {
+    essaySessionID
+    error {
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

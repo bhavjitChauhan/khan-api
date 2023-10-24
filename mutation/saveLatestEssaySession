@@ -1,0 +1,10 @@
+mutation saveLatestEssaySession($essaySessionID: String!, $latestText: String!) {
+  saveLatestEssayText(essaySessionID: $essaySessionID, latestText: $latestText) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
