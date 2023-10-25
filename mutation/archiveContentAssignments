@@ -7,3 +7,33 @@ mutation archiveContentAssignments($assignmentIds: [ID]!) {
     __typename
   }
 }
+
+fragment AssignmentInfoFragment on Assignment {
+  id
+  contents {
+    id
+    title
+    __typename
+  }
+  studentList {
+    id
+    cacheId
+    name
+    __typename
+  }
+  students {
+    id
+    kaid
+    __typename
+  }
+  coach {
+    id
+    kaid
+    __typename
+  }
+  startDate
+  dueDate
+  isDraft
+  subjectSlug
+  __typename
+}
