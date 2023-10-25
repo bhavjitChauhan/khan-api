@@ -9,6 +9,8 @@ query districts($filter: String!) {
     rosterSyncingEnabled
     sendActivationEmails
     rosterDistrictAdmins
+    deletedAt
+    isDowngraded
     isTest
     isKmapDistrict
     isK4dDistrict
