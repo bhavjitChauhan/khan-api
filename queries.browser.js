@@ -16687,4 +16687,60 @@ fragment contentSearchLearnableContent on LearnableContent {
     __typename
   }
 }`,
+  challengeEditorQuery: `query challengeEditorQuery($contentId: String!) {
+  challengeRevisionById(id: $contentId) {
+    ...ChallengeRevision
+    __typename
+  }
+  contentEditingStatus {
+    editingDisabled
+    publishDisabled
+    __typename
+  }
+  isEditableByCurrentUser(contentId: $contentId, contentKind: "Challenge")
+  isPublishableByCurrentUser(contentId: $contentId, contentKind: "Challenge")
+}
+
+fragment ChallengeRevision on ChallengeRevision {
+  id
+  contentId
+  contentKind
+  sha
+  doNotPublish
+  slug
+  listed
+  title
+  description
+  code
+  tests
+  __typename
+}`,
+  projectEditorQuery: `query projectEditorQuery($contentId: String!) {
+  projectRevisionById(id: $contentId) {
+    ...ProjectRevision
+    __typename
+  }
+  contentEditingStatus {
+    editingDisabled
+    publishDisabled
+    __typename
+  }
+  isEditableByCurrentUser(contentId: $contentId, contentKind: "Project")
+  isPublishableByCurrentUser(contentId: $contentId, contentKind: "Project")
+}
+
+fragment ProjectRevision on ProjectRevision {
+  id
+  contentId
+  contentKind
+  slug
+  description
+  listed
+  title
+  sha
+  code
+  doNotPublish
+  projectEval
+  __typename
+}`,
 }

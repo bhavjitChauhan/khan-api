@@ -9924,16 +9924,7 @@ fragment entry on TeamPageEntryForEditing {
   contentEditorEditChallenge: `mutation contentEditorEditChallenge($input: EditChallengeInput!, $sha: String!) {
   editChallenge(input: $input, sha: $sha) {
     challenge {
-      id
-      contentId
-      contentKind
-      listed
-      title
-      description
-      code
-      sha
-      doNotPublish
-      tests
+      ...ChallengeRevision
       __typename
     }
     error {
@@ -9944,6 +9935,21 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
+}
+
+fragment ChallengeRevision on ChallengeRevision {
+  id
+  contentId
+  contentKind
+  sha
+  doNotPublish
+  slug
+  listed
+  title
+  description
+  code
+  tests
+  __typename
 }`,
   sendAiGuideDisabledDuringDistrictActivationTestEmail: `mutation sendAiGuideDisabledDuringDistrictActivationTestEmail {
   sendAiGuideDisabledDuringDistrictActivationTestEmail {

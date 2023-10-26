@@ -2126,4 +2126,18 @@ fragment InvitationsField on Invitation {
   fingerprint
   __typename
 }`,
+  ChallengeRevision: `fragment ChallengeRevision on ChallengeRevision {
+  id
+  contentId
+  contentKind
+  sha
+  doNotPublish
+  slug
+  listed
+  title
+  description
+  code
+  tests
+  __typename
+}`,
 }

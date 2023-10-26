@@ -1,0 +1,28 @@
+query challengeEditorQuery($contentId: String!) {
+  challengeRevisionById(id: $contentId) {
+    ...ChallengeRevision
+    __typename
+  }
+  contentEditingStatus {
+    editingDisabled
+    publishDisabled
+    __typename
+  }
+  isEditableByCurrentUser(contentId: $contentId, contentKind: "Challenge")
+  isPublishableByCurrentUser(contentId: $contentId, contentKind: "Challenge")
+}
+
+fragment ChallengeRevision on ChallengeRevision {
+  id
+  contentId
+  contentKind
+  sha
+  doNotPublish
+  slug
+  listed
+  title
+  description
+  code
+  tests
+  __typename
+}
