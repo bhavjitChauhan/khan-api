@@ -603,4 +603,6 @@ hashes = {
   previewAiGuideDisabledDuringDistrictActivationEmail: 3622096416,
   TranslationEditor_GetAIGuideActivityStrings: 3594501385,
   previewDistrictKhamigoSevereFlagNotificationEmail: 3100203232,
+  challengeEditorQuery: 3959132902,
+  projectEditorQuery: 1984572926,
 }

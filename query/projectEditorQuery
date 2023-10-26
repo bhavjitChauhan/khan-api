@@ -1,0 +1,28 @@
+query projectEditorQuery($contentId: String!) {
+  projectRevisionById(id: $contentId) {
+    ...ProjectRevision
+    __typename
+  }
+  contentEditingStatus {
+    editingDisabled
+    publishDisabled
+    __typename
+  }
+  isEditableByCurrentUser(contentId: $contentId, contentKind: "Project")
+  isPublishableByCurrentUser(contentId: $contentId, contentKind: "Project")
+}
+
+fragment ProjectRevision on ProjectRevision {
+  id
+  contentId
+  contentKind
+  slug
+  description
+  listed
+  title
+  sha
+  code
+  doNotPublish
+  projectEval
+  __typename
+}
