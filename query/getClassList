@@ -22,6 +22,12 @@ query getClassList {
         id
         isNweaMapSynced
         courseSISName
+        classroom {
+          id
+          cacheId
+          isKmapClassroom
+          __typename
+        }
         studentUserDistrictInfos {
           id
           __typename
