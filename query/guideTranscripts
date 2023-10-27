@@ -1,10 +1,22 @@
-query guideTranscripts($kaid: String!, $cursor: String) {
-  aiGuideThreads(kaid: $kaid, cursor: $cursor) {
+query guideTranscripts($kaid: String!, $cursor: String, $startDate: DateTime, $endDate: DateTime, $moderationStatus: ModerationStatus) {
+  aiGuideThreads(
+    kaid: $kaid
+    cursor: $cursor
+    startDate: $startDate
+    endDate: $endDate
+    moderationStatus: $moderationStatus
+  ) {
     threads {
       id
-      summary
       lastUpdatedAt
       flagged
+      title
+      interactions {
+        id
+        pageType
+        pageTitle
+        __typename
+      }
       __typename
     }
     cursor
