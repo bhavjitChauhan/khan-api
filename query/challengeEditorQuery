@@ -23,6 +23,8 @@ fragment ChallengeRevision on ChallengeRevision {
   title
   description
   code
+  codeFormat
   tests
+  testsFormat
   __typename
 }

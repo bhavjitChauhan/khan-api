@@ -332,6 +332,35 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     ...ArticleRevision
     __typename
   }
+}
+
+fragment ArticleRevision on ArticleRevision {
+  id
+  contentId
+  contentKind
+  creationDate
+  sha
+  authorKey
+  customDescriptionTag
+  customTitleTag
+  description
+  descriptionHtml: description
+  doNotPublish
+  sourceKaLocale
+  sourceLanguage: sourceKaLocale
+  slug
+  readableId: slug
+  title
+  sponsored
+  thumbnailData
+  thumbnailCache
+  alternateSlugs
+  assessmentItemTags
+  authorNames
+  clarificationsEnabled
+  perseusContent
+  listed
+  __typename
 }`,
   articleEditorRedirectQuery: `query articleEditorRedirectQuery($contentId: String!) {
   articleRevisionById(id: $contentId) {
@@ -1100,14 +1129,15 @@ fragment ProjectRevision on ProjectRevision {
   id
   contentId
   contentKind
+  sha
+  doNotPublish
   slug
-  description
   listed
   title
-  sha
-  code
-  doNotPublish
+  description
   projectEval
+  code
+  codeFormat
   __typename
 }`,
   contentEditorGetPublishedExerciseProblems: `query contentEditorGetPublishedExerciseProblems($id: String!) {
@@ -16702,7 +16732,9 @@ fragment ChallengeRevision on ChallengeRevision {
   title
   description
   code
+  codeFormat
   tests
+  testsFormat
   __typename
 }`,
   projectEditorQuery: `query projectEditorQuery($contentId: String!) {
@@ -16723,14 +16755,15 @@ fragment ProjectRevision on ProjectRevision {
   id
   contentId
   contentKind
+  sha
+  doNotPublish
   slug
-  description
   listed
   title
-  sha
-  code
-  doNotPublish
+  description
   projectEval
+  code
+  codeFormat
   __typename
 }`,
 }
