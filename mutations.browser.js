@@ -1201,14 +1201,15 @@ fragment ProjectRevision on ProjectRevision {
   id
   contentId
   contentKind
+  sha
+  doNotPublish
   slug
-  description
   listed
   title
-  sha
-  code
-  doNotPublish
+  description
   projectEval
+  code
+  codeFormat
   __typename
 }`,
   contentEditorEditTalkthrough: `mutation contentEditorEditTalkthrough($sha: String!, $input: EditTalkthroughInput!) {
@@ -9948,7 +9949,9 @@ fragment ChallengeRevision on ChallengeRevision {
   title
   description
   code
+  codeFormat
   tests
+  testsFormat
   __typename
 }`,
   sendAiGuideDisabledDuringDistrictActivationTestEmail: `mutation sendAiGuideDisabledDuringDistrictActivationTestEmail {
