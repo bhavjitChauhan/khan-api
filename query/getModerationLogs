@@ -1,5 +1,10 @@
-query getModerationLogs($limit: Int!, $cursor: String!) {
-  moderationLogs(limit: $limit, cursor: $cursor) {
+query getModerationLogs($limit: Int!, $cursor: String!, $beforeTimestampSeconds: String, $excludeModeratorKaids: [String!]) {
+  moderationLogs(
+    limit: $limit
+    cursor: $cursor
+    beforeTimestampSeconds: $beforeTimestampSeconds
+    excludeModeratorKaids: $excludeModeratorKaids
+  ) {
     moderationLogs {
       date
       description {

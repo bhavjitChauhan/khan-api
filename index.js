@@ -137,10 +137,9 @@ console.log('Fetching script URLs...')
 const runtimeScript = await fetch(runtimeScriptURL).then(r => r.text())
 const scriptURLs = Object.entries(eval('(' + runtimeScript.match(/(\{[\w",:-]+\})\[\w+\]\+"\.js"/)[1] + ')')).map(([key, value]) => `https://cdn.kastatic.org/genwebpack/prod/en/${key}.${value}.js`)
 const addtionalScriptURL = html.match(/src=(?:"|')(https?:\/\/cdn\.kastatic\.org\/genwebpack\/prod\/en\/javascript\/app-shell-package\/app-entry\.\w+\.js)(?:"|')/)?.[1]
-if (!addtionalScriptURL) {
+if (!addtionalScriptURL)
     console.error('Failed to find addtional script URL')
-    // process.exit(1)
-} else
+else
     scriptURLs.push(addtionalScriptURL)
 console.log('Fetched runtime URLs')
 
