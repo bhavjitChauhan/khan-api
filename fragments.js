@@ -1676,6 +1676,7 @@ fragment InvitationsField on Invitation {
   title
   description
   projectEval
+  authorName
   code
   codeFormat
   __typename
@@ -2137,6 +2138,7 @@ fragment InvitationsField on Invitation {
   listed
   title
   description
+  authorName
   code
   codeFormat
   tests

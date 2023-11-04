@@ -139,9 +139,9 @@ const scriptURLs = Object.entries(eval('(' + runtimeScript.match(/(\{[\w",:-]+\}
 const addtionalScriptURL = html.match(/src=(?:"|')(https?:\/\/cdn\.kastatic\.org\/genwebpack\/prod\/en\/javascript\/app-shell-package\/app-entry\.\w+\.js)(?:"|')/)?.[1]
 if (!addtionalScriptURL) {
     console.error('Failed to find addtional script URL')
-    process.exit(1)
-}
-scriptURLs.push(addtionalScriptURL)
+    // process.exit(1)
+} else
+    scriptURLs.push(addtionalScriptURL)
 console.log('Fetched runtime URLs')
 
 

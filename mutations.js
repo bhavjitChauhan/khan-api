@@ -1208,6 +1208,7 @@ fragment ProjectRevision on ProjectRevision {
   title
   description
   projectEval
+  authorName
   code
   codeFormat
   __typename
@@ -10840,6 +10841,7 @@ fragment ChallengeRevision on ChallengeRevision {
   listed
   title
   description
+  authorName
   code
   codeFormat
   tests

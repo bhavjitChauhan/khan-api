@@ -1136,6 +1136,7 @@ fragment ProjectRevision on ProjectRevision {
   title
   description
   projectEval
+  authorName
   code
   codeFormat
   __typename
@@ -9592,20 +9593,6 @@ fragment gtp_egudFragment on ExamGroupUserData {
     ...gtp_essayScoresFragment
     __typename
   }
-}
-
-fragment gtp_essayScoresFragment on EssayScores {
-  areas {
-    translatedTitle
-    essays {
-      examCompletionDate
-      score
-      maxScore
-      __typename
-    }
-    __typename
-  }
-  __typename
 }`,
   gtp_getExamGroupMetadata: `query gtp_getExamGroupMetadata($examGroupId: String!) {
   examGroup(examGroupId: $examGroupId) {
@@ -17107,6 +17094,7 @@ fragment ChallengeRevision on ChallengeRevision {
   listed
   title
   description
+  authorName
   code
   codeFormat
   tests
@@ -17138,6 +17126,7 @@ fragment ProjectRevision on ProjectRevision {
   title
   description
   projectEval
+  authorName
   code
   codeFormat
   __typename
