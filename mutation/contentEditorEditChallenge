@@ -24,6 +24,7 @@ fragment ChallengeRevision on ChallengeRevision {
   listed
   title
   description
+  authorName
   code
   codeFormat
   tests
