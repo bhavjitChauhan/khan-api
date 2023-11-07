@@ -1,0 +1,14 @@
+query getAdminsForDistrict($districtID: String!) {
+  getAdminsForDistrict(districtID: $districtID) {
+    id
+    uuid
+    displayNameForTeacher
+    districtProvidedEmail
+    kaid
+    moderatorOfSchools {
+      id
+      __typename
+    }
+    __typename
+  }
+}

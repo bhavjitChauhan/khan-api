@@ -1,0 +1,12 @@
+mutation enableSevereModerationAlertsForAdmins($adminUDIUUIDs: [String!]!, $districtID: String!) {
+  enableSevereModerationAlertsForAdmins(
+    adminUDIUUIDs: $adminUDIUUIDs
+    districtID: $districtID
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

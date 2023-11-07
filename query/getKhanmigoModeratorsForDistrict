@@ -1,0 +1,14 @@
+query getKhanmigoModeratorsForDistrict($districtID: String!) {
+  getKhanmigoModeratorsForDistrict(districtID: $districtID) {
+    id
+    uuid
+    displayNameForTeacher
+    kaid
+    moderatorOfSchools {
+      id
+      name
+      __typename
+    }
+    __typename
+  }
+}
