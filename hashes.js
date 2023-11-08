@@ -587,7 +587,7 @@ export default {
   product: 1198925240,
   GetStandardRegionsForCountry: 4233445579,
   TranslationEditor_GetContentForDescriptors: 3070688782,
-  ActivitiesQuery: 780735656,
+  ActivitiesQuery: 1213509825,
   getStudentExerciseContentReport_CourseChallenge: 4157263325,
   hasCooldown: 1911736684,
   ContentCarouselContent: 309964941,

@@ -3,6 +3,7 @@ query ActivitiesQuery {
     id
     unitChildren {
       id
+      listed
       translatedTitle
       lessonChildren {
         id

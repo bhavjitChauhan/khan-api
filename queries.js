@@ -16513,6 +16513,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     id
     unitChildren {
       id
+      listed
       translatedTitle
       lessonChildren {
         id
