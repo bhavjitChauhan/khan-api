@@ -16802,4 +16802,17 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  LearnPrototype_UserClassrooms: `query LearnPrototype_UserClassrooms {
+  user {
+    id
+    classrooms {
+      id
+      cacheId
+      name
+      descriptor
+      __typename
+    }
+    __typename
+  }
+}`,
 }
