@@ -10785,10 +10785,10 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
-  createEssaySession: `mutation createEssaySession($initialText: String!, $essayInstructions: String!, $studentGradeLevel: Int!) {
+  createEssaySession: `mutation createEssaySession($essayText: String!, $essayInstructions: String!, $studentGradeLevel: Int!) {
   createEssaySession(
     essayInstructions: $essayInstructions
-    initialText: $initialText
+    essayText: $essayText
     studentGradeLevel: $studentGradeLevel
   ) {
     essaySessionID
@@ -10799,8 +10799,13 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
-  saveLatestEssaySession: `mutation saveLatestEssaySession($essaySessionID: String!, $latestText: String!) {
-  saveLatestEssayText(essaySessionID: $essaySessionID, latestText: $latestText) {
+  saveLatestEssaySession: `mutation saveLatestEssaySession($essaySessionID: String!, $essayInstructions: String!, $studentGradeLevel: Int!, $essayText: String!) {
+  saveLatestEssayText(
+    essaySessionID: $essaySessionID
+    essayInstructions: $essayInstructions
+    studentGradeLevel: $studentGradeLevel
+    essayText: $essayText
+  ) {
     error {
       code
       debugMessage

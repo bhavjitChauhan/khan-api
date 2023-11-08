@@ -1,5 +1,10 @@
-mutation saveLatestEssaySession($essaySessionID: String!, $latestText: String!) {
-  saveLatestEssayText(essaySessionID: $essaySessionID, latestText: $latestText) {
+mutation saveLatestEssaySession($essaySessionID: String!, $essayInstructions: String!, $studentGradeLevel: Int!, $essayText: String!) {
+  saveLatestEssayText(
+    essaySessionID: $essaySessionID
+    essayInstructions: $essayInstructions
+    studentGradeLevel: $studentGradeLevel
+    essayText: $essayText
+  ) {
     error {
       code
       debugMessage
