@@ -1,0 +1,13 @@
+query aiGuideOwnedSwagQuery {
+  user {
+    id
+    aiGuideSwagOwned {
+      id
+      name
+      description
+      price
+      __typename
+    }
+    __typename
+  }
+}
