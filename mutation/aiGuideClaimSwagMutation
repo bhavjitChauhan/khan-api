@@ -1,0 +1,9 @@
+mutation aiGuideClaimSwagMutation($kaid: String!, $swagId: String!) {
+  claimAiGuideSwag(kaid: $kaid, swagID: $swagId) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,9 @@
+query aiGuideSwagQuery {
+  aiGuideSwag {
+    id
+    name
+    description
+    price
+    __typename
+  }
+}
