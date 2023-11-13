@@ -1,0 +1,36 @@
+query activeEssaySession {
+  activeEssaySession {
+    draft {
+      feedbackList {
+        dimension
+        feedbackId
+        feedbackText
+        isPositiveFeedback
+        isResolved
+        relevantParagraphNumber
+        relevantQuotedText
+        thread {
+          id
+          interactions {
+            answer
+            customMessages
+            flagged
+            id
+            question
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      id
+      submittedText
+      __typename
+    }
+    essayInstructions
+    id
+    mostRecentEditedText
+    studentGradeLevel
+    __typename
+  }
+}

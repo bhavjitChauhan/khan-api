@@ -1,0 +1,9 @@
+mutation finishEssaySession($essaySessionID: String!) {
+  finishEssaySession(essaySessionID: $essaySessionID) {
+    error {
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
