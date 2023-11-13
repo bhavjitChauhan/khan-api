@@ -311,7 +311,7 @@ hashes = {
   getVideoPlayerSettings: 2873868438,
   getVideoSlug: 1944349933,
   GetWalmartProfile: 904565532,
-  gtp_getCheckpoints: 2825726112,
+  gtp_getCheckpoints: 3597388057,
   gtp_getDescriptors: 1258260582,
   gtp_getEGUD: 2032463878,
   gtp_getEGUDViaExam: 2228385609,
@@ -329,7 +329,7 @@ hashes = {
   gtp_getTaskById: 1190189740,
   gtp_getTestPrepHeaderInfo: 897246365,
   gtp_getTestSectionTasks: 4281692595,
-  gtp_getTPUD: 3568619556,
+  gtp_getTPUD: 2648698266,
   gtp_onboardingStatus: 3646852342,
   gtp_relatedContent: 3291890228,
   guideTranscript: 3141977082,
@@ -610,4 +610,5 @@ hashes = {
   LearnPrototype_UserClassrooms: 4185575609,
   aiGuideOwnedSwagQuery: 1558150526,
   aiGuideSwagQuery: 1942812571,
+  activeEssaySession: 2257827826,
 }

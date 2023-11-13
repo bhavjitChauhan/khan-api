@@ -4947,6 +4947,44 @@ fragment gtp_checkpointFragment on Checkpoint {
     }
     __typename
   }
+}
+
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
 }`,
   gtp_resetPracticeTestMutation: `mutation gtp_resetPracticeTestMutation($examId: String!, $taskId: String!) {
   resetPracticeTest(examId: $examId, taskId: $taskId) {
@@ -10827,6 +10865,15 @@ fragment ProjectRevision on ProjectRevision {
   claimAiGuideSwag(kaid: $kaid, swagID: $swagId) {
     error {
       code
+      __typename
+    }
+    __typename
+  }
+}`,
+  finishEssaySession: `mutation finishEssaySession($essaySessionID: String!) {
+  finishEssaySession(essaySessionID: $essaySessionID) {
+    error {
+      debugMessage
       __typename
     }
     __typename
