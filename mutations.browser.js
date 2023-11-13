@@ -4879,169 +4879,6 @@ fragment userTaskFields on PracticeUserTask {
     }
     __typename
   }
-}
-
-fragment gtp_practiceTestFragment on PracticeTest {
-  id
-  practiceTestId
-  approxTestMins
-  testTitle
-  directions
-  formCode
-  hasStarted
-  completionStatus
-  completedAt
-  subScores {
-    name
-    score
-    __typename
-  }
-  sections {
-    sectionId
-    taskId
-    exerciseName
-    isScored
-    sectionTitle
-    numCorrect
-    numTotal
-    durationSeconds
-    breakDurationSeconds
-    hasUserGrading
-    completed
-    userProvidedScores {
-      score
-      minScore
-      maxScore
-      __typename
-    }
-    __typename
-  }
-  __typename
-}
-
-fragment gtp_taskFragment on Task {
-  id
-  kaid
-  examId
-  taskType
-  secondsTaken
-  taskDurationSeconds
-  translatedTitle
-  creationDatetime
-  startDatetime
-  completed
-  receivedCredit
-  completionDatetime
-  stage
-  checkpoint
-  taskContent {
-    concepts {
-      item {
-        conceptId
-        translatedTitle
-        __typename
-      }
-      questions {
-        conceptId
-        translatedTitle
-        __typename
-      }
-      __typename
-    }
-    id
-    itemData
-    itemShapeType
-    skills {
-      item {
-        areaId
-        skillId
-        skillContentId
-        translatedTitle
-        __typename
-      }
-      questions {
-        areaId
-        skillId
-        skillContentId
-        translatedTitle
-        __typename
-      }
-      __typename
-    }
-    gradingMetadata {
-      instructions
-      promptTitle
-      responseTitle
-      minScore
-      maxScore
-      rubric {
-        article {
-          id
-          perseusContent
-          __typename
-        }
-        __typename
-      }
-      scoreExamples {
-        score
-        article {
-          id
-          perseusContent
-          __typename
-        }
-        __typename
-      }
-      __typename
-    }
-    __typename
-  }
-  taskState
-  taskStateHash
-  exerciseName
-  itemIds
-  areaId
-  areaTitle
-  ... on SkillTask {
-    skillId
-    skill {
-      description
-      __typename
-    }
-    level
-    incomingSkillLevelLabel {
-      label
-      skillLevel
-      __typename
-    }
-    outgoingSkillLevelLabel {
-      label
-      skillLevel
-      __typename
-    }
-    __typename
-  }
-  ... on TmsTask {
-    directions
-    extendedTaskState
-    startExtendedTimeDt
-    __typename
-  }
-  ... on TestSectionTask {
-    directions
-    __typename
-  }
-  ... on ExpressDiagnosticTask {
-    directions
-    skillLevels {
-      skillName
-      minLevel
-      maxLevel
-      level
-      __typename
-    }
-    __typename
-  }
-  __typename
 }`,
   gtp_resetPracticeTestMutation: `mutation gtp_resetPracticeTestMutation($examId: String!, $taskId: String!) {
   resetPracticeTest(examId: $examId, taskId: $taskId) {
@@ -5543,6 +5380,163 @@ fragment gtp_taskFragment on Task {
     }
     __typename
   }
+}
+
+fragment gtp_egudFragment on ExamGroupUserData {
+  id
+  practiceDaysInfo {
+    day
+    hour
+    length
+    minute
+    __typename
+  }
+  selectedCutoffIdentifiers
+  selectedExams
+  initialSelectedExams
+  dailyActivityHistory {
+    date
+    activityHistory {
+      examsCompleted
+      problemsDone
+      secondsSpent
+      status
+      cta {
+        type
+        minutes
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  extendedTimeMultiplier
+  __typename
+}
+
+fragment gtp_taskFragment on Task {
+  id
+  kaid
+  examId
+  taskType
+  secondsTaken
+  taskDurationSeconds
+  translatedTitle
+  creationDatetime
+  startDatetime
+  completed
+  receivedCredit
+  completionDatetime
+  stage
+  checkpoint
+  taskContent {
+    concepts {
+      item {
+        conceptId
+        translatedTitle
+        __typename
+      }
+      questions {
+        conceptId
+        translatedTitle
+        __typename
+      }
+      __typename
+    }
+    id
+    itemData
+    itemShapeType
+    skills {
+      item {
+        areaId
+        skillId
+        skillContentId
+        translatedTitle
+        __typename
+      }
+      questions {
+        areaId
+        skillId
+        skillContentId
+        translatedTitle
+        __typename
+      }
+      __typename
+    }
+    gradingMetadata {
+      instructions
+      promptTitle
+      responseTitle
+      minScore
+      maxScore
+      rubric {
+        article {
+          id
+          perseusContent
+          __typename
+        }
+        __typename
+      }
+      scoreExamples {
+        score
+        article {
+          id
+          perseusContent
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  taskState
+  taskStateHash
+  exerciseName
+  itemIds
+  areaId
+  areaTitle
+  ... on SkillTask {
+    skillId
+    skill {
+      description
+      __typename
+    }
+    level
+    incomingSkillLevelLabel {
+      label
+      skillLevel
+      __typename
+    }
+    outgoingSkillLevelLabel {
+      label
+      skillLevel
+      __typename
+    }
+    __typename
+  }
+  ... on TmsTask {
+    directions
+    extendedTaskState
+    startExtendedTimeDt
+    __typename
+  }
+  ... on TestSectionTask {
+    directions
+    __typename
+  }
+  ... on ExpressDiagnosticTask {
+    directions
+    skillLevels {
+      skillName
+      minLevel
+      maxLevel
+      level
+      __typename
+    }
+    __typename
+  }
+  __typename
 }`,
   gtp_submitTask: `mutation gtp_submitTask($taskId: ID!, $taskType: String!, $newTaskState: JSONString!, $newTaskStateHash: ID!, $prevTaskStateHash: ID) {
   submitTask(
@@ -5795,6 +5789,38 @@ fragment gtp_taskFragment on Task {
     }
     __typename
   }
+}
+
+fragment gtp_egudFragment on ExamGroupUserData {
+  id
+  practiceDaysInfo {
+    day
+    hour
+    length
+    minute
+    __typename
+  }
+  selectedCutoffIdentifiers
+  selectedExams
+  initialSelectedExams
+  dailyActivityHistory {
+    date
+    activityHistory {
+      examsCompleted
+      problemsDone
+      secondsSpent
+      status
+      cta {
+        type
+        minutes
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  extendedTimeMultiplier
+  __typename
 }`,
   gtp_updateSubscriptionByToken: `mutation gtp_updateSubscriptionByToken($token: String!, $subscribe: Boolean!) {
   updateSubscriptionByToken(token: $token, subscribe: $subscribe) {
