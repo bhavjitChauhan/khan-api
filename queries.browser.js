@@ -10026,6 +10026,12 @@ fragment gtp_tpudFragment on TestPrepUserData {
       flagged
       flaggedCategories
       responseWasStoppedByUser
+      coeditorState {
+        prefix
+        selection
+        suffix
+        __typename
+      }
       __typename
     }
     __typename
