@@ -46,6 +46,7 @@ query getUserDevAdminGeneral($kaid: String!) {
     homepage
     isAIGuideEnabled
     isChild
+    isCleverV3
     isEnrolledInAIGuide
     isPhantom
     isParent
