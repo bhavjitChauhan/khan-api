@@ -4947,6 +4947,44 @@ fragment gtp_checkpointFragment on Checkpoint {
     }
     __typename
   }
+}
+
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
 }`,
   gtp_resetPracticeTestMutation: `mutation gtp_resetPracticeTestMutation($examId: String!, $taskId: String!) {
   resetPracticeTest(examId: $examId, taskId: $taskId) {
@@ -9230,9 +9268,9 @@ fragment AssignmentInfoFragment on Assignment {
     __typename
   }
 }`,
-  updateChallengeProgress: `mutation updateChallengeProgress($programId: ID!, $lessonId: ID!, $stashedCode: String, $status: Int) {
+  updateChallengeProgress: `mutation updateChallengeProgress($currentStep: Int, $programId: ID!, $lessonId: ID!, $stashedCode: String, $status: Int) {
   updateChallengeProgress(
-    input: {programId: $programId, lessonId: $lessonId, stashedCode: $stashedCode, status: $status}
+    input: {currentStep: $currentStep, programId: $programId, lessonId: $lessonId, stashedCode: $stashedCode, status: $status}
   ) {
     actionResults {
       pointsEarned {
@@ -9262,6 +9300,7 @@ fragment AssignmentInfoFragment on Assignment {
       __typename
     }
     programProgress {
+      currentStep
       completionStatus
       content {
         id

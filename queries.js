@@ -14327,6 +14327,7 @@ fragment BasicContentItemProgress on ContentItemProgress {
         __typename
       }
       ... on ChallengeItemProgress {
+        currentStep
         points
         stashedCode
         __typename
