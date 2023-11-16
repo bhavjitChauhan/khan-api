@@ -2,6 +2,24 @@ query getUserDevAdminGeneral($kaid: String!) {
   user(kaid: $kaid) {
     id
     age
+    aiGuideAccessPlans {
+      id
+      isActive
+      recipientKAID
+      description
+      createdBy
+      createdAt
+      activatedAt
+      deactivatedAt
+      deactivationReasons
+      deactivationExplanation
+      eligibilityPolicy
+      lifecycleType
+      enrollmentGroup
+      enrollmentGroupReferenceID
+      expiresAt
+      __typename
+    }
     aiGuideDisabledReason
     aiGuideEnrollmentGroup
     applePrimaryEmail
