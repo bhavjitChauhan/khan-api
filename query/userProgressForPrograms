@@ -9,6 +9,7 @@ query userProgressForPrograms($contentDescriptors: [String!]!) {
         __typename
       }
       ... on ChallengeItemProgress {
+        currentStep
         points
         stashedCode
         __typename
