@@ -9,6 +9,10 @@ query aiGuideInvitationInfo($token: String!) {
   user {
     id
     age
+    aiGuideInvitationAcceptance(token: $token) {
+      acceptedAt
+      __typename
+    }
     __typename
   }
 }
