@@ -30,6 +30,11 @@ query activeEssaySession {
     essayInstructions
     id
     mostRecentEditedText
+    paragraphIDToParagraphNumbers {
+      paragraphID
+      paragraphNumbers
+      __typename
+    }
     studentGradeLevel
     __typename
   }
