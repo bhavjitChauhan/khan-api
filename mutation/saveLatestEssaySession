@@ -1,9 +1,10 @@
-mutation saveLatestEssaySession($essaySessionID: String!, $essayInstructions: String!, $studentGradeLevel: Int!, $essayText: String!) {
+mutation saveLatestEssaySession($essaySessionID: String!, $essayInstructions: String!, $studentGradeLevel: Int!, $essayText: String!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!) {
   saveLatestEssayText(
     essaySessionID: $essaySessionID
     essayInstructions: $essayInstructions
     studentGradeLevel: $studentGradeLevel
     essayText: $essayText
+    paragraphIDToParagraphNumbers: $paragraphIDToParagraphNumbers
   ) {
     error {
       code
