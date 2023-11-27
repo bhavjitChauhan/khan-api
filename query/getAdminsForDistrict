@@ -9,6 +9,10 @@ query getAdminsForDistrict($districtID: String!) {
       id
       __typename
     }
+    adminOfSchools {
+      id
+      __typename
+    }
     __typename
   }
 }

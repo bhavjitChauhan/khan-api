@@ -232,11 +232,13 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     __typename
   }
 }`,
-  allFlaggedGuideThreads: `query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderationReviewStatus: ModerationReviewStatus, $moderationScore: Float, $afterDate: DateTime, $beforeDate: DateTime, $page: Int, $limit: Int) {
+  allFlaggedGuideThreads: `query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderationReviewStatus: ModerationReviewStatus, $moderationFlagSeverity: ModerationFlagSeverityFilter, $severeModerationAlertSent: Boolean, $moderationScore: Float, $afterDate: DateTime, $beforeDate: DateTime, $page: Int, $limit: Int) {
   allFlaggedGuideThreads: allAiGuideThreads(
     moderationCategory: $moderationCategory
     moderationReviewStatus: $moderationReviewStatus
     moderationStatus: FLAGGED
+    moderationFlagSeverity: $moderationFlagSeverity
+    severeModerationAlertSent: $severeModerationAlertSent
     minModerationScore: $moderationScore
     afterDate: $afterDate
     beforeDate: $beforeDate
@@ -298,6 +300,9 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
       moderatorNickname
       moderationReviewed
       lastModerationReviewedDate
+      moderationFlagSeverity
+      severeModerationAlertSent
+      adminsNotifiedCount
       __typename
     }
     __typename
@@ -17201,6 +17206,10 @@ fragment ProjectRevision on ProjectRevision {
       id
       __typename
     }
+    adminOfSchools {
+      id
+      __typename
+    }
     __typename
   }
 }`,
@@ -17291,6 +17300,20 @@ fragment ProjectRevision on ProjectRevision {
       __typename
     }
     studentGradeLevel
+    __typename
+  }
+}`,
+  getUserAdminOfSchools: `query getUserAdminOfSchools {
+  user {
+    id
+    userDistrictInfos {
+      id
+      adminOfSchools {
+        id
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }`,
