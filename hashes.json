@@ -6,7 +6,7 @@
   "aiGuideEnrollmentsMeta": 37654722,
   "aiGuideInvitationInfo": 4261787513,
   "allCurationNodes": 4291751251,
-  "allFlaggedGuideThreads": 1289038529,
+  "allFlaggedGuideThreads": 992549233,
   "allStandardsForSet": 3015316215,
   "allTranslatableLocales": 419203518,
   "articleEditorQuery": 1661821936,
@@ -605,10 +605,11 @@
   "previewDistrictKhamigoSevereFlagNotificationEmail": 3100203232,
   "challengeEditorQuery": 2406706230,
   "projectEditorQuery": 997216386,
-  "getAdminsForDistrict": 2751685942,
+  "getAdminsForDistrict": 3546558979,
   "getKhanmigoModeratorsForDistrict": 3080388460,
   "LearnPrototype_UserClassrooms": 4185575609,
   "aiGuideOwnedSwagQuery": 1558150526,
   "aiGuideSwagQuery": 1942812571,
-  "activeEssaySession": 3037110170
+  "activeEssaySession": 3037110170,
+  "getUserAdminOfSchools": 2858117771
 }

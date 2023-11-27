@@ -1,0 +1,14 @@
+query getUserAdminOfSchools {
+  user {
+    id
+    userDistrictInfos {
+      id
+      adminOfSchools {
+        id
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

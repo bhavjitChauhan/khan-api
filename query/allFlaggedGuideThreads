@@ -1,8 +1,10 @@
-query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderationReviewStatus: ModerationReviewStatus, $moderationScore: Float, $afterDate: DateTime, $beforeDate: DateTime, $page: Int, $limit: Int) {
+query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderationReviewStatus: ModerationReviewStatus, $moderationFlagSeverity: ModerationFlagSeverityFilter, $severeModerationAlertSent: Boolean, $moderationScore: Float, $afterDate: DateTime, $beforeDate: DateTime, $page: Int, $limit: Int) {
   allFlaggedGuideThreads: allAiGuideThreads(
     moderationCategory: $moderationCategory
     moderationReviewStatus: $moderationReviewStatus
     moderationStatus: FLAGGED
+    moderationFlagSeverity: $moderationFlagSeverity
+    severeModerationAlertSent: $severeModerationAlertSent
     minModerationScore: $moderationScore
     afterDate: $afterDate
     beforeDate: $beforeDate
@@ -64,6 +66,9 @@ query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderatio
       moderatorNickname
       moderationReviewed
       lastModerationReviewedDate
+      moderationFlagSeverity
+      severeModerationAlertSent
+      adminsNotifiedCount
       __typename
     }
     __typename
