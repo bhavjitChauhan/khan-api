@@ -1313,6 +1313,10 @@ fragment LearnableContentData on LearnableContent {
     width
     __typename
   }
+  ... on Exercise {
+    problemTypeKind
+    __typename
+  }
   ... on Interactive {
     authorList {
       name
@@ -1700,6 +1704,10 @@ fragment LearnableContentData on LearnableContent {
     }
     userAuthoredContentType
     width
+    __typename
+  }
+  ... on Exercise {
+    problemTypeKind
     __typename
   }
   ... on Interactive {

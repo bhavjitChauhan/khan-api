@@ -1394,6 +1394,10 @@ fragment InvitationsField on Invitation {
     width
     __typename
   }
+  ... on Exercise {
+    problemTypeKind
+    __typename
+  }
   ... on Interactive {
     authorList {
       name
