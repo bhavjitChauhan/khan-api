@@ -17225,6 +17225,10 @@ fragment ProjectRevision on ProjectRevision {
       name
       __typename
     }
+    adminOfSchools {
+      id
+      __typename
+    }
     __typename
   }
 }`,
@@ -17313,6 +17317,18 @@ fragment ProjectRevision on ProjectRevision {
         id
         __typename
       }
+      __typename
+    }
+    __typename
+  }
+}`,
+  devadminGetKhanmigoModeratorsForDistrict: `query devadminGetKhanmigoModeratorsForDistrict($districtID: String!) {
+  getKhanmigoModeratorsForDistrict(districtID: $districtID) {
+    id
+    displayNameForTeacher
+    moderatorOfSchools {
+      id
+      name
       __typename
     }
     __typename
