@@ -2,12 +2,12 @@ query activeEssaySession {
   activeEssaySession {
     draft {
       feedbackList {
+        id
         dimension
-        feedbackId
         feedbackText
-        isPositiveFeedback
+        isPositive
         isResolved
-        relevantParagraphNumber
+        relevantParagraphId
         relevantQuotedText
         thread {
           id
