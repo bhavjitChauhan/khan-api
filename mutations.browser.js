@@ -275,36 +275,6 @@ mutations = {
     }
     __typename
   }
-}
-
-fragment AssignmentInfoFragment on Assignment {
-  id
-  contents {
-    id
-    title
-    __typename
-  }
-  studentList {
-    id
-    cacheId
-    name
-    __typename
-  }
-  students {
-    id
-    kaid
-    __typename
-  }
-  coach {
-    id
-    kaid
-    __typename
-  }
-  startDate
-  dueDate
-  isDraft
-  subjectSlug
-  __typename
 }`,
   archiveSubjectMasteryAssignment: `mutation archiveSubjectMasteryAssignment($assignmentId: ID!) {
   archiveSubjectMasteryAssignments(ids: [$assignmentId]) {
@@ -7735,36 +7705,6 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
-}
-
-fragment AssignmentInfoFragment on Assignment {
-  id
-  contents {
-    id
-    title
-    __typename
-  }
-  studentList {
-    id
-    cacheId
-    name
-    __typename
-  }
-  students {
-    id
-    kaid
-    __typename
-  }
-  coach {
-    id
-    kaid
-    __typename
-  }
-  startDate
-  dueDate
-  isDraft
-  subjectSlug
-  __typename
 }`,
   publishStandardMappings: `mutation publishStandardMappings($set: String!, $content: String!) {
   publishStandardMappings(setId: $set, contentDescriptor: $content) {
@@ -10911,10 +10851,11 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
-  createEssaySession: `mutation createEssaySession($essayText: String!, $essayInstructions: String!, $studentGradeLevel: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!) {
+  createEssaySession: `mutation createEssaySession($essayText: String!, $essayVersion: Int!, $essayInstructions: String!, $studentGradeLevel: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!) {
   createEssaySession(
     essayInstructions: $essayInstructions
     essayText: $essayText
+    essayVersion: $essayVersion
     studentGradeLevel: $studentGradeLevel
     paragraphIDToParagraphNumbers: $paragraphIDToParagraphNumbers
   ) {
@@ -10926,12 +10867,13 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
-  saveLatestEssaySession: `mutation saveLatestEssaySession($essaySessionID: String!, $essayInstructions: String!, $studentGradeLevel: Int!, $essayText: String!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!) {
+  saveLatestEssaySession: `mutation saveLatestEssaySession($essaySessionID: String!, $essayInstructions: String!, $studentGradeLevel: Int!, $essayText: String!, $essayVersion: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!) {
   saveLatestEssayText(
     essaySessionID: $essaySessionID
     essayInstructions: $essayInstructions
     studentGradeLevel: $studentGradeLevel
     essayText: $essayText
+    essayVersion: $essayVersion
     paragraphIDToParagraphNumbers: $paragraphIDToParagraphNumbers
   ) {
     error {

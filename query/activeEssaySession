@@ -30,6 +30,7 @@ query activeEssaySession {
     essayInstructions
     id
     mostRecentEditedText
+    essayVersion
     paragraphIDToParagraphNumbers {
       paragraphID
       paragraphNumbers
