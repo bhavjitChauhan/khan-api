@@ -2,6 +2,7 @@ query masteryAssignments($classCode: String!) {
   classroom(classCode: $classCode) {
     id
     cacheId
+    name
     masteryAssignments(contextFilter: NO_KMAP) {
       id
       type: curationNodeLevel
