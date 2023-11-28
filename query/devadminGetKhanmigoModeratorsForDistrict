@@ -1,16 +1,10 @@
-query getKhanmigoModeratorsForDistrict($districtID: String!) {
+query devadminGetKhanmigoModeratorsForDistrict($districtID: String!) {
   getKhanmigoModeratorsForDistrict(districtID: $districtID) {
     id
-    uuid
     displayNameForTeacher
-    kaid
     moderatorOfSchools {
       id
       name
-      __typename
-    }
-    adminOfSchools {
-      id
       __typename
     }
     __typename

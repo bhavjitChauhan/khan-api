@@ -606,10 +606,11 @@ export default {
   challengeEditorQuery: 2406706230,
   projectEditorQuery: 997216386,
   getAdminsForDistrict: 3546558979,
-  getKhanmigoModeratorsForDistrict: 3080388460,
+  getKhanmigoModeratorsForDistrict: 3401983033,
   LearnPrototype_UserClassrooms: 4185575609,
   aiGuideOwnedSwagQuery: 1558150526,
   aiGuideSwagQuery: 1942812571,
   activeEssaySession: 1986414260,
   getUserAdminOfSchools: 2858117771,
+  devadminGetKhanmigoModeratorsForDistrict: 2818001886,
 }
