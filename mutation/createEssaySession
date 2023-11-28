@@ -1,8 +1,9 @@
-mutation createEssaySession($essayText: String!, $essayInstructions: String!, $studentGradeLevel: Int!) {
+mutation createEssaySession($essayText: String!, $essayInstructions: String!, $studentGradeLevel: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!) {
   createEssaySession(
     essayInstructions: $essayInstructions
     essayText: $essayText
     studentGradeLevel: $studentGradeLevel
+    paragraphIDToParagraphNumbers: $paragraphIDToParagraphNumbers
   ) {
     essaySessionID
     error {
