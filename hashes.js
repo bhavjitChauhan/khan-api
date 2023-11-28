@@ -382,7 +382,7 @@ export default {
   ManageFolders_UsersInFolder: 492038127,
   manticoreEditorGetVideo: 2828754886,
   manticoreGetContentForDescriptors: 2725825522,
-  masteryAssignments: 1596932390,
+  masteryAssignments: 1845746827,
   masteryTowerCurrentLeaderboardQuery: 1245872208,
   masteryTowerCurrentSessionQuery: 3188818068,
   masteryTowerCurrentWeekLeaderboardQuery: 1461523792,

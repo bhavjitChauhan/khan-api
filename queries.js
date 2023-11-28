@@ -11529,6 +11529,7 @@ fragment BaseFolder on Folder {
   classroom(classCode: $classCode) {
     id
     cacheId
+    name
     masteryAssignments(contextFilter: NO_KMAP) {
       id
       type: curationNodeLevel
