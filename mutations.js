@@ -11029,4 +11029,24 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  resetChallengeProgress: `mutation resetChallengeProgress($programId: ID!, $lessonId: ID!) {
+  resetChallengeProgress(input: {programId: $programId, lessonId: $lessonId}) {
+    programProgress {
+      completionStatus
+      content {
+        id
+        contentKind
+        __typename
+      }
+      points
+      stashedCode
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
