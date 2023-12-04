@@ -1,0 +1,7 @@
+query getDistrictDisallowDiscussions {
+  user {
+    id
+    districtDisallowDiscussions
+    __typename
+  }
+}
