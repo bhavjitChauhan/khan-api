@@ -1,0 +1,45 @@
+query AssignmentsPageForContentItems($contentDescriptors: [String!]!, $cursor: ID, $pageSize: Int) {
+  user {
+    id
+    assignmentsPageForContentItems(
+      contentDescriptors: $contentDescriptors
+      after: $cursor
+      pageSize: $pageSize
+    ) {
+      pageInfo {
+        nextCursor
+        __typename
+      }
+      assignments {
+        id
+        dueDate
+        contents {
+          ... on AIGuideActivity {
+            id
+            contentId
+            slug
+            translatedTitle
+            activityType
+            __typename
+          }
+          __typename
+        }
+        classroom {
+          cacheId
+          id
+          name
+          descriptor
+          coach {
+            id
+            nickname
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

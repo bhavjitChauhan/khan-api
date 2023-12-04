@@ -9,7 +9,7 @@ hashes = {
   allFlaggedGuideThreads: 992549233,
   allStandardsForSet: 3015316215,
   allTranslatableLocales: 419203518,
-  articleEditorQuery: 1661821936,
+  articleEditorQuery: 3393781286,
   articleEditorRedirectQuery: 4039343373,
   articleForDiff: 3813521305,
   articleRevisionsForDiff: 795341688,
@@ -587,7 +587,7 @@ hashes = {
   product: 1198925240,
   GetStandardRegionsForCountry: 4233445579,
   TranslationEditor_GetContentForDescriptors: 3070688782,
-  ActivitiesQuery: 1213509825,
+  ActivitiesQuery: 485495665,
   getStudentExerciseContentReport_CourseChallenge: 4157263325,
   hasCooldown: 1911736684,
   ContentCarouselContent: 309964941,
@@ -613,4 +613,5 @@ hashes = {
   activeEssaySession: 32022969,
   getUserAdminOfSchools: 2858117771,
   devadminGetKhanmigoModeratorsForDistrict: 2818001886,
+  AssignmentsPageForContentItems: 3665892653,
 }
