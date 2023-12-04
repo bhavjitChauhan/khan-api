@@ -341,35 +341,6 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     ...ArticleRevision
     __typename
   }
-}
-
-fragment ArticleRevision on ArticleRevision {
-  id
-  contentId
-  contentKind
-  creationDate
-  sha
-  authorKey
-  customDescriptionTag
-  customTitleTag
-  description
-  descriptionHtml: description
-  doNotPublish
-  sourceKaLocale
-  sourceLanguage: sourceKaLocale
-  slug
-  readableId: slug
-  title
-  sponsored
-  thumbnailData
-  thumbnailCache
-  alternateSlugs
-  assessmentItemTags
-  authorNames
-  clarificationsEnabled
-  perseusContent
-  listed
-  __typename
 }`,
   articleEditorRedirectQuery: `query articleEditorRedirectQuery($contentId: String!) {
   articleRevisionById(id: $contentId) {
@@ -16945,6 +16916,7 @@ fragment contentSearchLearnableContent on LearnableContent {
           slug
           translatedTitle
           defaultUrlPath
+          contentDescriptor
           ... on AIGuideActivity {
             persona
             activityType
@@ -17330,6 +17302,51 @@ fragment ProjectRevision on ProjectRevision {
     moderatorOfSchools {
       id
       name
+      __typename
+    }
+    __typename
+  }
+}`,
+  AssignmentsPageForContentItems: `query AssignmentsPageForContentItems($contentDescriptors: [String!]!, $cursor: ID, $pageSize: Int) {
+  user {
+    id
+    assignmentsPageForContentItems(
+      contentDescriptors: $contentDescriptors
+      after: $cursor
+      pageSize: $pageSize
+    ) {
+      pageInfo {
+        nextCursor
+        __typename
+      }
+      assignments {
+        id
+        dueDate
+        contents {
+          ... on AIGuideActivity {
+            id
+            contentId
+            slug
+            translatedTitle
+            activityType
+            __typename
+          }
+          __typename
+        }
+        classroom {
+          cacheId
+          id
+          name
+          descriptor
+          coach {
+            id
+            nickname
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
       __typename
     }
     __typename
