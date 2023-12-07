@@ -1,10 +1,6 @@
 query translationEditorPermissions {
-  curator: actorRoleScopes(role: CURATOR) {
-    locale
-    __typename
-  }
-  videoTranslator: actorRoleScopes(role: VIDEO_TRANSLATIONS_EDITOR) {
-    locale
+  videoMapperEditor: actorRoleScopes(role: VIDEO_MAPPER_EDITOR) {
+    kaLocale
     __typename
   }
   locales {
