@@ -616,4 +616,5 @@ hashes = {
   AssignmentsPageForContentItems: 3665892653,
   getDistrictDisallowDiscussions: 762796058,
   getIndexedContentSearchResults: 181419709,
+  exerciseEditorQuery: 4047399663,
 }
