@@ -1,0 +1,19 @@
+query getSatAccountSettings($targetKaid: String) {
+  target: user(kaid: $targetKaid) {
+    id
+    isChild
+    isSatStudent
+    satStudent(id: $targetKaid) {
+      id
+      cbLinked
+      extraTimeSections
+      timePercentMultiplier
+      __typename
+    }
+    __typename
+  }
+  chronomancer {
+    isCollegeBoardIntegrationEnabled
+    __typename
+  }
+}
