@@ -64,14 +64,6 @@ query getAccountSettings($targetKaid: String) {
       daysUntilCutoff
       __typename
     }
-    isSatStudent
-    satStudent(id: $targetKaid) {
-      id
-      cbLinked
-      extraTimeSections
-      timePercentMultiplier
-      __typename
-    }
     maybeManagedChildren {
       id
       nickname
@@ -95,10 +87,6 @@ query getAccountSettings($targetKaid: String) {
       rosterSource
       __typename
     }
-    __typename
-  }
-  chronomancer {
-    isCollegeBoardIntegrationEnabled
     __typename
   }
   sessionHash
