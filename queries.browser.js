@@ -9634,20 +9634,6 @@ fragment gtp_egudFragment on ExamGroupUserData {
     ...gtp_essayScoresFragment
     __typename
   }
-}
-
-fragment gtp_essayScoresFragment on EssayScores {
-  areas {
-    translatedTitle
-    essays {
-      examCompletionDate
-      score
-      maxScore
-      __typename
-    }
-    __typename
-  }
-  __typename
 }`,
   gtp_getExamGroupMetadata: `query gtp_getExamGroupMetadata($examGroupId: String!) {
   examGroup(examGroupId: $examGroupId) {
@@ -17380,6 +17366,86 @@ fragment ProjectRevision on ProjectRevision {
   user {
     id
     districtDisallowDiscussions
+    __typename
+  }
+}`,
+  getIndexedContentSearchResults: `query getIndexedContentSearchResults($query: String!, $allowedTopicAncestors: [String], $contentKinds: [String], $pageNum: Int) {
+  searchPage(
+    query: $query
+    allowedTopicAncestors: $allowedTopicAncestors
+    contentKinds: $contentKinds
+    pageNum: $pageNum
+  ) {
+    metadata {
+      currentPage
+      numPages
+      resultCount
+      __typename
+    }
+    pageInfo {
+      nextCursor
+      __typename
+    }
+    results {
+      contentId
+      kind
+      curationNode {
+        id
+        iconPath
+        title
+        description
+        domainSlug
+        contentKind
+        relativeUrl
+        parent {
+          id
+          iconPath
+          contentKind
+          title
+          parent {
+            id
+            iconPath
+            contentKind
+            title
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      learnableContent {
+        id
+        title
+        description
+        defaultUrlPath
+        parentTopic {
+          id
+          domainSlug
+          title
+          contentKind
+          iconPath
+          parent {
+            id
+            title
+            contentKind
+            relativeUrl
+            iconPath
+            parent {
+              id
+              title
+              contentKind
+              relativeUrl
+              iconPath
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }`,
