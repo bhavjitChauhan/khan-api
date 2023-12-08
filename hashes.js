@@ -316,7 +316,7 @@ export default {
   gtp_getEGUD: 2032463878,
   gtp_getEGUDViaExam: 2228385609,
   gtp_getEmailRemindersData: 3986128331,
-  gtp_getEssayScores: 2592913749,
+  gtp_getEssayScores: 2781221644,
   gtp_getExamGroupMetadata: 1815269996,
   gtp_getExamMetadata: 4038979495,
   gtp_getExamOnboardingLessons: 2641005736,
