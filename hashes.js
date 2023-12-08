@@ -616,6 +616,6 @@ export default {
   AssignmentsPageForContentItems: 3665892653,
   getDistrictDisallowDiscussions: 762796058,
   getIndexedContentSearchResults: 181419709,
-  exerciseEditorQuery: 4047399663,
+  exerciseEditorQuery: 3694924500,
   getSatAccountSettings: 714630499,
 }
