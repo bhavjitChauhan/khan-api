@@ -45,6 +45,7 @@ query GetAllSetsOfStandardsForRegion($isDiscoverable: Boolean, $regionSlug: Stri
       }
       __typename
     }
+    domains
     __typename
   }
 }
