@@ -4,6 +4,7 @@ query GetSetOfStandards($setId: String!, $region: String) {
     isDiscoverable
     name
     standardRegionIds
+    domains
     standards {
       id
       standardId
