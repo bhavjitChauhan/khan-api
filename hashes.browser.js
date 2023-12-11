@@ -570,7 +570,7 @@ hashes = {
   CourseIntroContent: 2191456130,
   CourseIntroCurationNode: 4073988870,
   getUserInterests: 2604473325,
-  GetAllSetsOfStandardsForRegion: 824866283,
+  GetAllSetsOfStandardsForRegion: 3024068050,
   GetSetOfStandards: 1604045939,
   GetStandardRegionsForUS: 3844774931,
   courseProgress: 2068057704,

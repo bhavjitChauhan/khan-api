@@ -16125,6 +16125,7 @@ fragment contentSearchLearnableContent on LearnableContent {
       }
       __typename
     }
+    domains
     __typename
   }
 }`,
