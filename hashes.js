@@ -316,7 +316,7 @@ export default {
   gtp_getEGUD: 4264015478,
   gtp_getEGUDViaExam: 2771787897,
   gtp_getEmailRemindersData: 3986128331,
-  gtp_getEssayScores: 2781221644,
+  gtp_getEssayScores: 2592913749,
   gtp_getExamGroupMetadata: 579400923,
   gtp_getExamMetadata: 2853727292,
   gtp_getExamOnboardingLessons: 2641005736,
@@ -616,6 +616,6 @@ export default {
   AssignmentsPageForContentItems: 3665892653,
   getDistrictDisallowDiscussions: 762796058,
   getIndexedContentSearchResults: 181419709,
-  exerciseEditorQuery: 4047399663,
+  exerciseEditorQuery: 3694924500,
   getSatAccountSettings: 714630499,
 }
