@@ -14,6 +14,7 @@ query ActivitiesQuery {
           slug
           translatedTitle
           defaultUrlPath
+          contentDescriptor
           ... on AIGuideActivity {
             persona
             activityType
