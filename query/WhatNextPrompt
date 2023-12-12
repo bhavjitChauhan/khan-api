@@ -88,6 +88,16 @@ query WhatNextPrompt($assignmentsPageSize: Int, $assignmentsOrderBy: AssignmentO
       }
       __typename
     }
+    recommendations(queryParams: {}) {
+      content {
+        id
+        title
+        defaultUrlPath
+        __typename
+      }
+      reason
+      __typename
+    }
     __typename
   }
 }

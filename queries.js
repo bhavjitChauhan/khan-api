@@ -9621,6 +9621,20 @@ fragment gtp_egudFragment on ExamGroupUserData {
     ...gtp_essayScoresFragment
     __typename
   }
+}
+
+fragment gtp_essayScoresFragment on EssayScores {
+  areas {
+    translatedTitle
+    essays {
+      examCompletionDate
+      score
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
 }`,
   gtp_getExamGroupMetadata: `query gtp_getExamGroupMetadata($examGroupId: String!) {
   examGroup(examGroupId: $examGroupId) {
@@ -15533,6 +15547,16 @@ fragment VideoRevision on VideoRevision {
         ...UnitProgressFields
         __typename
       }
+      __typename
+    }
+    recommendations(queryParams: {}) {
+      content {
+        id
+        title
+        defaultUrlPath
+        __typename
+      }
+      reason
       __typename
     }
     __typename
