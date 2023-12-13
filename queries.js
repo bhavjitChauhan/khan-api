@@ -12958,6 +12958,23 @@ fragment ProblemAttemptFields on ProblemAttempt {
           numAttempted
           __typename
         }
+        bestScoreSkills {
+          numLeveledUp
+          numLeveledDown
+          levelChanges {
+            id
+            before
+            after
+            changeDirection
+            exercise {
+              id
+              translatedTitle
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
         exerciseAttempts {
           id
           isCompleted
@@ -17581,6 +17598,45 @@ fragment ExerciseRevision on ExerciseRevision {
     children {
       id
       nickname
+      __typename
+    }
+    __typename
+  }
+}`,
+  courseChallengeCsvQuery: `query courseChallengeCsvQuery($assignmentId: String!, $teacherKaid: String) {
+  coach: user {
+    id
+    assignment: assignmentByThisUser(id: $assignmentId) {
+      id
+      itemCompletionStates: itemCompletionStatesForAllStudents {
+        completedOn
+        student {
+          id
+          coachNickname(teacherKaid: $teacherKaid)
+          __typename
+        }
+        bestScoreSkills {
+          levelChanges {
+            id
+            after
+            changeDirection
+            exercise {
+              id
+              translatedTitle
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      studentList {
+        id
+        cacheId
+        name
+        __typename
+      }
       __typename
     }
     __typename

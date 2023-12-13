@@ -440,7 +440,7 @@
   "SatPracticeByTeacherQuery": 652150496,
   "searchDonors": 788096811,
   "seoMetadataQuery": 1684252461,
-  "simpleCompletionQuery": 2886272344,
+  "simpleCompletionQuery": 1514025759,
   "siteEditorCourseProperties": 2354211252,
   "siteEditorGetPublishQueueList": 1264583479,
   "siteEditorGetPublishStatus": 1363651614,
@@ -618,5 +618,6 @@
   "getIndexedContentSearchResults": 181419709,
   "exerciseEditorQuery": 4047399663,
   "getSatAccountSettings": 714630499,
-  "allCoacheeNames": 2231775310
+  "allCoacheeNames": 2231775310,
+  "courseChallengeCsvQuery": 277772492
 }
