@@ -11,6 +11,7 @@ query GetSetOfStandards($setId: String!, $region: String) {
       description
       coverage
       children
+      groupLabel
       mappedContent {
         ... on LearnableContent {
           id
