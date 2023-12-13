@@ -16596,6 +16596,7 @@ fragment contentSearchLearnableContent on LearnableContent {
       description
       coverage
       children
+      groupLabel
       mappedContent {
         ... on LearnableContent {
           id
