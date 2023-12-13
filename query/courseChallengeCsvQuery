@@ -1,38 +1,18 @@
-query simpleCompletionQuery($assignmentId: String!, $teacherKaid: String) {
+query courseChallengeCsvQuery($assignmentId: String!, $teacherKaid: String) {
   coach: user {
     id
     assignment: assignmentByThisUser(id: $assignmentId) {
-      contents {
-        id
-        translatedTitle
-        defaultUrlPath
-        kind
-        __typename
-      }
-      assignedDate
-      dueDate
       id
       itemCompletionStates: itemCompletionStatesForAllStudents {
+        completedOn
         student {
           id
-          kaid
           coachNickname(teacherKaid: $teacherKaid)
-          profileRoot
-          __typename
-        }
-        state
-        completedOn
-        bestScore {
-          numCorrect
-          numAttempted
           __typename
         }
         bestScoreSkills {
-          numLeveledUp
-          numLeveledDown
           levelChanges {
             id
-            before
             after
             changeDirection
             exercise {
@@ -42,15 +22,6 @@ query simpleCompletionQuery($assignmentId: String!, $teacherKaid: String) {
             }
             __typename
           }
-          __typename
-        }
-        exerciseAttempts {
-          id
-          isCompleted
-          isRestarted
-          numAttempted
-          numCorrect
-          lastAttemptDate
           __typename
         }
         __typename
