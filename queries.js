@@ -9621,20 +9621,6 @@ fragment gtp_egudFragment on ExamGroupUserData {
     ...gtp_essayScoresFragment
     __typename
   }
-}
-
-fragment gtp_essayScoresFragment on EssayScores {
-  areas {
-    translatedTitle
-    essays {
-      examCompletionDate
-      score
-      maxScore
-      __typename
-    }
-    __typename
-  }
-  __typename
 }`,
   gtp_getExamGroupMetadata: `query gtp_getExamGroupMetadata($examGroupId: String!) {
   examGroup(examGroupId: $examGroupId) {
@@ -17642,5 +17628,109 @@ fragment ExerciseRevision on ExerciseRevision {
     }
     __typename
   }
+}`,
+  ActivitySessionsV2Query: `query ActivitySessionsV2Query($studentKaid: String!, $endDate: Date, $startDate: Date, $courseType: String, $activityKind: String, $after: ID, $pageSize: Int) {
+  user(kaid: $studentKaid) {
+    id
+    exams {
+      id
+      examId
+      metadata {
+        id
+        nameInfo {
+          name
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    activityLogV2(
+      endDate: $endDate
+      startDate: $startDate
+      courseType: $courseType
+      activityKind: $activityKind
+    ) {
+      time {
+        exerciseMinutes
+        totalMinutes
+        __typename
+      }
+      activitySessions(pageSize: $pageSize, after: $after) {
+        sessions {
+          ... on BasicActivitySession {
+            ...ActivitySession
+            __typename
+          }
+          ... on MasteryActivitySession {
+            ...ActivitySession
+            correctCount
+            problemCount
+            skillLevels {
+              ...ActivitySessionSkillLevels
+              exercise {
+                id
+                translatedTitle
+                __typename
+              }
+              __typename
+            }
+            task {
+              id
+              isRestarted
+              __typename
+            }
+            __typename
+          }
+          ... on TestPrepActivitySession {
+            ...ActivitySession
+            testPrepCorrectCount: correctCount
+            testPrepProblemCount: problemCount
+            testPrepSkillLevels: skillLevels {
+              id
+              skill {
+                translatedTitle
+                skillId
+                __typename
+              }
+              before
+              after
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        pageInfo {
+          nextCursor
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment ActivitySession on ActivitySession {
+  id
+  title
+  subtitle
+  activityKind {
+    id
+    __typename
+  }
+  durationMinutes
+  eventTimestamp
+  skillType
+  __typename
+}
+
+fragment ActivitySessionSkillLevels on SkillLevelChange {
+  id
+  before
+  after
+  __typename
 }`,
 }
