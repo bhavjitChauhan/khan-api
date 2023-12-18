@@ -5156,6 +5156,14 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
       __typename
     }
     isDistrictSynced
+    includesSat
+    isK4dClassroom
+    classroomDistrictInfo {
+      id
+      courseSISName
+      sisSubjct
+      __typename
+    }
     __typename
   }
 }
