@@ -164,7 +164,7 @@ export default {
   getChronomancerStatus: 470968035,
   getClassesAndStudents: 2368301074,
   getClassList: 2957375249,
-  getClassroomRoster: 3350324708,
+  getClassroomRoster: 2996106323,
   getClassroomsAndPrimaryOffering: 3980807925,
   getClassSelector: 805182339,
   getClassSettings: 1432539102,
