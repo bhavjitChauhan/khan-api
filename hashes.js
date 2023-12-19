@@ -483,7 +483,7 @@ export default {
   translationPortalCourseContentProgress: 1280299301,
   translationPortalCourseContentProgressCached: 145057965,
   translationPortalCourseTitlesByIds: 3882891760,
-  translationPortalFolders: 832993184,
+  translationPortalFolders: 2604296134,
   translationPortalPlatformAndDomainsProgress: 2387563653,
   translationPortalTranslationFreshness: 2389527240,
   TranslationSearchQuery: 3875751778,

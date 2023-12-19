@@ -1,19 +1,9 @@
-query translationPortalFolders {
-  folderGroups {
-    myFolders {
-      id
-      name
-      kaLocale
-      courseIds
-      __typename
-    }
-    otherFolders {
-      id
-      name
-      kaLocale
-      courseIds
-      __typename
-    }
+query translationPortalFolders($kaLocale: String!) {
+  allFolders(kaLocalesFilter: [$kaLocale]) {
+    id
+    name
+    kaLocale
+    courseIds
     __typename
   }
 }

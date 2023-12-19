@@ -14294,22 +14294,12 @@ fragment tapVideoNode on TAPVideoNode {
     __typename
   }
 }`,
-  translationPortalFolders: `query translationPortalFolders {
-  folderGroups {
-    myFolders {
-      id
-      name
-      kaLocale
-      courseIds
-      __typename
-    }
-    otherFolders {
-      id
-      name
-      kaLocale
-      courseIds
-      __typename
-    }
+  translationPortalFolders: `query translationPortalFolders($kaLocale: String!) {
+  allFolders(kaLocalesFilter: [$kaLocale]) {
+    id
+    name
+    kaLocale
+    courseIds
     __typename
   }
 }`,
