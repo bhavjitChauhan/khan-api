@@ -621,4 +621,5 @@ export default {
   allCoacheeNames: 2231775310,
   courseChallengeCsvQuery: 277772492,
   ActivitySessionsV2Query: 106895928,
+  aiGuideConversionTrialInfo: 2182684421,
 }

@@ -17745,4 +17745,19 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
   after
   __typename
 }`,
+  aiGuideConversionTrialInfo: `query aiGuideConversionTrialInfo {
+  user {
+    id
+    age
+    aiGuideAccessPlans {
+      id
+      isActive
+      enrollmentGroup
+      __typename
+    }
+    isAIGuideEnabled
+    includesDistrictOwnedData
+    __typename
+  }
+}`,
 }
