@@ -1,0 +1,12 @@
+mutation aiGuideEnrollViaConversionTrial($digitalTermsOfServiceAccepted: Boolean!) {
+  aiGuideEnrollViaConversionTrial(
+    digitalTermsOfServiceAccepted: $digitalTermsOfServiceAccepted
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

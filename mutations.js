@@ -11060,4 +11060,16 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  aiGuideEnrollViaConversionTrial: `mutation aiGuideEnrollViaConversionTrial($digitalTermsOfServiceAccepted: Boolean!) {
+  aiGuideEnrollViaConversionTrial(
+    digitalTermsOfServiceAccepted: $digitalTermsOfServiceAccepted
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
