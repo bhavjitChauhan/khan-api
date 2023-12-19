@@ -11049,4 +11049,15 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  generateTotpTwoFactorSecret: `mutation generateTotpTwoFactorSecret($email: String!) {
+  generateTotpTwoFactorSecret(email: $email) {
+    totpSecret
+    totpProvisioningUri
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
