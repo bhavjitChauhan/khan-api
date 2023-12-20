@@ -47,7 +47,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rollup-plugin-dts", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:6.0.2"],\
             ["ts-jest", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:29.1.1"],\
             ["typedoc", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:0.25.1"],\
-            ["typedoc-plugin-rename-defaults", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:0.6.6"],\
+            ["typedoc-plugin-markdown", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:3.17.1"],\
             ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
           ],\
           "linkType": "SOFT"\
@@ -893,7 +893,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rollup-plugin-dts", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:6.0.2"],\
             ["ts-jest", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:29.1.1"],\
             ["typedoc", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:0.25.1"],\
-            ["typedoc-plugin-rename-defaults", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:0.6.6"],\
+            ["typedoc-plugin-markdown", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:3.17.1"],\
             ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
           ],\
           "linkType": "SOFT"\
@@ -3640,6 +3640,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["handlebars", [\
+        ["npm:4.7.8", {\
+          "packageLocation": "./.yarn/cache/handlebars-npm-4.7.8-25244c2c82-00e68bb5c1.zip/node_modules/handlebars/",\
+          "packageDependencies": [\
+            ["handlebars", "npm:4.7.8"],\
+            ["minimist", "npm:1.2.8"],\
+            ["neo-async", "npm:2.6.2"],\
+            ["source-map", "npm:0.6.1"],\
+            ["uglify-js", "npm:3.17.4"],\
+            ["wordwrap", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["has", [\
         ["npm:1.0.3", {\
           "packageLocation": "./.yarn/cache/has-npm-1.0.3-b7f00631c1-b9ad53d53b.zip/node_modules/has/",\
@@ -5074,6 +5088,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["neo-async", [\
+        ["npm:2.6.2", {\
+          "packageLocation": "./.yarn/cache/neo-async-npm-2.6.2-75d6902586-deac9f8d00.zip/node_modules/neo-async/",\
+          "packageDependencies": [\
+            ["neo-async", "npm:2.6.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["node-fetch", [\
         ["npm:2.6.12", {\
           "packageLocation": "./.yarn/cache/node-fetch-npm-2.6.12-48619ce9d6-3bc1655203.zip/node_modules/node-fetch/",\
@@ -6195,19 +6218,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["typedoc-plugin-rename-defaults", [\
-        ["npm:0.6.6", {\
-          "packageLocation": "./.yarn/cache/typedoc-plugin-rename-defaults-npm-0.6.6-196992b546-f080664f87.zip/node_modules/typedoc-plugin-rename-defaults/",\
+      ["typedoc-plugin-markdown", [\
+        ["npm:3.17.1", {\
+          "packageLocation": "./.yarn/cache/typedoc-plugin-markdown-npm-3.17.1-091f1bd18a-f12494bfc9.zip/node_modules/typedoc-plugin-markdown/",\
           "packageDependencies": [\
-            ["typedoc-plugin-rename-defaults", "npm:0.6.6"]\
+            ["typedoc-plugin-markdown", "npm:3.17.1"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:0.6.6", {\
-          "packageLocation": "./.yarn/__virtual__/typedoc-plugin-rename-defaults-virtual-d99d8ac988/0/cache/typedoc-plugin-rename-defaults-npm-0.6.6-196992b546-f080664f87.zip/node_modules/typedoc-plugin-rename-defaults/",\
+        ["virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:3.17.1", {\
+          "packageLocation": "./.yarn/__virtual__/typedoc-plugin-markdown-virtual-4b4578372f/0/cache/typedoc-plugin-markdown-npm-3.17.1-091f1bd18a-f12494bfc9.zip/node_modules/typedoc-plugin-markdown/",\
           "packageDependencies": [\
-            ["typedoc-plugin-rename-defaults", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:0.6.6"],\
+            ["typedoc-plugin-markdown", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:3.17.1"],\
             ["@types/typedoc", null],\
+            ["handlebars", "npm:4.7.8"],\
             ["typedoc", "virtual:7cfc1dbecec2d680e878e6405b6868692333220788ef56f4d7b2338d82e8c38305414d54d4519dfb5f0d644fce1d92dbc81739a92872addf438e84a2f8d42b5f#npm:0.25.1"]\
           ],\
           "packagePeers": [\
@@ -6222,6 +6246,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/typescript-patch-2e8dbfb8ab-0f4da2f15e.zip/node_modules/typescript/",\
           "packageDependencies": [\
             ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["uglify-js", [\
+        ["npm:3.17.4", {\
+          "packageLocation": "./.yarn/cache/uglify-js-npm-3.17.4-58d4ab56aa-7b3897df38.zip/node_modules/uglify-js/",\
+          "packageDependencies": [\
+            ["uglify-js", "npm:3.17.4"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6365,6 +6398,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["wide-align", "npm:1.1.5"],\
             ["string-width", "npm:4.2.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["wordwrap", [\
+        ["npm:1.0.0", {\
+          "packageLocation": "./.yarn/cache/wordwrap-npm-1.0.0-ae57a645e8-2a44b27881.zip/node_modules/wordwrap/",\
+          "packageDependencies": [\
+            ["wordwrap", "npm:1.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\

@@ -17,7 +17,9 @@ docs/
 .env
 
 # Build artifacts
+.docusaurus/
 browser/
+build/
 dist/
 node/
 index.d.ts

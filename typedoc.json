@@ -3,15 +3,13 @@
   "entryPoints": [
     "src"
   ],
-  "entryPointStrategy": "expand",
-  "gaID": "G-TS3VCNBMER",
-  "includeVersion": true,
+  "githubPages": false,
+  "hideBreadcrumbs": true,
+  "hideInPageTOC": true,
   "name": "Khan API",
-  "navigationLinks": {
-    "GitHub": "https://github.com/bhavjitChauhan/khan-api",
-    "NPM": "https://www.npmjs.com/package/@bhavjit/khan-api"
-  },
   "plugin": [
-    "typedoc-plugin-rename-defaults"
-  ]
+    "typedoc-plugin-markdown"
+  ],
+  "publicPath": "api/",
+  "readme": "none",
 }

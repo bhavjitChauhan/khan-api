@@ -127,15 +127,4 @@ fi
 
 git stash pop
 
-# Run docs script
-read -p "Do you want to update the docs? [Y/n] " -n 1 -r response
-if [[ ! $response =~ ^[Nn]$ ]]; then
-    echo
-    ./scripts/docs.sh
-    echo    
-    echo "Documentation updated"
-else
-    echo
-fi
-
 echo "Release complete"
