@@ -1,8 +1,0 @@
-dist
-browser
-node
-
-*.js
-*.cjs
-
-index.d.ts

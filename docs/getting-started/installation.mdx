@@ -1,0 +1,52 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Installation
+
+## Node.js
+
+<Tabs>
+<TabItem value="npm" label="npm">
+
+```bash
+npm i @bhavjit/khan-api
+```
+
+</TabItem>
+<TabItem value="yarn" label="Yarn">
+
+```bash
+yarn add @bhavjit/khan-api
+```
+
+</TabItem>
+</Tabs>
+
+
+## Browser
+
+Remember that Khan Academy's CORS policy will block requests not originating from their website.
+
+<Tabs>
+<TabItem value="esm" label="Module">
+
+```html
+<script type="module">
+  import { Client } from 'https://esm.run/@bhavjit/khan-api'
+
+  const client = new Client()
+</script>
+```
+
+</TabItem>
+<TabItem value="script" label="Script">
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@bhavjit/khan-api"></script>
+<script>
+  const client = new KhanAPI.Client()
+</script>
+```
+
+</TabItem>
+</Tabs>

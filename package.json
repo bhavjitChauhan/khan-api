@@ -1,82 +1,44 @@
 {
-  "name": "@bhavjit/khan-api",
-  "version": "0.6.5",
-  "description": "A Khan Academy API client and wrapper",
-  "keywords": [
-    "khan-academy",
-    "api"
-  ],
-  "homepage": "https://khan-api.bhavjit.com",
-  "bugs": "https://github.com/bhavjitChauhan/khan-api/issues",
-  "license": "MIT",
-  "author": "Bhavjit Chauhan",
-  "files": [
-    "browser/",
-    "node/",
-    "example.js",
-    "index.d.ts"
-  ],
-  "module": "./node/esm/khan-api.mjs",
-  "main": "./node/cjs/khan-api.cjs",
-  "browser": "./browser/iife/khan-api.js",
-  "types": "./index.d.ts",
-  "repository": "github:bhavjitChauhan/khan-api",
+  "name": "khan-api-docs",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "jest",
-    "lint": "eslint .",
-    "format": "prettier --write ./**/*.ts ./browser/**/*.js ./node/**/*js",
-    "clean": "rimraf browser node index.d.ts",
-    "types": "tsc --emitDeclarationOnly && rollup -c && rimraf dist/types",
-    "build": "yarn node ./scripts/build.js",
-    "doc": "typedoc"
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids"
   },
-  "packageManager": "yarn@3.6.4",
-  "type": "module",
   "dependencies": {
-    "cross-fetch": "^4.0.0"
+    "@docusaurus/core": "3.0.1",
+    "@docusaurus/preset-classic": "3.0.1",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.0.0",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.5",
-    "@types/minimist": "^1.2.3",
-    "@types/node": "^18.18.3",
-    "@typescript-eslint/eslint-plugin": "^6.7.4",
-    "@typescript-eslint/parser": "^6.7.4",
-    "chalk": "^5.3.0",
-    "dotenv": "^16.3.1",
-    "esbuild": "^0.19.4",
-    "eslint": "^8.51.0",
-    "eslint-config-prettier": "^9.0.0",
-    "jest": "^29.7.0",
-    "minimist": "^1.2.8",
-    "prettier": "3.0.3",
-    "rimraf": "^5.0.5",
-    "rollup": "3.29.4",
-    "rollup-plugin-dts": "^6.0.2",
-    "ts-jest": "^29.1.1",
-    "typedoc": "^0.25.1",
-    "typedoc-plugin-rename-defaults": "^0.6.6",
-    "typescript": "^5.2.2"
+    "@docusaurus/module-type-aliases": "3.0.1",
+    "@docusaurus/types": "3.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
   },
   "engines": {
-    "node": ">=14"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "exports": {
-    "types": "./index.d.ts",
-    "node": {
-      "import": "./node/esm/khan-api.mjs",
-      "require": "./node/cjs/khan-api.cjs",
-      "default": "./node/esm/khan-api.mjs"
-    },
-    "browser": {
-      "import": "./browser/esm/khan-api.js",
-      "require": "./browser/esm/khan-api.js",
-      "script": "./browser/iife/khan-api.js",
-      "default": "./browser/esm/khan-api.js"
-    },
-    "default": "./node/esm/khan-api.mjs"
-  },
-  "runkitExampleFilename": "example.js"
+    "node": ">=18.0"
+  }
 }

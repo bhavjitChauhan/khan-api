@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-classes/Answer" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.0.1">
+<title data-rh="true">Class: Answer | Khan API</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://khan-api.bhavjit.com/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://khan-api.bhavjit.com/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://khan-api.bhavjit.com/docs/classes/Answer"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Class: Answer | Khan API"><meta data-rh="true" name="description" content="Hierarchy"><meta data-rh="true" property="og:description" content="Hierarchy"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://khan-api.bhavjit.com/docs/classes/Answer"><link data-rh="true" rel="alternate" href="https://khan-api.bhavjit.com/docs/classes/Answer" hreflang="en"><link data-rh="true" rel="alternate" href="https://khan-api.bhavjit.com/docs/classes/Answer" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Khan API RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Khan API Atom Feed"><link rel="stylesheet" href="/assets/css/styles.e2fd383f.css">
+<script src="/assets/js/runtime~main.92fd9f34.js" defer="defer"></script>
+<script src="/assets/js/main.b244e228.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();null!==e?t(e):window.matchMedia("(prefers-color-scheme: dark)").matches?t("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,t("light"))}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><b class="navbar__title text--truncate">Khan API</b></a><a class="navbar__item navbar__link" href="/docs/getting-started">Tutorials</a><a class="navbar__item navbar__link" href="/docs/api">Docs</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/bhavjitChauhan/khan-api" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><h1>Class: Answer</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="hierarchy">Hierarchy<a href="#hierarchy" class="hash-link" aria-label="Direct link to Hierarchy" title="Direct link to Hierarchy">​</a></h2>
+<ul>
+<li>
+<p><a href="/docs/classes/Message"><code>Message</code></a></p>
+<p>↳ <strong><code>Answer</code></strong></p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="implements">Implements<a href="#implements" class="hash-link" aria-label="Direct link to Implements" title="Direct link to Implements">​</a></h2>
+<ul>
+<li><a href="/docs/interfaces/IAnswer"><code>IAnswer</code></a></li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="constructors">Constructors<a href="#constructors" class="hash-link" aria-label="Direct link to Constructors" title="Direct link to Constructors">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="constructor">constructor<a href="#constructor" class="hash-link" aria-label="Direct link to constructor" title="Direct link to constructor">​</a></h3>
+<p>• <strong>new Answer</strong>(<code>data?</code>)</p>
+<p>Creates a new class instance</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="parameters">Parameters<a href="#parameters" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h4>
+<table><thead><tr><th style="text-align:left">Name</th><th style="text-align:left">Type</th></tr></thead><tbody><tr><td style="text-align:left"><code>data?</code></td><td style="text-align:left"><a href="/docs/interfaces/IBaseMessage"><code>IBaseMessage</code></a></td></tr></tbody></table>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from">Inherited from<a href="#inherited-from" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#constructor">constructor</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in">Defined in<a href="#defined-in" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L36" target="_blank" rel="noopener noreferrer">lib/Wrapper.ts:36</a></p>
+<p>• <strong>new Answer</strong>(<code>client</code>, <code>data?</code>)</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="parameters-1">Parameters<a href="#parameters-1" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h4>
+<table><thead><tr><th style="text-align:left">Name</th><th style="text-align:left">Type</th></tr></thead><tbody><tr><td style="text-align:left"><code>client</code></td><td style="text-align:left"><a href="/docs/classes/Client"><code>Client</code></a></td></tr><tr><td style="text-align:left"><code>data?</code></td><td style="text-align:left"><a href="/docs/interfaces/IBaseMessage"><code>IBaseMessage</code></a></td></tr></tbody></table>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-1">Inherited from<a href="#inherited-from-1" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#constructor">constructor</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-1">Defined in<a href="#defined-in-1" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L37" target="_blank" rel="noopener noreferrer">lib/Wrapper.ts:37</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="author">author<a href="#author" class="hash-link" aria-label="Direct link to author" title="Direct link to author">​</a></h3>
+<p>• <code>Optional</code> <code>Readonly</code> <strong>author</strong>: <a href="/docs/classes/User"><code>User</code></a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of">Implementation of<a href="#implementation-of" class="hash-link" aria-label="Direct link to Implementation of" title="Direct link to Implementation of">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer">IAnswer</a>.<a href="/docs/interfaces/IAnswer#author">author</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-2">Inherited from<a href="#inherited-from-2" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#author">author</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-2">Defined in<a href="#defined-in-2" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L34" target="_blank" rel="noopener noreferrer">lib/messages/BaseMessage.ts:34</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="byvideoauthor">byVideoAuthor<a href="#byvideoauthor" class="hash-link" aria-label="Direct link to byVideoAuthor" title="Direct link to byVideoAuthor">​</a></h3>
+<p>• <code>Optional</code> <code>Readonly</code> <strong>byVideoAuthor</strong>: <code>boolean</code></p>
+<p><strong><code>Raw</code></strong></p>
+<p>types/schema!FeedbackSchemaBase.fromVideoAuthor</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-1">Implementation of<a href="#implementation-of-1" class="hash-link" aria-label="Direct link to Implementation of" title="Direct link to Implementation of">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer">IAnswer</a>.<a href="/docs/interfaces/IAnswer#byvideoauthor">byVideoAuthor</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-3">Inherited from<a href="#inherited-from-3" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#byvideoauthor">byVideoAuthor</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-3">Defined in<a href="#defined-in-3" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L74" target="_blank" rel="noopener noreferrer">lib/messages/BaseMessage.ts:74</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="client">client<a href="#client" class="hash-link" aria-label="Direct link to client" title="Direct link to client">​</a></h3>
+<p>• <code>Optional</code> <strong>client</strong>: <a href="/docs/classes/Client"><code>Client</code></a></p>
+<p>The client that this base was fetched with.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-4">Inherited from<a href="#inherited-from-4" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#client">client</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-4">Defined in<a href="#defined-in-4" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L15" target="_blank" rel="noopener noreferrer">lib/Wrapper.ts:15</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="created">created<a href="#created" class="hash-link" aria-label="Direct link to created" title="Direct link to created">​</a></h3>
+<p>• <code>Optional</code> <code>Readonly</code> <strong>created</strong>: <code>Date</code></p>
+<p><strong><code>Raw</code></strong></p>
+<p>types/schema!FeedbackSchemaBase.date</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-2">Implementation of<a href="#implementation-of-2" class="hash-link" aria-label="Direct link to Implementation of" title="Direct link to Implementation of">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer">IAnswer</a>.<a href="/docs/interfaces/IAnswer#created">created</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-5">Inherited from<a href="#inherited-from-5" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#created">created</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-5">Defined in<a href="#defined-in-5" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L39" target="_blank" rel="noopener noreferrer">lib/messages/BaseMessage.ts:39</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="deleted">deleted<a href="#deleted" class="hash-link" aria-label="Direct link to deleted" title="Direct link to deleted">​</a></h3>
+<p>• <code>Optional</code> <code>Readonly</code> <strong>deleted</strong>: <code>boolean</code></p>
+<p><strong><code>Raw</code></strong></p>
+<p>types/schema!FeedbackSchemaBase.appearsAsDeleted</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-3">Implementation of<a href="#implementation-of-3" class="hash-link" aria-label="Direct link to Implementation of" title="Direct link to Implementation of">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer">IAnswer</a>.<a href="/docs/interfaces/IAnswer#deleted">deleted</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-6">Inherited from<a href="#inherited-from-6" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#deleted">deleted</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-6">Defined in<a href="#defined-in-6" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L53" target="_blank" rel="noopener noreferrer">lib/messages/BaseMessage.ts:53</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="encryptedkey">encryptedKey<a href="#encryptedkey" class="hash-link" aria-label="Direct link to encryptedKey" title="Direct link to encryptedKey">​</a></h3>
+<p>• <code>Optional</code> <code>Readonly</code> <strong>encryptedKey</strong>: `kaencrypted_${string}_${string}`</p>
+<p><strong><code>Raw</code></strong></p>
+<p>types/schema!FeedbackSchemaBase.key</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-4">Implementation of<a href="#implementation-of-4" class="hash-link" aria-label="Direct link to Implementation of" title="Direct link to Implementation of">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer">IAnswer</a>.<a href="/docs/interfaces/IAnswer#encryptedkey">encryptedKey</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-7">Inherited from<a href="#inherited-from-7" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#encryptedkey">encryptedKey</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-7">Defined in<a href="#defined-in-7" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L48" target="_blank" rel="noopener noreferrer">lib/messages/BaseMessage.ts:48</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="key">key<a href="#key" class="hash-link" aria-label="Direct link to key" title="Direct link to key">​</a></h3>
+<p>• <code>Optional</code> <code>Readonly</code> <strong>key</strong>: `ag5zfmtoYW4tYWNhZGVteX${string}CxIIVXNlckRhdGEi${string}thaWRf${string}${string}${string}`</p>
+<p><strong><code>Raw</code></strong></p>
+<p>types/schema!FeedbackSchemaBase.expandKey</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-5">Implementation of<a href="#implementation-of-5" class="hash-link" aria-label="Direct link to Implementation of" title="Direct link to Implementation of">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer">IAnswer</a>.<a href="/docs/interfaces/IAnswer#key">key</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-8">Inherited from<a href="#inherited-from-8" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#key">key</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-8">Defined in<a href="#defined-in-8" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L44" target="_blank" rel="noopener noreferrer">lib/messages/BaseMessage.ts:44</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="locked">locked<a href="#locked" class="hash-link" aria-label="Direct link to locked" title="Direct link to locked">​</a></h3>
+<p>• <code>Optional</code> <code>Readonly</code> <strong>locked</strong>: <code>boolean</code></p>
+<p><strong><code>Raw</code></strong></p>
+<p>types/schema!FeedbackSchemaBase.isLocked</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-6">Implementation of<a href="#implementation-of-6" class="hash-link" aria-label="Direct link to Implementation of" title="Direct link to Implementation of">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer">IAnswer</a>.<a href="/docs/interfaces/IAnswer#locked">locked</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-9">Inherited from<a href="#inherited-from-9" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#locked">locked</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-9">Defined in<a href="#defined-in-9" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L57" target="_blank" rel="noopener noreferrer">lib/messages/BaseMessage.ts:57</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="pinned">pinned<a href="#pinned" class="hash-link" aria-label="Direct link to pinned" title="Direct link to pinned">​</a></h3>
+<p>• <code>Optional</code> <code>Readonly</code> <strong>pinned</strong>: <code>boolean</code></p>
+<p><strong><code>Raw</code></strong></p>
+<p>types/schema!FeedbackSchemaBase.isPinned</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-7">Implementation of<a href="#implementation-of-7" class="hash-link" aria-label="Direct link to Implementation of" title="Direct link to Implementation of">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer">IAnswer</a>.<a href="/docs/interfaces/IAnswer#pinned">pinned</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-10">Inherited from<a href="#inherited-from-10" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#pinned">pinned</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-10">Defined in<a href="#defined-in-10" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L61" target="_blank" rel="noopener noreferrer">lib/messages/BaseMessage.ts:61</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="program">program<a href="#program" class="hash-link" aria-label="Direct link to program" title="Direct link to program">​</a></h3>
+<p>• <code>Optional</code> <code>Readonly</code> <strong>program</strong>: <a href="/docs/classes/Program"><code>Program</code></a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-8">Implementation of<a href="#implementation-of-8" class="hash-link" aria-label="Direct link to Implementation of" title="Direct link to Implementation of">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer">IAnswer</a>.<a href="/docs/interfaces/IAnswer#program">program</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-11">Inherited from<a href="#inherited-from-11" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#program">program</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-11">Defined in<a href="#defined-in-11" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L35" target="_blank" rel="noopener noreferrer">lib/messages/BaseMessage.ts:35</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="question">question<a href="#question" class="hash-link" aria-label="Direct link to question" title="Direct link to question">​</a></h3>
+<p>• <code>Optional</code> <code>Readonly</code> <strong>question</strong>: <a href="/docs/classes/Question"><code>Question</code></a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-9">Implementation of<a href="#implementation-of-9" class="hash-link" aria-label="Direct link to Implementation of" title="Direct link to Implementation of">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer">IAnswer</a>.<a href="/docs/interfaces/IAnswer#question">question</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-12">Defined in<a href="#defined-in-12" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Answer.ts#L17" target="_blank" rel="noopener noreferrer">lib/messages/Answer.ts:17</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="rawdata">rawData<a href="#rawdata" class="hash-link" aria-label="Direct link to rawData" title="Direct link to rawData">​</a></h3>
+<p>• <code>Optional</code> <strong>rawData</strong>: <code>RecursivePartial</code>&lt;<a href="/docs/interfaces/FeedbackSchemaBase"><code>FeedbackSchemaBase</code></a>&gt;</p>
+<p>The raw base schema data</p>
+<p><strong><code>Remarks</code></strong></p>
+<p>Only set if the base was created from a user schema.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-12">Inherited from<a href="#inherited-from-12" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#rawdata">rawData</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-13">Defined in<a href="#defined-in-13" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L22" target="_blank" rel="noopener noreferrer">lib/Wrapper.ts:22</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="replies">replies<a href="#replies" class="hash-link" aria-label="Direct link to replies" title="Direct link to replies">​</a></h3>
+<p>• <code>Optional</code> <code>Readonly</code> <strong>replies</strong>: <a href="/docs/classes/Reply"><code>Reply</code></a>[]</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-10">Implementation of<a href="#implementation-of-10" class="hash-link" aria-label="Direct link to Implementation of" title="Direct link to Implementation of">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer">IAnswer</a>.<a href="/docs/interfaces/IAnswer#replies">replies</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-13">Inherited from<a href="#inherited-from-13" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#replies">replies</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-14">Defined in<a href="#defined-in-14" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L50" target="_blank" rel="noopener noreferrer">lib/messages/Message.ts:50</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="replycount">replyCount<a href="#replycount" class="hash-link" aria-label="Direct link to replyCount" title="Direct link to replyCount">​</a></h3>
+<p>• <code>Optional</code> <code>Readonly</code> <strong>replyCount</strong>: <code>number</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-11">Implementation of<a href="#implementation-of-11" class="hash-link" aria-label="Direct link to Implementation of" title="Direct link to Implementation of">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer">IAnswer</a>.<a href="/docs/interfaces/IAnswer#replycount">replyCount</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-14">Inherited from<a href="#inherited-from-14" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#replycount">replyCount</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-15">Defined in<a href="#defined-in-15" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L49" target="_blank" rel="noopener noreferrer">lib/messages/Message.ts:49</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="score">score<a href="#score" class="hash-link" aria-label="Direct link to score" title="Direct link to score">​</a></h3>
+<p>• <code>Optional</code> <code>Readonly</code> <strong>score</strong>: <code>number</code></p>
+<p><strong><code>Raw</code></strong></p>
+<p>types/schema!FeedbackSchemaBase.lowQualityScore</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-12">Implementation of<a href="#implementation-of-12" class="hash-link" aria-label="Direct link to Implementation of" title="Direct link to Implementation of">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer">IAnswer</a>.<a href="/docs/interfaces/IAnswer#score">score</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-15">Inherited from<a href="#inherited-from-15" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#score">score</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-16">Defined in<a href="#defined-in-16" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L69" target="_blank" rel="noopener noreferrer">lib/messages/BaseMessage.ts:69</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="selfdownvoted">selfDownvoted<a href="#selfdownvoted" class="hash-link" aria-label="Direct link to selfDownvoted" title="Direct link to selfDownvoted">​</a></h3>
+<p>• <code>Optional</code> <code>Readonly</code> <strong>selfDownvoted</strong>: <code>boolean</code></p>
+<p><strong><code>Raw</code></strong></p>
+<p>types/schema!FeedbackSchemaBase.downVoted</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-13">Implementation of<a href="#implementation-of-13" class="hash-link" aria-label="Direct link to Implementation of" title="Direct link to Implementation of">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer">IAnswer</a>.<a href="/docs/interfaces/IAnswer#selfdownvoted">selfDownvoted</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-16">Inherited from<a href="#inherited-from-16" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#selfdownvoted">selfDownvoted</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-17">Defined in<a href="#defined-in-17" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L48" target="_blank" rel="noopener noreferrer">lib/messages/Message.ts:48</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="selfflagged">selfFlagged<a href="#selfflagged" class="hash-link" aria-label="Direct link to selfFlagged" title="Direct link to selfFlagged">​</a></h3>
+<p>• <code>Optional</code> <code>Readonly</code> <strong>selfFlagged</strong>: <code>boolean</code></p>
+<p><strong><code>Raw</code></strong></p>
+<p>types/schema!FeedbackSchemaBase.flaggedByUser</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-14">Implementation of<a href="#implementation-of-14" class="hash-link" aria-label="Direct link to Implementation of" title="Direct link to Implementation of">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer">IAnswer</a>.<a href="/docs/interfaces/IAnswer#selfflagged">selfFlagged</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-17">Inherited from<a href="#inherited-from-17" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#selfflagged">selfFlagged</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-18">Defined in<a href="#defined-in-18" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L79" target="_blank" rel="noopener noreferrer">lib/messages/BaseMessage.ts:79</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="selfupvoted">selfUpvoted<a href="#selfupvoted" class="hash-link" aria-label="Direct link to selfUpvoted" title="Direct link to selfUpvoted">​</a></h3>
+<p>• <code>Optional</code> <code>Readonly</code> <strong>selfUpvoted</strong>: <code>boolean</code></p>
+<p><strong><code>Raw</code></strong></p>
+<p>types/schema!FeedbackSchemaBase.upVoted</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-15">Implementation of<a href="#implementation-of-15" class="hash-link" aria-label="Direct link to Implementation of" title="Direct link to Implementation of">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer">IAnswer</a>.<a href="/docs/interfaces/IAnswer#selfupvoted">selfUpvoted</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-18">Inherited from<a href="#inherited-from-18" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#selfupvoted">selfUpvoted</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-19">Defined in<a href="#defined-in-19" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L44" target="_blank" rel="noopener noreferrer">lib/messages/Message.ts:44</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="text">text<a href="#text" class="hash-link" aria-label="Direct link to text" title="Direct link to text">​</a></h3>
+<p>• <code>Optional</code> <code>Readonly</code> <strong>text</strong>: <code>string</code></p>
+<p><strong><code>Raw</code></strong></p>
+<p>types/schema!FeedbackSchemaBase.content</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-16">Implementation of<a href="#implementation-of-16" class="hash-link" aria-label="Direct link to Implementation of" title="Direct link to Implementation of">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer">IAnswer</a>.<a href="/docs/interfaces/IAnswer#text">text</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-19">Inherited from<a href="#inherited-from-19" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#text">text</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-20">Defined in<a href="#defined-in-20" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L33" target="_blank" rel="noopener noreferrer">lib/messages/BaseMessage.ts:33</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="verified">verified<a href="#verified" class="hash-link" aria-label="Direct link to verified" title="Direct link to verified">​</a></h3>
+<p>• <code>Optional</code> <code>Readonly</code> <strong>verified</strong>: <code>boolean</code></p>
+<p><strong><code>Raw</code></strong></p>
+<p>types/schema!FeedbackSchemaBase.definitelyNotSpam</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-17">Implementation of<a href="#implementation-of-17" class="hash-link" aria-label="Direct link to Implementation of" title="Direct link to Implementation of">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer">IAnswer</a>.<a href="/docs/interfaces/IAnswer#verified">verified</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-20">Inherited from<a href="#inherited-from-20" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#verified">verified</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-21">Defined in<a href="#defined-in-21" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L65" target="_blank" rel="noopener noreferrer">lib/messages/BaseMessage.ts:65</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="votes">votes<a href="#votes" class="hash-link" aria-label="Direct link to votes" title="Direct link to votes">​</a></h3>
+<p>• <code>Optional</code> <code>Readonly</code> <strong>votes</strong>: <code>number</code></p>
+<p><strong><code>Raw</code></strong></p>
+<p>types/schema!FeedbackSchemaBase.sumVotesIncremented</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-18">Implementation of<a href="#implementation-of-18" class="hash-link" aria-label="Direct link to Implementation of" title="Direct link to Implementation of">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer">IAnswer</a>.<a href="/docs/interfaces/IAnswer#votes">votes</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-21">Inherited from<a href="#inherited-from-21" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#votes">votes</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-22">Defined in<a href="#defined-in-22" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L40" target="_blank" rel="noopener noreferrer">lib/messages/Message.ts:40</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="type">Type<a href="#type" class="hash-link" aria-label="Direct link to Type" title="Direct link to Type">​</a></h3>
+<p>▪ <code>Static</code> <code>Readonly</code> <strong>Type</strong>: typeof <a href="/docs/enums/MessageType"><code>MessageType</code></a> = <code>MessageType</code></p>
+<p>Aliases for the message types.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-22">Inherited from<a href="#inherited-from-22" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#type">Type</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-23">Defined in<a href="#defined-in-23" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L35" target="_blank" rel="noopener noreferrer">lib/messages/Message.ts:35</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="accessors">Accessors<a href="#accessors" class="hash-link" aria-label="Direct link to Accessors" title="Direct link to Accessors">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="byself">bySelf<a href="#byself" class="hash-link" aria-label="Direct link to bySelf" title="Direct link to bySelf">​</a></h3>
+<p>• <code>get</code> <strong>bySelf</strong>(): <code>boolean</code></p>
+<p>Checks if the message was written by the client user</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns">Returns<a href="#returns" class="hash-link" aria-label="Direct link to Returns" title="Direct link to Returns">​</a></h4>
+<p><code>boolean</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-23">Inherited from<a href="#inherited-from-23" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p>Message.bySelf</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-24">Defined in<a href="#defined-in-24" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L84" target="_blank" rel="noopener noreferrer">lib/messages/BaseMessage.ts:84</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="selfvoted">selfVoted<a href="#selfvoted" class="hash-link" aria-label="Direct link to selfVoted" title="Direct link to selfVoted">​</a></h3>
+<p>• <code>get</code> <strong>selfVoted</strong>(): <code>null</code> | <code>1</code> | <code>0</code> | <code>-1</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-1">Returns<a href="#returns-1" class="hash-link" aria-label="Direct link to Returns" title="Direct link to Returns">​</a></h4>
+<p><code>null</code> | <code>1</code> | <code>0</code> | <code>-1</code></p>
+<p><code>1</code> if the message was upvoted by the user, <code>-1</code> if it was downvoted,
+and <code>0</code> if it was not voted on. <code>null</code> if the user is not logged in.</p>
+<p><strong><code>See</code></strong></p>
+<ul>
+<li>lib/messages/Message!Message.selfUpvoted</li>
+<li>lib/messages/Message!Message.selfDownvoted</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-24">Inherited from<a href="#inherited-from-24" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p>Message.selfVoted</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-25">Defined in<a href="#defined-in-25" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L59" target="_blank" rel="noopener noreferrer">lib/messages/Message.ts:59</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="url">url<a href="#url" class="hash-link" aria-label="Direct link to url" title="Direct link to url">​</a></h3>
+<p>• <code>get</code> <strong>url</strong>(): <code>null</code> | <code>string</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-2">Returns<a href="#returns-2" class="hash-link" aria-label="Direct link to Returns" title="Direct link to Returns">​</a></h4>
+<p><code>null</code> | <code>string</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-25">Inherited from<a href="#inherited-from-25" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p>Message.url</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-26">Defined in<a href="#defined-in-26" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L88" target="_blank" rel="noopener noreferrer">lib/messages/BaseMessage.ts:88</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="methods">Methods<a href="#methods" class="hash-link" aria-label="Direct link to Methods" title="Direct link to Methods">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="resolveidentifier">#resolveIdentifier<a href="#resolveidentifier" class="hash-link" aria-label="Direct link to #resolveIdentifier" title="Direct link to #resolveIdentifier">​</a></h3>
+<p>▸ <code>Private</code> <strong>#resolveIdentifier</strong>(): `ag5zfmtoYW4tYWNhZGVteX${string}CxIIVXNlckRhdGEi${string}thaWRf${string}${string}${string}` | `kaencrypted_${string}_${string}`</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-3">Returns<a href="#returns-3" class="hash-link" aria-label="Direct link to Returns" title="Direct link to Returns">​</a></h4>
+<p>`ag5zfmtoYW4tYWNhZGVteX${string}CxIIVXNlckRhdGEi${string}thaWRf${string}${string}${string}` | `kaencrypted_${string}_${string}`</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-26">Inherited from<a href="#inherited-from-26" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message##resolveidentifier">#resolveIdentifier</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-27">Defined in<a href="#defined-in-27" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L84" target="_blank" rel="noopener noreferrer">lib/messages/Message.ts:84</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="byuser">byUser<a href="#byuser" class="hash-link" aria-label="Direct link to byUser" title="Direct link to byUser">​</a></h3>
+<p>▸ <strong>byUser</strong>(<code>user</code>): <code>boolean</code></p>
+<p>Checks if the message was written by the given user</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="parameters-2">Parameters<a href="#parameters-2" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h4>
+<table><thead><tr><th style="text-align:left">Name</th><th style="text-align:left">Type</th></tr></thead><tbody><tr><td style="text-align:left"><code>user</code></td><td style="text-align:left"><a href="/docs/classes/User"><code>User</code></a></td></tr></tbody></table>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-4">Returns<a href="#returns-4" class="hash-link" aria-label="Direct link to Returns" title="Direct link to Returns">​</a></h4>
+<p><code>boolean</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-27">Inherited from<a href="#inherited-from-27" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#byuser">byUser</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-28">Defined in<a href="#defined-in-28" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L138" target="_blank" rel="noopener noreferrer">lib/messages/BaseMessage.ts:138</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="copy">copy<a href="#copy" class="hash-link" aria-label="Direct link to copy" title="Direct link to copy">​</a></h3>
+<p>▸ <strong>copy</strong>(<code>answer</code>): <a href="/docs/classes/Answer"><code>Answer</code></a></p>
+<p>Updates data into the class</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="parameters-3">Parameters<a href="#parameters-3" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h4>
+<table><thead><tr><th style="text-align:left">Name</th><th style="text-align:left">Type</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><code>answer</code></td><td style="text-align:left"><a href="/docs/interfaces/IAnswer"><code>IAnswer</code></a></td><td style="text-align:left">The data to copy from</td></tr></tbody></table>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-5">Returns<a href="#returns-5" class="hash-link" aria-label="Direct link to Returns" title="Direct link to Returns">​</a></h4>
+<p><a href="/docs/classes/Answer"><code>Answer</code></a></p>
+<p>The class instance</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="overrides">Overrides<a href="#overrides" class="hash-link" aria-label="Direct link to Overrides" title="Direct link to Overrides">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#copy">copy</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-29">Defined in<a href="#defined-in-29" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Answer.ts#L47" target="_blank" rel="noopener noreferrer">lib/messages/Answer.ts:47</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="copyfromschema">copyFromSchema<a href="#copyfromschema" class="hash-link" aria-label="Direct link to copyFromSchema" title="Direct link to copyFromSchema">​</a></h3>
+<p>▸ <strong>copyFromSchema</strong>(<code>schema</code>): <a href="/docs/classes/Answer"><code>Answer</code></a></p>
+<p>Updates data from a schema into the instance</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="parameters-4">Parameters<a href="#parameters-4" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h4>
+<table><thead><tr><th style="text-align:left">Name</th><th style="text-align:left">Type</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><code>schema</code></td><td style="text-align:left"><code>RecursivePartial</code>&lt;<a href="/docs/interfaces/FeedbackSchemaBase"><code>FeedbackSchemaBase</code></a>&gt;</td><td style="text-align:left">The schema to copy from</td></tr></tbody></table>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-6">Returns<a href="#returns-6" class="hash-link" aria-label="Direct link to Returns" title="Direct link to Returns">​</a></h4>
+<p><a href="/docs/classes/Answer"><code>Answer</code></a></p>
+<p>The class instance</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-28">Inherited from<a href="#inherited-from-28" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#copyfromschema">copyFromSchema</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-30">Defined in<a href="#defined-in-30" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L65" target="_blank" rel="noopener noreferrer">lib/Wrapper.ts:65</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="get">get<a href="#get" class="hash-link" aria-label="Direct link to get" title="Direct link to get">​</a></h3>
+<p>▸ <strong>get</strong>(<code>client?</code>): <code>Promise</code>&lt;<a href="/docs/classes/Answer"><code>Answer</code></a>&gt;</p>
+<p>Gets and updates the instance&#x27;s data</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="parameters-5">Parameters<a href="#parameters-5" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h4>
+<table><thead><tr><th style="text-align:left">Name</th><th style="text-align:left">Type</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><code>client</code></td><td style="text-align:left"><a href="/docs/classes/Client"><code>Client</code></a></td><td style="text-align:left">The API client to use</td></tr></tbody></table>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-7">Returns<a href="#returns-7" class="hash-link" aria-label="Direct link to Returns" title="Direct link to Returns">​</a></h4>
+<p><code>Promise</code>&lt;<a href="/docs/classes/Answer"><code>Answer</code></a>&gt;</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-29">Inherited from<a href="#inherited-from-29" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#get">get</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-31">Defined in<a href="#defined-in-31" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L109" target="_blank" rel="noopener noreferrer">lib/messages/Message.ts:109</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="getallreplies">getAllReplies<a href="#getallreplies" class="hash-link" aria-label="Direct link to getAllReplies" title="Direct link to getAllReplies">​</a></h3>
+<p>  ▸ <strong>getAllReplies</strong>(<code>client?</code>): <code>Promise</code>&lt;<a href="/docs/classes/Answer"><code>Answer</code></a>&gt;</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="parameters-6">Parameters<a href="#parameters-6" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h4>
+<table><thead><tr><th style="text-align:left">Name</th><th style="text-align:left">Type</th></tr></thead><tbody><tr><td style="text-align:left"><code>client</code></td><td style="text-align:left"><a href="/docs/classes/Client"><code>Client</code></a></td></tr></tbody></table>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-8">Returns<a href="#returns-8" class="hash-link" aria-label="Direct link to Returns" title="Direct link to Returns">​</a></h4>
+<p><code>Promise</code>&lt;<a href="/docs/classes/Answer"><code>Answer</code></a>&gt;</p>
+<p><strong><code>See</code></strong></p>
+<p><a href="/docs/classes/Client">!Client.getAllMessageReplies</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-30">Inherited from<a href="#inherited-from-30" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#getallreplies">getAllReplies</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-32">Defined in<a href="#defined-in-32" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L134" target="_blank" rel="noopener noreferrer">lib/messages/Message.ts:134</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="getreplies">getReplies<a href="#getreplies" class="hash-link" aria-label="Direct link to getReplies" title="Direct link to getReplies">​</a></h3>
+<p>▸ <strong>getReplies</strong>(<code>client?</code>, <code>limit?</code>): <code>AsyncGenerator</code>&lt;<a href="/docs/classes/Reply"><code>Reply</code></a>[], <a href="/docs/classes/Answer"><code>Answer</code></a>, <code>unknown</code>&gt;</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="parameters-7">Parameters<a href="#parameters-7" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h4>
+<table><thead><tr><th style="text-align:left">Name</th><th style="text-align:left">Type</th></tr></thead><tbody><tr><td style="text-align:left"><code>client</code></td><td style="text-align:left"><a href="/docs/classes/Client"><code>Client</code></a></td></tr><tr><td style="text-align:left"><code>limit?</code></td><td style="text-align:left"><code>number</code></td></tr></tbody></table>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-9">Returns<a href="#returns-9" class="hash-link" aria-label="Direct link to Returns" title="Direct link to Returns">​</a></h4>
+<p><code>AsyncGenerator</code>&lt;<a href="/docs/classes/Reply"><code>Reply</code></a>[], <a href="/docs/classes/Answer"><code>Answer</code></a>, <code>unknown</code>&gt;</p>
+<p><strong><code>See</code></strong></p>
+<p><a href="/docs/classes/Client">!Client.getMessageReplies</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-31">Inherited from<a href="#inherited-from-31" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#getreplies">getReplies</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-33">Defined in<a href="#defined-in-33" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L118" target="_blank" rel="noopener noreferrer">lib/messages/Message.ts:118</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="is">is<a href="#is" class="hash-link" aria-label="Direct link to is" title="Direct link to is">​</a></h3>
+<p>▸ <strong>is</strong>(<code>message</code>): <code>boolean</code></p>
+<p>Checks if the message is the same as the given message</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="parameters-8">Parameters<a href="#parameters-8" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h4>
+<table><thead><tr><th style="text-align:left">Name</th><th style="text-align:left">Type</th></tr></thead><tbody><tr><td style="text-align:left"><code>message</code></td><td style="text-align:left"><a href="/docs/interfaces/IBaseMessage"><code>IBaseMessage</code></a> | <a href="/docs/classes/BaseMessage"><code>BaseMessage</code></a></td></tr></tbody></table>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-10">Returns<a href="#returns-10" class="hash-link" aria-label="Direct link to Returns" title="Direct link to Returns">​</a></h4>
+<p><code>boolean</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-32">Inherited from<a href="#inherited-from-32" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#is">is</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-34">Defined in<a href="#defined-in-34" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L145" target="_blank" rel="noopener noreferrer">lib/messages/BaseMessage.ts:145</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="isschema">isSchema<a href="#isschema" class="hash-link" aria-label="Direct link to isSchema" title="Direct link to isSchema">​</a></h3>
+<p>▸ <strong>isSchema</strong>(<code>schema</code>): <code>boolean</code></p>
+<p>Checks if the schema represents the same instance</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="parameters-9">Parameters<a href="#parameters-9" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h4>
+<table><thead><tr><th style="text-align:left">Name</th><th style="text-align:left">Type</th></tr></thead><tbody><tr><td style="text-align:left"><code>schema</code></td><td style="text-align:left"><code>RecursivePartial</code>&lt;<a href="/docs/interfaces/FeedbackSchemaBase"><code>FeedbackSchemaBase</code></a>&gt;</td></tr></tbody></table>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-11">Returns<a href="#returns-11" class="hash-link" aria-label="Direct link to Returns" title="Direct link to Returns">​</a></h4>
+<p><code>boolean</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inherited-from-33">Inherited from<a href="#inherited-from-33" class="hash-link" aria-label="Direct link to Inherited from" title="Direct link to Inherited from">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#isschema">isSchema</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-35">Defined in<a href="#defined-in-35" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L88" target="_blank" rel="noopener noreferrer">lib/Wrapper.ts:88</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="transformschema">transformSchema<a href="#transformschema" class="hash-link" aria-label="Direct link to transformSchema" title="Direct link to transformSchema">​</a></h3>
+<p>▸ <strong>transformSchema</strong>(<code>schema</code>): <a href="/docs/interfaces/IAnswer"><code>IAnswer</code></a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="parameters-10">Parameters<a href="#parameters-10" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h4>
+<table><thead><tr><th style="text-align:left">Name</th><th style="text-align:left">Type</th></tr></thead><tbody><tr><td style="text-align:left"><code>schema</code></td><td style="text-align:left"><code>RecursivePartial</code>&lt;<a href="/docs/interfaces/AnswerFeedbackSchema"><code>AnswerFeedbackSchema</code></a>&gt;</td></tr></tbody></table>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-12">Returns<a href="#returns-12" class="hash-link" aria-label="Direct link to Returns" title="Direct link to Returns">​</a></h4>
+<p><a href="/docs/interfaces/IAnswer"><code>IAnswer</code></a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="overrides-1">Overrides<a href="#overrides-1" class="hash-link" aria-label="Direct link to Overrides" title="Direct link to Overrides">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#transformschema">transformSchema</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-36">Defined in<a href="#defined-in-36" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Answer.ts#L35" target="_blank" rel="noopener noreferrer">lib/messages/Answer.ts:35</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="fromidentifier">fromIdentifier<a href="#fromidentifier" class="hash-link" aria-label="Direct link to fromIdentifier" title="Direct link to fromIdentifier">​</a></h3>
+<p>▸ <code>Static</code> <strong>fromIdentifier</strong>(<code>identifier</code>): <a href="/docs/classes/Answer"><code>Answer</code></a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="parameters-11">Parameters<a href="#parameters-11" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h4>
+<table><thead><tr><th style="text-align:left">Name</th><th style="text-align:left">Type</th></tr></thead><tbody><tr><td style="text-align:left"><code>identifier</code></td><td style="text-align:left">`ag5zfmtoYW4tYWNhZGVteX${string}CxIIVXNlckRhdGEi${string}thaWRf${string}${string}${string}` | `kaencrypted_${string}_${string}`</td></tr></tbody></table>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-13">Returns<a href="#returns-13" class="hash-link" aria-label="Direct link to Returns" title="Direct link to Returns">​</a></h4>
+<p><a href="/docs/classes/Answer"><code>Answer</code></a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="overrides-2">Overrides<a href="#overrides-2" class="hash-link" aria-label="Direct link to Overrides" title="Direct link to Overrides">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#fromidentifier">fromIdentifier</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-37">Defined in<a href="#defined-in-37" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Answer.ts#L26" target="_blank" rel="noopener noreferrer">lib/messages/Answer.ts:26</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="fromschema">fromSchema<a href="#fromschema" class="hash-link" aria-label="Direct link to fromSchema" title="Direct link to fromSchema">​</a></h3>
+<p>▸ <code>Static</code> <strong>fromSchema</strong>(<code>schema</code>): <a href="/docs/classes/Answer"><code>Answer</code></a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="parameters-12">Parameters<a href="#parameters-12" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h4>
+<table><thead><tr><th style="text-align:left">Name</th><th style="text-align:left">Type</th></tr></thead><tbody><tr><td style="text-align:left"><code>schema</code></td><td style="text-align:left"><code>RecursivePartial</code>&lt;<a href="/docs/interfaces/AnswerFeedbackSchema"><code>AnswerFeedbackSchema</code></a>&gt;</td></tr></tbody></table>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="returns-14">Returns<a href="#returns-14" class="hash-link" aria-label="Direct link to Returns" title="Direct link to Returns">​</a></h4>
+<p><a href="/docs/classes/Answer"><code>Answer</code></a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="overrides-3">Overrides<a href="#overrides-3" class="hash-link" aria-label="Direct link to Overrides" title="Direct link to Overrides">​</a></h4>
+<p><a href="/docs/classes/Message">Message</a>.<a href="/docs/classes/Message#fromschema">fromSchema</a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-38">Defined in<a href="#defined-in-38" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Answer.ts#L19" target="_blank" rel="noopener noreferrer">lib/messages/Answer.ts:19</a></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/bhavjitChauhan/khan-api/tree/docs/docs/classes/Answer.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#hierarchy" class="table-of-contents__link toc-highlight">Hierarchy</a></li><li><a href="#implements" class="table-of-contents__link toc-highlight">Implements</a></li><li><a href="#constructors" class="table-of-contents__link toc-highlight">Constructors</a><ul><li><a href="#constructor" class="table-of-contents__link toc-highlight">constructor</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#author" class="table-of-contents__link toc-highlight">author</a></li><li><a href="#byvideoauthor" class="table-of-contents__link toc-highlight">byVideoAuthor</a></li><li><a href="#client" class="table-of-contents__link toc-highlight">client</a></li><li><a href="#created" class="table-of-contents__link toc-highlight">created</a></li><li><a href="#deleted" class="table-of-contents__link toc-highlight">deleted</a></li><li><a href="#encryptedkey" class="table-of-contents__link toc-highlight">encryptedKey</a></li><li><a href="#key" class="table-of-contents__link toc-highlight">key</a></li><li><a href="#locked" class="table-of-contents__link toc-highlight">locked</a></li><li><a href="#pinned" class="table-of-contents__link toc-highlight">pinned</a></li><li><a href="#program" class="table-of-contents__link toc-highlight">program</a></li><li><a href="#question" class="table-of-contents__link toc-highlight">question</a></li><li><a href="#rawdata" class="table-of-contents__link toc-highlight">rawData</a></li><li><a href="#replies" class="table-of-contents__link toc-highlight">replies</a></li><li><a href="#replycount" class="table-of-contents__link toc-highlight">replyCount</a></li><li><a href="#score" class="table-of-contents__link toc-highlight">score</a></li><li><a href="#selfdownvoted" class="table-of-contents__link toc-highlight">selfDownvoted</a></li><li><a href="#selfflagged" class="table-of-contents__link toc-highlight">selfFlagged</a></li><li><a href="#selfupvoted" class="table-of-contents__link toc-highlight">selfUpvoted</a></li><li><a href="#text" class="table-of-contents__link toc-highlight">text</a></li><li><a href="#verified" class="table-of-contents__link toc-highlight">verified</a></li><li><a href="#votes" class="table-of-contents__link toc-highlight">votes</a></li><li><a href="#type" class="table-of-contents__link toc-highlight">Type</a></li></ul></li><li><a href="#accessors" class="table-of-contents__link toc-highlight">Accessors</a><ul><li><a href="#byself" class="table-of-contents__link toc-highlight">bySelf</a></li><li><a href="#selfvoted" class="table-of-contents__link toc-highlight">selfVoted</a></li><li><a href="#url" class="table-of-contents__link toc-highlight">url</a></li></ul></li><li><a href="#methods" class="table-of-contents__link toc-highlight">Methods</a><ul><li><a href="#resolveidentifier" class="table-of-contents__link toc-highlight">#resolveIdentifier</a></li><li><a href="#byuser" class="table-of-contents__link toc-highlight">byUser</a></li><li><a href="#copy" class="table-of-contents__link toc-highlight">copy</a></li><li><a href="#copyfromschema" class="table-of-contents__link toc-highlight">copyFromSchema</a></li><li><a href="#get" class="table-of-contents__link toc-highlight">get</a></li><li><a href="#getallreplies" class="table-of-contents__link toc-highlight">getAllReplies</a></li><li><a href="#getreplies" class="table-of-contents__link toc-highlight">getReplies</a></li><li><a href="#is" class="table-of-contents__link toc-highlight">is</a></li><li><a href="#isschema" class="table-of-contents__link toc-highlight">isSchema</a></li><li><a href="#transformschema" class="table-of-contents__link toc-highlight">transformSchema</a></li><li><a href="#fromidentifier" class="table-of-contents__link toc-highlight">fromIdentifier</a></li><li><a href="#fromschema" class="table-of-contents__link toc-highlight">fromSchema</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Pages</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs">Docs</a></li></ul></div><div class="col footer__col"><div class="footer__title">Resources</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://khan-api.bhavjit.com/reference" target="_blank" rel="noopener noreferrer" class="footer__link-item">Reference<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/bhavjitChauhan/khan-api/tree/safelist" target="_blank" rel="noopener noreferrer" class="footer__link-item">Safelist<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/bhavjitChauhan/khan-api/tree/proxy" target="_blank" rel="noopener noreferrer" class="footer__link-item">Proxy<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">Links</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/bhavjitChauhan/khan-api" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.npmjs.com/package/@bhavjit/khan-api" target="_blank" rel="noopener noreferrer" class="footer__link-item">npm<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.jsdelivr.com/package/npm/@bhavjit/khan-api" target="_blank" rel="noopener noreferrer" class="footer__link-item">jsDelivr<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 Bhavjit Chauhan. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

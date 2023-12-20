@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-interfaces/ProgramSchema" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.0.1">
+<title data-rh="true">Interface: ProgramSchema\&lt;UserData\&gt; | Khan API</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://khan-api.bhavjit.com/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://khan-api.bhavjit.com/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://khan-api.bhavjit.com/docs/interfaces/ProgramSchema"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Interface: ProgramSchema\&lt;UserData\&gt; | Khan API"><meta data-rh="true" name="description" content="Type parameters"><meta data-rh="true" property="og:description" content="Type parameters"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://khan-api.bhavjit.com/docs/interfaces/ProgramSchema"><link data-rh="true" rel="alternate" href="https://khan-api.bhavjit.com/docs/interfaces/ProgramSchema" hreflang="en"><link data-rh="true" rel="alternate" href="https://khan-api.bhavjit.com/docs/interfaces/ProgramSchema" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Khan API RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Khan API Atom Feed"><link rel="stylesheet" href="/assets/css/styles.e2fd383f.css">
+<script src="/assets/js/runtime~main.92fd9f34.js" defer="defer"></script>
+<script src="/assets/js/main.b244e228.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();null!==e?t(e):window.matchMedia("(prefers-color-scheme: dark)").matches?t("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,t("light"))}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><b class="navbar__title text--truncate">Khan API</b></a><a class="navbar__item navbar__link" href="/docs/getting-started">Tutorials</a><a class="navbar__item navbar__link" href="/docs/api">Docs</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/bhavjitChauhan/khan-api" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><h1>Interface: ProgramSchema&lt;UserData&gt;</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="type-parameters">Type parameters<a href="#type-parameters" class="hash-link" aria-label="Direct link to Type parameters" title="Direct link to Type parameters">​</a></h2>
+<table><thead><tr><th style="text-align:left">Name</th><th style="text-align:left">Type</th></tr></thead><tbody><tr><td style="text-align:left"><code>UserData</code></td><td style="text-align:left"><code>unknown</code></td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="__typename">__typename<a href="#__typename" class="hash-link" aria-label="Direct link to __typename" title="Direct link to __typename">​</a></h3>
+<p>• <strong>__typename</strong>: <code>&quot;Program&quot;</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in">Defined in<a href="#defined-in" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L202" target="_blank" rel="noopener noreferrer">types/schema.ts:202</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="authorkaid">authorKaid<a href="#authorkaid" class="hash-link" aria-label="Direct link to authorKaid" title="Direct link to authorKaid">​</a></h3>
+<p>• <strong>authorKaid</strong>: <code>&quot;&quot;</code> | `kaid_${number}`</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-1">Defined in<a href="#defined-in-1" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L203" target="_blank" rel="noopener noreferrer">types/schema.ts:203</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="authornickname">authorNickname<a href="#authornickname" class="hash-link" aria-label="Direct link to authorNickname" title="Direct link to authorNickname">​</a></h3>
+<p>• <strong>authorNickname</strong>: <code>null</code> | <code>string</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-2">Defined in<a href="#defined-in-2" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L204" target="_blank" rel="noopener noreferrer">types/schema.ts:204</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="bychild">byChild<a href="#bychild" class="hash-link" aria-label="Direct link to byChild" title="Direct link to byChild">​</a></h3>
+<p>• <strong>byChild</strong>: <code>boolean</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-3">Defined in<a href="#defined-in-3" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L205" target="_blank" rel="noopener noreferrer">types/schema.ts:205</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="category">category<a href="#category" class="hash-link" aria-label="Direct link to category" title="Direct link to category">​</a></h3>
+<p>• <strong>category</strong>: <code>unknown</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-4">Defined in<a href="#defined-in-4" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L206" target="_blank" rel="noopener noreferrer">types/schema.ts:206</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="created">created<a href="#created" class="hash-link" aria-label="Direct link to created" title="Direct link to created">​</a></h3>
+<p>• <strong>created</strong>: <code>string</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-5">Defined in<a href="#defined-in-5" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L207" target="_blank" rel="noopener noreferrer">types/schema.ts:207</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="creatorprofile">creatorProfile<a href="#creatorprofile" class="hash-link" aria-label="Direct link to creatorProfile" title="Direct link to creatorProfile">​</a></h3>
+<p>• <strong>creatorProfile</strong>: <code>UserData</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-6">Defined in<a href="#defined-in-6" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L208" target="_blank" rel="noopener noreferrer">types/schema.ts:208</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="deleted">deleted<a href="#deleted" class="hash-link" aria-label="Direct link to deleted" title="Direct link to deleted">​</a></h3>
+<p>• <strong>deleted</strong>: <code>null</code> | <code>boolean</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-7">Defined in<a href="#defined-in-7" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L209" target="_blank" rel="noopener noreferrer">types/schema.ts:209</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="description">description<a href="#description" class="hash-link" aria-label="Direct link to description" title="Direct link to description">​</a></h3>
+<p>• <strong>description</strong>: <code>string</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-8">Defined in<a href="#defined-in-8" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L210" target="_blank" rel="noopener noreferrer">types/schema.ts:210</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="displayablespinoffcount">displayableSpinoffCount<a href="#displayablespinoffcount" class="hash-link" aria-label="Direct link to displayableSpinoffCount" title="Direct link to displayableSpinoffCount">​</a></h3>
+<p>• <strong>displayableSpinoffCount</strong>: <code>number</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-9">Defined in<a href="#defined-in-9" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L211" target="_blank" rel="noopener noreferrer">types/schema.ts:211</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="docsurlpath">docsUrlPath<a href="#docsurlpath" class="hash-link" aria-label="Direct link to docsUrlPath" title="Direct link to docsUrlPath">​</a></h3>
+<p>• <strong>docsUrlPath</strong>: <code>string</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-10">Defined in<a href="#defined-in-10" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L212" target="_blank" rel="noopener noreferrer">types/schema.ts:212</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="flaggedby">flaggedBy<a href="#flaggedby" class="hash-link" aria-label="Direct link to flaggedBy" title="Direct link to flaggedBy">​</a></h3>
+<p>• <strong>flaggedBy</strong>: <code>unknown</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-11">Defined in<a href="#defined-in-11" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L213" target="_blank" rel="noopener noreferrer">types/schema.ts:213</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="flaggedbyuser">flaggedByUser<a href="#flaggedbyuser" class="hash-link" aria-label="Direct link to flaggedByUser" title="Direct link to flaggedByUser">​</a></h3>
+<p>• <strong>flaggedByUser</strong>: <code>boolean</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-12">Defined in<a href="#defined-in-12" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L214" target="_blank" rel="noopener noreferrer">types/schema.ts:214</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="flags">flags<a href="#flags" class="hash-link" aria-label="Direct link to flags" title="Direct link to flags">​</a></h3>
+<p>• <strong>flags</strong>: <code>unknown</code></p>
+<p>Required special permissions.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-13">Defined in<a href="#defined-in-13" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L218" target="_blank" rel="noopener noreferrer">types/schema.ts:218</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="height">height<a href="#height" class="hash-link" aria-label="Direct link to height" title="Direct link to height">​</a></h3>
+<p>• <strong>height</strong>: <code>number</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-14">Defined in<a href="#defined-in-14" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L219" target="_blank" rel="noopener noreferrer">types/schema.ts:219</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="hidefromhotlist">hideFromHotlist<a href="#hidefromhotlist" class="hash-link" aria-label="Direct link to hideFromHotlist" title="Direct link to hideFromHotlist">​</a></h3>
+<p>• <strong>hideFromHotlist</strong>: <code>boolean</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-15">Defined in<a href="#defined-in-15" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L220" target="_blank" rel="noopener noreferrer">types/schema.ts:220</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="id">id<a href="#id" class="hash-link" aria-label="Direct link to id" title="Direct link to id">​</a></h3>
+<p>• <strong>id</strong>: `${number}`</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-16">Defined in<a href="#defined-in-16" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L221" target="_blank" rel="noopener noreferrer">types/schema.ts:221</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="imagepath">imagePath<a href="#imagepath" class="hash-link" aria-label="Direct link to imagePath" title="Direct link to imagePath">​</a></h3>
+<p>• <strong>imagePath</strong>: <code>string</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-17">Defined in<a href="#defined-in-17" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L222" target="_blank" rel="noopener noreferrer">types/schema.ts:222</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="isowner">isOwner<a href="#isowner" class="hash-link" aria-label="Direct link to isOwner" title="Direct link to isOwner">​</a></h3>
+<p>• <strong>isOwner</strong>: <code>boolean</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-18">Defined in<a href="#defined-in-18" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L223" target="_blank" rel="noopener noreferrer">types/schema.ts:223</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="isprojectorfork">isProjectOrFork<a href="#isprojectorfork" class="hash-link" aria-label="Direct link to isProjectOrFork" title="Direct link to isProjectOrFork">​</a></h3>
+<p>• <strong>isProjectOrFork</strong>: <code>boolean</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-19">Defined in<a href="#defined-in-19" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L224" target="_blank" rel="noopener noreferrer">types/schema.ts:224</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="kaid">kaid<a href="#kaid" class="hash-link" aria-label="Direct link to kaid" title="Direct link to kaid">​</a></h3>
+<p>• <strong>kaid</strong>: <code>&quot;&quot;</code> | `kaid_${number}`</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-20">Defined in<a href="#defined-in-20" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L225" target="_blank" rel="noopener noreferrer">types/schema.ts:225</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="key">key<a href="#key" class="hash-link" aria-label="Direct link to key" title="Direct link to key">​</a></h3>
+<p>• <strong>key</strong>: `ag5zfmtoYW4tYWNhZGVteXI${string}CxIKU2NyYXRjaHBhZB${string}${string}`</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-21">Defined in<a href="#defined-in-21" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L226" target="_blank" rel="noopener noreferrer">types/schema.ts:226</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="newurlpath">newUrlPath<a href="#newurlpath" class="hash-link" aria-label="Direct link to newUrlPath" title="Direct link to newUrlPath">​</a></h3>
+<p>• <strong>newUrlPath</strong>: <code>string</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-22">Defined in<a href="#defined-in-22" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L227" target="_blank" rel="noopener noreferrer">types/schema.ts:227</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="originscratchpad">originScratchpad<a href="#originscratchpad" class="hash-link" aria-label="Direct link to originScratchpad" title="Direct link to originScratchpad">​</a></h3>
+<p>• <strong>originScratchpad</strong>: <code>null</code> | <a href="/docs/interfaces/OriginProgramSchema"><code>OriginProgramSchema</code></a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-23">Defined in<a href="#defined-in-23" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L228" target="_blank" rel="noopener noreferrer">types/schema.ts:228</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="restrictposting">restrictPosting<a href="#restrictposting" class="hash-link" aria-label="Direct link to restrictPosting" title="Direct link to restrictPosting">​</a></h3>
+<p>• <strong>restrictPosting</strong>: <code>boolean</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-24">Defined in<a href="#defined-in-24" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L229" target="_blank" rel="noopener noreferrer">types/schema.ts:229</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="revision">revision<a href="#revision" class="hash-link" aria-label="Direct link to revision" title="Direct link to revision">​</a></h3>
+<p>• <strong>revision</strong>: <a href="/docs/interfaces/ProgramRevisionSchema"><code>ProgramRevisionSchema</code></a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-25">Defined in<a href="#defined-in-25" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L230" target="_blank" rel="noopener noreferrer">types/schema.ts:230</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="slug">slug<a href="#slug" class="hash-link" aria-label="Direct link to slug" title="Direct link to slug">​</a></h3>
+<p>• <strong>slug</strong>: <code>string</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-26">Defined in<a href="#defined-in-26" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L231" target="_blank" rel="noopener noreferrer">types/schema.ts:231</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="spinoffcount">spinoffCount<a href="#spinoffcount" class="hash-link" aria-label="Direct link to spinoffCount" title="Direct link to spinoffCount">​</a></h3>
+<p>• <strong>spinoffCount</strong>: <code>number</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-27">Defined in<a href="#defined-in-27" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L232" target="_blank" rel="noopener noreferrer">types/schema.ts:232</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="sumvotesincremented">sumVotesIncremented<a href="#sumvotesincremented" class="hash-link" aria-label="Direct link to sumVotesIncremented" title="Direct link to sumVotesIncremented">​</a></h3>
+<p>• <strong>sumVotesIncremented</strong>: <code>number</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-28">Defined in<a href="#defined-in-28" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L233" target="_blank" rel="noopener noreferrer">types/schema.ts:233</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="title">title<a href="#title" class="hash-link" aria-label="Direct link to title" title="Direct link to title">​</a></h3>
+<p>• <strong>title</strong>: <code>string</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-29">Defined in<a href="#defined-in-29" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L234" target="_blank" rel="noopener noreferrer">types/schema.ts:234</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="topic">topic<a href="#topic" class="hash-link" aria-label="Direct link to topic" title="Direct link to topic">​</a></h3>
+<p>• <strong>topic</strong>: <a href="/docs/interfaces/TopicSchema"><code>TopicSchema</code></a></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-30">Defined in<a href="#defined-in-30" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L235" target="_blank" rel="noopener noreferrer">types/schema.ts:235</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="translatedtitle">translatedTitle<a href="#translatedtitle" class="hash-link" aria-label="Direct link to translatedTitle" title="Direct link to translatedTitle">​</a></h3>
+<p>• <strong>translatedTitle</strong>: <code>string</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-31">Defined in<a href="#defined-in-31" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L236" target="_blank" rel="noopener noreferrer">types/schema.ts:236</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="upvoted">upVoted<a href="#upvoted" class="hash-link" aria-label="Direct link to upVoted" title="Direct link to upVoted">​</a></h3>
+<p>• <strong>upVoted</strong>: <code>boolean</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-32">Defined in<a href="#defined-in-32" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L237" target="_blank" rel="noopener noreferrer">types/schema.ts:237</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="url">url<a href="#url" class="hash-link" aria-label="Direct link to url" title="Direct link to url">​</a></h3>
+<p>• <strong>url</strong>: <code>string</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-33">Defined in<a href="#defined-in-33" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L238" target="_blank" rel="noopener noreferrer">types/schema.ts:238</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="userauthoredcontenttype">userAuthoredContentType<a href="#userauthoredcontenttype" class="hash-link" aria-label="Direct link to userAuthoredContentType" title="Direct link to userAuthoredContentType">​</a></h3>
+<p>• <strong>userAuthoredContentType</strong>: <code>string</code></p>
+<p>Besides <code>PJS</code>, <code>WEBPAGE</code> and <code>SQL</code> it can also be an arbitrary string</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-34">Defined in<a href="#defined-in-34" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L242" target="_blank" rel="noopener noreferrer">types/schema.ts:242</a></p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="width">width<a href="#width" class="hash-link" aria-label="Direct link to width" title="Direct link to width">​</a></h3>
+<p>• <strong>width</strong>: <code>number</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="defined-in-35">Defined in<a href="#defined-in-35" class="hash-link" aria-label="Direct link to Defined in" title="Direct link to Defined in">​</a></h4>
+<p><a href="https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/schema.ts#L243" target="_blank" rel="noopener noreferrer">types/schema.ts:243</a></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/bhavjitChauhan/khan-api/tree/docs/docs/interfaces/ProgramSchema.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#type-parameters" class="table-of-contents__link toc-highlight">Type parameters</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#__typename" class="table-of-contents__link toc-highlight">__typename</a></li><li><a href="#authorkaid" class="table-of-contents__link toc-highlight">authorKaid</a></li><li><a href="#authornickname" class="table-of-contents__link toc-highlight">authorNickname</a></li><li><a href="#bychild" class="table-of-contents__link toc-highlight">byChild</a></li><li><a href="#category" class="table-of-contents__link toc-highlight">category</a></li><li><a href="#created" class="table-of-contents__link toc-highlight">created</a></li><li><a href="#creatorprofile" class="table-of-contents__link toc-highlight">creatorProfile</a></li><li><a href="#deleted" class="table-of-contents__link toc-highlight">deleted</a></li><li><a href="#description" class="table-of-contents__link toc-highlight">description</a></li><li><a href="#displayablespinoffcount" class="table-of-contents__link toc-highlight">displayableSpinoffCount</a></li><li><a href="#docsurlpath" class="table-of-contents__link toc-highlight">docsUrlPath</a></li><li><a href="#flaggedby" class="table-of-contents__link toc-highlight">flaggedBy</a></li><li><a href="#flaggedbyuser" class="table-of-contents__link toc-highlight">flaggedByUser</a></li><li><a href="#flags" class="table-of-contents__link toc-highlight">flags</a></li><li><a href="#height" class="table-of-contents__link toc-highlight">height</a></li><li><a href="#hidefromhotlist" class="table-of-contents__link toc-highlight">hideFromHotlist</a></li><li><a href="#id" class="table-of-contents__link toc-highlight">id</a></li><li><a href="#imagepath" class="table-of-contents__link toc-highlight">imagePath</a></li><li><a href="#isowner" class="table-of-contents__link toc-highlight">isOwner</a></li><li><a href="#isprojectorfork" class="table-of-contents__link toc-highlight">isProjectOrFork</a></li><li><a href="#kaid" class="table-of-contents__link toc-highlight">kaid</a></li><li><a href="#key" class="table-of-contents__link toc-highlight">key</a></li><li><a href="#newurlpath" class="table-of-contents__link toc-highlight">newUrlPath</a></li><li><a href="#originscratchpad" class="table-of-contents__link toc-highlight">originScratchpad</a></li><li><a href="#restrictposting" class="table-of-contents__link toc-highlight">restrictPosting</a></li><li><a href="#revision" class="table-of-contents__link toc-highlight">revision</a></li><li><a href="#slug" class="table-of-contents__link toc-highlight">slug</a></li><li><a href="#spinoffcount" class="table-of-contents__link toc-highlight">spinoffCount</a></li><li><a href="#sumvotesincremented" class="table-of-contents__link toc-highlight">sumVotesIncremented</a></li><li><a href="#title" class="table-of-contents__link toc-highlight">title</a></li><li><a href="#topic" class="table-of-contents__link toc-highlight">topic</a></li><li><a href="#translatedtitle" class="table-of-contents__link toc-highlight">translatedTitle</a></li><li><a href="#upvoted" class="table-of-contents__link toc-highlight">upVoted</a></li><li><a href="#url" class="table-of-contents__link toc-highlight">url</a></li><li><a href="#userauthoredcontenttype" class="table-of-contents__link toc-highlight">userAuthoredContentType</a></li><li><a href="#width" class="table-of-contents__link toc-highlight">width</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Pages</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs">Docs</a></li></ul></div><div class="col footer__col"><div class="footer__title">Resources</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://khan-api.bhavjit.com/reference" target="_blank" rel="noopener noreferrer" class="footer__link-item">Reference<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/bhavjitChauhan/khan-api/tree/safelist" target="_blank" rel="noopener noreferrer" class="footer__link-item">Safelist<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/bhavjitChauhan/khan-api/tree/proxy" target="_blank" rel="noopener noreferrer" class="footer__link-item">Proxy<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">Links</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/bhavjitChauhan/khan-api" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.npmjs.com/package/@bhavjit/khan-api" target="_blank" rel="noopener noreferrer" class="footer__link-item">npm<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.jsdelivr.com/package/npm/@bhavjit/khan-api" target="_blank" rel="noopener noreferrer" class="footer__link-item">jsDelivr<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 Bhavjit Chauhan. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
