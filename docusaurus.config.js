@@ -61,10 +61,13 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/khan-api-social-card.jpg',
       navbar: {
         title: 'Khan API',
+        // logo: {
+        //   alt: 'Khan API Logo',
+        //   src: 'img/logo.svg',
+        // },
         items: [
           {
             type: 'docSidebar',
