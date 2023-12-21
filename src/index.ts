@@ -15,7 +15,7 @@ function isAllowedProxiedUrl(url: string) {
 
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-    if (isRootUrl(request.url)) return Response.redirect('https://github.com/bhavjitChauhan/khan-api/tree/proxy/')
+    if (isRootUrl(request.url)) return Response.redirect('https://khan-api.bhavjit.com/docs/proxy')
 
     const domain = request.headers.get('host')!.replace(/:\d{1,5}$/, ''),
       domainRegex = new RegExp(`${domain}(?::\\d{1,5})?`)
