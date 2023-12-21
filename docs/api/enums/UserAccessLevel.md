@@ -8,7 +8,7 @@
 
 #### Defined in
 
-[types/enums.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/enums.ts#L15)
+[src/types/enums.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L15)
 
 ___
 
@@ -18,4 +18,4 @@ ___
 
 #### Defined in
 
-[types/enums.ts:16](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/enums.ts#L16)
+[src/types/enums.ts:16](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L16)

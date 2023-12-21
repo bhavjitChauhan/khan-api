@@ -12,7 +12,7 @@
 
 #### Defined in
 
-[Program.ts:30](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L30)
+[src/Program.ts:30](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L30)
 
 ___
 
@@ -22,7 +22,7 @@ ___
 
 #### Defined in
 
-[Program.ts:46](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L46)
+[src/Program.ts:46](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L46)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-[Program.ts:38](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L38)
+[src/Program.ts:38](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L38)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-[Program.ts:31](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L31)
+[src/Program.ts:31](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L31)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[Program.ts:45](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L45)
+[src/Program.ts:45](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L45)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[Program.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L44)
+[src/Program.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L44)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[Program.ts:34](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L34)
+[src/Program.ts:34](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L34)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 #### Defined in
 
-[Program.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L53)
+[src/Program.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L53)
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[Program.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L37)
+[src/Program.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L37)
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 #### Defined in
 
-[Program.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L28)
+[src/Program.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L28)
 
 ___
 
@@ -112,7 +112,7 @@ ___
 
 #### Defined in
 
-[Program.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L42)
+[src/Program.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L42)
 
 ___
 
@@ -122,7 +122,7 @@ ___
 
 #### Defined in
 
-[Program.ts:41](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L41)
+[src/Program.ts:41](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L41)
 
 ___
 
@@ -132,7 +132,7 @@ ___
 
 #### Defined in
 
-[Program.ts:52](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L52)
+[src/Program.ts:52](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L52)
 
 ___
 
@@ -142,7 +142,7 @@ ___
 
 #### Defined in
 
-[Program.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L48)
+[src/Program.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L48)
 
 ___
 
@@ -152,7 +152,7 @@ ___
 
 #### Defined in
 
-[Program.ts:49](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L49)
+[src/Program.ts:49](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L49)
 
 ___
 
@@ -162,7 +162,7 @@ ___
 
 #### Defined in
 
-[Program.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L36)
+[src/Program.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L36)
 
 ___
 
@@ -172,7 +172,7 @@ ___
 
 #### Defined in
 
-[Program.ts:43](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L43)
+[src/Program.ts:43](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L43)
 
 ___
 
@@ -182,7 +182,7 @@ ___
 
 #### Defined in
 
-[Program.ts:51](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L51)
+[src/Program.ts:51](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L51)
 
 ___
 
@@ -192,7 +192,7 @@ ___
 
 #### Defined in
 
-[Program.ts:29](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L29)
+[src/Program.ts:29](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L29)
 
 ___
 
@@ -202,7 +202,7 @@ ___
 
 #### Defined in
 
-[Program.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L39)
+[src/Program.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L39)
 
 ___
 
@@ -212,7 +212,7 @@ ___
 
 #### Defined in
 
-[Program.ts:32](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L32)
+[src/Program.ts:32](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L32)
 
 ___
 
@@ -222,7 +222,7 @@ ___
 
 #### Defined in
 
-[Program.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L35)
+[src/Program.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L35)
 
 ___
 
@@ -232,4 +232,4 @@ ___
 
 #### Defined in
 
-[Program.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L33)
+[src/Program.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L33)

@@ -10,7 +10,7 @@
 
 #### Defined in
 
-[queries/projectsAuthoredByUser.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/projectsAuthoredByUser.ts#L35)
+[src/queries/projectsAuthoredByUser.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/projectsAuthoredByUser.ts#L35)
 
 ___
 
@@ -27,7 +27,7 @@ ___
 
 #### Defined in
 
-[queries/projectsAuthoredByUser.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/projectsAuthoredByUser.ts#L36)
+[src/queries/projectsAuthoredByUser.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/projectsAuthoredByUser.ts#L36)
 
 ___
 
@@ -37,4 +37,4 @@ ___
 
 #### Defined in
 
-[queries/projectsAuthoredByUser.ts:40](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/projectsAuthoredByUser.ts#L40)
+[src/queries/projectsAuthoredByUser.ts:40](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/projectsAuthoredByUser.ts#L40)

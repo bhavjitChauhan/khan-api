@@ -2,7 +2,7 @@
 
 **`Raw`**
 
-types/enums!FeedbackType
+[FeedbackType](api/enums/FeedbackType.md)
 
 ## Enumeration Members
 
@@ -12,7 +12,7 @@ types/enums!FeedbackType
 
 #### Defined in
 
-[lib/messages/Message.ts:20](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L20)
+[src/lib/messages/Message.ts:20](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Message.ts#L20)
 
 ___
 
@@ -22,7 +22,7 @@ ___
 
 #### Defined in
 
-[lib/messages/Message.ts:19](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L19)
+[src/lib/messages/Message.ts:19](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Message.ts#L19)
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 #### Defined in
 
-[lib/messages/Message.ts:18](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L18)
+[src/lib/messages/Message.ts:18](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Message.ts#L18)

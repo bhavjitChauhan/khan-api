@@ -10,7 +10,7 @@
 
 #### Defined in
 
-[queries/hotlist.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/hotlist.ts#L35)
+[src/queries/hotlist.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/hotlist.ts#L35)
 
 ___
 
@@ -20,7 +20,7 @@ ___
 
 #### Defined in
 
-[queries/hotlist.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/hotlist.ts#L36)
+[src/queries/hotlist.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/hotlist.ts#L36)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 #### Defined in
 
-[queries/hotlist.ts:38](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/hotlist.ts#L38)
+[src/queries/hotlist.ts:38](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/hotlist.ts#L38)
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 #### Defined in
 
-[queries/hotlist.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/hotlist.ts#L37)
+[src/queries/hotlist.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/hotlist.ts#L37)

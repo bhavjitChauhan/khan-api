@@ -8,7 +8,7 @@
 
 #### Defined in
 
-[types/enums.ts:59](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/enums.ts#L59)
+[src/types/enums.ts:59](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L59)
 
 ___
 
@@ -18,7 +18,7 @@ ___
 
 #### Defined in
 
-[types/enums.ts:60](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/enums.ts#L60)
+[src/types/enums.ts:60](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L60)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 #### Defined in
 
-[types/enums.ts:61](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/enums.ts#L61)
+[src/types/enums.ts:61](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L61)
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 #### Defined in
 
-[types/enums.ts:62](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/types/enums.ts#L62)
+[src/types/enums.ts:62](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L62)

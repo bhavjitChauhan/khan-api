@@ -2,7 +2,7 @@
 
 **`Raw`**
 
-types/enums!ProgramEditorType
+[ProgramEditorType](api/enums/ProgramEditorType.md)
 
 ## Enumeration Members
 
@@ -12,7 +12,7 @@ types/enums!ProgramEditorType
 
 #### Defined in
 
-[Program.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L22)
+[src/Program.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L22)
 
 ___
 
@@ -22,7 +22,7 @@ ___
 
 #### Defined in
 
-[Program.ts:24](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L24)
+[src/Program.ts:24](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L24)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-[Program.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L21)
+[src/Program.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L21)
 
 ___
 
@@ -42,4 +42,4 @@ ___
 
 #### Defined in
 
-[Program.ts:23](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L23)
+[src/Program.ts:23](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L23)

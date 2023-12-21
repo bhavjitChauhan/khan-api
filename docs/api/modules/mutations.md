@@ -10,7 +10,7 @@ Mutations
 
 ### loginWithPasswordMutation
 
-▸ **loginWithPasswordMutation**(`variables`, `init?`): `Promise`\<`TypedResponse`\<[`Response`](api/modules/mutations.LoginWithPasswordMutation.md#response)\>\>
+▸ **loginWithPasswordMutation**(`variables`, `init?`): `Promise`\<[`TypedResponse`](api/interfaces/TypedResponse.md)\<[`Response`](api/modules/mutations.LoginWithPasswordMutation.md#response)\>\>
 
 Low-level function for making a `loginWithPasswordMutation` request.
 
@@ -23,13 +23,13 @@ Low-level function for making a `loginWithPasswordMutation` request.
 
 #### Returns
 
-`Promise`\<`TypedResponse`\<[`Response`](api/modules/mutations.LoginWithPasswordMutation.md#response)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces/TypedResponse.md)\<[`Response`](api/modules/mutations.LoginWithPasswordMutation.md#response)\>\>
 
 **`Remarks`**
 
 There are many things that can go wrong with this request and Khan Academy
 doesn't provide a great way to handle them. It's recommended to use
-Client!Client.login | Client.login instead.
+[Client.login](api/classes/Client.md#login) instead.
 
 **`Link`**
 
@@ -37,7 +37,7 @@ Client!Client.login | Client.login instead.
 
 **`See`**
 
-Client!Client.login
+[Client.login](api/classes/Client.md#login)
 
 **`Example`**
 
@@ -53,4 +53,4 @@ const cookies = response.headers.get('set-cookie')
 
 #### Defined in
 
-[mutations/loginWithPasswordMutation.ts:91](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/mutations/loginWithPasswordMutation.ts#L91)
+[src/mutations/loginWithPasswordMutation.ts:91](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/mutations/loginWithPasswordMutation.ts#L91)

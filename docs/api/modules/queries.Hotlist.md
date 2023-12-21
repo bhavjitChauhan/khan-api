@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[queries/hotlist.ts:46](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/hotlist.ts#L46)
+[src/queries/hotlist.ts:46](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/hotlist.ts#L46)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[queries/hotlist.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/hotlist.ts#L44)
+[src/queries/hotlist.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/hotlist.ts#L44)
 
 ## Variables
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[queries/hotlist.ts:8](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/hotlist.ts#L8)
+[src/queries/hotlist.ts:8](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/hotlist.ts#L8)

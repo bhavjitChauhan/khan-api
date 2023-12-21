@@ -12,7 +12,7 @@ Email or username
 
 #### Defined in
 
-[mutations/loginWithPasswordMutation.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/mutations/loginWithPasswordMutation.ts#L36)
+[src/mutations/loginWithPasswordMutation.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/mutations/loginWithPasswordMutation.ts#L36)
 
 ___
 
@@ -22,4 +22,4 @@ ___
 
 #### Defined in
 
-[mutations/loginWithPasswordMutation.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/mutations/loginWithPasswordMutation.ts#L37)
+[src/mutations/loginWithPasswordMutation.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/mutations/loginWithPasswordMutation.ts#L37)

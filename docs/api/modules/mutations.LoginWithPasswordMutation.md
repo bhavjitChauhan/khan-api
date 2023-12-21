@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[mutations/loginWithPasswordMutation.ts:40](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/mutations/loginWithPasswordMutation.ts#L40)
+[src/mutations/loginWithPasswordMutation.ts:40](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/mutations/loginWithPasswordMutation.ts#L40)
 
 ## Variables
 
@@ -28,4 +28,4 @@
 
 #### Defined in
 
-[mutations/loginWithPasswordMutation.ts:7](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/mutations/loginWithPasswordMutation.ts#L7)
+[src/mutations/loginWithPasswordMutation.ts:7](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/mutations/loginWithPasswordMutation.ts#L7)

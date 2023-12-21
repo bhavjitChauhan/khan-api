@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:11](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L11)
+[src/lib/messages/BaseMessage.ts:11](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L11)
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:12](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L12)
+[src/lib/messages/BaseMessage.ts:12](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L12)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:13](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L13)
+[src/lib/messages/BaseMessage.ts:13](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L13)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:14](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L14)
+[src/lib/messages/BaseMessage.ts:14](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L14)
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L15)
+[src/lib/messages/BaseMessage.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L15)
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:17](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L17)
+[src/lib/messages/BaseMessage.ts:17](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L17)
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:16](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L16)
+[src/lib/messages/BaseMessage.ts:16](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L16)
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 #### Defined in
 
-[lib/messages/Reply.ts:10](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Reply.ts#L10)
+[src/lib/messages/Reply.ts:10](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Reply.ts#L10)
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:18](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L18)
+[src/lib/messages/BaseMessage.ts:18](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L18)
 
 ___
 
@@ -144,7 +144,7 @@ ___
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:19](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L19)
+[src/lib/messages/BaseMessage.ts:19](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L19)
 
 ___
 
@@ -158,7 +158,7 @@ ___
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:20](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L20)
+[src/lib/messages/BaseMessage.ts:20](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L20)
 
 ___
 
@@ -172,7 +172,7 @@ ___
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L21)
+[src/lib/messages/BaseMessage.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L21)
 
 ___
 
@@ -186,7 +186,7 @@ ___
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L22)
+[src/lib/messages/BaseMessage.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L22)
 
 ___
 
@@ -200,4 +200,4 @@ ___
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:23](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L23)
+[src/lib/messages/BaseMessage.ts:23](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L23)

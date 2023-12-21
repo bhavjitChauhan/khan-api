@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[queries/getUserByUsernameOrEmail.ts:25](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/getUserByUsernameOrEmail.ts#L25)
+[src/queries/getUserByUsernameOrEmail.ts:25](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getUserByUsernameOrEmail.ts#L25)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[queries/getUserByUsernameOrEmail.ts:23](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/getUserByUsernameOrEmail.ts#L23)
+[src/queries/getUserByUsernameOrEmail.ts:23](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getUserByUsernameOrEmail.ts#L23)
 
 ## Variables
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[queries/getUserByUsernameOrEmail.ts:9](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/getUserByUsernameOrEmail.ts#L9)
+[src/queries/getUserByUsernameOrEmail.ts:9](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getUserByUsernameOrEmail.ts#L9)

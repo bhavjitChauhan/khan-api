@@ -10,7 +10,7 @@
 
 #### Defined in
 
-[queries/getFeedbackRepliesPage.ts:59](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/getFeedbackRepliesPage.ts#L59)
+[src/queries/getFeedbackRepliesPage.ts:59](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getFeedbackRepliesPage.ts#L59)
 
 ___
 
@@ -20,7 +20,7 @@ ___
 
 #### Defined in
 
-[queries/getFeedbackRepliesPage.ts:60](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/getFeedbackRepliesPage.ts#L60)
+[src/queries/getFeedbackRepliesPage.ts:60](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getFeedbackRepliesPage.ts#L60)
 
 ___
 
@@ -30,4 +30,4 @@ ___
 
 #### Defined in
 
-[queries/getFeedbackRepliesPage.ts:58](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/getFeedbackRepliesPage.ts#L58)
+[src/queries/getFeedbackRepliesPage.ts:58](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getFeedbackRepliesPage.ts#L58)

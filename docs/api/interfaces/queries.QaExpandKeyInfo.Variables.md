@@ -10,4 +10,4 @@
 
 #### Defined in
 
-[queries/QAExpandKeyInfo.ts:17](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/QAExpandKeyInfo.ts#L17)
+[src/queries/QAExpandKeyInfo.ts:17](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/QAExpandKeyInfo.ts#L17)

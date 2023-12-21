@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[queries/programQuery.ts:81](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/programQuery.ts#L81)
+[src/queries/programQuery.ts:81](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/programQuery.ts#L81)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[queries/programQuery.ts:79](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/programQuery.ts#L79)
+[src/queries/programQuery.ts:79](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/programQuery.ts#L79)
 
 ## Variables
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[queries/programQuery.ts:8](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/programQuery.ts#L8)
+[src/queries/programQuery.ts:8](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/programQuery.ts#L8)

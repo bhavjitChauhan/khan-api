@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[queries/getFullUserProfile.ts:109](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/getFullUserProfile.ts#L109)
+[src/queries/getFullUserProfile.ts:109](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getFullUserProfile.ts#L109)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 #### Defined in
 
-[queries/getFullUserProfile.ts:107](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/getFullUserProfile.ts#L107)
+[src/queries/getFullUserProfile.ts:107](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getFullUserProfile.ts#L107)
 
 ## Variables
 
@@ -41,4 +41,4 @@ ___
 
 #### Defined in
 
-[queries/getFullUserProfile.ts:9](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/getFullUserProfile.ts#L9)
+[src/queries/getFullUserProfile.ts:9](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getFullUserProfile.ts#L9)

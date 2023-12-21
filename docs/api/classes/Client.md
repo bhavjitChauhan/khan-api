@@ -4,9 +4,13 @@
 
 ### constructor
 
-• **new Client**()
+• **new Client**(): [`Client`](api/classes/Client.md)
 
 Creates a new Client instance
+
+#### Returns
+
+[`Client`](api/classes/Client.md)
 
 **`Example`**
 
@@ -16,7 +20,7 @@ const client = new Client()
 
 #### Defined in
 
-[Client.ts:94](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L94)
+[src/Client.ts:94](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L94)
 
 ## Properties
 
@@ -26,7 +30,7 @@ const client = new Client()
 
 #### Defined in
 
-[Client.ts:68](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L68)
+[src/Client.ts:68](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L68)
 
 ___
 
@@ -36,7 +40,7 @@ ___
 
 #### Defined in
 
-[Client.ts:66](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L66)
+[src/Client.ts:66](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L66)
 
 ___
 
@@ -46,7 +50,7 @@ ___
 
 #### Defined in
 
-[Client.ts:67](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L67)
+[src/Client.ts:67](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L67)
 
 ___
 
@@ -56,7 +60,7 @@ ___
 
 #### Defined in
 
-[Client.ts:64](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L64)
+[src/Client.ts:64](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L64)
 
 ___
 
@@ -66,7 +70,7 @@ ___
 
 #### Defined in
 
-[Client.ts:62](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L62)
+[src/Client.ts:62](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L62)
 
 ___
 
@@ -76,7 +80,7 @@ ___
 
 #### Defined in
 
-[Client.ts:63](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L63)
+[src/Client.ts:63](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L63)
 
 ___
 
@@ -86,7 +90,7 @@ ___
 
 #### Defined in
 
-[Client.ts:70](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L70)
+[src/Client.ts:70](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L70)
 
 ___
 
@@ -96,7 +100,7 @@ ___
 
 #### Defined in
 
-[Client.ts:71](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L71)
+[src/Client.ts:71](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L71)
 
 ___
 
@@ -106,7 +110,7 @@ ___
 
 #### Defined in
 
-[Client.ts:72](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L72)
+[src/Client.ts:72](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L72)
 
 ## Accessors
 
@@ -128,7 +132,7 @@ The KAAS cookie is used by Khan Academy to authenticate requests.
 
 #### Defined in
 
-[Client.ts:190](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L190)
+[src/Client.ts:190](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L190)
 
 ## Methods
 
@@ -154,7 +158,7 @@ Gets all replies to a message
 
 **`See`**
 
-[!Client.getMessageReplies](api/classes/Client.md)
+[Client.getMessageReplies](api/classes/Client.md#getmessagereplies)
 
 **`Example`**
 
@@ -166,7 +170,7 @@ console.log(replies.map(reply => reply.text))
 
 #### Defined in
 
-[Client.ts:974](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L974)
+[src/Client.ts:974](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L974)
 
 ___
 
@@ -189,11 +193,11 @@ Gets all Help Requests for a program
 
 **`See`**
 
-[!Client.getAllProgramMessages](api/classes/Client.md)
+[Client.getAllProgramMessages](api/classes/Client.md#getallprogrammessages)
 
 #### Defined in
 
-[Client.ts:888](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L888)
+[src/Client.ts:888](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L888)
 
 ___
 
@@ -217,7 +221,7 @@ Gets all specified types of messages for a program
 
 **`See`**
 
-[!Client.getProgramMessages](api/classes/Client.md)
+[Client.getProgramMessages](api/classes/Client.md#getprogrammessages)
 
 **`Example`**
 
@@ -229,7 +233,7 @@ console.log(messages.map(message => message.text)
 
 #### Defined in
 
-[Client.ts:791](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L791)
+[src/Client.ts:791](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L791)
 
 ___
 
@@ -252,11 +256,11 @@ Gets all questions for a program
 
 **`See`**
 
-[!Client.getAllProgramMessages](api/classes/Client.md)
+[Client.getAllProgramMessages](api/classes/Client.md#getallprogrammessages)
 
 #### Defined in
 
-[Client.ts:856](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L856)
+[src/Client.ts:856](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L856)
 
 ___
 
@@ -279,11 +283,11 @@ Gets all Tips and Thanks messages for a program
 
 **`See`**
 
-[!Client.getAllProgramMessages](api/classes/Client.md)
+[Client.getAllProgramMessages](api/classes/Client.md#getallprogrammessages)
 
 #### Defined in
 
-[Client.ts:824](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L824)
+[src/Client.ts:824](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L824)
 
 ___
 
@@ -307,7 +311,7 @@ Gets all of a user's programs
 
 **`See`**
 
-[!Client.getUserPrograms](api/classes/Client.md)
+[Client.getUserPrograms](api/classes/Client.md#getuserprograms)
 
 **`Example`**
 
@@ -319,7 +323,7 @@ console.log(programs.map(program => program.title))
 
 #### Defined in
 
-[Client.ts:445](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L445)
+[src/Client.ts:445](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L445)
 
 ___
 
@@ -341,7 +345,7 @@ Gets a single answer message
 
 #### Defined in
 
-[Client.ts:666](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L666)
+[src/Client.ts:666](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L666)
 
 ___
 
@@ -378,7 +382,7 @@ for await (const programs of client.getHotlistPrograms()) {
 
 #### Defined in
 
-[Client.ts:502](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L502)
+[src/Client.ts:502](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L502)
 
 ___
 
@@ -401,13 +405,13 @@ Gets a single message by its feedback key or encrypted feedback key
 **`Remarks`**
 
 This method is not recommended when you know the message's type. Use
-[!Client.getTipsAndThanks | `getTipsAndThanks`](api/classes/Client.md),
-[!Client.getQuestion | `getQuestion`](api/classes/Client.md) or
-[!Client.getReply | `getReply`](api/classes/Client.md) instead.
+[`getTipsAndThanks`](api/classes/Client.md#gettipsandthanks),
+[`getQuestion`](api/classes/Client.md#getquestion) or
+[`getReply`](api/classes/Client.md#getreply) instead.
 
 #### Defined in
 
-[Client.ts:584](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L584)
+[src/Client.ts:584](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L584)
 
 ___
 
@@ -443,7 +447,7 @@ for await (const replies of client.getMessageReplies('ag5zfmtoYW4tYWNhZGVteXJBCx
 
 #### Defined in
 
-[Client.ts:912](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L912)
+[src/Client.ts:912](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L912)
 
 ___
 
@@ -463,7 +467,7 @@ ___
 
 #### Defined in
 
-[Client.ts:460](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L460)
+[src/Client.ts:460](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L460)
 
 ___
 
@@ -486,11 +490,11 @@ Gets Help Requests for a program
 
 **`See`**
 
-[!Client.getProgramMessages](api/classes/Client.md)
+[Client.getProgramMessages](api/classes/Client.md#getprogrammessages)
 
 #### Defined in
 
-[Client.ts:872](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L872)
+[src/Client.ts:872](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L872)
 
 ___
 
@@ -523,7 +527,7 @@ for await (const messages of client.getProgramTipsAndThanks(5154160781082624)) {
 
 #### Defined in
 
-[Client.ts:722](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L722)
+[src/Client.ts:722](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L722)
 
 ___
 
@@ -546,11 +550,11 @@ Gets questions for a program
 
 **`See`**
 
-[!Client.getProgramMessages](api/classes/Client.md)
+[Client.getProgramMessages](api/classes/Client.md#getprogrammessages)
 
 #### Defined in
 
-[Client.ts:840](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L840)
+[src/Client.ts:840](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L840)
 
 ___
 
@@ -573,11 +577,11 @@ Gets Tips and Thanks messages for a program
 
 **`See`**
 
-[!Client.getProgramMessages](api/classes/Client.md)
+[Client.getProgramMessages](api/classes/Client.md#getprogrammessages)
 
 #### Defined in
 
-[Client.ts:808](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L808)
+[src/Client.ts:808](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L808)
 
 ___
 
@@ -603,7 +607,7 @@ Note that Help Requests are a type of question.
 
 #### Defined in
 
-[Client.ts:657](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L657)
+[src/Client.ts:657](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L657)
 
 ___
 
@@ -624,7 +628,7 @@ ___
 
 #### Defined in
 
-[Client.ts:565](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L565)
+[src/Client.ts:565](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L565)
 
 ___
 
@@ -646,7 +650,7 @@ Gets a single reply
 
 #### Defined in
 
-[Client.ts:675](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L675)
+[src/Client.ts:675](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L675)
 
 ___
 
@@ -668,7 +672,7 @@ Gets a single tips and thanks message
 
 #### Defined in
 
-[Client.ts:645](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L645)
+[src/Client.ts:645](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L645)
 
 ___
 
@@ -689,7 +693,7 @@ ___
 
 #### Defined in
 
-[Client.ts:557](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L557)
+[src/Client.ts:557](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L557)
 
 ___
 
@@ -709,7 +713,7 @@ ___
 
 #### Defined in
 
-[Client.ts:275](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L275)
+[src/Client.ts:275](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L275)
 
 ___
 
@@ -730,7 +734,7 @@ ___
 
 #### Defined in
 
-[Client.ts:314](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L314)
+[src/Client.ts:314](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L314)
 
 ___
 
@@ -767,13 +771,13 @@ for await (const programs of client.getUserPrograms('bhavjitChauhan')) {
 
 #### Defined in
 
-[Client.ts:373](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L373)
+[src/Client.ts:373](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L373)
 
 ___
 
 ### getUserStatistics
 
-▸ **getUserStatistics**(`identifier?`): `Promise`\<`UserStatistics`\>
+▸ **getUserStatistics**(`identifier?`): `Promise`\<[`UserStatistics`](api/interfaces/UserStatistics.md)\>
 
 #### Parameters
 
@@ -783,11 +787,11 @@ ___
 
 #### Returns
 
-`Promise`\<`UserStatistics`\>
+`Promise`\<[`UserStatistics`](api/interfaces/UserStatistics.md)\>
 
 #### Defined in
 
-[Client.ts:336](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L336)
+[src/Client.ts:336](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L336)
 
 ___
 
@@ -810,7 +814,7 @@ Logs in to Khan Academy and stores the KAAS cookie
 
 #### Defined in
 
-[Client.ts:202](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L202)
+[src/Client.ts:202](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L202)
 
 ___
 
@@ -838,11 +842,11 @@ If the identifier is cached, it will be returned immediately. Otherwise a
 
 **`See`**
 
-utils/resolvers!resolveFeedbackKey
+[resolveFeedbackKey](api/README.md#resolvefeedbackkey)
 
 #### Defined in
 
-[Client.ts:167](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L167)
+[src/Client.ts:167](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L167)
 
 ___
 
@@ -869,7 +873,7 @@ If the identifier is cached, it will be returned immediately. Otherwise a
 
 **`See`**
 
-utils/resolvers!resolveKaid
+[resolveKaid](api/README.md#resolvekaid)
 
 **`Example`**
 
@@ -881,7 +885,7 @@ console.log(await getKaid()) // Returns cached result
 
 #### Defined in
 
-[Client.ts:112](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L112)
+[src/Client.ts:112](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L112)
 
 ___
 
@@ -908,7 +912,7 @@ If the identifier is cached, it will be returned immediately. Otherwise a
 
 **`See`**
 
-utils/resolvers!resolveUsername
+[resolveUsername](api/README.md#resolveusername)
 
 **`Example`**
 
@@ -920,13 +924,13 @@ console.log(await getUsername()) // Returns cached result
 
 #### Defined in
 
-[Client.ts:141](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L141)
+[src/Client.ts:141](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L141)
 
 ___
 
 ### #resolveJsonReponse
 
-▸ `Static` `Private` **#resolveJsonReponse**\<`T`\>(`response`): `Promise`\<`T`\>
+▸ **#resolveJsonReponse**\<`T`\>(`response`): `Promise`\<`T`\>
 
 #### Type parameters
 
@@ -938,7 +942,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `response` | `TypedResponse`\<`T`\> |
+| `response` | [`TypedResponse`](api/interfaces/TypedResponse.md)\<`T`\> |
 
 #### Returns
 
@@ -946,4 +950,4 @@ ___
 
 #### Defined in
 
-[Client.ts:74](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Client.ts#L74)
+[src/Client.ts:74](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Client.ts#L74)

@@ -14,7 +14,7 @@
 
 ### constructor
 
-• **new Program**(`data?`)
+• **new Program**(`data?`): [`Program`](api/classes/Program.md)
 
 Creates a new class instance
 
@@ -24,15 +24,19 @@ Creates a new class instance
 | :------ | :------ |
 | `data?` | [`IProgram`](api/interfaces/IProgram.md) |
 
+#### Returns
+
+[`Program`](api/classes/Program.md)
+
 #### Inherited from
 
 Wrapper\<ProgramSchema\<UserSchema\>, IProgram\>.constructor
 
 #### Defined in
 
-[lib/Wrapper.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L36)
+[src/lib/Wrapper.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L36)
 
-• **new Program**(`client`, `data?`)
+• **new Program**(`client`, `data?`): [`Program`](api/classes/Program.md)
 
 #### Parameters
 
@@ -41,13 +45,17 @@ Wrapper\<ProgramSchema\<UserSchema\>, IProgram\>.constructor
 | `client` | [`Client`](api/classes/Client.md) |
 | `data?` | [`IProgram`](api/interfaces/IProgram.md) |
 
+#### Returns
+
+[`Program`](api/classes/Program.md)
+
 #### Inherited from
 
 Wrapper\<ProgramSchema\<UserSchema\>, IProgram\>.constructor
 
 #### Defined in
 
-[lib/Wrapper.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L37)
+[src/lib/Wrapper.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L37)
 
 ## Properties
 
@@ -63,7 +71,7 @@ The author of the program.
 
 #### Defined in
 
-[Program.ts:78](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L78)
+[src/Program.ts:78](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L78)
 
 ___
 
@@ -79,7 +87,7 @@ Wrapper.client
 
 #### Defined in
 
-[lib/Wrapper.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L15)
+[src/lib/Wrapper.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L15)
 
 ___
 
@@ -95,7 +103,7 @@ The code of the program.
 
 #### Defined in
 
-[Program.ts:118](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L118)
+[src/Program.ts:118](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L118)
 
 ___
 
@@ -111,7 +119,7 @@ The date the program was created.
 
 #### Defined in
 
-[Program.ts:82](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L82)
+[src/Program.ts:82](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L82)
 
 ___
 
@@ -127,7 +135,7 @@ Whether the program has been deleted.
 
 #### Defined in
 
-[Program.ts:147](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L147)
+[src/Program.ts:147](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L147)
 
 ___
 
@@ -143,7 +151,7 @@ The description of the program. Set to `null` if the description is empty string
 
 #### Defined in
 
-[Program.ts:143](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L143)
+[src/Program.ts:143](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L143)
 
 ___
 
@@ -163,7 +171,7 @@ Constrained between 400 and 600. May be any value in between.
 
 #### Defined in
 
-[Program.ts:103](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L103)
+[src/Program.ts:103](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L103)
 
 ___
 
@@ -177,7 +185,7 @@ ___
 
 #### Defined in
 
-[Program.ts:164](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L164)
+[src/Program.ts:164](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L164)
 
 ___
 
@@ -193,7 +201,7 @@ Whether the program is hidden from the hotlist.
 
 #### Defined in
 
-[Program.ts:122](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L122)
+[src/Program.ts:122](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L122)
 
 ___
 
@@ -209,7 +217,7 @@ The ID of the program.
 
 #### Defined in
 
-[Program.ts:70](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L70)
+[src/Program.ts:70](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L70)
 
 ___
 
@@ -223,7 +231,7 @@ ___
 
 #### Defined in
 
-[Program.ts:132](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L132)
+[src/Program.ts:132](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L132)
 
 ___
 
@@ -239,7 +247,7 @@ The original program that this program is a spin-off of.
 
 #### Defined in
 
-[Program.ts:131](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L131)
+[src/Program.ts:131](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L131)
 
 ___
 
@@ -253,7 +261,7 @@ ___
 
 #### Defined in
 
-[Program.ts:163](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L163)
+[src/Program.ts:163](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L163)
 
 ___
 
@@ -273,7 +281,7 @@ Wrapper.rawData
 
 #### Defined in
 
-[lib/Wrapper.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L22)
+[src/lib/Wrapper.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L22)
 
 ___
 
@@ -293,7 +301,7 @@ Whether the program has been flagged by the client's authenticated user.
 
 #### Defined in
 
-[Program.ts:154](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L154)
+[src/Program.ts:154](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L154)
 
 ___
 
@@ -313,7 +321,7 @@ Whether the program has been voted by the client's authenticated user.
 
 #### Defined in
 
-[Program.ts:160](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L160)
+[src/Program.ts:160](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L160)
 
 ___
 
@@ -329,7 +337,7 @@ The number of spin-offs the program has.
 
 #### Defined in
 
-[Program.ts:114](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L114)
+[src/Program.ts:114](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L114)
 
 ___
 
@@ -349,7 +357,7 @@ Previous thumbnails are not guaranteed to be available.
 
 #### Defined in
 
-[Program.ts:139](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L139)
+[src/Program.ts:139](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L139)
 
 ___
 
@@ -363,7 +371,7 @@ ___
 
 #### Defined in
 
-[Program.ts:162](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L162)
+[src/Program.ts:162](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L162)
 
 ___
 
@@ -379,7 +387,7 @@ The title of the program.
 
 #### Defined in
 
-[Program.ts:74](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L74)
+[src/Program.ts:74](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L74)
 
 ___
 
@@ -395,7 +403,7 @@ The type of program.
 
 #### Defined in
 
-[Program.ts:126](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L126)
+[src/Program.ts:126](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L126)
 
 ___
 
@@ -415,7 +423,7 @@ Set to `null` if the program has never been updated.
 
 #### Defined in
 
-[Program.ts:89](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L89)
+[src/Program.ts:89](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L89)
 
 ___
 
@@ -435,7 +443,7 @@ Note that a program has 1 vote on creation.
 
 #### Defined in
 
-[Program.ts:110](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L110)
+[src/Program.ts:110](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L110)
 
 ___
 
@@ -455,7 +463,7 @@ Constrained between 400 and 600. May be any value in between.
 
 #### Defined in
 
-[Program.ts:96](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L96)
+[src/Program.ts:96](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L96)
 
 ___
 
@@ -467,11 +475,11 @@ Aliases for the program types.
 
 **`Raw`**
 
-types/schema!ProgramRevisionSchema.editorType
+[ProgramRevisionSchema.editorType](api/interfaces/ProgramRevisionSchema.md#editortype)
 
 #### Defined in
 
-[Program.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L65)
+[src/Program.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L65)
 
 ## Accessors
 
@@ -487,7 +495,7 @@ Number of lines of code in the program.
 
 #### Defined in
 
-[Program.ts:173](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L173)
+[src/Program.ts:173](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L173)
 
 ___
 
@@ -503,7 +511,7 @@ Short URL of the program.
 
 #### Defined in
 
-[Program.ts:192](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L192)
+[src/Program.ts:192](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L192)
 
 ___
 
@@ -517,7 +525,7 @@ ___
 
 #### Defined in
 
-[Program.ts:166](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L166)
+[src/Program.ts:166](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L166)
 
 ___
 
@@ -537,7 +545,7 @@ To get the latest thumbnail image, use 'latest' as the thumbnail ID instead.
 
 #### Defined in
 
-[Program.ts:203](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L203)
+[src/Program.ts:203](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L203)
 
 ___
 
@@ -553,13 +561,13 @@ URL of the program.
 
 #### Defined in
 
-[Program.ts:181](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L181)
+[src/Program.ts:181](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L181)
 
 ## Methods
 
 ### #resolveIdentifier
 
-▸ `Private` **#resolveIdentifier**(): `number` \| \`ag5zfmtoYW4tYWNhZGVteXI$\{string}CxIKU2NyYXRjaHBhZB$\{string}$\{string}\`
+▸ **#resolveIdentifier**(): `number` \| \`ag5zfmtoYW4tYWNhZGVteXI$\{string}CxIKU2NyYXRjaHBhZB$\{string}$\{string}\`
 
 #### Returns
 
@@ -567,7 +575,7 @@ URL of the program.
 
 #### Defined in
 
-[Program.ts:231](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L231)
+[src/Program.ts:231](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L231)
 
 ___
 
@@ -595,7 +603,7 @@ Wrapper.copy
 
 #### Defined in
 
-[lib/Wrapper.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L53)
+[src/lib/Wrapper.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L53)
 
 ___
 
@@ -623,7 +631,7 @@ Wrapper.copyFromSchema
 
 #### Defined in
 
-[lib/Wrapper.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L65)
+[src/lib/Wrapper.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L65)
 
 ___
 
@@ -647,7 +655,7 @@ Wrapper.get
 
 #### Defined in
 
-[Program.ts:325](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L325)
+[src/Program.ts:325](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L325)
 
 ___
 
@@ -668,7 +676,7 @@ ___
 
 #### Defined in
 
-[Program.ts:405](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L405)
+[src/Program.ts:405](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L405)
 
 ___
 
@@ -689,7 +697,7 @@ ___
 
 #### Defined in
 
-[Program.ts:377](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L377)
+[src/Program.ts:377](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L377)
 
 ___
 
@@ -710,7 +718,7 @@ ___
 
 #### Defined in
 
-[Program.ts:349](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L349)
+[src/Program.ts:349](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L349)
 
 ___
 
@@ -731,7 +739,7 @@ ___
 
 #### Defined in
 
-[Program.ts:389](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L389)
+[src/Program.ts:389](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L389)
 
 ___
 
@@ -752,7 +760,7 @@ ___
 
 #### Defined in
 
-[Program.ts:361](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L361)
+[src/Program.ts:361](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L361)
 
 ___
 
@@ -773,7 +781,7 @@ ___
 
 #### Defined in
 
-[Program.ts:333](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L333)
+[src/Program.ts:333](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L333)
 
 ___
 
@@ -797,7 +805,7 @@ Wrapper.is
 
 #### Defined in
 
-[Program.ts:417](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L417)
+[src/Program.ts:417](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L417)
 
 ___
 
@@ -823,7 +831,7 @@ Wrapper.isSchema
 
 #### Defined in
 
-[lib/Wrapper.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L88)
+[src/lib/Wrapper.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L88)
 
 ___
 
@@ -869,13 +877,13 @@ Wrapper.transformSchema
 
 #### Defined in
 
-[Program.ts:238](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L238)
+[src/Program.ts:238](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L238)
 
 ___
 
 ### fromIdentifier
 
-▸ `Static` **fromIdentifier**(`identifier`): [`Program`](api/classes/Program.md)
+▸ **fromIdentifier**(`identifier`): [`Program`](api/classes/Program.md)
 
 #### Parameters
 
@@ -889,13 +897,13 @@ ___
 
 #### Defined in
 
-[Program.ts:219](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L219)
+[src/Program.ts:219](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L219)
 
 ___
 
 ### fromSchema
 
-▸ `Static` **fromSchema**(`schema`): [`Program`](api/classes/Program.md)
+▸ **fromSchema**(`schema`): [`Program`](api/classes/Program.md)
 
 #### Parameters
 
@@ -909,4 +917,4 @@ ___
 
 #### Defined in
 
-[Program.ts:211](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/Program.ts#L211)
+[src/Program.ts:211](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/Program.ts#L211)

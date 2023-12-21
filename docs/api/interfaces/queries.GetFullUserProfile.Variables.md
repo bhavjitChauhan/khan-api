@@ -10,7 +10,7 @@
 
 #### Defined in
 
-[queries/getFullUserProfile.ts:103](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/getFullUserProfile.ts#L103)
+[src/queries/getFullUserProfile.ts:103](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getFullUserProfile.ts#L103)
 
 ___
 
@@ -20,4 +20,4 @@ ___
 
 #### Defined in
 
-[queries/getFullUserProfile.ts:104](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/getFullUserProfile.ts#L104)
+[src/queries/getFullUserProfile.ts:104](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getFullUserProfile.ts#L104)

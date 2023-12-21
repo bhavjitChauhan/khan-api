@@ -10,4 +10,4 @@
 
 #### Defined in
 
-[queries/programQuery.ts:76](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/programQuery.ts#L76)
+[src/queries/programQuery.ts:76](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/programQuery.ts#L76)

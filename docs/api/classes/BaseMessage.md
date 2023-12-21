@@ -18,7 +18,7 @@
 
 ### constructor
 
-• **new BaseMessage**(`data?`)
+• **new BaseMessage**(`data?`): [`BaseMessage`](api/classes/BaseMessage.md)
 
 Creates a new class instance
 
@@ -28,15 +28,19 @@ Creates a new class instance
 | :------ | :------ |
 | `data?` | [`IBaseMessage`](api/interfaces/IBaseMessage.md) |
 
+#### Returns
+
+[`BaseMessage`](api/classes/BaseMessage.md)
+
 #### Inherited from
 
 Wrapper\<FeedbackSchemaBase, IBaseMessage\>.constructor
 
 #### Defined in
 
-[lib/Wrapper.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L36)
+[src/lib/Wrapper.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L36)
 
-• **new BaseMessage**(`client`, `data?`)
+• **new BaseMessage**(`client`, `data?`): [`BaseMessage`](api/classes/BaseMessage.md)
 
 #### Parameters
 
@@ -45,13 +49,17 @@ Wrapper\<FeedbackSchemaBase, IBaseMessage\>.constructor
 | `client` | [`Client`](api/classes/Client.md) |
 | `data?` | [`IBaseMessage`](api/interfaces/IBaseMessage.md) |
 
+#### Returns
+
+[`BaseMessage`](api/classes/BaseMessage.md)
+
 #### Inherited from
 
 Wrapper\<FeedbackSchemaBase, IBaseMessage\>.constructor
 
 #### Defined in
 
-[lib/Wrapper.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L37)
+[src/lib/Wrapper.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L37)
 
 ## Properties
 
@@ -65,7 +73,7 @@ Wrapper\<FeedbackSchemaBase, IBaseMessage\>.constructor
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:34](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L34)
+[src/lib/messages/BaseMessage.ts:34](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L34)
 
 ___
 
@@ -75,7 +83,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.fromVideoAuthor
+[FeedbackSchemaBase.fromVideoAuthor](api/interfaces/FeedbackSchemaBase.md#fromvideoauthor)
 
 #### Implementation of
 
@@ -83,7 +91,7 @@ types/schema!FeedbackSchemaBase.fromVideoAuthor
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:74](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L74)
+[src/lib/messages/BaseMessage.ts:74](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L74)
 
 ___
 
@@ -99,7 +107,7 @@ Wrapper.client
 
 #### Defined in
 
-[lib/Wrapper.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L15)
+[src/lib/Wrapper.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L15)
 
 ___
 
@@ -109,7 +117,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.date
+[FeedbackSchemaBase.date](api/interfaces/FeedbackSchemaBase.md#date)
 
 #### Implementation of
 
@@ -117,7 +125,7 @@ types/schema!FeedbackSchemaBase.date
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L39)
+[src/lib/messages/BaseMessage.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L39)
 
 ___
 
@@ -127,7 +135,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.appearsAsDeleted
+[FeedbackSchemaBase.appearsAsDeleted](api/interfaces/FeedbackSchemaBase.md#appearsasdeleted)
 
 #### Implementation of
 
@@ -135,7 +143,7 @@ types/schema!FeedbackSchemaBase.appearsAsDeleted
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L53)
+[src/lib/messages/BaseMessage.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L53)
 
 ___
 
@@ -145,7 +153,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.key
+[FeedbackSchemaBase.key](api/interfaces/FeedbackSchemaBase.md#key)
 
 #### Implementation of
 
@@ -153,7 +161,7 @@ types/schema!FeedbackSchemaBase.key
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L48)
+[src/lib/messages/BaseMessage.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L48)
 
 ___
 
@@ -163,7 +171,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.expandKey
+[FeedbackSchemaBase.expandKey](api/interfaces/FeedbackSchemaBase.md#expandkey)
 
 #### Implementation of
 
@@ -171,7 +179,7 @@ types/schema!FeedbackSchemaBase.expandKey
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L44)
+[src/lib/messages/BaseMessage.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L44)
 
 ___
 
@@ -181,7 +189,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.isLocked
+[FeedbackSchemaBase.isLocked](api/interfaces/FeedbackSchemaBase.md#islocked)
 
 #### Implementation of
 
@@ -189,7 +197,7 @@ types/schema!FeedbackSchemaBase.isLocked
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:57](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L57)
+[src/lib/messages/BaseMessage.ts:57](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L57)
 
 ___
 
@@ -199,7 +207,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.isPinned
+[FeedbackSchemaBase.isPinned](api/interfaces/FeedbackSchemaBase.md#ispinned)
 
 #### Implementation of
 
@@ -207,7 +215,7 @@ types/schema!FeedbackSchemaBase.isPinned
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:61](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L61)
+[src/lib/messages/BaseMessage.ts:61](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L61)
 
 ___
 
@@ -221,7 +229,7 @@ ___
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L35)
+[src/lib/messages/BaseMessage.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L35)
 
 ___
 
@@ -241,7 +249,7 @@ Wrapper.rawData
 
 #### Defined in
 
-[lib/Wrapper.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L22)
+[src/lib/Wrapper.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L22)
 
 ___
 
@@ -251,7 +259,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.lowQualityScore
+[FeedbackSchemaBase.lowQualityScore](api/interfaces/FeedbackSchemaBase.md#lowqualityscore)
 
 #### Implementation of
 
@@ -259,7 +267,7 @@ types/schema!FeedbackSchemaBase.lowQualityScore
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:69](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L69)
+[src/lib/messages/BaseMessage.ts:69](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L69)
 
 ___
 
@@ -269,7 +277,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.flaggedByUser
+[FeedbackSchemaBase.flaggedByUser](api/interfaces/FeedbackSchemaBase.md#flaggedbyuser)
 
 #### Implementation of
 
@@ -277,7 +285,7 @@ types/schema!FeedbackSchemaBase.flaggedByUser
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:79](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L79)
+[src/lib/messages/BaseMessage.ts:79](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L79)
 
 ___
 
@@ -287,7 +295,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.content
+[FeedbackSchemaBase.content](api/interfaces/FeedbackSchemaBase.md#content)
 
 #### Implementation of
 
@@ -295,7 +303,7 @@ types/schema!FeedbackSchemaBase.content
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L33)
+[src/lib/messages/BaseMessage.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L33)
 
 ___
 
@@ -305,7 +313,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.definitelyNotSpam
+[FeedbackSchemaBase.definitelyNotSpam](api/interfaces/FeedbackSchemaBase.md#definitelynotspam)
 
 #### Implementation of
 
@@ -313,7 +321,7 @@ types/schema!FeedbackSchemaBase.definitelyNotSpam
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L65)
+[src/lib/messages/BaseMessage.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L65)
 
 ## Accessors
 
@@ -329,7 +337,7 @@ Checks if the message was written by the client user
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:84](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L84)
+[src/lib/messages/BaseMessage.ts:84](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L84)
 
 ___
 
@@ -343,7 +351,7 @@ ___
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L88)
+[src/lib/messages/BaseMessage.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L88)
 
 ## Methods
 
@@ -365,7 +373,7 @@ Checks if the message was written by the given user
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:138](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L138)
+[src/lib/messages/BaseMessage.ts:138](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L138)
 
 ___
 
@@ -393,7 +401,7 @@ Wrapper.copy
 
 #### Defined in
 
-[lib/Wrapper.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L53)
+[src/lib/Wrapper.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L53)
 
 ___
 
@@ -421,13 +429,13 @@ Wrapper.copyFromSchema
 
 #### Defined in
 
-[lib/Wrapper.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L65)
+[src/lib/Wrapper.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L65)
 
 ___
 
 ### get
 
-▸ `Abstract` **get**(`client?`): `Promise`\<[`BaseMessage`](api/classes/BaseMessage.md)\>
+▸ **get**(`client?`): `Promise`\<[`BaseMessage`](api/classes/BaseMessage.md)\>
 
 Gets and updates the instance's data
 
@@ -447,7 +455,7 @@ Wrapper.get
 
 #### Defined in
 
-[lib/Wrapper.ts:78](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L78)
+[src/lib/Wrapper.ts:78](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L78)
 
 ___
 
@@ -473,7 +481,7 @@ Wrapper.is
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:145](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L145)
+[src/lib/messages/BaseMessage.ts:145](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L145)
 
 ___
 
@@ -499,7 +507,7 @@ Wrapper.isSchema
 
 #### Defined in
 
-[lib/Wrapper.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L88)
+[src/lib/Wrapper.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L88)
 
 ___
 
@@ -523,4 +531,4 @@ Wrapper.transformSchema
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:101](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L101)
+[src/lib/messages/BaseMessage.ts:101](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L101)

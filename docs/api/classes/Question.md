@@ -6,7 +6,7 @@ Note that Help Requests are a type of Question.
 
 **`Raw`**
 
-types/schema!QuestionFeedbackSchema
+[QuestionFeedbackSchema](api/interfaces/QuestionFeedbackSchema.md)
 
 ## Hierarchy
 
@@ -22,7 +22,7 @@ types/schema!QuestionFeedbackSchema
 
 ### constructor
 
-• **new Question**(`data?`)
+• **new Question**(`data?`): [`Question`](api/classes/Question.md)
 
 Creates a new class instance
 
@@ -32,15 +32,19 @@ Creates a new class instance
 | :------ | :------ |
 | `data?` | [`IBaseMessage`](api/interfaces/IBaseMessage.md) |
 
+#### Returns
+
+[`Question`](api/classes/Question.md)
+
 #### Inherited from
 
 [Message](api/classes/Message.md).[constructor](api/classes/Message.md#constructor)
 
 #### Defined in
 
-[lib/Wrapper.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L36)
+[src/lib/Wrapper.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L36)
 
-• **new Question**(`client`, `data?`)
+• **new Question**(`client`, `data?`): [`Question`](api/classes/Question.md)
 
 #### Parameters
 
@@ -49,13 +53,17 @@ Creates a new class instance
 | `client` | [`Client`](api/classes/Client.md) |
 | `data?` | [`IBaseMessage`](api/interfaces/IBaseMessage.md) |
 
+#### Returns
+
+[`Question`](api/classes/Question.md)
+
 #### Inherited from
 
 [Message](api/classes/Message.md).[constructor](api/classes/Message.md#constructor)
 
 #### Defined in
 
-[lib/Wrapper.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L37)
+[src/lib/Wrapper.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L37)
 
 ## Properties
 
@@ -69,7 +77,7 @@ Creates a new class instance
 
 #### Defined in
 
-[lib/messages/Question.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Question.ts#L21)
+[src/lib/messages/Question.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Question.ts#L21)
 
 ___
 
@@ -83,7 +91,7 @@ ___
 
 #### Defined in
 
-[lib/messages/Question.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Question.ts#L22)
+[src/lib/messages/Question.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Question.ts#L22)
 
 ___
 
@@ -101,7 +109,7 @@ ___
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:34](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L34)
+[src/lib/messages/BaseMessage.ts:34](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L34)
 
 ___
 
@@ -111,7 +119,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.fromVideoAuthor
+[FeedbackSchemaBase.fromVideoAuthor](api/interfaces/FeedbackSchemaBase.md#fromvideoauthor)
 
 #### Implementation of
 
@@ -123,7 +131,7 @@ types/schema!FeedbackSchemaBase.fromVideoAuthor
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:74](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L74)
+[src/lib/messages/BaseMessage.ts:74](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L74)
 
 ___
 
@@ -139,7 +147,7 @@ The client that this base was fetched with.
 
 #### Defined in
 
-[lib/Wrapper.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L15)
+[src/lib/Wrapper.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L15)
 
 ___
 
@@ -149,7 +157,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.date
+[FeedbackSchemaBase.date](api/interfaces/FeedbackSchemaBase.md#date)
 
 #### Implementation of
 
@@ -161,7 +169,7 @@ types/schema!FeedbackSchemaBase.date
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L39)
+[src/lib/messages/BaseMessage.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L39)
 
 ___
 
@@ -171,7 +179,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.appearsAsDeleted
+[FeedbackSchemaBase.appearsAsDeleted](api/interfaces/FeedbackSchemaBase.md#appearsasdeleted)
 
 #### Implementation of
 
@@ -183,7 +191,7 @@ types/schema!FeedbackSchemaBase.appearsAsDeleted
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L53)
+[src/lib/messages/BaseMessage.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L53)
 
 ___
 
@@ -193,7 +201,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.key
+[FeedbackSchemaBase.key](api/interfaces/FeedbackSchemaBase.md#key)
 
 #### Implementation of
 
@@ -205,7 +213,7 @@ types/schema!FeedbackSchemaBase.key
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L48)
+[src/lib/messages/BaseMessage.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L48)
 
 ___
 
@@ -215,7 +223,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.expandKey
+[FeedbackSchemaBase.expandKey](api/interfaces/FeedbackSchemaBase.md#expandkey)
 
 #### Implementation of
 
@@ -227,7 +235,7 @@ types/schema!FeedbackSchemaBase.expandKey
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L44)
+[src/lib/messages/BaseMessage.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L44)
 
 ___
 
@@ -237,7 +245,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.isLocked
+[FeedbackSchemaBase.isLocked](api/interfaces/FeedbackSchemaBase.md#islocked)
 
 #### Implementation of
 
@@ -249,7 +257,7 @@ types/schema!FeedbackSchemaBase.isLocked
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:57](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L57)
+[src/lib/messages/BaseMessage.ts:57](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L57)
 
 ___
 
@@ -259,7 +267,7 @@ ___
 
 **`Raw`**
 
-types/schema!QuestionFeedbackSchema.isOld
+[QuestionFeedbackSchema.isOld](api/interfaces/QuestionFeedbackSchema.md#isold)
 
 #### Implementation of
 
@@ -267,7 +275,7 @@ types/schema!QuestionFeedbackSchema.isOld
 
 #### Defined in
 
-[lib/messages/Question.ts:26](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Question.ts#L26)
+[src/lib/messages/Question.ts:26](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Question.ts#L26)
 
 ___
 
@@ -277,7 +285,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.isPinned
+[FeedbackSchemaBase.isPinned](api/interfaces/FeedbackSchemaBase.md#ispinned)
 
 #### Implementation of
 
@@ -289,7 +297,7 @@ types/schema!FeedbackSchemaBase.isPinned
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:61](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L61)
+[src/lib/messages/BaseMessage.ts:61](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L61)
 
 ___
 
@@ -307,7 +315,7 @@ ___
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L35)
+[src/lib/messages/BaseMessage.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L35)
 
 ___
 
@@ -327,7 +335,7 @@ Only set if the base was created from a user schema.
 
 #### Defined in
 
-[lib/Wrapper.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L22)
+[src/lib/Wrapper.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L22)
 
 ___
 
@@ -345,7 +353,7 @@ ___
 
 #### Defined in
 
-[lib/messages/Message.ts:50](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L50)
+[src/lib/messages/Message.ts:50](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Message.ts#L50)
 
 ___
 
@@ -363,7 +371,7 @@ ___
 
 #### Defined in
 
-[lib/messages/Message.ts:49](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L49)
+[src/lib/messages/Message.ts:49](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Message.ts#L49)
 
 ___
 
@@ -373,7 +381,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.lowQualityScore
+[FeedbackSchemaBase.lowQualityScore](api/interfaces/FeedbackSchemaBase.md#lowqualityscore)
 
 #### Implementation of
 
@@ -385,7 +393,7 @@ types/schema!FeedbackSchemaBase.lowQualityScore
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:69](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L69)
+[src/lib/messages/BaseMessage.ts:69](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L69)
 
 ___
 
@@ -395,7 +403,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.downVoted
+[FeedbackSchemaBase.downVoted](api/interfaces/FeedbackSchemaBase.md#downvoted)
 
 #### Implementation of
 
@@ -407,7 +415,7 @@ types/schema!FeedbackSchemaBase.downVoted
 
 #### Defined in
 
-[lib/messages/Message.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L48)
+[src/lib/messages/Message.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Message.ts#L48)
 
 ___
 
@@ -417,7 +425,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.flaggedByUser
+[FeedbackSchemaBase.flaggedByUser](api/interfaces/FeedbackSchemaBase.md#flaggedbyuser)
 
 #### Implementation of
 
@@ -429,7 +437,7 @@ types/schema!FeedbackSchemaBase.flaggedByUser
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:79](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L79)
+[src/lib/messages/BaseMessage.ts:79](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L79)
 
 ___
 
@@ -439,7 +447,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.upVoted
+[FeedbackSchemaBase.upVoted](api/interfaces/FeedbackSchemaBase.md#upvoted)
 
 #### Implementation of
 
@@ -451,7 +459,7 @@ types/schema!FeedbackSchemaBase.upVoted
 
 #### Defined in
 
-[lib/messages/Message.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L44)
+[src/lib/messages/Message.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Message.ts#L44)
 
 ___
 
@@ -461,7 +469,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.content
+[FeedbackSchemaBase.content](api/interfaces/FeedbackSchemaBase.md#content)
 
 #### Implementation of
 
@@ -473,7 +481,7 @@ types/schema!FeedbackSchemaBase.content
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L33)
+[src/lib/messages/BaseMessage.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L33)
 
 ___
 
@@ -483,7 +491,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.definitelyNotSpam
+[FeedbackSchemaBase.definitelyNotSpam](api/interfaces/FeedbackSchemaBase.md#definitelynotspam)
 
 #### Implementation of
 
@@ -495,7 +503,7 @@ types/schema!FeedbackSchemaBase.definitelyNotSpam
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L65)
+[src/lib/messages/BaseMessage.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L65)
 
 ___
 
@@ -505,7 +513,7 @@ ___
 
 **`Raw`**
 
-types/schema!FeedbackSchemaBase.sumVotesIncremented
+[FeedbackSchemaBase.sumVotesIncremented](api/interfaces/FeedbackSchemaBase.md#sumvotesincremented)
 
 #### Implementation of
 
@@ -517,7 +525,7 @@ types/schema!FeedbackSchemaBase.sumVotesIncremented
 
 #### Defined in
 
-[lib/messages/Message.ts:40](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L40)
+[src/lib/messages/Message.ts:40](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Message.ts#L40)
 
 ___
 
@@ -533,7 +541,7 @@ Aliases for the message types.
 
 #### Defined in
 
-[lib/messages/Message.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L35)
+[src/lib/messages/Message.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Message.ts#L35)
 
 ## Accessors
 
@@ -553,7 +561,7 @@ Message.bySelf
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:84](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L84)
+[src/lib/messages/BaseMessage.ts:84](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L84)
 
 ___
 
@@ -570,8 +578,8 @@ and `0` if it was not voted on. `null` if the user is not logged in.
 
 **`See`**
 
- - lib/messages/Message!Message.selfUpvoted
- - lib/messages/Message!Message.selfDownvoted
+ - [Message.selfUpvoted](api/classes/Message.md#selfupvoted)
+ - [Message.selfDownvoted](api/classes/Message.md#selfdownvoted)
 
 #### Inherited from
 
@@ -579,7 +587,7 @@ Message.selfVoted
 
 #### Defined in
 
-[lib/messages/Message.ts:59](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L59)
+[src/lib/messages/Message.ts:59](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Message.ts#L59)
 
 ___
 
@@ -597,13 +605,13 @@ Message.url
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L88)
+[src/lib/messages/BaseMessage.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L88)
 
 ## Methods
 
 ### #resolveIdentifier
 
-▸ `Private` **#resolveIdentifier**(): \`ag5zfmtoYW4tYWNhZGVteX$\{string}CxIIVXNlckRhdGEi$\{string}thaWRf$\{string}$\{string}$\{string}\` \| \`kaencrypted\_$\{string}\_$\{string}\`
+▸ **#resolveIdentifier**(): \`ag5zfmtoYW4tYWNhZGVteX$\{string}CxIIVXNlckRhdGEi$\{string}thaWRf$\{string}$\{string}$\{string}\` \| \`kaencrypted\_$\{string}\_$\{string}\`
 
 #### Returns
 
@@ -615,7 +623,7 @@ Message.url
 
 #### Defined in
 
-[lib/messages/Message.ts:84](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L84)
+[src/lib/messages/Message.ts:84](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Message.ts#L84)
 
 ___
 
@@ -641,7 +649,7 @@ Checks if the message was written by the given user
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:138](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L138)
+[src/lib/messages/BaseMessage.ts:138](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L138)
 
 ___
 
@@ -669,7 +677,7 @@ The class instance
 
 #### Defined in
 
-[lib/messages/Question.ts:60](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Question.ts#L60)
+[src/lib/messages/Question.ts:60](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Question.ts#L60)
 
 ___
 
@@ -697,7 +705,7 @@ The class instance
 
 #### Defined in
 
-[lib/Wrapper.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L65)
+[src/lib/Wrapper.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L65)
 
 ___
 
@@ -723,7 +731,7 @@ Gets and updates the instance's data
 
 #### Defined in
 
-[lib/messages/Message.ts:109](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L109)
+[src/lib/messages/Message.ts:109](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Message.ts#L109)
 
 ___
 
@@ -743,7 +751,7 @@ ___
 
 **`See`**
 
-[!Client.getAllMessageReplies](api/classes/Client.md)
+[Client.getAllMessageReplies](api/classes/Client.md#getallmessagereplies)
 
 #### Inherited from
 
@@ -751,7 +759,7 @@ ___
 
 #### Defined in
 
-[lib/messages/Message.ts:134](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L134)
+[src/lib/messages/Message.ts:134](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Message.ts#L134)
 
 ___
 
@@ -772,7 +780,7 @@ ___
 
 **`See`**
 
-[!Client.getMessageReplies](api/classes/Client.md)
+[Client.getMessageReplies](api/classes/Client.md#getmessagereplies)
 
 #### Inherited from
 
@@ -780,7 +788,7 @@ ___
 
 #### Defined in
 
-[lib/messages/Message.ts:118](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Message.ts#L118)
+[src/lib/messages/Message.ts:118](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Message.ts#L118)
 
 ___
 
@@ -806,7 +814,7 @@ Checks if the message is the same as the given message
 
 #### Defined in
 
-[lib/messages/BaseMessage.ts:145](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/BaseMessage.ts#L145)
+[src/lib/messages/BaseMessage.ts:145](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/BaseMessage.ts#L145)
 
 ___
 
@@ -832,7 +840,7 @@ Checks if the schema represents the same instance
 
 #### Defined in
 
-[lib/Wrapper.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/Wrapper.ts#L88)
+[src/lib/Wrapper.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L88)
 
 ___
 
@@ -856,13 +864,13 @@ ___
 
 #### Defined in
 
-[lib/messages/Question.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Question.ts#L44)
+[src/lib/messages/Question.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Question.ts#L44)
 
 ___
 
 ### fromIdentifier
 
-▸ `Static` **fromIdentifier**(`identifier`): [`Question`](api/classes/Question.md)
+▸ **fromIdentifier**(`identifier`): [`Question`](api/classes/Question.md)
 
 #### Parameters
 
@@ -880,13 +888,13 @@ ___
 
 #### Defined in
 
-[lib/messages/Question.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Question.ts#L35)
+[src/lib/messages/Question.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Question.ts#L35)
 
 ___
 
 ### fromSchema
 
-▸ `Static` **fromSchema**(`schema`): [`Question`](api/classes/Question.md)
+▸ **fromSchema**(`schema`): [`Question`](api/classes/Question.md)
 
 #### Parameters
 
@@ -904,4 +912,4 @@ ___
 
 #### Defined in
 
-[lib/messages/Question.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/lib/messages/Question.ts#L28)
+[src/lib/messages/Question.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Question.ts#L28)

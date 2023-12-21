@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[queries/getProfileWidgets.ts:77](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/getProfileWidgets.ts#L77)
+[src/queries/getProfileWidgets.ts:77](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getProfileWidgets.ts#L77)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 #### Defined in
 
-[queries/getProfileWidgets.ts:75](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/getProfileWidgets.ts#L75)
+[src/queries/getProfileWidgets.ts:75](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getProfileWidgets.ts#L75)
 
 ## Variables
 
@@ -41,4 +41,4 @@ ___
 
 #### Defined in
 
-[queries/getProfileWidgets.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/b7f7b44b/src/queries/getProfileWidgets.ts#L15)
+[src/queries/getProfileWidgets.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getProfileWidgets.ts#L15)
