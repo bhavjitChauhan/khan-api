@@ -1,6 +1,4 @@
-# Khan API
-
-⚠️ **This project is currently in beta and breaking changes may be released without warning!**
+# [Khan API](https://khan-api.bhavjit.com "Khan API website")
 
 [![NPM version](https://img.shields.io/npm/v/@bhavjit/khan-api)](https://www.npmjs.com/package/@bhavjit/khan-api?activeTab=versions)
 ![Platform support](https://img.shields.io/node/v/@bhavjit/khan-api)
@@ -12,9 +10,10 @@ A Khan Academy internal API client and wrapper for Node.js and the browser.
 
 <summary>Quick links</summary>
 
-- [Documentation](https://khan-api.bhavjit.com "Khan API library documentation website")
-- [API Reference](https://khan-api.bhavjit.com/reference "Khan Academy internal API reference")
-- [Query Safelist](https://github.com/bhavjitChauhan/khan-api/tree/safelist "Khan Academy safelisted GraphQL queries repository")
+- [Documentation](https://khan-api.bhavjit.com "Khan API library documentation")
+- [Reference](https://khan-api.bhavjit.com/reference "Khan internal API reference")
+- [Safelist](https://github.com/bhavjitChauhan/khan-api/tree/safelist "Khan Academy safelisted GraphQL queries")
+- [Proxy](https://github.com/bhavjitChauhan/khan-api/tree/proxy "Khan Academy API CORS proxy")
 
 </details>
 
@@ -22,16 +21,16 @@ A Khan Academy internal API client and wrapper for Node.js and the browser.
 
 ### Node.js
 
-#### [Yarn](https://yarn.pm/@bhavjit/khan-api)
-
-```bash
-yarn add @bhavjit/khan-api
-```
-
 #### [NPM](https://www.npmjs.com/package/@bhavjit/khan-api)
 
 ```bash
 npm i @bhavjit/khan-api
+```
+
+#### [Yarn](https://yarn.pm/@bhavjit/khan-api)
+
+```bash
+yarn add @bhavjit/khan-api
 ```
 
 ## Usage
@@ -56,8 +55,6 @@ const client = new Client()
 
 ### Web
 
-Remember that Khan Academy's CORS policy will block requests not originating from their website.
-
 #### JavaScript modules
 
 ```html
@@ -76,3 +73,5 @@ Remember that Khan Academy's CORS policy will block requests not originating fro
   const client = new KhanAPI.Client()
 </script>
 ```
+
+See the [examples](examples) directory for more.
