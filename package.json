@@ -13,7 +13,7 @@
   "files": [
     "browser/",
     "node/",
-    "example.js",
+    "examples/program.js",
     "index.d.ts"
   ],
   "module": "./node/esm/khan-api.mjs",
@@ -78,5 +78,5 @@
     },
     "default": "./node/esm/khan-api.mjs"
   },
-  "runkitExampleFilename": "example.js"
+  "runkitExampleFilename": "examples/program.js"
 }
