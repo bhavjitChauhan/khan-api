@@ -54,6 +54,18 @@ if ! npm whoami --registry=https://npm.pkg.github.com &> /dev/null; then
     npm login --scope=@bhavjitChauhan --registry=https://npm.pkg.github.com    
 fi
 
+# Let user upgrade the version
+read -p "Current version: $(node -p "require('./package.json').version"). Do you want to upgrade it? [Y/n] " -n 1 -r response
+if [[ ! $response =~ ^[Nn]$ ]]; then
+    echo
+    read -p "Enter the new version: " -r version
+    echo "Upgrading version to $version..."
+    npm version "$version" -m "Release %s"
+    git add package.json
+else
+    echo
+fi
+
 # Build the package
 echo "Installing dependencies..."
 yarn
@@ -71,18 +83,6 @@ if [[ ! $response =~ ^[Nn]$ ]]; then
     yarn test
     echo "Tests complete"
     echo
-else
-    echo
-fi
-
-# Let user upgrade the version
-read -p "Current version: $(node -p "require('./package.json').version"). Do you want to upgrade it? [Y/n] " -n 1 -r response
-if [[ ! $response =~ ^[Nn]$ ]]; then
-    echo
-    read -p "Enter the new version: " -r version
-    echo "Upgrading version to $version..."
-    npm version "$version" -m "Release %s"
-    git add package.json
 else
     echo
 fi
