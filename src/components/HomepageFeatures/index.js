@@ -8,7 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_fun_moments.svg').default,
     description: (
       <>
-        The Khan API provides a simple and straightforward way to access Khan Academy data.
+        The Khan API library provides a simple and straightforward way to access Khan Academy data.
       </>
     ),
   },
@@ -17,7 +17,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_server_status.svg').default,
     description: (
       <>
-        No need to worry about your app breaking. The <a href="https://github.com/bhavjitChauhan/khan-api/tree/safelist" target="_blank">Safelist</a> is automatically updated with the latest queries.
+        No need to worry about your app breaking because Khan updated their API. Learn more about the <a href="https://khan-api.bhavjit.com/docs/safelist">Safelist</a>.
       </>
     ),
   },
@@ -26,7 +26,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_destinations.svg').default,
     description: (
       <>
-        From Node.js to the browser, the Khan API works seemlessly. No need to worry about any CORS errors.
+        From Node.js to the browser, the Khan API library works seemlessly. Learn more about the <a href="https://khan-api.bhavjit.com/docs/proxy">Proxy</a>.
       </>
     ),
   },
