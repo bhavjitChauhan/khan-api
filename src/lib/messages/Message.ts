@@ -12,7 +12,7 @@ import BaseMessage, { IBaseMessage } from './BaseMessage'
 import Reply from './Reply'
 
 /**
- * @raw {@link types/enums!FeedbackType}
+ * @raw {@link FeedbackType}
  */
 export enum MessageType {
   TipsAndThanks = FeedbackType.COMMENT,
@@ -35,15 +35,15 @@ export default class Message extends BaseMessage implements IMessage {
   static readonly Type = MessageType
 
   /**
-   * @raw {@link types/schema!FeedbackSchemaBase.sumVotesIncremented}
+   * @raw {@link FeedbackSchemaBase.sumVotesIncremented}
    */
   readonly votes?: number
   /**
-   * @raw {@link types/schema!FeedbackSchemaBase.upVoted}
+   * @raw {@link FeedbackSchemaBase.upVoted}
    */
   readonly selfUpvoted?: boolean
   /**
-   * @raw {@link types/schema!FeedbackSchemaBase.downVoted}
+   * @raw {@link FeedbackSchemaBase.downVoted}
    */
   readonly selfDownvoted?: boolean
   readonly replyCount?: number
@@ -53,8 +53,8 @@ export default class Message extends BaseMessage implements IMessage {
    * @returns `1` if the message was upvoted by the user, `-1` if it was downvoted,
    * and `0` if it was not voted on. `null` if the user is not logged in.
    *
-   * @see {@link lib/messages/Message!Message.selfUpvoted}
-   * @see {@link lib/messages/Message!Message.selfDownvoted}
+   * @see {@link Message.selfUpvoted}
+   * @see {@link Message.selfDownvoted}
    */
   get selfVoted() {
     if (this.client?.authenticated === false) return null
@@ -113,7 +113,7 @@ export default class Message extends BaseMessage implements IMessage {
   }
 
   /**
-   * @see {@link Client!Client.getMessageReplies}
+   * @see {@link Client.getMessageReplies}
    */
   async *getReplies(client = this.client ?? new Client(), limit?: number) {
     for await (const replies of client.getMessageReplies(
@@ -129,7 +129,7 @@ export default class Message extends BaseMessage implements IMessage {
   }
 
   /**
-   * @see {@link Client!Client.getAllMessageReplies}
+   * @see {@link Client.getAllMessageReplies}
    */
   async getAllReplies(client = this.client ?? new Client()) {
     if (!this.key && !this.encryptedKey)

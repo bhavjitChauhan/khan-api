@@ -177,7 +177,7 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
    *
    * @param schema
    *
-   * @see {@link Client!Client.getUser}
+   * @see {@link Client.getUser}
    */
   static fromSchema(schema: RecursivePartial<UserSchema>) {
     const user = new User()
@@ -278,7 +278,7 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
    *
    * @param client Optional client to use for the request
    *
-   * @see {@link Client!Client.getUser}
+   * @see {@link Client.getUser}
    */
   async get(client = this.client ?? new Client()) {
     const user = await client.getUser(this.#resolveIdentifier())
@@ -297,7 +297,7 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
   }
 
   /**
-   * @see {@link Client!Client.getUserStatistics}
+   * @see {@link Client.getUserStatistics}
    */
   async getStatistics(client = this.client ?? new Client()) {
     const statistics = await client.getUserStatistics(this.#resolveIdentifier())
@@ -306,7 +306,7 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
   }
 
   /**
-   * @see {@link Client!Client.getUserPrograms}
+   * @see {@link Client.getUserPrograms}
    */
   async *getPrograms(
     client = this.client ?? new Client(),
@@ -327,7 +327,7 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
   }
 
   /**
-   * @see {@link Client!Client.getAllUserPrograms}
+   * @see {@link Client.getAllUserPrograms}
    */
   async getAllPrograms(
     client = this.client ?? new Client(),

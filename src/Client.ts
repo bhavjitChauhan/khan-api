@@ -102,7 +102,7 @@ export default class Client {
    * If the identifier is cached, it will be returned immediately. Otherwise a
    * `getUserByUsernameOrEmail` request will be made to resolve the identifier
    *
-   * @see {@link utils/resolvers!resolveKaid}
+   * @see {@link resolveKaid}
    *
    * @example
    * const getKaid = async () => await client.resolveCachedKaid('bhavjitChauhan')
@@ -131,7 +131,7 @@ export default class Client {
    * If the identifier is cached, it will be returned immediately. Otherwise a
    * `getUserHoverCardProfile` request will be made to resolve the identifier
    *
-   * @see {@link utils/resolvers!resolveUsername}
+   * @see {@link resolveUsername}
    *
    * @example
    * const getUsername = async () => await client.resolveCachedUsername('kaid_376749826184384230772276')
@@ -162,7 +162,7 @@ export default class Client {
    * If the identifier is cached, it will be returned immediately. Otherwise a
    * `QAExpandKeyInfo` request will be made to resolve the identifier
    *
-   * @see {@link utils/resolvers!resolveFeedbackKey}
+   * @see {@link resolveFeedbackKey}
    */
   async resolveCachedFeedbackKey(
     identifier: Parameters<typeof resolveFeedbackKey>[0]
@@ -435,7 +435,7 @@ export default class Client {
   /**
    * Gets all of a user's programs
    *
-   * @see {@link Client!Client.getUserPrograms}
+   * @see {@link Client.getUserPrograms}
    *
    * @example
    * const client = new Client()
@@ -575,9 +575,9 @@ export default class Client {
    *
    * @remarks
    * This method is not recommended when you know the message's type. Use
-   * {@link Client!Client.getTipsAndThanks | `getTipsAndThanks`},
-   * {@link Client!Client.getQuestion | `getQuestion`} or
-   * {@link Client!Client.getReply | `getReply`} instead.
+   * {@link Client.getTipsAndThanks | `getTipsAndThanks`},
+   * {@link Client.getQuestion | `getQuestion`} or
+   * {@link Client.getReply | `getReply`} instead.
    *
    * @param identifier Feedback key or encrypted feedback key
    */
@@ -781,7 +781,7 @@ export default class Client {
   /**
    * Gets all specified types of messages for a program
    *
-   * @see {@link Client!Client.getProgramMessages}
+   * @see {@link Client.getProgramMessages}
    *
    * @example
    * const client = new Client()
@@ -803,7 +803,7 @@ export default class Client {
   /**
    * Gets Tips and Thanks messages for a program
    *
-   * @see {@link Client!Client.getProgramMessages}
+   * @see {@link Client.getProgramMessages}
    */
   async *getProgramTipsAndThanks(
     identifier: ProgramID | ProgramURL | ProgramKey,
@@ -819,7 +819,7 @@ export default class Client {
   /**
    * Gets all Tips and Thanks messages for a program
    *
-   * @see {@link Client!Client.getAllProgramMessages}
+   * @see {@link Client.getAllProgramMessages}
    */
   async getAllProgramTipsAndThanks(
     identifier: ProgramID | ProgramURL | ProgramKey,
@@ -835,7 +835,7 @@ export default class Client {
   /**
    * Gets questions for a program
    *
-   * @see {@link Client!Client.getProgramMessages}
+   * @see {@link Client.getProgramMessages}
    */
   async *getProgramQuestions(
     identifier: ProgramID | ProgramURL | ProgramKey,
@@ -851,7 +851,7 @@ export default class Client {
   /**
    * Gets all questions for a program
    *
-   * @see {@link Client!Client.getAllProgramMessages}
+   * @see {@link Client.getAllProgramMessages}
    */
   async getAllProgramQuestions(
     identifier: ProgramID | ProgramURL | ProgramKey,
@@ -867,7 +867,7 @@ export default class Client {
   /**
    * Gets Help Requests for a program
    *
-   * @see {@link Client!Client.getProgramMessages}
+   * @see {@link Client.getProgramMessages}
    */
   async *getProgramHelpRequests(
     identifier: ProgramID | ProgramURL | ProgramKey,
@@ -883,7 +883,7 @@ export default class Client {
   /**
    * Gets all Help Requests for a program
    *
-   * @see {@link Client!Client.getAllProgramMessages}
+   * @see {@link Client.getAllProgramMessages}
    */
   async getAllProgramHelpRequests(
     identifier: ProgramID | ProgramURL | ProgramKey,
@@ -964,7 +964,7 @@ export default class Client {
    *
    * @raw {@link queries!getFeedbackReplies}
    *
-   * @see {@link Client!Client.getMessageReplies}
+   * @see {@link Client.getMessageReplies}
    *
    * @example
    * const client = new Client()

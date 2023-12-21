@@ -128,7 +128,7 @@ export namespace ProgramQuery {
  *
  * @link {@link https://khan-api.bhavjit.com/reference/view/19553924/2s8YzQUiXU#77a4642b-3580-4409-b837-1ac82a487c35 | Reference}
  *
- * @see {@link Client!Client.getProgram}
+ * @see {@link Client.getProgram}
  *
  * @example
  * Simple usage without error handling:

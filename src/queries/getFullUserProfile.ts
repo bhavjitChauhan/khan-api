@@ -191,7 +191,7 @@ export namespace GetFullUserProfile {
  *
  * @link {@link https://khan-api.bhavjit.com/reference/view/19553924/2s8YzQUiXU#9ae4c690-be8a-4b57-acfc-07a4870a5ee3 | Reference}
  *
- * @see {@link Client!Client.getUser}
+ * @see {@link Client.getUser}
  *
  * @example
  * Get profile by KAID, without error handling:

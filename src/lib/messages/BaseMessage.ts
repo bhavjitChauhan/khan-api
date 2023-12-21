@@ -28,53 +28,53 @@ export default abstract class BaseMessage
   implements IBaseMessage
 {
   /**
-   * @raw {@link types/schema!FeedbackSchemaBase.content}
+   * @raw {@link FeedbackSchemaBase.content}
    */
   readonly text?: string
   readonly author?: User
   readonly program?: Program
   /**
-   * @raw {@link types/schema!FeedbackSchemaBase.date}
+   * @raw {@link FeedbackSchemaBase.date}
    */
   readonly created?: Date
 
   /**
-   * @raw {@link types/schema!FeedbackSchemaBase.expandKey}
+   * @raw {@link FeedbackSchemaBase.expandKey}
    */
   readonly key?: FeedbackKey
   /**
-   * @raw {@link types/schema!FeedbackSchemaBase.key}
+   * @raw {@link FeedbackSchemaBase.key}
    */
   readonly encryptedKey?: EncryptedFeedbackKey
 
   /**
-   * @raw {@link types/schema!FeedbackSchemaBase.appearsAsDeleted}
+   * @raw {@link FeedbackSchemaBase.appearsAsDeleted}
    */
   readonly deleted?: boolean
   /**
-   * @raw {@link types/schema!FeedbackSchemaBase.isLocked}
+   * @raw {@link FeedbackSchemaBase.isLocked}
    */
   readonly locked?: boolean
   /**
-   * @raw {@link types/schema!FeedbackSchemaBase.isPinned}
+   * @raw {@link FeedbackSchemaBase.isPinned}
    */
   readonly pinned?: boolean
   /**
-   * @raw {@link types/schema!FeedbackSchemaBase.definitelyNotSpam}
+   * @raw {@link FeedbackSchemaBase.definitelyNotSpam}
    */
   readonly verified?: boolean
   /**
-   * @raw {@link types/schema!FeedbackSchemaBase.lowQualityScore}
+   * @raw {@link FeedbackSchemaBase.lowQualityScore}
    */
   readonly score?: number
 
   /**
-   * @raw {@link types/schema!FeedbackSchemaBase.fromVideoAuthor}
+   * @raw {@link FeedbackSchemaBase.fromVideoAuthor}
    */
   readonly byVideoAuthor?: boolean
 
   /**
-   * @raw {@link types/schema!FeedbackSchemaBase.flaggedByUser}
+   * @raw {@link FeedbackSchemaBase.flaggedByUser}
    */
   readonly selfFlagged?: boolean
 

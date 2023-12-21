@@ -15,7 +15,7 @@ import { resolveProgramID } from './utils/resolvers'
 import { RecursivePartial } from './utils/types'
 
 /**
- * @raw {@link types/enums!ProgramEditorType}
+ * @raw {@link ProgramEditorType}
  */
 export enum ProgramType {
   ProcessingJS = 'pjs',
@@ -60,7 +60,7 @@ export default class Program
   /**
    * Aliases for the program types.
    *
-   * @raw {@link types/schema!ProgramRevisionSchema.editorType}
+   * @raw {@link ProgramRevisionSchema.editorType}
    */
   static readonly Type = ProgramType
 
