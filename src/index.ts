@@ -26,14 +26,17 @@ export * from './lib/messages/Reply'
 
 /** Utilities */
 export * from './utils/avatars'
-export * from './utils/programs'
+export * from './utils/fetch'
 export * from './utils/messages'
-export * from './utils/safelist'
+export * from './utils/programs'
 export * from './utils/regexes'
 export * from './utils/resolvers'
+export * from './utils/safelist'
 
 /** Types */
+export * from './types/badges'
 export * from './types/enums'
 export * from './types/responses'
 export * from './types/schema'
 export * from './types/strings'
+export * from './types/user-statistics'
