@@ -79,8 +79,8 @@ export default class Client {
         err instanceof Error
           ? err.message
           : typeof err === 'string'
-          ? err
-          : 'Unknown error'
+            ? err
+            : 'Unknown error'
       throw new Error(`Failed to parse response JSON: ${message}`)
     }
   }

@@ -244,8 +244,8 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
         typeof schema.kaid === 'string' && isKaid(schema.kaid)
           ? schema.kaid
           : typeof schema.kaid === 'string'
-          ? null
-          : undefined,
+            ? null
+            : undefined,
       key: schema.key ?? undefined,
       newNotifications: schema.newNotificationCount ?? undefined,
       nickname: schema.nickname ?? undefined,
@@ -255,14 +255,14 @@ export default class User extends Wrapper<UserSchema, IUser> implements IUser {
         typeof schema.userId === 'string' && isGoogleID(schema.userId)
           ? schema.userId.match(GoogleIDRegex)![1]
           : typeof schema.userId === 'string'
-          ? null
-          : undefined,
+            ? null
+            : undefined,
       qualarooID:
         typeof schema.qualarooId === 'string' && isQualarooID(schema.qualarooId)
           ? schema.qualarooId.match(QualarooIDRegex)![1]
           : typeof schema.qualarooId === 'string'
-          ? null
-          : undefined,
+            ? null
+            : undefined,
       username:
         schema.username ??
         (schema.profileRoot

@@ -167,8 +167,8 @@ export default function programQuery(
     typeof variablesOrProgramId === 'number'
       ? { programId: variablesOrProgramId.toString() }
       : typeof variablesOrProgramId === 'string'
-      ? { programId: variablesOrProgramId }
-      : variablesOrProgramId,
+        ? { programId: variablesOrProgramId }
+        : variablesOrProgramId,
     init
   )
 }
