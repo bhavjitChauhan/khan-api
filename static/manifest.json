@@ -1,0 +1,23 @@
+{
+  "short_name": "Khan API",
+  "name": "Khan API Library Docs",
+  "icons": [
+    {
+      "src": "/img/logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/img/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "id": "/?source=pwa",
+  "start_url": "/?source=pwa",
+  "background_color": "#14bf96",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#14bf96",
+  "description": "A Khan Academy API client and wrapper"
+}
