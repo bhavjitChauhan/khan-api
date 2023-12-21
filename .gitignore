@@ -18,6 +18,7 @@ docs/
 
 # Build artifacts
 browser/
+build/
 dist/
 node/
 index.d.ts
