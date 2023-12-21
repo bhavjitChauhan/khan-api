@@ -1,5 +1,6 @@
 import fetch from 'cross-fetch'
 import { getLatestMutation, getLatestQuery } from './safelist'
+import { PROXY_DOMAIN } from '../lib/constants'
 
 export interface TypedResponse<T> extends Response {
   json(): Promise<T>
@@ -36,6 +37,12 @@ export async function graphql<Variables, Response>(
   init?: RequestInit
 ): Promise<TypedResponse<Response>> {
   const body = { query, variables }
+  if (
+    typeof window !== 'undefined' &&
+    window.location.hostname !== 'khanacademy.org'
+  )
+    url = url.replace('www.khanacademy.org', PROXY_DOMAIN)
+
   const response = await post<Response>(url, body, init)
   if (
     response.status === 403 &&
