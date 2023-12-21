@@ -74,7 +74,7 @@ const config = {
           },
           {
             type: 'docSidebar',
-            sidebarId: 'docSidebar',
+            sidebarId: 'apiSidebar',
             position: 'left',
             label: 'Docs',
           },

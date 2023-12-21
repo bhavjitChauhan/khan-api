@@ -28,7 +28,7 @@ const sidebars = {
     'safelist',
     'proxy'
   ],
-  docSidebar: [
+  apiSidebar: [
     {
       type: 'doc',
       label: 'Main',
