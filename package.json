@@ -27,10 +27,9 @@
     "format": "prettier --write ./**/*.ts ./browser/**/*.js ./node/**/*js",
     "clean": "rimraf browser node index.d.ts",
     "types": "tsc --emitDeclarationOnly && rollup -c && rimraf dist/types",
-    "build": "yarn node ./scripts/build.js",
+    "build": "node ./scripts/build.js",
     "doc": "typedoc"
   },
-  "packageManager": "yarn@4.0.2",
   "type": "module",
   "dependencies": {
     "cross-fetch": "^4.0.0"

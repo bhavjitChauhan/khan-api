@@ -1,15 +1,15 @@
 /**
  * @file Build script for Khan API
- * 
+ *
  * @example
  * ```bash
- * yarn build
+ * npm run build
  * ```
- * 
+ *
  * @example
  * With metafiles:
  * ```bash
- * yarn build --meta
+ * npm run build -- --meta
  * ```
  */
 

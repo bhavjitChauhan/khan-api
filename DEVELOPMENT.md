@@ -1,9 +1,9 @@
 # Development
 
 ## Bump Dependencies
-1. `yarn set version latest`
-1. `yarn upgrade-interactive`
-2. `yarn dlx @yarnpkg/sdks`
+```bash
+npx npm-check-updates -i
+```
 
 ## Release
 

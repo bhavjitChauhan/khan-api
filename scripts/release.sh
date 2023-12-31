@@ -30,12 +30,6 @@ if [ "$(node -p "process.versions.node.split('.')[0]")" -lt 18 ]; then
     exit 1
 fi
 
-# Check if Yarn is installed
-if ! command -v yarn &> /dev/null; then
-    echo "Yarn could not be found, please install it"
-    exit 1
-fi
-
 # Check if NPM is installed
 if ! command -v npm &> /dev/null; then
     echo "NPM could not be found, please install it"
@@ -51,7 +45,7 @@ fi
 # Check if logged into GitHub Package Registry
 if ! npm whoami --registry=https://npm.pkg.github.com &> /dev/null; then
     echo "You are not logged in to the GitHub Package Registry, logging in..."
-    npm login --scope=@bhavjitChauhan --registry=https://npm.pkg.github.com    
+    npm login --scope=@bhavjitChauhan --registry=https://npm.pkg.github.com
 fi
 
 # Let user upgrade the version
@@ -68,19 +62,19 @@ fi
 
 # Build the package
 echo "Installing dependencies..."
-yarn
+npm i
 echo "Installed dependencies"
 echo
 
 echo "Linting..."
-yarn lint
+npm run lint
 echo "Linted"
 echo
 
 read -p "Do you want to run tests? [Y/n] " -n 1 -r response
 if [[ ! $response =~ ^[Nn]$ ]]; then
     echo "Running tests..."
-    yarn test
+    npm test
     echo "Tests complete"
     echo
 else
@@ -88,22 +82,22 @@ else
 fi
 
 echo "Cleaning..."
-yarn clean
+npm run clean
 echo "Cleaned"
 echo
 
 echo "Building..."
-yarn build
+npm run build
 echo "Built"
 echo
 
 echo "Generating types..."
-yarn types
+npm run types
 echo "Types generated"
 echo
 
 echo "Formatting..."
-yarn format
+npm run format
 echo "Formatted"
 echo
 
