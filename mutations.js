@@ -10428,10 +10428,11 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }`,
-  SetGuidePreferences: `mutation SetGuidePreferences($readingLevel: AIGuideReadingLevel, $guideLanguageCode: String) {
+  SetGuidePreferences: `mutation SetGuidePreferences($readingLevel: AIGuideReadingLevel, $guideLanguageCode: String, $guideVoiceDescriptor: String) {
   setPreferencesForUser(
     readingLevel: $readingLevel
     guideLanguageCode: $guideLanguageCode
+    guideVoiceDescriptor: $guideVoiceDescriptor
   ) {
     error {
       code

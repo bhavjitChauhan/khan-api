@@ -1,7 +1,8 @@
-mutation SetGuidePreferences($readingLevel: AIGuideReadingLevel, $guideLanguageCode: String) {
+mutation SetGuidePreferences($readingLevel: AIGuideReadingLevel, $guideLanguageCode: String, $guideVoiceDescriptor: String) {
   setPreferencesForUser(
     readingLevel: $readingLevel
     guideLanguageCode: $guideLanguageCode
+    guideVoiceDescriptor: $guideVoiceDescriptor
   ) {
     error {
       code
