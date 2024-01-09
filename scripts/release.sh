@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# This script is used to publish the package to the GitHub Package Registry
-
 # Check if Git is installed
 if ! command -v git &> /dev/null; then
     echo "Git could not be found, please install it"
@@ -36,13 +34,13 @@ if ! command -v npm &> /dev/null; then
     exit 1
 fi
 
-# Check if logged into NPM registry
+# Check if logged into the NPM registry
 if ! npm whoami &> /dev/null; then
     echo "You are not logged in to the NPM registry, logging in..."
     npm login
 fi
 
-# Check if logged into GitHub Package Registry
+# Check if logged into the GitHub Package Registry
 if ! npm whoami --registry=https://npm.pkg.github.com &> /dev/null; then
     echo "You are not logged in to the GitHub Package Registry, logging in..."
     npm login --scope=@bhavjitChauhan --registry=https://npm.pkg.github.com
@@ -101,7 +99,7 @@ npm run format
 echo "Formatted"
 echo
 
-# Publish the package to NPM registry
+# Publish the package to the NPM registry
 read -p "Do you want to publish to the NPM registry? [Y/n] " -n 1 -r response
 if [[ ! $response =~ ^[Nn]$ ]]; then
     echo "Publishing package to NPM registry..."
@@ -109,12 +107,12 @@ if [[ ! $response =~ ^[Nn]$ ]]; then
     echo "Package published to NPM registry"
 fi
 
-# Publish the package to GitHub Package Registry
+# Publish the package to the GitHub Package Registry
 read -p "Do you want to publish to the GitHub Package Registry? [Y/n] " -n 1 -r response
 if [[ ! $response =~ ^[Nn]$ ]]; then
     echo "Publishing package to GitHub Package Registry..."
     sed -i 's/"name": "@bhavjit\/khan-api"/"name": "@bhavjitchauhan\/khan-api"/' package.json
-    npm publish --registry=https://npm.pkg.github.com --access public
+    npm publish --access public
     sed -i 's/"name": "@bhavjitchauhan\/khan-api"/"name": "@bhavjit\/khan-api"/' package.json
     echo "Package published"
 fi
