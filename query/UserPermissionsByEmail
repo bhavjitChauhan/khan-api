@@ -8,6 +8,7 @@ query UserPermissionsByEmail($email: String!) {
       id
       kind
       role
+      folderId
       granterEmail
       locale: kaLocale
       canPublish

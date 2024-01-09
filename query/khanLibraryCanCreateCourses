@@ -1,0 +1,10 @@
+query khanLibraryCanCreateCourses($folderId: String!) {
+  user {
+    id
+    hasContentPermission(
+      name: "can_create_courses"
+      contentScope: {contentKind: TOPIC, folderId: $folderId}
+    )
+    __typename
+  }
+}
