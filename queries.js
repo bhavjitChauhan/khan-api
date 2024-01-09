@@ -9478,44 +9478,6 @@ fragment CommonUserInfoFragment on User {
     ...gtp_checkpointFragment
     __typename
   }
-}
-
-fragment gtp_checkpointFragment on Checkpoint {
-  id
-  stages {
-    numCreditedTasks
-    creditedTaskIds
-    goalTasks
-    stageIndex
-    stageDisplayNumber
-    startedAt
-    completedAt
-    incomingLevels {
-      name
-      level
-      __typename
-    }
-    focusAreas {
-      skillTitle
-      areaId
-      areaTitle
-      __typename
-    }
-    __typename
-  }
-  checkpointIndex
-  startedAt
-  completedAt
-  drillMode
-  isComplete
-  removedFromSchedule
-  hasDonePracticeTasks
-  numStages
-  canCreateNewStage
-  hasDonePracticeTasks
-  miniSectionStages
-  tmsTaskIds
-  __typename
 }`,
   gtp_getDescriptors: `query gtp_getDescriptors($examId: String!, $checkpointStr: String) {
   descriptorList(examId: $examId, requestedCheckpoint: $checkpointStr) {
@@ -10218,109 +10180,6 @@ fragment gtp_taskFragment on Task {
     ...gtp_tpudFragment
     __typename
   }
-}
-
-fragment gtp_checkpointFragment on Checkpoint {
-  id
-  stages {
-    numCreditedTasks
-    creditedTaskIds
-    goalTasks
-    stageIndex
-    stageDisplayNumber
-    startedAt
-    completedAt
-    incomingLevels {
-      name
-      level
-      __typename
-    }
-    focusAreas {
-      skillTitle
-      areaId
-      areaTitle
-      __typename
-    }
-    __typename
-  }
-  checkpointIndex
-  startedAt
-  completedAt
-  drillMode
-  isComplete
-  removedFromSchedule
-  hasDonePracticeTasks
-  numStages
-  canCreateNewStage
-  hasDonePracticeTasks
-  miniSectionStages
-  tmsTaskIds
-  __typename
-}
-
-fragment gtp_practiceTestFragment on PracticeTest {
-  id
-  practiceTestId
-  approxTestMins
-  testTitle
-  directions
-  formCode
-  hasStarted
-  completionStatus
-  completedAt
-  subScores {
-    name
-    score
-    __typename
-  }
-  sections {
-    sectionId
-    taskId
-    exerciseName
-    isScored
-    sectionTitle
-    numCorrect
-    numTotal
-    durationSeconds
-    breakDurationSeconds
-    hasUserGrading
-    completed
-    userProvidedScores {
-      score
-      minScore
-      maxScore
-      __typename
-    }
-    __typename
-  }
-  __typename
-}
-
-fragment gtp_tpudFragment on TestPrepUserData {
-  id
-  examId
-  currentStage
-  currentCheckpoint
-  targetScore
-  diagnosticsStates {
-    type
-    state
-    __typename
-  }
-  onboardingState
-  hasSeededSkillLevels
-  hasUnlockedDrillMode
-  scoreInfo {
-    minScore
-    maxScore
-    __typename
-  }
-  schedule {
-    examDate
-    practiceTestDates
-    __typename
-  }
-  __typename
 }`,
   gtp_onboardingStatus: `query gtp_onboardingStatus($examGroupId: String!) {
   egud(examGroupId: $examGroupId) {
@@ -17757,6 +17616,73 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     }
     isAIGuideEnabled
     includesDistrictOwnedData
+    __typename
+  }
+}`,
+  pythonProgramQuery: `query pythonProgramQuery($programId: String!) {
+  program: programById(id: $programId) {
+    byChild
+    category
+    codeFormat
+    created
+    author {
+      id
+      nickname
+      profileRoot
+      profile {
+        accessLevel
+        __typename
+      }
+      __typename
+    }
+    deleted
+    description
+    spinoffCount: displayableSpinoffCount
+    docsUrlPath
+    flags
+    flaggedByKaids
+    isFlaggedByCurrentUser
+    height
+    hideFromHotlist
+    id
+    imagePath
+    originIsProject
+    isOwner
+    authorKaid
+    key
+    newUrlPath
+    originProgram {
+      deleted
+      translatedTitle
+      url
+      __typename
+    }
+    restrictPosting
+    latestRevision {
+      id
+      code
+      configVersion
+      created
+      editorType
+      folds
+      __typename
+    }
+    slug
+    sumVotesIncremented
+    title
+    parentCurationNode {
+      id
+      slug
+      relativeUrl
+      slug
+      translatedTitle
+      __typename
+    }
+    translatedTitle
+    url
+    userAuthoredContentType
+    upVoted
+    width
     __typename
   }
 }`,

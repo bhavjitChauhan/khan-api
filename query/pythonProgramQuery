@@ -1,0 +1,67 @@
+query pythonProgramQuery($programId: String!) {
+  program: programById(id: $programId) {
+    byChild
+    category
+    codeFormat
+    created
+    author {
+      id
+      nickname
+      profileRoot
+      profile {
+        accessLevel
+        __typename
+      }
+      __typename
+    }
+    deleted
+    description
+    spinoffCount: displayableSpinoffCount
+    docsUrlPath
+    flags
+    flaggedByKaids
+    isFlaggedByCurrentUser
+    height
+    hideFromHotlist
+    id
+    imagePath
+    originIsProject
+    isOwner
+    authorKaid
+    key
+    newUrlPath
+    originProgram {
+      deleted
+      translatedTitle
+      url
+      __typename
+    }
+    restrictPosting
+    latestRevision {
+      id
+      code
+      configVersion
+      created
+      editorType
+      folds
+      __typename
+    }
+    slug
+    sumVotesIncremented
+    title
+    parentCurationNode {
+      id
+      slug
+      relativeUrl
+      slug
+      translatedTitle
+      __typename
+    }
+    translatedTitle
+    url
+    userAuthoredContentType
+    upVoted
+    width
+    __typename
+  }
+}
