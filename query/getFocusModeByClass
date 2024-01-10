@@ -1,0 +1,21 @@
+query getFocusModeByClass($descriptor: String!) {
+  classroom: classroomByDescriptorV2(descriptor: $descriptor) {
+    id
+    cacheId
+    classroomDistrictInfo {
+      id
+      district {
+        id
+        __typename
+      }
+      __typename
+    }
+    students {
+      id
+      kaid
+      coachNickname
+      __typename
+    }
+    __typename
+  }
+}

@@ -28,7 +28,7 @@
   "ClassDescriptorByClassCodeQuery": 1267889878,
   "ClassInfo": 3383053671,
   "ClassroomByCode": 3971729576,
-  "ClassroomByDescriptorQuery": 141372441,
+  "ClassroomByDescriptorQuery": 616030011,
   "ClassroomDistrictInfosQuery": 3368645794,
   "classroomHasCourseMasteryAssignments": 2215210122,
   "ClassSubjectMasteryProgress": 2241509294,
@@ -616,7 +616,7 @@
   "AssignmentsPageForContentItems": 3665892653,
   "getDistrictDisallowDiscussions": 762796058,
   "getIndexedContentSearchResults": 181419709,
-  "exerciseEditorQuery": 3694924500,
+  "exerciseEditorQuery": 4047399663,
   "getSatAccountSettings": 714630499,
   "allCoacheeNames": 2231775310,
   "courseChallengeCsvQuery": 277772492,
@@ -624,5 +624,6 @@
   "aiGuideConversionTrialInfo": 2182684421,
   "pythonProgramQuery": 3923153985,
   "allFolders": 3440687258,
-  "khanLibraryCanCreateCourses": 3496952118
+  "khanLibraryCanCreateCourses": 3496952118,
+  "getFocusModeByClass": 1798875481
 }
