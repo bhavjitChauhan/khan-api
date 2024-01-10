@@ -709,6 +709,11 @@ fragment AssignmentCsvData on Assignment {
       isNweaMapSynced
       courseSISName
       sisSubjct
+      teacherUserDistrictInfo {
+        id
+        khanmigoShould
+        __typename
+      }
       __typename
     }
     testPrepExams {
@@ -17352,6 +17357,74 @@ fragment ProjectRevision on ProjectRevision {
   }
   isEditableByCurrentUser(contentId: $contentId, contentKind: "Exercise")
   isPublishableByCurrentUser(contentId: $contentId, contentKind: "Exercise")
+}
+
+fragment AssessmentItemRevision on AssessmentItemRevision {
+  id
+  contentKind
+  contentId
+  sha
+  creationDate
+  name
+  authorNames
+  itemData
+  itemShapeType
+  perseusApiMajorVersion
+  requiresScreenOrMouse
+  tags
+  __typename
+}
+
+fragment ExerciseRevision on ExerciseRevision {
+  id
+  contentKind
+  contentId
+  sha
+  creationDate
+  authorKey
+  doNotPublish
+  sourceKaLocale
+  sourceLanguage: sourceKaLocale
+  slug
+  name: slug
+  title
+  displayName: title
+  prettyDisplayName: title
+  description
+  descriptionHtml: description
+  customTitleTag
+  customDescriptionTag
+  thumbnailData
+  thumbnailCache
+  sponsored
+  alternateSlugs
+  authorName
+  covers
+  prerequisites
+  relatedContent
+  assessmentItemTags
+  difficultyLevel
+  suggestedCompletionCriteria
+  trackingDocumentUrl
+  problemTypes {
+    name
+    relatedVideos
+    items {
+      id
+      sha
+      perseusApiMajorVersion
+      requiresScreenOrMouse
+      __typename
+    }
+    __typename
+  }
+  assessmentItems {
+    ...AssessmentItemRevision
+    __typename
+  }
+  listed
+  hasLintErrors
+  __typename
 }`,
   getSatAccountSettings: `query getSatAccountSettings($targetKaid: String) {
   target: user(kaid: $targetKaid) {
@@ -17633,6 +17706,27 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
       name: "can_create_courses"
       contentScope: {contentKind: TOPIC, folderId: $folderId}
     )
+    __typename
+  }
+}`,
+  getFocusModeByClass: `query getFocusModeByClass($descriptor: String!) {
+  classroom: classroomByDescriptorV2(descriptor: $descriptor) {
+    id
+    cacheId
+    classroomDistrictInfo {
+      id
+      district {
+        id
+        __typename
+      }
+      __typename
+    }
+    students {
+      id
+      kaid
+      coachNickname
+      __typename
+    }
     __typename
   }
 }`,
