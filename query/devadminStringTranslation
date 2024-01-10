@@ -1,9 +1,9 @@
-query devadminStringTranslation($message: String!, $messageLocation: String!, $messageContext: String, $kaLocale: KALocale!) {
+query devadminStringTranslation($message: String!, $messageContext: String, $kaLocale: KALocale!) {
   stringTranslation(
     message: $message
-    messageLocation: $messageLocation
     messageContext: $messageContext
     kaLocale: $kaLocale
+    messageLocation: "devadmin-automatic-translation-test"
   ) {
     found
     isAITranslated
