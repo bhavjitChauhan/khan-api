@@ -2,7 +2,7 @@ query courseEditorSearchPublished($query: String!, $contentKinds: [String]) {
   searchPage(
     query: $query
     contentKinds: $contentKinds
-    numResults: 100
+    numResults: 125
     region: "*"
   ) {
     results {
