@@ -1,0 +1,12 @@
+mutation startFocusMode($kaids: [String!]!, $cooldownEnd: DateTime!) {
+  setTeacherDirectedCooldowns(kaids: $kaids, cooldownEnd: $cooldownEnd) {
+    errors {
+      code
+      debugMessage
+      failedFor
+      kaids
+      __typename
+    }
+    __typename
+  }
+}

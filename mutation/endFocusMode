@@ -1,0 +1,12 @@
+mutation endFocusMode($kaids: [String!]!) {
+  removeTeacherDirectedCooldowns(kaids: $kaids) {
+    errors {
+      code
+      debugMessage
+      failedFor
+      kaids
+      __typename
+    }
+    __typename
+  }
+}

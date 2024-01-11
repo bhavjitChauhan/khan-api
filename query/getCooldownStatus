@@ -1,0 +1,20 @@
+query getCooldownStatus {
+  user {
+    id
+    hasCooldown
+    cooldownStatus {
+      hasAntiCheatCooldown
+      lastAntiCheatCooldownExpiresAt
+      hasTeacherDirectedCooldown
+      teacherDirectedCooldownExpiresAt
+      teacherDirectedCooldownStartedBy {
+        id
+        kaid
+        nickname
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

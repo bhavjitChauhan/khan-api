@@ -14,6 +14,25 @@ query getFocusModeByClass($descriptor: String!) {
       id
       kaid
       coachNickname
+      cooldownStatus {
+        hasTeacherDirectedCooldown
+        teacherDirectedCooldownExpiresAt
+        teacherDirectedCooldownStartedBy {
+          id
+          kaid
+          userDistrictInfos {
+            id
+            district {
+              id
+              __typename
+            }
+            districtProvidedFullName
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
       __typename
     }
     __typename
