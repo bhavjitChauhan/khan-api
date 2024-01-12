@@ -10446,4 +10446,87 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  contentEditorEditExercise: `mutation contentEditorEditExercise($sha: String!, $input: EditExercisePropertiesInput!) {
+  editExerciseProperties(sha: $sha, input: $input) {
+    exercise {
+      ...ExerciseRevision
+      __typename
+    }
+    error {
+      code
+      conflictSha
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment AssessmentItemRevision on AssessmentItemRevision {
+  id
+  contentKind
+  contentId
+  sha
+  creationDate
+  name
+  authorNames
+  itemData
+  itemShapeType
+  perseusApiMajorVersion
+  requiresScreenOrMouse
+  tags
+  __typename
+}
+
+fragment ExerciseRevision on ExerciseRevision {
+  id
+  contentKind
+  contentId
+  sha
+  creationDate
+  authorKey
+  doNotPublish
+  sourceKaLocale
+  sourceLanguage: sourceKaLocale
+  slug
+  name: slug
+  title
+  displayName: title
+  prettyDisplayName: title
+  description
+  descriptionHtml: description
+  customTitleTag
+  customDescriptionTag
+  thumbnailData
+  thumbnailCache
+  sponsored
+  alternateSlugs
+  authorName
+  covers
+  prerequisites
+  relatedContent
+  assessmentItemTags
+  difficultyLevel
+  suggestedCompletionCriteria
+  trackingDocumentUrl
+  problemTypes {
+    name
+    relatedVideos
+    items {
+      id
+      sha
+      perseusApiMajorVersion
+      requiresScreenOrMouse
+      __typename
+    }
+    __typename
+  }
+  assessmentItems {
+    ...AssessmentItemRevision
+    __typename
+  }
+  listed
+  hasLintErrors
+  __typename
+}`,
 }

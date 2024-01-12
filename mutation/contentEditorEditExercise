@@ -1,15 +1,17 @@
-query exerciseEditorQuery($contentId: String!) {
-  exerciseRevisionById(id: $contentId) {
-    ...ExerciseRevision
+mutation contentEditorEditExercise($sha: String!, $input: EditExercisePropertiesInput!) {
+  editExerciseProperties(sha: $sha, input: $input) {
+    exercise {
+      ...ExerciseRevision
+      __typename
+    }
+    error {
+      code
+      conflictSha
+      debugMessage
+      __typename
+    }
     __typename
   }
-  contentEditingStatus {
-    editingDisabled
-    publishDisabled
-    __typename
-  }
-  isEditableByCurrentUser(contentId: $contentId, contentKind: "Exercise")
-  isPublishableByCurrentUser(contentId: $contentId, contentKind: "Exercise")
 }
 
 fragment AssessmentItemRevision on AssessmentItemRevision {
