@@ -9903,19 +9903,6 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     }
     __typename
   }
-}
-
-fragment Program on Program {
-  id
-  latestRevision {
-    id
-    code
-    __typename
-  }
-  title
-  url
-  userAuthoredContentType
-  __typename
 }`,
   updateProgramSettings: `mutation updateProgramSettings($programId: ID!, $height: Int!, $width: Int!, $category: ProgramCategoryInput, $description: String) {
   updateProgramSettings(
