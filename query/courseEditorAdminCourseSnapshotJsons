@@ -1,0 +1,3 @@
+query courseEditorAdminCourseSnapshotJsons($courseId: String!) {
+  courseSnapshotJsonsByCourseId(id: $courseId)
+}
