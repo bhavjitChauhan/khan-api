@@ -1,0 +1,9 @@
+query GuideExtensionAllowedUrls {
+  allowedUrlList {
+    allowedURLS {
+      pattern
+      __typename
+    }
+    __typename
+  }
+}
