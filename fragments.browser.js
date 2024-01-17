@@ -1583,6 +1583,18 @@ fragment InvitationsField on Invitation {
   translatedDescription
   translatedTitle
   urlWithinCurationNode
+  ... on Challenge {
+    userAuthoredContentType
+    __typename
+  }
+  ... on Interactive {
+    userAuthoredContentType
+    __typename
+  }
+  ... on Project {
+    userAuthoredContentType
+    __typename
+  }
   __typename
 }`,
   LessonAndChildrenFields: `fragment LessonAndChildrenFields on Lesson {
