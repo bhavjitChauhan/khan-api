@@ -9,7 +9,7 @@ hashes = {
   allFlaggedGuideThreads: 992549233,
   allStandardsForSet: 3015316215,
   allTranslatableLocales: 419203518,
-  articleEditorQuery: 1661821936,
+  articleEditorQuery: 3393781286,
   articleEditorRedirectQuery: 4039343373,
   articleForDiff: 3813521305,
   articleRevisionsForDiff: 795341688,
@@ -629,4 +629,5 @@ hashes = {
   getCooldownStatus: 3932999064,
   courseEditorAdminCourseSnapshotJsons: 1796704488,
   GuideExtensionAllowedUrls: 3439108051,
+  courseEditorAdminCourseOperationJsons: 315062600,
 }

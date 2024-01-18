@@ -1,0 +1,3 @@
+query courseEditorAdminCourseOperationJsons($courseId: String!) {
+  courseOperationJsonsByCourseId(id: $courseId)
+}
