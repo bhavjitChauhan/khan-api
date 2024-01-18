@@ -1,0 +1,22 @@
+mutation spinOffPythonProgram($originProgramOrContentId: String!, $originProgramKind: SpinoffOriginKind!, $originRevisionId: ID, $title: String!, $revision: ProgramRevisionInput!, $curationNodeSlug: String!) {
+  spinOffProgram(
+    origin: {programOrContentId: $originProgramOrContentId, kind: $originProgramKind}
+    originRevisionId: $originRevisionId
+    title: $title
+    revision: $revision
+    curationNodeSlug: $curationNodeSlug
+    hideFromHotlist: true
+  ) {
+    program {
+      id
+      url
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
