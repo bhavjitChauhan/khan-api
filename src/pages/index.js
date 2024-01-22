@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <Layout
       title="Home"
-      description="Description will go into a meta tag in <head />">
+      description="A Khan Academy API client for Node.js and the browser.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
