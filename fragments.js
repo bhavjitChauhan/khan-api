@@ -2159,6 +2159,9 @@ fragment InvitationsField on Invitation {
   codeFormat
   tests
   testsFormat
+  height
+  width
+  userAuthoredContentType
   __typename
 }`,
 }

@@ -13,5 +13,8 @@ fragment ChallengeRevision on ChallengeRevision {
   codeFormat
   tests
   testsFormat
+  height
+  width
+  userAuthoredContentType
   __typename
 }
