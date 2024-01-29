@@ -625,7 +625,7 @@ hashes = {
   pythonProgramQuery: 3923153985,
   allFolders: 3440687258,
   khanLibraryCanCreateCourses: 3496952118,
-  getFocusModeByClass: 4110212729,
+  getFocusModeByClass: 3259050936,
   getCooldownStatus: 3932999064,
   courseEditorAdminCourseSnapshotJsons: 1796704488,
   GuideExtensionAllowedUrls: 3439108051,
