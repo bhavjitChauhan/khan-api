@@ -629,5 +629,6 @@
   "getCooldownStatus": "query getCooldownStatus {\n  user {\n    id\n    hasCooldown\n    cooldownStatus {\n      hasAntiCheatCooldown\n      lastAntiCheatCooldownExpiresAt\n      hasTeacherDirectedCooldown\n      teacherDirectedCooldownExpiresAt\n      teacherDirectedCooldownStartedBy {\n        id\n        kaid\n        nickname\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}",
   "courseEditorAdminCourseSnapshotJsons": "query courseEditorAdminCourseSnapshotJsons($courseId: String!) {\n  courseSnapshotJsonsByCourseId(id: $courseId)\n}",
   "GuideExtensionAllowedUrls": "query GuideExtensionAllowedUrls {\n  allowedUrlList {\n    allowedURLS {\n      pattern\n      __typename\n    }\n    __typename\n  }\n}",
-  "courseEditorAdminCourseOperationJsons": "query courseEditorAdminCourseOperationJsons($courseId: String!) {\n  courseOperationJsonsByCourseId(id: $courseId)\n}"
+  "courseEditorAdminCourseOperationJsons": "query courseEditorAdminCourseOperationJsons($courseId: String!) {\n  courseOperationJsonsByCourseId(id: $courseId)\n}",
+  "GuideExtensionIsUserK4DStudent": "query GuideExtensionIsUserK4DStudent {\n  user {\n    id\n    kaid\n    isK4dStudent\n    __typename\n  }\n}"
 }
