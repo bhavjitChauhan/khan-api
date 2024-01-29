@@ -630,4 +630,5 @@ export default {
   courseEditorAdminCourseSnapshotJsons: 1796704488,
   GuideExtensionAllowedUrls: 3439108051,
   courseEditorAdminCourseOperationJsons: 315062600,
+  GuideExtensionIsUserK4DStudent: 1864356563,
 }

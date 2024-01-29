@@ -17950,4 +17950,12 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
   courseEditorAdminCourseOperationJsons: `query courseEditorAdminCourseOperationJsons($courseId: String!) {
   courseOperationJsonsByCourseId(id: $courseId)
 }`,
+  GuideExtensionIsUserK4DStudent: `query GuideExtensionIsUserK4DStudent {
+  user {
+    id
+    kaid
+    isK4dStudent
+    __typename
+  }
+}`,
 }
