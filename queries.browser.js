@@ -17888,15 +17888,7 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
         teacherDirectedCooldownStartedBy {
           id
           kaid
-          userDistrictInfos {
-            id
-            district {
-              id
-              __typename
-            }
-            districtProvidedFullName
-            __typename
-          }
+          nickname
           __typename
         }
         __typename
