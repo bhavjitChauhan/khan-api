@@ -13,6 +13,10 @@ query getClassesAndStudents {
         coachNickname
         __typename
       }
+      topics {
+        id
+        __typename
+      }
       __typename
     }
     __typename

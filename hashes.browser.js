@@ -162,7 +162,7 @@ hashes = {
   getChildrenForDevadmin: 1948866426,
   getChildrenOfTopic: 1598707302,
   getChronomancerStatus: 470968035,
-  getClassesAndStudents: 2368301074,
+  getClassesAndStudents: 4112328276,
   getClassList: 2957375249,
   getClassroomRoster: 2996106323,
   getClassroomsAndPrimaryOffering: 3980807925,
@@ -631,4 +631,5 @@ hashes = {
   GuideExtensionAllowedUrls: 3439108051,
   courseEditorAdminCourseOperationJsons: 315062600,
   GuideExtensionIsUserK4DStudent: 1864356563,
+  khanmigoEnabledForUserQuery: 952859768,
 }

@@ -1,0 +1,7 @@
+query khanmigoEnabledForUserQuery {
+  coach: user {
+    id
+    isAIGuideEnabled
+    __typename
+  }
+}
