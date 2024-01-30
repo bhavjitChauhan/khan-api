@@ -4991,6 +4991,10 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
         coachNickname
         __typename
       }
+      topics {
+        id
+        __typename
+      }
       __typename
     }
     __typename
@@ -17947,6 +17951,13 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     id
     kaid
     isK4dStudent
+    __typename
+  }
+}`,
+  khanmigoEnabledForUserQuery: `query khanmigoEnabledForUserQuery {
+  coach: user {
+    id
+    isAIGuideEnabled
     __typename
   }
 }`,
