@@ -3529,6 +3529,7 @@ fragment CourseProgress on SubjectProgress {
   district(districtName: $districtName) {
     id
     name
+    rosterSource
     isTest
     hasKhanmigo
     isKmapDistrict
@@ -17959,6 +17960,24 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
   coach: user {
     id
     isAIGuideEnabled
+    __typename
+  }
+}`,
+  getAdminsForInProductAdminRostering: `query getAdminsForInProductAdminRostering($districtID: String!) {
+  getAdminsForDistrict(districtID: $districtID) {
+    id
+    displayNameForTeacher
+    districtProvidedEmail
+    primaryRole
+    canManageAdmins
+    activationEmailSentAt
+    rosterSource
+    kaid
+    adminOfSchools {
+      id
+      name
+      __typename
+    }
     __typename
   }
 }`,

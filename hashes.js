@@ -111,7 +111,7 @@ export default {
   districtHomepage: 2523966179,
   districtHomepageProgress: 1681650575,
   DistrictPrimaryOfferingAsTeacher: 15799337,
-  DistrictQuery: 2401390135,
+  DistrictQuery: 1512729965,
   districts: 101104407,
   DistrictSkillsMAPProgressQuery: 706683816,
   DistrictSkillsProgressQuery: 2501404314,
@@ -632,4 +632,5 @@ export default {
   courseEditorAdminCourseOperationJsons: 315062600,
   GuideExtensionIsUserK4DStudent: 1864356563,
   khanmigoEnabledForUserQuery: 952859768,
+  getAdminsForInProductAdminRostering: 4041210074,
 }
