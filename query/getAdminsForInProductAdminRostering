@@ -1,0 +1,18 @@
+query getAdminsForInProductAdminRostering($districtID: String!) {
+  getAdminsForDistrict(districtID: $districtID) {
+    id
+    displayNameForTeacher
+    districtProvidedEmail
+    primaryRole
+    canManageAdmins
+    activationEmailSentAt
+    rosterSource
+    kaid
+    adminOfSchools {
+      id
+      name
+      __typename
+    }
+    __typename
+  }
+}

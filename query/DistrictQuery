@@ -2,6 +2,7 @@ query DistrictQuery($districtName: String!) {
   district(districtName: $districtName) {
     id
     name
+    rosterSource
     isTest
     hasKhanmigo
     isKmapDistrict
