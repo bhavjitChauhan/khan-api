@@ -6914,6 +6914,7 @@ fragment userTaskFields on PracticeUserTask {
     }
     hasKhanmigoViaClassy
     hasKhanmigoViaStripe
+    everHadKhanmigoViaStripe
     __typename
   }
 }`,

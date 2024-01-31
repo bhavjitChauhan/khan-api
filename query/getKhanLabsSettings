@@ -18,6 +18,7 @@ query getKhanLabsSettings($targetKaid: String!) {
     }
     hasKhanmigoViaClassy
     hasKhanmigoViaStripe
+    everHadKhanmigoViaStripe
     __typename
   }
 }
