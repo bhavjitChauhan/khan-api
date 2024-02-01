@@ -1,0 +1,46 @@
+query getKhanmigoCheckoutVideo($contentId: String!) {
+  videoById(contentId: $contentId) {
+    id
+    assessmentItemTags
+    contentKind
+    defaultUrlPath
+    kind
+    nodeSlug
+    slug
+    sponsored
+    title
+    translatedDescription
+    translatedTitle
+    translatedCustomTitleTag
+    authorNames
+    authorList {
+      name
+      __typename
+    }
+    clarificationsEnabled
+    creationDate
+    dateAdded
+    description
+    descriptionHtml
+    downloadUrls
+    duration
+    imageUrl
+    kaUrl
+    kaUserLicense
+    keywords
+    readableId
+    relativeUrl
+    sha
+    thumbnailUrls {
+      category
+      url
+      __typename
+    }
+    translatedDescriptionHtml
+    translatedYoutubeId
+    translatedYoutubeLang
+    youtubeId
+    augmentedTranscript
+    __typename
+  }
+}

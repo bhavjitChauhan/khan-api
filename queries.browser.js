@@ -17987,4 +17987,71 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     __typename
   }
 }`,
+  getKhanmigoCheckoutVideo: `query getKhanmigoCheckoutVideo($contentId: String!) {
+  videoById(contentId: $contentId) {
+    id
+    assessmentItemTags
+    contentKind
+    defaultUrlPath
+    kind
+    nodeSlug
+    slug
+    sponsored
+    title
+    translatedDescription
+    translatedTitle
+    translatedCustomTitleTag
+    authorNames
+    authorList {
+      name
+      __typename
+    }
+    clarificationsEnabled
+    creationDate
+    dateAdded
+    description
+    descriptionHtml
+    downloadUrls
+    duration
+    imageUrl
+    kaUrl
+    kaUserLicense
+    keywords
+    readableId
+    relativeUrl
+    sha
+    thumbnailUrls {
+      category
+      url
+      __typename
+    }
+    translatedDescriptionHtml
+    translatedYoutubeId
+    translatedYoutubeLang
+    youtubeId
+    augmentedTranscript
+    __typename
+  }
+}`,
+  getNonProfileKhanmigoCheckoutEligibilityData: `query getNonProfileKhanmigoCheckoutEligibilityData {
+  user {
+    id
+    isAIGuideEnabled
+    aiGuideDisabledReason
+    isEnrolledInAIGuide
+    children {
+      id
+      classrooms {
+        id
+        cacheId
+        __typename
+      }
+      __typename
+    }
+    age
+    hasKhanmigoViaClassy
+    hasKhanmigoViaStripe
+    __typename
+  }
+}`,
 }

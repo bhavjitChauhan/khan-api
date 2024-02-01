@@ -633,4 +633,6 @@ hashes = {
   GuideExtensionIsUserK4DStudent: 1864356563,
   khanmigoEnabledForUserQuery: 952859768,
   getAdminsForInProductAdminRostering: 4041210074,
+  getKhanmigoCheckoutVideo: 3428586690,
+  getNonProfileKhanmigoCheckoutEligibilityData: 2547430613,
 }

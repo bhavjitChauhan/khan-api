@@ -1,0 +1,21 @@
+query getNonProfileKhanmigoCheckoutEligibilityData {
+  user {
+    id
+    isAIGuideEnabled
+    aiGuideDisabledReason
+    isEnrolledInAIGuide
+    children {
+      id
+      classrooms {
+        id
+        cacheId
+        __typename
+      }
+      __typename
+    }
+    age
+    hasKhanmigoViaClassy
+    hasKhanmigoViaStripe
+    __typename
+  }
+}
