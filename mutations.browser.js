@@ -11205,4 +11205,20 @@ fragment ExerciseRevision on ExerciseRevision {
     __typename
   }
 }`,
+  createKhanmigoCheckoutStripeSession: `mutation createKhanmigoCheckoutStripeSession($priceID: String!, $paymentFrequency: PaymentFrequency!, $cancelURL: String!, $successURL: String!) {
+  createStripeSession(
+    priceID: $priceID
+    paymentFrequency: $paymentFrequency
+    cancelURL: $cancelURL
+    successURL: $successURL
+  ) {
+    redirectURL
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
