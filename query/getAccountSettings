@@ -78,6 +78,7 @@ query getAccountSettings($targetKaid: String) {
     }
     hasChildren
     includesDistrictOwnedData
+    includesCentrallyOwnedDistrictData
     badgeCounts
     points
     userDistrictInfos {

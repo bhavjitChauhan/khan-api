@@ -97,6 +97,7 @@ query getClassList {
     isAIGuideEnabled
     isKmapTeacher
     isK4dTeacher
+    includesCentrallyOwnedDistrictData
     userDistrictInfos {
       id
       activatedAt

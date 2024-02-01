@@ -14,7 +14,7 @@ query getClassroomRoster($classDescriptor: String!, $teacherKaid: String!, $afte
         __typename
       }
       key
-      isDistrictSynced
+      includesCentrallyOwnedDistrictData
       __typename
     }
     schoolAffiliation {
@@ -61,7 +61,7 @@ query getClassroomRoster($classDescriptor: String!, $teacherKaid: String!, $afte
       ...CleverCoachRequestField
       __typename
     }
-    isDistrictSynced
+    includesCentrallyOwnedDistrictData
     includesSat
     isK4dClassroom
     classroomDistrictInfo {

@@ -31,7 +31,7 @@ query getDashboardRoster($teacherKaid: String!, $after: Int, $pageSize: Int) {
       }
       key
       studentKaids
-      isDistrictSynced
+      includesCentrallyOwnedDistrictData
       __typename
     }
     schoolAffiliation {

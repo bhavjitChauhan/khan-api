@@ -760,6 +760,7 @@ fragment AssignmentCsvData on Assignment {
       __typename
     }
     isK4dClassroom
+    includesCentrallyOwnedDistrictData
     __typename
   }
 }`,
@@ -4695,6 +4696,7 @@ fragment UserFields on User {
     }
     hasChildren
     includesDistrictOwnedData
+    includesCentrallyOwnedDistrictData
     badgeCounts
     points
     userDistrictInfos {
@@ -5100,6 +5102,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
     isAIGuideEnabled
     isKmapTeacher
     isK4dTeacher
+    includesCentrallyOwnedDistrictData
     userDistrictInfos {
       id
       activatedAt
@@ -5130,7 +5133,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
         __typename
       }
       key
-      isDistrictSynced
+      includesCentrallyOwnedDistrictData
       __typename
     }
     schoolAffiliation {
@@ -5177,7 +5180,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
       ...CleverCoachRequestField
       __typename
     }
-    isDistrictSynced
+    includesCentrallyOwnedDistrictData
     includesSat
     isK4dClassroom
     classroomDistrictInfo {
@@ -5298,7 +5301,7 @@ fragment StudentField2 on StudentsPage {
       masteryEnabled
       __typename
     }
-    isDistrictSynced
+    includesCentrallyOwnedDistrictData
     isK4dClassroom
     __typename
   }
@@ -5312,8 +5315,7 @@ fragment StudentField2 on StudentsPage {
   user {
     id
     tosForFormalTeacherStatus
-    isKmapTeacher
-    isK4dTeacher
+    includesCentrallyOwnedDistrictData
     schoolAffiliation {
       id
       name
@@ -5931,7 +5933,7 @@ fragment Badge on Badge {
       }
       key
       studentKaids
-      isDistrictSynced
+      includesCentrallyOwnedDistrictData
       __typename
     }
     schoolAffiliation {
@@ -6873,7 +6875,8 @@ fragment userTaskFields on PracticeUserTask {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
     cacheId
-    isDistrictSynced
+    includesDistrictOwnedData
+    includesCentrallyOwnedDistrictData
     __typename
   }
 }`,
@@ -8091,7 +8094,8 @@ fragment Badge on Badge {
     hideVisual
     prefersReducedMotion
     noColorInVideos
-    isDistrictSynced
+    includesDistrictOwnedData
+    includesCentrallyOwnedDistrictData
     settingsCanBeModByLoggedInUser
     userDistrictInfos {
       id
@@ -9026,6 +9030,8 @@ fragment Badge on Badge {
       isCleverLibrarySynced
       isK4dClassroom
       isKmapClassroom
+      includesDistrictOwnedData
+      includesCentrallyOwnedDistrictData
       signupCode
       googleClassId
       topics {

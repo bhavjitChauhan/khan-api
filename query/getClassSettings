@@ -47,7 +47,7 @@ query getClassSettings($classDescriptor: String!) {
       masteryEnabled
       __typename
     }
-    isDistrictSynced
+    includesCentrallyOwnedDistrictData
     isK4dClassroom
     __typename
   }
