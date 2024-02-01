@@ -71,6 +71,7 @@ query ClassroomByDescriptorQuery($descriptor: String!) {
       __typename
     }
     isK4dClassroom
+    includesCentrallyOwnedDistrictData
     __typename
   }
 }

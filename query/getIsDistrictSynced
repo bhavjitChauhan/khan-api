@@ -2,7 +2,8 @@ query getIsDistrictSynced($classDescriptor: String!) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
     cacheId
-    isDistrictSynced
+    includesDistrictOwnedData
+    includesCentrallyOwnedDistrictData
     __typename
   }
 }

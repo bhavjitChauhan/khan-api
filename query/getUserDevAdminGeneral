@@ -211,6 +211,8 @@ query getUserDevAdminGeneral($kaid: String!) {
       isCleverLibrarySynced
       isK4dClassroom
       isKmapClassroom
+      includesDistrictOwnedData
+      includesCentrallyOwnedDistrictData
       signupCode
       googleClassId
       topics {

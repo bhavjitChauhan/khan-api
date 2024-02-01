@@ -12,7 +12,8 @@ query getStudentSettings($kaid: String!) {
     hideVisual
     prefersReducedMotion
     noColorInVideos
-    isDistrictSynced
+    includesDistrictOwnedData
+    includesCentrallyOwnedDistrictData
     settingsCanBeModByLoggedInUser
     userDistrictInfos {
       id
