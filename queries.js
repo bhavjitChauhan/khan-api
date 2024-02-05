@@ -17870,9 +17870,13 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
   khanLibraryCanCreateCourses: `query khanLibraryCanCreateCourses($folderId: String!) {
   user {
     id
-    hasContentPermission(
+    canCreateCourses: hasContentPermission(
       name: "can_create_courses"
       contentScope: {contentKind: TOPIC, folderId: $folderId}
+    )
+    canEditDomains: hasPermission(
+      name: "can_edit_domain_properties"
+      scope: ANY_ON_CURRENT_LOCALE
     )
     __typename
   }
