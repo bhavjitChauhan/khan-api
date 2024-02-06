@@ -11221,4 +11221,13 @@ fragment ExerciseRevision on ExerciseRevision {
     __typename
   }
 }`,
+  enableTotpTwoFactor: `mutation enableTotpTwoFactor($secret: String!, $code: String!) {
+  enableTotpTwoFactor(secret: $secret, code: $code) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
