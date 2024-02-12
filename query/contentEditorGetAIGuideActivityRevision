@@ -1,0 +1,16 @@
+query contentEditorGetAIGuideActivityRevision($id: String!) {
+  aiGuideActivityRevisionById(id: $id) {
+    ...AIGuideActivityRevision
+    __typename
+  }
+}
+
+fragment AIGuideActivityRevision on AIGuideActivityRevision {
+  id
+  contentId
+  contentKind
+  slug
+  sha
+  listed
+  __typename
+}

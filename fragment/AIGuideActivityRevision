@@ -1,0 +1,9 @@
+fragment AIGuideActivityRevision on AIGuideActivityRevision {
+  id
+  contentId
+  contentKind
+  slug
+  sha
+  listed
+  __typename
+}
