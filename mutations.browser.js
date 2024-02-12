@@ -11231,4 +11231,29 @@ fragment ExerciseRevision on ExerciseRevision {
     __typename
   }
 }`,
+  contentEditorEditAIGuideActivity: `mutation contentEditorEditAIGuideActivity($sha: String!, $input: EditAIGuideActivityInput!) {
+  editAIGuideActivity(sha: $sha, input: $input) {
+    aiGuideActivity {
+      ...AIGuideActivityRevision
+      __typename
+    }
+    error {
+      code
+      conflictSha
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment AIGuideActivityRevision on AIGuideActivityRevision {
+  id
+  contentId
+  contentKind
+  slug
+  sha
+  listed
+  __typename
+}`,
 }

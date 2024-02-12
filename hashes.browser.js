@@ -635,4 +635,5 @@ hashes = {
   getAdminsForInProductAdminRostering: 4041210074,
   getKhanmigoCheckoutVideo: 3428586690,
   getNonProfileKhanmigoCheckoutEligibilityData: 2547430613,
+  contentEditorGetAIGuideActivityRevision: 1505188525,
 }

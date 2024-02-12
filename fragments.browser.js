@@ -2164,4 +2164,13 @@ fragment InvitationsField on Invitation {
   userAuthoredContentType
   __typename
 }`,
+  AIGuideActivityRevision: `fragment AIGuideActivityRevision on AIGuideActivityRevision {
+  id
+  contentId
+  contentKind
+  slug
+  sha
+  listed
+  __typename
+}`,
 }

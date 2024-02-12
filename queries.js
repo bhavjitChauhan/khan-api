@@ -18058,4 +18058,20 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     __typename
   }
 }`,
+  contentEditorGetAIGuideActivityRevision: `query contentEditorGetAIGuideActivityRevision($id: String!) {
+  aiGuideActivityRevisionById(id: $id) {
+    ...AIGuideActivityRevision
+    __typename
+  }
+}
+
+fragment AIGuideActivityRevision on AIGuideActivityRevision {
+  id
+  contentId
+  contentKind
+  slug
+  sha
+  listed
+  __typename
+}`,
 }
