@@ -16990,6 +16990,8 @@ fragment contentSearchLearnableContent on LearnableContent {
           ... on AIGuideActivity {
             persona
             activityType
+            worksInMobileApp
+            worksOnSmallLayouts
             __typename
           }
           __typename
@@ -18073,5 +18075,16 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   sha
   listed
   __typename
+}`,
+  GuideExtensionUserDistrictStatus: `query GuideExtensionUserDistrictStatus {
+  user {
+    id
+    kaid
+    isK4dStudent
+    isKmapStudent
+    isK4dTeacher
+    isKmapTeacher
+    __typename
+  }
 }`,
 }
