@@ -16992,6 +16992,7 @@ fragment contentSearchLearnableContent on LearnableContent {
           ... on AIGuideActivity {
             persona
             activityType
+            isAssignable
             worksInMobileApp
             worksOnSmallLayouts
             __typename
@@ -17400,6 +17401,11 @@ fragment ProjectRevision on ProjectRevision {
       assignments {
         id
         dueDate
+        itemCompletionStates {
+          studentKaid
+          completedOn
+          __typename
+        }
         contents {
           ... on AIGuideActivity {
             id
@@ -18088,6 +18094,21 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     isKmapStudent
     isK4dTeacher
     isKmapTeacher
+    __typename
+  }
+}`,
+  assignmentData: `query assignmentData($assignmentID: String!) {
+  user {
+    id
+    assignment(id: $assignmentID) {
+      id
+      itemCompletionStates {
+        studentKaid
+        completedOn
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }`,

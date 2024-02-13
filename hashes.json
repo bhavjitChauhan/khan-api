@@ -587,7 +587,7 @@
   "product": 1198925240,
   "GetStandardRegionsForCountry": 4233445579,
   "TranslationEditor_GetContentForDescriptors": 3070688782,
-  "ActivitiesQuery": 3577758528,
+  "ActivitiesQuery": 2948210939,
   "getStudentExerciseContentReport_CourseChallenge": 4157263325,
   "hasCooldown": 1911736684,
   "ContentCarouselContent": 309964941,
@@ -613,7 +613,7 @@
   "activeEssaySession": 32022969,
   "getUserAdminOfSchools": 2858117771,
   "devadminGetKhanmigoModeratorsForDistrict": 2818001886,
-  "AssignmentsPageForContentItems": 3665892653,
+  "AssignmentsPageForContentItems": 3808844361,
   "getDistrictDisallowDiscussions": 762796058,
   "getIndexedContentSearchResults": 181419709,
   "exerciseEditorQuery": 3909216587,
@@ -636,5 +636,6 @@
   "getKhanmigoCheckoutVideo": 3428586690,
   "getNonProfileKhanmigoCheckoutEligibilityData": 2547430613,
   "contentEditorGetAIGuideActivityRevision": 1505188525,
-  "GuideExtensionUserDistrictStatus": 201483435
+  "GuideExtensionUserDistrictStatus": 201483435,
+  "assignmentData": 2483388095
 }

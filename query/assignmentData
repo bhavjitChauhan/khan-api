@@ -1,0 +1,15 @@
+query assignmentData($assignmentID: String!) {
+  user {
+    id
+    assignment(id: $assignmentID) {
+      id
+      itemCompletionStates {
+        studentKaid
+        completedOn
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
