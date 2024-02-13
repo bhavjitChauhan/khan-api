@@ -806,6 +806,8 @@ fragment InvitationsField on Invitation {
   difficultyLevel
   suggestedCompletionCriteria
   trackingDocumentUrl
+  problemTypeKind
+  numQuestionsPerProblemType
   problemTypes {
     name
     relatedVideos
