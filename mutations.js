@@ -892,6 +892,8 @@ fragment ExerciseRevision on ExerciseRevision {
   difficultyLevel
   suggestedCompletionCriteria
   trackingDocumentUrl
+  problemTypeKind
+  numQuestionsPerProblemType
   problemTypes {
     name
     relatedVideos
@@ -1079,6 +1081,8 @@ fragment ExerciseRevision on ExerciseRevision {
   difficultyLevel
   suggestedCompletionCriteria
   trackingDocumentUrl
+  problemTypeKind
+  numQuestionsPerProblemType
   problemTypes {
     name
     relatedVideos
@@ -1162,6 +1166,8 @@ fragment ExerciseRevision on ExerciseRevision {
   difficultyLevel
   suggestedCompletionCriteria
   trackingDocumentUrl
+  problemTypeKind
+  numQuestionsPerProblemType
   problemTypes {
     name
     relatedVideos
@@ -1358,6 +1364,8 @@ fragment ExerciseRevision on ExerciseRevision {
   difficultyLevel
   suggestedCompletionCriteria
   trackingDocumentUrl
+  problemTypeKind
+  numQuestionsPerProblemType
   problemTypes {
     name
     relatedVideos
@@ -11164,6 +11172,8 @@ fragment ExerciseRevision on ExerciseRevision {
   difficultyLevel
   suggestedCompletionCriteria
   trackingDocumentUrl
+  problemTypeKind
+  numQuestionsPerProblemType
   problemTypes {
     name
     relatedVideos
