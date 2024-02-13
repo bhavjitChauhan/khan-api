@@ -1,0 +1,11 @@
+query GuideExtensionUserDistrictStatus {
+  user {
+    id
+    kaid
+    isK4dStudent
+    isKmapStudent
+    isK4dTeacher
+    isKmapTeacher
+    __typename
+  }
+}

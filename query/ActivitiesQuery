@@ -18,6 +18,8 @@ query ActivitiesQuery {
           ... on AIGuideActivity {
             persona
             activityType
+            worksInMobileApp
+            worksOnSmallLayouts
             __typename
           }
           __typename

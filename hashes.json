@@ -587,7 +587,7 @@
   "product": 1198925240,
   "GetStandardRegionsForCountry": 4233445579,
   "TranslationEditor_GetContentForDescriptors": 3070688782,
-  "ActivitiesQuery": 485495665,
+  "ActivitiesQuery": 3577758528,
   "getStudentExerciseContentReport_CourseChallenge": 4157263325,
   "hasCooldown": 1911736684,
   "ContentCarouselContent": 309964941,
@@ -635,5 +635,6 @@
   "getAdminsForInProductAdminRostering": 4041210074,
   "getKhanmigoCheckoutVideo": 3428586690,
   "getNonProfileKhanmigoCheckoutEligibilityData": 2547430613,
-  "contentEditorGetAIGuideActivityRevision": 1505188525
+  "contentEditorGetAIGuideActivityRevision": 1505188525,
+  "GuideExtensionUserDistrictStatus": 201483435
 }
