@@ -11266,4 +11266,18 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   listed
   __typename
 }`,
+  SubmitActivityAssignmentMutation: `mutation SubmitActivityAssignmentMutation($assignmentID: ID!, $threadID: ID!) {
+  submitActivityAssignment(assignmentID: $assignmentID, threadID: $threadID) {
+    notification {
+      classroomName
+      firstCompletion
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
