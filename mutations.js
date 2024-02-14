@@ -11280,4 +11280,20 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  CreateKhanLibraryFolder: `mutation CreateKhanLibraryFolder($name: String!, $kaLocale: String!) {
+  createFolder(name: $name, kaLocale: $kaLocale) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    folder {
+      id
+      kaLocale
+      name
+      __typename
+    }
+    __typename
+  }
+}`,
 }
