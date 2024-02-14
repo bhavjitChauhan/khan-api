@@ -43,7 +43,6 @@ query getUserDevAdminGeneral($kaid: String!) {
       username
       __typename
     }
-    collegeBoardUsername
     pendingCoaches {
       id
       kaid

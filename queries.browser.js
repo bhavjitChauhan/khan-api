@@ -8916,7 +8916,6 @@ fragment Badge on Badge {
       username
       __typename
     }
-    collegeBoardUsername
     pendingCoaches {
       id
       kaid
