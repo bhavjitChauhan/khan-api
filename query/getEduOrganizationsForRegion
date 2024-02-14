@@ -1,6 +1,6 @@
-query getEduOrganizationsForRegion($country: String!, $postalCode: String, $administrativeAreaLevel1: String, $administrativeAreaLevel2: String, $locality: String) {
+query getEduOrganizationsForRegion($country: String!, $postalCode: String, $administrativeAreaLevel1: String, $administrativeAreaLevel2: String, $locality: String, $partnershipOnly: Boolean) {
   eduOrganizationsForRegion(
-    filters: {country: $country, postalCode: $postalCode, administrativeAreaLevel1: $administrativeAreaLevel1, administrativeAreaLevel2: $administrativeAreaLevel2, locality: $locality}
+    filters: {country: $country, postalCode: $postalCode, administrativeAreaLevel1: $administrativeAreaLevel1, administrativeAreaLevel2: $administrativeAreaLevel2, locality: $locality, partnershipOnly: $partnershipOnly}
   ) {
     id
     name

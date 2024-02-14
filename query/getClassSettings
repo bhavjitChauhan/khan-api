@@ -2,7 +2,22 @@ query getClassSettings($classDescriptor: String!) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
     cacheId
-    founderKaid: coachKaid
+    founder: coach {
+      id
+      kaid
+      hasPartnershipSchoolAffiliation
+      schoolAffiliation {
+        id
+        name
+        country
+        postalCode
+        administrativeAreaLevel1
+        administrativeAreaLevel2
+        locality
+        __typename
+      }
+      __typename
+    }
     descriptor
     name
     key
@@ -16,6 +31,21 @@ query getClassSettings($classDescriptor: String!) {
         kaid
         __typename
       }
+      school {
+        id
+        eduOrg {
+          id
+          name
+          country
+          postalCode
+          administrativeAreaLevel1
+          administrativeAreaLevel2
+          locality
+          __typename
+        }
+        __typename
+      }
+      isManuallyUnmarked
       __typename
     }
     allTeachers {
