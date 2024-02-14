@@ -5039,6 +5039,21 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
           id
           __typename
         }
+        school {
+          id
+          eduOrg {
+            id
+            name
+            country
+            postalCode
+            administrativeAreaLevel1
+            administrativeAreaLevel2
+            locality
+            __typename
+          }
+          __typename
+        }
+        isManuallyUnmarked
         __typename
       }
       testPrepExams {
@@ -5098,8 +5113,15 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
     }
     schoolAffiliation {
       id
+      name
+      country
+      postalCode
+      administrativeAreaLevel1
+      administrativeAreaLevel2
+      locality
       __typename
     }
+    hasPartnershipSchoolAffiliation
     affiliationCountryCode
     isAIGuideEnabled
     isKmapTeacher
@@ -5258,7 +5280,22 @@ fragment StudentField2 on StudentsPage {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
     cacheId
-    founderKaid: coachKaid
+    founder: coach {
+      id
+      kaid
+      hasPartnershipSchoolAffiliation
+      schoolAffiliation {
+        id
+        name
+        country
+        postalCode
+        administrativeAreaLevel1
+        administrativeAreaLevel2
+        locality
+        __typename
+      }
+      __typename
+    }
     descriptor
     name
     key
@@ -5272,6 +5309,21 @@ fragment StudentField2 on StudentsPage {
         kaid
         __typename
       }
+      school {
+        id
+        eduOrg {
+          id
+          name
+          country
+          postalCode
+          administrativeAreaLevel1
+          administrativeAreaLevel2
+          locality
+          __typename
+        }
+        __typename
+      }
+      isManuallyUnmarked
       __typename
     }
     allTeachers {
@@ -6132,9 +6184,9 @@ fragment StudentField1 on StudentsPage {
     __typename
   }
 }`,
-  getEduOrganizationsForRegion: `query getEduOrganizationsForRegion($country: String!, $postalCode: String, $administrativeAreaLevel1: String, $administrativeAreaLevel2: String, $locality: String) {
+  getEduOrganizationsForRegion: `query getEduOrganizationsForRegion($country: String!, $postalCode: String, $administrativeAreaLevel1: String, $administrativeAreaLevel2: String, $locality: String, $partnershipOnly: Boolean) {
   eduOrganizationsForRegion(
-    filters: {country: $country, postalCode: $postalCode, administrativeAreaLevel1: $administrativeAreaLevel1, administrativeAreaLevel2: $administrativeAreaLevel2, locality: $locality}
+    filters: {country: $country, postalCode: $postalCode, administrativeAreaLevel1: $administrativeAreaLevel1, administrativeAreaLevel2: $administrativeAreaLevel2, locality: $locality, partnershipOnly: $partnershipOnly}
   ) {
     id
     name

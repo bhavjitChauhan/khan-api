@@ -1,0 +1,6 @@
+mutation MarkDistrictClass($classDescriptor: String!, $eduOrgID: String!) {
+  markDistrictClass(classDescriptor: $classDescriptor, eduOrgID: $eduOrgID) {
+    succeeded
+    __typename
+  }
+}

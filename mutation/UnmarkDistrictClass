@@ -1,0 +1,6 @@
+mutation UnmarkDistrictClass($classDescriptor: String!) {
+  unmarkDistrictClass(classDescriptor: $classDescriptor) {
+    succeeded
+    __typename
+  }
+}

@@ -32,6 +32,21 @@ query getClassList {
           id
           __typename
         }
+        school {
+          id
+          eduOrg {
+            id
+            name
+            country
+            postalCode
+            administrativeAreaLevel1
+            administrativeAreaLevel2
+            locality
+            __typename
+          }
+          __typename
+        }
+        isManuallyUnmarked
         __typename
       }
       testPrepExams {
@@ -91,8 +106,15 @@ query getClassList {
     }
     schoolAffiliation {
       id
+      name
+      country
+      postalCode
+      administrativeAreaLevel1
+      administrativeAreaLevel2
+      locality
       __typename
     }
+    hasPartnershipSchoolAffiliation
     affiliationCountryCode
     isAIGuideEnabled
     isKmapTeacher

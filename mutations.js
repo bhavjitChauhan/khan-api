@@ -11296,4 +11296,16 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  MarkDistrictClass: `mutation MarkDistrictClass($classDescriptor: String!, $eduOrgID: String!) {
+  markDistrictClass(classDescriptor: $classDescriptor, eduOrgID: $eduOrgID) {
+    succeeded
+    __typename
+  }
+}`,
+  UnmarkDistrictClass: `mutation UnmarkDistrictClass($classDescriptor: String!) {
+  unmarkDistrictClass(classDescriptor: $classDescriptor) {
+    succeeded
+    __typename
+  }
+}`,
 }
