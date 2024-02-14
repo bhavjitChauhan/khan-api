@@ -11308,4 +11308,14 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  generateTwoFactorRecoveryCodes: `mutation generateTwoFactorRecoveryCodes {
+  generateTwoFactorRecoveryCodes {
+    recoveryCodes
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
