@@ -1,0 +1,14 @@
+mutation editAdminUDIMutation($udiID: ID!, $params: WriteAdminUDIParams!) {
+  editAdminUDI(udiID: $udiID, params: $params) {
+    adminUDI {
+      id
+      canManageAdmins
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

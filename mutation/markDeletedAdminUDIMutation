@@ -1,0 +1,9 @@
+mutation markDeletedAdminUDIMutation($udiID: ID!) {
+  markDeletedAdminUDI(udiID: $udiID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
