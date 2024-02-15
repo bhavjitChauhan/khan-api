@@ -407,5 +407,8 @@
   "CreateKhanLibraryFolder": "mutation CreateKhanLibraryFolder($name: String!, $kaLocale: String!) {\n  createFolder(name: $name, kaLocale: $kaLocale) {\n    error {\n      code\n      debugMessage\n      __typename\n    }\n    folder {\n      id\n      kaLocale\n      name\n      __typename\n    }\n    __typename\n  }\n}",
   "MarkDistrictClass": "mutation MarkDistrictClass($classDescriptor: String!, $eduOrgID: String!) {\n  markDistrictClass(classDescriptor: $classDescriptor, eduOrgID: $eduOrgID) {\n    succeeded\n    __typename\n  }\n}",
   "UnmarkDistrictClass": "mutation UnmarkDistrictClass($classDescriptor: String!) {\n  unmarkDistrictClass(classDescriptor: $classDescriptor) {\n    succeeded\n    __typename\n  }\n}",
-  "generateTwoFactorRecoveryCodes": "mutation generateTwoFactorRecoveryCodes {\n  generateTwoFactorRecoveryCodes {\n    recoveryCodes\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}"
+  "generateTwoFactorRecoveryCodes": "mutation generateTwoFactorRecoveryCodes {\n  generateTwoFactorRecoveryCodes {\n    recoveryCodes\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
+  "editAdminUDIMutation": "mutation editAdminUDIMutation($udiID: ID!, $params: WriteAdminUDIParams!) {\n  editAdminUDI(udiID: $udiID, params: $params) {\n    adminUDI {\n      id\n      canManageAdmins\n      __typename\n    }\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
+  "markDeletedAdminUDIMutation": "mutation markDeletedAdminUDIMutation($udiID: ID!) {\n  markDeletedAdminUDI(udiID: $udiID) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
+  "resendActivationEmailMutation": "mutation resendActivationEmailMutation($udiID: ID!) {\n  resendActivationEmail(udiID: $udiID) {\n    emailSent\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}"
 }

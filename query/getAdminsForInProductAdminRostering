@@ -3,6 +3,8 @@ query getAdminsForInProductAdminRostering($districtID: String!) {
     id
     displayNameForTeacher
     districtProvidedEmail
+    districtProvidedFirstName
+    districtProvidedLastName
     primaryRole
     canManageAdmins
     activationEmailSentAt

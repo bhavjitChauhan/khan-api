@@ -1,0 +1,10 @@
+mutation resendActivationEmailMutation($udiID: ID!) {
+  resendActivationEmail(udiID: $udiID) {
+    emailSent
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

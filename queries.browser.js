@@ -18041,6 +18041,8 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     id
     displayNameForTeacher
     districtProvidedEmail
+    districtProvidedFirstName
+    districtProvidedLastName
     primaryRole
     canManageAdmins
     activationEmailSentAt

@@ -11318,4 +11318,37 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  editAdminUDIMutation: `mutation editAdminUDIMutation($udiID: ID!, $params: WriteAdminUDIParams!) {
+  editAdminUDI(udiID: $udiID, params: $params) {
+    adminUDI {
+      id
+      canManageAdmins
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  markDeletedAdminUDIMutation: `mutation markDeletedAdminUDIMutation($udiID: ID!) {
+  markDeletedAdminUDI(udiID: $udiID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  resendActivationEmailMutation: `mutation resendActivationEmailMutation($udiID: ID!) {
+  resendActivationEmail(udiID: $udiID) {
+    emailSent
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
