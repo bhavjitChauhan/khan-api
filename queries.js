@@ -3551,6 +3551,7 @@ fragment CourseProgress on SubjectProgress {
       isKmapSchool
       __typename
     }
+    schoolYearStart
     __typename
   }
 }`,
@@ -18158,6 +18159,40 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       itemCompletionStates {
         studentKaid
         completedOn
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  districtKhanmigoActivity: `query districtKhanmigoActivity($filter: KhanmigoDistrictFilters!) {
+  districtKhanmigoActivity(filter: $filter) {
+    totalChats
+    rows {
+      activityType
+      aIGuideActivity {
+        id
+        __typename
+      }
+      totalChats
+      chatPercent
+      courseRows {
+        course {
+          id
+          __typename
+        }
+        totalChats
+        chatPercent
+        unitRows {
+          unit {
+            id
+            __typename
+          }
+          totalChats
+          chatPercent
+          __typename
+        }
         __typename
       }
       __typename
