@@ -8,7 +8,6 @@ mutation setUserCourses($courseIds: [String]!, $gradeLevelId: String) {
       id
       homepageModules {
         navigation {
-          interestedInSat
           interestedInLsat
           __typename
         }

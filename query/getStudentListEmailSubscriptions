@@ -9,13 +9,6 @@ query getStudentListEmailSubscriptions($studentListId: String!) {
         token
         __typename
       }
-      satCoachReportSubscription: satClassroomEmailSubscriptionForClassroomID(
-        classroomID: $studentListId
-      ) {
-        checked
-        token
-        __typename
-      }
       __typename
     }
     __typename

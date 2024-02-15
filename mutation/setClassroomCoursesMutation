@@ -7,8 +7,6 @@ mutation setClassroomCoursesMutation($classDescriptor: String!, $courseKeys: [St
       id
       cacheId
       descriptor
-      showSatUpsell
-      includesSat
       topics {
         id
         key

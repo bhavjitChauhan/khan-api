@@ -31,11 +31,5 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     description
     __typename
   }
-  satStudentListEmailSubscriptions {
-    key
-    checked
-    description
-    __typename
-  }
   __typename
 }

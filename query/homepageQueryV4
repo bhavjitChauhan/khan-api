@@ -34,7 +34,6 @@ query homepageQueryV4($kaid: String, $username: String) {
     homepageModules {
       navigation {
         myCoursesEnabled
-        interestedInSat
         interestedInLsat
         classes {
           classroom {
