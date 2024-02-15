@@ -206,7 +206,6 @@ query getUserDevAdminGeneral($kaid: String!) {
       descriptor
       cacheId
       name
-      includesSat
       isCleverLibrarySynced
       isK4dClassroom
       isKmapClassroom

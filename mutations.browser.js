@@ -8432,8 +8432,6 @@ fragment entry on TeamPageEntryForEditing {
       id
       cacheId
       descriptor
-      showSatUpsell
-      includesSat
       topics {
         id
         key
@@ -8783,7 +8781,6 @@ fragment entry on TeamPageEntryForEditing {
       id
       homepageModules {
         navigation {
-          interestedInSat
           interestedInLsat
           __typename
         }

@@ -55,7 +55,6 @@ query getClassSettings($classDescriptor: String!) {
     }
     googleClassId
     googleClassName
-    includesSat
     invitations {
       id
       accepted

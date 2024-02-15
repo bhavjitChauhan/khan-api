@@ -740,12 +740,6 @@ fragment InvitationsField on Invitation {
     description
     __typename
   }
-  satStudentListEmailSubscriptions {
-    key
-    checked
-    description
-    __typename
-  }
   __typename
 }`,
   entry: `fragment entry on TeamPageEntryForEditing {

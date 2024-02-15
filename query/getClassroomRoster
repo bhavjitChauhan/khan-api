@@ -62,7 +62,6 @@ query getClassroomRoster($classDescriptor: String!, $teacherKaid: String!, $afte
       __typename
     }
     includesCentrallyOwnedDistrictData
-    includesSat
     isK4dClassroom
     classroomDistrictInfo {
       id
