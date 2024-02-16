@@ -4,6 +4,7 @@ query guideTranscript($transcriptId: String!) {
     summary
     lastUpdatedAt
     flagged
+    kaid
     insights {
       interests
       topics
