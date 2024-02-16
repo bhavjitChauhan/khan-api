@@ -1,5 +1,5 @@
-query getKhanmigoEnabled($kaid: String!) {
-  user(kaid: $kaid) {
+query getKhanmigoEnabled {
+  user {
     id
     isAIGuideEnabled
     __typename
