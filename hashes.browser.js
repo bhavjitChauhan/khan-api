@@ -332,7 +332,7 @@ hashes = {
   gtp_getTPUD: 2648698266,
   gtp_onboardingStatus: 3646852342,
   gtp_relatedContent: 3291890228,
-  guideTranscript: 3284680446,
+  guideTranscript: 3047342227,
   guideTranscripts: 2901310517,
   hasChangedAvatar: 1861878399,
   hasUsedTestPrepProductQuery: 659116580,

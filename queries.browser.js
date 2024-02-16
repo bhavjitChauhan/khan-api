@@ -10473,6 +10473,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
     summary
     lastUpdatedAt
     flagged
+    kaid
     insights {
       interests
       topics
