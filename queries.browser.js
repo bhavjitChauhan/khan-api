@@ -17130,8 +17130,8 @@ fragment contentSearchLearnableContent on LearnableContent {
     __typename
   }
 }`,
-  getKhanmigoEnabled: `query getKhanmigoEnabled($kaid: String!) {
-  user(kaid: $kaid) {
+  getKhanmigoEnabled: `query getKhanmigoEnabled {
+  user {
     id
     isAIGuideEnabled
     __typename
@@ -18081,20 +18081,11 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
   getNonProfileKhanmigoCheckoutEligibilityData: `query getNonProfileKhanmigoCheckoutEligibilityData {
   user {
     id
-    isAIGuideEnabled
-    aiGuideDisabledReason
-    isEnrolledInAIGuide
     children {
       id
-      classrooms {
-        id
-        cacheId
-        __typename
-      }
       __typename
     }
     age
-    hasKhanmigoViaClassy
     hasKhanmigoViaStripe
     __typename
   }
