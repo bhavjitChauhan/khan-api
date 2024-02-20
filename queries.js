@@ -4772,7 +4772,6 @@ fragment UserFields on User {
     kaLocale
     name
     courseIds
-    teamKaids
     __typename
   }
 }`,
@@ -5032,6 +5031,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
           id
           cacheId
           isKmapClassroom
+          isCleverLibrarySynced
           __typename
         }
         studentUserDistrictInfos {

@@ -4,7 +4,6 @@ query GetAllFolders {
     kaLocale
     name
     courseIds
-    teamKaids
     __typename
   }
 }
