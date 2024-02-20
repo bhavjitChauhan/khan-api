@@ -25,6 +25,7 @@ query getClassList {
           id
           cacheId
           isKmapClassroom
+          isCleverLibrarySynced
           __typename
         }
         studentUserDistrictInfos {
