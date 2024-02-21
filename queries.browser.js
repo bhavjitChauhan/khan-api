@@ -3554,8 +3554,8 @@ fragment CourseProgress on SubjectProgress {
     __typename
   }
 }`,
-  districts: `query districts($filter: String!) {
-  districts(filter: $filter) {
+  districts: `query districts($filter: String!, $excludeTeacherDirected: Boolean!) {
+  districts(filter: $filter, excludeTeacherDirected: $excludeTeacherDirected) {
     id
     name
     rosterID
@@ -18162,6 +18162,116 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
         }
         __typename
       }
+      __typename
+    }
+    __typename
+  }
+}`,
+  GetPartnership: `query GetPartnership($partnershipID: ID!) {
+  getPartnershipById(partnershipId: $partnershipID) {
+    ... on MetaDistrict {
+      id
+      name
+      levelLabel
+      levelHeight
+      countryCode
+      descendants {
+        ... on MetaDistrict {
+          id
+          parent {
+            id
+            __typename
+          }
+          name
+          levelLabel
+          levelHeight
+          __typename
+        }
+        ... on District {
+          id
+          parent {
+            id
+            __typename
+          }
+          name
+          levelLabel
+          levelHeight
+          countryCode
+          rosterSyncingEnabled
+          khanmigoPreference
+          isTest
+          goLiveDate
+          schoolYearStart
+          schoolYearEnd
+          schools {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    ... on District {
+      id
+      name
+      levelLabel
+      levelHeight
+      countryCode
+      rosterSyncingEnabled
+      khanmigoPreference
+      isTest
+      goLiveDate
+      schoolYearStart
+      schoolYearEnd
+      schools {
+        id
+        name
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  GetPartnerships: `query GetPartnerships($countryCodes: [String!], $includeDeleted: Boolean!, $onlyTeacherDirected: Boolean!) {
+  getPartnerships(
+    countryCodes: $countryCodes
+    includeDeleted: $includeDeleted
+    onlyTeacherDirected: $onlyTeacherDirected
+  ) {
+    ... on MetaDistrict {
+      id
+      name
+      countryCode
+      districts: descendants {
+        ... on District {
+          id
+          countryCode
+          rosterSyncingEnabled
+          khanmigoPreference
+          isTest
+          goLiveDate
+          schoolYearStart
+          schoolYearEnd
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    ... on District {
+      id
+      name
+      countryCode
+      rosterSyncingEnabled
+      khanmigoPreference
+      isTest
+      goLiveDate
+      schoolYearStart
+      schoolYearEnd
       __typename
     }
     __typename

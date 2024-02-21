@@ -1,0 +1,41 @@
+query GetPartnerships($countryCodes: [String!], $includeDeleted: Boolean!, $onlyTeacherDirected: Boolean!) {
+  getPartnerships(
+    countryCodes: $countryCodes
+    includeDeleted: $includeDeleted
+    onlyTeacherDirected: $onlyTeacherDirected
+  ) {
+    ... on MetaDistrict {
+      id
+      name
+      countryCode
+      districts: descendants {
+        ... on District {
+          id
+          countryCode
+          rosterSyncingEnabled
+          khanmigoPreference
+          isTest
+          goLiveDate
+          schoolYearStart
+          schoolYearEnd
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    ... on District {
+      id
+      name
+      countryCode
+      rosterSyncingEnabled
+      khanmigoPreference
+      isTest
+      goLiveDate
+      schoolYearStart
+      schoolYearEnd
+      __typename
+    }
+    __typename
+  }
+}

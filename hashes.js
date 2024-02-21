@@ -112,7 +112,7 @@ export default {
   districtHomepageProgress: 1681650575,
   DistrictPrimaryOfferingAsTeacher: 15799337,
   DistrictQuery: 1969306748,
-  districts: 101104407,
+  districts: 2427993588,
   DistrictSkillsMAPProgressQuery: 706683816,
   DistrictSkillsProgressQuery: 2501404314,
   districtsMetrics: 2006961705,
@@ -639,4 +639,6 @@ export default {
   GuideExtensionUserDistrictStatus: 201483435,
   assignmentData: 2483388095,
   districtKhanmigoActivity: 3440092757,
+  GetPartnership: 2104711457,
+  GetPartnerships: 3021530916,
 }
