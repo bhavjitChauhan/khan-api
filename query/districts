@@ -1,5 +1,5 @@
-query districts($filter: String!) {
-  districts(filter: $filter) {
+query districts($filter: String!, $excludeTeacherDirected: Boolean!) {
+  districts(filter: $filter, excludeTeacherDirected: $excludeTeacherDirected) {
     id
     name
     rosterID
