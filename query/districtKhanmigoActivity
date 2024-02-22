@@ -1,28 +1,31 @@
 query districtKhanmigoActivity($filter: KhanmigoDistrictFilters!) {
   districtKhanmigoActivity(filter: $filter) {
-    totalChats
+    totalUsers
     rows {
       activityType
       aIGuideActivity {
         id
+        translatedTitle
         __typename
       }
-      totalChats
-      chatPercent
+      totalUsers
+      userPercentage
       courseRows {
         course {
           id
+          translatedTitle
           __typename
         }
-        totalChats
-        chatPercent
+        totalUsers
+        userPercentage
         unitRows {
           unit {
             id
+            translatedTitle
             __typename
           }
-          totalChats
-          chatPercent
+          totalUsers
+          userPercentage
           __typename
         }
         __typename
