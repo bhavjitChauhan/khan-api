@@ -638,7 +638,7 @@ export default {
   contentEditorGetAIGuideActivityRevision: 1505188525,
   GuideExtensionUserDistrictStatus: 201483435,
   assignmentData: 2483388095,
-  districtKhanmigoActivity: 3440092757,
+  districtKhanmigoActivity: 984891921,
   GetPartnership: 2104711457,
   GetPartnerships: 3021530916,
 }
