@@ -1,5 +1,5 @@
-mutation editAdminUDIMutation($udiID: ID!, $params: WriteAdminUDIParams!) {
-  editAdminUDI(udiID: $udiID, params: $params) {
+mutation editAdminUDIMutation($urlsafeKey: ID!, $params: WriteAdminUDIParams!) {
+  editAdminUDI(urlsafeKey: $urlsafeKey, params: $params) {
     adminUDI {
       id
       canManageAdmins

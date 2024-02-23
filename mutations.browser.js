@@ -11315,8 +11315,8 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
-  editAdminUDIMutation: `mutation editAdminUDIMutation($udiID: ID!, $params: WriteAdminUDIParams!) {
-  editAdminUDI(udiID: $udiID, params: $params) {
+  editAdminUDIMutation: `mutation editAdminUDIMutation($urlsafeKey: ID!, $params: WriteAdminUDIParams!) {
+  editAdminUDI(urlsafeKey: $urlsafeKey, params: $params) {
     adminUDI {
       id
       canManageAdmins
@@ -11329,8 +11329,8 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
-  markDeletedAdminUDIMutation: `mutation markDeletedAdminUDIMutation($udiID: ID!) {
-  markDeletedAdminUDI(udiID: $udiID) {
+  markDeletedAdminUDIMutation: `mutation markDeletedAdminUDIMutation($urlsafeKey: ID!) {
+  markDeletedAdminUDI(urlsafeKey: $urlsafeKey) {
     error {
       code
       __typename
@@ -11341,6 +11341,19 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   resendActivationEmailMutation: `mutation resendActivationEmailMutation($udiID: ID!) {
   resendActivationEmail(udiID: $udiID) {
     emailSent
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  setUpAdminMutation: `mutation setUpAdminMutation($params: WriteAdminUDIParams!) {
+  setUpAndInviteAdmin(params: $params) {
+    adminUDI {
+      id
+      __typename
+    }
     error {
       code
       __typename

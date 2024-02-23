@@ -1,5 +1,5 @@
-mutation markDeletedAdminUDIMutation($udiID: ID!) {
-  markDeletedAdminUDI(udiID: $udiID) {
+mutation markDeletedAdminUDIMutation($urlsafeKey: ID!) {
+  markDeletedAdminUDI(urlsafeKey: $urlsafeKey) {
     error {
       code
       __typename
