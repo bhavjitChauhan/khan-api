@@ -1,0 +1,13 @@
+mutation setUpAdminMutation($params: WriteAdminUDIParams!) {
+  setUpAndInviteAdmin(params: $params) {
+    adminUDI {
+      id
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
