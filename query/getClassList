@@ -21,13 +21,6 @@ query getClassList {
         id
         isNweaMapSynced
         courseSISName
-        classroom {
-          id
-          cacheId
-          isKmapClassroom
-          isCleverLibrarySynced
-          __typename
-        }
         studentUserDistrictInfos {
           id
           __typename
@@ -93,6 +86,9 @@ query getClassList {
         __typename
       }
       isK4dClassroom
+      isKmapClassroom
+      isCleverLibrarySynced
+      includesCentrallyOwnedDistrictData
       invitations {
         id
         accepted
