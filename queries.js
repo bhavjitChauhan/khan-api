@@ -5027,13 +5027,6 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
         id
         isNweaMapSynced
         courseSISName
-        classroom {
-          id
-          cacheId
-          isKmapClassroom
-          isCleverLibrarySynced
-          __typename
-        }
         studentUserDistrictInfos {
           id
           __typename
@@ -5099,6 +5092,9 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
         __typename
       }
       isK4dClassroom
+      isKmapClassroom
+      isCleverLibrarySynced
+      includesCentrallyOwnedDistrictData
       invitations {
         id
         accepted
