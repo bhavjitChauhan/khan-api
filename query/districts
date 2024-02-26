@@ -18,6 +18,7 @@ query districts($filter: String!, $excludeTeacherDirected: Boolean!) {
     lastTestPull
     goLiveDate
     region
+    countryCode
     schools {
       id
       name

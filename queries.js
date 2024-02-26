@@ -3574,6 +3574,7 @@ fragment CourseProgress on SubjectProgress {
     lastTestPull
     goLiveDate
     region
+    countryCode
     schools {
       id
       name
@@ -5046,6 +5047,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
           __typename
         }
         isManuallyUnmarked
+        classWillBeRemovedInDays
         __typename
       }
       testPrepExams {

@@ -40,6 +40,7 @@ query getClassList {
           __typename
         }
         isManuallyUnmarked
+        classWillBeRemovedInDays
         __typename
       }
       testPrepExams {
