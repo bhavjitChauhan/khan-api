@@ -641,4 +641,5 @@ export default {
   districtKhanmigoActivity: 984891921,
   GetPartnership: 2104711457,
   GetPartnerships: 3021530916,
+  getExerciseProblemTypeKind: 3439472591,
 }

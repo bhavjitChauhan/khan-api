@@ -18278,4 +18278,11 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  getExerciseProblemTypeKind: `query getExerciseProblemTypeKind($exerciseIds: [String!]!) {
+  exercises: exercisesByIds(ids: $exerciseIds) {
+    id
+    problemTypeKind
+    __typename
+  }
+}`,
 }
