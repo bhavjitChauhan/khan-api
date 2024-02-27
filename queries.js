@@ -713,6 +713,21 @@ fragment AssignmentCsvData on Assignment {
         khanmigoShould
         __typename
       }
+      school {
+        id
+        eduOrg {
+          id
+          name
+          country
+          postalCode
+          administrativeAreaLevel1
+          administrativeAreaLevel2
+          locality
+          __typename
+        }
+        __typename
+      }
+      isManuallyUnmarked
       __typename
     }
     testPrepExams {
@@ -760,6 +775,21 @@ fragment AssignmentCsvData on Assignment {
     }
     isK4dClassroom
     includesCentrallyOwnedDistrictData
+    __typename
+  }
+  teacher: user {
+    id
+    hasPartnershipSchoolAffiliation
+    schoolAffiliation {
+      id
+      name
+      country
+      postalCode
+      administrativeAreaLevel1
+      administrativeAreaLevel2
+      locality
+      __typename
+    }
     __typename
   }
 }`,
