@@ -2,7 +2,7 @@ query activeEssaySession {
   activeEssaySession {
     draft {
       feedbackList {
-        id
+        feedbackID
         dimension
         feedbackText
         isPositive
@@ -13,7 +13,7 @@ query activeEssaySession {
           id
           interactions {
             answer
-            customMessages
+            annotations
             flagged
             id
             question

@@ -17378,7 +17378,7 @@ fragment ProjectRevision on ProjectRevision {
   activeEssaySession {
     draft {
       feedbackList {
-        id
+        feedbackID
         dimension
         feedbackText
         isPositive
@@ -17389,7 +17389,7 @@ fragment ProjectRevision on ProjectRevision {
           id
           interactions {
             answer
-            customMessages
+            annotations
             flagged
             id
             question

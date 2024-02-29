@@ -610,7 +610,7 @@ export default {
   LearnPrototype_UserClassrooms: 4185575609,
   aiGuideOwnedSwagQuery: 1558150526,
   aiGuideSwagQuery: 1942812571,
-  activeEssaySession: 32022969,
+  activeEssaySession: 2590143311,
   getUserAdminOfSchools: 2858117771,
   devadminGetKhanmigoModeratorsForDistrict: 2818001886,
   AssignmentsPageForContentItems: 3808844361,
