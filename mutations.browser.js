@@ -11361,4 +11361,26 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  createPythonProgram: `mutation createPythonProgram($title: String!, $revision: ProgramRevisionInput!, $curationNodeSlug: String!) {
+  createProgram(
+    title: $title
+    revision: $revision
+    curationNodeSlug: $curationNodeSlug
+    userAuthoredContentType: PYTHON
+    codeFormat: MULTI_FILE_JSON
+    hideFromHotlist: true
+  ) {
+    program {
+      id
+      url
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
