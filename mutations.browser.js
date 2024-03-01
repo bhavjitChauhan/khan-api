@@ -11383,4 +11383,16 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  SetPartnershipSchoolYear: `mutation SetPartnershipSchoolYear($partnershipID: String!, $schoolYearDates: DistrictSchoolYearInput!) {
+  setPartnershipSchoolYear(
+    partnershipID: $partnershipID
+    schoolYearDates: $schoolYearDates
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
