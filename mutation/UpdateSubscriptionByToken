@@ -1,9 +1,6 @@
-mutation UpdateSubscriptionByToken($token: String!, $subscribe: Boolean!) {
+mutation updateSubscriptionByToken($token: String!, $subscribe: Boolean!) {
   updateSubscriptionByToken(token: $token, subscribe: $subscribe) {
-    error {
-      code
-      __typename
-    }
+    success
     __typename
   }
 }

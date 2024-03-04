@@ -6734,11 +6734,27 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
       __typename
     }
     hasAccessToAIGuideTeacher
+    hasAccessToAIGuideDistrictAdmin
     tosAccepted
     shouldShowAgeCheck
     birthMonthYear
     lastLoginCountry
     region
+    userDistrictInfos {
+      id
+      isKAD
+      district {
+        id
+        region
+        __typename
+      }
+      __typename
+    }
+    schoolAffiliation {
+      id
+      location
+      __typename
+    }
     __typename
   }
   actorIsImpersonatingUser
@@ -12305,8 +12321,7 @@ fragment CourseProgress on SubjectProgress {
     localName
     __typename
   }
-}
-`,
+}`,
   OverallProgressReportQuery: `query OverallProgressReportQuery($classDescriptor: String!, $progressFrom: DateTime, $progressUpTo: DateTime) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
@@ -13634,8 +13649,7 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
-}
-`,
+}`,
   SubjectMasteryAssignmentsByDescriptorQuery: `query SubjectMasteryAssignmentsByDescriptorQuery($classDescriptor: String!) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
@@ -18312,6 +18326,28 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   exercises: exercisesByIds(ids: $exerciseIds) {
     id
     problemTypeKind
+    __typename
+  }
+}`,
+  aiGuideSwagAppliedQuery: `query aiGuideSwagAppliedQuery {
+  user {
+    id
+    aiGuideSwagApplied {
+      id
+      __typename
+    }
+    __typename
+  }
+}`,
+  GuidePreferences: `query GuidePreferences {
+  user {
+    id
+    aiGuidePreferences {
+      readingLevel
+      guideLanguageCode
+      guideVoiceDescriptor
+      __typename
+    }
     __typename
   }
 }`,
