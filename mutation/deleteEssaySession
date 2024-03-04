@@ -1,0 +1,9 @@
+mutation deleteEssaySession($id: String!) {
+  deleteEssaySession(essaySessionID: $id) {
+    error {
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

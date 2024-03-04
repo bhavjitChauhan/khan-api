@@ -1,11 +1,11 @@
-query activeEssaySession {
-  activeEssaySession {
+query essaySession($id: String!) {
+  essaySession(essaySessionID: $id) {
     draft {
       feedbackList {
-        _: id
-        feedbackID
         dimension
+        feedbackID
         feedbackText
+        _: id
         isPositive
         isResolved
         relevantParagraphId
@@ -13,8 +13,8 @@ query activeEssaySession {
         thread {
           id
           interactions {
-            answer
             annotations
+            answer
             flagged
             id
             question
@@ -29,9 +29,10 @@ query activeEssaySession {
       __typename
     }
     essayInstructions
+    essayTitle
+    essayVersion
     id
     mostRecentEditedText
-    essayVersion
     paragraphIDToParagraphNumbers {
       paragraphID
       paragraphNumbers

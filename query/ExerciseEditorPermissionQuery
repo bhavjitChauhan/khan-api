@@ -1,0 +1,15 @@
+query ExerciseEditorPermissionQuery($contentId: String!) {
+  isEditable: isEditableByCurrentUser(
+    contentId: $contentId
+    contentKind: "Exercise"
+  )
+  isPublishable: isPublishableByCurrentUser(
+    contentId: $contentId
+    contentKind: "Exercise"
+  )
+  user {
+    id
+    nickname
+    __typename
+  }
+}
