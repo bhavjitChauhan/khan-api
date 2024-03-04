@@ -3,6 +3,7 @@
   "entryPoints": [
     "src"
   ],
+  "out": "./docs/api",
   "githubPages": false,
   "hideBreadcrumbs": true,
   "hideInPageTOC": true,

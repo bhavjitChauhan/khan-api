@@ -54,7 +54,6 @@ export async function getLatestFragment(fragment: string) {
  * request queries.
  *
  * @example
- * ```js
  * const hash = hashQuery(GET_FULL_USER_PROFILE_QUERY)
  * const variables = { username: 'sal' }
  * const url = `https://www.khanacademy.org/api/internal/graphql/getFullUserProfile?hash=${hash}&variables=${encodeURIComponent(JSON.stringify(variables))}`
@@ -81,7 +80,7 @@ export function hashQuery(document: string) {
  * const response = await fetch(url)
  * const data = await response.json()
  *
- * @see {@link hashDocument}
+ * @see {@link hashQuery}
  */
 export async function getLatestQueryHash(query: string) {
   const text = await getLatestQuery(query)
