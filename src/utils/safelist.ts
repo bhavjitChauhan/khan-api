@@ -2,7 +2,7 @@ import { SAFELIST_URL } from '../lib/constants'
 import { http } from './fetch'
 
 /**
- * Gets the latest version of a query from the Khan Academy safelist.
+ * Gets the latest version of a query from the Safelist.
  *
  * @param query The operation name of the query
  *
@@ -19,7 +19,7 @@ export async function getLatestQuery(query: string) {
 }
 
 /**
- * Gets the latest version of a mutation from the Khan Academy safelist.
+ * Gets the latest version of a mutation from the Safelist.
  *
  * @param mutation The operation name of the mutation
  *
@@ -33,7 +33,7 @@ export async function getLatestMutation(mutation: string) {
 }
 
 /**
- * Gets the latest version of a fragment from the Khan Academy safelist.
+ * Gets the latest version of a fragment from the Safelist.
  *
  * @param fragment The name of the fragment
  *
@@ -44,4 +44,47 @@ export async function getLatestFragment(fragment: string) {
   if (response.status === 404) return null
   const text = await response.text()
   return text
+}
+
+/**
+ * Generates the djb2 hash for a query.
+ *
+ * @description
+ * This hash may be used to make Khan API requests GET requests instead of POST
+ * request queries.
+ *
+ * @example
+ * ```js
+ * const hash = hashQuery(GET_FULL_USER_PROFILE_QUERY)
+ * const variables = { username: 'sal' }
+ * const url = `https://www.khanacademy.org/api/internal/graphql/getFullUserProfile?hash=${hash}&variables=${encodeURIComponent(JSON.stringify(variables))}`
+ *
+ * const response = await fetch(url)
+ * const data = await response.json()
+ */
+export function hashQuery(document: string) {
+  let hash = 5381,
+    i = document.length
+
+  while (i) hash = (hash * 33) ^ document.charCodeAt(--i)
+  return hash >>> 0
+}
+
+/**
+ * Gets the latest version of a query from the Safelist and returns its hash.
+ *
+ * @example
+ * const hash = await getLatestQueryHash('getFullUserProfile')
+ * const variables = { username: 'sal' }
+ * const url = `https://www.khanacademy.org/api/internal/graphql/getFullUserProfile?hash=${hash}&variables=${encodeURIComponent(JSON.stringify(variables))}`
+ *
+ * const response = await fetch(url)
+ * const data = await response.json()
+ *
+ * @see {@link hashDocument}
+ */
+export async function getLatestQueryHash(query: string) {
+  const text = await getLatestQuery(query)
+  if (!text) return null
+  return hashQuery(text)
 }
