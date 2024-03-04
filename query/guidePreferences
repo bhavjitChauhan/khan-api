@@ -1,9 +1,10 @@
-query guidePreferences {
+query GuidePreferences {
   user {
     id
     aiGuidePreferences {
       readingLevel
       guideLanguageCode
+      guideVoiceDescriptor
       __typename
     }
     __typename

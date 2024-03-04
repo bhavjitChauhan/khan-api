@@ -1,5 +1,5 @@
-mutation DisableAIGuide($kaid: String!) {
-  disableAIGuide(kaid: $kaid, reason: DISABLED_BY_USER) {
+mutation disableAIGuide($kaid: String!) {
+  disableAIGuide(kaid: $kaid, reason: MODERATION) {
     error {
       code
       debugMessage

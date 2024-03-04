@@ -1,0 +1,10 @@
+query aiGuideSwagAppliedQuery {
+  user {
+    id
+    aiGuideSwagApplied {
+      id
+      __typename
+    }
+    __typename
+  }
+}
