@@ -1,8 +1,7 @@
 query UserPermissionsForContent {
   user {
     id
-    canEdit: hasPermission(name: "can_edit", scope: ANY_ON_CURRENT_LOCALE)
-    canCurate: hasPermission(name: "can_curate_tags", scope: ANY_ON_CURRENT_LOCALE)
+    canEdit: hasPermission(name: "can_edit_content", scope: ANY_ON_CURRENT_LOCALE)
     __typename
   }
 }

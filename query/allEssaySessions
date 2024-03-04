@@ -1,0 +1,8 @@
+query allEssaySessions {
+  allEssaySessionSummaries {
+    id
+    essayTitle
+    lastUpdated
+    __typename
+  }
+}

@@ -10937,12 +10937,13 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
-  saveLatestEssaySession: `mutation saveLatestEssaySession($essaySessionID: String!, $essayInstructions: String!, $studentGradeLevel: Int!, $essayText: String!, $essayVersion: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!) {
+  saveLatestEssaySession: `mutation saveLatestEssaySession($essaySessionID: String!, $essayInstructions: String!, $studentGradeLevel: Int!, $essayText: String!, $essayTitle: String!, $essayVersion: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!) {
   saveLatestEssayText(
     essaySessionID: $essaySessionID
     essayInstructions: $essayInstructions
     studentGradeLevel: $studentGradeLevel
     essayText: $essayText
+    essayTitle: $essayTitle
     essayVersion: $essayVersion
     paragraphIDToParagraphNumbers: $paragraphIDToParagraphNumbers
   ) {
@@ -11390,6 +11391,15 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   ) {
     error {
       code
+      __typename
+    }
+    __typename
+  }
+}`,
+  deleteEssaySession: `mutation deleteEssaySession($id: String!) {
+  deleteEssaySession(essaySessionID: $id) {
+    error {
+      debugMessage
       __typename
     }
     __typename

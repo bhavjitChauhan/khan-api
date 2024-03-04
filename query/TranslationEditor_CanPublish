@@ -1,0 +1,10 @@
+query TranslationEditor_CanPublish($kaLocale: String!, $contentKind: ContentKind!) {
+  user {
+    id
+    hasContentPermission(
+      contentScope: {kaLocale: $kaLocale, contentKind: $contentKind}
+      name: "can_publish_content"
+    )
+    __typename
+  }
+}

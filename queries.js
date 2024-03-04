@@ -15139,8 +15139,7 @@ fragment Classroom on StudentList {
   UserPermissionsForContent: `query UserPermissionsForContent {
   user {
     id
-    canEdit: hasPermission(name: "can_edit", scope: ANY_ON_CURRENT_LOCALE)
-    canCurate: hasPermission(name: "can_curate_tags", scope: ANY_ON_CURRENT_LOCALE)
+    canEdit: hasPermission(name: "can_edit_content", scope: ANY_ON_CURRENT_LOCALE)
     __typename
   }
 }`,
@@ -17392,6 +17391,7 @@ fragment ProjectRevision on ProjectRevision {
   activeEssaySession {
     draft {
       feedbackList {
+        _: id
         feedbackID
         dimension
         feedbackText
@@ -18348,6 +18348,83 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       guideVoiceDescriptor
       __typename
     }
+    __typename
+  }
+}`,
+  ExerciseEditorPermissionQuery: `query ExerciseEditorPermissionQuery($contentId: String!) {
+  isEditable: isEditableByCurrentUser(
+    contentId: $contentId
+    contentKind: "Exercise"
+  )
+  isPublishable: isPublishableByCurrentUser(
+    contentId: $contentId
+    contentKind: "Exercise"
+  )
+  user {
+    id
+    nickname
+    __typename
+  }
+}`,
+  TranslationEditor_CanPublish: `query TranslationEditor_CanPublish($kaLocale: String!, $contentKind: ContentKind!) {
+  user {
+    id
+    hasContentPermission(
+      contentScope: {kaLocale: $kaLocale, contentKind: $contentKind}
+      name: "can_publish_content"
+    )
+    __typename
+  }
+}`,
+  allEssaySessions: `query allEssaySessions {
+  allEssaySessionSummaries {
+    id
+    essayTitle
+    lastUpdated
+    __typename
+  }
+}`,
+  essaySession: `query essaySession($id: String!) {
+  essaySession(essaySessionID: $id) {
+    draft {
+      feedbackList {
+        dimension
+        feedbackID
+        feedbackText
+        _: id
+        isPositive
+        isResolved
+        relevantParagraphId
+        relevantQuotedText
+        thread {
+          id
+          interactions {
+            annotations
+            answer
+            flagged
+            id
+            question
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      id
+      submittedText
+      __typename
+    }
+    essayInstructions
+    essayTitle
+    essayVersion
+    id
+    mostRecentEditedText
+    paragraphIDToParagraphNumbers {
+      paragraphID
+      paragraphNumbers
+      __typename
+    }
+    studentGradeLevel
     __typename
   }
 }`,
