@@ -53,7 +53,7 @@ const unencryptedKey = json.data.qaExpandKeyInfo?.unencryptedKey
 
 #### Defined in
 
-[src/queries/QAExpandKeyInfo.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/QAExpandKeyInfo.ts#L42)
+[src/queries/QAExpandKeyInfo.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/QAExpandKeyInfo.ts#L42)
 
 ▸ **QAExpandKeyInfo**(`encryptedKey`, `init?`): `Promise`\<[`TypedResponse`](api/interfaces/TypedResponse.md)\<[`Response`](api/modules/queries.QaExpandKeyInfo.md#response)\>\>
 
@@ -79,7 +79,7 @@ const unencryptedKey = json.data.qaExpandKeyInfo?.unencryptedKey
 
 #### Defined in
 
-[src/queries/QAExpandKeyInfo.ts:55](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/QAExpandKeyInfo.ts#L55)
+[src/queries/QAExpandKeyInfo.ts:55](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/QAExpandKeyInfo.ts#L55)
 
 ___
 
@@ -118,7 +118,7 @@ const avatar = profile.avatar
 
 #### Defined in
 
-[src/queries/avatarDataForProfile.ts:50](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/avatarDataForProfile.ts#L50)
+[src/queries/avatarDataForProfile.ts:50](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/avatarDataForProfile.ts#L50)
 
 ▸ **avatarDataForProfile**(`kaid`, `init?`): `Promise`\<[`TypedResponse`](api/interfaces/TypedResponse.md)\<[`Response`](api/modules/queries.AvatarDataForProfile.md#response)\>\>
 
@@ -145,7 +145,7 @@ const avatar = profile.avatar
 
 #### Defined in
 
-[src/queries/avatarDataForProfile.ts:64](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/avatarDataForProfile.ts#L64)
+[src/queries/avatarDataForProfile.ts:64](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/avatarDataForProfile.ts#L64)
 
 ___
 
@@ -172,7 +172,7 @@ Low-level for making a `feedbackQuery` request.
 
 #### Defined in
 
-[src/queries/feedbackQuery.ts:226](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/feedbackQuery.ts#L226)
+[src/queries/feedbackQuery.ts:226](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/feedbackQuery.ts#L226)
 
 ___
 
@@ -210,7 +210,7 @@ const replies = json.data.feedbackReplies
 
 #### Defined in
 
-[src/queries/getFeedbackReplies.ts:106](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getFeedbackReplies.ts#L106)
+[src/queries/getFeedbackReplies.ts:106](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getFeedbackReplies.ts#L106)
 
 ▸ **getFeedbackReplies**(`postKey`, `init?`): `Promise`\<[`TypedResponse`](api/interfaces/TypedResponse.md)\<[`Response`](api/modules/queries.GetFeedbackReplies.md#response)\>\>
 
@@ -236,7 +236,7 @@ const replies = json.data.feedbackReplies
 
 #### Defined in
 
-[src/queries/getFeedbackReplies.ts:119](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getFeedbackReplies.ts#L119)
+[src/queries/getFeedbackReplies.ts:119](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getFeedbackReplies.ts#L119)
 
 ___
 
@@ -263,7 +263,7 @@ Low-level function to fetch a page of replies to a feedback post.
 
 #### Defined in
 
-[src/queries/getFeedbackRepliesPage.ts:75](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getFeedbackRepliesPage.ts#L75)
+[src/queries/getFeedbackRepliesPage.ts:75](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getFeedbackRepliesPage.ts#L75)
 
 ___
 
@@ -333,7 +333,7 @@ const profile = json.data.user
 
 #### Defined in
 
-[src/queries/getFullUserProfile.ts:224](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getFullUserProfile.ts#L224)
+[src/queries/getFullUserProfile.ts:240](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getFullUserProfile.ts#L240)
 
 ▸ **getFullUserProfile**(`kaid?`, `init?`): `Promise`\<[`TypedResponse`](api/interfaces/TypedResponse.md)\<[`Response`](api/modules/queries.GetFullUserProfile.md#response)\>\>
 
@@ -359,7 +359,7 @@ const profile = json.data.user
 
 #### Defined in
 
-[src/queries/getFullUserProfile.ts:237](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getFullUserProfile.ts#L237)
+[src/queries/getFullUserProfile.ts:253](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getFullUserProfile.ts#L253)
 
 ▸ **getFullUserProfile**(`username?`, `init?`): `Promise`\<[`TypedResponse`](api/interfaces/TypedResponse.md)\<[`Response`](api/modules/queries.GetFullUserProfile.md#response)\>\>
 
@@ -385,7 +385,7 @@ const profile = json.data.user
 
 #### Defined in
 
-[src/queries/getFullUserProfile.ts:250](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getFullUserProfile.ts#L250)
+[src/queries/getFullUserProfile.ts:266](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getFullUserProfile.ts#L266)
 
 ___
 
@@ -410,7 +410,7 @@ ___
 
 #### Defined in
 
-[src/queries/getProfileWidgets.ts:118](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getProfileWidgets.ts#L118)
+[src/queries/getProfileWidgets.ts:118](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getProfileWidgets.ts#L118)
 
 ▸ **getProfileWidgets**(`kaid`, `init?`): `Promise`\<[`TypedResponse`](api/interfaces/TypedResponse.md)\<[`Response`](api/modules/queries.GetProfileWidgets.md#response)\>\>
 
@@ -427,7 +427,7 @@ ___
 
 #### Defined in
 
-[src/queries/getProfileWidgets.ts:122](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getProfileWidgets.ts#L122)
+[src/queries/getProfileWidgets.ts:122](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getProfileWidgets.ts#L122)
 
 ___
 
@@ -476,7 +476,7 @@ const kaid = json.data.user?.kaid
 
 #### Defined in
 
-[src/queries/getUserByUsernameOrEmail.ts:55](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getUserByUsernameOrEmail.ts#L55)
+[src/queries/getUserByUsernameOrEmail.ts:55](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getUserByUsernameOrEmail.ts#L55)
 
 ▸ **getUserByUsernameOrEmail**(`username`, `init?`): `Promise`\<[`TypedResponse`](api/interfaces/TypedResponse.md)\<[`Response`](api/modules/queries.GetUserByUsernameOrEmail.md#response)\>\>
 
@@ -502,7 +502,7 @@ const kaid = json.data.user?.kaid
 
 #### Defined in
 
-[src/queries/getUserByUsernameOrEmail.ts:68](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getUserByUsernameOrEmail.ts#L68)
+[src/queries/getUserByUsernameOrEmail.ts:68](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getUserByUsernameOrEmail.ts#L68)
 
 ▸ **getUserByUsernameOrEmail**(`email`, `init?`): `Promise`\<[`TypedResponse`](api/interfaces/TypedResponse.md)\<[`Response`](api/modules/queries.GetUserByUsernameOrEmail.md#response)\>\>
 
@@ -528,7 +528,7 @@ const kaid = json.data.user?.kaid
 
 #### Defined in
 
-[src/queries/getUserByUsernameOrEmail.ts:81](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getUserByUsernameOrEmail.ts#L81)
+[src/queries/getUserByUsernameOrEmail.ts:81](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getUserByUsernameOrEmail.ts#L81)
 
 ___
 
@@ -566,7 +566,7 @@ const profile = json.data.user
 
 #### Defined in
 
-[src/queries/getUserHoverCardProfile.ts:70](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getUserHoverCardProfile.ts#L70)
+[src/queries/getUserHoverCardProfile.ts:70](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getUserHoverCardProfile.ts#L70)
 
 ▸ **getUserHoverCardProfile**(`kaid`, `init?`): `Promise`\<[`TypedResponse`](api/interfaces/TypedResponse.md)\<[`Response`](api/modules/queries.GetUserHoverCardProfile.md#response)\>\>
 
@@ -592,7 +592,7 @@ const profile = json.data.user
 
 #### Defined in
 
-[src/queries/getUserHoverCardProfile.ts:83](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getUserHoverCardProfile.ts#L83)
+[src/queries/getUserHoverCardProfile.ts:83](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getUserHoverCardProfile.ts#L83)
 
 ___
 
@@ -630,7 +630,7 @@ const programs = json.data.listTopPrograms.programs
 
 #### Defined in
 
-[src/queries/hotlist.ts:79](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/hotlist.ts#L79)
+[src/queries/hotlist.ts:79](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/hotlist.ts#L79)
 
 ___
 
@@ -672,7 +672,7 @@ const program = json.data.programById
 
 #### Defined in
 
-[src/queries/programQuery.ts:143](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/programQuery.ts#L143)
+[src/queries/programQuery.ts:143](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/programQuery.ts#L143)
 
 ▸ **programQuery**(`programId`, `init?`): `Promise`\<[`TypedResponse`](api/interfaces/TypedResponse.md)\<[`Response`](api/modules/queries.ProgramQuery.md#response)\>\>
 
@@ -698,7 +698,7 @@ const program = json.data.programById
 
 #### Defined in
 
-[src/queries/programQuery.ts:156](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/programQuery.ts#L156)
+[src/queries/programQuery.ts:156](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/programQuery.ts#L156)
 
 ___
 
@@ -723,4 +723,4 @@ ___
 
 #### Defined in
 
-[src/queries/projectsAuthoredByUser.ts:75](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/projectsAuthoredByUser.ts#L75)
+[src/queries/projectsAuthoredByUser.ts:75](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/projectsAuthoredByUser.ts#L75)

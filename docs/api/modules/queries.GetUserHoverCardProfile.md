@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/queries/getUserHoverCardProfile.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getUserHoverCardProfile.ts#L35)
+[src/queries/getUserHoverCardProfile.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getUserHoverCardProfile.ts#L35)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/queries/getUserHoverCardProfile.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getUserHoverCardProfile.ts#L33)
+[src/queries/getUserHoverCardProfile.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getUserHoverCardProfile.ts#L33)
 
 ## Variables
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[src/queries/getUserHoverCardProfile.ts:8](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getUserHoverCardProfile.ts#L8)
+[src/queries/getUserHoverCardProfile.ts:8](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getUserHoverCardProfile.ts#L8)

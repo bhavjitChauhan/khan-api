@@ -10,4 +10,4 @@
 
 #### Defined in
 
-[src/queries/getProfileWidgets.ts:72](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getProfileWidgets.ts#L72)
+[src/queries/getProfileWidgets.ts:72](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getProfileWidgets.ts#L72)

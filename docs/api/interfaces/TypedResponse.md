@@ -26,7 +26,7 @@ Response.body
 
 #### Defined in
 
-.yarn/cache/typescript-patch-4778c7998b-c93786fcc9.zip/node_modules/typescript/lib/lib.dom.d.ts:3145
+node_modules/typescript/lib/lib.dom.d.ts:3145
 
 ___
 
@@ -42,7 +42,7 @@ Response.bodyUsed
 
 #### Defined in
 
-.yarn/cache/typescript-patch-4778c7998b-c93786fcc9.zip/node_modules/typescript/lib/lib.dom.d.ts:3147
+node_modules/typescript/lib/lib.dom.d.ts:3147
 
 ___
 
@@ -58,7 +58,7 @@ Response.headers
 
 #### Defined in
 
-.yarn/cache/typescript-patch-4778c7998b-c93786fcc9.zip/node_modules/typescript/lib/lib.dom.d.ts:18798
+node_modules/typescript/lib/lib.dom.d.ts:18798
 
 ___
 
@@ -74,7 +74,7 @@ Response.ok
 
 #### Defined in
 
-.yarn/cache/typescript-patch-4778c7998b-c93786fcc9.zip/node_modules/typescript/lib/lib.dom.d.ts:18800
+node_modules/typescript/lib/lib.dom.d.ts:18800
 
 ___
 
@@ -90,7 +90,7 @@ Response.redirected
 
 #### Defined in
 
-.yarn/cache/typescript-patch-4778c7998b-c93786fcc9.zip/node_modules/typescript/lib/lib.dom.d.ts:18802
+node_modules/typescript/lib/lib.dom.d.ts:18802
 
 ___
 
@@ -106,7 +106,7 @@ Response.status
 
 #### Defined in
 
-.yarn/cache/typescript-patch-4778c7998b-c93786fcc9.zip/node_modules/typescript/lib/lib.dom.d.ts:18804
+node_modules/typescript/lib/lib.dom.d.ts:18804
 
 ___
 
@@ -122,7 +122,7 @@ Response.statusText
 
 #### Defined in
 
-.yarn/cache/typescript-patch-4778c7998b-c93786fcc9.zip/node_modules/typescript/lib/lib.dom.d.ts:18806
+node_modules/typescript/lib/lib.dom.d.ts:18806
 
 ___
 
@@ -138,7 +138,7 @@ Response.type
 
 #### Defined in
 
-.yarn/cache/typescript-patch-4778c7998b-c93786fcc9.zip/node_modules/typescript/lib/lib.dom.d.ts:18808
+node_modules/typescript/lib/lib.dom.d.ts:18808
 
 ___
 
@@ -154,7 +154,7 @@ Response.url
 
 #### Defined in
 
-.yarn/cache/typescript-patch-4778c7998b-c93786fcc9.zip/node_modules/typescript/lib/lib.dom.d.ts:18810
+node_modules/typescript/lib/lib.dom.d.ts:18810
 
 ## Methods
 
@@ -174,7 +174,7 @@ Response.arrayBuffer
 
 #### Defined in
 
-.yarn/cache/typescript-patch-4778c7998b-c93786fcc9.zip/node_modules/typescript/lib/lib.dom.d.ts:3149
+node_modules/typescript/lib/lib.dom.d.ts:3149
 
 ___
 
@@ -194,7 +194,7 @@ Response.blob
 
 #### Defined in
 
-.yarn/cache/typescript-patch-4778c7998b-c93786fcc9.zip/node_modules/typescript/lib/lib.dom.d.ts:3151
+node_modules/typescript/lib/lib.dom.d.ts:3151
 
 ___
 
@@ -214,7 +214,7 @@ Response.clone
 
 #### Defined in
 
-.yarn/cache/typescript-patch-4778c7998b-c93786fcc9.zip/node_modules/typescript/lib/lib.dom.d.ts:18812
+node_modules/typescript/lib/lib.dom.d.ts:18812
 
 ___
 
@@ -234,7 +234,7 @@ Response.formData
 
 #### Defined in
 
-.yarn/cache/typescript-patch-4778c7998b-c93786fcc9.zip/node_modules/typescript/lib/lib.dom.d.ts:3153
+node_modules/typescript/lib/lib.dom.d.ts:3153
 
 ___
 
@@ -252,7 +252,7 @@ Response.json
 
 #### Defined in
 
-[src/utils/fetch.ts:6](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/fetch.ts#L6)
+[src/utils/fetch.ts:6](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/fetch.ts#L6)
 
 ___
 
@@ -272,4 +272,4 @@ Response.text
 
 #### Defined in
 
-.yarn/cache/typescript-patch-4778c7998b-c93786fcc9.zip/node_modules/typescript/lib/lib.dom.d.ts:3157
+node_modules/typescript/lib/lib.dom.d.ts:3157

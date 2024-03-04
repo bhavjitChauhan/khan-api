@@ -14,7 +14,7 @@
 
 #### Defined in
 
-[src/types/schema.ts:202](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L202)
+[src/types/schema.ts:202](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L202)
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:203](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L203)
+[src/types/schema.ts:203](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L203)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:204](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L204)
+[src/types/schema.ts:204](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L204)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:205](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L205)
+[src/types/schema.ts:205](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L205)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:206](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L206)
+[src/types/schema.ts:206](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L206)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:207](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L207)
+[src/types/schema.ts:207](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L207)
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:208](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L208)
+[src/types/schema.ts:208](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L208)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:209](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L209)
+[src/types/schema.ts:209](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L209)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:210](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L210)
+[src/types/schema.ts:210](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L210)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:211](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L211)
+[src/types/schema.ts:211](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L211)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:212](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L212)
+[src/types/schema.ts:212](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L212)
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:213](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L213)
+[src/types/schema.ts:213](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L213)
 
 ___
 
@@ -134,7 +134,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:214](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L214)
+[src/types/schema.ts:214](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L214)
 
 ___
 
@@ -146,7 +146,7 @@ Required special permissions.
 
 #### Defined in
 
-[src/types/schema.ts:218](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L218)
+[src/types/schema.ts:218](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L218)
 
 ___
 
@@ -156,7 +156,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:219](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L219)
+[src/types/schema.ts:219](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L219)
 
 ___
 
@@ -166,7 +166,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:220](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L220)
+[src/types/schema.ts:220](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L220)
 
 ___
 
@@ -176,7 +176,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:221](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L221)
+[src/types/schema.ts:221](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L221)
 
 ___
 
@@ -186,7 +186,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:222](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L222)
+[src/types/schema.ts:222](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L222)
 
 ___
 
@@ -196,7 +196,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:223](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L223)
+[src/types/schema.ts:223](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L223)
 
 ___
 
@@ -206,7 +206,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:224](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L224)
+[src/types/schema.ts:224](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L224)
 
 ___
 
@@ -216,7 +216,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:225](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L225)
+[src/types/schema.ts:225](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L225)
 
 ___
 
@@ -226,7 +226,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:226](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L226)
+[src/types/schema.ts:226](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L226)
 
 ___
 
@@ -236,7 +236,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:227](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L227)
+[src/types/schema.ts:227](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L227)
 
 ___
 
@@ -246,7 +246,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:228](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L228)
+[src/types/schema.ts:228](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L228)
 
 ___
 
@@ -256,7 +256,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:229](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L229)
+[src/types/schema.ts:229](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L229)
 
 ___
 
@@ -266,7 +266,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:230](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L230)
+[src/types/schema.ts:230](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L230)
 
 ___
 
@@ -276,7 +276,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:231](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L231)
+[src/types/schema.ts:231](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L231)
 
 ___
 
@@ -286,7 +286,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:232](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L232)
+[src/types/schema.ts:232](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L232)
 
 ___
 
@@ -296,7 +296,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:233](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L233)
+[src/types/schema.ts:233](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L233)
 
 ___
 
@@ -306,7 +306,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:234](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L234)
+[src/types/schema.ts:234](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L234)
 
 ___
 
@@ -316,7 +316,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:235](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L235)
+[src/types/schema.ts:235](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L235)
 
 ___
 
@@ -326,7 +326,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:236](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L236)
+[src/types/schema.ts:236](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L236)
 
 ___
 
@@ -336,7 +336,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:237](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L237)
+[src/types/schema.ts:237](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L237)
 
 ___
 
@@ -346,7 +346,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:238](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L238)
+[src/types/schema.ts:238](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L238)
 
 ___
 
@@ -358,7 +358,7 @@ Besides `PJS`, `WEBPAGE` and `SQL` it can also be an arbitrary string
 
 #### Defined in
 
-[src/types/schema.ts:242](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L242)
+[src/types/schema.ts:242](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L242)
 
 ___
 
@@ -368,4 +368,4 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:243](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L243)
+[src/types/schema.ts:243](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L243)

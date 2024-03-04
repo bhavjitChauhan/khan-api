@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/queries/projectsAuthoredByUser.ts:45](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/projectsAuthoredByUser.ts#L45)
+[src/queries/projectsAuthoredByUser.ts:45](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/projectsAuthoredByUser.ts#L45)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/queries/projectsAuthoredByUser.ts:43](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/projectsAuthoredByUser.ts#L43)
+[src/queries/projectsAuthoredByUser.ts:43](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/projectsAuthoredByUser.ts#L43)
 
 ## Variables
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[src/queries/projectsAuthoredByUser.ts:9](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/projectsAuthoredByUser.ts#L9)
+[src/queries/projectsAuthoredByUser.ts:9](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/projectsAuthoredByUser.ts#L9)

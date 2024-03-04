@@ -10,7 +10,7 @@
 
 #### Defined in
 
-[src/types/badges.ts:32](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/badges.ts#L32)
+[src/types/badges.ts:32](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/badges.ts#L32)
 
 ___
 
@@ -22,7 +22,7 @@ ___
 
 #### Defined in
 
-[src/types/badges.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/badges.ts#L36)
+[src/types/badges.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/badges.ts#L36)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[src/types/badges.ts:40](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/badges.ts#L40)
+[src/types/badges.ts:40](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/badges.ts#L40)
 
 ___
 
@@ -46,4 +46,4 @@ ___
 
 #### Defined in
 
-[src/types/badges.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/badges.ts#L28)
+[src/types/badges.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/badges.ts#L28)

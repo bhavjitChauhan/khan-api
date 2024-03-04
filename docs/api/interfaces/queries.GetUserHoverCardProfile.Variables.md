@@ -10,4 +10,4 @@
 
 #### Defined in
 
-[src/queries/getUserHoverCardProfile.ts:30](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getUserHoverCardProfile.ts#L30)
+[src/queries/getUserHoverCardProfile.ts:30](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getUserHoverCardProfile.ts#L30)

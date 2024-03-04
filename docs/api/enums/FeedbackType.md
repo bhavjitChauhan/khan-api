@@ -16,7 +16,7 @@ Not all feedback types are supported by every query/mutation.
 
 #### Defined in
 
-[src/types/enums.ts:41](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L41)
+[src/types/enums.ts:41](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/enums.ts#L41)
 
 ___
 
@@ -26,7 +26,7 @@ ___
 
 #### Defined in
 
-[src/types/enums.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L42)
+[src/types/enums.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/enums.ts#L42)
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 #### Defined in
 
-[src/types/enums.ts:43](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L43)
+[src/types/enums.ts:43](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/enums.ts#L43)
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 #### Defined in
 
-[src/types/enums.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L44)
+[src/types/enums.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/enums.ts#L44)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 #### Defined in
 
-[src/types/enums.ts:45](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L45)
+[src/types/enums.ts:45](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/enums.ts#L45)
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 #### Defined in
 
-[src/types/enums.ts:46](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L46)
+[src/types/enums.ts:46](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/enums.ts#L46)
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-[src/types/enums.ts:47](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L47)
+[src/types/enums.ts:47](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/enums.ts#L47)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[src/types/enums.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L48)
+[src/types/enums.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/enums.ts#L48)
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 #### Defined in
 
-[src/types/enums.ts:49](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L49)
+[src/types/enums.ts:49](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/enums.ts#L49)
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 #### Defined in
 
-[src/types/enums.ts:50](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L50)
+[src/types/enums.ts:50](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/enums.ts#L50)
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 #### Defined in
 
-[src/types/enums.ts:51](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L51)
+[src/types/enums.ts:51](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/enums.ts#L51)
 
 ___
 
@@ -126,7 +126,7 @@ ___
 
 #### Defined in
 
-[src/types/enums.ts:52](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L52)
+[src/types/enums.ts:52](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/enums.ts#L52)
 
 ___
 
@@ -136,7 +136,7 @@ ___
 
 #### Defined in
 
-[src/types/enums.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L53)
+[src/types/enums.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/enums.ts#L53)
 
 ___
 
@@ -146,7 +146,7 @@ ___
 
 #### Defined in
 
-[src/types/enums.ts:54](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L54)
+[src/types/enums.ts:54](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/enums.ts#L54)
 
 ___
 
@@ -156,4 +156,4 @@ ___
 
 #### Defined in
 
-[src/types/enums.ts:55](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/enums.ts#L55)
+[src/types/enums.ts:55](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/enums.ts#L55)

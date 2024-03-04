@@ -12,7 +12,7 @@
 
 #### Defined in
 
-[src/lib/messages/Message.ts:20](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Message.ts#L20)
+[src/lib/messages/Message.ts:20](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/Message.ts#L20)
 
 ___
 
@@ -22,7 +22,7 @@ ___
 
 #### Defined in
 
-[src/lib/messages/Message.ts:19](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Message.ts#L19)
+[src/lib/messages/Message.ts:19](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/Message.ts#L19)
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 #### Defined in
 
-[src/lib/messages/Message.ts:18](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/Message.ts#L18)
+[src/lib/messages/Message.ts:18](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/Message.ts#L18)

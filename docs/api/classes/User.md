@@ -34,7 +34,7 @@ Wrapper\<UserSchema, IUser\>.constructor
 
 #### Defined in
 
-[src/lib/Wrapper.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L36)
+[src/lib/Wrapper.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/Wrapper.ts#L36)
 
 • **new User**(`client`, `data?`): [`User`](api/classes/User.md)
 
@@ -55,7 +55,7 @@ Wrapper\<UserSchema, IUser\>.constructor
 
 #### Defined in
 
-[src/lib/Wrapper.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L37)
+[src/lib/Wrapper.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/Wrapper.ts#L37)
 
 ## Properties
 
@@ -69,7 +69,7 @@ Wrapper\<UserSchema, IUser\>.constructor
 
 #### Defined in
 
-[src/User.ts:160](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L160)
+[src/User.ts:160](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L160)
 
 ___
 
@@ -85,7 +85,7 @@ The user's avatar URL.
 
 #### Defined in
 
-[src/User.ts:99](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L99)
+[src/User.ts:99](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L99)
 
 ___
 
@@ -101,7 +101,7 @@ The user's badge counts by category.
 
 #### Defined in
 
-[src/User.ts:111](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L111)
+[src/User.ts:111](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L111)
 
 ___
 
@@ -117,7 +117,7 @@ The user's bio.
 
 #### Defined in
 
-[src/User.ts:103](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L103)
+[src/User.ts:103](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L103)
 
 ___
 
@@ -131,7 +131,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:126](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L126)
+[src/User.ts:126](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L126)
 
 ___
 
@@ -145,7 +145,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:127](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L127)
+[src/User.ts:127](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L127)
 
 ___
 
@@ -161,7 +161,7 @@ Whether the user can send Guardian messages.
 
 #### Defined in
 
-[src/User.ts:131](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L131)
+[src/User.ts:131](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L131)
 
 ___
 
@@ -175,7 +175,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:132](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L132)
+[src/User.ts:132](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L132)
 
 ___
 
@@ -191,7 +191,7 @@ Whether the user is a child account.
 
 #### Defined in
 
-[src/User.ts:149](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L149)
+[src/User.ts:149](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L149)
 
 ___
 
@@ -207,7 +207,7 @@ Wrapper.client
 
 #### Defined in
 
-[src/lib/Wrapper.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L15)
+[src/lib/Wrapper.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/Wrapper.ts#L15)
 
 ___
 
@@ -221,7 +221,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:124](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L124)
+[src/User.ts:124](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L124)
 
 ___
 
@@ -235,7 +235,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:156](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L156)
+[src/User.ts:156](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L156)
 
 ___
 
@@ -249,7 +249,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:154](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L154)
+[src/User.ts:154](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L154)
 
 ___
 
@@ -263,7 +263,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:141](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L141)
+[src/User.ts:141](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L141)
 
 ___
 
@@ -279,7 +279,7 @@ The user's email address. Required authentication.
 
 #### Defined in
 
-[src/User.ts:91](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L91)
+[src/User.ts:91](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L91)
 
 ___
 
@@ -295,7 +295,7 @@ The user's authentication email addresses. Required authentication.
 
 #### Defined in
 
-[src/User.ts:95](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L95)
+[src/User.ts:95](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L95)
 
 ___
 
@@ -305,7 +305,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:153](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L153)
+[src/User.ts:153](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L153)
 
 ___
 
@@ -319,7 +319,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:118](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L118)
+[src/User.ts:118](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L118)
 
 ___
 
@@ -333,7 +333,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:134](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L134)
+[src/User.ts:134](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L134)
 
 ___
 
@@ -347,7 +347,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:135](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L135)
+[src/User.ts:135](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L135)
 
 ___
 
@@ -361,7 +361,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:136](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L136)
+[src/User.ts:136](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L136)
 
 ___
 
@@ -375,7 +375,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:137](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L137)
+[src/User.ts:137](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L137)
 
 ___
 
@@ -389,7 +389,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:138](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L138)
+[src/User.ts:138](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L138)
 
 ___
 
@@ -403,7 +403,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:139](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L139)
+[src/User.ts:139](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L139)
 
 ___
 
@@ -419,7 +419,7 @@ The date the user created their account.
 
 #### Defined in
 
-[src/User.ts:115](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L115)
+[src/User.ts:115](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L115)
 
 ___
 
@@ -435,7 +435,7 @@ The user's KAID.
 
 #### Defined in
 
-[src/User.ts:79](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L79)
+[src/User.ts:79](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L79)
 
 ___
 
@@ -449,7 +449,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:117](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L117)
+[src/User.ts:117](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L117)
 
 ___
 
@@ -463,7 +463,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:158](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L158)
+[src/User.ts:158](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L158)
 
 ___
 
@@ -479,7 +479,7 @@ Whether the user is a Guardian.
 
 #### Defined in
 
-[src/User.ts:145](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L145)
+[src/User.ts:145](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L145)
 
 ___
 
@@ -495,7 +495,7 @@ The number of unread notifications.
 
 #### Defined in
 
-[src/User.ts:123](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L123)
+[src/User.ts:123](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L123)
 
 ___
 
@@ -511,7 +511,7 @@ The user's nickname. May in rare cases be `null`.
 
 #### Defined in
 
-[src/User.ts:87](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L87)
+[src/User.ts:87](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L87)
 
 ___
 
@@ -525,7 +525,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:151](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L151)
+[src/User.ts:151](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L151)
 
 ___
 
@@ -539,7 +539,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:150](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L150)
+[src/User.ts:150](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L150)
 
 ___
 
@@ -553,7 +553,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:157](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L157)
+[src/User.ts:157](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L157)
 
 ___
 
@@ -569,7 +569,7 @@ The user's energy points.
 
 #### Defined in
 
-[src/User.ts:107](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L107)
+[src/User.ts:107](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L107)
 
 ___
 
@@ -583,7 +583,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:163](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L163)
+[src/User.ts:163](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L163)
 
 ___
 
@@ -597,7 +597,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:155](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L155)
+[src/User.ts:155](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L155)
 
 ___
 
@@ -611,7 +611,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:119](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L119)
+[src/User.ts:119](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L119)
 
 ___
 
@@ -631,7 +631,7 @@ Wrapper.rawData
 
 #### Defined in
 
-[src/lib/Wrapper.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L22)
+[src/lib/Wrapper.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/Wrapper.ts#L22)
 
 ___
 
@@ -647,7 +647,7 @@ Whether the user is the currently authenticated user.
 
 #### Defined in
 
-[src/User.ts:75](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L75)
+[src/User.ts:75](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L75)
 
 ___
 
@@ -661,7 +661,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:162](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L162)
+[src/User.ts:162](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L162)
 
 ___
 
@@ -675,7 +675,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:152](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L152)
+[src/User.ts:152](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L152)
 
 ___
 
@@ -691,7 +691,7 @@ The user's username. May not be set by the user.
 
 #### Defined in
 
-[src/User.ts:83](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L83)
+[src/User.ts:83](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L83)
 
 ## Accessors
 
@@ -705,7 +705,7 @@ The user's username. May not be set by the user.
 
 #### Defined in
 
-[src/User.ts:165](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L165)
+[src/User.ts:165](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L165)
 
 ## Methods
 
@@ -719,7 +719,7 @@ The user's username. May not be set by the user.
 
 #### Defined in
 
-[src/User.ts:201](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L201)
+[src/User.ts:201](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L201)
 
 ___
 
@@ -747,7 +747,7 @@ Wrapper.copy
 
 #### Defined in
 
-[src/lib/Wrapper.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L53)
+[src/lib/Wrapper.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/Wrapper.ts#L53)
 
 ___
 
@@ -775,7 +775,7 @@ Wrapper.copyFromSchema
 
 #### Defined in
 
-[src/lib/Wrapper.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L65)
+[src/lib/Wrapper.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/Wrapper.ts#L65)
 
 ___
 
@@ -805,7 +805,7 @@ Wrapper.get
 
 #### Defined in
 
-[src/User.ts:283](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L283)
+[src/User.ts:283](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L283)
 
 ___
 
@@ -831,7 +831,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:332](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L332)
+[src/User.ts:332](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L332)
 
 ___
 
@@ -855,7 +855,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:292](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L292)
+[src/User.ts:292](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L292)
 
 ___
 
@@ -881,7 +881,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:311](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L311)
+[src/User.ts:311](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L311)
 
 ___
 
@@ -905,7 +905,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:302](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L302)
+[src/User.ts:302](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L302)
 
 ___
 
@@ -931,7 +931,7 @@ Wrapper.is
 
 #### Defined in
 
-[src/User.ts:351](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L351)
+[src/User.ts:351](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L351)
 
 ___
 
@@ -957,7 +957,7 @@ Wrapper.isSchema
 
 #### Defined in
 
-[src/lib/Wrapper.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/Wrapper.ts#L88)
+[src/lib/Wrapper.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/Wrapper.ts#L88)
 
 ___
 
@@ -1022,7 +1022,7 @@ Wrapper.transformSchema
 
 #### Defined in
 
-[src/User.ts:209](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L209)
+[src/User.ts:209](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L209)
 
 ___
 
@@ -1042,7 +1042,7 @@ ___
 
 #### Defined in
 
-[src/User.ts:190](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L190)
+[src/User.ts:190](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L190)
 
 ___
 
@@ -1072,4 +1072,4 @@ Note that `Client.getUser` will automatically call this method. This is only use
 
 #### Defined in
 
-[src/User.ts:182](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/User.ts#L182)
+[src/User.ts:182](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L182)

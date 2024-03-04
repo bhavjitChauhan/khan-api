@@ -8,7 +8,7 @@
 
 #### Defined in
 
-[src/types/user-statistics.ts:5](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/user-statistics.ts#L5)
+[src/types/user-statistics.ts:5](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/user-statistics.ts#L5)
 
 ___
 
@@ -18,7 +18,7 @@ ___
 
 #### Defined in
 
-[src/types/user-statistics.ts:9](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/user-statistics.ts#L9)
+[src/types/user-statistics.ts:9](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/user-statistics.ts#L9)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 #### Defined in
 
-[src/types/user-statistics.ts:7](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/user-statistics.ts#L7)
+[src/types/user-statistics.ts:7](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/user-statistics.ts#L7)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 #### Defined in
 
-[src/types/user-statistics.ts:6](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/user-statistics.ts#L6)
+[src/types/user-statistics.ts:6](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/user-statistics.ts#L6)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 #### Defined in
 
-[src/types/user-statistics.ts:4](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/user-statistics.ts#L4)
+[src/types/user-statistics.ts:4](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/user-statistics.ts#L4)
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 #### Defined in
 
-[src/types/user-statistics.ts:8](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/user-statistics.ts#L8)
+[src/types/user-statistics.ts:8](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/user-statistics.ts#L8)
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 #### Defined in
 
-[src/types/user-statistics.ts:3](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/user-statistics.ts#L3)
+[src/types/user-statistics.ts:3](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/user-statistics.ts#L3)
 
 ___
 
@@ -78,4 +78,4 @@ ___
 
 #### Defined in
 
-[src/types/user-statistics.ts:2](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/user-statistics.ts#L2)
+[src/types/user-statistics.ts:2](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/user-statistics.ts#L2)

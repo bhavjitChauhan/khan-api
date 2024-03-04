@@ -8,7 +8,7 @@
 
 #### Defined in
 
-[src/types/schema.ts:132](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L132)
+[src/types/schema.ts:132](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L132)
 
 ___
 
@@ -18,7 +18,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:133](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L133)
+[src/types/schema.ts:133](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L133)
 
 ___
 
@@ -31,7 +31,7 @@ For example:
 
 #### Defined in
 
-[src/types/schema.ts:138](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L138)
+[src/types/schema.ts:138](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L138)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:139](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L139)
+[src/types/schema.ts:139](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L139)
 
 ___
 
@@ -51,4 +51,4 @@ ___
 
 #### Defined in
 
-[src/types/schema.ts:140](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/schema.ts#L140)
+[src/types/schema.ts:140](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L140)

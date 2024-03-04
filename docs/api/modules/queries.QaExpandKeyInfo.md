@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/queries/QAExpandKeyInfo.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/QAExpandKeyInfo.ts#L22)
+[src/queries/QAExpandKeyInfo.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/QAExpandKeyInfo.ts#L22)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/queries/QAExpandKeyInfo.ts:20](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/QAExpandKeyInfo.ts#L20)
+[src/queries/QAExpandKeyInfo.ts:20](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/QAExpandKeyInfo.ts#L20)
 
 ## Variables
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[src/queries/QAExpandKeyInfo.ts:8](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/QAExpandKeyInfo.ts#L8)
+[src/queries/QAExpandKeyInfo.ts:8](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/QAExpandKeyInfo.ts#L8)

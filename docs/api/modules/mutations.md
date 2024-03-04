@@ -53,4 +53,4 @@ const cookies = response.headers.get('set-cookie')
 
 #### Defined in
 
-[src/mutations/loginWithPasswordMutation.ts:91](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/mutations/loginWithPasswordMutation.ts#L91)
+[src/mutations/loginWithPasswordMutation.ts:91](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/mutations/loginWithPasswordMutation.ts#L91)

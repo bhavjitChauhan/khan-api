@@ -10,4 +10,4 @@
 
 #### Defined in
 
-[src/queries/getFeedbackReplies.ts:52](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getFeedbackReplies.ts#L52)
+[src/queries/getFeedbackReplies.ts:52](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getFeedbackReplies.ts#L52)

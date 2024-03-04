@@ -10,4 +10,4 @@
 
 #### Defined in
 
-[src/queries/avatarDataForProfile.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/avatarDataForProfile.ts#L21)
+[src/queries/avatarDataForProfile.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/avatarDataForProfile.ts#L21)

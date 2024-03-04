@@ -74,7 +74,7 @@
 
 #### Defined in
 
-[src/types/strings.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L21)
+[src/types/strings.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L21)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[src/types/strings.ts:30](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L30)
+[src/types/strings.ts:30](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L30)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[src/types/strings.ts:25](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L25)
+[src/types/strings.ts:25](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L25)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-[src/types/strings.ts:27](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L27)
+[src/types/strings.ts:27](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L27)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[src/types/strings.ts:23](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L23)
+[src/types/strings.ts:23](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L23)
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 #### Defined in
 
-[src/types/strings.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L33)
+[src/types/strings.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L33)
 
 ___
 
@@ -146,7 +146,7 @@ ___
 
 #### Defined in
 
-[src/types/responses.ts:3](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/responses.ts#L3)
+[src/types/responses.ts:3](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/responses.ts#L3)
 
 ___
 
@@ -156,7 +156,7 @@ ___
 
 #### Defined in
 
-[src/types/strings.ts:8](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L8)
+[src/types/strings.ts:8](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L8)
 
 ___
 
@@ -166,7 +166,7 @@ ___
 
 #### Defined in
 
-[src/types/strings.ts:73](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L73)
+[src/types/strings.ts:73](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L73)
 
 ___
 
@@ -176,7 +176,7 @@ ___
 
 #### Defined in
 
-[src/types/strings.ts:70](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L70)
+[src/types/strings.ts:70](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L70)
 
 ___
 
@@ -186,7 +186,7 @@ ___
 
 #### Defined in
 
-[src/types/strings.ts:16](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L16)
+[src/types/strings.ts:16](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L16)
 
 ___
 
@@ -196,7 +196,7 @@ ___
 
 #### Defined in
 
-[src/lib/messages/TipsAndThanks.ts:7](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/lib/messages/TipsAndThanks.ts#L7)
+[src/lib/messages/TipsAndThanks.ts:7](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/TipsAndThanks.ts#L7)
 
 ___
 
@@ -206,7 +206,7 @@ ___
 
 #### Defined in
 
-[src/types/strings.ts:12](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L12)
+[src/types/strings.ts:12](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L12)
 
 ___
 
@@ -216,7 +216,7 @@ ___
 
 #### Defined in
 
-[src/types/strings.ts:10](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L10)
+[src/types/strings.ts:10](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L10)
 
 ___
 
@@ -226,7 +226,7 @@ ___
 
 #### Defined in
 
-[src/types/strings.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L37)
+[src/types/strings.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L37)
 
 ___
 
@@ -236,7 +236,7 @@ ___
 
 #### Defined in
 
-[src/types/strings.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L36)
+[src/types/strings.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L36)
 
 ___
 
@@ -246,7 +246,7 @@ ___
 
 #### Defined in
 
-[src/types/strings.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L35)
+[src/types/strings.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L35)
 
 ___
 
@@ -256,7 +256,7 @@ ___
 
 #### Defined in
 
-[src/types/strings.ts:43](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L43)
+[src/types/strings.ts:43](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L43)
 
 ___
 
@@ -266,7 +266,7 @@ ___
 
 #### Defined in
 
-[src/types/strings.ts:40](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L40)
+[src/types/strings.ts:40](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L40)
 
 ___
 
@@ -276,7 +276,7 @@ ___
 
 #### Defined in
 
-[src/types/strings.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L39)
+[src/types/strings.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L39)
 
 ___
 
@@ -286,7 +286,7 @@ ___
 
 #### Defined in
 
-[src/types/strings.ts:14](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L14)
+[src/types/strings.ts:14](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L14)
 
 ___
 
@@ -303,7 +303,7 @@ ___
 
 #### Defined in
 
-[src/types/responses.ts:7](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/responses.ts#L7)
+[src/types/responses.ts:7](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/responses.ts#L7)
 
 ___
 
@@ -319,7 +319,7 @@ ___
 
 #### Defined in
 
-[src/types/responses.ts:25](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/responses.ts#L25)
+[src/types/responses.ts:25](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/responses.ts#L25)
 
 ___
 
@@ -329,7 +329,7 @@ ___
 
 #### Defined in
 
-[src/types/strings.ts:18](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/strings.ts#L18)
+[src/types/strings.ts:18](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/strings.ts#L18)
 
 ## Variables
 
@@ -339,7 +339,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:194](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L194)
+[src/utils/regexes.ts:194](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L194)
 
 ___
 
@@ -349,7 +349,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:196](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L196)
+[src/utils/regexes.ts:196](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L196)
 
 ___
 
@@ -359,7 +359,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:170](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L170)
+[src/utils/regexes.ts:170](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L170)
 
 ___
 
@@ -369,7 +369,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:172](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L172)
+[src/utils/regexes.ts:172](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L172)
 
 ___
 
@@ -379,7 +379,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:184](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L184)
+[src/utils/regexes.ts:184](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L184)
 
 ___
 
@@ -389,7 +389,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:185](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L185)
+[src/utils/regexes.ts:185](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L185)
 
 ___
 
@@ -399,7 +399,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:68](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L68)
+[src/utils/regexes.ts:68](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L68)
 
 ___
 
@@ -409,7 +409,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:69](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L69)
+[src/utils/regexes.ts:69](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L69)
 
 ___
 
@@ -419,7 +419,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:176](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L176)
+[src/utils/regexes.ts:176](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L176)
 
 ___
 
@@ -429,7 +429,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:169](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L169)
+[src/utils/regexes.ts:169](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L169)
 
 ___
 
@@ -439,7 +439,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:177](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L177)
+[src/utils/regexes.ts:177](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L177)
 
 ___
 
@@ -449,7 +449,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:179](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L179)
+[src/utils/regexes.ts:179](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L179)
 
 ___
 
@@ -459,7 +459,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:87](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L87)
+[src/utils/regexes.ts:87](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L87)
 
 ___
 
@@ -469,7 +469,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:137](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L137)
+[src/utils/regexes.ts:137](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L137)
 
 ___
 
@@ -479,7 +479,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:99](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L99)
+[src/utils/regexes.ts:99](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L99)
 
 ___
 
@@ -489,7 +489,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L88)
+[src/utils/regexes.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L88)
 
 ___
 
@@ -499,7 +499,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:91](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L91)
+[src/utils/regexes.ts:91](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L91)
 
 ___
 
@@ -509,7 +509,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:130](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L130)
+[src/utils/regexes.ts:130](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L130)
 
 ___
 
@@ -519,7 +519,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:135](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L135)
+[src/utils/regexes.ts:135](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L135)
 
 ___
 
@@ -529,7 +529,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:138](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L138)
+[src/utils/regexes.ts:138](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L138)
 
 ___
 
@@ -539,7 +539,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:140](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L140)
+[src/utils/regexes.ts:140](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L140)
 
 ___
 
@@ -549,7 +549,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:116](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L116)
+[src/utils/regexes.ts:116](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L116)
 
 ___
 
@@ -559,7 +559,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:124](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L124)
+[src/utils/regexes.ts:124](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L124)
 
 ___
 
@@ -569,7 +569,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:189](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L189)
+[src/utils/regexes.ts:189](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L189)
 
 ___
 
@@ -579,7 +579,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:190](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L190)
+[src/utils/regexes.ts:190](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L190)
 
 ___
 
@@ -597,7 +597,7 @@ ___
 
 #### Defined in
 
-[src/utils/messages.ts:38](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/messages.ts#L38)
+[src/utils/messages.ts:38](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/messages.ts#L38)
 
 ___
 
@@ -607,7 +607,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:20](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L20)
+[src/utils/regexes.ts:20](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L20)
 
 ___
 
@@ -617,7 +617,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:19](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L19)
+[src/utils/regexes.ts:19](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L19)
 
 ___
 
@@ -627,7 +627,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:72](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L72)
+[src/utils/regexes.ts:72](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L72)
 
 ___
 
@@ -637,7 +637,7 @@ ___
 
 #### Defined in
 
-[src/utils/regexes.ts:83](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L83)
+[src/utils/regexes.ts:83](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L83)
 
 ___
 
@@ -647,7 +647,7 @@ ___
 
 #### Defined in
 
-[src/utils/avatars.ts:10](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/avatars.ts#L10)
+[src/utils/avatars.ts:10](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/avatars.ts#L10)
 
 ___
 
@@ -657,7 +657,7 @@ ___
 
 #### Defined in
 
-[src/utils/avatars.ts:117](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/avatars.ts#L117)
+[src/utils/avatars.ts:117](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/avatars.ts#L117)
 
 ## Functions
 
@@ -683,7 +683,7 @@ asserts response is DataResponse\<T\>
 
 #### Defined in
 
-[src/types/responses.ts:54](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/responses.ts#L54)
+[src/types/responses.ts:54](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/responses.ts#L54)
 
 ___
 
@@ -703,7 +703,7 @@ ___
 
 #### Defined in
 
-[src/utils/avatars.ts:222](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/avatars.ts#L222)
+[src/utils/avatars.ts:222](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/avatars.ts#L222)
 
 ___
 
@@ -723,7 +723,7 @@ ___
 
 #### Defined in
 
-[src/utils/avatars.ts:226](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/avatars.ts#L226)
+[src/utils/avatars.ts:226](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/avatars.ts#L226)
 
 ___
 
@@ -743,7 +743,7 @@ ___
 
 #### Defined in
 
-[src/utils/avatars.ts:275](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/avatars.ts#L275)
+[src/utils/avatars.ts:275](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/avatars.ts#L275)
 
 ___
 
@@ -763,7 +763,7 @@ ___
 
 #### Defined in
 
-[src/utils/avatars.ts:269](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/avatars.ts#L269)
+[src/utils/avatars.ts:269](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/avatars.ts#L269)
 
 ___
 
@@ -805,7 +805,7 @@ extractAvatarSlug('https://www.khanacademy.org/images/avatars/blobby-green.png')
 
 #### Defined in
 
-[src/utils/avatars.ts:259](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/avatars.ts#L259)
+[src/utils/avatars.ts:259](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/avatars.ts#L259)
 
 ___
 
@@ -827,7 +827,7 @@ Generates a URL to an avatar PNG
 
 #### Defined in
 
-[src/utils/avatars.ts:240](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/avatars.ts#L240)
+[src/utils/avatars.ts:240](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/avatars.ts#L240)
 
 ___
 
@@ -849,7 +849,7 @@ Generates a URL to an avatar SVG
 
 #### Defined in
 
-[src/utils/avatars.ts:233](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/avatars.ts#L233)
+[src/utils/avatars.ts:233](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/avatars.ts#L233)
 
 ___
 
@@ -876,7 +876,7 @@ ___
 
 #### Defined in
 
-[src/utils/fetch.ts:16](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/fetch.ts#L16)
+[src/utils/fetch.ts:16](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/fetch.ts#L16)
 
 ___
 
@@ -884,7 +884,7 @@ ___
 
 ▸ **getLatestFragment**(`fragment`): `Promise`\<``null`` \| `string`\>
 
-Gets the latest version of a fragment from the Khan Academy safelist.
+Gets the latest version of a fragment from the Safelist.
 
 #### Parameters
 
@@ -902,7 +902,7 @@ Gets the latest version of a fragment from the Khan Academy safelist.
 
 #### Defined in
 
-[src/utils/safelist.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/safelist.ts#L42)
+[src/utils/safelist.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/safelist.ts#L42)
 
 ___
 
@@ -910,7 +910,7 @@ ___
 
 ▸ **getLatestMutation**(`mutation`): `Promise`\<``null`` \| `string`\>
 
-Gets the latest version of a mutation from the Khan Academy safelist.
+Gets the latest version of a mutation from the Safelist.
 
 #### Parameters
 
@@ -928,7 +928,7 @@ Gets the latest version of a mutation from the Khan Academy safelist.
 
 #### Defined in
 
-[src/utils/safelist.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/safelist.ts#L28)
+[src/utils/safelist.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/safelist.ts#L28)
 
 ___
 
@@ -936,7 +936,7 @@ ___
 
 ▸ **getLatestQuery**(`query`): `Promise`\<``null`` \| `string`\>
 
-Gets the latest version of a query from the Khan Academy safelist.
+Gets the latest version of a query from the Safelist.
 
 #### Parameters
 
@@ -960,7 +960,44 @@ const GET_FULL_USER_PROFILE_QUERY = await getLatestQuery('getFullUserProfile')
 
 #### Defined in
 
-[src/utils/safelist.ts:14](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/safelist.ts#L14)
+[src/utils/safelist.ts:14](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/safelist.ts#L14)
+
+___
+
+### getLatestQueryHash
+
+▸ **getLatestQueryHash**(`query`): `Promise`\<``null`` \| `number`\>
+
+Gets the latest version of a query from the Safelist and returns its hash.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `query` | `string` |
+
+#### Returns
+
+`Promise`\<``null`` \| `number`\>
+
+**`Example`**
+
+```ts
+const hash = await getLatestQueryHash('getFullUserProfile')
+const variables = { username: 'sal' }
+const url = `https://www.khanacademy.org/api/internal/graphql/getFullUserProfile?hash=${hash}&variables=${encodeURIComponent(JSON.stringify(variables))}`
+
+const response = await fetch(url)
+const data = await response.json()
+```
+
+**`See`**
+
+[hashQuery](api/README.md#hashquery)
+
+#### Defined in
+
+[src/utils/safelist.ts:85](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/safelist.ts#L85)
 
 ___
 
@@ -990,7 +1027,45 @@ ___
 
 #### Defined in
 
-[src/utils/fetch.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/fetch.ts#L33)
+[src/utils/fetch.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/fetch.ts#L33)
+
+___
+
+### hashQuery
+
+▸ **hashQuery**(`document`): `number`
+
+Generates the djb2 hash for a query.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `document` | `string` |
+
+#### Returns
+
+`number`
+
+**`Description`**
+
+This hash may be used to make Khan API requests GET requests instead of POST
+request queries.
+
+**`Example`**
+
+```ts
+const hash = hashQuery(GET_FULL_USER_PROFILE_QUERY)
+const variables = { username: 'sal' }
+const url = `https://www.khanacademy.org/api/internal/graphql/getFullUserProfile?hash=${hash}&variables=${encodeURIComponent(JSON.stringify(variables))}`
+
+const response = await fetch(url)
+const data = await response.json()
+```
+
+#### Defined in
+
+[src/utils/safelist.ts:64](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/safelist.ts#L64)
 
 ___
 
@@ -1017,7 +1092,7 @@ ___
 
 #### Defined in
 
-[src/utils/fetch.ts:9](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/fetch.ts#L9)
+[src/utils/fetch.ts:9](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/fetch.ts#L9)
 
 ___
 
@@ -1037,7 +1112,7 @@ schema is AnswerFeedbackSchema
 
 #### Defined in
 
-[src/utils/messages.ts:32](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/messages.ts#L32)
+[src/utils/messages.ts:32](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/messages.ts#L32)
 
 ___
 
@@ -1063,7 +1138,7 @@ response is DataResponse\<T\>
 
 #### Defined in
 
-[src/types/responses.ts:30](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/responses.ts#L30)
+[src/types/responses.ts:30](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/responses.ts#L30)
 
 ___
 
@@ -1083,7 +1158,7 @@ str is \`$\{string}@$\{string}.$\{string}\`
 
 #### Defined in
 
-[src/utils/regexes.ts:197](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L197)
+[src/utils/regexes.ts:197](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L197)
 
 ___
 
@@ -1103,7 +1178,7 @@ str is \`kaencrypted\_$\{string}\_$\{string}\`
 
 #### Defined in
 
-[src/utils/regexes.ts:180](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L180)
+[src/utils/regexes.ts:180](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L180)
 
 ___
 
@@ -1123,7 +1198,7 @@ str is \`ag5zfmtoYW4tYWNhZGVteX$\{string}CxIIVXNlckRhdGEi$\{string}thaWRf$\{stri
 
 #### Defined in
 
-[src/utils/regexes.ts:173](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L173)
+[src/utils/regexes.ts:173](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L173)
 
 ___
 
@@ -1143,7 +1218,7 @@ str is \`http://googleid.khanacademy.org/$\{number}\`
 
 #### Defined in
 
-[src/utils/regexes.ts:186](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L186)
+[src/utils/regexes.ts:186](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L186)
 
 ___
 
@@ -1163,7 +1238,7 @@ response is InputErrorResponse
 
 #### Defined in
 
-[src/types/responses.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/responses.ts#L44)
+[src/types/responses.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/responses.ts#L44)
 
 ___
 
@@ -1183,7 +1258,7 @@ str is \`kaid\_$\{number}\`
 
 #### Defined in
 
-[src/utils/regexes.ts:70](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L70)
+[src/utils/regexes.ts:70](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L70)
 
 ___
 
@@ -1203,7 +1278,7 @@ strOrNum is ProgramID
 
 #### Defined in
 
-[src/utils/regexes.ts:95](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L95)
+[src/utils/regexes.ts:95](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L95)
 
 ___
 
@@ -1236,7 +1311,7 @@ is possible that in the future, new program key formats will be introduced.
 
 #### Defined in
 
-[src/utils/regexes.ts:155](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L155)
+[src/utils/regexes.ts:155](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L155)
 
 ___
 
@@ -1256,7 +1331,7 @@ str is \`http$\{string}://$\{string}khanacademy.$\{string}/$\{string}/$\{string}
 
 #### Defined in
 
-[src/utils/regexes.ts:126](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L126)
+[src/utils/regexes.ts:126](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L126)
 
 ___
 
@@ -1276,7 +1351,7 @@ str is \`\_gae\_bingo\_random:$\{string}\`
 
 #### Defined in
 
-[src/utils/regexes.ts:191](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L191)
+[src/utils/regexes.ts:191](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L191)
 
 ___
 
@@ -1296,7 +1371,7 @@ schema is QuestionFeedbackSchema
 
 #### Defined in
 
-[src/utils/messages.ts:23](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/messages.ts#L23)
+[src/utils/messages.ts:23](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/messages.ts#L23)
 
 ___
 
@@ -1316,7 +1391,7 @@ schema is BasicFeedbackSchema
 
 #### Defined in
 
-[src/utils/messages.ts:17](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/messages.ts#L17)
+[src/utils/messages.ts:17](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/messages.ts#L17)
 
 ___
 
@@ -1336,7 +1411,7 @@ response is ServiceErrorsResponse
 
 #### Defined in
 
-[src/types/responses.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/responses.ts#L36)
+[src/types/responses.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/responses.ts#L36)
 
 ___
 
@@ -1356,7 +1431,7 @@ schema is BasicFeedbackSchema
 
 #### Defined in
 
-[src/utils/messages.ts:11](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/messages.ts#L11)
+[src/utils/messages.ts:11](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/messages.ts#L11)
 
 ___
 
@@ -1376,7 +1451,7 @@ str is \`http$\{string}://$\{string}khanacademy.$\{string}/profile/$\{string}\`
 
 #### Defined in
 
-[src/utils/regexes.ts:85](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/regexes.ts#L85)
+[src/utils/regexes.ts:85](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/regexes.ts#L85)
 
 ___
 
@@ -1404,7 +1479,7 @@ ___
 
 #### Defined in
 
-[src/utils/fetch.ts:24](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/fetch.ts#L24)
+[src/utils/fetch.ts:24](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/fetch.ts#L24)
 
 ___
 
@@ -1431,7 +1506,7 @@ original implementation.
 
 #### Defined in
 
-[src/utils/programs.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/programs.ts#L42)
+[src/utils/programs.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/programs.ts#L42)
 
 ___
 
@@ -1461,7 +1536,7 @@ original implementation.
 
 #### Defined in
 
-[src/utils/programs.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/programs.ts#L15)
+[src/utils/programs.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/programs.ts#L15)
 
 ___
 
@@ -1483,7 +1558,7 @@ Resolves a feedback key from an encrypted feedback key
 
 #### Defined in
 
-[src/utils/resolvers.ts:130](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/resolvers.ts#L130)
+[src/utils/resolvers.ts:130](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/resolvers.ts#L130)
 
 ___
 
@@ -1512,7 +1587,7 @@ console.log(kaid) // kaid_376749826184384230772276
 
 #### Defined in
 
-[src/utils/resolvers.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/resolvers.ts#L39)
+[src/utils/resolvers.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/resolvers.ts#L39)
 
 ___
 
@@ -1536,7 +1611,7 @@ Program ID as a number
 
 #### Defined in
 
-[src/utils/resolvers.ts:104](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/resolvers.ts#L104)
+[src/utils/resolvers.ts:104](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/resolvers.ts#L104)
 
 ___
 
@@ -1565,4 +1640,4 @@ console.log(username) // bhavjitChauhan
 
 #### Defined in
 
-[src/utils/resolvers.ts:73](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/utils/resolvers.ts#L73)
+[src/utils/resolvers.ts:73](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/resolvers.ts#L73)

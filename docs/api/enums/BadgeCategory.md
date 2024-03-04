@@ -8,7 +8,7 @@
 
 #### Defined in
 
-[src/types/badges.ts:20](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/badges.ts#L20)
+[src/types/badges.ts:20](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/badges.ts#L20)
 
 ___
 
@@ -18,7 +18,7 @@ ___
 
 #### Defined in
 
-[src/types/badges.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/badges.ts#L21)
+[src/types/badges.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/badges.ts#L21)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 #### Defined in
 
-[src/types/badges.ts:18](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/badges.ts#L18)
+[src/types/badges.ts:18](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/badges.ts#L18)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 #### Defined in
 
-[src/types/badges.ts:16](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/badges.ts#L16)
+[src/types/badges.ts:16](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/badges.ts#L16)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 #### Defined in
 
-[src/types/badges.ts:17](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/badges.ts#L17)
+[src/types/badges.ts:17](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/badges.ts#L17)
 
 ___
 
@@ -58,4 +58,4 @@ ___
 
 #### Defined in
 
-[src/types/badges.ts:19](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/types/badges.ts#L19)
+[src/types/badges.ts:19](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/badges.ts#L19)

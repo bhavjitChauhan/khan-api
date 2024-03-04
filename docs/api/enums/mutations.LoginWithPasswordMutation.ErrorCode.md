@@ -10,7 +10,7 @@
 
 #### Defined in
 
-[src/mutations/loginWithPasswordMutation.ts:63](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/mutations/loginWithPasswordMutation.ts#L63)
+[src/mutations/loginWithPasswordMutation.ts:63](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/mutations/loginWithPasswordMutation.ts#L63)
 
 ___
 
@@ -20,4 +20,4 @@ ___
 
 #### Defined in
 
-[src/mutations/loginWithPasswordMutation.ts:64](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/mutations/loginWithPasswordMutation.ts#L64)
+[src/mutations/loginWithPasswordMutation.ts:64](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/mutations/loginWithPasswordMutation.ts#L64)

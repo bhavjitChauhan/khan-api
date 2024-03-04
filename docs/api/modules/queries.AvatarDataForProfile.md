@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/queries/avatarDataForProfile.ts:26](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/avatarDataForProfile.ts#L26)
+[src/queries/avatarDataForProfile.ts:26](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/avatarDataForProfile.ts#L26)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/queries/avatarDataForProfile.ts:24](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/avatarDataForProfile.ts#L24)
+[src/queries/avatarDataForProfile.ts:24](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/avatarDataForProfile.ts#L24)
 
 ## Variables
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[src/queries/avatarDataForProfile.ts:8](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/avatarDataForProfile.ts#L8)
+[src/queries/avatarDataForProfile.ts:8](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/avatarDataForProfile.ts#L8)

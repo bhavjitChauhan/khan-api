@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/queries/getFeedbackReplies.ts:57](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getFeedbackReplies.ts#L57)
+[src/queries/getFeedbackReplies.ts:57](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getFeedbackReplies.ts#L57)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/queries/getFeedbackReplies.ts:55](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getFeedbackReplies.ts#L55)
+[src/queries/getFeedbackReplies.ts:55](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getFeedbackReplies.ts#L55)
 
 ## Variables
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[src/queries/getFeedbackReplies.ts:8](https://github.com/bhavjitChauhan/khan-api/blob/9bcea3fc/src/queries/getFeedbackReplies.ts#L8)
+[src/queries/getFeedbackReplies.ts:8](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/queries/getFeedbackReplies.ts#L8)
