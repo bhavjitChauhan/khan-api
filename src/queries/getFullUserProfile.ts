@@ -87,11 +87,27 @@ export namespace GetFullUserProfile {
       __typename
     }
     hasAccessToAIGuideTeacher
+    hasAccessToAIGuideDistrictAdmin
     tosAccepted
     shouldShowAgeCheck
     birthMonthYear
     lastLoginCountry
     region
+    userDistrictInfos {
+      id
+      isKAD
+      district {
+        id
+        region
+        __typename
+      }
+      __typename
+    }
+    schoolAffiliation {
+      id
+      location
+      __typename
+    }
     __typename
   }
   actorIsImpersonatingUser
