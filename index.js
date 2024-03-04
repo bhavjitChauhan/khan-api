@@ -135,12 +135,10 @@ console.log('Fetched homepage script')
 
 console.log('Fetching script URLs...')
 const runtimeScript = await fetch(runtimeScriptURL).then(r => r.text())
-const scriptURLs = Object.entries(eval('(' + runtimeScript.match(/(\{[\w",:-]+\})\[\w+\]\+"\.js"/)[1] + ')')).map(([key, value]) => `https://cdn.kastatic.org/genwebpack/prod/en/${key}.${value}.js`)
-const addtionalScriptURL = html.match(/src=(?:"|')(https?:\/\/cdn\.kastatic\.org\/genwebpack\/prod\/en\/javascript\/app-shell-package\/app-entry\.\w+\.js)(?:"|')/)?.[1]
-if (!addtionalScriptURL)
-    console.error('Failed to find addtional script URL')
-else
-    scriptURLs.push(addtionalScriptURL)
+let scriptURLs = Object.entries(eval('(' + runtimeScript.match(/(\{[\w",:-]+\})\[\w+\]\+"\.js"/)[1] + ')')).map(([key, value]) => `https://cdn.kastatic.org/genwebpack/prod/en/${key}.${value}.js`)
+const allHtmlScriptURLs = Array.from(html.matchAll(/src=(?:"|')(https?:\/\/cdn\.kastatic\.org\/.+\.js)(?:"|')/g), match => match[1])
+scriptURLs.push(...allHtmlScriptURLs)
+scriptURLs = [...new Set(scriptURLs)].filter(url => url)
 console.log('Fetched runtime URLs')
 
 
