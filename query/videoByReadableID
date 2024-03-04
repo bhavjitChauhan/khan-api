@@ -1,9 +1,46 @@
-query videoByReadableId($videoId: String!) {
-  video(id: $videoId) {
+query videoByReadableID($id: String!) {
+  video(id: $id) {
     id
+    assessmentItemTags
+    contentKind
+    defaultUrlPath
+    kind
+    nodeSlug
+    slug
+    sponsored
     title
+    translatedDescription
+    translatedTitle
+    translatedCustomTitleTag
+    authorNames
+    authorList {
+      name
+      __typename
+    }
+    clarificationsEnabled
+    creationDate
+    dateAdded
+    description
+    descriptionHtml
+    downloadUrls
+    duration
+    imageUrl
+    kaUrl
+    kaUserLicense
+    keywords
+    readableId
+    relativeUrl
+    sha
+    thumbnailUrls {
+      category
+      url
+      __typename
+    }
+    translatedDescriptionHtml
+    translatedYoutubeId
+    translatedYoutubeLang
     youtubeId
-    contentId
+    augmentedTranscript
     __typename
   }
 }
