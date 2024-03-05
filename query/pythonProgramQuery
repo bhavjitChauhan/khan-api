@@ -62,6 +62,7 @@ query pythonProgramQuery($programId: String!) {
     userAuthoredContentType
     upVoted
     width
+    definitelyNotSpam
     __typename
   }
 }

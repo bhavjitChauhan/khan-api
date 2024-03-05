@@ -622,7 +622,7 @@ hashes = {
   courseChallengeCsvQuery: 277772492,
   ActivitySessionsV2Query: 106895928,
   aiGuideConversionTrialInfo: 2182684421,
-  pythonProgramQuery: 3923153985,
+  pythonProgramQuery: 1687201212,
   allFolders: 3440687258,
   khanLibraryCanCreateCourses: 1407808137,
   getFocusModeByClass: 3259050936,

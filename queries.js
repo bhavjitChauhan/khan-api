@@ -17941,6 +17941,7 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     userAuthoredContentType
     upVoted
     width
+    definitelyNotSpam
     __typename
   }
 }`,
