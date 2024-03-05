@@ -1,0 +1,10 @@
+mutation deletePythonProgram($programId: ID!) {
+  deleteProgram(programID: $programId) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

@@ -11405,4 +11405,14 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  deletePythonProgram: `mutation deletePythonProgram($programId: ID!) {
+  deleteProgram(programID: $programId) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
