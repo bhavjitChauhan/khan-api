@@ -10673,12 +10673,13 @@ fragment gtp_tpudFragment on TestPrepUserData {
   }
   hasAccessToAIGuideDev
 }`,
-  hotlist: `query hotlist($curationNodeId: String, $onlyOfficialProjectSpinoffs: Boolean!, $sort: ListProgramSortOrder, $pageInfo: ListProgramsPageInfo) {
+  hotlist: `query hotlist($curationNodeId: String, $onlyOfficialProjectSpinoffs: Boolean!, $sort: ListProgramSortOrder, $pageInfo: ListProgramsPageInfo, $userAuthoredContentTypes: [UserAuthoredContentType!]) {
   listTopPrograms(
     curationNodeId: $curationNodeId
     onlyOfficialProjectSpinoffs: $onlyOfficialProjectSpinoffs
     sort: $sort
     pageInfo: $pageInfo
+    userAuthoredContentTypes: $userAuthoredContentTypes
   ) {
     complete
     cursor
@@ -10692,6 +10693,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
       sumVotesIncremented
       translatedTitle: title
       url
+      userAuthoredContentType
       __typename
     }
     __typename
