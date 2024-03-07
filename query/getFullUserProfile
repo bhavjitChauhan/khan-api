@@ -17,6 +17,8 @@ query getFullUserProfile($kaid: String, $username: String) {
     isParent
     isTeacher
     isFormalTeacher
+    isK4dStudent
+    isKmapStudent
     isDataCollectible
     isChild
     isOrphan
