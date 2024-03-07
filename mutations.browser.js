@@ -8858,13 +8858,14 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }`,
-  signupAdultWithPasswordMutation: `mutation signupAdultWithPasswordMutation($email: String!, $password: String!, $firstname: String!, $lastname: String!, $role: UserRole!) {
+  signupAdultWithPasswordMutation: `mutation signupAdultWithPasswordMutation($email: String!, $password: String!, $firstname: String!, $lastname: String!, $role: UserRole!, $birthdate: Date) {
   signupAdultWithPassword(
     email: $email
     password: $password
     firstname: $firstname
     lastname: $lastname
     role: $role
+    birthdate: $birthdate
   ) {
     user {
       id
