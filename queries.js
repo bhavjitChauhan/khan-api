@@ -6673,6 +6673,8 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     isParent
     isTeacher
     isFormalTeacher
+    isK4dStudent
+    isKmapStudent
     isDataCollectible
     isChild
     isOrphan

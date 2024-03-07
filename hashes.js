@@ -214,7 +214,7 @@ export default {
   getFlag: 1986245167,
   getFlagsSummary: 225516176,
   getFpmMasteryForTopic: 2367143383,
-  getFullUserProfile: 2709512314,
+  getFullUserProfile: 4025674678,
   getInfoForTotalStudentCountQuery: 3058507865,
   getInitialDataForPrePhantomUser: 1309764977,
   getIsClassCleverLibrarySynced: 1236091707,
