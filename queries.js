@@ -14666,6 +14666,7 @@ fragment tapTranslationFreshness on TAPTranslationFreshness {
   UserAssignments: `query UserAssignments($after: ID, $dueAfter: DateTime, $dueBefore: DateTime, $pageSize: Int, $orderBy: AssignmentOrder!, $studentListId: String, $coachKaid: String) {
   user {
     id
+    isAIGuideEnabled
     kaid
     assignmentsPage(
       after: $after
@@ -14680,6 +14681,7 @@ fragment tapTranslationFreshness on TAPTranslationFreshness {
         id
         key
         subjectSlug
+        title
         contents {
           ...ContentFields
           __typename
@@ -17475,6 +17477,7 @@ fragment ProjectRevision on ProjectRevision {
       assignments {
         id
         dueDate
+        title
         itemCompletionStates {
           studentKaid
           completedOn
@@ -17487,6 +17490,7 @@ fragment ProjectRevision on ProjectRevision {
             slug
             translatedTitle
             activityType
+            defaultUrlPath
             __typename
           }
           __typename
@@ -18170,9 +18174,14 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     id
     assignment(id: $assignmentID) {
       id
+      title
       itemCompletionStates {
         studentKaid
         completedOn
+        activitySubmissions {
+          threadID
+          __typename
+        }
         __typename
       }
       __typename

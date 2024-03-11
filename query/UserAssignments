@@ -1,6 +1,7 @@
 query UserAssignments($after: ID, $dueAfter: DateTime, $dueBefore: DateTime, $pageSize: Int, $orderBy: AssignmentOrder!, $studentListId: String, $coachKaid: String) {
   user {
     id
+    isAIGuideEnabled
     kaid
     assignmentsPage(
       after: $after
@@ -15,6 +16,7 @@ query UserAssignments($after: ID, $dueAfter: DateTime, $dueBefore: DateTime, $pa
         id
         key
         subjectSlug
+        title
         contents {
           ...ContentFields
           __typename
