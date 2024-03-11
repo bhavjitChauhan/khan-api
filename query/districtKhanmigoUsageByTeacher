@@ -1,0 +1,29 @@
+query districtKhanmigoUsageByTeacher($filter: KhanmigoDistrictFilters!, $schoolID: String!) {
+  districtKhanmigoUsage(filter: $filter) {
+    byTeacher(schoolID: $schoolID) {
+      user {
+        id
+        kaid
+        userDistrictInfos {
+          id
+          displayNameForTeacher
+          __typename
+        }
+        __typename
+      }
+      usage {
+        possibleUsers
+        usersWithUsage
+        percentUsersWithUsage
+        chats
+        avgChats
+        messages
+        avgMessagesPerChat
+        avgMessagesPerUser
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

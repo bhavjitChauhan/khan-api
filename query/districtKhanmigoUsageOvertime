@@ -1,0 +1,22 @@
+query districtKhanmigoUsageOvertime($filter: KhanmigoDistrictFilters!) {
+  districtKhanmigoUsage(filter: $filter) {
+    groupType
+    overTime {
+      rangeStartDate
+      rangeEndDate
+      usage {
+        possibleUsers
+        usersWithUsage
+        percentUsersWithUsage
+        chats
+        avgChats
+        messages
+        avgMessagesPerChat
+        avgMessagesPerUser
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

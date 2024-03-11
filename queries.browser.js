@@ -3584,6 +3584,7 @@ fragment CourseProgress on SubjectProgress {
       __typename
     }
     schoolYearStart
+    schoolYearEnd
     __typename
   }
 }`,
@@ -18448,6 +18449,142 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       __typename
     }
     studentGradeLevel
+    __typename
+  }
+}`,
+  districtKhanmigoTotalUsage: `query districtKhanmigoTotalUsage($filter: KhanmigoDistrictFilters!) {
+  districtKhanmigoUsage(filter: $filter) {
+    groupType
+    overall {
+      usersWithUsage
+      percentUsersWithUsage
+      avgChats
+      avgMessagesPerUser
+      __typename
+    }
+    bySchool {
+      school {
+        id
+        name
+        __typename
+      }
+      usage {
+        possibleUsers
+        usersWithUsage
+        percentUsersWithUsage
+        chats
+        avgChats
+        messages
+        avgMessagesPerChat
+        avgMessagesPerUser
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  districtKhanmigoUsageByClass: `query districtKhanmigoUsageByClass($filter: KhanmigoDistrictFilters!, $schoolID: String!) {
+  districtKhanmigoUsage(filter: $filter) {
+    byClass(schoolID: $schoolID) {
+      classroom {
+        id
+        cacheId
+        name
+        coachKaid
+        descriptor
+        __typename
+      }
+      usage {
+        usersWithUsage
+        percentUsersWithUsage
+        avgChats
+        avgMessagesPerChat
+        avgMessagesPerUser
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  districtKhanmigoUsageByStudent: `query districtKhanmigoUsageByStudent($filter: KhanmigoDistrictFilters!, $classroomDescriptor: String!) {
+  districtKhanmigoUsage(filter: $filter) {
+    byStudent(classroomDescriptor: $classroomDescriptor) {
+      user {
+        id
+        kaid
+        userDistrictInfos {
+          id
+          displayNameForTeacher
+          __typename
+        }
+        __typename
+      }
+      usage {
+        possibleUsers
+        usersWithUsage
+        percentUsersWithUsage
+        chats
+        avgChats
+        messages
+        avgMessagesPerChat
+        avgMessagesPerUser
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  districtKhanmigoUsageByTeacher: `query districtKhanmigoUsageByTeacher($filter: KhanmigoDistrictFilters!, $schoolID: String!) {
+  districtKhanmigoUsage(filter: $filter) {
+    byTeacher(schoolID: $schoolID) {
+      user {
+        id
+        kaid
+        userDistrictInfos {
+          id
+          displayNameForTeacher
+          __typename
+        }
+        __typename
+      }
+      usage {
+        possibleUsers
+        usersWithUsage
+        percentUsersWithUsage
+        chats
+        avgChats
+        messages
+        avgMessagesPerChat
+        avgMessagesPerUser
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  districtKhanmigoUsageOvertime: `query districtKhanmigoUsageOvertime($filter: KhanmigoDistrictFilters!) {
+  districtKhanmigoUsage(filter: $filter) {
+    groupType
+    overTime {
+      rangeStartDate
+      rangeEndDate
+      usage {
+        possibleUsers
+        usersWithUsage
+        percentUsersWithUsage
+        chats
+        avgChats
+        messages
+        avgMessagesPerChat
+        avgMessagesPerUser
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }`,
