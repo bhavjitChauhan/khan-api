@@ -22,7 +22,6 @@ query DistrictQuery($districtName: String!) {
       __typename
     }
     schoolYearStart
-    schoolYearEnd
     __typename
   }
 }
