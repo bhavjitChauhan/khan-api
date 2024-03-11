@@ -1,0 +1,12 @@
+mutation SetPartnershipKhanmigoPreference($partnershipID: String!, $khanmigoPreference: KhanmigoEnrollmentForPartnership!) {
+  setPartnershipKhanmigoPreference(
+    partnershipID: $partnershipID
+    khanmigoPreference: $khanmigoPreference
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

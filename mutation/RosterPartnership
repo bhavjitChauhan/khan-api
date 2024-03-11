@@ -1,0 +1,9 @@
+mutation RosterPartnership($partnershipID: String!) {
+  rosterPartnership(partnershipID: $partnershipID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
