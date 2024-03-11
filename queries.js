@@ -3584,6 +3584,7 @@ fragment CourseProgress on SubjectProgress {
       __typename
     }
     schoolYearStart
+    schoolYearEnd
     __typename
   }
 }`,
