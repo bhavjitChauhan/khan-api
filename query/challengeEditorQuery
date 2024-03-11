@@ -30,5 +30,8 @@ fragment ChallengeRevision on ChallengeRevision {
   height
   width
   userAuthoredContentType
+  customTitleTag
+  customDescriptionTag
+  sourceKaLocale
   __typename
 }

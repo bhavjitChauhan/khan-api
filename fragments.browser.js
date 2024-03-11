@@ -1691,6 +1691,9 @@ fragment InvitationsField on Invitation {
   authorName
   code
   codeFormat
+  customTitleTag
+  customDescriptionTag
+  sourceKaLocale
   __typename
 }`,
   PublishedCourseRevisionFragment: `fragment PublishedCourseRevisionFragment on CourseRevision {
@@ -2158,6 +2161,9 @@ fragment InvitationsField on Invitation {
   height
   width
   userAuthoredContentType
+  customTitleTag
+  customDescriptionTag
+  sourceKaLocale
   __typename
 }`,
   AIGuideActivityRevision: `fragment AIGuideActivityRevision on AIGuideActivityRevision {

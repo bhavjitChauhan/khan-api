@@ -1218,6 +1218,9 @@ fragment ProjectRevision on ProjectRevision {
   authorName
   code
   codeFormat
+  customTitleTag
+  customDescriptionTag
+  sourceKaLocale
   __typename
 }`,
   contentEditorEditTalkthrough: `mutation contentEditorEditTalkthrough($sha: String!, $input: EditTalkthroughInput!) {
@@ -10858,6 +10861,9 @@ fragment ChallengeRevision on ChallengeRevision {
   height
   width
   userAuthoredContentType
+  customTitleTag
+  customDescriptionTag
+  sourceKaLocale
   __typename
 }`,
   sendAiGuideDisabledDuringDistrictActivationTestEmail: `mutation sendAiGuideDisabledDuringDistrictActivationTestEmail {
