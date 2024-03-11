@@ -111,7 +111,7 @@
   "districtHomepage": 2523966179,
   "districtHomepageProgress": 1681650575,
   "DistrictPrimaryOfferingAsTeacher": 15799337,
-  "DistrictQuery": 1969306748,
+  "DistrictQuery": 2138278370,
   "districts": 3510948123,
   "DistrictSkillsMAPProgressQuery": 706683816,
   "DistrictSkillsProgressQuery": 2501404314,
@@ -647,5 +647,10 @@
   "ExerciseEditorPermissionQuery": 2837649085,
   "TranslationEditor_CanPublish": 4148747959,
   "allEssaySessions": 2942832972,
-  "essaySession": 3845407520
+  "essaySession": 3845407520,
+  "districtKhanmigoTotalUsage": 87542731,
+  "districtKhanmigoUsageByClass": 1108730643,
+  "districtKhanmigoUsageByStudent": 1379684463,
+  "districtKhanmigoUsageByTeacher": 823674612,
+  "districtKhanmigoUsageOvertime": 1661333824
 }
