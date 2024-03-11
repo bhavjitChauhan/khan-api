@@ -26,5 +26,8 @@ fragment ProjectRevision on ProjectRevision {
   authorName
   code
   codeFormat
+  customTitleTag
+  customDescriptionTag
+  sourceKaLocale
   __typename
 }

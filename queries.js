@@ -1185,6 +1185,9 @@ fragment ProjectRevision on ProjectRevision {
   authorName
   code
   codeFormat
+  customTitleTag
+  customDescriptionTag
+  sourceKaLocale
   __typename
 }`,
   contentEditorGetPublishedExerciseProblems: `query contentEditorGetPublishedExerciseProblems($id: String!) {
@@ -17290,6 +17293,9 @@ fragment ChallengeRevision on ChallengeRevision {
   height
   width
   userAuthoredContentType
+  customTitleTag
+  customDescriptionTag
+  sourceKaLocale
   __typename
 }`,
   projectEditorQuery: `query projectEditorQuery($contentId: String!) {
@@ -17320,6 +17326,9 @@ fragment ProjectRevision on ProjectRevision {
   authorName
   code
   codeFormat
+  customTitleTag
+  customDescriptionTag
+  sourceKaLocale
   __typename
 }`,
   getAdminsForDistrict: `query getAdminsForDistrict($districtID: String!) {
