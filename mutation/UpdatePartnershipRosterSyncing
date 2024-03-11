@@ -1,0 +1,9 @@
+mutation UpdatePartnershipRosterSyncing($partnershipID: String!, $sync: Boolean!) {
+  updatePartnershipRosterSyncing(partnershipID: $partnershipID, sync: $sync) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

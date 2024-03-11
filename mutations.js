@@ -11422,4 +11422,43 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  ProvisionKhanmigoPartnership: `mutation ProvisionKhanmigoPartnership($partnershipID: String!, $dryRun: Boolean!) {
+  provisionKhanmigoPartnership(partnershipID: $partnershipID, dryRun: $dryRun) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  RosterPartnership: `mutation RosterPartnership($partnershipID: String!) {
+  rosterPartnership(partnershipID: $partnershipID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  SetPartnershipKhanmigoPreference: `mutation SetPartnershipKhanmigoPreference($partnershipID: String!, $khanmigoPreference: KhanmigoEnrollmentForPartnership!) {
+  setPartnershipKhanmigoPreference(
+    partnershipID: $partnershipID
+    khanmigoPreference: $khanmigoPreference
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  UpdatePartnershipRosterSyncing: `mutation UpdatePartnershipRosterSyncing($partnershipID: String!, $sync: Boolean!) {
+  updatePartnershipRosterSyncing(partnershipID: $partnershipID, sync: $sync) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
