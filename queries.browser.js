@@ -18588,4 +18588,26 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  getTeacherKhanmigoAccess: `query getTeacherKhanmigoAccess {
+  user {
+    id
+    tosForFormalTeacherStatus
+    userDistrictInfos {
+      id
+      district {
+        id
+        khanmigoIncludeStudents
+        __typename
+      }
+      __typename
+    }
+    aiGuideAccessPlans {
+      id
+      isActive
+      enrollmentGroup
+      __typename
+    }
+    __typename
+  }
+}`,
 }

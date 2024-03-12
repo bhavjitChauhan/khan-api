@@ -653,4 +653,5 @@ export default {
   districtKhanmigoUsageByStudent: 1379684463,
   districtKhanmigoUsageByTeacher: 823674612,
   districtKhanmigoUsageOvertime: 1661333824,
+  getTeacherKhanmigoAccess: 3919763789,
 }
