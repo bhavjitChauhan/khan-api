@@ -18622,4 +18622,12 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  getTeacherAIEligibilityData: `query getTeacherAIEligibilityData {
+  user {
+    id
+    age
+    isEnrolledInAIGuide
+    __typename
+  }
+}`,
 }
