@@ -14,7 +14,7 @@ query pythonProgramQuery($programId: String!) {
       }
       __typename
     }
-    deleted
+    hiddenEverywhere: deleted
     description
     spinoffCount: displayableSpinoffCount
     docsUrlPath
@@ -22,7 +22,7 @@ query pythonProgramQuery($programId: String!) {
     flaggedByKaids
     isFlaggedByCurrentUser
     height
-    hideFromHotlist
+    hiddenFromHotlist: hideFromHotlist
     id
     imagePath
     originIsProject

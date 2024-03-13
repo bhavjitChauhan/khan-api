@@ -11207,7 +11207,7 @@ fragment ExerciseRevision on ExerciseRevision {
     title: $title
     revision: $revision
     curationNodeSlug: $curationNodeSlug
-    hideFromHotlist: true
+    hideFromHotlist: false
   ) {
     program {
       id
@@ -11464,6 +11464,21 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
 }`,
   DeleteKhanLibraryFolder: `mutation DeleteKhanLibraryFolder($folderId: String!) {
   deleteFolder(folderId: $folderId) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  updateProgramCategory: `mutation updateProgramCategory($programId: ID!, $category: ProgramCategoryInput) {
+  updateProgramSettings(
+    programId: $programId
+    height: 0
+    width: 0
+    category: $category
+  ) {
     error {
       code
       debugMessage

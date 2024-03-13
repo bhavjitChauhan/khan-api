@@ -1,0 +1,36 @@
+query courseMetadata($path: String!, $countryCode: String!) {
+  contentRoute(path: $path, countryCode: $countryCode) {
+    resolvedPath
+    listedPathData {
+      course {
+        id
+        translatedTitle
+        relativeUrl
+        __typename
+      }
+      domain {
+        id
+        translatedTitle
+        relativeUrl
+        __typename
+      }
+      __typename
+    }
+    unlistedPathData {
+      course {
+        id
+        translatedTitle
+        relativeUrl
+        __typename
+      }
+      domain {
+        id
+        translatedTitle
+        relativeUrl
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

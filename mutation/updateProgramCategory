@@ -1,0 +1,15 @@
+mutation updateProgramCategory($programId: ID!, $category: ProgramCategoryInput) {
+  updateProgramSettings(
+    programId: $programId
+    height: 0
+    width: 0
+    category: $category
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
