@@ -1,0 +1,9 @@
+query FoldersLibraryPermissionCheck {
+  user {
+    id
+    canCreateFolders: hasPermission(name: "can_create_folders")
+    canDeleteFolders: hasPermission(name: "can_delete_folders")
+    canGrantContentRoles: hasPermission(name: "can_grant_content_roles")
+    __typename
+  }
+}

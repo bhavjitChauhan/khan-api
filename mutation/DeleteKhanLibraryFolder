@@ -1,0 +1,10 @@
+mutation DeleteKhanLibraryFolder($folderId: String!) {
+  deleteFolder(folderId: $folderId) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

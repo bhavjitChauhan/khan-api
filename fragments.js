@@ -242,6 +242,7 @@ export default {
   id
   name
   kaLocale
+  isEmpty
   __typename
 }`,
   BasicContentItemProgress: `fragment BasicContentItemProgress on ContentItemProgress {

@@ -17,5 +17,6 @@ fragment BaseFolder on Folder {
   id
   name
   kaLocale
+  isEmpty
   __typename
 }
