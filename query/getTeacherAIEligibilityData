@@ -1,0 +1,8 @@
+query getTeacherAIEligibilityData {
+  user {
+    id
+    age
+    isEnrolledInAIGuide
+    __typename
+  }
+}

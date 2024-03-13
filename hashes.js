@@ -655,4 +655,5 @@ export default {
   districtKhanmigoUsageOvertime: 1661333824,
   getTeacherKhanmigoAccess: 3919763789,
   FoldersLibraryPermissionCheck: 890262259,
+  getTeacherAIEligibilityData: 3391149362,
 }
