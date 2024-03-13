@@ -10884,6 +10884,7 @@ fragment BaseFolder on Folder {
   id
   name
   kaLocale
+  isEmpty
   __typename
 }
 
@@ -11085,6 +11086,7 @@ fragment BaseFolder on Folder {
   id
   name
   kaLocale
+  isEmpty
   __typename
 }`,
   khanLibraryGetOtherGroup: `query khanLibraryGetOtherGroup {
@@ -11106,6 +11108,7 @@ fragment BaseFolder on Folder {
   id
   name
   kaLocale
+  isEmpty
   __typename
 }`,
   khanLibraryGetStatus: `query khanLibraryGetStatus {
@@ -18607,6 +18610,15 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       enrollmentGroup
       __typename
     }
+    __typename
+  }
+}`,
+  FoldersLibraryPermissionCheck: `query FoldersLibraryPermissionCheck {
+  user {
+    id
+    canCreateFolders: hasPermission(name: "can_create_folders")
+    canDeleteFolders: hasPermission(name: "can_delete_folders")
+    canGrantContentRoles: hasPermission(name: "can_grant_content_roles")
     __typename
   }
 }`,

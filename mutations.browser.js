@@ -6876,6 +6876,7 @@ fragment BaseFolder on Folder {
   id
   name
   kaLocale
+  isEmpty
   __typename
 }
 
@@ -11456,6 +11457,16 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   updatePartnershipRosterSyncing(partnershipID: $partnershipID, sync: $sync) {
     error {
       code
+      __typename
+    }
+    __typename
+  }
+}`,
+  DeleteKhanLibraryFolder: `mutation DeleteKhanLibraryFolder($folderId: String!) {
+  deleteFolder(folderId: $folderId) {
+    error {
+      code
+      debugMessage
       __typename
     }
     __typename
