@@ -1,0 +1,8 @@
+query programsGalleryGetDomain($id: String!) {
+  domainById(id: $id) {
+    id
+    translatedTitle
+    relativeUrl
+    __typename
+  }
+}

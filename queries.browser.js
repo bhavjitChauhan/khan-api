@@ -1606,6 +1606,7 @@ fragment CourseData on Course {
   isListedForLearners
   translatedCustomTitleTag
   contentKind
+  userAuthoredContentTypes
   parent {
     id
     contentKind
@@ -17912,7 +17913,7 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
       }
       __typename
     }
-    deleted
+    hiddenEverywhere: deleted
     description
     spinoffCount: displayableSpinoffCount
     docsUrlPath
@@ -17920,7 +17921,7 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     flaggedByKaids
     isFlaggedByCurrentUser
     height
-    hideFromHotlist
+    hiddenFromHotlist: hideFromHotlist
     id
     imagePath
     originIsProject
@@ -18627,6 +18628,50 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     id
     age
     isEnrolledInAIGuide
+    __typename
+  }
+}`,
+  courseMetadata: `query courseMetadata($path: String!, $countryCode: String!) {
+  contentRoute(path: $path, countryCode: $countryCode) {
+    resolvedPath
+    listedPathData {
+      course {
+        id
+        translatedTitle
+        relativeUrl
+        __typename
+      }
+      domain {
+        id
+        translatedTitle
+        relativeUrl
+        __typename
+      }
+      __typename
+    }
+    unlistedPathData {
+      course {
+        id
+        translatedTitle
+        relativeUrl
+        __typename
+      }
+      domain {
+        id
+        translatedTitle
+        relativeUrl
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  programsGalleryGetDomain: `query programsGalleryGetDomain($id: String!) {
+  domainById(id: $id) {
+    id
+    translatedTitle
+    relativeUrl
     __typename
   }
 }`,

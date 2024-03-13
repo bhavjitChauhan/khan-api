@@ -9,6 +9,7 @@ fragment CourseData on Course {
   isListedForLearners
   translatedCustomTitleTag
   contentKind
+  userAuthoredContentTypes
   parent {
     id
     contentKind

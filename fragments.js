@@ -375,6 +375,7 @@ fragment InvitationsField on Invitation {
   isListedForLearners
   translatedCustomTitleTag
   contentKind
+  userAuthoredContentTypes
   parent {
     id
     contentKind
