@@ -9463,10 +9463,10 @@ fragment AssignmentInfoFragment on Assignment {
     __typename
   }
 }`,
-  updateContentPermission: `mutation updateContentPermission($userKaid: String!, $id: String!, $role: String!, $locale: String!, $topic: String!, $kind: String!, $canPublish: Boolean!) {
+  updateContentPermission: `mutation updateContentPermission($userKaid: String!, $id: String!, $role: String!, $kaLocale: String!, $curationNodeId: String!, $kind: String!, $canPublish: Boolean!) {
   updateContentPermission(
     userKaid: $userKaid
-    contentPermission: {id: $id, role: $role, locale: $locale, topic: $topic, kind: $kind, canPublish: $canPublish}
+    contentPermission: {id: $id, role: $role, kaLocale: $kaLocale, curationNodeId: $curationNodeId, kind: $kind, canPublish: $canPublish}
   ) {
     error {
       code
