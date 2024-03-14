@@ -11333,6 +11333,11 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     }
     error {
       code
+      conflictingUDI {
+        id
+        districtProvidedEmail
+        __typename
+      }
       __typename
     }
     __typename
@@ -11482,6 +11487,24 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     error {
       code
       debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  setUpAdminsMutation: `mutation setUpAdminsMutation($params: [WriteAdminUDIParams!]!) {
+  setUpAdminUDIs(params: $params) {
+    adminUDI {
+      id
+      __typename
+    }
+    error {
+      code
+      conflictingUDI {
+        id
+        districtProvidedEmail
+        __typename
+      }
       __typename
     }
     __typename
