@@ -1,8 +1,7 @@
-mutation editAdminUDIMutation($urlsafeKey: ID!, $params: WriteAdminUDIParams!) {
-  editAdminUDI(urlsafeKey: $urlsafeKey, params: $params) {
+mutation setUpAdminsMutation($params: [WriteAdminUDIParams!]!) {
+  setUpAdminUDIs(params: $params) {
     adminUDI {
       id
-      canManageAdmins
       __typename
     }
     error {
