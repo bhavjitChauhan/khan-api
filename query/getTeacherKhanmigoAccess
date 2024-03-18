@@ -1,7 +1,7 @@
 query getTeacherKhanmigoAccess {
   user {
     id
-    tosForFormalTeacherStatus
+    isFormalTeacher
     userDistrictInfos {
       id
       district {
