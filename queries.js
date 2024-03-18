@@ -18595,7 +18595,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   getTeacherKhanmigoAccess: `query getTeacherKhanmigoAccess {
   user {
     id
-    tosForFormalTeacherStatus
+    isFormalTeacher
     userDistrictInfos {
       id
       district {
