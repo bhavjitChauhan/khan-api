@@ -1,0 +1,21 @@
+query freeForTeachersEnrollEligibility($agreesToTerms: Boolean) {
+  user {
+    id
+    aiGuideAccessPlans {
+      id
+      enrollmentGroup
+      isActive
+      __typename
+    }
+    birthdate
+    email
+    username
+    aiGuideFreeForTeachersEligibility(agreesToAIGuideTermsOfService: $agreesToTerms) {
+      age
+      aiGuideTermsOfService
+      isTeacher
+      __typename
+    }
+    __typename
+  }
+}

@@ -11510,4 +11510,20 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  saveFreeForTeachersEligibilityForm: `mutation saveFreeForTeachersEligibilityForm($teacherRoleOp: RoleOperation!, $birthdate: String!) {
+  setSettings(birthdate: $birthdate) {
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+  updateUserRole(role: TEACHER, operation: $teacherRoleOp) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
