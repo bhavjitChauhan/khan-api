@@ -11382,7 +11382,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     curationNodeSlug: $curationNodeSlug
     userAuthoredContentType: PYTHON
     codeFormat: MULTI_FILE_JSON
-    hideFromHotlist: true
+    hideFromHotlist: false
   ) {
     program {
       id

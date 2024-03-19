@@ -640,7 +640,7 @@ export default {
   assignmentData: 2096341817,
   districtKhanmigoActivity: 984891921,
   GetPartnership: 2104711457,
-  GetPartnerships: 3021530916,
+  GetPartnerships: 2436432226,
   getExerciseProblemTypeKind: 3439472591,
   aiGuideSwagAppliedQuery: 1997210616,
   GuidePreferences: 1214899081,

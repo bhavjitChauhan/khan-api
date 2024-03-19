@@ -8,18 +8,19 @@ query GetPartnerships($countryCodes: [String!], $includeDeleted: Boolean!, $only
       id
       name
       countryCode
-      districts: descendants {
-        ... on District {
-          id
-          countryCode
-          rosterSyncingEnabled
-          khanmigoPreference
-          isTest
-          goLiveDate
-          schoolYearStart
-          schoolYearEnd
-          __typename
-        }
+      inferredAttributes {
+        rosterSyncingEnabled
+        isRosterSyncingEnabledConsistent
+        khanmigoPreference
+        isKhanmigoPreferenceConsistent
+        isTest
+        isTestConsistent
+        goLiveDate
+        isGoLiveDateConsistent
+        schoolYearStart
+        isSchoolYearStartConsistent
+        schoolYearEnd
+        isSchoolYearEndConsistent
         __typename
       }
       __typename
