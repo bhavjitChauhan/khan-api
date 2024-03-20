@@ -215,6 +215,8 @@ export default {
   dueDate
   isDraft
   subjectSlug
+  title
+  instructions
   __typename
 }`,
   Badge: `fragment Badge on Badge {

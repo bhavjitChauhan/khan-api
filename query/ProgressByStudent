@@ -12,6 +12,7 @@ query ProgressByStudent($assignmentFilters: CoachAssignmentFilters, $classDescri
     assignmentsPage(filters: $assignmentFilters, after: $after, pageSize: $pageSize) {
       assignments {
         id
+        title
         dueDate
         contents {
           id
@@ -26,6 +27,16 @@ query ProgressByStudent($assignmentFilters: CoachAssignmentFilters, $classDescri
           bestScore {
             numAttempted
             numCorrect
+            __typename
+          }
+          activitySubmissions {
+            threadID
+            __typename
+          }
+          student {
+            id
+            kaid
+            profileRoot
             __typename
           }
           __typename

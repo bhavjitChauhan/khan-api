@@ -1,0 +1,15 @@
+query ActivityCompletionThreadQuery($threadId: String!) {
+  aiGuideThread(threadId: $threadId) {
+    id
+    summary
+    flagged
+    kaid
+    interactions {
+      id
+      answer
+      question
+      __typename
+    }
+    __typename
+  }
+}

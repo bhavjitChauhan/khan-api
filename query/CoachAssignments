@@ -34,6 +34,8 @@ query CoachAssignments($classDescriptor: String!, $assignmentFilters: CoachAssig
           itemPickerStrategy
           __typename
         }
+        title
+        instructions
         __typename
       }
       pageInfo {

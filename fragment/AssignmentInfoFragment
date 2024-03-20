@@ -25,5 +25,7 @@ fragment AssignmentInfoFragment on Assignment {
   dueDate
   isDraft
   subjectSlug
+  title
+  instructions
   __typename
 }
