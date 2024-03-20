@@ -3,6 +3,7 @@ query getKhanLabsSettings($targetKaid: String!) {
     id
     age
     isParent
+    isTeacher
     isAIGuideEnabled
     aiGuideDisabledReason
     nickname
@@ -16,7 +17,6 @@ query getKhanLabsSettings($targetKaid: String!) {
       includesDistrictOwnedData
       __typename
     }
-    hasKhanmigoViaClassy
     hasKhanmigoViaStripe
     everHadKhanmigoViaStripe
     __typename

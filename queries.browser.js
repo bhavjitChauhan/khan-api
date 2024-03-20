@@ -6993,6 +6993,7 @@ fragment userTaskFields on PracticeUserTask {
     id
     age
     isParent
+    isTeacher
     isAIGuideEnabled
     aiGuideDisabledReason
     nickname
@@ -7006,7 +7007,6 @@ fragment userTaskFields on PracticeUserTask {
       includesDistrictOwnedData
       __typename
     }
-    hasKhanmigoViaClassy
     hasKhanmigoViaStripe
     everHadKhanmigoViaStripe
     __typename
@@ -18597,6 +18597,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   user {
     id
     isFormalTeacher
+    aiGuideEnrollmentGroup
     userDistrictInfos {
       id
       district {
@@ -18740,6 +18741,20 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       }
       __typename
     }
+    __typename
+  }
+}`,
+  UserPurchases: `query UserPurchases($kaid: String, $isActive: Boolean) {
+  userPurchases(kaid: $kaid, isActive: $isActive) {
+    id
+    kind
+    isActive
+    expiresAt
+    extId
+    kaid
+    extProductID
+    extUpdatedAt
+    extCustomerID
     __typename
   }
 }`,
