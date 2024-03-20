@@ -11536,4 +11536,43 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  contentEditorCreateChallenge: `mutation contentEditorCreateChallenge($input: NewChallengeInput!) {
+  createChallenge(input: $input) {
+    challenge {
+      ...ChallengeRevision
+      __typename
+    }
+    error {
+      code
+      conflictSha
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment ChallengeRevision on ChallengeRevision {
+  id
+  contentId
+  contentKind
+  sha
+  doNotPublish
+  slug
+  listed
+  title
+  description
+  authorName
+  code
+  codeFormat
+  tests
+  testsFormat
+  height
+  width
+  userAuthoredContentType
+  customTitleTag
+  customDescriptionTag
+  sourceKaLocale
+  __typename
+}`,
 }
