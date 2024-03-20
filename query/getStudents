@@ -1,4 +1,4 @@
-query getStudents($classDescriptor: String!) {
+query getStudents($classDescriptor: String!, $aiGuideEnabledStudentsOnly: Boolean!) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
     cacheId
@@ -6,6 +6,12 @@ query getStudents($classDescriptor: String!) {
       id
       kaid
       coachNickname
+      __typename
+    }
+    students @include(if: $aiGuideEnabledStudentsOnly) {
+      id
+      kaid
+      isAIGuideEnabled
       __typename
     }
     __typename

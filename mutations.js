@@ -305,6 +305,8 @@ fragment AssignmentInfoFragment on Assignment {
   dueDate
   isDraft
   subjectSlug
+  title
+  instructions
   __typename
 }`,
   archiveSubjectMasteryAssignment: `mutation archiveSubjectMasteryAssignment($assignmentId: ID!) {
@@ -3653,9 +3655,9 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
   relatedContentId: lessonId
   __typename
 }`,
-  createAssignments: `mutation createAssignments($classDescriptors: [String!]!, $qualifiedContentDescriptorsList: [String!], $startDate: DateTime!, $dueDate: DateTime, $isDraft: Boolean, $studentKaids: [ID], $subjectSlug: String!, $questionSetType: ExerciseItemPickerStrategy) {
+  createAssignments: `mutation createAssignments($classDescriptors: [String!]!, $qualifiedContentDescriptorsList: [String!], $startDate: DateTime!, $dueDate: DateTime, $isDraft: Boolean, $studentKaids: [ID], $subjectSlug: String!, $questionSetType: ExerciseItemPickerStrategy, $title: String, $instructions: String) {
   createAssignments(
-    assignment: {classroomDescriptors: $classDescriptors, qualifiedContentDescriptorsList: $qualifiedContentDescriptorsList, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft, studentKaids: $studentKaids, subjectSlug: $subjectSlug, exerciseItemPickerStrategy: $questionSetType}
+    assignment: {classroomDescriptors: $classDescriptors, qualifiedContentDescriptorsList: $qualifiedContentDescriptorsList, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft, studentKaids: $studentKaids, subjectSlug: $subjectSlug, exerciseItemPickerStrategy: $questionSetType, title: $title, instructions: $instructions}
   ) {
     assignments {
       ...AssignmentInfoFragment
@@ -3692,6 +3694,8 @@ fragment AssignmentInfoFragment on Assignment {
   dueDate
   isDraft
   subjectSlug
+  title
+  instructions
   __typename
 }`,
   createChildMutation: `mutation createChildMutation($birthdate: Date!, $username: String!, $password: String!, $nickname: String) {
@@ -7777,6 +7781,8 @@ fragment AssignmentInfoFragment on Assignment {
   dueDate
   isDraft
   subjectSlug
+  title
+  instructions
   __typename
 }`,
   publishStandardMappings: `mutation publishStandardMappings($set: String!, $content: String!) {
@@ -9361,6 +9367,8 @@ fragment AssignmentInfoFragment on Assignment {
   dueDate
   isDraft
   subjectSlug
+  title
+  instructions
   __typename
 }`,
   updateAssignments: `mutation updateAssignments($ids: [ID]!, $startDate: DateTime, $dueDate: DateTime) {

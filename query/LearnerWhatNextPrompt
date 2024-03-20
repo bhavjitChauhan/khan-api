@@ -1,0 +1,17 @@
+query LearnerWhatNextPrompt {
+  user {
+    id
+    kaid
+    recommendations(queryParams: {}) {
+      content {
+        id
+        title
+        defaultUrlPath
+        __typename
+      }
+      reason
+      __typename
+    }
+    __typename
+  }
+}

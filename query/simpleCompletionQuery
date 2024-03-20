@@ -53,6 +53,10 @@ query simpleCompletionQuery($assignmentId: String!, $teacherKaid: String) {
           lastAttemptDate
           __typename
         }
+        activitySubmissions {
+          threadID
+          __typename
+        }
         __typename
       }
       studentList {

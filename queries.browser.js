@@ -935,6 +935,8 @@ fragment AssignmentCsvData on Assignment {
           itemPickerStrategy
           __typename
         }
+        title
+        instructions
         __typename
       }
       pageInfo {
@@ -8150,7 +8152,7 @@ fragment Badge on Badge {
     __typename
   }
 }`,
-  getStudents: `query getStudents($classDescriptor: String!) {
+  getStudents: `query getStudents($classDescriptor: String!, $aiGuideEnabledStudentsOnly: Boolean!) {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
     cacheId
@@ -8158,6 +8160,12 @@ fragment Badge on Badge {
       id
       kaid
       coachNickname
+      __typename
+    }
+    students @include(if: $aiGuideEnabledStudentsOnly) {
+      id
+      kaid
+      isAIGuideEnabled
       __typename
     }
     __typename
@@ -12712,6 +12720,7 @@ fragment ProblemAttemptFields on ProblemAttempt {
     assignmentsPage(filters: $assignmentFilters, after: $after, pageSize: $pageSize) {
       assignments {
         id
+        title
         dueDate
         contents {
           id
@@ -12726,6 +12735,16 @@ fragment ProblemAttemptFields on ProblemAttempt {
           bestScore {
             numAttempted
             numCorrect
+            __typename
+          }
+          activitySubmissions {
+            threadID
+            __typename
+          }
+          student {
+            id
+            kaid
+            profileRoot
             __typename
           }
           __typename
@@ -13104,6 +13123,10 @@ fragment ProblemAttemptFields on ProblemAttempt {
           numAttempted
           numCorrect
           lastAttemptDate
+          __typename
+        }
+        activitySubmissions {
+          threadID
           __typename
         }
         __typename
@@ -18755,6 +18778,38 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     extProductID
     extUpdatedAt
     extCustomerID
+    __typename
+  }
+}`,
+  ActivityCompletionThreadQuery: `query ActivityCompletionThreadQuery($threadId: String!) {
+  aiGuideThread(threadId: $threadId) {
+    id
+    summary
+    flagged
+    kaid
+    interactions {
+      id
+      answer
+      question
+      __typename
+    }
+    __typename
+  }
+}`,
+  LearnerWhatNextPrompt: `query LearnerWhatNextPrompt {
+  user {
+    id
+    kaid
+    recommendations(queryParams: {}) {
+      content {
+        id
+        title
+        defaultUrlPath
+        __typename
+      }
+      reason
+      __typename
+    }
     __typename
   }
 }`,
