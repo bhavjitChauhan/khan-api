@@ -11526,4 +11526,14 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  CancelStripeSubscription: `mutation CancelStripeSubscription($subscriptionId: String!) {
+  cancelStripeSubscription(subscriptionId: $subscriptionId) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }

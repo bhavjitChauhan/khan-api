@@ -2,6 +2,7 @@ query getTeacherKhanmigoAccess {
   user {
     id
     isFormalTeacher
+    aiGuideEnrollmentGroup
     userDistrictInfos {
       id
       district {

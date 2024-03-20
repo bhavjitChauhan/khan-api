@@ -1,0 +1,14 @@
+query UserPurchases($kaid: String, $isActive: Boolean) {
+  userPurchases(kaid: $kaid, isActive: $isActive) {
+    id
+    kind
+    isActive
+    expiresAt
+    extId
+    kaid
+    extProductID
+    extUpdatedAt
+    extCustomerID
+    __typename
+  }
+}
