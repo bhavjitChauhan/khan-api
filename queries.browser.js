@@ -18697,4 +18697,50 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  getContentSearchResults: `query getContentSearchResults($query: String!, $allowedTopicAncestors: [String], $contentKinds: [String], $numResults: Int) {
+  searchPage(
+    query: $query
+    allowedTopicAncestors: $allowedTopicAncestors
+    contentKinds: $contentKinds
+    numResults: $numResults
+  ) {
+    results {
+      contentId
+      kind
+      learnableContent {
+        id
+        title
+        contentDescriptor
+        description
+        mappedStandards {
+          id
+          setId
+          standardId
+          __typename
+        }
+        parentTopic {
+          id
+          title
+          contentKind
+          parent {
+            id
+            title
+            contentKind
+            parent {
+              id
+              title
+              contentKind
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }

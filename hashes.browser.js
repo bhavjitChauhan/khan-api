@@ -659,4 +659,5 @@ hashes = {
   courseMetadata: 1342216916,
   programsGalleryGetDomain: 3335265948,
   freeForTeachersEnrollEligibility: 3273719544,
+  getContentSearchResults: 2346233338,
 }
