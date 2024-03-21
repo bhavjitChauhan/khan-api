@@ -220,7 +220,7 @@ export default {
   getIsClassCleverLibrarySynced: 1236091707,
   getIsDistrictSynced: 917643347,
   getItemsForExercise: 1632154855,
-  getKhanLabsSettings: 246770578,
+  getKhanLabsSettings: 2408006546,
   getLastSecond: 2978522582,
   getLearnMenuProgress: 4010484075,
   getLearnStormCampaign: 3811728982,
