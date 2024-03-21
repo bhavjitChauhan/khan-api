@@ -6997,6 +6997,7 @@ fragment userTaskFields on PracticeUserTask {
     isParent
     isTeacher
     isAIGuideEnabled
+    aiGuideEnrollmentGroup
     aiGuideDisabledReason
     nickname
     includesDistrictOwnedData
@@ -7005,12 +7006,25 @@ fragment userTaskFields on PracticeUserTask {
       age
       nickname
       isAIGuideEnabled
+      aiGuideEnrollmentGroup
       aiGuideDisabledReason
       includesDistrictOwnedData
+      aiGuideAccessPlans {
+        id
+        isActive
+        enrollmentGroup
+        __typename
+      }
       __typename
     }
     hasKhanmigoViaStripe
     everHadKhanmigoViaStripe
+    aiGuideAccessPlans {
+      id
+      isActive
+      enrollmentGroup
+      __typename
+    }
     __typename
   }
 }`,
