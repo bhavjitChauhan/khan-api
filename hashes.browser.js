@@ -660,7 +660,7 @@ hashes = {
   programsGalleryGetDomain: 3335265948,
   freeForTeachersEnrollEligibility: 3273719544,
   getContentSearchResults: 2346233338,
-  UserPurchases: 3444034265,
+  UserPurchases: 3206316106,
   ActivityCompletionThreadQuery: 4128549525,
   LearnerWhatNextPrompt: 245792669,
 }
