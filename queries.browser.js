@@ -672,7 +672,7 @@ fragment AssignmentCsvData on Assignment {
     cacheId
     name
     signupCode
-    includesDistrictOwnedData
+    includesCentrallyOwnedDistrictData
     __typename
   }
 }`,
@@ -13461,7 +13461,7 @@ fragment TranslatedContentFields on LearnableContent {
     cacheId
     name
     signupCode
-    includesDistrictOwnedData
+    includesCentrallyOwnedDistrictData
     classroomDistrictInfo {
       id
       emailDomains
