@@ -18840,4 +18840,38 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  AITeacherTools_ArticleDetails: `query AITeacherTools_ArticleDetails($articleId: String) {
+  articleById(id: $articleId) {
+    id
+    title
+    translatedPerseusContent
+    __typename
+  }
+}`,
+  AITeacherTools_ExerciseDetails: `query AITeacherTools_ExerciseDetails($exerciseId: String) {
+  exerciseById(id: $exerciseId) {
+    id
+    title
+    prerequisites
+    assessmentItems {
+      id
+      itemShapeType
+      itemData
+      problemType
+      __typename
+    }
+    __typename
+  }
+}`,
+  AITeacherTools_VideoDetails: `query AITeacherTools_VideoDetails($videoId: String) {
+  videoById(contentId: $videoId) {
+    id
+    title
+    subtitles {
+      text
+      __typename
+    }
+    __typename
+  }
+}`,
 }
