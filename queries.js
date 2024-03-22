@@ -18828,4 +18828,16 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  isKADorKADTeacherQuery: `query isKADorKADTeacherQuery {
+  user {
+    id
+    userDistrictInfos {
+      id
+      isKAD
+      isKmap
+      __typename
+    }
+    __typename
+  }
+}`,
 }

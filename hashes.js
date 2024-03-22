@@ -663,4 +663,5 @@ export default {
   UserPurchases: 3206316106,
   ActivityCompletionThreadQuery: 4128549525,
   LearnerWhatNextPrompt: 245792669,
+  isKADorKADTeacherQuery: 1520039936,
 }

@@ -1,0 +1,12 @@
+query isKADorKADTeacherQuery {
+  user {
+    id
+    userDistrictInfos {
+      id
+      isKAD
+      isKmap
+      __typename
+    }
+    __typename
+  }
+}
