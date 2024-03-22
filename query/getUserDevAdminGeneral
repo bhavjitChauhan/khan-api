@@ -187,6 +187,12 @@ query getUserDevAdminGeneral($kaid: String!) {
       khanmigoShould
       khanmigoStatus
       khanmigoReason
+      udiAuditLogs {
+        actorKaid
+        createdAt
+        description
+        __typename
+      }
       __typename
     }
     walmartId

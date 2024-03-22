@@ -27,6 +27,12 @@ query UserDistrictInfosQuery($email: String, $rosterID: String) {
       name
       __typename
     }
+    udiAuditLogs {
+      actorKaid
+      createdAt
+      description
+      __typename
+    }
     __typename
   }
 }
