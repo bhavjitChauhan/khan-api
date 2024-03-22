@@ -9111,6 +9111,12 @@ fragment Badge on Badge {
       khanmigoShould
       khanmigoStatus
       khanmigoReason
+      udiAuditLogs {
+        actorKaid
+        createdAt
+        description
+        __typename
+      }
       __typename
     }
     walmartId
@@ -15072,6 +15078,12 @@ fragment AssignmentData on Assignment {
     adminOfSchools {
       id
       name
+      __typename
+    }
+    udiAuditLogs {
+      actorKaid
+      createdAt
+      description
       __typename
     }
     __typename
