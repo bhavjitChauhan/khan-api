@@ -664,4 +664,7 @@ hashes = {
   ActivityCompletionThreadQuery: 4128549525,
   LearnerWhatNextPrompt: 245792669,
   isKADorKADTeacherQuery: 1520039936,
+  AITeacherTools_ArticleDetails: 280833367,
+  AITeacherTools_ExerciseDetails: 3453126164,
+  AITeacherTools_VideoDetails: 2297513947,
 }

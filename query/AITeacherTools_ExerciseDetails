@@ -1,0 +1,15 @@
+query AITeacherTools_ExerciseDetails($exerciseId: String) {
+  exerciseById(id: $exerciseId) {
+    id
+    title
+    prerequisites
+    assessmentItems {
+      id
+      itemShapeType
+      itemData
+      problemType
+      __typename
+    }
+    __typename
+  }
+}

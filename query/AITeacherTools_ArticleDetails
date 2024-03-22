@@ -1,0 +1,8 @@
+query AITeacherTools_ArticleDetails($articleId: String) {
+  articleById(id: $articleId) {
+    id
+    title
+    translatedPerseusContent
+    __typename
+  }
+}

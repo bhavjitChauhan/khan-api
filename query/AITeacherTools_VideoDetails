@@ -1,0 +1,11 @@
+query AITeacherTools_VideoDetails($videoId: String) {
+  videoById(contentId: $videoId) {
+    id
+    title
+    subtitles {
+      text
+      __typename
+    }
+    __typename
+  }
+}
