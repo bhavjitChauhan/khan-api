@@ -214,7 +214,7 @@ export default {
   getFlag: 1986245167,
   getFlagsSummary: 225516176,
   getFpmMasteryForTopic: 2367143383,
-  getFullUserProfile: 4025674678,
+  getFullUserProfile: 2285962565,
   getInfoForTotalStudentCountQuery: 3058507865,
   getInitialDataForPrePhantomUser: 1309764977,
   getIsClassCleverLibrarySynced: 1236091707,
@@ -667,4 +667,5 @@ export default {
   AITeacherTools_ArticleDetails: 280833367,
   AITeacherTools_ExerciseDetails: 3453126164,
   AITeacherTools_VideoDetails: 2297513947,
+  getShowDiscussionsForDistrict: 2134624385,
 }

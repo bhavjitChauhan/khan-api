@@ -11583,4 +11583,13 @@ fragment ChallengeRevision on ChallengeRevision {
   sourceKaLocale
   __typename
 }`,
+  updateShowDiscussions: `mutation updateShowDiscussions($districtID: String!, $enable: Boolean!) {
+  updateDistrictShowDiscussions(districtID: $districtID, enable: $enable) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

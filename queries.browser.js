@@ -6752,6 +6752,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     userDistrictInfos {
       id
       isKAD
+      canSeeAllSchools
       district {
         id
         region
@@ -18883,6 +18884,13 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       text
       __typename
     }
+    __typename
+  }
+}`,
+  getShowDiscussionsForDistrict: `query getShowDiscussionsForDistrict($districtID: ID!) {
+  districtById(districtId: $districtID) {
+    id
+    showDiscussions
     __typename
   }
 }`,
