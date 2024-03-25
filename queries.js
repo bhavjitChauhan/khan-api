@@ -6673,8 +6673,6 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     gaUserId
     isPhantom
     isDeveloper: hasPermission(name: "can_do_what_only_admins_can_do")
-    isCurator: hasPermission(name: "can_curate_tags", scope: ANY_ON_CURRENT_LOCALE)
-    isCreator: hasPermission(name: "has_creator_role", scope: ANY_ON_CURRENT_LOCALE)
     isPublisher: hasPermission(name: "can_publish", scope: ANY_ON_CURRENT_LOCALE)
     isModerator: hasPermission(name: "can_moderate_users", scope: GLOBAL)
     isParent
