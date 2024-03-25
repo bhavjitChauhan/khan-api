@@ -11600,4 +11600,18 @@ fragment ChallengeRevision on ChallengeRevision {
     __typename
   }
 }`,
+  freeForTeachersEnroll: `mutation freeForTeachersEnroll($termsUrl: String!, $userAcceptedTerms: Boolean!, $countryCode: String!) {
+  activateTeacherTools(
+    termsUrl: $termsUrl
+    userAcceptedTerms: $userAcceptedTerms
+    countryCode: $countryCode
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
