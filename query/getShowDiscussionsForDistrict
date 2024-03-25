@@ -1,0 +1,7 @@
+query getShowDiscussionsForDistrict($districtID: ID!) {
+  districtById(districtId: $districtID) {
+    id
+    showDiscussions
+    __typename
+  }
+}
