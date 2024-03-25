@@ -6961,8 +6961,16 @@ fragment CourseRevisionStructure on CourseRevision {
   __typename
 }`,
   khanLibraryCreateCourse: `mutation khanLibraryCreateCourse($input: CreateDefaultCourse!) {
-  course: createDefaultCourse(inputData: $input) {
-    ...CourseRevisionStructure
+  createDefaultCourse(inputData: $input) {
+    course: courseRevision {
+      ...CourseRevisionStructure
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
     __typename
   }
 }
