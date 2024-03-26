@@ -87,7 +87,6 @@ query getFullUserProfile($kaid: String, $username: String) {
     userDistrictInfos {
       id
       isKAD
-      canSeeAllSchools
       district {
         id
         region

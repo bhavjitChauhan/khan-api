@@ -214,7 +214,7 @@ hashes = {
   getFlag: 1986245167,
   getFlagsSummary: 225516176,
   getFpmMasteryForTopic: 2367143383,
-  getFullUserProfile: 2480591006,
+  getFullUserProfile: 142629453,
   getInfoForTotalStudentCountQuery: 3058507865,
   getInitialDataForPrePhantomUser: 1309764977,
   getIsClassCleverLibrarySynced: 1236091707,
@@ -668,4 +668,5 @@ hashes = {
   AITeacherTools_ExerciseDetails: 3453126164,
   AITeacherTools_VideoDetails: 2297513947,
   getShowDiscussionsForDistrict: 2134624385,
+  DistrictAdminPermissionsQuery: 2609890217,
 }

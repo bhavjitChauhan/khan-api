@@ -6750,7 +6750,6 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     userDistrictInfos {
       id
       isKAD
-      canSeeAllSchools
       district {
         id
         region
@@ -18891,6 +18890,22 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   districtById(districtId: $districtID) {
     id
     showDiscussions
+    __typename
+  }
+}`,
+  DistrictAdminPermissionsQuery: `query DistrictAdminPermissionsQuery {
+  user {
+    id
+    hasPermission(name: "CAN_ACT_LIKE_A_DISTRICT_ADMIN", scope: ANY)
+    userDistrictInfos {
+      id
+      district {
+        id
+        __typename
+      }
+      canSeeAllSchools
+      __typename
+    }
     __typename
   }
 }`,
