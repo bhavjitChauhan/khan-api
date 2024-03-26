@@ -11120,11 +11120,6 @@ fragment BaseFolder on Folder {
   folderGroups {
     otherFolders {
       ...BaseFolder
-      courses {
-        id
-        importable
-        __typename
-      }
       __typename
     }
     __typename
