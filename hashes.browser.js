@@ -669,4 +669,5 @@ hashes = {
   AITeacherTools_VideoDetails: 2297513947,
   getShowDiscussionsForDistrict: 2134624385,
   DistrictAdminPermissionsQuery: 2609890217,
+  activityByContentDescriptor: 1800741948,
 }
