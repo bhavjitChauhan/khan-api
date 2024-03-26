@@ -18508,6 +18508,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       usersWithUsage
       percentUsersWithUsage
       avgChats
+      avgMessagesPerChat
       avgMessagesPerUser
       __typename
     }

@@ -5,6 +5,7 @@ query districtKhanmigoTotalUsage($filter: KhanmigoDistrictFilters!) {
       usersWithUsage
       percentUsersWithUsage
       avgChats
+      avgMessagesPerChat
       avgMessagesPerUser
       __typename
     }
