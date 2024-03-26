@@ -115,6 +115,7 @@ fragments = {
 }`,
   AssignmentData: `fragment AssignmentData on Assignment {
   id
+  title
   contents {
     id
     contentDescriptor
