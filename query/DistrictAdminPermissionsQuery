@@ -1,0 +1,16 @@
+query DistrictAdminPermissionsQuery {
+  user {
+    id
+    hasPermission(name: "CAN_ACT_LIKE_A_DISTRICT_ADMIN", scope: ANY)
+    userDistrictInfos {
+      id
+      district {
+        id
+        __typename
+      }
+      canSeeAllSchools
+      __typename
+    }
+    __typename
+  }
+}
