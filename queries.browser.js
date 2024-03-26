@@ -18905,4 +18905,21 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  activityByContentDescriptor: `query activityByContentDescriptor($activityID: String!, $activityKind: String!) {
+  learnableContent(id: $activityID, kind: $activityKind) {
+    id
+    contentId
+    contentKind
+    topicPaths {
+      path {
+        id
+        kind
+        slug
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
