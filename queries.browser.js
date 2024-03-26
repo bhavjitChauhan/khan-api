@@ -14831,6 +14831,7 @@ fragment ContentFields on LearnableContent {
 
 fragment AssignmentData on Assignment {
   id
+  title
   contents {
     id
     contentDescriptor
@@ -14930,6 +14931,7 @@ fragment AssignmentData on Assignment {
 
 fragment AssignmentData on Assignment {
   id
+  title
   contents {
     id
     contentDescriptor
