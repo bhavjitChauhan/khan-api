@@ -31,6 +31,16 @@ query ProgressByStudent($assignmentFilters: CoachAssignmentFilters, $classDescri
           }
           activitySubmissions {
             threadID
+            thread {
+              id
+              interactions {
+                id
+                answer
+                question
+                __typename
+              }
+              __typename
+            }
             __typename
           }
           student {
