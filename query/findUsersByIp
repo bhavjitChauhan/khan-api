@@ -18,6 +18,8 @@ query findUsersByIp($ip: String!, $usersCursor: ID, $pageSize: Int) {
         kaid
         __typename
       }
+      isChild
+      discussionBanned
       __typename
     }
     pageInfo {
