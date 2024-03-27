@@ -18934,4 +18934,22 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  getItemIdForGroupedExercise: `query getItemIdForGroupedExercise($exerciseId: String!) {
+  assessmentItemsForGroupedItemTaskWithError(
+    exerciseId: $exerciseId
+    nextProblemNumber: 1
+    previouslyReservedItemIds: []
+  ) {
+    value {
+      id
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }

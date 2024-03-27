@@ -670,4 +670,5 @@ hashes = {
   getShowDiscussionsForDistrict: 2134624385,
   DistrictAdminPermissionsQuery: 2609890217,
   activityByContentDescriptor: 1800741948,
+  getItemIdForGroupedExercise: 382432773,
 }
