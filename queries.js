@@ -4455,6 +4455,8 @@ fragment UserFields on User {
         kaid
         __typename
       }
+      isChild
+      discussionBanned
       __typename
     }
     pageInfo {
