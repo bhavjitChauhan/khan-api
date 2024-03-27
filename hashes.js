@@ -426,7 +426,7 @@ export default {
   programQuery: 2753000164,
   ProgressByGradeQuery: 2344111782,
   ProgressBySchoolQuery: 2643116922,
-  ProgressByStudent: 21142012,
+  ProgressByStudent: 2007497225,
   ProgressByTeacherQuery: 147340987,
   projectsAuthoredByUser: 96565169,
   PublishContent: 1106236,

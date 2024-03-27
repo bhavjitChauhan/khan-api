@@ -12754,6 +12754,16 @@ fragment ProblemAttemptFields on ProblemAttempt {
           }
           activitySubmissions {
             threadID
+            thread {
+              id
+              interactions {
+                id
+                answer
+                question
+                __typename
+              }
+              __typename
+            }
             __typename
           }
           student {
