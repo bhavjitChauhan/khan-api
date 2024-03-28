@@ -1,0 +1,14 @@
+query districtId {
+  user {
+    id
+    userDistrictInfos {
+      id
+      district {
+        id
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

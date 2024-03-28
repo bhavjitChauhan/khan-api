@@ -671,4 +671,5 @@ export default {
   DistrictAdminPermissionsQuery: 2609890217,
   activityByContentDescriptor: 1800741948,
   getItemIdForGroupedExercise: 382432773,
+  districtId: 3726089185,
 }

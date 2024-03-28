@@ -18952,4 +18952,18 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  districtId: `query districtId {
+  user {
+    id
+    userDistrictInfos {
+      id
+      district {
+        id
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
