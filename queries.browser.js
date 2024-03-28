@@ -18912,6 +18912,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
         __typename
       }
       canSeeAllSchools
+      canManageAdmins
       __typename
     }
     __typename

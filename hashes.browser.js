@@ -668,7 +668,7 @@ hashes = {
   AITeacherTools_ExerciseDetails: 3453126164,
   AITeacherTools_VideoDetails: 2297513947,
   getShowDiscussionsForDistrict: 2134624385,
-  DistrictAdminPermissionsQuery: 2609890217,
+  DistrictAdminPermissionsQuery: 2419103410,
   activityByContentDescriptor: 1800741948,
   getItemIdForGroupedExercise: 382432773,
   districtId: 3726089185,
