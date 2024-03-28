@@ -9366,6 +9366,7 @@ fragment CommonUserInfoFragment on User {
         startDt: $startDt
         endDt: $endDt
         after: $videoProgressesCursor
+        pageSize: $pageSize
       ) {
         videoProgresses {
           completed
