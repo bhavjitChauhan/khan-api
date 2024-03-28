@@ -3657,6 +3657,7 @@ fragment CourseProgress on SubjectProgress {
     schoolYearEnd
     hasKhanmigo
     khanmigoPreference
+    khanmigoIncludeNonStudents
     khanmigoIncludeStudents
     khanmigoStudents
     khanmigoAdmins

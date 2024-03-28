@@ -112,7 +112,7 @@ export default {
   districtHomepageProgress: 1681650575,
   DistrictPrimaryOfferingAsTeacher: 15799337,
   DistrictQuery: 2138278370,
-  districts: 3510948123,
+  districts: 2021343704,
   DistrictSkillsMAPProgressQuery: 706683816,
   DistrictSkillsProgressQuery: 2501404314,
   districtsMetrics: 2006961705,
