@@ -9,6 +9,7 @@ query DistrictAdminPermissionsQuery {
         __typename
       }
       canSeeAllSchools
+      canManageAdmins
       __typename
     }
     __typename
