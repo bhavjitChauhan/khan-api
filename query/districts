@@ -64,6 +64,7 @@ query districts($filter: String!, $excludeTeacherDirected: Boolean!) {
     schoolYearEnd
     hasKhanmigo
     khanmigoPreference
+    khanmigoIncludeNonStudents
     khanmigoIncludeStudents
     khanmigoStudents
     khanmigoAdmins
