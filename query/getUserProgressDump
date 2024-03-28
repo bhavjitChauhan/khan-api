@@ -9,6 +9,7 @@ query getUserProgressDump($kaid: String!, $problemLogCursor: ID, $videoProgresse
         startDt: $startDt
         endDt: $endDt
         after: $videoProgressesCursor
+        pageSize: $pageSize
       ) {
         videoProgresses {
           completed
