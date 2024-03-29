@@ -18969,4 +18969,25 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  coeditingLatestSnapshot: `query coeditingLatestSnapshot($threadId: String!) {
+  aiGuideThread(threadId: $threadId) {
+    id
+    coeditingDocument {
+      id
+      title
+      latestSnapshot {
+        id
+        text {
+          prefix
+          selection
+          suffix
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }

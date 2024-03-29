@@ -672,4 +672,5 @@ export default {
   activityByContentDescriptor: 1800741948,
   getItemIdForGroupedExercise: 382432773,
   districtId: 3726089185,
+  coeditingLatestSnapshot: 2234147930,
 }

@@ -11614,4 +11614,20 @@ fragment ChallengeRevision on ChallengeRevision {
     __typename
   }
 }`,
+  coeditingAutosave: `mutation coeditingAutosave($configName: String!, $threadId: String!, $title: String!, $prefix: String!, $selection: String!, $suffix: String!) {
+  saveCoeditingSnapshot(
+    configName: $configName
+    threadId: $threadId
+    title: $title
+    prefix: $prefix
+    selection: $selection
+    suffix: $suffix
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
