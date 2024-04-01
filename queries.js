@@ -4620,6 +4620,7 @@ fragment UserFields on User {
       programID: id
       key
       appearsAsDeleted
+      codeFormat
       date: created
       deleted
       hideFromHotlist
