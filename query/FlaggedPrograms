@@ -4,6 +4,7 @@ query FlaggedPrograms($page: Int, $sort: ModerationSortOrder, $limit: Int) {
       programID: id
       key
       appearsAsDeleted
+      codeFormat
       date: created
       deleted
       hideFromHotlist
