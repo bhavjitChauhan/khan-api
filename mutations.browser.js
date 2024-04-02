@@ -7496,7 +7496,7 @@ fragment CourseRevisionStructure on CourseRevision {
     __typename
   }
 }`,
-  modifyDistrict: `mutation modifyDistrict($existingDistrictID: ID!, $newName: String, $offerings: [Offering!], $rosterSyncingEnabled: Boolean, $rosterID: String, $rosterSource: RosterSource, $nweaID: String, $ncesID: String, $isTest: Boolean, $sendTeacherActivationEmails: Boolean, $goLiveDate: Date, $kaLocale: String, $schoolYearDates: DistrictSchoolYearInput, $region: String, $allOnGrades: [DistrictGradeLevel!], $allOffGrades: [DistrictGradeLevel!], $subsetGrades: [DistrictGradeLevel!], $schoolKhanmigoPreferences: [DistrictKhanmigoSchool!], $khanmigoPreference: KhanmigoEnrollment, $khanmigoAdmins: Int, $khanmigoTeachers: Int, $khanmigoStudents: Int, $khanmigoStartDate: Date, $khanmigoEndDate: Date, $khanmigoTokenCapacity: Int, $khanmigoIncludeUserEmails: [String!], $khanmigoExcludeUserEmails: [String!], $khanmigoIncludeStudents: Boolean) {
+  modifyDistrict: `mutation modifyDistrict($existingDistrictID: ID!, $newName: String, $offerings: [Offering!], $rosterSyncingEnabled: Boolean, $rosterID: String, $rosterSource: RosterSource, $nweaID: String, $ncesID: String, $isTest: Boolean, $sendTeacherActivationEmails: Boolean, $goLiveDate: Date, $kaLocale: String, $schoolYearDates: DistrictSchoolYearInput, $region: String, $allOnGrades: [DistrictGradeLevel!], $allOffGrades: [DistrictGradeLevel!], $subsetGrades: [DistrictGradeLevel!], $schoolKhanmigoPreferences: [DistrictKhanmigoSchool!], $khanmigoPreference: KhanmigoEnrollment, $khanmigoAdmins: Int, $khanmigoTeachers: Int, $khanmigoStudents: Int, $khanmigoStartDate: Date, $khanmigoEndDate: Date, $khanmigoTokenCapacity: Int, $khanmigoIncludeUserEmails: [String!], $khanmigoExcludeUserEmails: [String!], $khanmigoIncludeNonStudents: Boolean, $khanmigoIncludeStudents: Boolean) {
   modifyDistrict(
     existingDistrictID: $existingDistrictID
     newName: $newName
@@ -7525,6 +7525,7 @@ fragment CourseRevisionStructure on CourseRevision {
     khanmigoTokenCapacity: $khanmigoTokenCapacity
     khanmigoIncludeUserEmails: $khanmigoIncludeUserEmails
     khanmigoExcludeUserEmails: $khanmigoExcludeUserEmails
+    khanmigoIncludeNonStudents: $khanmigoIncludeNonStudents
     khanmigoIncludeStudents: $khanmigoIncludeStudents
   ) {
     district {
@@ -7558,6 +7559,7 @@ fragment CourseRevisionStructure on CourseRevision {
       }
       region
       khanmigoPreference
+      khanmigoIncludeNonStudents
       khanmigoIncludeStudents
       khanmigoAdmins
       khanmigoTeachers
