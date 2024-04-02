@@ -51,8 +51,8 @@ hashes = {
   ContentForLearnableContent: 2675420102,
   ContentForPath: 1242644265,
   ContentItemAssignmentStatusesQuery: 2379533208,
-  contentTabThreeLevelQuery: 1115327340,
-  contentTabTwoLevelQuery: 3674314042,
+  contentTabThreeLevelQuery: 1411230461,
+  contentTabTwoLevelQuery: 280717163,
   Content_GetRelatedAssessmentItems: 1204074885,
   courseChallengeAttemptQuery: 785250894,
   courseEditorFoldersByCourseIds: 389254275,
@@ -673,4 +673,5 @@ hashes = {
   getItemIdForGroupedExercise: 382432773,
   districtId: 3726089185,
   coeditingLatestSnapshot: 2234147930,
+  getAiGuideThreads: 2735494621,
 }

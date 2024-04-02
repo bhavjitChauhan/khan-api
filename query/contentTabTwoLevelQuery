@@ -97,6 +97,7 @@ fragment LessonAndChildrenFields on Lesson {
       }
       ... on Exercise {
         expectedDoNCount: exerciseLength(useDefault: true)
+        problemTypeKind
         __typename
       }
     }
