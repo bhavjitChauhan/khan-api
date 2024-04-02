@@ -2113,6 +2113,7 @@ fragment LessonAndChildrenFieldsThreeLevels on Lesson {
       }
       ... on Exercise {
         expectedDoNCount: exerciseLength(useDefault: true)
+        problemTypeKind
         __typename
       }
     }
@@ -2239,6 +2240,7 @@ fragment LessonAndChildrenFields on Lesson {
       }
       ... on Exercise {
         expectedDoNCount: exerciseLength(useDefault: true)
+        problemTypeKind
         __typename
       }
     }
@@ -18981,6 +18983,27 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
           prefix
           selection
           suffix
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  getAiGuideThreads: `query getAiGuideThreads($kaid: String!, $hasCoeditor: Boolean!) {
+  aiGuideThreads(kaid: $kaid, hasCoeditor: $hasCoeditor) {
+    threads {
+      id
+      coeditingDocument {
+        id
+        title
+        configName
+        threadId
+        latestSnapshot {
+          id
+          createdAt
           __typename
         }
         __typename

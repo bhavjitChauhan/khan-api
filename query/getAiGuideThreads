@@ -1,0 +1,21 @@
+query getAiGuideThreads($kaid: String!, $hasCoeditor: Boolean!) {
+  aiGuideThreads(kaid: $kaid, hasCoeditor: $hasCoeditor) {
+    threads {
+      id
+      coeditingDocument {
+        id
+        title
+        configName
+        threadId
+        latestSnapshot {
+          id
+          createdAt
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
