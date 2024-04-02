@@ -653,7 +653,7 @@ export default {
   districtKhanmigoUsageByStudent: 1379684463,
   districtKhanmigoUsageByTeacher: 823674612,
   districtKhanmigoUsageOvertime: 1661333824,
-  getTeacherKhanmigoAccess: 3853414579,
+  getTeacherKhanmigoAccess: 2454313616,
   FoldersLibraryPermissionCheck: 890262259,
   getTeacherAIEligibilityData: 3391149362,
   courseMetadata: 1342216916,

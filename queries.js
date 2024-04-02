@@ -18657,7 +18657,6 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   user {
     id
     isFormalTeacher
-    aiGuideEnrollmentGroup
     userDistrictInfos {
       id
       district {
