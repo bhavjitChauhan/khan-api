@@ -1,0 +1,35 @@
+mutation contentEditorCreateProject($input: NewProjectInput!) {
+  createProject(input: $input) {
+    project {
+      ...ProjectRevision
+      __typename
+    }
+    error {
+      code
+      conflictSha
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment ProjectRevision on ProjectRevision {
+  id
+  contentId
+  contentKind
+  sha
+  doNotPublish
+  slug
+  listed
+  title
+  description
+  projectEval
+  authorName
+  code
+  codeFormat
+  customTitleTag
+  customDescriptionTag
+  sourceKaLocale
+  __typename
+}
