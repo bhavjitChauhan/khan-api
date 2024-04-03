@@ -9488,7 +9488,7 @@ fragment CommonUserInfoFragment on User {
   }
 }`,
   getUsersWithGrantsForEmail: `query getUsersWithGrantsForEmail($email: String!) {
-  usersWithGrants(email: $email) {
+  user(email: $email) {
     id
     email
     kaid

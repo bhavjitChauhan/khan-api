@@ -1,5 +1,5 @@
 query getUsersWithGrantsForEmail($email: String!) {
-  usersWithGrants(email: $email) {
+  user(email: $email) {
     id
     email
     kaid
