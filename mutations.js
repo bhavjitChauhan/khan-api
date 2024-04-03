@@ -4398,8 +4398,12 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }`,
-  enrollMultipleInAIGuide: `mutation enrollMultipleInAIGuide($kaids: [String!], $enrollmentGroup: AIGuideEnrollmentGroup!) {
-  enrollMultipleInAIGuide(kaids: $kaids, enrollmentGroup: $enrollmentGroup) {
+  enrollMultipleInAIGuide: `mutation enrollMultipleInAIGuide($kaids: [String!], $enrollmentGroup: AIGuideEnrollmentGroup!, $description: String!) {
+  enrollMultipleInAIGuide(
+    kaids: $kaids
+    enrollmentGroup: $enrollmentGroup
+    description: $description
+  ) {
     error {
       code
       debugMessage
