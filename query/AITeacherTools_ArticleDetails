@@ -3,6 +3,11 @@ query AITeacherTools_ArticleDetails($articleId: String) {
     id
     title
     translatedPerseusContent
+    parentTopic {
+      id
+      domainSlug
+      __typename
+    }
     __typename
   }
 }
