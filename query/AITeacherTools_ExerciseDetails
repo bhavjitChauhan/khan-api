@@ -3,6 +3,11 @@ query AITeacherTools_ExerciseDetails($exerciseId: String) {
     id
     title
     prerequisites
+    parentTopic {
+      id
+      domainSlug
+      __typename
+    }
     assessmentItems {
       id
       itemShapeType

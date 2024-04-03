@@ -2,6 +2,11 @@ query AITeacherTools_VideoDetails($videoId: String) {
   videoById(contentId: $videoId) {
     id
     title
+    parentTopic {
+      id
+      domainSlug
+      __typename
+    }
     subtitles {
       text
       __typename

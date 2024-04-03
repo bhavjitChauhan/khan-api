@@ -18869,6 +18869,11 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     id
     title
     translatedPerseusContent
+    parentTopic {
+      id
+      domainSlug
+      __typename
+    }
     __typename
   }
 }`,
@@ -18877,6 +18882,11 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     id
     title
     prerequisites
+    parentTopic {
+      id
+      domainSlug
+      __typename
+    }
     assessmentItems {
       id
       itemShapeType
@@ -18891,6 +18901,11 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   videoById(contentId: $videoId) {
     id
     title
+    parentTopic {
+      id
+      domainSlug
+      __typename
+    }
     subtitles {
       text
       __typename
