@@ -1,5 +1,9 @@
-mutation enrollMultipleInAIGuide($kaids: [String!], $enrollmentGroup: AIGuideEnrollmentGroup!) {
-  enrollMultipleInAIGuide(kaids: $kaids, enrollmentGroup: $enrollmentGroup) {
+mutation enrollMultipleInAIGuide($kaids: [String!], $enrollmentGroup: AIGuideEnrollmentGroup!, $description: String!) {
+  enrollMultipleInAIGuide(
+    kaids: $kaids
+    enrollmentGroup: $enrollmentGroup
+    description: $description
+  ) {
     error {
       code
       debugMessage
