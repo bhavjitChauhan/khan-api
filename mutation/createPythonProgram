@@ -5,7 +5,6 @@ mutation createPythonProgram($title: String!, $revision: ProgramRevisionInput!, 
     curationNodeSlug: $curationNodeSlug
     userAuthoredContentType: PYTHON
     codeFormat: MULTI_FILE_JSON
-    hideFromHotlist: false
   ) {
     program {
       id

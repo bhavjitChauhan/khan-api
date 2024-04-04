@@ -11229,7 +11229,6 @@ fragment ExerciseRevision on ExerciseRevision {
     title: $title
     revision: $revision
     curationNodeSlug: $curationNodeSlug
-    hideFromHotlist: false
   ) {
     program {
       id
@@ -11404,7 +11403,6 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     curationNodeSlug: $curationNodeSlug
     userAuthoredContentType: PYTHON
     codeFormat: MULTI_FILE_JSON
-    hideFromHotlist: false
   ) {
     program {
       id
