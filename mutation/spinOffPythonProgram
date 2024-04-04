@@ -5,7 +5,6 @@ mutation spinOffPythonProgram($originProgramOrContentId: String!, $originProgram
     title: $title
     revision: $revision
     curationNodeSlug: $curationNodeSlug
-    hideFromHotlist: false
   ) {
     program {
       id
