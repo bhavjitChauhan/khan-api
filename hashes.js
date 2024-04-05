@@ -632,7 +632,7 @@ export default {
   courseEditorAdminCourseOperationJsons: 315062600,
   GuideExtensionIsUserK4DStudent: 1864356563,
   khanmigoEnabledForUserQuery: 952859768,
-  getAdminsForInProductAdminRostering: 2828577354,
+  getAdminsForInProductAdminRostering: 3427446809,
   getKhanmigoCheckoutVideo: 3428586690,
   getNonProfileKhanmigoCheckoutEligibilityData: 4182812904,
   contentEditorGetAIGuideActivityRevision: 1505188525,
