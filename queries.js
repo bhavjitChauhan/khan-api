@@ -18275,6 +18275,11 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
         translatedTitle
         __typename
       }
+      aiReportingLabel {
+        id
+        translatedTitle
+        __typename
+      }
       totalUsers
       userPercentage
       courseRows {

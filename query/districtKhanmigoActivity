@@ -8,6 +8,11 @@ query districtKhanmigoActivity($filter: KhanmigoDistrictFilters!) {
         translatedTitle
         __typename
       }
+      aiReportingLabel {
+        id
+        translatedTitle
+        __typename
+      }
       totalUsers
       userPercentage
       courseRows {
