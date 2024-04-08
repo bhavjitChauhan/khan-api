@@ -11669,4 +11669,18 @@ fragment ProjectRevision on ProjectRevision {
   sourceKaLocale
   __typename
 }`,
+  activateNewAIGuideAccessPlan: `mutation activateNewAIGuideAccessPlan($blueprint: AIGuideAccessPlanDefaultBlueprint!) {
+  activateNewAIGuideAccessPlan(blueprint: $blueprint) {
+    activatedAccessPlan {
+      id
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
