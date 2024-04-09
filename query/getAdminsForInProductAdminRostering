@@ -10,10 +10,17 @@ query getAdminsForInProductAdminRostering($districtID: String!) {
     canManageAdmins
     activationEmailSentAt
     rosterSource
+    cleverId
+    classlinkId
     kaid
     adminOfSchools {
       id
       name
+      __typename
+    }
+    adrIsGlobalAdmin
+    adrAdminOfSchools {
+      id
       __typename
     }
     __typename
