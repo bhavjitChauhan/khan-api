@@ -17,6 +17,11 @@ query guideTranscripts($kaid: String!, $cursor: String, $startDate: DateTime, $e
         pageTitle
         __typename
       }
+      coeditingDocument {
+        id
+        title
+        __typename
+      }
       __typename
     }
     cursor
