@@ -12,3 +12,35 @@ query gtp_getEGUDViaExam($examId: String!) {
     __typename
   }
 }
+
+fragment gtp_egudFragment on ExamGroupUserData {
+  id
+  practiceDaysInfo {
+    day
+    hour
+    length
+    minute
+    __typename
+  }
+  selectedCutoffIdentifiers
+  selectedExams
+  initialSelectedExams
+  dailyActivityHistory {
+    date
+    activityHistory {
+      examsCompleted
+      problemsDone
+      secondsSpent
+      status
+      cta {
+        type
+        minutes
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  extendedTimeMultiplier
+  __typename
+}
