@@ -10577,12 +10577,6 @@ fragment gtp_tpudFragment on TestPrepUserData {
       flagged
       flaggedCategories
       responseWasStoppedByUser
-      coeditorState {
-        prefix
-        selection
-        suffix
-        __typename
-      }
       __typename
     }
     __typename
@@ -10605,6 +10599,11 @@ fragment gtp_tpudFragment on TestPrepUserData {
         id
         pageType
         pageTitle
+        __typename
+      }
+      coeditingDocument {
+        id
+        title
         __typename
       }
       __typename

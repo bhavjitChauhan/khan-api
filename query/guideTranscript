@@ -24,12 +24,6 @@ query guideTranscript($transcriptId: String!) {
       flagged
       flaggedCategories
       responseWasStoppedByUser
-      coeditorState {
-        prefix
-        selection
-        suffix
-        __typename
-      }
       __typename
     }
     __typename
