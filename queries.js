@@ -19040,4 +19040,16 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  gettingStartedEssaySession: `query gettingStartedEssaySession($id: String!) {
+  essaySession(essaySessionID: $id) {
+    essayInstructions
+    essayTitle
+    essayType
+    gettingStartedThreadID
+    id
+    minimumWordCount
+    studentGradeLevel
+    __typename
+  }
+}`,
 }
