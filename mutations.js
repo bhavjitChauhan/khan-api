@@ -11683,4 +11683,16 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  saveGettingStartedThreadId: `mutation saveGettingStartedThreadId($sessionId: String!, $threadId: String!) {
+  setEssaySessionThreadIDs(
+    essaySessionID: $sessionId
+    gettingStartedThreadID: $threadId
+  ) {
+    error {
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
