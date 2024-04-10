@@ -9002,7 +9002,7 @@ fragment Badge on Badge {
     lastLogin
     lastLoginIp
     lastLoginCountry
-    lastLoginLocale
+    lastLoginKaLocale
     lastReportedTimezone
     managingParent {
       id
@@ -9363,7 +9363,7 @@ fragment CommonUserInfoFragment on User {
     id
     kaid
     email
-    lastLoginLocale
+    lastLoginKaLocale
     rawLogs {
       videoProgressesPage(
         startDt: $startDt

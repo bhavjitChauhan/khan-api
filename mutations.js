@@ -11695,4 +11695,24 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  EnableDisableChildrenAIGuide: `mutation EnableDisableChildrenAIGuide($enableKAIDs: [String!]!, $disableKAIDs: [String!]!) {
+  aiGuideActivateChildAccounts(childKAIDs: $enableKAIDs) {
+    errors {
+      code
+      debugMessage
+      kaid
+      __typename
+    }
+    __typename
+  }
+  aiGuideDeactivateChildAccounts(childKAIDs: $disableKAIDs) {
+    errors {
+      code
+      debugMessage
+      kaid
+      __typename
+    }
+    __typename
+  }
+}`,
 }
