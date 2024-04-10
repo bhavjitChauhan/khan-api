@@ -3,7 +3,7 @@ query getUserProgressDump($kaid: String!, $problemLogCursor: ID, $videoProgresse
     id
     kaid
     email
-    lastLoginLocale
+    lastLoginKaLocale
     rawLogs {
       videoProgressesPage(
         startDt: $startDt

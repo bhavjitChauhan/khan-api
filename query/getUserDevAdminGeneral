@@ -74,7 +74,7 @@ query getUserDevAdminGeneral($kaid: String!) {
     lastLogin
     lastLoginIp
     lastLoginCountry
-    lastLoginLocale
+    lastLoginKaLocale
     lastReportedTimezone
     managingParent {
       id
