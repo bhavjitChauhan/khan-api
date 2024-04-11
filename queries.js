@@ -18141,6 +18141,7 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
   getAdminsForInProductAdminRostering: `query getAdminsForInProductAdminRostering($districtID: String!) {
   getAdminsForDistrict(districtID: $districtID) {
     id
+    canSeeAllSchools
     displayNameForTeacher
     districtProvidedEmail
     districtProvidedFirstName
