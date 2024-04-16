@@ -11715,4 +11715,36 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  saveThreadIds: `mutation saveThreadIds($sessionId: String!, $gettingStartedThreadId: String, $outliningThreadId: String, $draftingThreadId: String) {
+  setEssaySessionThreadIDs(
+    essaySessionID: $sessionId
+    gettingStartedThreadID: $gettingStartedThreadId
+    outliningThreadID: $outliningThreadId
+    draftingThreadID: $draftingThreadId
+  ) {
+    error {
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  writingCoachCreateEssaySession: `mutation writingCoachCreateEssaySession($assignmentTitle: String!, $essayText: String!, $essayType: EssayType!, $essayVersion: Int!, $essayInstructions: String!, $studentGradeLevel: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!) {
+  createEssaySession(
+    essayInstructions: $essayInstructions
+    essayText: $essayText
+    essayTitle: $assignmentTitle
+    essayType: $essayType
+    essayVersion: $essayVersion
+    studentGradeLevel: $studentGradeLevel
+    paragraphIDToParagraphNumbers: $paragraphIDToParagraphNumbers
+  ) {
+    essaySessionID
+    error {
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }

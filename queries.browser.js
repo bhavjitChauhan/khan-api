@@ -19051,4 +19051,22 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  writingCoachEssaySession: `query writingCoachEssaySession($id: String!) {
+  essaySession(essaySessionID: $id) {
+    draft {
+      id
+      __typename
+    }
+    draftingThreadID
+    essayInstructions
+    essayTitle
+    essayType
+    gettingStartedThreadID
+    id
+    minimumWordCount
+    outliningThreadID
+    studentGradeLevel
+    __typename
+  }
+}`,
 }

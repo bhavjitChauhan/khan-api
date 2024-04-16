@@ -675,4 +675,5 @@ export default {
   coeditingLatestSnapshot: 2234147930,
   getAiGuideThreads: 2735494621,
   gettingStartedEssaySession: 3075146673,
+  writingCoachEssaySession: 3711961053,
 }
