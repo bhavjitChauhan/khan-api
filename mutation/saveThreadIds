@@ -1,0 +1,14 @@
+mutation saveThreadIds($sessionId: String!, $gettingStartedThreadId: String, $outliningThreadId: String, $draftingThreadId: String) {
+  setEssaySessionThreadIDs(
+    essaySessionID: $sessionId
+    gettingStartedThreadID: $gettingStartedThreadId
+    outliningThreadID: $outliningThreadId
+    draftingThreadID: $draftingThreadId
+  ) {
+    error {
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
