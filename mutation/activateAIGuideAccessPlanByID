@@ -1,0 +1,14 @@
+mutation activateAIGuideAccessPlanByID($id: ID!) {
+  activateAIGuideAccessPlanByID(id: $id) {
+    activatedAccessPlan {
+      id
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
