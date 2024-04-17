@@ -1,0 +1,18 @@
+mutation deactivateAIGuideAccessPlanByID($accessPlanID: ID!, $reasons: [ReasonForDisablingAIGuide!]!, $explanation: String!) {
+  deactivateAIGuideAccessPlanByID(
+    accessPlanID: $accessPlanID
+    reasons: $reasons
+    explanation: $explanation
+  ) {
+    deactivatedAccessPlan {
+      id
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

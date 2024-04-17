@@ -11747,4 +11747,36 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  activateAIGuideAccessPlanByID: `mutation activateAIGuideAccessPlanByID($id: ID!) {
+  activateAIGuideAccessPlanByID(id: $id) {
+    activatedAccessPlan {
+      id
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  deactivateAIGuideAccessPlanByID: `mutation deactivateAIGuideAccessPlanByID($accessPlanID: ID!, $reasons: [ReasonForDisablingAIGuide!]!, $explanation: String!) {
+  deactivateAIGuideAccessPlanByID(
+    accessPlanID: $accessPlanID
+    reasons: $reasons
+    explanation: $explanation
+  ) {
+    deactivatedAccessPlan {
+      id
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
