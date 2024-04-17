@@ -18147,6 +18147,7 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     districtProvidedLastName
     primaryRole
     canManageAdmins
+    canSeeAllSchools
     activationEmailSentAt
     rosterSource
     cleverId

@@ -7,6 +7,7 @@ query getAdminsForInProductAdminRostering($districtID: String!) {
     districtProvidedLastName
     primaryRole
     canManageAdmins
+    canSeeAllSchools
     activationEmailSentAt
     rosterSource
     cleverId
