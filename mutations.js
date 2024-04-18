@@ -11779,4 +11779,17 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  saveLatestOutline: `mutation saveLatestOutline($essaySessionID: String!, $outline: String!, $outlineVersion: Int!) {
+  saveLatestEssayOutline(
+    essaySessionID: $essaySessionID
+    outline: $outline
+    outlineVersion: $outlineVersion
+  ) {
+    error {
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }

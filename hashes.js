@@ -646,7 +646,7 @@ export default {
   GuidePreferences: 1214899081,
   ExerciseEditorPermissionQuery: 2837649085,
   TranslationEditor_CanPublish: 4148747959,
-  allEssaySessions: 2942832972,
+  allEssaySessions: 4149554155,
   essaySession: 3845407520,
   districtKhanmigoTotalUsage: 3235917008,
   districtKhanmigoUsageByClass: 1108730643,
@@ -675,5 +675,5 @@ export default {
   coeditingLatestSnapshot: 2234147930,
   getAiGuideThreads: 2735494621,
   gettingStartedEssaySession: 3075146673,
-  writingCoachEssaySession: 3711961053,
+  writingCoachEssaySession: 3701058983,
 }
