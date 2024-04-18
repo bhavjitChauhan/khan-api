@@ -11373,8 +11373,8 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
-  resendActivationEmailMutation: `mutation resendActivationEmailMutation($udiID: ID!) {
-  resendActivationEmail(udiID: $udiID) {
+  resendActivationEmailMutation: `mutation resendActivationEmailMutation($urlsafeKey: ID!) {
+  resendActivationEmail(urlsafeKey: $urlsafeKey) {
     emailSent
     error {
       code
