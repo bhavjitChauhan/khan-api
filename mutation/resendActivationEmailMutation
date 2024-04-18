@@ -1,5 +1,5 @@
-mutation resendActivationEmailMutation($udiID: ID!) {
-  resendActivationEmail(udiID: $udiID) {
+mutation resendActivationEmailMutation($urlsafeKey: ID!) {
+  resendActivationEmail(urlsafeKey: $urlsafeKey) {
     emailSent
     error {
       code
