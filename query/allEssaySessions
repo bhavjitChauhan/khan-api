@@ -3,6 +3,7 @@ query allEssaySessions {
     id
     essayTitle
     lastUpdated
+    currentStage
     __typename
   }
 }

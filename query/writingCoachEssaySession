@@ -11,6 +11,8 @@ query writingCoachEssaySession($id: String!) {
     gettingStartedThreadID
     id
     minimumWordCount
+    outline
+    outlineVersion
     outliningThreadID
     studentGradeLevel
     __typename

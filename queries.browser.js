@@ -18483,6 +18483,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     id
     essayTitle
     lastUpdated
+    currentStage
     __typename
   }
 }`,
@@ -19065,6 +19066,8 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     gettingStartedThreadID
     id
     minimumWordCount
+    outline
+    outlineVersion
     outliningThreadID
     studentGradeLevel
     __typename
