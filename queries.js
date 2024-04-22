@@ -17702,6 +17702,11 @@ fragment ProjectRevision on ProjectRevision {
   }
   isEditableByCurrentUser(contentId: $contentId, contentKind: "Exercise")
   isPublishableByCurrentUser(contentId: $contentId, contentKind: "Exercise")
+  user {
+    id
+    nickname
+    __typename
+  }
 }
 
 fragment AssessmentItemRevision on AssessmentItemRevision {
