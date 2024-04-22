@@ -9,6 +9,7 @@ query StandaloneUserAssignments($after: ID, $pageSize: Int, $kaid: String!, $cla
     ) {
       assignments {
         id
+        title
         contents {
           ...TranslatedContentFields
           __typename
@@ -28,6 +29,10 @@ query StandaloneUserAssignments($after: ID, $pageSize: Int, $kaid: String!, $cla
             id
             isCompleted
             isRestarted
+            __typename
+          }
+          activitySubmissions {
+            threadID
             __typename
           }
           __typename

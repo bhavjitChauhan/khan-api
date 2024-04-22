@@ -55,6 +55,16 @@ query simpleCompletionQuery($assignmentId: String!, $teacherKaid: String) {
         }
         activitySubmissions {
           threadID
+          thread {
+            id
+            interactions {
+              id
+              answer
+              question
+              __typename
+            }
+            __typename
+          }
           __typename
         }
         __typename

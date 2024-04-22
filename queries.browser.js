@@ -13156,6 +13156,16 @@ fragment ProblemAttemptFields on ProblemAttempt {
         }
         activitySubmissions {
           threadID
+          thread {
+            id
+            interactions {
+              id
+              answer
+              question
+              __typename
+            }
+            __typename
+          }
           __typename
         }
         __typename
@@ -13328,6 +13338,7 @@ fragment ProblemAttemptFields on ProblemAttempt {
     ) {
       assignments {
         id
+        title
         contents {
           ...TranslatedContentFields
           __typename
@@ -13347,6 +13358,10 @@ fragment ProblemAttemptFields on ProblemAttempt {
             id
             isCompleted
             isRestarted
+            __typename
+          }
+          activitySubmissions {
+            threadID
             __typename
           }
           __typename
