@@ -19073,4 +19073,11 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  getUserEmailByKaid: `query getUserEmailByKaid($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    email
+    __typename
+  }
+}`,
 }
