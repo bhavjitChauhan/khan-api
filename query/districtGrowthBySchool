@@ -1,0 +1,17 @@
+query districtGrowthBySchool($filters: DistrictGrowthFilters!) {
+  districtGrowthBySchool(filters: $filters) {
+    school {
+      id
+      name
+      __typename
+    }
+    info {
+      numStudents
+      medianCMPercent
+      wowPercentChange
+      eoyPercentGuess
+      __typename
+    }
+    __typename
+  }
+}

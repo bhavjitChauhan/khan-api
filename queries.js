@@ -19100,4 +19100,99 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  districtGrowthByClassroom: `query districtGrowthByClassroom($teacherKaid: String!, $schoolID: String!, $filters: DistrictGrowthFilters!) {
+  districtGrowthByClassroom(
+    teacherKaid: $teacherKaid
+    schoolID: $schoolID
+    filters: $filters
+  ) {
+    classroom {
+      id
+      cacheId
+      descriptor
+      name
+      __typename
+    }
+    info {
+      numStudents
+      medianCMPercent
+      wowPercentChange
+      eoyPercentGuess
+      __typename
+    }
+    __typename
+  }
+}`,
+  districtGrowthBySchool: `query districtGrowthBySchool($filters: DistrictGrowthFilters!) {
+  districtGrowthBySchool(filters: $filters) {
+    school {
+      id
+      name
+      __typename
+    }
+    info {
+      numStudents
+      medianCMPercent
+      wowPercentChange
+      eoyPercentGuess
+      __typename
+    }
+    __typename
+  }
+}`,
+  districtGrowthByStudent: `query districtGrowthByStudent($classroomDescriptor: String!, $filters: DistrictGrowthFilters!) {
+  districtGrowthByStudent(
+    classroomDescriptor: $classroomDescriptor
+    filters: $filters
+  ) {
+    user {
+      id
+      kaid
+      userDistrictInfos {
+        id
+        displayNameForTeacher
+        __typename
+      }
+      __typename
+    }
+    info {
+      numStudents
+      medianCMPercent
+      wowPercentChange
+      eoyPercentGuess
+      __typename
+    }
+    __typename
+  }
+}`,
+  districtGrowthByTeacher: `query districtGrowthByTeacher($schoolID: String!, $filters: DistrictGrowthFilters!) {
+  districtGrowthByTeacher(schoolID: $schoolID, filters: $filters) {
+    user {
+      id
+      kaid
+      userDistrictInfos {
+        id
+        displayNameForTeacher
+        __typename
+      }
+      __typename
+    }
+    info {
+      numStudents
+      medianCMPercent
+      wowPercentChange
+      eoyPercentGuess
+      __typename
+    }
+    __typename
+  }
+}`,
+  districtGrowthByWeek: `query districtGrowthByWeek($filters: DistrictGrowthFilters!) {
+  districtGrowthByWeek(filters: $filters) {
+    weekEndDate
+    overallMedianCMPercent
+    selectedSchoolsMedianCMPercent
+    __typename
+  }
+}`,
 }
