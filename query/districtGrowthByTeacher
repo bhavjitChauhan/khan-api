@@ -1,0 +1,22 @@
+query districtGrowthByTeacher($schoolID: String!, $filters: DistrictGrowthFilters!) {
+  districtGrowthByTeacher(schoolID: $schoolID, filters: $filters) {
+    user {
+      id
+      kaid
+      userDistrictInfos {
+        id
+        displayNameForTeacher
+        __typename
+      }
+      __typename
+    }
+    info {
+      numStudents
+      medianCMPercent
+      wowPercentChange
+      eoyPercentGuess
+      __typename
+    }
+    __typename
+  }
+}

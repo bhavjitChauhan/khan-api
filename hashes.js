@@ -677,4 +677,9 @@ export default {
   gettingStartedEssaySession: 3075146673,
   writingCoachEssaySession: 3701058983,
   getUserEmailByKaid: 3896469412,
+  districtGrowthByClassroom: 2644225197,
+  districtGrowthBySchool: 590667432,
+  districtGrowthByStudent: 1206656323,
+  districtGrowthByTeacher: 1604079230,
+  districtGrowthByWeek: 153577162,
 }
