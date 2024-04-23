@@ -332,7 +332,7 @@ export default {
   gtp_getTPUD: 2648698266,
   gtp_onboardingStatus: 3646852342,
   gtp_relatedContent: 3291890228,
-  guideTranscript: 3940086551,
+  guideTranscript: 804278667,
   guideTranscripts: 335722228,
   hasChangedAvatar: 1861878399,
   hasUsedTestPrepProductQuery: 659116580,

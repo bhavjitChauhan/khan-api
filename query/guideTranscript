@@ -26,6 +26,21 @@ query guideTranscript($transcriptId: String!) {
       responseWasStoppedByUser
       __typename
     }
+    coeditingDocument {
+      id
+      snapshots {
+        id
+        createdAt
+        text {
+          prefix
+          selection
+          suffix
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }
