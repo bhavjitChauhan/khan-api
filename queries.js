@@ -10579,6 +10579,21 @@ fragment gtp_tpudFragment on TestPrepUserData {
       responseWasStoppedByUser
       __typename
     }
+    coeditingDocument {
+      id
+      snapshots {
+        id
+        createdAt
+        text {
+          prefix
+          selection
+          suffix
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }`,
