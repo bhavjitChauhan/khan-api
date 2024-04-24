@@ -11792,4 +11792,20 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  saveLatestEssayText: `mutation saveLatestEssayText($essayInstructions: String!, $essaySessionID: String!, $essayText: String!, $essayVersion: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!, $studentGradeLevel: Int!) {
+  saveLatestEssayText(
+    essayInstructions: $essayInstructions
+    essaySessionID: $essaySessionID
+    essayText: $essayText
+    essayVersion: $essayVersion
+    paragraphIDToParagraphNumbers: $paragraphIDToParagraphNumbers
+    studentGradeLevel: $studentGradeLevel
+  ) {
+    error {
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }

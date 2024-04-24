@@ -8,8 +8,10 @@ query writingCoachEssaySession($id: String!) {
     essayInstructions
     essayTitle
     essayType
+    essayVersion
     gettingStartedThreadID
     id
+    mostRecentEditedText
     minimumWordCount
     outline
     outlineVersion
