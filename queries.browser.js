@@ -19098,8 +19098,10 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     essayInstructions
     essayTitle
     essayType
+    essayVersion
     gettingStartedThreadID
     id
+    mostRecentEditedText
     minimumWordCount
     outline
     outlineVersion
