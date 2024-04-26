@@ -11696,7 +11696,7 @@ fragment ProjectRevision on ProjectRevision {
   }
 }`,
   EnableDisableChildrenAIGuide: `mutation EnableDisableChildrenAIGuide($enableKAIDs: [String!]!, $disableKAIDs: [String!]!) {
-  aiGuideDeactivateChildAccounts(childKAIDs: $disableKAIDs) {
+  aiGuideActivateChildAccounts(childKAIDs: $enableKAIDs) {
     errors {
       code
       debugMessage
@@ -11705,7 +11705,7 @@ fragment ProjectRevision on ProjectRevision {
     }
     __typename
   }
-  aiGuideActivateChildAccounts(childKAIDs: $enableKAIDs) {
+  aiGuideDeactivateChildAccounts(childKAIDs: $disableKAIDs) {
     errors {
       code
       debugMessage
