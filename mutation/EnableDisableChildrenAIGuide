@@ -1,5 +1,5 @@
 mutation EnableDisableChildrenAIGuide($enableKAIDs: [String!]!, $disableKAIDs: [String!]!) {
-  aiGuideDeactivateChildAccounts(childKAIDs: $disableKAIDs) {
+  aiGuideActivateChildAccounts(childKAIDs: $enableKAIDs) {
     errors {
       code
       debugMessage
@@ -8,7 +8,7 @@ mutation EnableDisableChildrenAIGuide($enableKAIDs: [String!]!, $disableKAIDs: [
     }
     __typename
   }
-  aiGuideActivateChildAccounts(childKAIDs: $enableKAIDs) {
+  aiGuideDeactivateChildAccounts(childKAIDs: $disableKAIDs) {
     errors {
       code
       debugMessage
