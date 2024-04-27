@@ -1,0 +1,9 @@
+mutation clearAdminUDIInfoMutation($urlsafeKey: ID!) {
+  clearAdminUDIInfo(urlsafeKey: $urlsafeKey) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
