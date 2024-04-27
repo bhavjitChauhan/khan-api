@@ -11808,4 +11808,13 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  clearAdminUDIInfoMutation: `mutation clearAdminUDIInfoMutation($urlsafeKey: ID!) {
+  clearAdminUDIInfo(urlsafeKey: $urlsafeKey) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
