@@ -1,0 +1,7 @@
+query previewEmail($email: SendEmailInput!) {
+  previewEmail(email: $email) {
+    htmlContent
+    textContent
+    __typename
+  }
+}

@@ -682,4 +682,7 @@ export default {
   districtGrowthByStudent: 1206656323,
   districtGrowthByTeacher: 1604079230,
   districtGrowthByWeek: 153577162,
+  allEmailTemplates: 588504456,
+  emailTemplate: 180010537,
+  previewEmail: 1957758907,
 }

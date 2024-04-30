@@ -19212,4 +19212,31 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
+  allEmailTemplates: `query allEmailTemplates {
+  allEmailTemplates {
+    id
+    name
+    htmlTemplate
+    textTemplate
+    exampleData
+    __typename
+  }
+}`,
+  emailTemplate: `query emailTemplate($id: ID!) {
+  emailTemplate(id: $id) {
+    id
+    name
+    htmlTemplate
+    textTemplate
+    exampleData
+    __typename
+  }
+}`,
+  previewEmail: `query previewEmail($email: SendEmailInput!) {
+  previewEmail(email: $email) {
+    htmlContent
+    textContent
+    __typename
+  }
+}`,
 }

@@ -1,0 +1,10 @@
+query allEmailTemplates {
+  allEmailTemplates {
+    id
+    name
+    htmlTemplate
+    textTemplate
+    exampleData
+    __typename
+  }
+}
