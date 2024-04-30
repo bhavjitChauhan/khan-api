@@ -11817,4 +11817,38 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  deleteEmailTemplate: `mutation deleteEmailTemplate($id: ID!) {
+  deleteEmailTemplate(id: $id) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  upsertEmailTemplate: `mutation upsertEmailTemplate($id: ID!, $name: String!, $textTemplate: String!, $htmlTemplate: String!, $exampleData: Map!) {
+  upsertEmailTemplate(
+    id: $id
+    name: $name
+    htmlTemplate: $htmlTemplate
+    textTemplate: $textTemplate
+    exampleData: $exampleData
+  ) {
+    updatedTemplate {
+      id
+      name
+      htmlTemplate
+      textTemplate
+      exampleData
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
