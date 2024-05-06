@@ -11851,4 +11851,31 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  reportPastedContent: `mutation reportPastedContent($essaySessionId: ID!, $pastedText: String!, $pasteLocation: EssayPasteLocation!) {
+  reportEssayPastedContent(
+    essaySessionID: $essaySessionId
+    pastedText: $pastedText
+    pasteLocation: $pasteLocation
+  ) {
+    error {
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  writingCoachUpdateEssayFeedbackResolved: `mutation writingCoachUpdateEssayFeedbackResolved($essaySessionID: String!, $feedbackID: String!, $isResolved: Boolean!) {
+  updateEssayFeedbackResolved(
+    essaySessionID: $essaySessionID
+    feedbackID: $feedbackID
+    isResolved: $isResolved
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }

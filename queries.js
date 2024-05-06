@@ -19091,7 +19091,31 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   writingCoachEssaySession: `query writingCoachEssaySession($id: String!) {
   essaySession(essaySessionID: $id) {
     draft {
+      feedbackList {
+        dimension
+        feedbackID
+        feedbackText
+        _USE_feedbackID_INSTEAD_: id
+        isPositive
+        isResolved
+        relevantParagraphId
+        relevantQuotedText
+        thread {
+          id
+          interactions {
+            annotations
+            answer
+            flagged
+            id
+            question
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
       id
+      submittedText
       __typename
     }
     draftingThreadID
@@ -19106,6 +19130,11 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     outline
     outlineVersion
     outliningThreadID
+    paragraphIDToParagraphNumbers {
+      paragraphID
+      paragraphNumbers
+      __typename
+    }
     studentGradeLevel
     __typename
   }
