@@ -19128,6 +19128,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       cacheId
       descriptor
       name
+      coachKaid
       __typename
     }
     info {

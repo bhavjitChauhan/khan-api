@@ -9,6 +9,7 @@ query districtGrowthByClassroom($teacherKaid: String!, $schoolID: String!, $filt
       cacheId
       descriptor
       name
+      coachKaid
       __typename
     }
     info {
