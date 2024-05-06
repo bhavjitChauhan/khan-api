@@ -1,0 +1,13 @@
+mutation reportPastedContent($essaySessionId: ID!, $pastedText: String!, $pasteLocation: EssayPasteLocation!) {
+  reportEssayPastedContent(
+    essaySessionID: $essaySessionId
+    pastedText: $pastedText
+    pasteLocation: $pasteLocation
+  ) {
+    error {
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
