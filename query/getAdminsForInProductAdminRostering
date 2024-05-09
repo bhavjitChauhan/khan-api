@@ -18,11 +18,7 @@ query getAdminsForInProductAdminRostering($districtID: String!) {
       name
       __typename
     }
-    adrIsGlobalAdmin
-    adrAdminOfSchools {
-      id
-      __typename
-    }
+    hasAdminDirectedInfo
     __typename
   }
 }

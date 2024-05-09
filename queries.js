@@ -1147,6 +1147,7 @@ fragment ExerciseRevision on ExerciseRevision {
   problemTypeKind
   numQuestionsPerProblemType
   problemTypes {
+    contentId
     name
     relatedVideos
     items {
@@ -17774,6 +17775,7 @@ fragment ExerciseRevision on ExerciseRevision {
   problemTypeKind
   numQuestionsPerProblemType
   problemTypes {
+    contentId
     name
     relatedVideos
     items {
@@ -18193,11 +18195,7 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
       name
       __typename
     }
-    adrIsGlobalAdmin
-    adrAdminOfSchools {
-      id
-      __typename
-    }
+    hasAdminDirectedInfo
     __typename
   }
 }`,
