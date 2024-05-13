@@ -72,7 +72,6 @@ fragment ExerciseRevision on ExerciseRevision {
   problemTypeKind
   numQuestionsPerProblemType
   problemTypes {
-    contentId
     name
     relatedVideos
     items {

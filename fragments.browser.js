@@ -808,7 +808,6 @@ fragment InvitationsField on Invitation {
   problemTypeKind
   numQuestionsPerProblemType
   problemTypes {
-    contentId
     name
     relatedVideos
     items {
