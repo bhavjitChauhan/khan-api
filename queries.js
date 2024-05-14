@@ -267,6 +267,15 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
         isK4dTeacher
         isStudentOfFormalTeacherActor
         aiGuideFlaggedInteractionsCount
+        aiGuideAccessPlans {
+          id
+          isActive
+          description
+          enrollmentGroup
+          enrollmentGroupReferenceID
+          createdAt
+          __typename
+        }
         __typename
       }
       summary
@@ -294,6 +303,9 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
           kaOffensiveTerms
           __typename
         }
+        url
+        pageTitle
+        pageType
         __typename
       }
       moderatorKAID
