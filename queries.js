@@ -18866,6 +18866,8 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     id
     kind
     isActive
+    cancelAt
+    endedAt
     cancelAtPeriodEnd
     expiresAt
     extId
