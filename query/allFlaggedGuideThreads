@@ -33,6 +33,15 @@ query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderatio
         isK4dTeacher
         isStudentOfFormalTeacherActor
         aiGuideFlaggedInteractionsCount
+        aiGuideAccessPlans {
+          id
+          isActive
+          description
+          enrollmentGroup
+          enrollmentGroupReferenceID
+          createdAt
+          __typename
+        }
         __typename
       }
       summary
@@ -60,6 +69,9 @@ query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderatio
           kaOffensiveTerms
           __typename
         }
+        url
+        pageTitle
+        pageType
         __typename
       }
       moderatorKAID
