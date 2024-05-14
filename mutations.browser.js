@@ -11729,13 +11729,14 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
-  writingCoachCreateEssaySession: `mutation writingCoachCreateEssaySession($assignmentTitle: String!, $essayText: String!, $essayType: EssayType!, $essayVersion: Int!, $essayInstructions: String!, $studentGradeLevel: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!) {
+  writingCoachCreateEssaySession: `mutation writingCoachCreateEssaySession($assignmentTitle: String!, $essayText: String!, $essayType: EssayType!, $essayVersion: Int!, $essayInstructions: String!, $minimumWordCount: Int, $studentGradeLevel: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!) {
   createEssaySession(
     essayInstructions: $essayInstructions
     essayText: $essayText
     essayTitle: $assignmentTitle
     essayType: $essayType
     essayVersion: $essayVersion
+    minimumWordCount: $minimumWordCount
     studentGradeLevel: $studentGradeLevel
     paragraphIDToParagraphNumbers: $paragraphIDToParagraphNumbers
   ) {
@@ -11792,11 +11793,12 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
-  saveLatestEssayText: `mutation saveLatestEssayText($essayInstructions: String!, $essaySessionID: String!, $essayText: String!, $essayVersion: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!, $studentGradeLevel: Int!) {
+  saveLatestEssayText: `mutation saveLatestEssayText($essayInstructions: String!, $essaySessionID: String!, $essayText: String!, $essayTitle: String!, $essayVersion: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!, $studentGradeLevel: Int!) {
   saveLatestEssayText(
     essayInstructions: $essayInstructions
     essaySessionID: $essaySessionID
     essayText: $essayText
+    essayTitle: $essayTitle
     essayVersion: $essayVersion
     paragraphIDToParagraphNumbers: $paragraphIDToParagraphNumbers
     studentGradeLevel: $studentGradeLevel
