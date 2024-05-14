@@ -3,6 +3,8 @@ query UserPurchases($kaid: String, $isActive: Boolean) {
     id
     kind
     isActive
+    cancelAt
+    endedAt
     cancelAtPeriodEnd
     expiresAt
     extId
