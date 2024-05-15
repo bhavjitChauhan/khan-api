@@ -2180,4 +2180,25 @@ fragment InvitationsField on Invitation {
   listed
   __typename
 }`,
+  AllUserFields: `fragment AllUserFields on User {
+  ...UserFields
+  ...FilterFields
+  __typename
+}`,
+  FilterFields: `fragment FilterFields on User {
+  id
+  nickname
+  coaches {
+    id
+    email
+    username
+    kaid
+    __typename
+  }
+  joined
+  discussionBanned
+  isChild
+  points
+  __typename
+}`,
 }

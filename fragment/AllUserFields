@@ -1,0 +1,5 @@
+fragment AllUserFields on User {
+  ...UserFields
+  ...FilterFields
+  __typename
+}
