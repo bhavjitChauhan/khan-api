@@ -11880,4 +11880,16 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  sendEmail: `mutation sendEmail($email: SendEmailInput!) {
+  sendEmail(email: $email) {
+    emailsSent
+    errorMessages
+    errors {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
