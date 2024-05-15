@@ -1,0 +1,16 @@
+fragment FilterFields on User {
+  id
+  nickname
+  coaches {
+    id
+    email
+    username
+    kaid
+    __typename
+  }
+  joined
+  discussionBanned
+  isChild
+  points
+  __typename
+}

@@ -81,5 +81,7 @@
   "contentSearchLearnableContent": "fragment contentSearchLearnableContent on LearnableContent {\n  id\n  slug\n  title\n  listed\n  defaultUrlPath\n  __typename\n}",
   "tapAIGuideActivityNode": "fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {\n  ...tapContentItem\n  ...tapMetadataWordCounts\n  fingerprint\n  __typename\n}",
   "ChallengeRevision": "fragment ChallengeRevision on ChallengeRevision {\n  id\n  contentId\n  contentKind\n  sha\n  doNotPublish\n  slug\n  listed\n  title\n  description\n  authorName\n  code\n  codeFormat\n  tests\n  testsFormat\n  height\n  width\n  userAuthoredContentType\n  customTitleTag\n  customDescriptionTag\n  sourceKaLocale\n  __typename\n}",
-  "AIGuideActivityRevision": "fragment AIGuideActivityRevision on AIGuideActivityRevision {\n  id\n  contentId\n  contentKind\n  slug\n  sha\n  listed\n  __typename\n}"
+  "AIGuideActivityRevision": "fragment AIGuideActivityRevision on AIGuideActivityRevision {\n  id\n  contentId\n  contentKind\n  slug\n  sha\n  listed\n  __typename\n}",
+  "AllUserFields": "fragment AllUserFields on User {\n  ...UserFields\n  ...FilterFields\n  __typename\n}",
+  "FilterFields": "fragment FilterFields on User {\n  id\n  nickname\n  coaches {\n    id\n    email\n    username\n    kaid\n    __typename\n  }\n  joined\n  discussionBanned\n  isChild\n  points\n  __typename\n}"
 }

@@ -4453,25 +4453,8 @@ fragment UserFields on User {
   findUsersByIp: `query findUsersByIp($ip: String!, $usersCursor: ID, $pageSize: Int) {
   usersSearchByIpPage(ip: $ip, after: $usersCursor, pageSize: $pageSize) {
     users {
-      id
-      kaid
-      lastLogin
-      points
-      profileRoot
-      nickname
-      joined
-      authEmails
-      userId
-      username
-      coaches {
-        id
-        email
-        username
-        kaid
-        __typename
-      }
-      isChild
-      discussionBanned
+      ...UserFields
+      ...FilterFields
       __typename
     }
     pageInfo {
@@ -4481,6 +4464,44 @@ fragment UserFields on User {
     totalCount
     __typename
   }
+}
+
+fragment FilterFields on User {
+  id
+  nickname
+  coaches {
+    id
+    email
+    username
+    kaid
+    __typename
+  }
+  joined
+  discussionBanned
+  isChild
+  points
+  __typename
+}
+
+fragment UserFields on User {
+  id
+  kaid
+  lastLogin
+  points
+  profileRoot
+  nickname
+  joined
+  authEmails
+  userId
+  username
+  coaches {
+    id
+    email
+    username
+    kaid
+    __typename
+  }
+  __typename
 }`,
   FlaggedFeedback: `query FlaggedFeedback($feedbackType: FeedbackType, $page: Int, $sort: ModerationSortOrder, $limit: Int, $kaLocale: String) {
   flaggedFeedback(
@@ -19278,5 +19299,53 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     textContent
     __typename
   }
+}`,
+  findUsersByNickname: `query findUsersByNickname($nickname: String!) {
+  usersSearchByNickname(nickname: $nickname) {
+    users {
+      ...UserFields
+      ...FilterFields
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment FilterFields on User {
+  id
+  nickname
+  coaches {
+    id
+    email
+    username
+    kaid
+    __typename
+  }
+  joined
+  discussionBanned
+  isChild
+  points
+  __typename
+}
+
+fragment UserFields on User {
+  id
+  kaid
+  lastLogin
+  points
+  profileRoot
+  nickname
+  joined
+  authEmails
+  userId
+  username
+  coaches {
+    id
+    email
+    username
+    kaid
+    __typename
+  }
+  __typename
 }`,
 }

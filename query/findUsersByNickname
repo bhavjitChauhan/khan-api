@@ -1,15 +1,10 @@
-query findUsersByIp($ip: String!, $usersCursor: ID, $pageSize: Int) {
-  usersSearchByIpPage(ip: $ip, after: $usersCursor, pageSize: $pageSize) {
+query findUsersByNickname($nickname: String!) {
+  usersSearchByNickname(nickname: $nickname) {
     users {
       ...UserFields
       ...FilterFields
       __typename
     }
-    pageInfo {
-      nextCursor
-      __typename
-    }
-    totalCount
     __typename
   }
 }
