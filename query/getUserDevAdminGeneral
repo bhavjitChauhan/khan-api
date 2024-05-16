@@ -199,6 +199,7 @@ query getUserDevAdminGeneral($kaid: String!) {
     walmartDivision
     hasCoach
     isK4dStudent
+    isKmapStudent
     isK4dTeacher
     isStudentOfFormalTeacherActor
     stripeCustomerUrl

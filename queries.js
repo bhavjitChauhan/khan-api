@@ -9160,6 +9160,7 @@ fragment Badge on Badge {
     walmartDivision
     hasCoach
     isK4dStudent
+    isKmapStudent
     isK4dTeacher
     isStudentOfFormalTeacherActor
     stripeCustomerUrl
@@ -18831,6 +18832,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       age
       aiGuideTermsOfService
       isTeacher
+      kadStudent
       __typename
     }
     __typename
