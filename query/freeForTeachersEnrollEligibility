@@ -14,6 +14,7 @@ query freeForTeachersEnrollEligibility($agreesToTerms: Boolean) {
       age
       aiGuideTermsOfService
       isTeacher
+      kadStudent
       __typename
     }
     __typename
