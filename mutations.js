@@ -8778,15 +8778,7 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }`,
-  setTeacherCountryAffiliation: `mutation setTeacherCountryAffiliation($tosForFormalTeacherStatus: Boolean, $countryCode: String!) {
-  setSettings(tosForFormalTeacherStatus: $tosForFormalTeacherStatus) {
-    user {
-      id
-      tosForFormalTeacherStatus
-      __typename
-    }
-    __typename
-  }
+  setTeacherCountryAffiliation: `mutation setTeacherCountryAffiliation($countryCode: String!) {
   userSettingsSetAffiliationCountryCode(countryCode: $countryCode) {
     error {
       code
@@ -11896,6 +11888,34 @@ fragment ProjectRevision on ProjectRevision {
   completeEssaySession(essaySessionID: $essaySessionID) {
     error {
       debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  setTeacherSchoolAffiliation: `mutation setTeacherSchoolAffiliation($countryCode: String!, $eduorgKeyId: ID!) {
+  userSettingsSetAffiliationCountryCode(countryCode: $countryCode) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+  setEduorgAffiliation(eduorgKeyId: $eduorgKeyId) {
+    user {
+      id
+      schoolAffiliation {
+        id
+        name
+        postalCode
+        location
+        __typename
+      }
+      affiliationCountryCode
+      __typename
+    }
+    error {
+      code
       __typename
     }
     __typename
