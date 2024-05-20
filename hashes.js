@@ -675,7 +675,7 @@ export default {
   coeditingLatestSnapshot: 2234147930,
   getAiGuideThreads: 2735494621,
   gettingStartedEssaySession: 3075146673,
-  writingCoachEssaySession: 2356805768,
+  writingCoachEssaySession: 2578719407,
   getUserEmailByKaid: 3896469412,
   districtGrowthByClassroom: 1706032326,
   districtGrowthBySchool: 590667432,

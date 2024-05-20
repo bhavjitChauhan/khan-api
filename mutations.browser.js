@@ -11892,4 +11892,13 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  completeEssaySession: `mutation completeEssaySession($essaySessionID: String!) {
+  completeEssaySession(essaySessionID: $essaySessionID) {
+    error {
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }

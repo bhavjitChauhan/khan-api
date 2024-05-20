@@ -28,6 +28,7 @@ query writingCoachEssaySession($id: String!) {
       submittedText
       __typename
     }
+    completed
     draftingThreadID
     essayInstructions
     essayTitle

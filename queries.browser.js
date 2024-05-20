@@ -19151,6 +19151,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       submittedText
       __typename
     }
+    completed
     draftingThreadID
     essayInstructions
     essayTitle
