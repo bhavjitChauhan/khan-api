@@ -1,0 +1,28 @@
+mutation setTeacherSchoolAffiliation($countryCode: String!, $eduorgKeyId: ID!) {
+  userSettingsSetAffiliationCountryCode(countryCode: $countryCode) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+  setEduorgAffiliation(eduorgKeyId: $eduorgKeyId) {
+    user {
+      id
+      schoolAffiliation {
+        id
+        name
+        postalCode
+        location
+        __typename
+      }
+      affiliationCountryCode
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

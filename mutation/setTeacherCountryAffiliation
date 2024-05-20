@@ -1,12 +1,4 @@
-mutation setTeacherCountryAffiliation($tosForFormalTeacherStatus: Boolean, $countryCode: String!) {
-  setSettings(tosForFormalTeacherStatus: $tosForFormalTeacherStatus) {
-    user {
-      id
-      tosForFormalTeacherStatus
-      __typename
-    }
-    __typename
-  }
+mutation setTeacherCountryAffiliation($countryCode: String!) {
   userSettingsSetAffiliationCountryCode(countryCode: $countryCode) {
     error {
       code
