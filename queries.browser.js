@@ -19351,4 +19351,11 @@ fragment UserFields on User {
   }
   __typename
 }`,
+  userBirthMonthYear: `query userBirthMonthYear {
+  user {
+    id
+    birthMonthYear
+    __typename
+  }
+}`,
 }

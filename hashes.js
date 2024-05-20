@@ -686,4 +686,5 @@ export default {
   emailTemplate: 180010537,
   previewEmail: 1957758907,
   findUsersByNickname: 3932081178,
+  userBirthMonthYear: 1380270141,
 }
