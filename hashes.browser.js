@@ -687,4 +687,5 @@ hashes = {
   previewEmail: 1957758907,
   findUsersByNickname: 3932081178,
   userBirthMonthYear: 1380270141,
+  districtAdminName: 937404703,
 }

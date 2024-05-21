@@ -686,5 +686,6 @@
   "emailTemplate": "query emailTemplate($id: ID!) {\n  emailTemplate(id: $id) {\n    id\n    name\n    htmlTemplate\n    textTemplate\n    exampleData\n    __typename\n  }\n}",
   "previewEmail": "query previewEmail($email: SendEmailInput!) {\n  previewEmail(email: $email) {\n    htmlContent\n    textContent\n    __typename\n  }\n}",
   "findUsersByNickname": "query findUsersByNickname($nickname: String!) {\n  usersSearchByNickname(nickname: $nickname) {\n    users {\n      ...UserFields\n      ...FilterFields\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment FilterFields on User {\n  id\n  nickname\n  coaches {\n    id\n    email\n    username\n    kaid\n    __typename\n  }\n  joined\n  discussionBanned\n  isChild\n  points\n  __typename\n}\n\nfragment UserFields on User {\n  id\n  kaid\n  lastLogin\n  points\n  profileRoot\n  nickname\n  joined\n  authEmails\n  userId\n  username\n  coaches {\n    id\n    email\n    username\n    kaid\n    __typename\n  }\n  __typename\n}",
-  "userBirthMonthYear": "query userBirthMonthYear {\n  user {\n    id\n    birthMonthYear\n    __typename\n  }\n}"
+  "userBirthMonthYear": "query userBirthMonthYear {\n  user {\n    id\n    birthMonthYear\n    __typename\n  }\n}",
+  "districtAdminName": "query districtAdminName {\n  user {\n    id\n    kaid\n    nickname\n    userDistrictInfos {\n      id\n      districtProvidedFirstName\n      __typename\n    }\n    __typename\n  }\n}"
 }
