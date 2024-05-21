@@ -19358,4 +19358,17 @@ fragment UserFields on User {
     __typename
   }
 }`,
+  districtAdminName: `query districtAdminName {
+  user {
+    id
+    kaid
+    nickname
+    userDistrictInfos {
+      id
+      districtProvidedFirstName
+      __typename
+    }
+    __typename
+  }
+}`,
 }
