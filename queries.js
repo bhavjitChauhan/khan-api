@@ -1159,6 +1159,7 @@ fragment ExerciseRevision on ExerciseRevision {
   problemTypeKind
   numQuestionsPerProblemType
   problemTypes {
+    contentId
     name
     relatedVideos
     items {
@@ -17808,6 +17809,7 @@ fragment ExerciseRevision on ExerciseRevision {
   problemTypeKind
   numQuestionsPerProblemType
   problemTypes {
+    contentId
     name
     relatedVideos
     items {
