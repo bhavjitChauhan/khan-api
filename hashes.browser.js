@@ -690,4 +690,5 @@ hashes = {
   districtAdminName: 937404703,
   perseusTemplateCompletionQuery: 2620456742,
   districtDashboardLearningMinutes: 3958197028,
+  districtDashboardActivation: 90100696,
 }
