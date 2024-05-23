@@ -19373,4 +19373,22 @@ fragment UserFields on User {
     __typename
   }
 }`,
+  perseusTemplateCompletionQuery: `query perseusTemplateCompletionQuery($exemplar: String!, $exerciseTitle: String!, $exerciseDescription: String!) {
+  perseusTemplateCompletion(
+    exemplar: $exemplar
+    exerciseDetails: {title: $exerciseTitle, description: $exerciseDescription}
+  ) {
+    completion {
+      template
+      misconceptions
+      placeholderNames
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
