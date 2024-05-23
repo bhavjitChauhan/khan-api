@@ -689,4 +689,5 @@ hashes = {
   userBirthMonthYear: 1380270141,
   districtAdminName: 937404703,
   perseusTemplateCompletionQuery: 2620456742,
+  districtDashboardLearningMinutes: 3958197028,
 }
