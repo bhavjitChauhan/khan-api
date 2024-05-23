@@ -19422,4 +19422,15 @@ fragment UserFields on User {
     __typename
   }
 }`,
+  districtDashboardActivation: `query districtDashboardActivation($filters: DistrictDashboardFilters!) {
+  districtDashboardActivation(filters: $filters) {
+    numRosteredStudents
+    numWithAnAccount
+    percentWithAnAccount
+    numStartedAnActivity
+    percentStartedAnActivity
+    lastUpdatedDate
+    __typename
+  }
+}`,
 }
