@@ -11926,4 +11926,13 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  disableTotpTwoFactor: `mutation disableTotpTwoFactor($kaid: String!) {
+  disableTotpTwoFactor(targetKaid: $kaid) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
