@@ -19391,4 +19391,35 @@ fragment UserFields on User {
     __typename
   }
 }`,
+  districtDashboardLearningMinutes: `query districtDashboardLearningMinutes($filters: DistrictDashboardFilters!) {
+  districtDashboardLearningMinutes(filters: $filters) {
+    header {
+      yearFirstWeekStart
+      yearFirstWeekEnd
+      yearLastWeekStart
+      yearLastWeekEnd
+      numberOfWeeksInTheSchoolYear
+      lastWeekAvg
+      yearToDateAvg
+      __typename
+    }
+    rows {
+      weekStart
+      weekEnd
+      totalStudents
+      totalMinutes
+      avgMinutes
+      numWith0
+      percent0
+      numWith1to14
+      percent1to14
+      numWith15to29
+      percent15to29
+      num30Plus
+      percent30Plus
+      __typename
+    }
+    __typename
+  }
+}`,
 }
