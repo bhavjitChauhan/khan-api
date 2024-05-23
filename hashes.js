@@ -688,4 +688,5 @@ export default {
   findUsersByNickname: 3932081178,
   userBirthMonthYear: 1380270141,
   districtAdminName: 937404703,
+  perseusTemplateCompletionQuery: 2620456742,
 }
