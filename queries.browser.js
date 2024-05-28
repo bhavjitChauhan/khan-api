@@ -19273,6 +19273,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   districtGrowthByWeek: `query districtGrowthByWeek($filters: DistrictGrowthFilters!) {
   districtGrowthByWeek(filters: $filters) {
     weekEndDate
+    weekStartDate
     overallMedianCMPercent
     selectedSchoolsMedianCMPercent
     __typename
