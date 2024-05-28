@@ -11520,6 +11520,8 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       conflictingUDI {
         id
         districtProvidedEmail
+        districtProvidedFirstName
+        districtProvidedLastName
         __typename
       }
       __typename
