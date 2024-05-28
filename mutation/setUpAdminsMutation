@@ -9,6 +9,8 @@ mutation setUpAdminsMutation($params: [WriteAdminUDIParams!]!) {
       conflictingUDI {
         id
         districtProvidedEmail
+        districtProvidedFirstName
+        districtProvidedLastName
         __typename
       }
       __typename
