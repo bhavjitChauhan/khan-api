@@ -18961,7 +18961,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
-  AITeacherTools_ExerciseDetails: `query AITeacherTools_ExerciseDetails($exerciseId: String) {
+  AITeacherTools_ExerciseDetails: `query AITeacherTools_ExerciseDetails($exerciseId: String!) {
   exerciseById(id: $exerciseId) {
     id
     title
@@ -18969,6 +18969,12 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     parentTopic {
       id
       domainSlug
+      allLearnableContent(includeUnlisted: false) {
+        id
+        title
+        defaultUrlPath
+        __typename
+      }
       __typename
     }
     assessmentItems {
