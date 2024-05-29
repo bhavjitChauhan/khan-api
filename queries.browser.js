@@ -10612,6 +10612,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
       flagged
       flaggedCategories
       responseWasStoppedByUser
+      traceID
       __typename
     }
     coeditingDocument {
