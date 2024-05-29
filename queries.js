@@ -18552,6 +18552,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     essayTitle
     lastUpdated
     currentStage
+    assignmentId: assignmentID
     __typename
   }
 }`,
