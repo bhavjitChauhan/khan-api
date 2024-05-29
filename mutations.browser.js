@@ -11937,4 +11937,21 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  getOrCreateEssaySessionForAssignment: `mutation getOrCreateEssaySessionForAssignment($assignmentId: String!) {
+  getOrCreateEssaySessionForAssignment(assignmentID: $assignmentId) {
+    essaySessionSummary {
+      id
+      essayTitle
+      lastUpdated
+      currentStage
+      assignmentId: assignmentID
+      __typename
+    }
+    error {
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
