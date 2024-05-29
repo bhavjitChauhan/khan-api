@@ -665,7 +665,7 @@ export default {
   LearnerWhatNextPrompt: 245792669,
   isKADorKADTeacherQuery: 1520039936,
   AITeacherTools_ArticleDetails: 2233101977,
-  AITeacherTools_ExerciseDetails: 3596766426,
+  AITeacherTools_ExerciseDetails: 4155519382,
   AITeacherTools_VideoDetails: 3796805173,
   getShowDiscussionsForDistrict: 2134624385,
   DistrictAdminPermissionsQuery: 2419103410,

@@ -1,4 +1,4 @@
-query AITeacherTools_ExerciseDetails($exerciseId: String) {
+query AITeacherTools_ExerciseDetails($exerciseId: String!) {
   exerciseById(id: $exerciseId) {
     id
     title
@@ -6,6 +6,12 @@ query AITeacherTools_ExerciseDetails($exerciseId: String) {
     parentTopic {
       id
       domainSlug
+      allLearnableContent(includeUnlisted: false) {
+        id
+        title
+        defaultUrlPath
+        __typename
+      }
       __typename
     }
     assessmentItems {
