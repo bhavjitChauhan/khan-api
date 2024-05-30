@@ -19442,4 +19442,28 @@ fragment UserFields on User {
     __typename
   }
 }`,
+  districtDashboardSkillsLeveledUp: `query districtDashboardSkillsLeveledUp($filters: DistrictDashboardFilters!, $upToProficient: Boolean!) {
+  districtDashboardSkillsLeveledUp(
+    filters: $filters
+    upToProficient: $upToProficient
+  ) {
+    header {
+      yearFirstWeekStart
+      yearFirstWeekEnd
+      yearLastWeekStart
+      yearLastWeekEnd
+      numberOfWeeksInTheSchoolYear
+      lastWeekAvg
+      yearToDateAvg
+      __typename
+    }
+    rows {
+      weekStart
+      weekEnd
+      avgSkills
+      __typename
+    }
+    __typename
+  }
+}`,
 }

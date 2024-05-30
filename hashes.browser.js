@@ -691,4 +691,5 @@ hashes = {
   perseusTemplateCompletionQuery: 2620456742,
   districtDashboardLearningMinutes: 3958197028,
   districtDashboardActivation: 90100696,
+  districtDashboardSkillsLeveledUp: 1383756852,
 }
