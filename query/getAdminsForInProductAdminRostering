@@ -1,5 +1,5 @@
 query getAdminsForInProductAdminRostering($districtID: String!) {
-  getAdminsForDistrict(districtID: $districtID) {
+  getAdminsForDistrict(districtID: $districtID, allowPartial: true) {
     id
     displayNameForTeacher
     districtProvidedEmail
@@ -13,7 +13,7 @@ query getAdminsForInProductAdminRostering($districtID: String!) {
     cleverId
     classlinkId
     kaid
-    adminOfSchools {
+    adminOfSchools(onlyVisible: true) {
       id
       name
       __typename

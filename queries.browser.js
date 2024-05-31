@@ -18211,7 +18211,7 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
   }
 }`,
   getAdminsForInProductAdminRostering: `query getAdminsForInProductAdminRostering($districtID: String!) {
-  getAdminsForDistrict(districtID: $districtID) {
+  getAdminsForDistrict(districtID: $districtID, allowPartial: true) {
     id
     displayNameForTeacher
     districtProvidedEmail
@@ -18225,7 +18225,7 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     cleverId
     classlinkId
     kaid
-    adminOfSchools {
+    adminOfSchools(onlyVisible: true) {
       id
       name
       __typename
