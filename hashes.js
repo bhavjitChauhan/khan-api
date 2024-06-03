@@ -694,4 +694,6 @@ export default {
   districtDashboardSkillsLeveledUp: 1383756852,
   districtById: 728152285,
   devadminEssayHistory: 205459217,
+  devadminEssayAuthor: 3140435347,
+  devadminWritingCoachTime: 3823115589,
 }
