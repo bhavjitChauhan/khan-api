@@ -678,7 +678,7 @@ hashes = {
   writingCoachEssaySession: 2578719407,
   getUserEmailByKaid: 3896469412,
   districtGrowthByClassroom: 1706032326,
-  districtGrowthBySchool: 590667432,
+  districtGrowthBySchool: 415491745,
   districtGrowthByStudent: 1206656323,
   districtGrowthByTeacher: 1604079230,
   districtGrowthByWeek: 3450578792,

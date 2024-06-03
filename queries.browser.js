@@ -19165,6 +19165,10 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       medianCMPercent
       wowPercentChange
       eoyPercentGuess
+      course {
+        id
+        __typename
+      }
       __typename
     }
     __typename
