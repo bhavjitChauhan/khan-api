@@ -1,4 +1,4 @@
-mutation saveLatestEssayText($essayInstructions: String!, $essaySessionID: String!, $essayText: String!, $essayTitle: String!, $essayVersion: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!, $studentGradeLevel: Int!) {
+mutation saveLatestEssayText($essayInstructions: String!, $essaySessionID: String!, $essayText: String!, $essayTitle: String!, $essayVersion: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!, $studentGradeLevel: Int!, $stage: WritingCoachEssayEditingStage!) {
   saveLatestEssayText(
     essayInstructions: $essayInstructions
     essaySessionID: $essaySessionID
@@ -7,6 +7,7 @@ mutation saveLatestEssayText($essayInstructions: String!, $essaySessionID: Strin
     essayVersion: $essayVersion
     paragraphIDToParagraphNumbers: $paragraphIDToParagraphNumbers
     studentGradeLevel: $studentGradeLevel
+    stage: $stage
   ) {
     error {
       debugMessage
