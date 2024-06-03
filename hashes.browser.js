@@ -112,7 +112,7 @@ hashes = {
   districtHomepageProgress: 1681650575,
   DistrictPrimaryOfferingAsTeacher: 15799337,
   DistrictQuery: 2138278370,
-  districts: 2021343704,
+  districts: 1050760816,
   DistrictSkillsMAPProgressQuery: 706683816,
   DistrictSkillsProgressQuery: 2501404314,
   districtsMetrics: 2006961705,
@@ -692,4 +692,5 @@ hashes = {
   districtDashboardLearningMinutes: 3958197028,
   districtDashboardActivation: 90100696,
   districtDashboardSkillsLeveledUp: 1383756852,
+  districtById: 728152285,
 }
