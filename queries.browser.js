@@ -19521,4 +19521,29 @@ fragment UserFields on User {
     __typename
   }
 }`,
+  devadminEssayHistory: `query devadminEssayHistory($essaySessionId: ID!, $pageSize: Int!, $cursor: String) {
+  userEssayHistory(
+    essaySessionID: $essaySessionId
+    pageSize: $pageSize
+    cursor: $cursor
+  ) {
+    snapshots {
+      details {
+        firstIncludedVersion
+        firstIncludedEditTimestamp
+        lastIncludedVersion
+        lastIncludedEditTimestamp
+        content
+        __typename
+      }
+      ... on UserEssayTextSnapshot {
+        stage
+        __typename
+      }
+      __typename
+    }
+    cursor
+    __typename
+  }
+}`,
 }

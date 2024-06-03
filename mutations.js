@@ -10973,6 +10973,7 @@ fragment ProjectRevision on ProjectRevision {
     essayTitle: $essayTitle
     essayVersion: $essayVersion
     paragraphIDToParagraphNumbers: $paragraphIDToParagraphNumbers
+    stage: REVISING
   ) {
     error {
       code
@@ -11792,7 +11793,7 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
-  saveLatestEssayText: `mutation saveLatestEssayText($essayInstructions: String!, $essaySessionID: String!, $essayText: String!, $essayTitle: String!, $essayVersion: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!, $studentGradeLevel: Int!) {
+  saveLatestEssayText: `mutation saveLatestEssayText($essayInstructions: String!, $essaySessionID: String!, $essayText: String!, $essayTitle: String!, $essayVersion: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!, $studentGradeLevel: Int!, $stage: WritingCoachEssayEditingStage!) {
   saveLatestEssayText(
     essayInstructions: $essayInstructions
     essaySessionID: $essaySessionID
@@ -11801,6 +11802,7 @@ fragment ProjectRevision on ProjectRevision {
     essayVersion: $essayVersion
     paragraphIDToParagraphNumbers: $paragraphIDToParagraphNumbers
     studentGradeLevel: $studentGradeLevel
+    stage: $stage
   ) {
     error {
       debugMessage
