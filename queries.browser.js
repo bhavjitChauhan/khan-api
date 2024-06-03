@@ -19546,4 +19546,20 @@ fragment UserFields on User {
     __typename
   }
 }`,
+  devadminEssayAuthor: `query devadminEssayAuthor($essaySessionId: String!) {
+  essaySession(essaySessionID: $essaySessionId) {
+    id
+    kaid
+    __typename
+  }
+}`,
+  devadminWritingCoachTime: `query devadminWritingCoachTime($kaid: String!, $essaySessionId: String!, $stage: WritingCoachStage!, $startTime: DateTime!, $endTime: DateTime!) {
+  writingCoachTimeInSeconds(
+    studentKaid: $kaid
+    essaySessionID: $essaySessionId
+    stage: $stage
+    startTime: $startTime
+    endTime: $endTime
+  )
+}`,
 }
