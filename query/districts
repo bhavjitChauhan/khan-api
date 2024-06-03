@@ -19,32 +19,6 @@ query districts($filter: String!, $excludeTeacherDirected: Boolean!) {
     goLiveDate
     region
     countryCode
-    schools {
-      id
-      name
-      isKADSchool
-      isKmapSchool
-      khanmigoPreference
-      allOnGrades {
-        id
-        name
-        sortIndex
-        __typename
-      }
-      allOffGrades {
-        id
-        name
-        sortIndex
-        __typename
-      }
-      subsetGrades {
-        id
-        name
-        sortIndex
-        __typename
-      }
-      __typename
-    }
     schoolYearDates {
       start {
         nthWeek
@@ -76,41 +50,6 @@ query districts($filter: String!, $excludeTeacherDirected: Boolean!) {
     khanmigoTokenUsage
     khanmigoStart
     khanmigoEnd
-    khanmigoIncludedUsers {
-      id
-      districtProvidedEmail
-      primaryRole
-      __typename
-    }
-    khanmigoExcludedUsers {
-      id
-      districtProvidedEmail
-      primaryRole
-      __typename
-    }
-    khanmigoGradeEnrollment {
-      id
-      districtID
-      allOnGrades {
-        id
-        name
-        sortIndex
-        __typename
-      }
-      allOffGrades {
-        id
-        name
-        sortIndex
-        __typename
-      }
-      subsetGrades {
-        id
-        name
-        sortIndex
-        __typename
-      }
-      __typename
-    }
     __typename
   }
 }

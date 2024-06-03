@@ -3627,32 +3627,6 @@ fragment CourseProgress on SubjectProgress {
     goLiveDate
     region
     countryCode
-    schools {
-      id
-      name
-      isKADSchool
-      isKmapSchool
-      khanmigoPreference
-      allOnGrades {
-        id
-        name
-        sortIndex
-        __typename
-      }
-      allOffGrades {
-        id
-        name
-        sortIndex
-        __typename
-      }
-      subsetGrades {
-        id
-        name
-        sortIndex
-        __typename
-      }
-      __typename
-    }
     schoolYearDates {
       start {
         nthWeek
@@ -3684,41 +3658,6 @@ fragment CourseProgress on SubjectProgress {
     khanmigoTokenUsage
     khanmigoStart
     khanmigoEnd
-    khanmigoIncludedUsers {
-      id
-      districtProvidedEmail
-      primaryRole
-      __typename
-    }
-    khanmigoExcludedUsers {
-      id
-      districtProvidedEmail
-      primaryRole
-      __typename
-    }
-    khanmigoGradeEnrollment {
-      id
-      districtID
-      allOnGrades {
-        id
-        name
-        sortIndex
-        __typename
-      }
-      allOffGrades {
-        id
-        name
-        sortIndex
-        __typename
-      }
-      subsetGrades {
-        id
-        name
-        sortIndex
-        __typename
-      }
-      __typename
-    }
     __typename
   }
 }`,
@@ -19461,6 +19400,122 @@ fragment UserFields on User {
       weekStart
       weekEnd
       avgSkills
+      __typename
+    }
+    __typename
+  }
+}`,
+  districtById: `query districtById($districtId: String!, $excludeTeacherDirected: Boolean!) {
+  districts(filter: $districtId, excludeTeacherDirected: $excludeTeacherDirected) {
+    id
+    name
+    rosterID
+    rosterSource
+    nweaID
+    ncesID
+    rosterSyncingEnabled
+    sendActivationEmails
+    rosterDistrictAdmins
+    deletedAt
+    isDowngraded
+    isTest
+    isKmapDistrict
+    isK4dDistrict
+    lastRostered
+    lastTestPull
+    goLiveDate
+    region
+    countryCode
+    schools {
+      id
+      name
+      isKADSchool
+      isKmapSchool
+      khanmigoPreference
+      allOnGrades {
+        id
+        name
+        sortIndex
+        __typename
+      }
+      allOffGrades {
+        id
+        name
+        sortIndex
+        __typename
+      }
+      subsetGrades {
+        id
+        name
+        sortIndex
+        __typename
+      }
+      __typename
+    }
+    schoolYearDates {
+      start {
+        nthWeek
+        dayOfWeek
+        month
+        __typename
+      }
+      end {
+        nthWeek
+        dayOfWeek
+        month
+        __typename
+      }
+      __typename
+    }
+    schoolYearStart
+    schoolYearEnd
+    hasKhanmigo
+    khanmigoPreference
+    khanmigoIncludeNonStudents
+    khanmigoIncludeStudents
+    khanmigoStudents
+    khanmigoAdmins
+    khanmigoTeachers
+    khanmigoTotal
+    khanmigoUDIsShould
+    khanmigoUDIsHave
+    khanmigoTokenCapacity
+    khanmigoTokenUsage
+    khanmigoStart
+    khanmigoEnd
+    khanmigoIncludedUsers {
+      id
+      districtProvidedEmail
+      primaryRole
+      __typename
+    }
+    khanmigoExcludedUsers {
+      id
+      districtProvidedEmail
+      primaryRole
+      __typename
+    }
+    khanmigoGradeEnrollment {
+      id
+      districtID
+      allOnGrades {
+        id
+        name
+        sortIndex
+        __typename
+      }
+      allOffGrades {
+        id
+        name
+        sortIndex
+        __typename
+      }
+      subsetGrades {
+        id
+        name
+        sortIndex
+        __typename
+      }
       __typename
     }
     __typename
