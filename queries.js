@@ -19567,4 +19567,18 @@ fragment UserFields on User {
     endTime: $endTime
   )
 }`,
+  listAIGuideConversationTestCases: `query listAIGuideConversationTestCases {
+  listAIGuideConversationTestCases {
+    id
+    owningTeam
+    name
+    description
+    interactions {
+      threadId
+      interactionId
+      __typename
+    }
+    __typename
+  }
+}`,
 }

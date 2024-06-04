@@ -1,0 +1,16 @@
+mutation createAIGuideConversationTestCase($input: CreateAIGuideConversationTestCaseInput!) {
+  createAIGuideConversationTestCase(input: $input) {
+    testCase {
+      id
+      owningTeam
+      name
+      description
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

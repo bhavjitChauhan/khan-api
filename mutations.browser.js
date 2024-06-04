@@ -11956,4 +11956,50 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  createAIGuideConversationTestCase: `mutation createAIGuideConversationTestCase($input: CreateAIGuideConversationTestCaseInput!) {
+  createAIGuideConversationTestCase(input: $input) {
+    testCase {
+      id
+      owningTeam
+      name
+      description
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  deleteAIGuideConversationTestCase: `mutation deleteAIGuideConversationTestCase($id: ID!) {
+  deleteAIGuideConversationTestCase(id: $id) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  removeAIGuideConversationTestCaseInteraction: `mutation removeAIGuideConversationTestCaseInteraction($id: ID!, $interactionId: ID!) {
+  removeAIGuideConversationTestCaseInteraction(
+    id: $id
+    interactionId: $interactionId
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  updateAIGuideConversationTestCase: `mutation updateAIGuideConversationTestCase($id: ID!, $input: UpdateAIGuideConversationTestCaseInput!) {
+  updateAIGuideConversationTestCase(id: $id, input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
