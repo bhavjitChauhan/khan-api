@@ -1,0 +1,9 @@
+mutation deleteAIGuideConversationTestCase($id: ID!) {
+  deleteAIGuideConversationTestCase(id: $id) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

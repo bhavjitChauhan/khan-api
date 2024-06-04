@@ -1,0 +1,12 @@
+mutation removeAIGuideConversationTestCaseInteraction($id: ID!, $interactionId: ID!) {
+  removeAIGuideConversationTestCaseInteraction(
+    id: $id
+    interactionId: $interactionId
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

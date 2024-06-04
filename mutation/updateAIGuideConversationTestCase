@@ -1,0 +1,9 @@
+mutation updateAIGuideConversationTestCase($id: ID!, $input: UpdateAIGuideConversationTestCaseInput!) {
+  updateAIGuideConversationTestCase(id: $id, input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
