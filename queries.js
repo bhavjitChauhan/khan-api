@@ -10540,6 +10540,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
       languages
       title
       summary
+      math
       __typename
     }
     interactions {
