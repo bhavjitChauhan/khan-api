@@ -1,0 +1,12 @@
+query fetchAllLegalDocs($isArchived: Boolean) {
+  legalDocuments(isArchived: $isArchived) {
+    id
+    name
+    slug
+    isArchived
+    kaLocales
+    countryCodes
+    draftContent
+    __typename
+  }
+}
