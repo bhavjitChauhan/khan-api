@@ -697,5 +697,6 @@
   "devadminEssayAuthor": "query devadminEssayAuthor($essaySessionId: String!) {\n  essaySession(essaySessionID: $essaySessionId) {\n    id\n    kaid\n    __typename\n  }\n}",
   "devadminWritingCoachTime": "query devadminWritingCoachTime($kaid: String!, $essaySessionId: String!, $stage: WritingCoachStage!, $startTime: DateTime!, $endTime: DateTime!) {\n  writingCoachTimeInSeconds(\n    studentKaid: $kaid\n    essaySessionID: $essaySessionId\n    stage: $stage\n    startTime: $startTime\n    endTime: $endTime\n  )\n}",
   "listAIGuideConversationTestCases": "query listAIGuideConversationTestCases {\n  listAIGuideConversationTestCases {\n    id\n    owningTeam\n    name\n    description\n    interactions {\n      threadId\n      interactionId\n      __typename\n    }\n    __typename\n  }\n}",
-  "fetchAllLegalDocs": "query fetchAllLegalDocs($isArchived: Boolean) {\n  legalDocuments(isArchived: $isArchived) {\n    id\n    name\n    slug\n    isArchived\n    kaLocales\n    countryCodes\n    draftContent\n    __typename\n  }\n}"
+  "fetchAllLegalDocs": "query fetchAllLegalDocs($isArchived: Boolean) {\n  legalDocuments(isArchived: $isArchived) {\n    id\n    name\n    slug\n    isArchived\n    kaLocales\n    countryCodes\n    draftContent\n    __typename\n  }\n}",
+  "getTeacherTools": "query getTeacherTools {\n  aiGuideTeacherTools {\n    id\n    configName\n    __typename\n  }\n}"
 }

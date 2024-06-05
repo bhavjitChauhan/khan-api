@@ -1,0 +1,7 @@
+query getTeacherTools {
+  aiGuideTeacherTools {
+    id
+    configName
+    __typename
+  }
+}

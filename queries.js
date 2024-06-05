@@ -19593,4 +19593,11 @@ fragment UserFields on User {
     __typename
   }
 }`,
+  getTeacherTools: `query getTeacherTools {
+  aiGuideTeacherTools {
+    id
+    configName
+    __typename
+  }
+}`,
 }
