@@ -12002,4 +12002,24 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  upsertLegalDoc: `mutation upsertLegalDoc($legalDocument: LegalDocumentInput!) {
+  upsertLegalDocument(legalDocument: $legalDocument) {
+    legalDocument {
+      id
+      name
+      slug
+      isArchived
+      kaLocales
+      countryCodes
+      draftContent
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }

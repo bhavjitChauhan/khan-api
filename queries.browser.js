@@ -19581,4 +19581,16 @@ fragment UserFields on User {
     __typename
   }
 }`,
+  fetchAllLegalDocs: `query fetchAllLegalDocs($isArchived: Boolean) {
+  legalDocuments(isArchived: $isArchived) {
+    id
+    name
+    slug
+    isArchived
+    kaLocales
+    countryCodes
+    draftContent
+    __typename
+  }
+}`,
 }
