@@ -1,9 +1,10 @@
-query StudentSkillsProgressKADQuery($studentKaid: String!, $progressFrom: DateTime!, $progressUpTo: DateTime!, $courseID: String!) {
+query StudentSkillsProgressKADQuery($studentKaid: String!, $progressFrom: DateTime!, $progressUpTo: DateTime!, $courseID: String!, $kaLocale: String!) {
   districtStudentsSkillsProgressForCourses(
     studentKaid: $studentKaid
     progressFrom: $progressFrom
     progressUpTo: $progressUpTo
     courseID: $courseID
+    kaLocale: $kaLocale
   ) {
     exercise {
       id
