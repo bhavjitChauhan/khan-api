@@ -19600,4 +19600,15 @@ fragment UserFields on User {
     __typename
   }
 }`,
+  fetchEssayPasteLog: `query fetchEssayPasteLog($essaySessionId: ID!) {
+  userEssayPasteLog(essaySessionID: $essaySessionId) {
+    pasteEvents {
+      text
+      location
+      timestamp
+      __typename
+    }
+    __typename
+  }
+}`,
 }
