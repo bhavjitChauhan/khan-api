@@ -3603,6 +3603,7 @@ fragment CourseProgress on SubjectProgress {
     }
     schoolYearStart
     schoolYearEnd
+    kaLocale
     __typename
   }
 }`,
@@ -13612,12 +13613,13 @@ fragment TranslatedContentFields on LearnableContent {
     __typename
   }
 }`,
-  StudentSkillsProgressKADQuery: `query StudentSkillsProgressKADQuery($studentKaid: String!, $progressFrom: DateTime!, $progressUpTo: DateTime!, $courseID: String!) {
+  StudentSkillsProgressKADQuery: `query StudentSkillsProgressKADQuery($studentKaid: String!, $progressFrom: DateTime!, $progressUpTo: DateTime!, $courseID: String!, $kaLocale: String!) {
   districtStudentsSkillsProgressForCourses(
     studentKaid: $studentKaid
     progressFrom: $progressFrom
     progressUpTo: $progressUpTo
     courseID: $courseID
+    kaLocale: $kaLocale
   ) {
     exercise {
       id

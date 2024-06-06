@@ -23,6 +23,7 @@ query DistrictQuery($districtName: String!) {
     }
     schoolYearStart
     schoolYearEnd
+    kaLocale
     __typename
   }
 }
