@@ -1,71 +1,69 @@
-# Interface: ProgramRevisionSchema
-
 ## Properties
 
 ### \_\_typename
 
-• **\_\_typename**: ``"ProgramRevision"``
+> **\_\_typename**: `"ProgramRevision"`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:254](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L254)
+[src/types/schema.ts:256](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L256)
 
-___
+***
 
 ### code
 
-• **code**: `string`
+> **code**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:255](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L255)
+[src/types/schema.ts:257](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L257)
 
-___
+***
 
 ### configVersion
 
-• **configVersion**: `number`
+> **configVersion**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:256](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L256)
+[src/types/schema.ts:258](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L258)
 
-___
+***
 
 ### created
 
-• **created**: `string`
+> **created**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:257](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L257)
+[src/types/schema.ts:259](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L259)
 
-___
+***
 
 ### editorType
 
-• **editorType**: [`ProgramEditorType`](api/enums/ProgramEditorType.md)
+> **editorType**: [`ProgramEditorType`](api%5Cenumerations%5CProgramEditorType.md)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:258](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L258)
+[src/types/schema.ts:260](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L260)
 
-___
+***
 
 ### folds
 
-• **folds**: [`number`, `number`][]
+> **folds**: [`number`, `number`][]
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:259](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L259)
+[src/types/schema.ts:261](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L261)
 
-___
+***
 
 ### id
 
-• **id**: `string`
+> **id**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:260](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L260)
+[src/types/schema.ts:262](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L262)

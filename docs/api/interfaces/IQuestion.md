@@ -1,293 +1,285 @@
-# Interface: IQuestion
+## Extends
 
-## Hierarchy
-
-- [`IMessage`](api/interfaces/IMessage.md)
-
-  ↳ **`IQuestion`**
-
-## Implemented by
-
-- [`Question`](api/classes/Question.md)
+- [`IMessage`](api%5Cinterfaces%5CIMessage.md)
 
 ## Properties
 
-### answerCount
+### answerCount?
 
-• `Optional` **answerCount**: `number`
+> `optional` **answerCount**: `number`
 
-#### Defined in
+#### Source
 
-[src/lib/messages/Question.ts:10](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/Question.ts#L10)
+[src/lib/messages/Question.ts:10](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Question.ts#L10)
 
-___
+***
 
-### answers
+### answers?
 
-• `Optional` **answers**: [`Answer`](api/classes/Answer.md)[]
+> `optional` **answers**: [`Answer`](api%5Cclasses%5CAnswer.md)[]
 
-#### Defined in
+#### Source
 
-[src/lib/messages/Question.ts:9](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/Question.ts#L9)
+[src/lib/messages/Question.ts:9](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Question.ts#L9)
 
-___
+***
 
-### author
+### author?
 
-• `Optional` **author**: [`User`](api/classes/User.md)
-
-#### Inherited from
-
-[IMessage](api/interfaces/IMessage.md).[author](api/interfaces/IMessage.md#author)
-
-#### Defined in
-
-[src/lib/messages/BaseMessage.ts:11](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L11)
-
-___
-
-### byVideoAuthor
-
-• `Optional` **byVideoAuthor**: `boolean`
+> `optional` **author**: [`User`](api%5Cclasses%5CUser.md)
 
 #### Inherited from
 
-[IMessage](api/interfaces/IMessage.md).[byVideoAuthor](api/interfaces/IMessage.md#byvideoauthor)
+[`IMessage`](api%5Cinterfaces%5CIMessage.md).[`author`](api%5Cinterfaces%5CIMessage.md#author)
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:12](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L12)
+[src/lib/messages/BaseMessage.ts:11](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L11)
 
-___
+***
 
-### created
+### byVideoAuthor?
 
-• `Optional` **created**: `Date`
-
-#### Inherited from
-
-[IMessage](api/interfaces/IMessage.md).[created](api/interfaces/IMessage.md#created)
-
-#### Defined in
-
-[src/lib/messages/BaseMessage.ts:13](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L13)
-
-___
-
-### deleted
-
-• `Optional` **deleted**: `boolean`
+> `optional` **byVideoAuthor**: `boolean`
 
 #### Inherited from
 
-[IMessage](api/interfaces/IMessage.md).[deleted](api/interfaces/IMessage.md#deleted)
+[`IMessage`](api%5Cinterfaces%5CIMessage.md).[`byVideoAuthor`](api%5Cinterfaces%5CIMessage.md#byvideoauthor)
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:14](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L14)
+[src/lib/messages/BaseMessage.ts:12](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L12)
 
-___
+***
 
-### encryptedKey
+### created?
 
-• `Optional` **encryptedKey**: `string`
-
-#### Inherited from
-
-[IMessage](api/interfaces/IMessage.md).[encryptedKey](api/interfaces/IMessage.md#encryptedkey)
-
-#### Defined in
-
-[src/lib/messages/BaseMessage.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L15)
-
-___
-
-### key
-
-• `Optional` **key**: `string`
+> `optional` **created**: `Date`
 
 #### Inherited from
 
-[IMessage](api/interfaces/IMessage.md).[key](api/interfaces/IMessage.md#key)
+[`IMessage`](api%5Cinterfaces%5CIMessage.md).[`created`](api%5Cinterfaces%5CIMessage.md#created)
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:17](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L17)
+[src/lib/messages/BaseMessage.ts:13](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L13)
 
-___
+***
 
-### locked
+### deleted?
 
-• `Optional` **locked**: `boolean`
-
-#### Inherited from
-
-[IMessage](api/interfaces/IMessage.md).[locked](api/interfaces/IMessage.md#locked)
-
-#### Defined in
-
-[src/lib/messages/BaseMessage.ts:16](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L16)
-
-___
-
-### old
-
-• `Optional` **old**: `boolean`
-
-#### Defined in
-
-[src/lib/messages/Question.ts:11](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/Question.ts#L11)
-
-___
-
-### pinned
-
-• `Optional` **pinned**: `boolean`
+> `optional` **deleted**: `boolean`
 
 #### Inherited from
 
-[IMessage](api/interfaces/IMessage.md).[pinned](api/interfaces/IMessage.md#pinned)
+[`IMessage`](api%5Cinterfaces%5CIMessage.md).[`deleted`](api%5Cinterfaces%5CIMessage.md#deleted)
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:18](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L18)
+[src/lib/messages/BaseMessage.ts:14](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L14)
 
-___
+***
 
-### program
+### encryptedKey?
 
-• `Optional` **program**: [`Program`](api/classes/Program.md)
-
-#### Inherited from
-
-[IMessage](api/interfaces/IMessage.md).[program](api/interfaces/IMessage.md#program)
-
-#### Defined in
-
-[src/lib/messages/BaseMessage.ts:19](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L19)
-
-___
-
-### replies
-
-• `Optional` **replies**: [`Reply`](api/classes/Reply.md)[]
+> `optional` **encryptedKey**: `string`
 
 #### Inherited from
 
-[IMessage](api/interfaces/IMessage.md).[replies](api/interfaces/IMessage.md#replies)
+[`IMessage`](api%5Cinterfaces%5CIMessage.md).[`encryptedKey`](api%5Cinterfaces%5CIMessage.md#encryptedkey)
 
-#### Defined in
+#### Source
 
-[src/lib/messages/Message.ts:24](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/Message.ts#L24)
+[src/lib/messages/BaseMessage.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L15)
 
-___
+***
 
-### replyCount
+### key?
 
-• `Optional` **replyCount**: `number`
-
-#### Inherited from
-
-[IMessage](api/interfaces/IMessage.md).[replyCount](api/interfaces/IMessage.md#replycount)
-
-#### Defined in
-
-[src/lib/messages/Message.ts:25](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/Message.ts#L25)
-
-___
-
-### score
-
-• `Optional` **score**: `number`
+> `optional` **key**: `string`
 
 #### Inherited from
 
-[IMessage](api/interfaces/IMessage.md).[score](api/interfaces/IMessage.md#score)
+[`IMessage`](api%5Cinterfaces%5CIMessage.md).[`key`](api%5Cinterfaces%5CIMessage.md#key)
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:20](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L20)
+[src/lib/messages/BaseMessage.ts:17](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L17)
 
-___
+***
 
-### selfDownvoted
+### locked?
 
-• `Optional` **selfDownvoted**: `boolean`
-
-#### Inherited from
-
-[IMessage](api/interfaces/IMessage.md).[selfDownvoted](api/interfaces/IMessage.md#selfdownvoted)
-
-#### Defined in
-
-[src/lib/messages/Message.ts:26](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/Message.ts#L26)
-
-___
-
-### selfFlagged
-
-• `Optional` **selfFlagged**: `boolean`
+> `optional` **locked**: `boolean`
 
 #### Inherited from
 
-[IMessage](api/interfaces/IMessage.md).[selfFlagged](api/interfaces/IMessage.md#selfflagged)
+[`IMessage`](api%5Cinterfaces%5CIMessage.md).[`locked`](api%5Cinterfaces%5CIMessage.md#locked)
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L21)
+[src/lib/messages/BaseMessage.ts:16](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L16)
 
-___
+***
 
-### selfUpvoted
+### old?
 
-• `Optional` **selfUpvoted**: `boolean`
+> `optional` **old**: `boolean`
 
-#### Inherited from
+#### Source
 
-[IMessage](api/interfaces/IMessage.md).[selfUpvoted](api/interfaces/IMessage.md#selfupvoted)
+[src/lib/messages/Question.ts:11](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Question.ts#L11)
 
-#### Defined in
+***
 
-[src/lib/messages/Message.ts:27](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/Message.ts#L27)
+### pinned?
 
-___
-
-### text
-
-• `Optional` **text**: `string`
+> `optional` **pinned**: `boolean`
 
 #### Inherited from
 
-[IMessage](api/interfaces/IMessage.md).[text](api/interfaces/IMessage.md#text)
+[`IMessage`](api%5Cinterfaces%5CIMessage.md).[`pinned`](api%5Cinterfaces%5CIMessage.md#pinned)
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L22)
+[src/lib/messages/BaseMessage.ts:18](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L18)
 
-___
+***
 
-### verified
+### program?
 
-• `Optional` **verified**: `boolean`
-
-#### Inherited from
-
-[IMessage](api/interfaces/IMessage.md).[verified](api/interfaces/IMessage.md#verified)
-
-#### Defined in
-
-[src/lib/messages/BaseMessage.ts:23](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L23)
-
-___
-
-### votes
-
-• `Optional` **votes**: `number`
+> `optional` **program**: [`Program`](api%5Cclasses%5CProgram.md)
 
 #### Inherited from
 
-[IMessage](api/interfaces/IMessage.md).[votes](api/interfaces/IMessage.md#votes)
+[`IMessage`](api%5Cinterfaces%5CIMessage.md).[`program`](api%5Cinterfaces%5CIMessage.md#program)
 
-#### Defined in
+#### Source
 
-[src/lib/messages/Message.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/Message.ts#L28)
+[src/lib/messages/BaseMessage.ts:19](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L19)
+
+***
+
+### replies?
+
+> `optional` **replies**: [`Reply`](api%5Cclasses%5CReply.md)[]
+
+#### Inherited from
+
+[`IMessage`](api%5Cinterfaces%5CIMessage.md).[`replies`](api%5Cinterfaces%5CIMessage.md#replies)
+
+#### Source
+
+[src/lib/messages/Message.ts:24](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Message.ts#L24)
+
+***
+
+### replyCount?
+
+> `optional` **replyCount**: `number`
+
+#### Inherited from
+
+[`IMessage`](api%5Cinterfaces%5CIMessage.md).[`replyCount`](api%5Cinterfaces%5CIMessage.md#replycount)
+
+#### Source
+
+[src/lib/messages/Message.ts:25](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Message.ts#L25)
+
+***
+
+### score?
+
+> `optional` **score**: `number`
+
+#### Inherited from
+
+[`IMessage`](api%5Cinterfaces%5CIMessage.md).[`score`](api%5Cinterfaces%5CIMessage.md#score)
+
+#### Source
+
+[src/lib/messages/BaseMessage.ts:20](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L20)
+
+***
+
+### selfDownvoted?
+
+> `optional` **selfDownvoted**: `boolean`
+
+#### Inherited from
+
+[`IMessage`](api%5Cinterfaces%5CIMessage.md).[`selfDownvoted`](api%5Cinterfaces%5CIMessage.md#selfdownvoted)
+
+#### Source
+
+[src/lib/messages/Message.ts:26](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Message.ts#L26)
+
+***
+
+### selfFlagged?
+
+> `optional` **selfFlagged**: `boolean`
+
+#### Inherited from
+
+[`IMessage`](api%5Cinterfaces%5CIMessage.md).[`selfFlagged`](api%5Cinterfaces%5CIMessage.md#selfflagged)
+
+#### Source
+
+[src/lib/messages/BaseMessage.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L21)
+
+***
+
+### selfUpvoted?
+
+> `optional` **selfUpvoted**: `boolean`
+
+#### Inherited from
+
+[`IMessage`](api%5Cinterfaces%5CIMessage.md).[`selfUpvoted`](api%5Cinterfaces%5CIMessage.md#selfupvoted)
+
+#### Source
+
+[src/lib/messages/Message.ts:27](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Message.ts#L27)
+
+***
+
+### text?
+
+> `optional` **text**: `string`
+
+#### Inherited from
+
+[`IMessage`](api%5Cinterfaces%5CIMessage.md).[`text`](api%5Cinterfaces%5CIMessage.md#text)
+
+#### Source
+
+[src/lib/messages/BaseMessage.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L22)
+
+***
+
+### verified?
+
+> `optional` **verified**: `boolean`
+
+#### Inherited from
+
+[`IMessage`](api%5Cinterfaces%5CIMessage.md).[`verified`](api%5Cinterfaces%5CIMessage.md#verified)
+
+#### Source
+
+[src/lib/messages/BaseMessage.ts:23](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L23)
+
+***
+
+### votes?
+
+> `optional` **votes**: `number`
+
+#### Inherited from
+
+[`IMessage`](api%5Cinterfaces%5CIMessage.md).[`votes`](api%5Cinterfaces%5CIMessage.md#votes)
+
+#### Source
+
+[src/lib/messages/Message.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Message.ts#L28)

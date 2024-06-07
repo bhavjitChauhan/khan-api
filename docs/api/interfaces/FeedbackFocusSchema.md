@@ -1,51 +1,49 @@
-# Interface: FeedbackFocusSchema
-
 ## Properties
 
 ### \_\_typename
 
-• **\_\_typename**: ``"FeedbackFocus"``
+> **\_\_typename**: `"FeedbackFocus"`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:338](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L338)
+[src/types/schema.ts:340](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L340)
 
-___
+***
 
 ### id
 
-• **id**: `string`
+> **id**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:339](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L339)
+[src/types/schema.ts:341](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L341)
 
-___
+***
 
 ### kind
 
-• **kind**: [`FeedbackFocusKind`](api/enums/FeedbackFocusKind.md)
+> **kind**: [`FeedbackFocusKind`](api%5Cenumerations%5CFeedbackFocusKind.md)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:340](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L340)
+[src/types/schema.ts:342](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L342)
 
-___
+***
 
 ### relativeUrl
 
-• **relativeUrl**: `string`
+> **relativeUrl**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:341](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L341)
+[src/types/schema.ts:343](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L343)
 
-___
+***
 
 ### translatedTitle
 
-• **translatedTitle**: `string`
+> **translatedTitle**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:342](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L342)
+[src/types/schema.ts:344](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L344)

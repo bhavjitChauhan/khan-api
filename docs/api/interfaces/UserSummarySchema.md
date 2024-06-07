@@ -1,21 +1,19 @@
-# Interface: UserSummarySchema
-
 ## Properties
 
 ### \_\_typename
 
-• **\_\_typename**: ``"UserSummary"``
+> **\_\_typename**: `"UserSummary"`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:182](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L182)
+[src/types/schema.ts:184](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L184)
 
-___
+***
 
 ### statistics
 
-• **statistics**: [`UserStatisticsSchema`](api/interfaces/UserStatisticsSchema.md)
+> **statistics**: [`UserStatisticsSchema`](api%5Cinterfaces%5CUserStatisticsSchema.md)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:183](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L183)
+[src/types/schema.ts:185](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L185)

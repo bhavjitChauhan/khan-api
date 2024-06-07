@@ -1,371 +1,367 @@
-# Interface: ProgramSchema\<UserData\>
-
 ## Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `UserData` | `unknown` |
+• **UserData** = `unknown`
 
 ## Properties
 
 ### \_\_typename
 
-• **\_\_typename**: ``"Program"``
+> **\_\_typename**: `"Program"`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:202](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L202)
+[src/types/schema.ts:204](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L204)
 
-___
+***
 
 ### authorKaid
 
-• **authorKaid**: ``""`` \| \`kaid\_$\{number}\`
+> **authorKaid**: `""` \| \`kaid\_$\{number\}\`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:203](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L203)
+[src/types/schema.ts:205](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L205)
 
-___
+***
 
 ### authorNickname
 
-• **authorNickname**: ``null`` \| `string`
+> **authorNickname**: `null` \| `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:204](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L204)
+[src/types/schema.ts:206](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L206)
 
-___
+***
 
 ### byChild
 
-• **byChild**: `boolean`
+> **byChild**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:205](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L205)
+[src/types/schema.ts:207](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L207)
 
-___
+***
 
 ### category
 
-• **category**: `unknown`
+> **category**: `unknown`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:206](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L206)
+[src/types/schema.ts:208](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L208)
 
-___
+***
 
 ### created
 
-• **created**: `string`
+> **created**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:207](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L207)
+[src/types/schema.ts:209](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L209)
 
-___
+***
 
 ### creatorProfile
 
-• **creatorProfile**: `UserData`
+> **creatorProfile**: `UserData`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:208](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L208)
+[src/types/schema.ts:210](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L210)
 
-___
+***
 
 ### deleted
 
-• **deleted**: ``null`` \| `boolean`
+> **deleted**: `null` \| `boolean`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:209](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L209)
+[src/types/schema.ts:211](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L211)
 
-___
+***
 
 ### description
 
-• **description**: `string`
+> **description**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:210](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L210)
+[src/types/schema.ts:212](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L212)
 
-___
+***
 
 ### displayableSpinoffCount
 
-• **displayableSpinoffCount**: `number`
+> **displayableSpinoffCount**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:211](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L211)
+[src/types/schema.ts:213](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L213)
 
-___
+***
 
 ### docsUrlPath
 
-• **docsUrlPath**: `string`
+> **docsUrlPath**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:212](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L212)
+[src/types/schema.ts:214](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L214)
 
-___
+***
 
 ### flaggedBy
 
-• **flaggedBy**: `unknown`
+> **flaggedBy**: `unknown`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:213](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L213)
+[src/types/schema.ts:215](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L215)
 
-___
+***
 
 ### flaggedByUser
 
-• **flaggedByUser**: `boolean`
+> **flaggedByUser**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:214](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L214)
+[src/types/schema.ts:216](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L216)
 
-___
+***
 
 ### flags
 
-• **flags**: `unknown`
+> **flags**: `unknown`
 
 Required special permissions.
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:218](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L218)
+[src/types/schema.ts:220](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L220)
 
-___
+***
 
 ### height
 
-• **height**: `number`
+> **height**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:219](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L219)
+[src/types/schema.ts:221](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L221)
 
-___
+***
 
 ### hideFromHotlist
 
-• **hideFromHotlist**: `boolean`
+> **hideFromHotlist**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:220](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L220)
+[src/types/schema.ts:222](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L222)
 
-___
+***
 
 ### id
 
-• **id**: \`$\{number}\`
+> **id**: \`$\{number\}\`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:221](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L221)
+[src/types/schema.ts:223](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L223)
 
-___
+***
 
 ### imagePath
 
-• **imagePath**: `string`
+> **imagePath**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:222](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L222)
+[src/types/schema.ts:224](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L224)
 
-___
+***
 
 ### isOwner
 
-• **isOwner**: `boolean`
+> **isOwner**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:223](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L223)
+[src/types/schema.ts:225](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L225)
 
-___
+***
 
 ### isProjectOrFork
 
-• **isProjectOrFork**: `boolean`
+> **isProjectOrFork**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:224](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L224)
+[src/types/schema.ts:226](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L226)
 
-___
+***
 
 ### kaid
 
-• **kaid**: ``""`` \| \`kaid\_$\{number}\`
+> **kaid**: `""` \| \`kaid\_$\{number\}\`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:225](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L225)
+[src/types/schema.ts:227](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L227)
 
-___
+***
 
 ### key
 
-• **key**: \`ag5zfmtoYW4tYWNhZGVteXI$\{string}CxIKU2NyYXRjaHBhZB$\{string}$\{string}\`
+> **key**: \`ag5zfmtoYW4tYWNhZGVteXI$\{string\}CxIKU2NyYXRjaHBhZB$\{string\}$\{string\}\`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:226](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L226)
+[src/types/schema.ts:228](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L228)
 
-___
+***
 
 ### newUrlPath
 
-• **newUrlPath**: `string`
+> **newUrlPath**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:227](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L227)
+[src/types/schema.ts:229](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L229)
 
-___
+***
 
 ### originScratchpad
 
-• **originScratchpad**: ``null`` \| [`OriginProgramSchema`](api/interfaces/OriginProgramSchema.md)
+> **originScratchpad**: `null` \| [`OriginProgramSchema`](api%5Cinterfaces%5COriginProgramSchema.md)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:228](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L228)
+[src/types/schema.ts:230](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L230)
 
-___
+***
 
 ### restrictPosting
 
-• **restrictPosting**: `boolean`
+> **restrictPosting**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:229](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L229)
+[src/types/schema.ts:231](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L231)
 
-___
+***
 
 ### revision
 
-• **revision**: [`ProgramRevisionSchema`](api/interfaces/ProgramRevisionSchema.md)
+> **revision**: [`ProgramRevisionSchema`](api%5Cinterfaces%5CProgramRevisionSchema.md)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:230](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L230)
+[src/types/schema.ts:232](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L232)
 
-___
+***
 
 ### slug
 
-• **slug**: `string`
+> **slug**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:231](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L231)
+[src/types/schema.ts:233](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L233)
 
-___
+***
 
 ### spinoffCount
 
-• **spinoffCount**: `number`
+> **spinoffCount**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:232](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L232)
+[src/types/schema.ts:234](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L234)
 
-___
+***
 
 ### sumVotesIncremented
 
-• **sumVotesIncremented**: `number`
+> **sumVotesIncremented**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:233](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L233)
+[src/types/schema.ts:235](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L235)
 
-___
+***
 
 ### title
 
-• **title**: `string`
+> **title**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:234](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L234)
+[src/types/schema.ts:236](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L236)
 
-___
+***
 
 ### topic
 
-• **topic**: [`TopicSchema`](api/interfaces/TopicSchema.md)
+> **topic**: [`TopicSchema`](api%5Cinterfaces%5CTopicSchema.md)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:235](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L235)
+[src/types/schema.ts:237](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L237)
 
-___
+***
 
 ### translatedTitle
 
-• **translatedTitle**: `string`
+> **translatedTitle**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:236](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L236)
+[src/types/schema.ts:238](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L238)
 
-___
+***
 
 ### upVoted
 
-• **upVoted**: `boolean`
+> **upVoted**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:237](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L237)
+[src/types/schema.ts:239](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L239)
 
-___
+***
 
 ### url
 
-• **url**: `string`
+> **url**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:238](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L238)
+[src/types/schema.ts:240](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L240)
 
-___
+***
 
 ### userAuthoredContentType
 
-• **userAuthoredContentType**: `string`
+> **userAuthoredContentType**: `string`
 
 Besides `PJS`, `WEBPAGE` and `SQL` it can also be an arbitrary string
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:242](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L242)
+[src/types/schema.ts:244](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L244)
 
-___
+***
 
 ### width
 
-• **width**: `number`
+> **width**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:243](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L243)
+[src/types/schema.ts:245](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L245)

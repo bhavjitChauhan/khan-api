@@ -1,405 +1,399 @@
-# Interface: IUser
-
-## Implemented by
-
-- [`User`](api/classes/User.md)
-
 ## Properties
 
-### accessLevel
+### accessLevel?
 
-• `Optional` `Readonly` **accessLevel**: [`UserAccessLevel`](api/enums/UserAccessLevel.md)
+> `optional` `readonly` **accessLevel**: [`UserAccessLevel`](api%5Cenumerations%5CUserAccessLevel.md)
 
-#### Defined in
+#### Source
 
-[src/User.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L65)
+[src/User.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L65)
 
-___
+***
 
-### avatar
+### avatar?
 
-• `Optional` `Readonly` **avatar**: [`AvatarURL`](api/README.md#avatarurl)
+> `optional` `readonly` **avatar**: [`AvatarURL`](api%5Ctype-aliases%5CAvatarURL.md)
 
-#### Defined in
+#### Source
 
-[src/User.ts:29](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L29)
+[src/User.ts:29](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L29)
 
-___
+***
 
-### badgeCounts
+### badgeCounts?
 
-• `Optional` `Readonly` **badgeCounts**: `Record`\<[`BadgeCategory`](api/enums/BadgeCategory.md), `number`\>
+> `optional` `readonly` **badgeCounts**: `Record`\<[`BadgeCategory`](api%5Cenumerations%5CBadgeCategory.md), `number`\>
 
-#### Defined in
+#### Source
 
-[src/User.ts:32](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L32)
+[src/User.ts:32](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L32)
 
-___
+***
 
-### bio
+### bio?
 
-• `Optional` `Readonly` **bio**: `string`
+> `optional` `readonly` **bio**: `string`
 
-#### Defined in
+#### Source
 
-[src/User.ts:30](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L30)
+[src/User.ts:30](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L30)
 
-___
+***
 
-### canAccessDistrictsHomepage
+### canAccessDistrictsHomepage?
 
-• `Optional` `Readonly` **canAccessDistrictsHomepage**: `boolean`
+> `optional` `readonly` **canAccessDistrictsHomepage**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:41](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L41)
+[src/User.ts:41](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L41)
 
-___
+***
 
-### canHellban
+### canHellban?
 
-• `Optional` `Readonly` **canHellban**: `boolean`
+> `optional` `readonly` **canHellban**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L42)
+[src/User.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L42)
 
-___
+***
 
-### canMessageUsers
+### canMessageUsers?
 
-• `Optional` `Readonly` **canMessageUsers**: `boolean`
+> `optional` `readonly` **canMessageUsers**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:43](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L43)
+[src/User.ts:43](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L43)
 
-___
+***
 
-### canModifyCoaches
+### canModifyCoaches?
 
-• `Optional` `Readonly` **canModifyCoaches**: `boolean`
+> `optional` `readonly` **canModifyCoaches**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L44)
+[src/User.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L44)
 
-___
+***
 
-### child
+### child?
 
-• `Optional` `Readonly` **child**: `boolean`
+> `optional` `readonly` **child**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:55](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L55)
+[src/User.ts:55](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L55)
 
-___
+***
 
-### completedVideos
+### completedVideos?
 
-• `Optional` `Readonly` **completedVideos**: `number`
+> `optional` `readonly` **completedVideos**: `number`
 
-#### Defined in
+#### Source
 
-[src/User.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L39)
+[src/User.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L39)
 
-___
+***
 
-### creator
+### creator?
 
-• `Optional` `Readonly` **creator**: `boolean`
+> `optional` `readonly` **creator**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:61](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L61)
+[src/User.ts:61](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L61)
 
-___
+***
 
-### curator
+### curator?
 
-• `Optional` `Readonly` **curator**: `boolean`
+> `optional` `readonly` **curator**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:59](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L59)
+[src/User.ts:59](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L59)
 
-___
+***
 
-### developer
+### developer?
 
-• `Optional` `Readonly` **developer**: `boolean`
+> `optional` `readonly` **developer**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L53)
+[src/User.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L53)
 
-___
+***
 
-### email
+### email?
 
-• `Optional` `Readonly` **email**: `string`
+> `optional` `readonly` **email**: `string`
 
-#### Defined in
+#### Source
 
-[src/User.ts:27](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L27)
+[src/User.ts:27](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L27)
 
-___
+***
 
-### emails
+### emails?
 
-• `Optional` `Readonly` **emails**: `string`[]
+> `optional` `readonly` **emails**: `string`[]
 
-#### Defined in
+#### Source
 
-[src/User.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L28)
+[src/User.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L28)
 
-___
+***
 
-### googleID
+### googleID?
 
-• `Optional` `Readonly` **googleID**: ``null`` \| `string`
+> `optional` `readonly` **googleID**: `null` \| `string`
 
-#### Defined in
+#### Source
 
-[src/User.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L36)
+[src/User.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L36)
 
-___
+***
 
-### hasAccessToAIGuideDev
+### hasAccessToAIGuideDev?
 
-• `Optional` `Readonly` **hasAccessToAIGuideDev**: `boolean`
+> `optional` `readonly` **hasAccessToAIGuideDev**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:46](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L46)
+[src/User.ts:46](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L46)
 
-___
+***
 
-### hasAccessToAIGuideTeacher
+### hasAccessToAIGuideTeacher?
 
-• `Optional` `Readonly` **hasAccessToAIGuideTeacher**: `boolean`
+> `optional` `readonly` **hasAccessToAIGuideTeacher**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:47](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L47)
+[src/User.ts:47](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L47)
 
-___
+***
 
-### hasChildren
+### hasChildren?
 
-• `Optional` `Readonly` **hasChildren**: `boolean`
+> `optional` `readonly` **hasChildren**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L48)
+[src/User.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L48)
 
-___
+***
 
-### hasClasses
+### hasClasses?
 
-• `Optional` `Readonly` **hasClasses**: `boolean`
+> `optional` `readonly` **hasClasses**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:49](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L49)
+[src/User.ts:49](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L49)
 
-___
+***
 
-### hasCoach
+### hasCoach?
 
-• `Optional` `Readonly` **hasCoach**: `boolean`
+> `optional` `readonly` **hasCoach**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:50](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L50)
+[src/User.ts:50](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L50)
 
-___
+***
 
-### hasStudents
+### hasStudents?
 
-• `Optional` `Readonly` **hasStudents**: `boolean`
+> `optional` `readonly` **hasStudents**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:51](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L51)
+[src/User.ts:51](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L51)
 
-___
+***
 
-### joined
+### joined?
 
-• `Optional` `Readonly` **joined**: `Date`
+> `optional` `readonly` **joined**: `Date`
 
-#### Defined in
+#### Source
 
-[src/User.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L33)
+[src/User.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L33)
 
-___
+***
 
-### kaid
+### kaid?
 
-• `Optional` `Readonly` **kaid**: ``null`` \| \`kaid\_$\{number}\`
+> `optional` `readonly` **kaid**: `null` \| \`kaid\_$\{number\}\`
 
-#### Defined in
+#### Source
 
-[src/User.ts:24](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L24)
+[src/User.ts:24](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L24)
 
-___
+***
 
-### key
+### key?
 
-• `Optional` `Readonly` **key**: `string`
+> `optional` `readonly` **key**: `string`
 
-#### Defined in
+#### Source
 
-[src/User.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L35)
+[src/User.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L35)
 
-___
+***
 
-### midsignupPhantom
+### midsignupPhantom?
 
-• `Optional` `Readonly` **midsignupPhantom**: `boolean`
+> `optional` `readonly` **midsignupPhantom**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:63](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L63)
+[src/User.ts:63](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L63)
 
-___
+***
 
-### moderator
+### moderator?
 
-• `Optional` `Readonly` **moderator**: `boolean`
+> `optional` `readonly` **moderator**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:54](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L54)
+[src/User.ts:54](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L54)
 
-___
+***
 
-### newNotifications
+### newNotifications?
 
-• `Optional` `Readonly` **newNotifications**: `number`
+> `optional` `readonly` **newNotifications**: `number`
 
-#### Defined in
+#### Source
 
-[src/User.ts:38](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L38)
+[src/User.ts:38](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L38)
 
-___
+***
 
-### nickname
+### nickname?
 
-• `Optional` `Readonly` **nickname**: `string`
+> `optional` `readonly` **nickname**: `string`
 
-#### Defined in
+#### Source
 
-[src/User.ts:26](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L26)
+[src/User.ts:26](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L26)
 
-___
+***
 
-### orphan
+### orphan?
 
-• `Optional` `Readonly` **orphan**: `boolean`
+> `optional` `readonly` **orphan**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:57](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L57)
+[src/User.ts:57](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L57)
 
-___
+***
 
-### parent
+### parent?
 
-• `Optional` `Readonly` **parent**: `boolean`
+> `optional` `readonly` **parent**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:56](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L56)
+[src/User.ts:56](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L56)
 
-___
+***
 
-### phantom
+### phantom?
 
-• `Optional` `Readonly` **phantom**: `boolean`
+> `optional` `readonly` **phantom**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:62](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L62)
+[src/User.ts:62](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L62)
 
-___
+***
 
-### points
+### points?
 
-• `Optional` `Readonly` **points**: `number`
+> `optional` `readonly` **points**: `number`
 
-#### Defined in
+#### Source
 
-[src/User.ts:31](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L31)
+[src/User.ts:31](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L31)
 
-___
+***
 
-### programs
+### programs?
 
-• `Optional` `Readonly` **programs**: [`Program`](api/classes/Program.md)[]
+> `optional` `readonly` **programs**: [`Program`](api%5Cclasses%5CProgram.md)[]
 
-#### Defined in
+#### Source
 
-[src/User.ts:68](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L68)
+[src/User.ts:68](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L68)
 
-___
+***
 
-### publisher
+### publisher?
 
-• `Optional` `Readonly` **publisher**: `boolean`
+> `optional` `readonly` **publisher**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:60](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L60)
+[src/User.ts:60](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L60)
 
-___
+***
 
-### qualarooID
+### qualarooID?
 
-• `Optional` `Readonly` **qualarooID**: ``null`` \| `string`
+> `optional` `readonly` **qualarooID**: `null` \| `string`
 
-#### Defined in
+#### Source
 
-[src/User.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L37)
+[src/User.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L37)
 
-___
+***
 
-### self
+### self?
 
-• `Optional` `Readonly` **self**: `boolean`
+> `optional` `readonly` **self**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:23](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L23)
+[src/User.ts:23](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L23)
 
-___
+***
 
-### statistics
+### statistics?
 
-• `Optional` `Readonly` **statistics**: [`UserStatistics`](api/interfaces/UserStatistics.md)
+> `optional` `readonly` **statistics**: [`UserStatistics`](api%5Cinterfaces%5CUserStatistics.md)
 
-#### Defined in
+#### Source
 
-[src/User.ts:67](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L67)
+[src/User.ts:67](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L67)
 
-___
+***
 
-### teacher
+### teacher?
 
-• `Optional` `Readonly` **teacher**: `boolean`
+> `optional` `readonly` **teacher**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/User.ts:58](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L58)
+[src/User.ts:58](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L58)
 
-___
+***
 
-### username
+### username?
 
-• `Optional` `Readonly` **username**: ``null`` \| `string`
+> `optional` `readonly` **username**: `null` \| `string`
 
-#### Defined in
+#### Source
 
-[src/User.ts:25](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/User.ts#L25)
+[src/User.ts:25](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/User.ts#L25)

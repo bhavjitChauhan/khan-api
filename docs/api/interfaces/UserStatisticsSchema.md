@@ -1,91 +1,89 @@
-# Interface: UserStatisticsSchema
-
 ## Properties
 
 ### \_\_typename
 
-• **\_\_typename**: ``"UserStatistics"``
+> **\_\_typename**: `"UserStatistics"`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:187](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L187)
+[src/types/schema.ts:189](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L189)
 
-___
+***
 
 ### answers
 
-• **answers**: `number`
+> **answers**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:188](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L188)
+[src/types/schema.ts:190](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L190)
 
-___
+***
 
 ### comments
 
-• **comments**: `number`
+> **comments**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:189](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L189)
+[src/types/schema.ts:191](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L191)
 
-___
+***
 
 ### flags
 
-• **flags**: `number`
+> **flags**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:190](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L190)
+[src/types/schema.ts:192](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L192)
 
-___
+***
 
 ### projectanswers
 
-• **projectanswers**: `number`
+> **projectanswers**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:191](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L191)
+[src/types/schema.ts:193](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L193)
 
-___
+***
 
 ### projectquestions
 
-• **projectquestions**: `number`
+> **projectquestions**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:192](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L192)
+[src/types/schema.ts:194](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L194)
 
-___
+***
 
 ### questions
 
-• **questions**: `number`
+> **questions**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:193](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L193)
+[src/types/schema.ts:195](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L195)
 
-___
+***
 
 ### replies
 
-• **replies**: `number`
+> **replies**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:194](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L194)
+[src/types/schema.ts:196](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L196)
 
-___
+***
 
 ### votes
 
-• **votes**: `number`
+> **votes**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:195](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L195)
+[src/types/schema.ts:197](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L197)

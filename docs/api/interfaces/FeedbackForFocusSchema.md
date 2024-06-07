@@ -1,51 +1,49 @@
-# Interface: FeedbackForFocusSchema
-
 ## Properties
 
 ### \_\_typename
 
-• **\_\_typename**: ``"FeedbackForFocus"``
+> **\_\_typename**: `"FeedbackForFocus"`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:273](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L273)
+[src/types/schema.ts:275](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L275)
 
-___
+***
 
 ### cursor
 
-• **cursor**: ``null`` \| `string`
+> **cursor**: `null` \| `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:274](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L274)
+[src/types/schema.ts:276](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L276)
 
-___
+***
 
 ### feedback
 
-• **feedback**: ``null`` \| [`BasicFeedbackSchema`](api/interfaces/BasicFeedbackSchema.md)[] \| [`QuestionFeedbackSchema`](api/interfaces/QuestionFeedbackSchema.md)[] \| [`AnswerFeedbackSchema`](api/interfaces/AnswerFeedbackSchema.md)[]
+> **feedback**: `null` \| [`BasicFeedbackSchema`](api%5Cinterfaces%5CBasicFeedbackSchema.md)[] \| [`QuestionFeedbackSchema`](api%5Cinterfaces%5CQuestionFeedbackSchema.md)[] \| [`AnswerFeedbackSchema`](api%5Cinterfaces%5CAnswerFeedbackSchema.md)[]
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:275](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L275)
+[src/types/schema.ts:277](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L277)
 
-___
+***
 
 ### isComplete
 
-• **isComplete**: `boolean`
+> **isComplete**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:280](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L280)
+[src/types/schema.ts:282](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L282)
 
-___
+***
 
 ### sortedByDate
 
-• **sortedByDate**: `boolean`
+> **sortedByDate**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:281](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L281)
+[src/types/schema.ts:283](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L283)

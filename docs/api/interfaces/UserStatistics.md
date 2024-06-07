@@ -1,81 +1,79 @@
-# Interface: UserStatistics
-
 ## Properties
 
 ### answers
 
-• `Readonly` **answers**: `number`
+> `readonly` **answers**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/user-statistics.ts:5](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/user-statistics.ts#L5)
+[src/types/user-statistics.ts:5](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/user-statistics.ts#L5)
 
-___
+***
 
 ### flags
 
-• `Readonly` **flags**: `number`
+> `readonly` **flags**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/user-statistics.ts:9](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/user-statistics.ts#L9)
+[src/types/user-statistics.ts:9](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/user-statistics.ts#L9)
 
-___
+***
 
 ### helpRequestAnswers
 
-• `Readonly` **helpRequestAnswers**: `number`
+> `readonly` **helpRequestAnswers**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/user-statistics.ts:7](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/user-statistics.ts#L7)
+[src/types/user-statistics.ts:7](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/user-statistics.ts#L7)
 
-___
+***
 
 ### helpRequests
 
-• `Readonly` **helpRequests**: `number`
+> `readonly` **helpRequests**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/user-statistics.ts:6](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/user-statistics.ts#L6)
+[src/types/user-statistics.ts:6](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/user-statistics.ts#L6)
 
-___
+***
 
 ### questions
 
-• `Readonly` **questions**: `number`
+> `readonly` **questions**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/user-statistics.ts:4](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/user-statistics.ts#L4)
+[src/types/user-statistics.ts:4](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/user-statistics.ts#L4)
 
-___
+***
 
 ### replies
 
-• `Readonly` **replies**: `number`
+> `readonly` **replies**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/user-statistics.ts:8](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/user-statistics.ts#L8)
+[src/types/user-statistics.ts:8](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/user-statistics.ts#L8)
 
-___
+***
 
 ### tipsAndThanks
 
-• `Readonly` **tipsAndThanks**: `number`
+> `readonly` **tipsAndThanks**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/user-statistics.ts:3](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/user-statistics.ts#L3)
+[src/types/user-statistics.ts:3](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/user-statistics.ts#L3)
 
-___
+***
 
 ### votes
 
-• `Readonly` **votes**: `number`
+> `readonly` **votes**: `number`
 
-#### Defined in
+#### Source
 
-[src/types/user-statistics.ts:2](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/user-statistics.ts#L2)
+[src/types/user-statistics.ts:2](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/user-statistics.ts#L2)

@@ -1,47 +1,43 @@
-# Interface: ListProgramsSchema\<ProgramData\>
-
 ## Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `ProgramData` | `unknown` |
+• **ProgramData** = `unknown`
 
 ## Properties
 
 ### \_\_typename
 
-• **\_\_typename**: ``"ListPrograms"``
+> **\_\_typename**: `"ListPrograms"`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:175](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L175)
+[src/types/schema.ts:177](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L177)
 
-___
+***
 
 ### complete
 
-• **complete**: `boolean`
+> **complete**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:176](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L176)
+[src/types/schema.ts:178](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L178)
 
-___
+***
 
 ### cursor
 
-• **cursor**: `string`
+> **cursor**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:177](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L177)
+[src/types/schema.ts:179](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L179)
 
-___
+***
 
 ### programs
 
-• **programs**: `ProgramData`[]
+> **programs**: `ProgramData`[]
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:178](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L178)
+[src/types/schema.ts:180](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L180)

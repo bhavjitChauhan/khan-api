@@ -1,425 +1,421 @@
-# Interface: BasicFeedbackSchema
+## Extends
 
-## Hierarchy
-
-- [`FeedbackSchemaBase`](api/interfaces/FeedbackSchemaBase.md)
-
-  ↳ **`BasicFeedbackSchema`**
+- [`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md)
 
 ## Properties
 
 ### \_\_typename
 
-• **\_\_typename**: [`FeedbackTypename`](api/enums/FeedbackTypename.md)
+> **\_\_typename**: [`FeedbackTypename`](api%5Cenumerations%5CFeedbackTypename.md)
 
 #### Overrides
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[__typename](api/interfaces/FeedbackSchemaBase.md#__typename)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`__typename`](api%5Cinterfaces%5CFeedbackSchemaBase.md#__typename)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:347](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L347)
+[src/types/schema.ts:349](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L349)
 
-___
+***
 
 ### appearsAsDeleted
 
-• **appearsAsDeleted**: `boolean`
+> **appearsAsDeleted**: `boolean`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[appearsAsDeleted](api/interfaces/FeedbackSchemaBase.md#appearsasdeleted)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`appearsAsDeleted`](api%5Cinterfaces%5CFeedbackSchemaBase.md#appearsasdeleted)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:286](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L286)
+[src/types/schema.ts:288](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L288)
 
-___
+***
 
 ### author
 
-• **author**: `Pick`\<[`UserSchema`](api/interfaces/UserSchema.md)\<`Pick`\<[`AvatarSchema`](api/interfaces/AvatarSchema.md), ``"__typename"`` \| ``"imageSrc"`` \| ``"name"``\>, [`ProfileSchema`](api/interfaces/ProfileSchema.md), [`ListProgramsSchema`](api/interfaces/ListProgramsSchema.md)\<`unknown`\>\>, ``"id"`` \| ``"__typename"`` \| ``"kaid"`` \| ``"nickname"`` \| ``"avatar"``\>
+> **author**: `Pick`\<[`UserSchema`](api%5Cinterfaces%5CUserSchema.md)\<`Pick`\<[`AvatarSchema`](api%5Cinterfaces%5CAvatarSchema.md), `"__typename"` \| `"imageSrc"` \| `"name"`\>, [`ProfileSchema`](api%5Cinterfaces%5CProfileSchema.md), [`ListProgramsSchema`](api%5Cinterfaces%5CListProgramsSchema.md)\<`unknown`\>\>, `"id"` \| `"__typename"` \| `"kaid"` \| `"nickname"` \| `"avatar"`\>
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[author](api/interfaces/FeedbackSchemaBase.md#author)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`author`](api%5Cinterfaces%5CFeedbackSchemaBase.md#author)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:287](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L287)
+[src/types/schema.ts:289](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L289)
 
-___
+***
 
 ### badges
 
-• **badges**: `unknown`
+> **badges**: `unknown`
 
 Always `null`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[badges](api/interfaces/FeedbackSchemaBase.md#badges)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`badges`](api%5Cinterfaces%5CFeedbackSchemaBase.md#badges)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:294](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L294)
+[src/types/schema.ts:296](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L296)
 
-___
+***
 
 ### content
 
-• **content**: `string`
+> **content**: `string`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[content](api/interfaces/FeedbackSchemaBase.md#content)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`content`](api%5Cinterfaces%5CFeedbackSchemaBase.md#content)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:295](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L295)
+[src/types/schema.ts:297](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L297)
 
-___
+***
 
 ### date
 
-• **date**: `string`
+> **date**: `string`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[date](api/interfaces/FeedbackSchemaBase.md#date)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`date`](api%5Cinterfaces%5CFeedbackSchemaBase.md#date)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:296](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L296)
+[src/types/schema.ts:298](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L298)
 
-___
+***
 
 ### definitelyNotSpam
 
-• **definitelyNotSpam**: `boolean`
+> **definitelyNotSpam**: `boolean`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[definitelyNotSpam](api/interfaces/FeedbackSchemaBase.md#definitelynotspam)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`definitelyNotSpam`](api%5Cinterfaces%5CFeedbackSchemaBase.md#definitelynotspam)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:297](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L297)
+[src/types/schema.ts:299](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L299)
 
-___
+***
 
 ### deleted
 
-• **deleted**: `boolean`
+> **deleted**: `boolean`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[deleted](api/interfaces/FeedbackSchemaBase.md#deleted)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`deleted`](api%5Cinterfaces%5CFeedbackSchemaBase.md#deleted)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:298](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L298)
+[src/types/schema.ts:300](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L300)
 
-___
+***
 
 ### downVoted
 
-• **downVoted**: `boolean`
+> **downVoted**: `boolean`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[downVoted](api/interfaces/FeedbackSchemaBase.md#downvoted)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`downVoted`](api%5Cinterfaces%5CFeedbackSchemaBase.md#downvoted)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:299](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L299)
+[src/types/schema.ts:301](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L301)
 
-___
+***
 
 ### expandKey
 
-• **expandKey**: `string`
+> **expandKey**: `string`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[expandKey](api/interfaces/FeedbackSchemaBase.md#expandkey)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`expandKey`](api%5Cinterfaces%5CFeedbackSchemaBase.md#expandkey)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:300](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L300)
+[src/types/schema.ts:302](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L302)
 
-___
+***
 
 ### feedbackType
 
-• **feedbackType**: [`COMMENT`](api/enums/FeedbackType.md#comment) \| [`REPLY`](api/enums/FeedbackType.md#reply)
+> **feedbackType**: [`COMMENT`](api%5Cenumerations%5CFeedbackType.md#comment) \| [`REPLY`](api%5Cenumerations%5CFeedbackType.md#reply)
 
 #### Overrides
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[feedbackType](api/interfaces/FeedbackSchemaBase.md#feedbacktype)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`feedbackType`](api%5Cinterfaces%5CFeedbackSchemaBase.md#feedbacktype)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:348](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L348)
+[src/types/schema.ts:350](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L350)
 
-___
+***
 
 ### flaggedBy
 
-• **flaggedBy**: `unknown`
+> **flaggedBy**: `unknown`
 
 Always `null`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[flaggedBy](api/interfaces/FeedbackSchemaBase.md#flaggedby)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`flaggedBy`](api%5Cinterfaces%5CFeedbackSchemaBase.md#flaggedby)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:305](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L305)
+[src/types/schema.ts:307](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L307)
 
-___
+***
 
 ### flaggedByUser
 
-• **flaggedByUser**: `boolean`
+> **flaggedByUser**: `boolean`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[flaggedByUser](api/interfaces/FeedbackSchemaBase.md#flaggedbyuser)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`flaggedByUser`](api%5Cinterfaces%5CFeedbackSchemaBase.md#flaggedbyuser)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:306](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L306)
+[src/types/schema.ts:308](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L308)
 
-___
+***
 
 ### flags
 
-• **flags**: `unknown`
+> **flags**: `unknown`
 
 Always `null`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[flags](api/interfaces/FeedbackSchemaBase.md#flags)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`flags`](api%5Cinterfaces%5CFeedbackSchemaBase.md#flags)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:310](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L310)
+[src/types/schema.ts:312](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L312)
 
-___
+***
 
 ### focus
 
-• **focus**: [`FeedbackFocusSchema`](api/interfaces/FeedbackFocusSchema.md)
+> **focus**: [`FeedbackFocusSchema`](api%5Cinterfaces%5CFeedbackFocusSchema.md)
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[focus](api/interfaces/FeedbackSchemaBase.md#focus)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`focus`](api%5Cinterfaces%5CFeedbackSchemaBase.md#focus)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:311](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L311)
+[src/types/schema.ts:313](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L313)
 
-___
+***
 
 ### focusUrl
 
-• **focusUrl**: `string`
+> **focusUrl**: `string`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[focusUrl](api/interfaces/FeedbackSchemaBase.md#focusurl)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`focusUrl`](api%5Cinterfaces%5CFeedbackSchemaBase.md#focusurl)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:312](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L312)
+[src/types/schema.ts:314](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L314)
 
-___
+***
 
 ### fromVideoAuthor
 
-• **fromVideoAuthor**: `boolean`
+> **fromVideoAuthor**: `boolean`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[fromVideoAuthor](api/interfaces/FeedbackSchemaBase.md#fromvideoauthor)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`fromVideoAuthor`](api%5Cinterfaces%5CFeedbackSchemaBase.md#fromvideoauthor)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:313](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L313)
+[src/types/schema.ts:315](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L315)
 
-___
+***
 
 ### isLocked
 
-• **isLocked**: `boolean`
+> **isLocked**: `boolean`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[isLocked](api/interfaces/FeedbackSchemaBase.md#islocked)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`isLocked`](api%5Cinterfaces%5CFeedbackSchemaBase.md#islocked)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:314](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L314)
+[src/types/schema.ts:316](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L316)
 
-___
+***
 
 ### isPinned
 
-• **isPinned**: `boolean`
+> **isPinned**: `boolean`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[isPinned](api/interfaces/FeedbackSchemaBase.md#ispinned)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`isPinned`](api%5Cinterfaces%5CFeedbackSchemaBase.md#ispinned)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:315](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L315)
+[src/types/schema.ts:317](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L317)
 
-___
+***
 
 ### key
 
-• **key**: `string`
+> **key**: `string`
 
 Encrypted ID
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[key](api/interfaces/FeedbackSchemaBase.md#key)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`key`](api%5Cinterfaces%5CFeedbackSchemaBase.md#key)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:319](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L319)
+[src/types/schema.ts:321](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L321)
 
-___
+***
 
 ### lowQualityScore
 
-• **lowQualityScore**: `number`
+> **lowQualityScore**: `number`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[lowQualityScore](api/interfaces/FeedbackSchemaBase.md#lowqualityscore)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`lowQualityScore`](api%5Cinterfaces%5CFeedbackSchemaBase.md#lowqualityscore)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:320](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L320)
+[src/types/schema.ts:322](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L322)
 
-___
+***
 
 ### notifyOnAnswer
 
-• **notifyOnAnswer**: `boolean`
+> **notifyOnAnswer**: `boolean`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[notifyOnAnswer](api/interfaces/FeedbackSchemaBase.md#notifyonanswer)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`notifyOnAnswer`](api%5Cinterfaces%5CFeedbackSchemaBase.md#notifyonanswer)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:321](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L321)
+[src/types/schema.ts:323](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L323)
 
-___
+***
 
 ### permalink
 
-• **permalink**: `string`
+> **permalink**: `string`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[permalink](api/interfaces/FeedbackSchemaBase.md#permalink)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`permalink`](api%5Cinterfaces%5CFeedbackSchemaBase.md#permalink)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:322](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L322)
+[src/types/schema.ts:324](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L324)
 
-___
+***
 
 ### qualityKind
 
-• **qualityKind**: `string`
+> **qualityKind**: `string`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[qualityKind](api/interfaces/FeedbackSchemaBase.md#qualitykind)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`qualityKind`](api%5Cinterfaces%5CFeedbackSchemaBase.md#qualitykind)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:323](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L323)
+[src/types/schema.ts:325](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L325)
 
-___
+***
 
 ### replyCount
 
-• **replyCount**: `number`
+> **replyCount**: `number`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[replyCount](api/interfaces/FeedbackSchemaBase.md#replycount)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`replyCount`](api%5Cinterfaces%5CFeedbackSchemaBase.md#replycount)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:324](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L324)
+[src/types/schema.ts:326](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L326)
 
-___
+***
 
 ### replyExpandKeys
 
-• **replyExpandKeys**: \`ag5zfmtoYW4tYWNhZGVteX$\{string}CxIIVXNlckRhdGEi$\{string}thaWRf$\{string}$\{string}$\{string}\` \| \`ag5zfmtoYW4tYWNhZGVteX$\{string}CxIIVXNlckRhdGEi$\{string}thaWRf$\{string}$\{string}$\{string}\`[]
+> **replyExpandKeys**: \`ag5zfmtoYW4tYWNhZGVteX$\{string\}CxIIVXNlckRhdGEi$\{string\}thaWRf$\{string\}$\{string\}$\{string\}\` \| \`ag5zfmtoYW4tYWNhZGVteX$\{string\}CxIIVXNlckRhdGEi$\{string\}thaWRf$\{string\}$\{string\}$\{string\}\`[]
 
 Expand keys for parent feedback. Always 1-2 elements
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[replyExpandKeys](api/interfaces/FeedbackSchemaBase.md#replyexpandkeys)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`replyExpandKeys`](api%5Cinterfaces%5CFeedbackSchemaBase.md#replyexpandkeys)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:328](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L328)
+[src/types/schema.ts:330](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L330)
 
-___
+***
 
 ### showLowQualityNotice
 
-• **showLowQualityNotice**: `boolean`
+> **showLowQualityNotice**: `boolean`
 
 Always `false`? May depend on the user
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[showLowQualityNotice](api/interfaces/FeedbackSchemaBase.md#showlowqualitynotice)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`showLowQualityNotice`](api%5Cinterfaces%5CFeedbackSchemaBase.md#showlowqualitynotice)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:332](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L332)
+[src/types/schema.ts:334](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L334)
 
-___
+***
 
 ### sumVotesIncremented
 
-• **sumVotesIncremented**: `number`
+> **sumVotesIncremented**: `number`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[sumVotesIncremented](api/interfaces/FeedbackSchemaBase.md#sumvotesincremented)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`sumVotesIncremented`](api%5Cinterfaces%5CFeedbackSchemaBase.md#sumvotesincremented)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:333](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L333)
+[src/types/schema.ts:335](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L335)
 
-___
+***
 
 ### upVoted
 
-• **upVoted**: `boolean`
+> **upVoted**: `boolean`
 
 #### Inherited from
 
-[FeedbackSchemaBase](api/interfaces/FeedbackSchemaBase.md).[upVoted](api/interfaces/FeedbackSchemaBase.md#upvoted)
+[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md).[`upVoted`](api%5Cinterfaces%5CFeedbackSchemaBase.md#upvoted)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:334](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L334)
+[src/types/schema.ts:336](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L336)

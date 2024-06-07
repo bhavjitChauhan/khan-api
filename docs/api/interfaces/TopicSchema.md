@@ -1,61 +1,59 @@
-# Interface: TopicSchema
-
 ## Properties
 
 ### \_\_typename
 
-• **\_\_typename**: ``"Topic"``
+> **\_\_typename**: `"Topic"`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:264](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L264)
+[src/types/schema.ts:266](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L266)
 
-___
+***
 
 ### id
 
-• **id**: `string`
+> **id**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:265](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L265)
+[src/types/schema.ts:267](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L267)
 
-___
+***
 
 ### nodeSlug
 
-• **nodeSlug**: `string`
+> **nodeSlug**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:266](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L266)
+[src/types/schema.ts:268](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L268)
 
-___
+***
 
 ### relativeUrl
 
-• **relativeUrl**: `string`
+> **relativeUrl**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:267](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L267)
+[src/types/schema.ts:269](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L269)
 
-___
+***
 
 ### slug
 
-• **slug**: `string`
+> **slug**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:268](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L268)
+[src/types/schema.ts:270](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L270)
 
-___
+***
 
 ### translatedTitle
 
-• **translatedTitle**: `string`
+> **translatedTitle**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:269](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L269)
+[src/types/schema.ts:271](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L271)

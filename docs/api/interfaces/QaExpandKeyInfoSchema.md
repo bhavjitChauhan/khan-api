@@ -1,31 +1,29 @@
-# Interface: QaExpandKeyInfoSchema
-
 ## Properties
 
 ### \_\_typename
 
-• **\_\_typename**: ``"QaExpandKeyInfo"``
+> **\_\_typename**: `"QaExpandKeyInfo"`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:429](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L429)
+[src/types/schema.ts:431](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L431)
 
-___
+***
 
 ### feedbackType
 
-• **feedbackType**: [`FeedbackType`](api/enums/FeedbackType.md)
+> **feedbackType**: [`FeedbackType`](api%5Cenumerations%5CFeedbackType.md)
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:430](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L430)
+[src/types/schema.ts:432](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L432)
 
-___
+***
 
 ### unencryptedKey
 
-• **unencryptedKey**: \`ag5zfmtoYW4tYWNhZGVteX$\{string}CxIIVXNlckRhdGEi$\{string}thaWRf$\{string}$\{string}$\{string}\`
+> **unencryptedKey**: \`ag5zfmtoYW4tYWNhZGVteX$\{string\}CxIIVXNlckRhdGEi$\{string\}thaWRf$\{string\}$\{string\}$\{string\}\`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:431](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L431)
+[src/types/schema.ts:433](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L433)

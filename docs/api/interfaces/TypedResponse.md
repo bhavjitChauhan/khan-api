@@ -1,166 +1,160 @@
-# Interface: TypedResponse\<T\>
-
-## Type parameters
-
-| Name |
-| :------ |
-| `T` |
-
-## Hierarchy
+## Extends
 
 - `Response`
 
-  ↳ **`TypedResponse`**
+## Type parameters
+
+• **T**
 
 ## Properties
 
 ### body
 
-• `Readonly` **body**: ``null`` \| `ReadableStream`\<`Uint8Array`\>
+> `readonly` **body**: `null` \| `ReadableStream`\<`Uint8Array`\>
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/body)
 
 #### Inherited from
 
-Response.body
+`Response.body`
 
-#### Defined in
+#### Source
 
-node_modules/typescript/lib/lib.dom.d.ts:3145
+node\_modules/typescript/lib/lib.dom.d.ts:3151
 
-___
+***
 
 ### bodyUsed
 
-• `Readonly` **bodyUsed**: `boolean`
+> `readonly` **bodyUsed**: `boolean`
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bodyUsed)
 
 #### Inherited from
 
-Response.bodyUsed
+`Response.bodyUsed`
 
-#### Defined in
+#### Source
 
-node_modules/typescript/lib/lib.dom.d.ts:3147
+node\_modules/typescript/lib/lib.dom.d.ts:3153
 
-___
+***
 
 ### headers
 
-• `Readonly` **headers**: `Headers`
+> `readonly` **headers**: `Headers`
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/headers)
 
 #### Inherited from
 
-Response.headers
+`Response.headers`
 
-#### Defined in
+#### Source
 
-node_modules/typescript/lib/lib.dom.d.ts:18798
+node\_modules/typescript/lib/lib.dom.d.ts:18936
 
-___
+***
 
 ### ok
 
-• `Readonly` **ok**: `boolean`
+> `readonly` **ok**: `boolean`
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/ok)
 
 #### Inherited from
 
-Response.ok
+`Response.ok`
 
-#### Defined in
+#### Source
 
-node_modules/typescript/lib/lib.dom.d.ts:18800
+node\_modules/typescript/lib/lib.dom.d.ts:18938
 
-___
+***
 
 ### redirected
 
-• `Readonly` **redirected**: `boolean`
+> `readonly` **redirected**: `boolean`
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/redirected)
 
 #### Inherited from
 
-Response.redirected
+`Response.redirected`
 
-#### Defined in
+#### Source
 
-node_modules/typescript/lib/lib.dom.d.ts:18802
+node\_modules/typescript/lib/lib.dom.d.ts:18940
 
-___
+***
 
 ### status
 
-• `Readonly` **status**: `number`
+> `readonly` **status**: `number`
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/status)
 
 #### Inherited from
 
-Response.status
+`Response.status`
 
-#### Defined in
+#### Source
 
-node_modules/typescript/lib/lib.dom.d.ts:18804
+node\_modules/typescript/lib/lib.dom.d.ts:18942
 
-___
+***
 
 ### statusText
 
-• `Readonly` **statusText**: `string`
+> `readonly` **statusText**: `string`
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/statusText)
 
 #### Inherited from
 
-Response.statusText
+`Response.statusText`
 
-#### Defined in
+#### Source
 
-node_modules/typescript/lib/lib.dom.d.ts:18806
+node\_modules/typescript/lib/lib.dom.d.ts:18944
 
-___
+***
 
 ### type
 
-• `Readonly` **type**: `ResponseType`
+> `readonly` **type**: `ResponseType`
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/type)
 
 #### Inherited from
 
-Response.type
+`Response.type`
 
-#### Defined in
+#### Source
 
-node_modules/typescript/lib/lib.dom.d.ts:18808
+node\_modules/typescript/lib/lib.dom.d.ts:18946
 
-___
+***
 
 ### url
 
-• `Readonly` **url**: `string`
+> `readonly` **url**: `string`
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/url)
 
 #### Inherited from
 
-Response.url
+`Response.url`
 
-#### Defined in
+#### Source
 
-node_modules/typescript/lib/lib.dom.d.ts:18810
+node\_modules/typescript/lib/lib.dom.d.ts:18948
 
 ## Methods
 
-### arrayBuffer
+### arrayBuffer()
 
-▸ **arrayBuffer**(): `Promise`\<`ArrayBuffer`\>
+> **arrayBuffer**(): `Promise`\<`ArrayBuffer`\>
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/arrayBuffer)
 
@@ -170,17 +164,17 @@ node_modules/typescript/lib/lib.dom.d.ts:18810
 
 #### Inherited from
 
-Response.arrayBuffer
+`Response.arrayBuffer`
 
-#### Defined in
+#### Source
 
-node_modules/typescript/lib/lib.dom.d.ts:3149
+node\_modules/typescript/lib/lib.dom.d.ts:3155
 
-___
+***
 
-### blob
+### blob()
 
-▸ **blob**(): `Promise`\<`Blob`\>
+> **blob**(): `Promise`\<`Blob`\>
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/blob)
 
@@ -190,17 +184,17 @@ ___
 
 #### Inherited from
 
-Response.blob
+`Response.blob`
 
-#### Defined in
+#### Source
 
-node_modules/typescript/lib/lib.dom.d.ts:3151
+node\_modules/typescript/lib/lib.dom.d.ts:3157
 
-___
+***
 
-### clone
+### clone()
 
-▸ **clone**(): `Response`
+> **clone**(): `Response`
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/clone)
 
@@ -210,17 +204,17 @@ ___
 
 #### Inherited from
 
-Response.clone
+`Response.clone`
 
-#### Defined in
+#### Source
 
-node_modules/typescript/lib/lib.dom.d.ts:18812
+node\_modules/typescript/lib/lib.dom.d.ts:18950
 
-___
+***
 
-### formData
+### formData()
 
-▸ **formData**(): `Promise`\<`FormData`\>
+> **formData**(): `Promise`\<`FormData`\>
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/formData)
 
@@ -230,17 +224,17 @@ ___
 
 #### Inherited from
 
-Response.formData
+`Response.formData`
 
-#### Defined in
+#### Source
 
-node_modules/typescript/lib/lib.dom.d.ts:3153
+node\_modules/typescript/lib/lib.dom.d.ts:3159
 
-___
+***
 
-### json
+### json()
 
-▸ **json**(): `Promise`\<`T`\>
+> **json**(): `Promise`\<`T`\>
 
 #### Returns
 
@@ -248,17 +242,17 @@ ___
 
 #### Overrides
 
-Response.json
+`Response.json`
 
-#### Defined in
+#### Source
 
-[src/utils/fetch.ts:6](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/utils/fetch.ts#L6)
+[src/utils/fetch.ts:6](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/utils/fetch.ts#L6)
 
-___
+***
 
-### text
+### text()
 
-▸ **text**(): `Promise`\<`string`\>
+> **text**(): `Promise`\<`string`\>
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/text)
 
@@ -268,8 +262,8 @@ ___
 
 #### Inherited from
 
-Response.text
+`Response.text`
 
-#### Defined in
+#### Source
 
-node_modules/typescript/lib/lib.dom.d.ts:3157
+node\_modules/typescript/lib/lib.dom.d.ts:3163

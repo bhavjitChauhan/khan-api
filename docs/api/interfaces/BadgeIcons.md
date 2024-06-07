@@ -1,49 +1,47 @@
-# Interface: BadgeIcons
-
 ## Properties
 
 ### compact
 
-• **compact**: `string`
+> **compact**: `string`
 
 60 x 60 PNG
 
-#### Defined in
+#### Source
 
-[src/types/badges.ts:32](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/badges.ts#L32)
+[src/types/badges.ts:32](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/badges.ts#L32)
 
-___
+***
 
 ### email
 
-• **email**: `string`
+> **email**: `string`
 
 70 x 70 PNG
 
-#### Defined in
+#### Source
 
-[src/types/badges.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/badges.ts#L36)
+[src/types/badges.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/badges.ts#L36)
 
-___
+***
 
 ### large
 
-• **large**: `string`
+> **large**: `string`
 
 512 x 512 PNG
 
-#### Defined in
+#### Source
 
-[src/types/badges.ts:40](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/badges.ts#L40)
+[src/types/badges.ts:40](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/badges.ts#L40)
 
-___
+***
 
 ### small
 
-• **small**: `string`
+> **small**: `string`
 
 40 x 40 PNG
 
-#### Defined in
+#### Source
 
-[src/types/badges.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/badges.ts#L28)
+[src/types/badges.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/badges.ts#L28)

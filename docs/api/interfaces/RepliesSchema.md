@@ -1,41 +1,39 @@
-# Interface: RepliesSchema
-
 ## Properties
 
 ### \_\_typename
 
-• **\_\_typename**: ``"Replies"``
+> **\_\_typename**: `"Replies"`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:435](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L435)
+[src/types/schema.ts:437](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L437)
 
-___
+***
 
 ### cursor
 
-• **cursor**: ``null`` \| `string`
+> **cursor**: `null` \| `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:436](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L436)
+[src/types/schema.ts:438](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L438)
 
-___
+***
 
 ### feedback
 
-• **feedback**: ``null`` \| [`BasicFeedbackSchema`](api/interfaces/BasicFeedbackSchema.md)[]
+> **feedback**: `null` \| [`BasicFeedbackSchema`](api%5Cinterfaces%5CBasicFeedbackSchema.md)[]
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:437](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L437)
+[src/types/schema.ts:439](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L439)
 
-___
+***
 
 ### isComplete
 
-• **isComplete**: `boolean`
+> **isComplete**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:438](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L438)
+[src/types/schema.ts:440](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L440)

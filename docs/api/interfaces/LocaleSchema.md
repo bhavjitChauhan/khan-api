@@ -1,41 +1,39 @@
-# Interface: LocaleSchema
-
 ## Properties
 
 ### \_\_typename
 
-• **\_\_typename**: ``"Locale"``
+> **\_\_typename**: `"Locale"`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:149](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L149)
+[src/types/schema.ts:151](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L151)
 
-___
+***
 
 ### id
 
-• **id**: `string`
+> **id**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:150](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L150)
+[src/types/schema.ts:152](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L152)
 
-___
+***
 
 ### kaLocale
 
-• **kaLocale**: ``"as"`` \| ``"az"`` \| ``"cs"`` \| ``"da"`` \| ``"el"`` \| ``"gu"`` \| ``"hu"`` \| ``"id"`` \| ``"it"`` \| ``"lt"`` \| ``"ja"`` \| ``"kk"`` \| ``"kn"`` \| ``"ky"`` \| ``"lv"`` \| ``"mn"`` \| ``"mr"`` \| ``"my"`` \| ``"nl"`` \| ``"pt-pt"`` \| ``"ru"`` \| ``"sv"`` \| ``"ta"`` \| ``"uz"`` \| ``"bg"`` \| ``"bn"`` \| ``"de"`` \| ``"en"`` \| ``"es"`` \| ``"fr"`` \| ``"hi"`` \| ``"hy"`` \| ``"ka"`` \| ``"km"`` \| ``"ko"`` \| ``"nb"`` \| ``"pa"`` \| ``"pl"`` \| ``"pt"`` \| ``"ro"`` \| ``"sr"`` \| ``"tr"`` \| ``"vi"`` \| ``"zh-hans"`` \| ``"sgn-us"``
+> **kaLocale**: `"as"` \| `"az"` \| `"cs"` \| `"da"` \| `"el"` \| `"gu"` \| `"hu"` \| `"id"` \| `"it"` \| `"lt"` \| `"ja"` \| `"kk"` \| `"kn"` \| `"ky"` \| `"lv"` \| `"mn"` \| `"mr"` \| `"my"` \| `"nl"` \| `"pt-pt"` \| `"ru"` \| `"sv"` \| `"ta"` \| `"uz"` \| `"bg"` \| `"bn"` \| `"de"` \| `"en"` \| `"es"` \| `"fr"` \| `"hi"` \| `"hy"` \| `"ka"` \| `"km"` \| `"ko"` \| `"nb"` \| `"pa"` \| `"pl"` \| `"pt"` \| `"ro"` \| `"sr"` \| `"tr"` \| `"vi"` \| `"zh-hans"` \| `"sgn-us"`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:151](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L151)
+[src/types/schema.ts:153](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L153)
 
-___
+***
 
 ### status
 
-• **status**: `unknown`
+> **status**: `unknown`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:152](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L152)
+[src/types/schema.ts:154](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L154)

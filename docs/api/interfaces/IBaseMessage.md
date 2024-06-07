@@ -1,143 +1,134 @@
-# Interface: IBaseMessage
+## Extended by
 
-## Hierarchy
-
-- **`IBaseMessage`**
-
-  ↳ [`IMessage`](api/interfaces/IMessage.md)
-
-  ↳ [`IReply`](api/interfaces/IReply.md)
-
-## Implemented by
-
-- [`BaseMessage`](api/classes/BaseMessage.md)
+- [`IMessage`](api%5Cinterfaces%5CIMessage.md)
+- [`IReply`](api%5Cinterfaces%5CIReply.md)
 
 ## Properties
 
-### author
+### author?
 
-• `Optional` **author**: [`User`](api/classes/User.md)
+> `optional` **author**: [`User`](api%5Cclasses%5CUser.md)
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:11](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L11)
+[src/lib/messages/BaseMessage.ts:11](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L11)
 
-___
+***
 
-### byVideoAuthor
+### byVideoAuthor?
 
-• `Optional` **byVideoAuthor**: `boolean`
+> `optional` **byVideoAuthor**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:12](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L12)
+[src/lib/messages/BaseMessage.ts:12](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L12)
 
-___
+***
 
-### created
+### created?
 
-• `Optional` **created**: `Date`
+> `optional` **created**: `Date`
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:13](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L13)
+[src/lib/messages/BaseMessage.ts:13](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L13)
 
-___
+***
 
-### deleted
+### deleted?
 
-• `Optional` **deleted**: `boolean`
+> `optional` **deleted**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:14](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L14)
+[src/lib/messages/BaseMessage.ts:14](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L14)
 
-___
+***
 
-### encryptedKey
+### encryptedKey?
 
-• `Optional` **encryptedKey**: `string`
+> `optional` **encryptedKey**: `string`
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L15)
+[src/lib/messages/BaseMessage.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L15)
 
-___
+***
 
-### key
+### key?
 
-• `Optional` **key**: `string`
+> `optional` **key**: `string`
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:17](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L17)
+[src/lib/messages/BaseMessage.ts:17](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L17)
 
-___
+***
 
-### locked
+### locked?
 
-• `Optional` **locked**: `boolean`
+> `optional` **locked**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:16](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L16)
+[src/lib/messages/BaseMessage.ts:16](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L16)
 
-___
+***
 
-### pinned
+### pinned?
 
-• `Optional` **pinned**: `boolean`
+> `optional` **pinned**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:18](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L18)
+[src/lib/messages/BaseMessage.ts:18](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L18)
 
-___
+***
 
-### program
+### program?
 
-• `Optional` **program**: [`Program`](api/classes/Program.md)
+> `optional` **program**: [`Program`](api%5Cclasses%5CProgram.md)
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:19](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L19)
+[src/lib/messages/BaseMessage.ts:19](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L19)
 
-___
+***
 
-### score
+### score?
 
-• `Optional` **score**: `number`
+> `optional` **score**: `number`
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:20](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L20)
+[src/lib/messages/BaseMessage.ts:20](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L20)
 
-___
+***
 
-### selfFlagged
+### selfFlagged?
 
-• `Optional` **selfFlagged**: `boolean`
+> `optional` **selfFlagged**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L21)
+[src/lib/messages/BaseMessage.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L21)
 
-___
+***
 
-### text
+### text?
 
-• `Optional` **text**: `string`
+> `optional` **text**: `string`
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L22)
+[src/lib/messages/BaseMessage.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L22)
 
-___
+***
 
-### verified
+### verified?
 
-• `Optional` **verified**: `boolean`
+> `optional` **verified**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/lib/messages/BaseMessage.ts:23](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/lib/messages/BaseMessage.ts#L23)
+[src/lib/messages/BaseMessage.ts:23](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L23)

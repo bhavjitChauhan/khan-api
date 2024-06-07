@@ -1,235 +1,229 @@
-# Interface: IProgram
-
-## Implemented by
-
-- [`Program`](api/classes/Program.md)
-
 ## Properties
 
-### author
+### author?
 
-• `Optional` `Readonly` **author**: [`User`](api/classes/User.md)
+> `optional` `readonly` **author**: [`User`](api%5Cclasses%5CUser.md)
 
-#### Defined in
+#### Source
 
-[src/Program.ts:30](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L30)
+[src/Program.ts:30](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L30)
 
-___
+***
 
-### category
+### category?
 
-• `Optional` `Readonly` **category**: `string`
+> `optional` `readonly` **category**: `string`
 
-#### Defined in
+#### Source
 
-[src/Program.ts:46](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L46)
+[src/Program.ts:46](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L46)
 
-___
+***
 
-### code
+### code?
 
-• `Optional` `Readonly` **code**: `string`
+> `optional` `readonly` **code**: `string`
 
-#### Defined in
+#### Source
 
-[src/Program.ts:38](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L38)
+[src/Program.ts:38](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L38)
 
-___
+***
 
-### created
+### created?
 
-• `Optional` `Readonly` **created**: `Date`
+> `optional` `readonly` **created**: `Date`
 
-#### Defined in
+#### Source
 
-[src/Program.ts:31](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L31)
+[src/Program.ts:31](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L31)
 
-___
+***
 
-### deleted
+### deleted?
 
-• `Optional` `Readonly` **deleted**: `boolean`
+> `optional` `readonly` **deleted**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/Program.ts:45](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L45)
+[src/Program.ts:45](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L45)
 
-___
+***
 
-### description
+### description?
 
-• `Optional` `Readonly` **description**: ``null`` \| `string`
+> `optional` `readonly` **description**: `null` \| `string`
 
-#### Defined in
+#### Source
 
-[src/Program.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L44)
+[src/Program.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L44)
 
-___
+***
 
-### height
+### height?
 
-• `Optional` `Readonly` **height**: `number`
+> `optional` `readonly` **height**: `number`
 
-#### Defined in
+#### Source
 
-[src/Program.ts:34](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L34)
+[src/Program.ts:34](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L34)
 
-___
+***
 
-### helpRequests
+### helpRequests?
 
-• `Optional` `Readonly` **helpRequests**: [`Question`](api/classes/Question.md)[]
+> `optional` `readonly` **helpRequests**: [`Question`](api%5Cclasses%5CQuestion.md)[]
 
-#### Defined in
+#### Source
 
-[src/Program.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L53)
+[src/Program.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L53)
 
-___
+***
 
-### hidden
+### hidden?
 
-• `Optional` `Readonly` **hidden**: `boolean`
+> `optional` `readonly` **hidden**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/Program.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L37)
+[src/Program.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L37)
 
-___
+***
 
-### id
+### id?
 
-• `Optional` `Readonly` **id**: `number`
+> `optional` `readonly` **id**: `number`
 
-#### Defined in
+#### Source
 
-[src/Program.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L28)
+[src/Program.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L28)
 
-___
+***
 
-### key
+### key?
 
-• `Optional` `Readonly` **key**: \`ag5zfmtoYW4tYWNhZGVteXI$\{string}CxIKU2NyYXRjaHBhZB$\{string}$\{string}\`
+> `optional` `readonly` **key**: \`ag5zfmtoYW4tYWNhZGVteXI$\{string\}CxIKU2NyYXRjaHBhZB$\{string\}$\{string\}\`
 
-#### Defined in
+#### Source
 
-[src/Program.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L42)
+[src/Program.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L42)
 
-___
+***
 
-### origin
+### origin?
 
-• `Optional` `Readonly` **origin**: ``null`` \| [`Program`](api/classes/Program.md)
+> `optional` `readonly` **origin**: `null` \| [`Program`](api%5Cclasses%5CProgram.md)
 
-#### Defined in
+#### Source
 
-[src/Program.ts:41](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L41)
+[src/Program.ts:41](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L41)
 
-___
+***
 
-### questions
+### questions?
 
-• `Optional` `Readonly` **questions**: [`Question`](api/classes/Question.md)[]
+> `optional` `readonly` **questions**: [`Question`](api%5Cclasses%5CQuestion.md)[]
 
-#### Defined in
+#### Source
 
-[src/Program.ts:52](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L52)
+[src/Program.ts:52](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L52)
 
-___
+***
 
-### selfFlagged
+### selfFlagged?
 
-• `Optional` `Readonly` **selfFlagged**: `boolean`
+> `optional` `readonly` **selfFlagged**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/Program.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L48)
+[src/Program.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L48)
 
-___
+***
 
-### selfVoted
+### selfVoted?
 
-• `Optional` `Readonly` **selfVoted**: `boolean`
+> `optional` `readonly` **selfVoted**: `boolean`
 
-#### Defined in
+#### Source
 
-[src/Program.ts:49](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L49)
+[src/Program.ts:49](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L49)
 
-___
+***
 
-### spinOffCount
+### spinOffCount?
 
-• `Optional` `Readonly` **spinOffCount**: `number`
+> `optional` `readonly` **spinOffCount**: `number`
 
-#### Defined in
+#### Source
 
-[src/Program.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L36)
+[src/Program.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L36)
 
-___
+***
 
-### thumbnailID
+### thumbnailID?
 
-• `Optional` `Readonly` **thumbnailID**: `number`
+> `optional` `readonly` **thumbnailID**: `number`
 
-#### Defined in
+#### Source
 
-[src/Program.ts:43](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L43)
+[src/Program.ts:43](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L43)
 
-___
+***
 
-### tipsAndThanks
+### tipsAndThanks?
 
-• `Optional` `Readonly` **tipsAndThanks**: [`TipsAndThanks`](api/classes/TipsAndThanks.md)[]
+> `optional` `readonly` **tipsAndThanks**: [`TipsAndThanks`](api%5Cclasses%5CTipsAndThanks.md)[]
 
-#### Defined in
+#### Source
 
-[src/Program.ts:51](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L51)
+[src/Program.ts:51](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L51)
 
-___
+***
 
-### title
+### title?
 
-• `Optional` `Readonly` **title**: `string`
+> `optional` `readonly` **title**: `string`
 
-#### Defined in
+#### Source
 
-[src/Program.ts:29](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L29)
+[src/Program.ts:29](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L29)
 
-___
+***
 
-### type
+### type?
 
-• `Optional` `Readonly` **type**: [`ProgramType`](api/enums/ProgramType.md)
+> `optional` `readonly` **type**: [`ProgramType`](api%5Cenumerations%5CProgramType.md)
 
-#### Defined in
+#### Source
 
-[src/Program.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L39)
+[src/Program.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L39)
 
-___
+***
 
-### updated
+### updated?
 
-• `Optional` `Readonly` **updated**: ``null`` \| `Date`
+> `optional` `readonly` **updated**: `null` \| `Date`
 
-#### Defined in
+#### Source
 
-[src/Program.ts:32](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L32)
+[src/Program.ts:32](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L32)
 
-___
+***
 
-### votes
+### votes?
 
-• `Optional` `Readonly` **votes**: `number`
+> `optional` `readonly` **votes**: `number`
 
-#### Defined in
+#### Source
 
-[src/Program.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L35)
+[src/Program.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L35)
 
-___
+***
 
-### width
+### width?
 
-• `Optional` `Readonly` **width**: `number`
+> `optional` `readonly` **width**: `number`
 
-#### Defined in
+#### Source
 
-[src/Program.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/Program.ts#L33)
+[src/Program.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L33)

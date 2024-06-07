@@ -1,21 +1,19 @@
-# Interface: PendingEmailVerificationSchema
-
 ## Properties
 
 ### \_\_typename
 
-• **\_\_typename**: ``"PendingEmailVerification"``
+> **\_\_typename**: `"PendingEmailVerification"`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:144](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L144)
+[src/types/schema.ts:146](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L146)
 
-___
+***
 
 ### email
 
-• **email**: `string`
+> **email**: `string`
 
-#### Defined in
+#### Source
 
-[src/types/schema.ts:145](https://github.com/bhavjitChauhan/khan-api/blob/649b2610/src/types/schema.ts#L145)
+[src/types/schema.ts:147](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L147)
