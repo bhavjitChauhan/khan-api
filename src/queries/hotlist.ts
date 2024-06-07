@@ -6,12 +6,13 @@ import { graphql } from '../utils/fetch'
 
 export namespace Hotlist {
   export const query =
-    `query hotlist($curationNodeId: String, $onlyOfficialProjectSpinoffs: Boolean!, $sort: ListProgramSortOrder, $pageInfo: ListProgramsPageInfo) {
+    `query hotlist($curationNodeId: String, $onlyOfficialProjectSpinoffs: Boolean!, $sort: ListProgramSortOrder, $pageInfo: ListProgramsPageInfo, $userAuthoredContentTypes: [UserAuthoredContentType!]) {
   listTopPrograms(
     curationNodeId: $curationNodeId
     onlyOfficialProjectSpinoffs: $onlyOfficialProjectSpinoffs
     sort: $sort
     pageInfo: $pageInfo
+    userAuthoredContentTypes: $userAuthoredContentTypes
   ) {
     complete
     cursor
@@ -25,6 +26,7 @@ export namespace Hotlist {
       sumVotesIncremented
       translatedTitle: title
       url
+      userAuthoredContentType
       __typename
     }
     __typename
@@ -56,6 +58,7 @@ export namespace Hotlist {
         | 'sumVotesIncremented'
         | 'translatedTitle'
         | 'url'
+        | 'userAuthoredContentType'
       >
     >
   }
