@@ -44,12 +44,7 @@ export async function graphql<Variables, Response>(
     url = url.replace('www.khanacademy.org', PROXY_DOMAIN)
 
   const response = await post<Response>(url, body, init)
-  if (
-    response.status === 403 &&
-    (await response.text()).startsWith(
-      'routes._validatePermission: [unauthorized error] Operation not found in safelist'
-    )
-  ) {
+  if (response.status === 403) {
     const isQuery = query.startsWith('query'),
       operationName = query.match(/^(?:query|mutation) (\w+)/)?.[1]
     if (!operationName)
