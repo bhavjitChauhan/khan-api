@@ -1,16 +1,14 @@
 {
-  "$schema": "https://typedoc.org/schema.json",
-  "entryPoints": [
-    "src"
-  ],
+  "$schema": "https://typedoc-plugin-markdown.org/schema.json",
+  "entryPoints": ["src"],
   "out": "./docs/api",
+  "entryFileName": "index",
   "githubPages": false,
   "hideBreadcrumbs": true,
-  "hideInPageTOC": true,
+  "hidePageHeader": true,
+  "hidePageTitle": true,
   "name": "Khan API",
-  "plugin": [
-    "typedoc-plugin-markdown"
-  ],
+  "plugin": ["typedoc-plugin-markdown"],
   "publicPath": "api/",
-  "readme": "none",
+  "readme": "none"
 }
