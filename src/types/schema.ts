@@ -74,6 +74,8 @@ export interface UserSchema<
   isDataCollectible: boolean | null
   isDeveloper: boolean | null
   isFormalTeacher: boolean | null
+  isK4dStudent: boolean | null
+  isKmapStudent: boolean | null
   isMidsignupPhantom: boolean
   isModerator: boolean | null
   isOrphan: boolean | null

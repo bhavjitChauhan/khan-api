@@ -19,13 +19,13 @@ export namespace GetFullUserProfile {
     gaUserId
     isPhantom
     isDeveloper: hasPermission(name: "can_do_what_only_admins_can_do")
-    isCurator: hasPermission(name: "can_curate_tags", scope: ANY_ON_CURRENT_LOCALE)
-    isCreator: hasPermission(name: "has_creator_role", scope: ANY_ON_CURRENT_LOCALE)
     isPublisher: hasPermission(name: "can_publish", scope: ANY_ON_CURRENT_LOCALE)
     isModerator: hasPermission(name: "can_moderate_users", scope: GLOBAL)
     isParent
     isTeacher
     isFormalTeacher
+    isK4dStudent
+    isKmapStudent
     isDataCollectible
     isChild
     isOrphan
@@ -158,6 +158,8 @@ export namespace GetFullUserProfile {
       | 'isDataCollectible'
       | 'isDeveloper'
       | 'isFormalTeacher'
+      | 'isK4dStudent'
+      | 'isKmapStudent'
       | 'isMidsignupPhantom'
       | 'isModerator'
       | 'isOrphan'
