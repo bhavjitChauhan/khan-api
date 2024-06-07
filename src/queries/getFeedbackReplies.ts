@@ -46,7 +46,7 @@ export namespace GetFeedbackReplies {
     upVoted
     __typename
   }
-}` as const
+}`
 
   export interface Variables {
     postKey: FeedbackKey | EncryptedFeedbackKey

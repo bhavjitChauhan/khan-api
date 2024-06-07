@@ -11,7 +11,7 @@ export namespace QaExpandKeyInfo {
     unencryptedKey
     __typename
   }
-}` as const
+}`
 
   export interface Variables {
     encryptedKey: string

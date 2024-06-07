@@ -5,8 +5,7 @@ import { ListProgramsSchema, ProgramSchema } from '../types/schema'
 import { graphql } from '../utils/fetch'
 
 export namespace Hotlist {
-  export const query =
-    `query hotlist($curationNodeId: String, $onlyOfficialProjectSpinoffs: Boolean!, $sort: ListProgramSortOrder, $pageInfo: ListProgramsPageInfo, $userAuthoredContentTypes: [UserAuthoredContentType!]) {
+  export const query = `query hotlist($curationNodeId: String, $onlyOfficialProjectSpinoffs: Boolean!, $sort: ListProgramSortOrder, $pageInfo: ListProgramsPageInfo, $userAuthoredContentTypes: [UserAuthoredContentType!]) {
   listTopPrograms(
     curationNodeId: $curationNodeId
     onlyOfficialProjectSpinoffs: $onlyOfficialProjectSpinoffs
@@ -31,7 +30,7 @@ export namespace Hotlist {
     }
     __typename
   }
-}` as const
+}`
 
   export interface Variables {
     curationNodeId?: string | null

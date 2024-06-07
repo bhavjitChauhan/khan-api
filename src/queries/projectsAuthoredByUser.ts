@@ -6,8 +6,7 @@ import { Kaid } from '../types/strings'
 import { graphql } from '../utils/fetch'
 
 export namespace ProjectsAuthoredByUser {
-  export const query =
-    `query projectsAuthoredByUser($kaid: String, $pageInfo: ListProgramsPageInfo, $sort: ListProgramSortOrder) {
+  export const query = `query projectsAuthoredByUser($kaid: String, $pageInfo: ListProgramsPageInfo, $sort: ListProgramSortOrder) {
   user(kaid: $kaid) {
     id
     programs(pageInfo: $pageInfo, sort: $sort) {
@@ -29,7 +28,7 @@ export namespace ProjectsAuthoredByUser {
     }
     __typename
   }
-}` as const
+}`
 
   export interface Variables {
     kaid: Kaid

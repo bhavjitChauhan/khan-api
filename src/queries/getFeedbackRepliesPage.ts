@@ -5,8 +5,7 @@ import { EncryptedFeedbackKey, FeedbackKey } from '../types/strings'
 import { graphql } from '../utils/fetch'
 
 export namespace GetFeedbackRepliesPage {
-  export const query =
-    `query getFeedbackRepliesPage($postKey: String!, $cursor: String, $limit: Int!) {
+  export const query = `query getFeedbackRepliesPage($postKey: String!, $cursor: String, $limit: Int!) {
   feedbackRepliesPaginated(feedbackKey: $postKey, cursor: $cursor, limit: $limit) {
     cursor
     isComplete
@@ -52,7 +51,7 @@ export namespace GetFeedbackRepliesPage {
     }
     __typename
   }
-}` as const
+}`
 
   export interface Variables {
     postKey: FeedbackKey | EncryptedFeedbackKey

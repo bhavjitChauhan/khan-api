@@ -70,7 +70,7 @@ export namespace ProgramQuery {
     width
     __typename
   }
-}` as const
+}`
 
   export interface Variables {
     programId: string

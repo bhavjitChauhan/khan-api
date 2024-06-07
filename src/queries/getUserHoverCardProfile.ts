@@ -24,7 +24,7 @@ export namespace GetUserHoverCardProfile {
     actorHasUserScopedPermission(capability: CAN_VIEW_USER_IDENTITY)
     __typename
   }
-}` as const
+}`
 
   export interface Variables {
     kaid: Kaid

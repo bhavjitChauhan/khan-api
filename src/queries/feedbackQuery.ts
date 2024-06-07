@@ -5,8 +5,7 @@ import { FeedbackForFocusSchema } from '../types/schema'
 import { graphql } from '../utils/fetch'
 
 export namespace FeedbackQuery {
-  export const query =
-    `query feedbackQuery($topicId: String!, $focusKind: String!, $cursor: String, $limit: Int, $feedbackType: FeedbackType!, $currentSort: Int, $qaExpandKey: String) {
+  export const query = `query feedbackQuery($topicId: String!, $focusKind: String!, $cursor: String, $limit: Int, $feedbackType: FeedbackType!, $currentSort: Int, $qaExpandKey: String) {
   feedback(
     focusId: $topicId
     cursor: $cursor
@@ -199,7 +198,7 @@ export namespace FeedbackQuery {
     sortedByDate
     __typename
   }
-}` as const
+}`
 
   export interface Variables {
     topicId: string

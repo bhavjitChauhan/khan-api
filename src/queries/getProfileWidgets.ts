@@ -66,7 +66,7 @@ export namespace GetProfileWidgets {
     }
     __typename
   }
-}` as const
+}`
 
   export interface Variables {
     kaid: Kaid

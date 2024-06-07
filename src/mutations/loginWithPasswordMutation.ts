@@ -4,8 +4,7 @@ import { UserSchema } from '../types/schema'
 import { graphql } from '../utils/fetch'
 
 export namespace LoginWithPasswordMutation {
-  export const query =
-    `mutation loginWithPasswordMutation($identifier: String!, $password: String!) {
+  export const query = `mutation loginWithPasswordMutation($identifier: String!, $password: String!) {
   loginWithPassword(identifier: $identifier, password: $password) {
     user {
       id
@@ -29,7 +28,7 @@ export namespace LoginWithPasswordMutation {
     }
     __typename
   }
-}` as const
+}`
 
   export interface Variables {
     /** Email or username */

@@ -6,14 +6,13 @@ import { graphql, TypedResponse } from '../utils/fetch'
 import { isEmail } from '../utils/regexes'
 
 export namespace GetUserByUsernameOrEmail {
-  export const query =
-    `query getUserByUsernameOrEmail($username: String, $email: String) {
+  export const query = `query getUserByUsernameOrEmail($username: String, $email: String) {
   user(username: $username, email: $email) {
     id
     kaid
     __typename
   }
-}` as const
+}`
 
   export interface Variables {
     username?: string

@@ -6,8 +6,7 @@ import { ProfileSchema, UserSchema } from '../types/schema'
 import { isKaid } from '../utils/regexes'
 
 export namespace GetFullUserProfile {
-  export const query =
-    `query getFullUserProfile($kaid: String, $username: String) {
+  export const query = `query getFullUserProfile($kaid: String, $username: String) {
   user(kaid: $kaid, username: $username) {
     id
     kaid
@@ -113,7 +112,7 @@ export namespace GetFullUserProfile {
   actorIsImpersonatingUser
   isAIGuideEnabled
   hasAccessToAIGuideDev
-}` as const
+}`
 
   export interface Variables {
     kaid?: Kaid | null
