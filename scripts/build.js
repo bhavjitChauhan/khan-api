@@ -38,7 +38,7 @@ const base = {
  * https://khan-api.bhavjit.com
  * Licensed under MIT license
  * Copyright ${new Date().getFullYear()} ${packageInfo.author}
- */\n`
+ */\n`,
   },
   bundle: true,
   sourcemap: true,
@@ -53,8 +53,10 @@ const nodeESM = {
   format: 'esm',
   outfile: `node/esm/${FILE_NAME}.mjs`,
   banner: {
-    js: base.banner.js + "\nimport { createRequire } from 'module'; const require = createRequire(import.meta.url);"
-  }
+    js:
+      base.banner.js +
+      "\nimport { createRequire } from 'module'; const require = createRequire(import.meta.url);",
+  },
 }
 
 /** @type {esbuild.BuildOptions} */
@@ -84,27 +86,47 @@ const browserIIFE = {
 }
 
 const configs = [nodeESM, nodeCJS, browserESM, browserIIFE]
-configs.push(...configs.map(config => ({ ...config, minify: true, outfile: config.outfile.replace(/\.([cm]?js)$/, '.min.$1') })))
+configs.push(
+  ...configs.map((config) => ({
+    ...config,
+    minify: true,
+    outfile: config.outfile.replace(/\.([cm]?js)$/, '.min.$1'),
+  }))
+)
 
 let start = performance.now()
 
 /** @type {PromiseSettledResult<esbuild.BuildResult>[]} */
-const results = await Promise.allSettled(configs.map(config => {
-  return new Promise(async (resolve, reject) => {
-    const start = performance.now()
-    console.log(chalk.cyan(`Building ${chalk.bold(config.outfile)}...`))
-    try {
-      const result = await esbuild.build(config)
-      console.log(chalk.green(`Built ${chalk.bold(config.outfile)} in ${chalk.bold(Math.ceil(performance.now() - start) + 'ms')}`))
-      resolve(result)
-    } catch (err) {
-      console.error(chalk.red(`Error building ${chalk.bold(config.outfile)}: ${chalk.bold(err.message)}`))
-      reject()
-    }
+const results = await Promise.allSettled(
+  configs.map((config) => {
+    return new Promise(async (resolve, reject) => {
+      const start = performance.now()
+      console.log(chalk.cyan(`Building ${chalk.bold(config.outfile)}...`))
+      try {
+        const result = await esbuild.build(config)
+        console.log(
+          chalk.green(
+            `Built ${chalk.bold(config.outfile)} in ${chalk.bold(Math.ceil(performance.now() - start) + 'ms')}`
+          )
+        )
+        resolve(result)
+      } catch (err) {
+        console.error(
+          chalk.red(
+            `Error building ${chalk.bold(config.outfile)}: ${chalk.bold(err.message)}`
+          )
+        )
+        reject()
+      }
+    })
   })
-}))
+)
 
-console.log(chalk.white.bgGreen(` Built files in ${chalk.bold(Math.ceil(performance.now() - start) + 'ms')} `) + '\n')
+console.log(
+  chalk.white.bgGreen(
+    ` Built files in ${chalk.bold(Math.ceil(performance.now() - start) + 'ms')} `
+  ) + '\n'
+)
 
 if (argv.meta) {
   start = performance.now()
@@ -118,18 +140,34 @@ if (argv.meta) {
         for (const output in metafile.outputs) {
           const { bytes } = metafile.outputs[output]
           total += bytes
-          console.log(chalk.gray(`  ${chalk.bold(output)} ${chalk.dim(`(${(bytes / 1000).toFixed(1)} kb)`)}`))
+          console.log(
+            chalk.gray(
+              `  ${chalk.bold(output)} ${chalk.dim(`(${(bytes / 1000).toFixed(1)} kb)`)}`
+            )
+          )
         }
       }
-      const outfile = Object.keys(metafile.outputs).filter(file => !file.endsWith('.map'))[0]
+      const outfile = Object.keys(metafile.outputs).filter(
+        (file) => !file.endsWith('.map')
+      )[0]
       const metafilePath = `./dist/meta/${outfile}.json`
       const dir = metafilePath.slice(0, metafilePath.lastIndexOf('/'))
-      if (existsSync(dir) === false)
-        await mkdir(dir, { recursive: true })
-      writeFile(`./dist/meta/${outfile}.json`, JSON.stringify(metafile, null, 2))
+      if (existsSync(dir) === false) await mkdir(dir, { recursive: true })
+      writeFile(
+        `./dist/meta/${outfile}.json`,
+        JSON.stringify(metafile, null, 2)
+      )
     }
   }
   if (argv.verbose || argv.v)
-    console.log(chalk.gray(`  ${chalk.bold('Total')} ${chalk.dim(`(${(total / 1000).toFixed(1)} kb)`)}`))
-  console.log(chalk.yellow(`Wrote metafiles in ${chalk.bold(Math.ceil(performance.now() - start) + 'ms')}`))
+    console.log(
+      chalk.gray(
+        `  ${chalk.bold('Total')} ${chalk.dim(`(${(total / 1000).toFixed(1)} kb)`)}`
+      )
+    )
+  console.log(
+    chalk.yellow(
+      `Wrote metafiles in ${chalk.bold(Math.ceil(performance.now() - start) + 'ms')}`
+    )
+  )
 }

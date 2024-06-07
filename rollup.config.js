@@ -6,6 +6,6 @@ const config = [
     output: [{ file: 'index.d.ts', format: 'es' }],
     plugins: [dts()],
   },
-];
+]
 
 export default config
