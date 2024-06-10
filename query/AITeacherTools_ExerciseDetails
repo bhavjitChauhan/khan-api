@@ -3,6 +3,7 @@ query AITeacherTools_ExerciseDetails($exerciseId: String!) {
     id
     title
     prerequisites
+    defaultUrlPath
     parentTopic {
       id
       domainSlug
