@@ -6720,6 +6720,8 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
       email
       __typename
     }
+    hasAccessToAIGuideCompanionMode
+    hasAccessToAIGuideLearnerActivities
     hasAccessToAIGuideTeacher
     hasAccessToAIGuideDistrictAdmin
     tosAccepted
