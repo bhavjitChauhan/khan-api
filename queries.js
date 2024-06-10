@@ -18911,6 +18911,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     id
     title
     prerequisites
+    defaultUrlPath
     parentTopic {
       id
       domainSlug
