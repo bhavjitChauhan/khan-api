@@ -19618,4 +19618,32 @@ fragment UserFields on User {
     __typename
   }
 }`,
+  LearnerAssignableAIActivitiesQuery: `query LearnerAssignableAIActivitiesQuery {
+  courseById(id: "x1b615e2cf0b0f17f") {
+    id
+    unitChildren {
+      id
+      listed
+      translatedTitle
+      lessonChildren {
+        id
+        translatedTitle
+        allLearnableContent {
+          id
+          translatedTitle
+          defaultUrlPath
+          contentDescriptor
+          ... on AIGuideActivity {
+            isAssignable
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }

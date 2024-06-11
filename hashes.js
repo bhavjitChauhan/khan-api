@@ -700,4 +700,5 @@ export default {
   fetchAllLegalDocs: 2516438376,
   getTeacherTools: 2949876244,
   fetchEssayPasteLog: 2108004452,
+  LearnerAssignableAIActivitiesQuery: 794814278,
 }
