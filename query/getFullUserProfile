@@ -81,6 +81,8 @@ query getFullUserProfile($kaid: String, $username: String) {
     hasAccessToAIGuideLearnerActivities
     hasAccessToAIGuideTeacher
     hasAccessToAIGuideDistrictAdmin
+    hasAccessToAIGuideParentTools
+    hasAccessToAIGuideParentPersona
     tosAccepted
     shouldShowAgeCheck
     birthMonthYear
