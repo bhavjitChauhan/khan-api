@@ -701,4 +701,5 @@ export default {
   getTeacherTools: 4232440853,
   fetchEssayPasteLog: 2108004452,
   LearnerAssignableAIActivitiesQuery: 794814278,
+  legalDocByID: 1097702970,
 }

@@ -19646,4 +19646,16 @@ fragment UserFields on User {
     __typename
   }
 }`,
+  legalDocByID: `query legalDocByID($id: ID!) {
+  legalDocument(id: $id) {
+    id
+    name
+    slug
+    isArchived
+    kaLocales
+    countryCodes
+    draftContent
+    __typename
+  }
+}`,
 }
