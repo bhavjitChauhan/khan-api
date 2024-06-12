@@ -19601,7 +19601,7 @@ fragment UserFields on User {
   }
 }`,
   getTeacherTools: `query getTeacherTools {
-  aiGuideTeacherTools {
+  aiGuideTeacherTools(order: TEACHER_TOOLS_PAGE) {
     id
     configName
     __typename
