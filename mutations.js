@@ -12040,4 +12040,14 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  setLegalDocArchived: `mutation setLegalDocArchived($legalDocID: ID!, $isArchived: Boolean!) {
+  setLegalDocumentArchivedStatus(legalDocID: $legalDocID, isArchived: $isArchived) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
