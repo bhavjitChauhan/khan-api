@@ -19655,6 +19655,14 @@ fragment UserFields on User {
     kaLocales
     countryCodes
     draftContent
+    lastUpdatedByKaid
+    versions {
+      id
+      content
+      publishedByKaid
+      publishedAt
+      __typename
+    }
     __typename
   }
 }`,
