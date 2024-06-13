@@ -12023,4 +12023,21 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  publishLegalDocument: `mutation publishLegalDocument($id: ID!) {
+  createLegalDocumentVersion(id: $id) {
+    version {
+      id
+      content
+      publishedByKaid
+      publishedAt
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
