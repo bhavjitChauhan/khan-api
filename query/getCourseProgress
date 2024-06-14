@@ -9,7 +9,7 @@ query getCourseProgress($filters: DistrictCourseProgressFilters!, $getKmapTopics
     rows {
       course {
         id
-        title
+        title: translatedTitle
         isKmap
         __typename
       }
