@@ -5777,7 +5777,7 @@ fragment Badge on Badge {
     rows {
       course {
         id
-        title
+        title: translatedTitle
         isKmap
         __typename
       }

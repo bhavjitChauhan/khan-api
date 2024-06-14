@@ -179,7 +179,7 @@ export default {
   getCourse: 2736096371,
   getCourseMasteryAssignmentChangesQuery: 12910511,
   getCourseMasteryAssignmentsForCoachAsDevAdmin: 3943192551,
-  getCourseProgress: 3990609421,
+  getCourseProgress: 3176111381,
   getCourseProgressByClassroom: 735405574,
   getCourseProgressBySchool: 2203407088,
   getCourseProgressByStudent: 3792708552,
