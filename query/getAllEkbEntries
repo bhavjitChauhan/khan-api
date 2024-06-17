@@ -1,0 +1,13 @@
+query getAllEkbEntries {
+  getExpandedKnowledgeBaseEntries {
+    entries {
+      id
+      metadata {
+        text
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

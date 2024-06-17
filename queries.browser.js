@@ -19666,4 +19666,17 @@ fragment UserFields on User {
     __typename
   }
 }`,
+  getAllEkbEntries: `query getAllEkbEntries {
+  getExpandedKnowledgeBaseEntries {
+    entries {
+      id
+      metadata {
+        text
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
