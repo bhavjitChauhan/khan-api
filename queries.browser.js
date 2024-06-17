@@ -6726,6 +6726,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     hasAccessToAIGuideDistrictAdmin
     hasAccessToAIGuideParentTools
     hasAccessToAIGuideParentPersona
+    hasAccessToAIGuideTeacherTools
     tosAccepted
     shouldShowAgeCheck
     birthMonthYear
