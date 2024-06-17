@@ -702,4 +702,5 @@ hashes = {
   fetchEssayPasteLog: 2108004452,
   LearnerAssignableAIActivitiesQuery: 794814278,
   legalDocByID: 3917369508,
+  getAllEkbEntries: 3647328658,
 }
