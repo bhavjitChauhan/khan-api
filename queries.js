@@ -18904,10 +18904,17 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   articleById(id: $articleId) {
     id
     title
+    defaultUrlPath
     translatedPerseusContent
     parentTopic {
       id
       domainSlug
+      allLearnableContent(includeUnlisted: false) {
+        id
+        title
+        defaultUrlPath
+        __typename
+      }
       __typename
     }
     __typename
@@ -18944,9 +18951,16 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   videoById(contentId: $videoId) {
     id
     title
+    defaultUrlPath
     parentTopic {
       id
       domainSlug
+      allLearnableContent(includeUnlisted: false) {
+        id
+        title
+        defaultUrlPath
+        __typename
+      }
       __typename
     }
     subtitles {
