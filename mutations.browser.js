@@ -11948,6 +11948,7 @@ fragment ProjectRevision on ProjectRevision {
       lastUpdated
       currentStage
       assignmentId: assignmentID
+      completed
       __typename
     }
     error {
@@ -12044,6 +12045,41 @@ fragment ProjectRevision on ProjectRevision {
   setLegalDocumentArchivedStatus(legalDocID: $legalDocID, isArchived: $isArchived) {
     error {
       code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  reportEssayTextPastedContent: `mutation reportEssayTextPastedContent($essaySessionId: ID!, $textBeforePaste: String!, $essayVersionBeforePaste: Int!, $stage: WritingCoachEssayEditingStage!, $selectionStart: Int!, $selectionEnd: Int!, $pastedText: String!) {
+  reportEssayTextPastedContent(
+    essaySessionID: $essaySessionId
+    textBeforePaste: $textBeforePaste
+    essayVersionBeforePaste: $essayVersionBeforePaste
+    stage: $stage
+    selectionStart: $selectionStart
+    selectionEnd: $selectionEnd
+    pastedText: $pastedText
+  ) {
+    error {
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  reportOutlinePastedContent: `mutation reportOutlinePastedContent($essaySessionId: ID!, $outlineBeforePaste: String!, $outlineVersionBeforePaste: Int!, $pasteLocation: EssayOutlinePasteLocation!, $pasteLocationPointer: String!, $selectionStart: Int!, $selectionEnd: Int!, $pastedText: String!) {
+  reportEssayOutlinePastedContent(
+    essaySessionID: $essaySessionId
+    outlineBeforePaste: $outlineBeforePaste
+    outlineVersionBeforePaste: $outlineVersionBeforePaste
+    pasteLocation: $pasteLocation
+    pasteLocationPointer: $pasteLocationPointer
+    selectionStart: $selectionStart
+    selectionEnd: $selectionEnd
+    pastedText: $pastedText
+  ) {
+    error {
       debugMessage
       __typename
     }

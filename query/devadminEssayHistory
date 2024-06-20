@@ -15,6 +15,22 @@ query devadminEssayHistory($essaySessionId: ID!, $pageSize: Int!, $cursor: Strin
       }
       ... on UserEssayTextSnapshot {
         stage
+        pasteMetadata {
+          selectionStart
+          selectionEnd
+          text
+          __typename
+        }
+        __typename
+      }
+      ... on UserEssayOutlineSnapshot {
+        pasteMetadata {
+          jsonPointer
+          selectionStart
+          selectionEnd
+          text
+          __typename
+        }
         __typename
       }
       __typename

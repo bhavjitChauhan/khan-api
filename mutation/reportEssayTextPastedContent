@@ -1,0 +1,17 @@
+mutation reportEssayTextPastedContent($essaySessionId: ID!, $textBeforePaste: String!, $essayVersionBeforePaste: Int!, $stage: WritingCoachEssayEditingStage!, $selectionStart: Int!, $selectionEnd: Int!, $pastedText: String!) {
+  reportEssayTextPastedContent(
+    essaySessionID: $essaySessionId
+    textBeforePaste: $textBeforePaste
+    essayVersionBeforePaste: $essayVersionBeforePaste
+    stage: $stage
+    selectionStart: $selectionStart
+    selectionEnd: $selectionEnd
+    pastedText: $pastedText
+  ) {
+    error {
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

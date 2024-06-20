@@ -646,7 +646,7 @@ hashes = {
   GuidePreferences: 1214899081,
   ExerciseEditorPermissionQuery: 2837649085,
   TranslationEditor_CanPublish: 4148747959,
-  allEssaySessions: 3895895771,
+  allEssaySessions: 2172605212,
   essaySession: 3845407520,
   districtKhanmigoTotalUsage: 3235917008,
   districtKhanmigoUsageByClass: 1108730643,
@@ -693,7 +693,7 @@ hashes = {
   districtDashboardActivation: 90100696,
   districtDashboardSkillsLeveledUp: 1383756852,
   districtById: 728152285,
-  devadminEssayHistory: 205459217,
+  devadminEssayHistory: 2183177348,
   devadminEssayAuthor: 3140435347,
   devadminWritingCoachTime: 3823115589,
   listAIGuideConversationTestCases: 1761668825,
@@ -704,4 +704,5 @@ hashes = {
   legalDocByID: 3917369508,
   getAllEkbEntries: 3647328658,
   districtDashboardKhanmigo: 2939413321,
+  devadminEssayOriginalityFlags: 3392766431,
 }

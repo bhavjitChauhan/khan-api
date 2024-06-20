@@ -1,0 +1,18 @@
+mutation reportOutlinePastedContent($essaySessionId: ID!, $outlineBeforePaste: String!, $outlineVersionBeforePaste: Int!, $pasteLocation: EssayOutlinePasteLocation!, $pasteLocationPointer: String!, $selectionStart: Int!, $selectionEnd: Int!, $pastedText: String!) {
+  reportEssayOutlinePastedContent(
+    essaySessionID: $essaySessionId
+    outlineBeforePaste: $outlineBeforePaste
+    outlineVersionBeforePaste: $outlineVersionBeforePaste
+    pasteLocation: $pasteLocation
+    pasteLocationPointer: $pasteLocationPointer
+    selectionStart: $selectionStart
+    selectionEnd: $selectionEnd
+    pastedText: $pastedText
+  ) {
+    error {
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
