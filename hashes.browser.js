@@ -703,4 +703,5 @@ hashes = {
   LearnerAssignableAIActivitiesQuery: 794814278,
   legalDocByID: 3917369508,
   getAllEkbEntries: 3647328658,
+  districtDashboardKhanmigo: 2939413321,
 }

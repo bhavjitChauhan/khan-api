@@ -19684,4 +19684,42 @@ fragment UserFields on User {
     __typename
   }
 }`,
+  districtDashboardKhanmigo: `query districtDashboardKhanmigo($filters: DistrictDashboardFilters!, $userType: DistrictUserTypeFilter) {
+  districtDashboardKhanmigo(filters: $filters, userType: $userType) {
+    lastWeekStart
+    lastWeekEnd
+    lastWeekUsage {
+      usersWithUsage
+      percentUsersWithUsage
+      avgChats
+      avgMessagesPerChat
+      __typename
+    }
+    priorWeekUsage {
+      usersWithUsage
+      percentUsersWithUsage
+      avgChats
+      avgMessagesPerChat
+      __typename
+    }
+    top5Activities {
+      activityType
+      aIGuideActivity {
+        id
+        translatedTitle
+        __typename
+      }
+      aiReportingLabel {
+        id
+        translatedTitle
+        __typename
+      }
+      userPercentage
+      chatPercent
+      totalChats
+      __typename
+    }
+    __typename
+  }
+}`,
 }
