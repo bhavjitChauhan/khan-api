@@ -5,6 +5,7 @@ query allEssaySessions {
     lastUpdated
     currentStage
     assignmentId: assignmentID
+    completed
     __typename
   }
 }

@@ -6,6 +6,7 @@ mutation getOrCreateEssaySessionForAssignment($assignmentId: String!) {
       lastUpdated
       currentStage
       assignmentId: assignmentID
+      completed
       __typename
     }
     error {

@@ -18504,6 +18504,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     lastUpdated
     currentStage
     assignmentId: assignmentID
+    completed
     __typename
   }
 }`,
@@ -19569,6 +19570,22 @@ fragment UserFields on User {
       }
       ... on UserEssayTextSnapshot {
         stage
+        pasteMetadata {
+          selectionStart
+          selectionEnd
+          text
+          __typename
+        }
+        __typename
+      }
+      ... on UserEssayOutlineSnapshot {
+        pasteMetadata {
+          jsonPointer
+          selectionStart
+          selectionEnd
+          text
+          __typename
+        }
         __typename
       }
       __typename
@@ -19731,6 +19748,23 @@ fragment UserFields on User {
       userPercentage
       chatPercent
       totalChats
+      __typename
+    }
+    __typename
+  }
+}`,
+  devadminEssayOriginalityFlags: `query devadminEssayOriginalityFlags($essaySessionId: ID!) {
+  userEssayOriginalityFlags(essaySessionID: $essaySessionId) {
+    ... on UserEssayOriginalityFlagPasteIntoOutline {
+      timestamp
+      location
+      wordCount
+      __typename
+    }
+    ... on UserEssayOriginalityFlagPasteIntoText {
+      timestamp
+      stage
+      wordCount
       __typename
     }
     __typename
