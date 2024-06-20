@@ -2,9 +2,16 @@ query AITeacherTools_VideoDetails($videoId: String) {
   videoById(contentId: $videoId) {
     id
     title
+    defaultUrlPath
     parentTopic {
       id
       domainSlug
+      allLearnableContent(includeUnlisted: false) {
+        id
+        title
+        defaultUrlPath
+        __typename
+      }
       __typename
     }
     subtitles {
