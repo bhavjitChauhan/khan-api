@@ -702,7 +702,7 @@ export default {
   fetchEssayPasteLog: 2108004452,
   LearnerAssignableAIActivitiesQuery: 794814278,
   legalDocByID: 3917369508,
-  getAllEkbEntries: 3647328658,
+  getAllEkbEntries: 1249693129,
   districtDashboardKhanmigo: 2939413321,
   devadminEssayOriginalityFlags: 3392766431,
   legalDocBySlug: 723734805,
