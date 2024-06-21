@@ -28,7 +28,7 @@ export default {
   ClassDescriptorByClassCodeQuery: 1267889878,
   ClassInfo: 2622688273,
   ClassroomByCode: 3971729576,
-  ClassroomByDescriptorQuery: 1887566971,
+  ClassroomByDescriptorQuery: 785403430,
   ClassroomDistrictInfosQuery: 3368645794,
   classroomHasCourseMasteryAssignments: 2215210122,
   ClassSubjectMasteryProgress: 2241509294,
@@ -706,4 +706,5 @@ export default {
   districtDashboardKhanmigo: 2939413321,
   devadminEssayOriginalityFlags: 3392766431,
   legalDocBySlug: 723734805,
+  teacherKhanmigoActivity: 490349419,
 }

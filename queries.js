@@ -740,6 +740,12 @@ fragment AssignmentCsvData on Assignment {
         __typename
       }
       isManuallyUnmarked
+      district {
+        id
+        schoolYearStart
+        schoolYearEnd
+        __typename
+      }
       __typename
     }
     testPrepExams {
@@ -19774,6 +19780,48 @@ fragment UserFields on User {
   legalDocumentContent(slug: $slug) {
     id
     content
+    __typename
+  }
+}`,
+  teacherKhanmigoActivity: `query teacherKhanmigoActivity($filter: KhanmigoTeacherFilters!) {
+  teacherKhanmigoActivity(filter: $filter) {
+    totalChats
+    rows {
+      activityType
+      aIGuideActivity {
+        id
+        translatedTitle
+        __typename
+      }
+      aiReportingLabel {
+        id
+        translatedTitle
+        __typename
+      }
+      totalChats
+      chatPercent
+      courseRows {
+        course {
+          id
+          translatedTitle
+          __typename
+        }
+        totalChats
+        chatPercent
+        unitRows {
+          unit {
+            id
+            translatedTitle
+            __typename
+          }
+          totalChats
+          chatPercent
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }`,
