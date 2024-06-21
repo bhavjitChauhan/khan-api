@@ -3,6 +3,8 @@ query getAllEkbEntries {
     entries {
       id
       metadata {
+        category
+        url
         text
         __typename
       }

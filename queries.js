@@ -19713,6 +19713,8 @@ fragment UserFields on User {
     entries {
       id
       metadata {
+        category
+        url
         text
         __typename
       }
