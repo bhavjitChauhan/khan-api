@@ -1,0 +1,7 @@
+query legalDocBySlug($slug: String!) {
+  legalDocumentContent(slug: $slug) {
+    id
+    content
+    __typename
+  }
+}
