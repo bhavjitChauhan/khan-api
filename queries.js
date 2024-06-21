@@ -19770,4 +19770,11 @@ fragment UserFields on User {
     __typename
   }
 }`,
+  legalDocBySlug: `query legalDocBySlug($slug: String!) {
+  legalDocumentContent(slug: $slug) {
+    id
+    content
+    __typename
+  }
+}`,
 }
