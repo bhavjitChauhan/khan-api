@@ -1,5 +1,5 @@
-mutation upsertLegalDoc($legalDocument: LegalDocumentInput!) {
-  upsertLegalDocument(legalDocument: $legalDocument) {
+mutation upsertLegalDoc($legalDocument: LegalDocumentInput!, $notes: String!) {
+  upsertLegalDocument(legalDocument: $legalDocument, notes: $notes) {
     legalDocument {
       id
       name

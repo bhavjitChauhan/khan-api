@@ -12016,8 +12016,8 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
-  upsertLegalDoc: `mutation upsertLegalDoc($legalDocument: LegalDocumentInput!) {
-  upsertLegalDocument(legalDocument: $legalDocument) {
+  upsertLegalDoc: `mutation upsertLegalDoc($legalDocument: LegalDocumentInput!, $notes: String!) {
+  upsertLegalDocument(legalDocument: $legalDocument, notes: $notes) {
     legalDocument {
       id
       name
@@ -12036,8 +12036,8 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
-  publishLegalDocument: `mutation publishLegalDocument($id: ID!) {
-  createLegalDocumentVersion(id: $id) {
+  publishLegalDocument: `mutation publishLegalDocument($id: ID!, $notes: String!) {
+  createLegalDocumentVersion(id: $id, notes: $notes) {
     version {
       id
       content
