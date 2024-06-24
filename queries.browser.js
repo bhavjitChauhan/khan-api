@@ -1127,6 +1127,7 @@ fragment AssessmentItemRevision on AssessmentItemRevision {
   itemShapeType
   perseusApiMajorVersion
   requiresScreenOrMouse
+  aiGenerated
   tags
   __typename
 }
@@ -1163,6 +1164,7 @@ fragment ExerciseRevision on ExerciseRevision {
   suggestedCompletionCriteria
   trackingDocumentUrl
   problemTypeKind
+  interimAssessmentType
   numQuestionsPerProblemType
   problemTypes {
     contentId
@@ -1173,6 +1175,7 @@ fragment ExerciseRevision on ExerciseRevision {
       sha
       perseusApiMajorVersion
       requiresScreenOrMouse
+      aiGenerated
       __typename
     }
     __typename
@@ -2528,6 +2531,7 @@ fragment FolderCourseRevisionFragment on CourseRevision {
       __typename
     }
     ... on ExerciseRevision {
+      interimAssessmentType
       suggestedCompletionCriteria
       __typename
     }
@@ -2580,6 +2584,7 @@ fragment FolderCourseRevisionFragment on CourseRevision {
         }
         __typename
       }
+      interimAssessmentType
       suggestedCompletionCriteria
       __typename
     }
@@ -2772,6 +2777,7 @@ fragment FolderCourseRevisionFragment on CourseRevision {
         problemType
         __typename
       }
+      interimAssessmentType
       suggestedCompletionCriteria
       __typename
     }
@@ -2817,6 +2823,7 @@ fragment LearnableContent on LearnableContent {
     sourceLanguage
     title
     ... on Exercise {
+      interimAssessmentType
       suggestedCompletionCriteria
       __typename
     }
@@ -17729,6 +17736,7 @@ fragment AssessmentItemRevision on AssessmentItemRevision {
   itemShapeType
   perseusApiMajorVersion
   requiresScreenOrMouse
+  aiGenerated
   tags
   __typename
 }
@@ -17765,6 +17773,7 @@ fragment ExerciseRevision on ExerciseRevision {
   suggestedCompletionCriteria
   trackingDocumentUrl
   problemTypeKind
+  interimAssessmentType
   numQuestionsPerProblemType
   problemTypes {
     contentId
@@ -17775,6 +17784,7 @@ fragment ExerciseRevision on ExerciseRevision {
       sha
       perseusApiMajorVersion
       requiresScreenOrMouse
+      aiGenerated
       __typename
     }
     __typename
@@ -19824,6 +19834,31 @@ fragment UserFields on User {
       }
       __typename
     }
+    __typename
+  }
+}`,
+  PerseusItemCompletionQuery: `query PerseusItemCompletionQuery($exerciseDetails: ExerciseDetailsInput!, $templateDetails: PerseusTemplateInput!, $numItems: Int!) {
+  perseusItemCompletion(
+    exerciseDetails: $exerciseDetails
+    templateDetails: $templateDetails
+    numItems: $numItems
+  ) {
+    items
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  khanLibraryCanEditInterimAssessments: `query khanLibraryCanEditInterimAssessments {
+  user {
+    id
+    canEditInterimAssessments: hasPermission(
+      name: "can_edit_interim_assessments"
+      scope: ANY_ON_CURRENT_LOCALE
+    )
     __typename
   }
 }`,

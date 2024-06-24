@@ -1,0 +1,15 @@
+query PerseusItemCompletionQuery($exerciseDetails: ExerciseDetailsInput!, $templateDetails: PerseusTemplateInput!, $numItems: Int!) {
+  perseusItemCompletion(
+    exerciseDetails: $exerciseDetails
+    templateDetails: $templateDetails
+    numItems: $numItems
+  ) {
+    items
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
