@@ -11942,7 +11942,7 @@ fragment ProjectRevision on ProjectRevision {
 }`,
   getOrCreateEssaySessionForAssignment: `mutation getOrCreateEssaySessionForAssignment($assignmentId: String!) {
   getOrCreateEssaySessionForAssignment(assignmentID: $assignmentId) {
-    essaySessionSummary {
+    essaySession {
       id
       essayTitle
       lastUpdated
