@@ -18504,7 +18504,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   }
 }`,
   allEssaySessions: `query allEssaySessions {
-  allEssaySessionSummaries {
+  allEssaySessions {
     id
     essayTitle
     lastUpdated

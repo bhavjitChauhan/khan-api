@@ -646,7 +646,7 @@ export default {
   GuidePreferences: 1214899081,
   ExerciseEditorPermissionQuery: 2837649085,
   TranslationEditor_CanPublish: 4148747959,
-  allEssaySessions: 2172605212,
+  allEssaySessions: 1854013381,
   essaySession: 3845407520,
   districtKhanmigoTotalUsage: 3235917008,
   districtKhanmigoUsageByClass: 1108730643,
