@@ -7,6 +7,7 @@ query courseEditorGetPublishedIdentity($descriptors: [String!]!) {
     sourceLanguage
     title
     ... on Exercise {
+      interimAssessmentType
       suggestedCompletionCriteria
       __typename
     }

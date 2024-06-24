@@ -30,6 +30,7 @@ query courseEditorGetPublishedEntities($descriptors: [String!]!) {
         problemType
         __typename
       }
+      interimAssessmentType
       suggestedCompletionCriteria
       __typename
     }

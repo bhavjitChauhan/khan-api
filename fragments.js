@@ -58,6 +58,7 @@ export default {
   itemShapeType
   perseusApiMajorVersion
   requiresScreenOrMouse
+  aiGenerated
   tags
   __typename
 }`,
@@ -806,6 +807,7 @@ fragment InvitationsField on Invitation {
   suggestedCompletionCriteria
   trackingDocumentUrl
   problemTypeKind
+  interimAssessmentType
   numQuestionsPerProblemType
   problemTypes {
     contentId
@@ -816,6 +818,7 @@ fragment InvitationsField on Invitation {
       sha
       perseusApiMajorVersion
       requiresScreenOrMouse
+      aiGenerated
       __typename
     }
     __typename

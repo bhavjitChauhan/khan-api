@@ -15,6 +15,7 @@ query courseEditorGetEditingIdentity($descriptors: [String!]!) {
       __typename
     }
     ... on ExerciseRevision {
+      interimAssessmentType
       suggestedCompletionCriteria
       __typename
     }

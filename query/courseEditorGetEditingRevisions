@@ -44,6 +44,7 @@ query courseEditorGetEditingRevisions($descriptors: [String!]!) {
         }
         __typename
       }
+      interimAssessmentType
       suggestedCompletionCriteria
       __typename
     }

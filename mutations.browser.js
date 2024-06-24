@@ -859,6 +859,7 @@ fragment AssessmentItemRevision on AssessmentItemRevision {
   itemShapeType
   perseusApiMajorVersion
   requiresScreenOrMouse
+  aiGenerated
   tags
   __typename
 }
@@ -895,6 +896,7 @@ fragment ExerciseRevision on ExerciseRevision {
   suggestedCompletionCriteria
   trackingDocumentUrl
   problemTypeKind
+  interimAssessmentType
   numQuestionsPerProblemType
   problemTypes {
     contentId
@@ -905,6 +907,7 @@ fragment ExerciseRevision on ExerciseRevision {
       sha
       perseusApiMajorVersion
       requiresScreenOrMouse
+      aiGenerated
       __typename
     }
     __typename
@@ -1049,6 +1052,7 @@ fragment AssessmentItemRevision on AssessmentItemRevision {
   itemShapeType
   perseusApiMajorVersion
   requiresScreenOrMouse
+  aiGenerated
   tags
   __typename
 }
@@ -1085,6 +1089,7 @@ fragment ExerciseRevision on ExerciseRevision {
   suggestedCompletionCriteria
   trackingDocumentUrl
   problemTypeKind
+  interimAssessmentType
   numQuestionsPerProblemType
   problemTypes {
     contentId
@@ -1095,6 +1100,7 @@ fragment ExerciseRevision on ExerciseRevision {
       sha
       perseusApiMajorVersion
       requiresScreenOrMouse
+      aiGenerated
       __typename
     }
     __typename
@@ -1135,6 +1141,7 @@ fragment AssessmentItemRevision on AssessmentItemRevision {
   itemShapeType
   perseusApiMajorVersion
   requiresScreenOrMouse
+  aiGenerated
   tags
   __typename
 }
@@ -1171,6 +1178,7 @@ fragment ExerciseRevision on ExerciseRevision {
   suggestedCompletionCriteria
   trackingDocumentUrl
   problemTypeKind
+  interimAssessmentType
   numQuestionsPerProblemType
   problemTypes {
     contentId
@@ -1181,6 +1189,7 @@ fragment ExerciseRevision on ExerciseRevision {
       sha
       perseusApiMajorVersion
       requiresScreenOrMouse
+      aiGenerated
       __typename
     }
     __typename
@@ -1337,6 +1346,7 @@ fragment AssessmentItemRevision on AssessmentItemRevision {
   itemShapeType
   perseusApiMajorVersion
   requiresScreenOrMouse
+  aiGenerated
   tags
   __typename
 }
@@ -1373,6 +1383,7 @@ fragment ExerciseRevision on ExerciseRevision {
   suggestedCompletionCriteria
   trackingDocumentUrl
   problemTypeKind
+  interimAssessmentType
   numQuestionsPerProblemType
   problemTypes {
     contentId
@@ -1383,6 +1394,7 @@ fragment ExerciseRevision on ExerciseRevision {
       sha
       perseusApiMajorVersion
       requiresScreenOrMouse
+      aiGenerated
       __typename
     }
     __typename
