@@ -5797,10 +5797,12 @@ fragment Badge on Badge {
       }
       info {
         activeLearners
+        totalLearners
         averageMinutes
         averageSkillsLeveledToProficient
         averageSkillsLeveledUp
         averageSkillsWorkedOn
+        percent0
         percent1to15
         percent15to30
         percent30plus
@@ -5840,10 +5842,12 @@ fragment Badge on Badge {
       }
       info {
         activeLearners
+        totalLearners
         averageMinutes
         averageSkillsLeveledToProficient
         averageSkillsLeveledUp
         averageSkillsWorkedOn
+        percent0
         percent1to15
         percent15to30
         percent30plus
@@ -5874,10 +5878,12 @@ fragment Badge on Badge {
       }
       info {
         activeLearners
+        totalLearners
         averageMinutes
         averageSkillsLeveledToProficient
         averageSkillsLeveledUp
         averageSkillsWorkedOn
+        percent0
         percent1to15
         percent15to30
         percent30plus
@@ -5918,10 +5924,12 @@ fragment Badge on Badge {
       }
       info {
         activeLearners
+        totalLearners
         averageMinutes
         averageSkillsLeveledToProficient
         averageSkillsLeveledUp
         averageSkillsWorkedOn
+        percent0
         percent1to15
         percent15to30
         percent30plus
@@ -16098,10 +16106,12 @@ fragment contentSearchLearnableContent on LearnableContent {
       }
       info {
         activeLearners
+        totalLearners
         averageMinutes
         averageSkillsLeveledToProficient
         averageSkillsLeveledUp
         averageSkillsWorkedOn
+        percent0
         percent1to15
         percent15to30
         percent30plus
@@ -16261,6 +16271,7 @@ fragment contentSearchLearnableContent on LearnableContent {
       info {
         averageMinutes
         activeLearners
+        percent0
         percent1to15
         percent15to30
         percent30plus
@@ -16308,10 +16319,12 @@ fragment contentSearchLearnableContent on LearnableContent {
       }
       info {
         activeLearners
+        totalLearners
         averageMinutes
         averageSkillsLeveledToProficient
         averageSkillsLeveledUp
         averageSkillsWorkedOn
+        percent0
         percent1to15
         percent15to30
         percent30plus
