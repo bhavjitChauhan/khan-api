@@ -1,0 +1,17 @@
+query teacherKhanmigoTotalUsage($filter: KhanmigoTeacherFilters!) {
+  teacherKhanmigoUsage(filter: $filter) {
+    byStudent {
+      student {
+        id
+        kaid
+        coachNickname
+        __typename
+      }
+      chats
+      avgMessagesPerChat
+      activities
+      __typename
+    }
+    __typename
+  }
+}

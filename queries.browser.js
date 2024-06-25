@@ -19862,4 +19862,43 @@ fragment UserFields on User {
     __typename
   }
 }`,
+  configurableInputsForActivity: `query configurableInputsForActivity($contentID: String!) {
+  aiGuideActivityById(id: $contentID) {
+    id
+    configurableInputs
+    __typename
+  }
+}`,
+  teacherKhanmigoTotalUsage: `query teacherKhanmigoTotalUsage($filter: KhanmigoTeacherFilters!) {
+  teacherKhanmigoUsage(filter: $filter) {
+    byStudent {
+      student {
+        id
+        kaid
+        coachNickname
+        __typename
+      }
+      chats
+      avgMessagesPerChat
+      activities
+      __typename
+    }
+    __typename
+  }
+}`,
+  teacherKhanmigoUsageOvertime: `query teacherKhanmigoUsageOvertime($filter: KhanmigoTeacherFilters!) {
+  teacherKhanmigoUsage(filter: $filter) {
+    overTime {
+      rangeStartDate
+      rangeEndDate
+      usage {
+        usersWithUsage
+        percentUsersWithUsage
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }

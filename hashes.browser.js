@@ -709,4 +709,7 @@ hashes = {
   teacherKhanmigoActivity: 490349419,
   PerseusItemCompletionQuery: 2615196925,
   khanLibraryCanEditInterimAssessments: 1327017425,
+  configurableInputsForActivity: 1805369147,
+  teacherKhanmigoTotalUsage: 617684036,
+  teacherKhanmigoUsageOvertime: 50309119,
 }

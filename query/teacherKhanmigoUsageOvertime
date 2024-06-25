@@ -1,0 +1,15 @@
+query teacherKhanmigoUsageOvertime($filter: KhanmigoTeacherFilters!) {
+  teacherKhanmigoUsage(filter: $filter) {
+    overTime {
+      rangeStartDate
+      rangeEndDate
+      usage {
+        usersWithUsage
+        percentUsersWithUsage
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

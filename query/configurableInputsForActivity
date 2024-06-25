@@ -1,0 +1,7 @@
+query configurableInputsForActivity($contentID: String!) {
+  aiGuideActivityById(id: $contentID) {
+    id
+    configurableInputs
+    __typename
+  }
+}
