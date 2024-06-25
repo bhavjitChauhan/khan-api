@@ -5149,6 +5149,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
       __typename
     }
     hasPartnershipSchoolAffiliation
+    hasAccessToAIGuideTeacherTools
     affiliationCountryCode
     isAIGuideEnabled
     isKmapTeacher

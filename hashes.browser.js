@@ -163,7 +163,7 @@ hashes = {
   getChildrenOfTopic: 1598707302,
   getChronomancerStatus: 470968035,
   getClassesAndStudents: 4112328276,
-  getClassList: 2944255707,
+  getClassList: 1293841409,
   getClassroomRoster: 3796170896,
   getClassroomsAndPrimaryOffering: 3980807925,
   getClassSelector: 805182339,
