@@ -19,6 +19,7 @@ query getDistrictCourseProgressByStudent($filters: DistrictCourseProgressFilters
       info {
         averageMinutes
         activeLearners
+        percent0
         percent1to15
         percent15to30
         percent30plus
