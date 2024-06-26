@@ -12098,4 +12098,13 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  AddUserParentRole: `mutation AddUserParentRole($kaid: String) {
+  updateUserRole(kaid: $kaid, role: PARENT, operation: ADD) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
