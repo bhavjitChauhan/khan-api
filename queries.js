@@ -19909,6 +19909,7 @@ fragment UserFields on User {
 }`,
   teacherKhanmigoUsageOvertime: `query teacherKhanmigoUsageOvertime($filter: KhanmigoTeacherFilters!) {
   teacherKhanmigoUsage(filter: $filter) {
+    groupType
     overTime {
       rangeStartDate
       rangeEndDate
