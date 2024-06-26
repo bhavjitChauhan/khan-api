@@ -2205,4 +2205,38 @@ fragment InvitationsField on Invitation {
   points
   __typename
 }`,
+  static_ActivityFragment: `fragment static_ActivityFragment on AIGuideActivity {
+  id
+  translatedTitle
+  contentDescriptor
+  slug
+  persona
+  activityType
+  worksInMobileApp
+  worksOnSmallLayouts
+  isAssignable
+  __typename
+}
+
+query ActivitiesList {
+  aiGuideActivitiesList(isMobileApp: false) {
+    id
+    welcomeActivities {
+      ...static_ActivityFragment
+      __typename
+    }
+    sections {
+      id
+      title: translatedTitle
+      iconUrl: iconPath
+      activities {
+        ...static_ActivityFragment
+        __typename
+      }
+      __typename
+    }
+    personas
+    __typename
+  }
+}`,
 }
