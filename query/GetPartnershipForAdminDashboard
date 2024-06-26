@@ -1,0 +1,48 @@
+query GetPartnershipForAdminDashboard($partnershipID: ID!) {
+  getPartnershipById(partnershipId: $partnershipID) {
+    ... on MetaDistrict {
+      id
+      name
+      countryCode
+      levelLabel
+      levelHeight
+      descendants {
+        ... on MetaDistrict {
+          id
+          parent {
+            id
+            __typename
+          }
+          name
+          levelLabel
+          levelHeight
+          __typename
+        }
+        ... on District {
+          id
+          parent {
+            id
+            __typename
+          }
+          name
+          levelLabel
+          levelHeight
+          isTest
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    ... on District {
+      id
+      name
+      countryCode
+      levelLabel
+      levelHeight
+      isTest
+      __typename
+    }
+    __typename
+  }
+}

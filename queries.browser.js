@@ -3591,8 +3591,8 @@ fragment CourseProgress on SubjectProgress {
   DistrictPrimaryOfferingAsTeacher: `query DistrictPrimaryOfferingAsTeacher {
   districtPrimaryOfferingAsTeacher
 }`,
-  DistrictQuery: `query DistrictQuery($districtName: String!) {
-  district(districtName: $districtName) {
+  DistrictQuery: `query DistrictQuery($districtID: ID!) {
+  districtById(districtId: $districtID) {
     id
     name
     rosterSource
@@ -3617,6 +3617,13 @@ fragment CourseProgress on SubjectProgress {
     schoolYearStart
     schoolYearEnd
     kaLocale
+    ancestors {
+      id
+      levelHeight
+      __typename
+    }
+    countryCode
+    levelHeight
     __typename
   }
 }`,
@@ -19910,6 +19917,82 @@ fragment UserFields on User {
         percentUsersWithUsage
         __typename
       }
+      __typename
+    }
+    __typename
+  }
+}`,
+  GetManagedPartnerships: `query GetManagedPartnerships {
+  user {
+    id
+    homepageUrl
+    userChosenRoles
+    __typename
+  }
+  getPartnerships(includeDeleted: false, onlyTeacherDirected: false) {
+    ... on MetaDistrict {
+      id
+      name
+      countryCode
+      levelHeight
+      __typename
+    }
+    ... on District {
+      id
+      name
+      isTest
+      isKmapDistrict
+      isK4dDistrict
+      countryCode
+      levelHeight
+      __typename
+    }
+    __typename
+  }
+}`,
+  GetPartnershipForAdminDashboard: `query GetPartnershipForAdminDashboard($partnershipID: ID!) {
+  getPartnershipById(partnershipId: $partnershipID) {
+    ... on MetaDistrict {
+      id
+      name
+      countryCode
+      levelLabel
+      levelHeight
+      descendants {
+        ... on MetaDistrict {
+          id
+          parent {
+            id
+            __typename
+          }
+          name
+          levelLabel
+          levelHeight
+          __typename
+        }
+        ... on District {
+          id
+          parent {
+            id
+            __typename
+          }
+          name
+          levelLabel
+          levelHeight
+          isTest
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    ... on District {
+      id
+      name
+      countryCode
+      levelLabel
+      levelHeight
+      isTest
       __typename
     }
     __typename

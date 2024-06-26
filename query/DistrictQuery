@@ -1,5 +1,5 @@
-query DistrictQuery($districtName: String!) {
-  district(districtName: $districtName) {
+query DistrictQuery($districtID: ID!) {
+  districtById(districtId: $districtID) {
     id
     name
     rosterSource
@@ -24,6 +24,13 @@ query DistrictQuery($districtName: String!) {
     schoolYearStart
     schoolYearEnd
     kaLocale
+    ancestors {
+      id
+      levelHeight
+      __typename
+    }
+    countryCode
+    levelHeight
     __typename
   }
 }

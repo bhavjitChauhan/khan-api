@@ -111,7 +111,7 @@ export default {
   districtHomepage: 2523966179,
   districtHomepageProgress: 1681650575,
   DistrictPrimaryOfferingAsTeacher: 15799337,
-  DistrictQuery: 3862268426,
+  DistrictQuery: 3317528373,
   districts: 1050760816,
   DistrictSkillsMAPProgressQuery: 706683816,
   DistrictSkillsProgressQuery: 2501404314,
@@ -712,4 +712,6 @@ export default {
   configurableInputsForActivity: 1805369147,
   teacherKhanmigoTotalUsage: 617684036,
   teacherKhanmigoUsageOvertime: 50309119,
+  GetManagedPartnerships: 3143980386,
+  GetPartnershipForAdminDashboard: 2922333438,
 }
