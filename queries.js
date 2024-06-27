@@ -2620,6 +2620,7 @@ fragment FolderCourseRevisionFragment on CourseRevision {
     contentId
     title
     importable
+    allowedExerciseTypes
     __typename
   }
 }`,
@@ -3098,6 +3099,10 @@ fragment LearnableContent on LearnableContent {
       translatedTitle
       __typename
     }
+    ... on ExerciseRevision {
+      interimAssessmentType
+      __typename
+    }
     __typename
   }
 }`,
@@ -3115,6 +3120,10 @@ fragment LearnableContent on LearnableContent {
         id
         title
         translatedTitle
+        ... on Exercise {
+          interimAssessmentType
+          __typename
+        }
         __typename
       }
       curationNode {

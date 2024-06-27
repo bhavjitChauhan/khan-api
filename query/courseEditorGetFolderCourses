@@ -4,6 +4,7 @@ query courseEditorGetFolderCourses($ids: [String!]!) {
     contentId
     title
     importable
+    allowedExerciseTypes
     __typename
   }
 }
