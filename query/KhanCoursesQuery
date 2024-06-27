@@ -1,7 +1,7 @@
-query KhanCoursesQuery($districtId: ID!) {
+query KhanCoursesQuery($districtId: ID!, $kaLocale: String!) {
   districtById(districtId: $districtId) {
     id
-    courses {
+    courses(kaLocale: $kaLocale) {
       id
       key
       translatedTitle
