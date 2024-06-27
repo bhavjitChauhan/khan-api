@@ -31,6 +31,7 @@ query districtDashboardKhanmigo($filters: DistrictDashboardFilters!, $userType: 
       userPercentage
       chatPercent
       totalChats
+      totalUsers
       __typename
     }
     __typename
