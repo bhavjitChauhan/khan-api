@@ -19796,6 +19796,7 @@ fragment UserFields on User {
       userPercentage
       chatPercent
       totalChats
+      totalUsers
       __typename
     }
     __typename
@@ -20005,6 +20006,17 @@ fragment UserFields on User {
       isTest
       __typename
     }
+    __typename
+  }
+}`,
+  AccountDeletionRequests: `query AccountDeletionRequests($kaid: String!) {
+  accountDeletionRequests(targetKaid: $kaid) {
+    user {
+      id
+      __typename
+    }
+    reason
+    processOnDate
     __typename
   }
 }`,

@@ -1,0 +1,11 @@
+query AccountDeletionRequests($kaid: String!) {
+  accountDeletionRequests(targetKaid: $kaid) {
+    user {
+      id
+      __typename
+    }
+    reason
+    processOnDate
+    __typename
+  }
+}

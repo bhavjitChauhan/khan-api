@@ -703,7 +703,7 @@ hashes = {
   LearnerAssignableAIActivitiesQuery: 794814278,
   legalDocByID: 3917369508,
   getAllEkbEntries: 1249693129,
-  districtDashboardKhanmigo: 2939413321,
+  districtDashboardKhanmigo: 135295171,
   devadminEssayOriginalityFlags: 3392766431,
   legalDocBySlug: 723734805,
   teacherKhanmigoActivity: 490349419,
@@ -714,4 +714,5 @@ hashes = {
   teacherKhanmigoUsageOvertime: 17695090,
   GetManagedPartnerships: 3143980386,
   GetPartnershipForAdminDashboard: 2922333438,
+  AccountDeletionRequests: 3465911117,
 }
