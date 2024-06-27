@@ -11,6 +11,10 @@ query courseEditorSearchEditing($text: String!, $filters: [EditingSearchFilter!]
       translatedTitle
       __typename
     }
+    ... on ExerciseRevision {
+      interimAssessmentType
+      __typename
+    }
     __typename
   }
 }

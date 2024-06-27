@@ -12,6 +12,10 @@ query courseEditorSearchPublished($query: String!, $contentKinds: [String]) {
         id
         title
         translatedTitle
+        ... on Exercise {
+          interimAssessmentType
+          __typename
+        }
         __typename
       }
       curationNode {
