@@ -349,7 +349,7 @@ hashes = {
   isSatStudent: 299620492,
   IssueFormGetExerciseId: 2428616784,
   joinModalClassInfo: 2448139857,
-  KhanCoursesQuery: 1686196733,
+  KhanCoursesQuery: 4095942726,
   khanLibraryCourseStructure: 835097584,
   khanLibraryGetDomainRevision: 1867428323,
   khanLibraryGetFolder: 322309692,

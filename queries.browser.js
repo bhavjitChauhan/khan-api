@@ -10870,10 +10870,10 @@ fragment gtp_tpudFragment on TestPrepUserData {
   }
 }
 `,
-  KhanCoursesQuery: `query KhanCoursesQuery($districtId: ID!) {
+  KhanCoursesQuery: `query KhanCoursesQuery($districtId: ID!, $kaLocale: String!) {
   districtById(districtId: $districtId) {
     id
-    courses {
+    courses(kaLocale: $kaLocale) {
       id
       key
       translatedTitle
