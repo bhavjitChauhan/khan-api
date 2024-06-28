@@ -12107,4 +12107,19 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  EditKhanLibraryFolder: `mutation EditKhanLibraryFolder($folderId: String!, $name: String!) {
+  editFolder(folderId: $folderId, name: $name) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    folder {
+      id
+      name
+      __typename
+    }
+    __typename
+  }
+}`,
 }
