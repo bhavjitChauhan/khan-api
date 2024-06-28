@@ -654,7 +654,7 @@ hashes = {
   districtKhanmigoUsageByTeacher: 823674612,
   districtKhanmigoUsageOvertime: 1661333824,
   getTeacherKhanmigoAccess: 2454313616,
-  FoldersLibraryPermissionCheck: 890262259,
+  FoldersLibraryPermissionCheck: 2487076270,
   getTeacherAIEligibilityData: 3391149362,
   courseMetadata: 1342216916,
   programsGalleryGetDomain: 3335265948,
@@ -715,4 +715,6 @@ hashes = {
   GetManagedPartnerships: 3143980386,
   GetPartnershipForAdminDashboard: 2922333438,
   AccountDeletionRequests: 3465911117,
+  getTeacherReferralEligibilityData: 2879858789,
+  khanmigoForTeachersPersonalReferralCode: 869866068,
 }

@@ -1,0 +1,8 @@
+query getTeacherReferralEligibilityData {
+  user {
+    id
+    hasAccessToAIGuideTeacherTools
+    isAIGuideEnabled
+    __typename
+  }
+}

@@ -1,0 +1,7 @@
+query khanmigoForTeachersPersonalReferralCode {
+  user {
+    id
+    khanmigoForTeachersReferralCode
+    __typename
+  }
+}

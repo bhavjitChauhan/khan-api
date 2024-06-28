@@ -18761,6 +18761,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   user {
     id
     canCreateFolders: hasPermission(name: "can_create_folders")
+    canEditFolders: hasPermission(name: "can_edit_folders")
     canDeleteFolders: hasPermission(name: "can_delete_folders")
     canGrantContentRoles: hasPermission(name: "can_grant_content_roles")
     __typename
@@ -20017,6 +20018,21 @@ fragment UserFields on User {
     }
     reason
     processOnDate
+    __typename
+  }
+}`,
+  getTeacherReferralEligibilityData: `query getTeacherReferralEligibilityData {
+  user {
+    id
+    hasAccessToAIGuideTeacherTools
+    isAIGuideEnabled
+    __typename
+  }
+}`,
+  khanmigoForTeachersPersonalReferralCode: `query khanmigoForTeachersPersonalReferralCode {
+  user {
+    id
+    khanmigoForTeachersReferralCode
     __typename
   }
 }`,
