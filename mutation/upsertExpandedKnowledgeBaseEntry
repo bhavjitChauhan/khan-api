@@ -1,0 +1,25 @@
+mutation upsertExpandedKnowledgeBaseEntry($id: String!, $category: String!, $text: String!, $url: String!) {
+  upsertExpandedKnowledgeBaseEntry(
+    id: $id
+    category: $category
+    text: $text
+    url: $url
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    upsertResult {
+      upsertedCount
+      code
+      details {
+        value
+        __typename
+      }
+      message
+      __typename
+    }
+    __typename
+  }
+}

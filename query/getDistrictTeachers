@@ -1,5 +1,5 @@
 query getDistrictTeachers($districtName: String!, $pageSize: Int, $cursor: Int) {
-  activationReportByTeacher(
+  activationReportByTeacher: activationReportByTeacherV2(
     districtName: $districtName
     pageSize: $pageSize
     cursor: $cursor

@@ -12122,4 +12122,39 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  deleteEkbEntry: `mutation deleteEkbEntry($id: String!) {
+  deleteExpandedKnowledgeBaseEntry(id: $id) {
+    error {
+      debugMessage
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  upsertExpandedKnowledgeBaseEntry: `mutation upsertExpandedKnowledgeBaseEntry($id: String!, $category: String!, $text: String!, $url: String!) {
+  upsertExpandedKnowledgeBaseEntry(
+    id: $id
+    category: $category
+    text: $text
+    url: $url
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    upsertResult {
+      upsertedCount
+      code
+      details {
+        value
+        __typename
+      }
+      message
+      __typename
+    }
+    __typename
+  }
+}`,
 }

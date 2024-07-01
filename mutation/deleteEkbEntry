@@ -1,0 +1,10 @@
+mutation deleteEkbEntry($id: String!) {
+  deleteExpandedKnowledgeBaseEntry(id: $id) {
+    error {
+      debugMessage
+      code
+      __typename
+    }
+    __typename
+  }
+}

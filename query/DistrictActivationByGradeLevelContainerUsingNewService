@@ -1,8 +1,5 @@
 query DistrictActivationByGradeLevelContainerUsingNewService($districtId: ID!, $schoolIds: [ID!]) {
-  activationReportByGradeLevel: activationReportByGradeLevelPortedToGo(
-    districtId: $districtId
-    schoolIds: $schoolIds
-  ) {
+  activationReportByGradeLevel(districtId: $districtId, schoolIds: $schoolIds) {
     rows {
       gradeLevel {
         id
