@@ -1631,6 +1631,10 @@ fragment CourseData on Course {
   translatedCustomTitleTag
   contentKind
   userAuthoredContentTypes
+  masterableExercises(includeDuplicates: true) {
+    id
+    __typename
+  }
   parent {
     id
     contentKind
@@ -20033,6 +20037,21 @@ fragment UserFields on User {
   user {
     id
     khanmigoForTeachersReferralCode
+    __typename
+  }
+}`,
+  SkillsToProficient_CourseProficiency: `query SkillsToProficient_CourseProficiency($courseId: String!) {
+  user {
+    id
+    courseProgress(topicId: $courseId) {
+      proficiencyLevel
+      masteryMap {
+        progressKey
+        status
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }`,

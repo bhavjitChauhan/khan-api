@@ -89,6 +89,10 @@ fragment CourseData on Course {
   translatedCustomTitleTag
   contentKind
   userAuthoredContentTypes
+  masterableExercises(includeDuplicates: true) {
+    id
+    __typename
+  }
   parent {
     id
     contentKind

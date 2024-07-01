@@ -1,0 +1,15 @@
+query SkillsToProficient_CourseProficiency($courseId: String!) {
+  user {
+    id
+    courseProgress(topicId: $courseId) {
+      proficiencyLevel
+      masteryMap {
+        progressKey
+        status
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
