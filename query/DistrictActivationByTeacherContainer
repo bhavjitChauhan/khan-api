@@ -1,5 +1,5 @@
 query DistrictActivationByTeacherContainer($districtName: String!, $schoolIds: [ID!], $teacherIDs: [ID!], $pageSize: Int, $cursor: Int) {
-  activationReportByTeacher(
+  activationReportByTeacher: activationReportByTeacherV2(
     districtName: $districtName
     schoolIds: $schoolIds
     teacherIDs: $teacherIDs

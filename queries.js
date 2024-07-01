@@ -1,6 +1,6 @@
 export default {
   activatedDistrictTeachers: `query activatedDistrictTeachers($districtName: String!, $pageSize: Int, $cursor: Int) {
-  activationReportByTeacher(
+  activationReportByTeacher: activationReportByTeacherV2(
     districtName: $districtName
     pageSize: $pageSize
     cursor: $cursor
@@ -3383,10 +3383,7 @@ fragment CourseProgress on SubjectProgress {
   }
 }`,
   DistrictActivationByGradeLevelContainerUsingNewService: `query DistrictActivationByGradeLevelContainerUsingNewService($districtId: ID!, $schoolIds: [ID!]) {
-  activationReportByGradeLevel: activationReportByGradeLevelPortedToGo(
-    districtId: $districtId
-    schoolIds: $schoolIds
-  ) {
+  activationReportByGradeLevel(districtId: $districtId, schoolIds: $schoolIds) {
     rows {
       gradeLevel {
         id
@@ -3412,10 +3409,7 @@ fragment CourseProgress on SubjectProgress {
   }
 }`,
   DistrictActivationBySchoolContainerUsingNewService: `query DistrictActivationBySchoolContainerUsingNewService($districtId: ID!, $schoolIds: [ID!]) {
-  activationReportBySchool: activationReportBySchoolPortedToGo(
-    districtId: $districtId
-    schoolIds: $schoolIds
-  ) {
+  activationReportBySchool(districtId: $districtId, schoolIds: $schoolIds) {
     rows {
       school {
         id
@@ -3440,7 +3434,7 @@ fragment CourseProgress on SubjectProgress {
   }
 }`,
   DistrictActivationByTeacherContainer: `query DistrictActivationByTeacherContainer($districtName: String!, $schoolIds: [ID!], $teacherIDs: [ID!], $pageSize: Int, $cursor: Int) {
-  activationReportByTeacher(
+  activationReportByTeacher: activationReportByTeacherV2(
     districtName: $districtName
     schoolIds: $schoolIds
     teacherIDs: $teacherIDs
@@ -3814,7 +3808,7 @@ fragment CourseProgress on SubjectProgress {
   }
 }`,
   districtTeachers: `query districtTeachers($districtName: String!, $pageSize: Int, $cursor: Int) {
-  activationReportByTeacher(
+  activationReportByTeacher: activationReportByTeacherV2(
     districtName: $districtName
     pageSize: $pageSize
     cursor: $cursor
@@ -6183,7 +6177,7 @@ fragment StudentField1 on StudentsPage {
   }
 }`,
   getDistrictTeachers: `query getDistrictTeachers($districtName: String!, $pageSize: Int, $cursor: Int) {
-  activationReportByTeacher(
+  activationReportByTeacher: activationReportByTeacherV2(
     districtName: $districtName
     pageSize: $pageSize
     cursor: $cursor
