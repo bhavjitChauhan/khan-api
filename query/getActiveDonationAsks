@@ -8,6 +8,7 @@ query getActiveDonationAsks {
     oneTimeDonationAmounts
     recurringDonationAmounts
     classyCampaignId
+    donateURL
     __typename
   }
 }

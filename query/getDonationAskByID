@@ -10,6 +10,7 @@ query getDonationAskByID($id: String!) {
     classyCampaignId
     active
     authorKaid
+    donateURL
     __typename
   }
 }

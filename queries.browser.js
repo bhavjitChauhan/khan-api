@@ -4767,6 +4767,7 @@ fragment UserFields on User {
     oneTimeDonationAmounts
     recurringDonationAmounts
     classyCampaignId
+    donateURL
     __typename
   }
 }`,
@@ -6213,6 +6214,7 @@ fragment StudentField1 on StudentsPage {
     classyCampaignId
     active
     authorKaid
+    donateURL
     __typename
   }
 }`,
