@@ -49,7 +49,7 @@ hashes = {
   contentEditorVideoRevisions: 1541188601,
   contentForDescriptors: 3325868085,
   ContentForLearnableContent: 2675420102,
-  ContentForPath: 1242644265,
+  ContentForPath: 3712657851,
   ContentItemAssignmentStatusesQuery: 2379533208,
   contentTabThreeLevelQuery: 1411230461,
   contentTabTwoLevelQuery: 280717163,
@@ -717,4 +717,5 @@ hashes = {
   AccountDeletionRequests: 3465911117,
   getTeacherReferralEligibilityData: 2879858789,
   khanmigoForTeachersPersonalReferralCode: 869866068,
+  SkillsToProficient_CourseProficiency: 1818521673,
 }

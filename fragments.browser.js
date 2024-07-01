@@ -380,6 +380,10 @@ fragment InvitationsField on Invitation {
   translatedCustomTitleTag
   contentKind
   userAuthoredContentTypes
+  masterableExercises(includeDuplicates: true) {
+    id
+    __typename
+  }
   parent {
     id
     contentKind
