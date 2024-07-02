@@ -12157,4 +12157,28 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  updateAIGuideConversationTestCaseInteraction: `mutation updateAIGuideConversationTestCaseInteraction($testCaseId: ID!, $interactionId: ID!, $input: UpdateAIGuideConversationTestCaseInteractionInput!) {
+  updateAIGuideConversationTestCaseInteraction(
+    testCaseId: $testCaseId
+    interactionId: $interactionId
+    input: $input
+  ) {
+    testCase {
+      id
+      interactions {
+        threadId
+        interactionId
+        success
+        name
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

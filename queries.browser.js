@@ -19666,6 +19666,8 @@ fragment UserFields on User {
     interactions {
       threadId
       interactionId
+      name
+      success
       __typename
     }
     __typename
