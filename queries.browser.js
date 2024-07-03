@@ -720,6 +720,7 @@ fragment AssignmentCsvData on Assignment {
       isNweaMapSynced
       courseSISName
       sisSubjct
+      studentsHaveAccessToKhanmigo
       teacherUserDistrictInfo {
         id
         khanmigoShould
