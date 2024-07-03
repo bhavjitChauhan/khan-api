@@ -1715,6 +1715,7 @@ fragment InvitationsField on Invitation {
   kaLocale
   title
   importable
+  allowedExerciseTypes
   hasUnpublishedChanges
   published {
     id

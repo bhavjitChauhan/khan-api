@@ -10975,6 +10975,7 @@ fragment PublishedCourseRevisionFragment on CourseRevision {
   kaLocale
   title
   importable
+  allowedExerciseTypes
   hasUnpublishedChanges
   published {
     id
@@ -18764,6 +18765,10 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     canEditFolders: hasPermission(name: "can_edit_folders")
     canDeleteFolders: hasPermission(name: "can_delete_folders")
     canGrantContentRoles: hasPermission(name: "can_grant_content_roles")
+    canEditInterimAssessments: hasPermission(
+      name: "can_edit_interim_assessments"
+      scope: ANY_ON_CURRENT_LOCALE
+    )
     __typename
   }
 }`,
