@@ -6919,6 +6919,7 @@ fragment PublishedCourseRevisionFragment on CourseRevision {
   kaLocale
   title
   importable
+  allowedExerciseTypes
   hasUnpublishedChanges
   published {
     id
