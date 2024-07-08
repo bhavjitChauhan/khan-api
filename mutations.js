@@ -12182,4 +12182,14 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  freeForTeachersReferralMutation: `mutation freeForTeachersReferralMutation($referralCode: String!) {
+  trackUserReferralRedemption(referralCode: $referralCode) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
