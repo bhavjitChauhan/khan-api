@@ -1,0 +1,7 @@
+query previewLearnerParentAIGuideActivatedEmail {
+  preview: previewLearnerParentAIGuideActivatedEmail {
+    textContent
+    htmlContent
+    __typename
+  }
+}

@@ -19650,14 +19650,14 @@ fragment UserFields on User {
     __typename
   }
 }`,
-  devadminWritingCoachTime: `query devadminWritingCoachTime($kaid: String!, $essaySessionId: String!, $stage: WritingCoachStage!, $startTime: DateTime!, $endTime: DateTime!) {
-  writingCoachTimeInSeconds(
-    studentKaid: $kaid
-    essaySessionID: $essaySessionId
-    stage: $stage
-    startTime: $startTime
-    endTime: $endTime
-  )
+  devadminWritingCoachTime: `query devadminWritingCoachTime($kaid: String!, $essaySessionId: String!) {
+  writingCoachTime(studentKaid: $kaid, essaySessionID: $essaySessionId) {
+    promptReviewingSeconds
+    outliningSeconds
+    draftingSeconds
+    revisingSeconds
+    __typename
+  }
 }`,
   listAIGuideConversationTestCases: `query listAIGuideConversationTestCases {
   listAIGuideConversationTestCases {
@@ -20052,6 +20052,13 @@ fragment UserFields on User {
       }
       __typename
     }
+    __typename
+  }
+}`,
+  previewLearnerParentAIGuideActivatedEmail: `query previewLearnerParentAIGuideActivatedEmail {
+  preview: previewLearnerParentAIGuideActivatedEmail {
+    textContent
+    htmlContent
     __typename
   }
 }`,
