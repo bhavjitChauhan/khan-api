@@ -9225,10 +9225,6 @@ fragment Badge on Badge {
 }`,
   getUserInfoForLinking: `query getUserInfoForLinking($userDistrictInfoUuid: ID!) {
   userDistrictInfo(uuid: $userDistrictInfoUuid) {
-    district {
-      id
-      __typename
-    }
     id
     districtProvidedEmail
     districtProvidedFirstName

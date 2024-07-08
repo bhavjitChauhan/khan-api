@@ -295,7 +295,7 @@ hashes = {
   getUserDevAdminGeneral: 1493156598,
   getUserHasUsedProduct: 27707820,
   getUserHoverCardProfile: 2464641677,
-  getUserInfoForLinking: 1298903970,
+  getUserInfoForLinking: 765816848,
   getUserInfoForSubjectProgress: 2589311766,
   getUserInfoForTopicProgressMastery: 1584861359,
   getUserInfoForTopicProgressNonMastery: 145202199,
