@@ -695,7 +695,7 @@ hashes = {
   districtById: 728152285,
   devadminEssayHistory: 2183177348,
   devadminEssayAuthor: 3140435347,
-  devadminWritingCoachTime: 3823115589,
+  devadminWritingCoachTime: 344083725,
   listAIGuideConversationTestCases: 981204477,
   fetchAllLegalDocs: 2516438376,
   getTeacherTools: 4232440853,
@@ -718,4 +718,5 @@ hashes = {
   getTeacherReferralEligibilityData: 2879858789,
   khanmigoForTeachersPersonalReferralCode: 869866068,
   SkillsToProficient_CourseProficiency: 1818521673,
+  previewLearnerParentAIGuideActivatedEmail: 961900096,
 }

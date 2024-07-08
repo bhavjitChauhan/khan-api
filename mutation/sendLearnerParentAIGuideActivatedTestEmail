@@ -1,0 +1,9 @@
+mutation sendLearnerParentAIGuideActivatedTestEmail {
+  sendLearnerParentAIGuideActivatedTestEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

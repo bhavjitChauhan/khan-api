@@ -1,9 +1,9 @@
-query devadminWritingCoachTime($kaid: String!, $essaySessionId: String!, $stage: WritingCoachStage!, $startTime: DateTime!, $endTime: DateTime!) {
-  writingCoachTimeInSeconds(
-    studentKaid: $kaid
-    essaySessionID: $essaySessionId
-    stage: $stage
-    startTime: $startTime
-    endTime: $endTime
-  )
+query devadminWritingCoachTime($kaid: String!, $essaySessionId: String!) {
+  writingCoachTime(studentKaid: $kaid, essaySessionID: $essaySessionId) {
+    promptReviewingSeconds
+    outliningSeconds
+    draftingSeconds
+    revisingSeconds
+    __typename
+  }
 }

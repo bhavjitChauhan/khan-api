@@ -12192,4 +12192,13 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  sendLearnerParentAIGuideActivatedTestEmail: `mutation sendLearnerParentAIGuideActivatedTestEmail {
+  sendLearnerParentAIGuideActivatedTestEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
