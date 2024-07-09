@@ -20078,4 +20078,16 @@ fragment UserFields on User {
     __typename
   }
 }`,
+  StreakQuery: `query StreakQuery {
+  user {
+    id
+    stpStreak {
+      length
+      isExpiring
+      longestLength
+      __typename
+    }
+    __typename
+  }
+}`,
 }
