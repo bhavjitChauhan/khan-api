@@ -10,6 +10,7 @@ query DistrictAdminPermissionsQuery {
       }
       canSeeAllSchools
       canManageAdmins
+      isKmap
       __typename
     }
     __typename
