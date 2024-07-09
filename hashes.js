@@ -668,7 +668,7 @@ export default {
   AITeacherTools_ExerciseDetails: 1112642801,
   AITeacherTools_VideoDetails: 3691196159,
   getShowDiscussionsForDistrict: 2134624385,
-  DistrictAdminPermissionsQuery: 2419103410,
+  DistrictAdminPermissionsQuery: 2100131541,
   activityByContentDescriptor: 1800741948,
   getItemIdForGroupedExercise: 382432773,
   districtId: 3726089185,
