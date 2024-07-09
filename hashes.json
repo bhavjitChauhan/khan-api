@@ -332,7 +332,7 @@
   "gtp_getTPUD": 2648698266,
   "gtp_onboardingStatus": 3646852342,
   "gtp_relatedContent": 3291890228,
-  "guideTranscript": 1984394711,
+  "guideTranscript": 1992580125,
   "guideTranscripts": 335722228,
   "hasChangedAvatar": 1861878399,
   "hasUsedTestPrepProductQuery": 659116580,
@@ -718,5 +718,6 @@
   "getTeacherReferralEligibilityData": 2879858789,
   "khanmigoForTeachersPersonalReferralCode": 869866068,
   "SkillsToProficient_CourseProficiency": 1818521673,
-  "previewLearnerParentAIGuideActivatedEmail": 961900096
+  "previewLearnerParentAIGuideActivatedEmail": 961900096,
+  "interimAssessmentCheckQuery": 1693632382
 }

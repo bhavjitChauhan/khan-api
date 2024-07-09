@@ -10577,6 +10577,7 @@ fragment gtp_tpudFragment on TestPrepUserData {
     lastUpdatedAt
     flagged
     kaid
+    title
     insights {
       interests
       topics
@@ -20059,6 +20060,21 @@ fragment UserFields on User {
   preview: previewLearnerParentAIGuideActivatedEmail {
     textContent
     htmlContent
+    __typename
+  }
+}`,
+  interimAssessmentCheckQuery: `query interimAssessmentCheckQuery($contentId: String!) {
+  revision: exerciseRevisionById(id: $contentId) {
+    id
+    interimAssessmentType
+    __typename
+  }
+  user {
+    id
+    canEditInterimAssessments: hasPermission(
+      name: "can_edit_interim_assessments"
+      scope: ANY_ON_CURRENT_LOCALE
+    )
     __typename
   }
 }`,
