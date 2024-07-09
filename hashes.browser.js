@@ -695,7 +695,7 @@ hashes = {
   districtById: 728152285,
   devadminEssayHistory: 2183177348,
   devadminEssayAuthor: 3140435347,
-  devadminWritingCoachTime: 344083725,
+  devadminWritingCoachTime: 1031216170,
   listAIGuideConversationTestCases: 981204477,
   fetchAllLegalDocs: 2516438376,
   getTeacherTools: 4232440853,
@@ -721,4 +721,6 @@ hashes = {
   previewLearnerParentAIGuideActivatedEmail: 961900096,
   interimAssessmentCheckQuery: 1693632382,
   StreakQuery: 3728201606,
+  essaySessionHistory: 1277525593,
+  getCoachAssignmentReport: 207191496,
 }
