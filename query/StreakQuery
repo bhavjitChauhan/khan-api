@@ -1,0 +1,12 @@
+query StreakQuery {
+  user {
+    id
+    stpStreak {
+      length
+      isExpiring
+      longestLength
+      __typename
+    }
+    __typename
+  }
+}

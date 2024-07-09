@@ -720,4 +720,5 @@ hashes = {
   SkillsToProficient_CourseProficiency: 1818521673,
   previewLearnerParentAIGuideActivatedEmail: 961900096,
   interimAssessmentCheckQuery: 1693632382,
+  StreakQuery: 3728201606,
 }
