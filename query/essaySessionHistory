@@ -1,0 +1,25 @@
+query essaySessionHistory($essaySessionID: String!, $pageSize: Int!, $cursor: String) {
+  essaySession(essaySessionID: $essaySessionID) {
+    id
+    history(pageSize: $pageSize, cursor: $cursor) {
+      snapshots {
+        details {
+          firstIncludedVersion
+          firstIncludedEditTimestamp
+          lastIncludedVersion
+          lastIncludedEditTimestamp
+          content
+          __typename
+        }
+        ... on UserEssayTextSnapshot {
+          stage
+          __typename
+        }
+        __typename
+      }
+      cursor
+      __typename
+    }
+    __typename
+  }
+}

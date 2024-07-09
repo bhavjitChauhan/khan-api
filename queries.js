@@ -19652,12 +19652,16 @@ fragment UserFields on User {
     __typename
   }
 }`,
-  devadminWritingCoachTime: `query devadminWritingCoachTime($kaid: String!, $essaySessionId: String!) {
-  writingCoachTime(studentKaid: $kaid, essaySessionID: $essaySessionId) {
-    promptReviewingSeconds
-    outliningSeconds
-    draftingSeconds
-    revisingSeconds
+  devadminWritingCoachTime: `query devadminWritingCoachTime($essaySessionId: String!) {
+  essaySession(essaySessionID: $essaySessionId) {
+    id
+    learningTime {
+      promptReviewingSeconds
+      outliningSeconds
+      draftingSeconds
+      revisingSeconds
+      __typename
+    }
     __typename
   }
 }`,
@@ -20090,5 +20094,159 @@ fragment UserFields on User {
     }
     __typename
   }
+}`,
+  essaySessionHistory: `query essaySessionHistory($essaySessionID: String!, $pageSize: Int!, $cursor: String) {
+  essaySession(essaySessionID: $essaySessionID) {
+    id
+    history(pageSize: $pageSize, cursor: $cursor) {
+      snapshots {
+        details {
+          firstIncludedVersion
+          firstIncludedEditTimestamp
+          lastIncludedVersion
+          lastIncludedEditTimestamp
+          content
+          __typename
+        }
+        ... on UserEssayTextSnapshot {
+          stage
+          __typename
+        }
+        __typename
+      }
+      cursor
+      __typename
+    }
+    __typename
+  }
+}`,
+  getCoachAssignmentReport: `query getCoachAssignmentReport($assignmentId: String!, $teacherKaid: String!) {
+  coach: user {
+    id
+    assignment: assignmentByThisUser(id: $assignmentId) {
+      id
+      contentDescriptors
+      title
+      assignedDate
+      dueDate
+      configuredActivityInputs
+      students {
+        id
+        kaid
+        coachNickname(teacherKaid: $teacherKaid)
+        __typename
+      }
+      classroom {
+        id
+        cacheId
+        name
+        signupCode
+        __typename
+      }
+      contents {
+        ...ExerciseContentFields
+        __typename
+      }
+      exerciseConfig {
+        itemPickerStrategy
+        assessmentItemIds
+        __typename
+      }
+      itemCompletionStatesForAllStudents {
+        studentKaid
+        exerciseAttempts {
+          id
+          isCompleted
+          numAttempted
+          __typename
+        }
+        assessmentItemsForAssessment {
+          id
+          contentId
+          itemData
+          __typename
+        }
+        student {
+          id
+          kaid
+          coachNickname(teacherKaid: $teacherKaid)
+          __typename
+        }
+        essaySession {
+          id
+          currentStage
+          completed
+          lastUpdated
+          draft {
+            id
+            feedbackList {
+              id
+              isResolved
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment ExerciseContentFields on LearnableContent {
+  id
+  kind
+  slug
+  ... on Exercise {
+    translatedTitle: translatedDisplayName
+    exerciseLength
+    assessmentItems {
+      id
+      contentId
+      itemData
+      __typename
+    }
+    __typename
+  }
+  ... on TopicQuiz {
+    id
+    translatedTitle
+    exerciseLength
+    coveredExercises(includeCoveredSkills: true) {
+      id
+      assessmentItems {
+        id
+        contentId
+        itemData
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  ... on TopicUnitTest {
+    translatedTitle
+    exerciseLength
+    coveredExercises(includeCoveredSkills: true) {
+      id
+      assessmentItems {
+        id
+        contentId
+        itemData
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  ... on LearnableCourseChallenge {
+    translatedTitle
+    exerciseLength
+    __typename
+  }
+  __typename
 }`,
 }
