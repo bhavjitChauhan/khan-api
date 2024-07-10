@@ -723,4 +723,5 @@ hashes = {
   StreakQuery: 3728201606,
   essaySessionHistory: 1277525593,
   getCoachAssignmentReport: 207191496,
+  previewTeacherToolsActivatedEmail: 831584000,
 }

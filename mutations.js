@@ -12201,4 +12201,13 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  sendTeacherToolsActivatedTestEmail: `mutation sendTeacherToolsActivatedTestEmail {
+  sendTeacherToolsActivatedTestEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

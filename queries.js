@@ -20249,4 +20249,11 @@ fragment ExerciseContentFields on LearnableContent {
   }
   __typename
 }`,
+  previewTeacherToolsActivatedEmail: `query previewTeacherToolsActivatedEmail {
+  preview: previewTeacherToolsActivatedEmail {
+    textContent
+    htmlContent
+    __typename
+  }
+}`,
 }
