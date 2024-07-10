@@ -673,7 +673,7 @@ export default {
   getItemIdForGroupedExercise: 382432773,
   districtId: 3726089185,
   coeditingLatestSnapshot: 2234147930,
-  getAiGuideThreads: 2735494621,
+  getAiGuideThreads: 99070135,
   gettingStartedEssaySession: 3075146673,
   writingCoachEssaySession: 2578719407,
   getUserEmailByKaid: 3896469412,

@@ -19116,11 +19116,11 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
-  getAiGuideThreads: `query getAiGuideThreads($kaid: String!, $hasCoeditor: Boolean!) {
-  aiGuideThreads(kaid: $kaid, hasCoeditor: $hasCoeditor) {
+  getAiGuideThreads: `query getAiGuideThreads($kaid: String!, $hasCoeditor: Boolean!, $limit: Int!) {
+  aiGuideThreads(kaid: $kaid, hasCoeditor: $hasCoeditor, limit: $limit) {
     threads {
       id
-      coeditingDocument {
+      coeditingDocument(excludeArchived: true) {
         id
         title
         configName
