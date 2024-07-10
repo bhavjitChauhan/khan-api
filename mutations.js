@@ -12210,4 +12210,13 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  archiveCoeditingDocument: `mutation archiveCoeditingDocument($threadID: String!) {
+  archiveCoeditingDocument(threadID: $threadID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
