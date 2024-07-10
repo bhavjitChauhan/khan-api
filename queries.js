@@ -14,8 +14,8 @@ export default {
     __typename
   }
 }`,
-  ActiveDistrictQuery: `query ActiveDistrictQuery($districtName: String!, $from: DateTime, $upTo: DateTime, $schoolIds: [ID!], $gradeLevels: [DistrictGradeLevel!], $courseSIS: [String!]) {
-  district(districtName: $districtName) {
+  ActiveDistrictQuery: `query ActiveDistrictQuery($districtId: ID!, $from: DateTime, $upTo: DateTime, $schoolIds: [ID!], $gradeLevels: [DistrictGradeLevel!], $courseSIS: [String!]) {
+  districtById(districtId: $districtId) {
     id
     schools {
       id
