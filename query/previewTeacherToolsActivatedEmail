@@ -1,0 +1,7 @@
+query previewTeacherToolsActivatedEmail {
+  preview: previewTeacherToolsActivatedEmail {
+    textContent
+    htmlContent
+    __typename
+  }
+}

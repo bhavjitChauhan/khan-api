@@ -1,0 +1,9 @@
+mutation sendTeacherToolsActivatedTestEmail {
+  sendTeacherToolsActivatedTestEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
