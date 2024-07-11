@@ -55,6 +55,7 @@ query getCoachAssignmentReport($assignmentId: String!, $teacherKaid: String!) {
           currentStage
           completed
           lastUpdated
+          wordCount
           draft {
             id
             feedbackList {
@@ -62,6 +63,13 @@ query getCoachAssignmentReport($assignmentId: String!, $teacherKaid: String!) {
               isResolved
               __typename
             }
+            __typename
+          }
+          learningTime {
+            promptReviewingSeconds
+            outliningSeconds
+            draftingSeconds
+            revisingSeconds
             __typename
           }
           __typename
