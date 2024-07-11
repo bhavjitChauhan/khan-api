@@ -387,6 +387,8 @@ fragment AssignmentInfoFragment on Assignment {
           points
           __typename
         }
+        updatedStpStreakLength
+        updatedCourseProficiencyLevel
         __typename
       }
       attemptPromotions {

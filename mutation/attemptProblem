@@ -67,6 +67,8 @@ mutation attemptProblem($input: AttemptProblemInput!) {
           points
           __typename
         }
+        updatedStpStreakLength
+        updatedCourseProficiencyLevel
         __typename
       }
       attemptPromotions {
