@@ -1,5 +1,5 @@
-query getDistrictSchoolsAndType($districtName: String!) {
-  district(districtName: $districtName) {
+query getDistrictSchoolsAndType($districtId: ID!) {
+  district: districtById(districtId: $districtId) {
     id
     schools {
       id

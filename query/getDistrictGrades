@@ -1,5 +1,5 @@
-query getDistrictGrades($districtName: String!) {
-  district(districtName: $districtName) {
+query getDistrictGrades($districtId: ID!) {
+  district: districtById(districtId: $districtId) {
     id
     activeGrades {
       id
