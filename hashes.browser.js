@@ -726,4 +726,5 @@ hashes = {
   previewTeacherToolsActivatedEmail: 831584000,
   SkillsToProficient_OverallProficiency: 2114668432,
   ActiveAssignmentsAndGoalsQuery: 3443580987,
+  localesForTeacherToolsBanner: 3566806382,
 }

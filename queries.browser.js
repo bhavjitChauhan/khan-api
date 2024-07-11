@@ -20299,4 +20299,12 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  localesForTeacherToolsBanner: `query localesForTeacherToolsBanner {
+  localesForLanguagePicker(includeEnglish: false, includeFake: false) {
+    id
+    localName
+    kaLocale
+    __typename
+  }
+}`,
 }
