@@ -725,4 +725,5 @@ hashes = {
   getCoachAssignmentReport: 2315171960,
   previewTeacherToolsActivatedEmail: 831584000,
   SkillsToProficient_OverallProficiency: 2114668432,
+  ActiveAssignmentsAndGoalsQuery: 3443580987,
 }
