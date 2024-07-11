@@ -13,7 +13,7 @@ query getDistrictCourseProgressByStudent($filters: DistrictCourseProgressFilters
     rows {
       course {
         id
-        title
+        title: translatedTitle
         __typename
       }
       info {
