@@ -541,7 +541,7 @@ hashes = {
   masteryAssignmentsDevAdmin: 2369006419,
   unitMasteryAssignmentChanges: 1908934611,
   getCoachedClassrooms: 2677063655,
-  getDistrictCourseProgressByStudent: 2969677686,
+  getDistrictCourseProgressByStudent: 2610980494,
   getProgressByTeacher: 3334684970,
   getUserKhanmigoDonation: 2016689673,
   aiGuideDrafts: 4225951738,

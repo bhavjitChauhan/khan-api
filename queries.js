@@ -16280,7 +16280,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     rows {
       course {
         id
-        title
+        title: translatedTitle
         __typename
       }
       info {
