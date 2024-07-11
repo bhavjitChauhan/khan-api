@@ -20275,4 +20275,28 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  ActiveAssignmentsAndGoalsQuery: `query ActiveAssignmentsAndGoalsQuery($classDescriptor: String!, $dueAfter: DateTime!, $userKaid: String!) {
+  user(kaid: $userKaid) {
+    id
+    isKmapStudent
+    assignmentsPage(
+      classroomDescriptor: $classDescriptor
+      dueAfter: $dueAfter
+      orderBy: DUE_DATE_ASC
+    ) {
+      assignments {
+        id
+        dueDate
+        __typename
+      }
+      __typename
+    }
+    masteryAssignments(classroomDescriptor: $classDescriptor, isPast: false) {
+      id
+      dueDate
+      __typename
+    }
+    __typename
+  }
+}`,
 }
