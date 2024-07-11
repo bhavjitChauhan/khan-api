@@ -1,7 +1,7 @@
 queries = {
-  activatedDistrictTeachers: `query activatedDistrictTeachers($districtName: String!, $pageSize: Int, $cursor: Int) {
+  activatedDistrictTeachers: `query activatedDistrictTeachers($districtId: ID!, $pageSize: Int, $cursor: Int) {
   activationReportByTeacher: activationReportByTeacherV2(
-    districtName: $districtName
+    districtId: $districtId
     pageSize: $pageSize
     cursor: $cursor
   ) {
@@ -3434,9 +3434,9 @@ fragment CourseProgress on SubjectProgress {
     __typename
   }
 }`,
-  DistrictActivationByTeacherContainer: `query DistrictActivationByTeacherContainer($districtName: String!, $schoolIds: [ID!], $teacherIDs: [ID!], $pageSize: Int, $cursor: Int) {
+  DistrictActivationByTeacherContainer: `query DistrictActivationByTeacherContainer($districtId: ID!, $schoolIds: [ID!], $teacherIDs: [ID!], $pageSize: Int, $cursor: Int) {
   activationReportByTeacher: activationReportByTeacherV2(
-    districtName: $districtName
+    districtId: $districtId
     schoolIds: $schoolIds
     teacherIDs: $teacherIDs
     pageSize: $pageSize
@@ -3808,9 +3808,9 @@ fragment CourseProgress on SubjectProgress {
     __typename
   }
 }`,
-  districtTeachers: `query districtTeachers($districtName: String!, $pageSize: Int, $cursor: Int) {
+  districtTeachers: `query districtTeachers($districtId: ID!, $pageSize: Int, $cursor: Int) {
   activationReportByTeacher: activationReportByTeacherV2(
-    districtName: $districtName
+    districtId: $districtId
     pageSize: $pageSize
     cursor: $cursor
   ) {
@@ -6113,15 +6113,15 @@ fragment StudentField1 on StudentsPage {
     __typename
   }
 }`,
-  getDistrictCourses: `query getDistrictCourses($districtName: String!) {
-  district(districtName: $districtName) {
+  getDistrictCourses: `query getDistrictCourses($districtId: ID!) {
+  district: districtById(districtId: $districtId) {
     id
     activeCourseSISNumbers
     __typename
   }
 }`,
-  getDistrictGrades: `query getDistrictGrades($districtName: String!) {
-  district(districtName: $districtName) {
+  getDistrictGrades: `query getDistrictGrades($districtId: ID!) {
+  district: districtById(districtId: $districtId) {
     id
     activeGrades {
       id
@@ -6154,8 +6154,8 @@ fragment StudentField1 on StudentsPage {
     __typename
   }
 }`,
-  getDistrictSchools: `query getDistrictSchools($districtName: String!) {
-  district(districtName: $districtName) {
+  getDistrictSchools: `query getDistrictSchools($districtId: ID!) {
+  district: districtById(districtId: $districtId) {
     id
     schools {
       id
@@ -6165,8 +6165,8 @@ fragment StudentField1 on StudentsPage {
     __typename
   }
 }`,
-  getDistrictSchoolsAndType: `query getDistrictSchoolsAndType($districtName: String!) {
-  district(districtName: $districtName) {
+  getDistrictSchoolsAndType: `query getDistrictSchoolsAndType($districtId: ID!) {
+  district: districtById(districtId: $districtId) {
     id
     schools {
       id
@@ -6178,9 +6178,9 @@ fragment StudentField1 on StudentsPage {
     __typename
   }
 }`,
-  getDistrictTeachers: `query getDistrictTeachers($districtName: String!, $pageSize: Int, $cursor: Int) {
+  getDistrictTeachers: `query getDistrictTeachers($districtId: ID!, $pageSize: Int, $cursor: Int) {
   activationReportByTeacher: activationReportByTeacherV2(
-    districtName: $districtName
+    districtId: $districtId
     pageSize: $pageSize
     cursor: $cursor
   ) {
