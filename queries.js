@@ -20267,4 +20267,12 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  SkillsToProficient_OverallProficiency: `query SkillsToProficient_OverallProficiency {
+  user {
+    id
+    countExercisesProficient
+    overallProficiencyLevel
+    __typename
+  }
+}`,
 }

@@ -1,0 +1,8 @@
+query SkillsToProficient_OverallProficiency {
+  user {
+    id
+    countExercisesProficient
+    overallProficiencyLevel
+    __typename
+  }
+}
