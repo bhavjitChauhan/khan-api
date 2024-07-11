@@ -693,7 +693,7 @@ export default {
   districtDashboardActivation: 90100696,
   districtDashboardSkillsLeveledUp: 1383756852,
   districtById: 728152285,
-  devadminEssayHistory: 2183177348,
+  devadminEssayHistory: 3041628018,
   devadminEssayAuthor: 3140435347,
   devadminWritingCoachTime: 1031216170,
   listAIGuideConversationTestCases: 981204477,
@@ -722,6 +722,6 @@ export default {
   interimAssessmentCheckQuery: 1693632382,
   StreakQuery: 3728201606,
   essaySessionHistory: 1277525593,
-  getCoachAssignmentReport: 207191496,
+  getCoachAssignmentReport: 2315171960,
   previewTeacherToolsActivatedEmail: 831584000,
 }

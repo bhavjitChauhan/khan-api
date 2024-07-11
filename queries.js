@@ -19604,44 +19604,47 @@ fragment UserFields on User {
     __typename
   }
 }`,
-  devadminEssayHistory: `query devadminEssayHistory($essaySessionId: ID!, $pageSize: Int!, $cursor: String) {
-  userEssayHistory(
-    essaySessionID: $essaySessionId
-    pageSize: $pageSize
-    cursor: $cursor
-  ) {
-    snapshots {
-      details {
-        firstIncludedVersion
-        firstIncludedEditTimestamp
-        lastIncludedVersion
-        lastIncludedEditTimestamp
-        content
-        __typename
-      }
-      ... on UserEssayTextSnapshot {
-        stage
-        pasteMetadata {
-          selectionStart
-          selectionEnd
-          text
+  devadminEssayHistory: `query devadminEssayHistory($essaySessionId: String!, $pageSize: Int!, $cursor: String) {
+  essaySession(essaySessionID: $essaySessionId) {
+    id
+    history(pageSize: $pageSize, cursor: $cursor) {
+      snapshots {
+        snapshotIndex
+        details {
+          firstIncludedVersion
+          firstIncludedEditTimestamp
+          lastIncludedVersion
+          lastIncludedEditTimestamp
+          content
+          __typename
+        }
+        ... on UserEssayTextSnapshot {
+          learningTimeSeconds
+          stage
+          pasteMetadata {
+            selectionStart
+            selectionEnd
+            text
+            __typename
+          }
+          __typename
+        }
+        ... on UserEssayOutlineSnapshot {
+          learningTimeSeconds
+          pasteMetadata {
+            jsonPointer
+            selectionStart
+            selectionEnd
+            text
+            __typename
+          }
           __typename
         }
         __typename
       }
-      ... on UserEssayOutlineSnapshot {
-        pasteMetadata {
-          jsonPointer
-          selectionStart
-          selectionEnd
-          text
-          __typename
-        }
-        __typename
-      }
+      cursor
       __typename
     }
-    cursor
     __typename
   }
 }`,
@@ -20177,6 +20180,7 @@ fragment UserFields on User {
           currentStage
           completed
           lastUpdated
+          wordCount
           draft {
             id
             feedbackList {
@@ -20184,6 +20188,13 @@ fragment UserFields on User {
               isResolved
               __typename
             }
+            __typename
+          }
+          learningTime {
+            promptReviewingSeconds
+            outliningSeconds
+            draftingSeconds
+            revisingSeconds
             __typename
           }
           __typename
