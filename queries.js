@@ -19404,10 +19404,10 @@ fragment UserFields on User {
     __typename
   }
 }`,
-  perseusTemplateCompletionQuery: `query perseusTemplateCompletionQuery($exemplar: String!, $exerciseTitle: String!, $exerciseDescription: String!) {
+  perseusTemplateCompletionQuery: `query perseusTemplateCompletionQuery($exemplar: String!, $exerciseTitle: String!, $exerciseDescription: String!, $standardsDescriptions: String!) {
   perseusTemplateCompletion(
     exemplar: $exemplar
-    exerciseDetails: {title: $exerciseTitle, description: $exerciseDescription}
+    exerciseDetails: {title: $exerciseTitle, description: $exerciseDescription, standardsDescriptions: $standardsDescriptions}
   ) {
     completion {
       template
