@@ -688,7 +688,7 @@ hashes = {
   findUsersByNickname: 3932081178,
   userBirthMonthYear: 1380270141,
   districtAdminName: 937404703,
-  perseusTemplateCompletionQuery: 2620456742,
+  perseusTemplateCompletionQuery: 2856668303,
   districtDashboardLearningMinutes: 3958197028,
   districtDashboardActivation: 90100696,
   districtDashboardSkillsLeveledUp: 1383756852,
