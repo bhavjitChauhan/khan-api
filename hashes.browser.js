@@ -104,9 +104,9 @@ hashes = {
   digitalSatAuthTransfer: 2638808363,
   discussionAvatar: 3184762071,
   DisplayNameQuery: 2131159056,
-  DistrictActivationByGradeLevelContainerUsingNewService: 1304433136,
+  DistrictActivationByGradeLevelContainerUsingNewService: 1216659376,
   DistrictActivationBySchoolContainerUsingNewService: 196245641,
-  DistrictActivationByTeacherContainer: 1816762172,
+  DistrictActivationByTeacherContainer: 2599515257,
   DistrictGradeLevelsQuery: 650176803,
   districtHomepage: 2523966179,
   districtHomepageProgress: 1681650575,
@@ -727,4 +727,5 @@ hashes = {
   SkillsToProficient_OverallProficiency: 2114668432,
   ActiveAssignmentsAndGoalsQuery: 3443580987,
   localesForTeacherToolsBanner: 3566806382,
+  DistrictActivationBySchoolContainer: 1503527854,
 }

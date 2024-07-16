@@ -1,10 +1,9 @@
-query DistrictActivationByGradeLevelContainerUsingNewService($districtId: ID!, $schoolIds: [ID!]) {
-  activationReportByGradeLevel(districtId: $districtId, schoolIds: $schoolIds) {
+query DistrictActivationBySchoolContainer($districtId: ID!, $schoolIds: [ID!]) {
+  activationReportBySchool(districtId: $districtId, schoolIds: $schoolIds) {
     rows {
-      gradeLevel {
+      school {
         id
         name
-        sortIndex
         __typename
       }
       numStudentsTotal

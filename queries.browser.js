@@ -3396,6 +3396,7 @@ fragment CourseProgress on SubjectProgress {
       numStudentsActivated
       numTeachersTotal
       numTeachersActivated
+      numStudentsStartedAnActivity
       __typename
     }
     updatedAt
@@ -3404,6 +3405,7 @@ fragment CourseProgress on SubjectProgress {
       numStudentsActivated
       numTeachersTotal
       numTeachersActivated
+      numStudentsStartedAnActivity
       __typename
     }
     __typename
@@ -3448,6 +3450,7 @@ fragment CourseProgress on SubjectProgress {
       numStudentsTotal
       numStudentsActivated
       isActivated
+      numStudentsStartedAnActivity
       __typename
     }
     totalCount
@@ -20304,6 +20307,33 @@ fragment ExerciseContentFields on LearnableContent {
     id
     localName
     kaLocale
+    __typename
+  }
+}`,
+  DistrictActivationBySchoolContainer: `query DistrictActivationBySchoolContainer($districtId: ID!, $schoolIds: [ID!]) {
+  activationReportBySchool(districtId: $districtId, schoolIds: $schoolIds) {
+    rows {
+      school {
+        id
+        name
+        __typename
+      }
+      numStudentsTotal
+      numStudentsActivated
+      numTeachersTotal
+      numTeachersActivated
+      numStudentsStartedAnActivity
+      __typename
+    }
+    updatedAt
+    totalRow {
+      numStudentsTotal
+      numStudentsActivated
+      numTeachersTotal
+      numTeachersActivated
+      numStudentsStartedAnActivity
+      __typename
+    }
     __typename
   }
 }`,
