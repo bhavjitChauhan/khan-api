@@ -728,4 +728,5 @@ export default {
   ActiveAssignmentsAndGoalsQuery: 3443580987,
   localesForTeacherToolsBanner: 3566806382,
   DistrictActivationBySchoolContainer: 1503527854,
+  SkillsToProficient_RecentCourses: 2833063482,
 }

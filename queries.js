@@ -20377,4 +20377,29 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  SkillsToProficient_RecentCourses: `query SkillsToProficient_RecentCourses($pageSize: Int!) {
+  user {
+    id
+    recentCourses(pageSize: $pageSize) {
+      results {
+        content {
+          id
+          relativeUrl
+          translatedTitle
+          ... on Course {
+            masterableExercises(includeDuplicates: true) {
+              id
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
