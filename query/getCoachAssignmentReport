@@ -72,6 +72,20 @@ query getCoachAssignmentReport($assignmentId: String!, $teacherKaid: String!) {
             revisingSeconds
             __typename
           }
+          originalityFlags {
+            isCritical
+            ... on UserEssayOriginalityFlagPasteIntoOutline {
+              location
+              wordCount
+              __typename
+            }
+            ... on UserEssayOriginalityFlagPasteIntoText {
+              stage
+              wordCount
+              __typename
+            }
+            __typename
+          }
           __typename
         }
         __typename

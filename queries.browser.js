@@ -19819,18 +19819,22 @@ fragment UserFields on User {
     __typename
   }
 }`,
-  devadminEssayOriginalityFlags: `query devadminEssayOriginalityFlags($essaySessionId: ID!) {
-  userEssayOriginalityFlags(essaySessionID: $essaySessionId) {
-    ... on UserEssayOriginalityFlagPasteIntoOutline {
-      timestamp
-      location
-      wordCount
-      __typename
-    }
-    ... on UserEssayOriginalityFlagPasteIntoText {
-      timestamp
-      stage
-      wordCount
+  devadminEssayOriginalityFlags: `query devadminEssayOriginalityFlags($essaySessionId: String!) {
+  essaySession(essaySessionID: $essaySessionId) {
+    id
+    originalityFlags {
+      ... on UserEssayOriginalityFlagPasteIntoOutline {
+        timestamp
+        location
+        wordCount
+        __typename
+      }
+      ... on UserEssayOriginalityFlagPasteIntoText {
+        timestamp
+        stage
+        wordCount
+        __typename
+      }
       __typename
     }
     __typename
@@ -20104,7 +20108,30 @@ fragment UserFields on User {
   essaySessionHistory: `query essaySessionHistory($essaySessionID: String!, $pageSize: Int!, $cursor: String) {
   essaySession(essaySessionID: $essaySessionID) {
     id
+    outliningThreadID
+    draftingThreadID
+    draft {
+      id
+      feedbackList {
+        id
+        dimension
+        feedbackID
+        feedbackText
+        _USE_feedbackID_INSTEAD_: id
+        isPositive
+        isResolved
+        relevantParagraphId
+        relevantQuotedText
+        thread {
+          id
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
     history(pageSize: $pageSize, cursor: $cursor) {
+      cursor
       snapshots {
         details {
           firstIncludedVersion
@@ -20120,7 +20147,6 @@ fragment UserFields on User {
         }
         __typename
       }
-      cursor
       __typename
     }
     __typename
@@ -20198,6 +20224,20 @@ fragment UserFields on User {
             outliningSeconds
             draftingSeconds
             revisingSeconds
+            __typename
+          }
+          originalityFlags {
+            isCritical
+            ... on UserEssayOriginalityFlagPasteIntoOutline {
+              location
+              wordCount
+              __typename
+            }
+            ... on UserEssayOriginalityFlagPasteIntoText {
+              stage
+              wordCount
+              __typename
+            }
             __typename
           }
           __typename
