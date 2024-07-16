@@ -1,15 +1,19 @@
-query devadminEssayOriginalityFlags($essaySessionId: ID!) {
-  userEssayOriginalityFlags(essaySessionID: $essaySessionId) {
-    ... on UserEssayOriginalityFlagPasteIntoOutline {
-      timestamp
-      location
-      wordCount
-      __typename
-    }
-    ... on UserEssayOriginalityFlagPasteIntoText {
-      timestamp
-      stage
-      wordCount
+query devadminEssayOriginalityFlags($essaySessionId: String!) {
+  essaySession(essaySessionID: $essaySessionId) {
+    id
+    originalityFlags {
+      ... on UserEssayOriginalityFlagPasteIntoOutline {
+        timestamp
+        location
+        wordCount
+        __typename
+      }
+      ... on UserEssayOriginalityFlagPasteIntoText {
+        timestamp
+        stage
+        wordCount
+        __typename
+      }
       __typename
     }
     __typename

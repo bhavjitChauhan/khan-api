@@ -1,7 +1,30 @@
 query essaySessionHistory($essaySessionID: String!, $pageSize: Int!, $cursor: String) {
   essaySession(essaySessionID: $essaySessionID) {
     id
+    outliningThreadID
+    draftingThreadID
+    draft {
+      id
+      feedbackList {
+        id
+        dimension
+        feedbackID
+        feedbackText
+        _USE_feedbackID_INSTEAD_: id
+        isPositive
+        isResolved
+        relevantParagraphId
+        relevantQuotedText
+        thread {
+          id
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
     history(pageSize: $pageSize, cursor: $cursor) {
+      cursor
       snapshots {
         details {
           firstIncludedVersion
@@ -17,7 +40,6 @@ query essaySessionHistory($essaySessionID: String!, $pageSize: Int!, $cursor: St
         }
         __typename
       }
-      cursor
       __typename
     }
     __typename
