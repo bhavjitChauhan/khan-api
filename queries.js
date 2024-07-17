@@ -15196,6 +15196,7 @@ fragment AssignmentData on Assignment {
       }
       deletedAt
       primaryRole
+      rosterSource
       __typename
     }
     __typename

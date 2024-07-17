@@ -10,6 +10,7 @@ query UserDowngradedQuery {
       }
       deletedAt
       primaryRole
+      rosterSource
       __typename
     }
     __typename

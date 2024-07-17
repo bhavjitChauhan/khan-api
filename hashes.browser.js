@@ -501,7 +501,7 @@ hashes = {
   userDistrictInfoByEmailAndClassCode: 1552829798,
   UserDistrictInfosQuery: 4104675755,
   UserDistrictStudentsQuery: 3714038324,
-  UserDowngradedQuery: 1543537955,
+  UserDowngradedQuery: 3196139705,
   UserEmailsQuery: 1523758591,
   userForConversationNotice: 765436338,
   UserHasDismissedQuery: 2823194798,
