@@ -8,7 +8,7 @@ query StudentSkillsProgressKADQuery($studentKaid: String!, $progressFrom: DateTi
   ) {
     exercise {
       id
-      title
+      title: translatedTitle
       mappedStandards {
         id
         setId
@@ -25,7 +25,7 @@ query StudentSkillsProgressKADQuery($studentKaid: String!, $progressFrom: DateTi
   }
   courseById(id: $courseID) {
     id
-    title
+    title: translatedTitle
     unitChildren {
       unitID: id
       unitTitle: translatedTitle
