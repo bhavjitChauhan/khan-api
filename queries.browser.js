@@ -20403,4 +20403,25 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  AssessmentStatus: `query AssessmentStatus($slug: String!) {
+  user {
+    id
+    assessmentData {
+      assessmentStatus(assessmentSlug: $slug) {
+        status
+        assessmentID
+        task {
+          id
+          expirationTime
+          questionsCompleted
+          estimatedQuestionsRemaining
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
