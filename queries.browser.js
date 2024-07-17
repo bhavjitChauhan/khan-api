@@ -3748,7 +3748,7 @@ fragment CourseProgress on SubjectProgress {
     rows {
       exercise {
         id
-        title
+        title: translatedTitle
         mappedStandards(region: $region) {
           id
           setId
@@ -3768,7 +3768,7 @@ fragment CourseProgress on SubjectProgress {
   }
   courseById(id: $courseID) {
     id
-    title
+    title: translatedTitle
     unitChildren {
       unitID: id
       unitTitle: translatedTitle
@@ -13672,7 +13672,7 @@ fragment TranslatedContentFields on LearnableContent {
   ) {
     exercise {
       id
-      title
+      title: translatedTitle
       mappedStandards {
         id
         setId
@@ -13689,7 +13689,7 @@ fragment TranslatedContentFields on LearnableContent {
   }
   courseById(id: $courseID) {
     id
-    title
+    title: translatedTitle
     unitChildren {
       unitID: id
       unitTitle: translatedTitle
@@ -13717,7 +13717,7 @@ fragment TranslatedContentFields on LearnableContent {
   ) {
     exercise {
       id
-      title
+      title: translatedTitle
       mappedStandards {
         id
         setId
@@ -13734,7 +13734,7 @@ fragment TranslatedContentFields on LearnableContent {
   }
   kmapTopics {
     id
-    title
+    title: translatedTitle
     band
     bandGradeName
     bandKey
