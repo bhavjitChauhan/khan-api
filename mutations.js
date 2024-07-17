@@ -12221,4 +12221,29 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  getOrCreateAssessmentTask: `mutation getOrCreateAssessmentTask($assessmentId: String!) {
+  getOrCreateAssessmentTask(input: {assessmentId: $assessmentId}) {
+    result {
+      task {
+        id
+        expirationTime
+        questionsCompleted
+        estimatedQuestionsRemaining
+        currentStep {
+          stepNumber
+          assessmentItem {
+            id
+            exerciseId
+            itemData
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
