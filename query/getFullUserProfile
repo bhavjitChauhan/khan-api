@@ -78,7 +78,7 @@ query getFullUserProfile($kaid: String, $username: String) {
       __typename
     }
     hasAccessToAIGuideCompanionMode
-    hasAccessToAIGuideLearnerActivities
+    hasAccessToAIGuideLearner
     hasAccessToAIGuideTeacher
     hasAccessToAIGuideDistrictAdmin
     hasAccessToAIGuideParentTools
