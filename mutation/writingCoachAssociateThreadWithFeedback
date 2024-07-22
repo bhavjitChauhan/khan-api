@@ -1,0 +1,14 @@
+mutation writingCoachAssociateThreadWithFeedback($essaySessionID: String!, $feedbackID: String!, $threadID: String!) {
+  associateThreadWithFeedback(
+    essaySessionID: $essaySessionID
+    feedbackID: $feedbackID
+    threadID: $threadID
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
