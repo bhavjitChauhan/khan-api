@@ -6766,8 +6766,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     hasAccessToAIGuideLearner
     hasAccessToAIGuideTeacher
     hasAccessToAIGuideDistrictAdmin
-    hasAccessToAIGuideParentTools
-    hasAccessToAIGuideParentPersona
+    hasAccessToAIGuideParent
     hasAccessToAIGuideTeacherTools
     tosAccepted
     shouldShowAgeCheck
