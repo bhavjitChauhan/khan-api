@@ -12246,4 +12246,37 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
+  writingCoachAssociateThreadWithFeedback: `mutation writingCoachAssociateThreadWithFeedback($essaySessionID: String!, $feedbackID: String!, $threadID: String!) {
+  associateThreadWithFeedback(
+    essaySessionID: $essaySessionID
+    feedbackID: $feedbackID
+    threadID: $threadID
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  writingCoachSaveLatestEssaySession: `mutation writingCoachSaveLatestEssaySession($essaySessionID: String!, $essayInstructions: String!, $studentGradeLevel: Int!, $essayText: String!, $essayTitle: String!, $essayVersion: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!) {
+  saveLatestEssayText(
+    essaySessionID: $essaySessionID
+    essayInstructions: $essayInstructions
+    studentGradeLevel: $studentGradeLevel
+    essayText: $essayText
+    essayTitle: $essayTitle
+    essayVersion: $essayVersion
+    paragraphIDToParagraphNumbers: $paragraphIDToParagraphNumbers
+    stage: REVISING
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
