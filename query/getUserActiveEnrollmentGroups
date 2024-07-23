@@ -1,0 +1,7 @@
+query getUserActiveEnrollmentGroups($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    aiGuideActiveEnrollmentGroups
+    __typename
+  }
+}
