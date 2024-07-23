@@ -730,4 +730,5 @@ hashes = {
   DistrictActivationBySchoolContainer: 1503527854,
   SkillsToProficient_RecentCourses: 2833063482,
   AssessmentStatus: 3269366830,
+  getUserActiveEnrollmentGroups: 1138579498,
 }
