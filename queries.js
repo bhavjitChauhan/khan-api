@@ -19609,10 +19609,11 @@ fragment UserFields on User {
     __typename
   }
 }`,
-  devadminEssayHistory: `query devadminEssayHistory($essaySessionId: String!, $pageSize: Int!, $cursor: String) {
+  devadminEssayHistory: `query devadminEssayHistory($essaySessionId: String!, $pageSize: Int!, $offset: Int!) {
   essaySession(essaySessionID: $essaySessionId) {
     id
-    history(pageSize: $pageSize, cursor: $cursor) {
+    history(pageSize: $pageSize, offset: $offset) {
+      hasMore
       snapshots {
         snapshotIndex
         details {
@@ -19647,7 +19648,6 @@ fragment UserFields on User {
         }
         __typename
       }
-      cursor
       __typename
     }
     __typename
@@ -20107,7 +20107,7 @@ fragment UserFields on User {
     __typename
   }
 }`,
-  essaySessionHistory: `query essaySessionHistory($essaySessionID: String!, $pageSize: Int!, $cursor: String) {
+  essaySessionHistory: `query essaySessionHistory($essaySessionID: String!, $pageSize: Int!, $offset: Int!) {
   essaySession(essaySessionID: $essaySessionID) {
     id
     outliningThreadID
@@ -20132,9 +20132,10 @@ fragment UserFields on User {
       }
       __typename
     }
-    history(pageSize: $pageSize, cursor: $cursor) {
-      cursor
+    history(pageSize: $pageSize, offset: $offset) {
+      hasMore
       snapshots {
+        snapshotIndex
         details {
           firstIncludedVersion
           firstIncludedEditTimestamp
@@ -20145,6 +20146,11 @@ fragment UserFields on User {
         }
         ... on UserEssayTextSnapshot {
           stage
+          learningTimeSeconds
+          __typename
+        }
+        ... on UserEssayOutlineSnapshot {
+          learningTimeSeconds
           __typename
         }
         __typename
