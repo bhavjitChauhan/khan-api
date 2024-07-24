@@ -20454,4 +20454,92 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  ClassroomDistrictInfoByRosterIdQuery: `query ClassroomDistrictInfoByRosterIdQuery($rosterID: ID!) {
+  classroomDistrictInfoByRosterId(rosterId: $rosterID) {
+    id
+    keyNameID
+    name
+    studentsHaveAccessToKhanmigo
+    district {
+      id
+      name
+      __typename
+    }
+    rosterSource
+    districtProvidedIdentifier
+    createdAt
+    updatedAt
+    emailDomains
+    isNweaMapSynced
+    schoolKey
+    school {
+      id
+      __typename
+    }
+    classroom {
+      id
+      cacheId
+      __typename
+    }
+    classRemovalDate
+    classWillBeRemovedInDays
+    courseSISNumber
+    courseSISName
+    sectionSIS
+    sisSubjct
+    cdiAuditLogs {
+      createdAt
+      kind
+      description
+      __typename
+    }
+    studentsHaveAccessToKhanmigo
+    isManuallyUnmarked
+    __typename
+  }
+}`,
+  classroomDistrictInfoByKeyNameIdQuery: `query classroomDistrictInfoByKeyNameIdQuery($keyNameID: ID!) {
+  classroomDistrictInfoByKeyNameID(keyNameID: $keyNameID) {
+    id
+    keyNameID
+    name
+    studentsHaveAccessToKhanmigo
+    district {
+      id
+      name
+      __typename
+    }
+    rosterSource
+    districtProvidedIdentifier
+    createdAt
+    updatedAt
+    emailDomains
+    isNweaMapSynced
+    schoolKey
+    school {
+      id
+      __typename
+    }
+    classroom {
+      id
+      cacheId
+      __typename
+    }
+    classRemovalDate
+    classWillBeRemovedInDays
+    courseSISNumber
+    courseSISName
+    sectionSIS
+    sisSubjct
+    cdiAuditLogs {
+      createdAt
+      kind
+      description
+      __typename
+    }
+    studentsHaveAccessToKhanmigo
+    isManuallyUnmarked
+    __typename
+  }
+}`,
 }
