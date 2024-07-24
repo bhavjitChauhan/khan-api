@@ -112,7 +112,7 @@ query getClassList {
       __typename
     }
     hasPartnershipSchoolAffiliation
-    hasAccessToAIGuideTeacherTools
+    hasAccessToAIGuideTeacher
     affiliationCountryCode
     isAIGuideEnabled
     isKmapTeacher
