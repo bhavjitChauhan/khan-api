@@ -19458,6 +19458,9 @@ fragment UserFields on User {
   districtDashboardActivation: `query districtDashboardActivation($filters: DistrictDashboardFilters!) {
   districtDashboardActivation(filters: $filters) {
     numRosteredStudents
+    numRosteredTeachers
+    numTeachersWithAnAccount
+    percentTeachersWithAnAccount
     numWithAnAccount
     percentWithAnAccount
     numStartedAnActivity
