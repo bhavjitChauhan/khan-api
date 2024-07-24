@@ -690,7 +690,7 @@ export default {
   districtAdminName: 937404703,
   perseusTemplateCompletionQuery: 2856668303,
   districtDashboardLearningMinutes: 3958197028,
-  districtDashboardActivation: 90100696,
+  districtDashboardActivation: 1719754234,
   districtDashboardSkillsLeveledUp: 1383756852,
   districtById: 728152285,
   devadminEssayHistory: 3041628018,
