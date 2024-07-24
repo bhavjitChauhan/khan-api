@@ -731,4 +731,5 @@ export default {
   SkillsToProficient_RecentCourses: 2833063482,
   AssessmentStatus: 3269366830,
   getUserActiveEnrollmentGroups: 1138579498,
+  SkillsToProficient_ClassRecommendations: 1091891880,
 }
