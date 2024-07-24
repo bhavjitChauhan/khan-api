@@ -732,4 +732,6 @@ hashes = {
   AssessmentStatus: 3269366830,
   getUserActiveEnrollmentGroups: 1138579498,
   SkillsToProficient_ClassRecommendations: 1091891880,
+  ClassroomDistrictInfoByRosterIdQuery: 3453419485,
+  classroomDistrictInfoByKeyNameIdQuery: 2235295680,
 }
