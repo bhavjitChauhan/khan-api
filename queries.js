@@ -5168,7 +5168,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
       __typename
     }
     hasPartnershipSchoolAffiliation
-    hasAccessToAIGuideTeacherTools
+    hasAccessToAIGuideTeacher
     affiliationCountryCode
     isAIGuideEnabled
     isKmapTeacher
@@ -6766,7 +6766,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     hasAccessToAIGuideLearner
     hasAccessToAIGuideDistrictAdmin
     hasAccessToAIGuideParent
-    hasAccessToAIGuideTeacherTools
+    hasAccessToAIGuideTeacher
     tosAccepted
     shouldShowAgeCheck
     birthMonthYear
@@ -20046,7 +20046,7 @@ fragment UserFields on User {
   getTeacherReferralEligibilityData: `query getTeacherReferralEligibilityData {
   user {
     id
-    hasAccessToAIGuideTeacherTools
+    hasAccessToAIGuideTeacher
     isAIGuideEnabled
     __typename
   }
