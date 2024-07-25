@@ -12325,4 +12325,21 @@ fragment TaskFragment on AssessmentTask {
   }
   __typename
 }`,
+  createUserCertificate: `mutation createUserCertificate($courseID: String!) {
+  createUserCertificate(courseID: $courseID) {
+    userCertificate {
+      id
+      kaid
+      courseID
+      createdAt
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }

@@ -734,4 +734,5 @@ hashes = {
   SkillsToProficient_ClassRecommendations: 1091891880,
   ClassroomDistrictInfoByRosterIdQuery: 3453419485,
   classroomDistrictInfoByKeyNameIdQuery: 2235295680,
+  userCertificate: 4276373627,
 }
