@@ -2244,4 +2244,23 @@ query ActivitiesList {
     __typename
   }
 }`,
+  TaskFragment: `fragment TaskFragment on AssessmentTask {
+  id
+  expirationTime
+  questionsCompleted
+  estimatedQuestionsRemaining
+  currentStep {
+    stepNumber
+    stepId
+    type
+    assessmentItem {
+      id
+      exerciseId
+      itemData
+      __typename
+    }
+    __typename
+  }
+  __typename
+}`,
 }
