@@ -19040,9 +19040,11 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
         id
         __typename
       }
+      activatedAt
       canSeeAllSchools
       canManageAdmins
       isKmap
+      isSuperAdmin
       __typename
     }
     __typename
