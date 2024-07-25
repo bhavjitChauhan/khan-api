@@ -1,10 +1,17 @@
-mutation getOrCreateAssessmentTask($assessmentId: String!) {
-  getOrCreateAssessmentTask(input: {assessmentId: $assessmentId}) {
+mutation CompleteStandardQuestion($assessmentId: String!, $stepId: String!, $correct: Boolean!, $response: String!) {
+  completeStandardQuestion(
+    input: {assessmentId: $assessmentId, stepId: $stepId, correct: $correct, response: $response}
+  ) {
     result {
       task {
         ...TaskFragment
         __typename
       }
+      __typename
+    }
+    error {
+      code
+      debugMessage
       __typename
     }
     __typename

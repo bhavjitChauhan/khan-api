@@ -12225,26 +12225,33 @@ fragment ProjectRevision on ProjectRevision {
   getOrCreateAssessmentTask(input: {assessmentId: $assessmentId}) {
     result {
       task {
-        id
-        expirationTime
-        questionsCompleted
-        estimatedQuestionsRemaining
-        currentStep {
-          stepNumber
-          assessmentItem {
-            id
-            exerciseId
-            itemData
-            __typename
-          }
-          __typename
-        }
+        ...TaskFragment
         __typename
       }
       __typename
     }
     __typename
   }
+}
+
+fragment TaskFragment on AssessmentTask {
+  id
+  expirationTime
+  questionsCompleted
+  estimatedQuestionsRemaining
+  currentStep {
+    stepNumber
+    stepId
+    type
+    assessmentItem {
+      id
+      exerciseId
+      itemData
+      __typename
+    }
+    __typename
+  }
+  __typename
 }`,
   writingCoachAssociateThreadWithFeedback: `mutation writingCoachAssociateThreadWithFeedback($essaySessionID: String!, $feedbackID: String!, $threadID: String!) {
   associateThreadWithFeedback(
@@ -12278,5 +12285,44 @@ fragment ProjectRevision on ProjectRevision {
     }
     __typename
   }
+}`,
+  CompleteStandardQuestion: `mutation CompleteStandardQuestion($assessmentId: String!, $stepId: String!, $correct: Boolean!, $response: String!) {
+  completeStandardQuestion(
+    input: {assessmentId: $assessmentId, stepId: $stepId, correct: $correct, response: $response}
+  ) {
+    result {
+      task {
+        ...TaskFragment
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment TaskFragment on AssessmentTask {
+  id
+  expirationTime
+  questionsCompleted
+  estimatedQuestionsRemaining
+  currentStep {
+    stepNumber
+    stepId
+    type
+    assessmentItem {
+      id
+      exerciseId
+      itemData
+      __typename
+    }
+    __typename
+  }
+  __typename
 }`,
 }

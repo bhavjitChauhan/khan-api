@@ -1,16 +1,3 @@
-mutation getOrCreateAssessmentTask($assessmentId: String!) {
-  getOrCreateAssessmentTask(input: {assessmentId: $assessmentId}) {
-    result {
-      task {
-        ...TaskFragment
-        __typename
-      }
-      __typename
-    }
-    __typename
-  }
-}
-
 fragment TaskFragment on AssessmentTask {
   id
   expirationTime
