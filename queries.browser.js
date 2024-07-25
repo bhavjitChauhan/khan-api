@@ -20544,4 +20544,13 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  userCertificate: `query userCertificate($courseID: String!) {
+  userCertificate(courseID: $courseID) {
+    id
+    kaid
+    courseID
+    createdAt
+    __typename
+  }
+}`,
 }
