@@ -646,7 +646,7 @@ hashes = {
   GuidePreferences: 1214899081,
   ExerciseEditorPermissionQuery: 2837649085,
   TranslationEditor_CanPublish: 4148747959,
-  allEssaySessions: 1854013381,
+  allEssaySessions: 781028456,
   essaySession: 3845407520,
   districtKhanmigoTotalUsage: 3235917008,
   districtKhanmigoUsageByClass: 1108730643,

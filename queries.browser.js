@@ -18544,7 +18544,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
-  allEssaySessions: `query allEssaySessions {
+  allEssaySessions: `query allEssaySessions($contentDescriptor: String!) {
   allEssaySessions {
     id
     essayTitle
@@ -18552,6 +18552,16 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     currentStage
     assignmentId: assignmentID
     completed
+    __typename
+  }
+  user {
+    id
+    assignmentsForContent(contentDescriptor: $contentDescriptor) {
+      id
+      title
+      dueDate
+      __typename
+    }
     __typename
   }
 }`,
