@@ -20404,6 +20404,8 @@ fragment ExerciseContentFields on LearnableContent {
       results {
         content {
           id
+          isListedForLearners
+          masteryEnabled
           relativeUrl
           translatedTitle
           ... on Course {
