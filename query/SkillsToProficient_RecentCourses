@@ -5,6 +5,8 @@ query SkillsToProficient_RecentCourses($pageSize: Int!) {
       results {
         content {
           id
+          isListedForLearners
+          masteryEnabled
           relativeUrl
           translatedTitle
           ... on Course {
