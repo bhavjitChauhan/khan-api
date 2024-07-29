@@ -735,4 +735,5 @@ export default {
   ClassroomDistrictInfoByRosterIdQuery: 3453419485,
   classroomDistrictInfoByKeyNameIdQuery: 2235295680,
   userCertificate: 4276373627,
+  getTeacherAccessGroups: 1477817385,
 }

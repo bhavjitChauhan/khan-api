@@ -20563,4 +20563,13 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  getTeacherAccessGroups: `query getTeacherAccessGroups {
+  user {
+    id
+    hasAccessToAIGuideTeacher
+    hasAccessToAIGuidePremiumTeacher
+    hasAccessToAIGuideDistrictClassroomTeacher
+    __typename
+  }
+}`,
 }
