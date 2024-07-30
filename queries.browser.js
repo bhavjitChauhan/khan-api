@@ -19165,6 +19165,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
 }`,
   writingCoachEssaySession: `query writingCoachEssaySession($id: String!) {
   essaySession(essaySessionID: $id) {
+    assignmentID
     draft {
       feedbackList {
         dimension
