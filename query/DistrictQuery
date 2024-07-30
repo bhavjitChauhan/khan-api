@@ -31,6 +31,16 @@ query DistrictQuery($districtID: ID!) {
     }
     countryCode
     levelHeight
+    goal {
+      type
+      createdBy {
+        id
+        kaid
+        __typename
+      }
+      __typename
+    }
+    schoolYearStart
     __typename
   }
 }

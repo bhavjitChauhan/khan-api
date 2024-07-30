@@ -3635,6 +3635,16 @@ fragment CourseProgress on SubjectProgress {
     }
     countryCode
     levelHeight
+    goal {
+      type
+      createdBy {
+        id
+        kaid
+        __typename
+      }
+      __typename
+    }
+    schoolYearStart
     __typename
   }
 }`,
