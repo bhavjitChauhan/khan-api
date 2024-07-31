@@ -20585,4 +20585,11 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  getFavoritedTeacherTools: `query getFavoritedTeacherTools {
+  aiGuideFavoritedTeacherTools {
+    id
+    configName
+    __typename
+  }
+}`,
 }
