@@ -1,0 +1,7 @@
+query getFavoritedTeacherTools {
+  aiGuideFavoritedTeacherTools {
+    id
+    configName
+    __typename
+  }
+}

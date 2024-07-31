@@ -12342,4 +12342,34 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
+  addFavoritedTeacherTool: `mutation addFavoritedTeacherTool($toolID: ID!, $configName: String!) {
+  aiGuideAddFavoritedTeacherTool(toolID: $toolID, configName: $configName) {
+    favoritedTool {
+      id
+      configName
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  deleteFavoritedTeacherTool: `mutation deleteFavoritedTeacherTool($toolID: ID!, $configName: String!) {
+  aiGuideDeleteFavoritedTeacherTool(toolID: $toolID, configName: $configName) {
+    favoritedTool {
+      id
+      configName
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
