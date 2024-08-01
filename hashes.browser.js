@@ -737,4 +737,5 @@ hashes = {
   userCertificate: 4276373627,
   getTeacherAccessGroups: 1477817385,
   getFavoritedTeacherTools: 4135212436,
+  exerciseEditorConflictQuery: 3049270126,
 }
