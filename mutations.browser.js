@@ -11745,7 +11745,7 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
-  writingCoachCreateEssaySession: `mutation writingCoachCreateEssaySession($assignmentTitle: String!, $essayText: String!, $essayType: EssayType!, $essayVersion: Int!, $essayInstructions: String!, $minimumWordCount: Int, $studentGradeLevel: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!) {
+  writingCoachCreateEssaySession: `mutation writingCoachCreateEssaySession($assignmentTitle: String!, $essayText: String!, $essayType: EssayType!, $essayVersion: Int!, $essayInstructions: String!, $minimumWordCount: Int, $studentGradeLevel: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!, $sampleEssayName: String) {
   createEssaySession(
     essayInstructions: $essayInstructions
     essayText: $essayText
@@ -11755,6 +11755,7 @@ fragment ProjectRevision on ProjectRevision {
     minimumWordCount: $minimumWordCount
     studentGradeLevel: $studentGradeLevel
     paragraphIDToParagraphNumbers: $paragraphIDToParagraphNumbers
+    sampleEssayName: $sampleEssayName
   ) {
     essaySessionID
     error {
@@ -11964,6 +11965,7 @@ fragment ProjectRevision on ProjectRevision {
       currentStage
       assignmentId: assignmentID
       completed
+      sampleEssayName
       __typename
     }
     error {

@@ -18562,6 +18562,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     currentStage
     assignmentId: assignmentID
     completed
+    sampleEssayName
     __typename
   }
   user {
@@ -19223,6 +19224,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       __typename
     }
     studentGradeLevel
+    sampleEssayName
     __typename
   }
 }`,
@@ -20262,11 +20264,13 @@ fragment UserFields on User {
             ... on UserEssayOriginalityFlagPasteIntoOutline {
               location
               wordCount
+              outlineVersionBeforePaste
               __typename
             }
             ... on UserEssayOriginalityFlagPasteIntoText {
               stage
               wordCount
+              essayVersionBeforePaste
               __typename
             }
             __typename
@@ -20600,6 +20604,43 @@ fragment ExerciseContentFields on LearnableContent {
     createdBy {
       id
       nickname
+      __typename
+    }
+    __typename
+  }
+}`,
+  assignmentForWritingCoach: `query assignmentForWritingCoach($assignmentID: String!) {
+  user {
+    id
+    assignment(id: $assignmentID) {
+      id
+      dueDate
+      classroom {
+        cacheId
+        id
+        name
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  snapshotForOutlinePasteEvent: `query snapshotForOutlinePasteEvent($essaySessionID: String!, $version: Int!) {
+  essaySession(essaySessionID: $essaySessionID) {
+    id
+    snapshot: snapshotForOutlinePasteEvent(outlineVersionBeforePaste: $version) {
+      snapshotIndex
+      __typename
+    }
+    __typename
+  }
+}`,
+  snapshotForTextPasteEvent: `query snapshotForTextPasteEvent($essaySessionID: String!, $version: Int!) {
+  essaySession(essaySessionID: $essaySessionID) {
+    id
+    snapshot: snapshotForTextPasteEvent(essayVersionBeforePaste: $version) {
+      snapshotIndex
       __typename
     }
     __typename

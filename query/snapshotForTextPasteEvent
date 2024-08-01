@@ -1,0 +1,10 @@
+query snapshotForTextPasteEvent($essaySessionID: String!, $version: Int!) {
+  essaySession(essaySessionID: $essaySessionID) {
+    id
+    snapshot: snapshotForTextPasteEvent(essayVersionBeforePaste: $version) {
+      snapshotIndex
+      __typename
+    }
+    __typename
+  }
+}
