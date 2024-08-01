@@ -1,0 +1,17 @@
+query assignmentForWritingCoach($assignmentID: String!) {
+  user {
+    id
+    assignment(id: $assignmentID) {
+      id
+      dueDate
+      classroom {
+        cacheId
+        id
+        name
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

@@ -6,6 +6,7 @@ query allEssaySessions($contentDescriptor: String!) {
     currentStage
     assignmentId: assignmentID
     completed
+    sampleEssayName
     __typename
   }
   user {

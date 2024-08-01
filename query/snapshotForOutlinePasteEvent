@@ -1,0 +1,10 @@
+query snapshotForOutlinePasteEvent($essaySessionID: String!, $version: Int!) {
+  essaySession(essaySessionID: $essaySessionID) {
+    id
+    snapshot: snapshotForOutlinePasteEvent(outlineVersionBeforePaste: $version) {
+      snapshotIndex
+      __typename
+    }
+    __typename
+  }
+}

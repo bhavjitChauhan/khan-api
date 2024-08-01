@@ -48,6 +48,7 @@ query writingCoachEssaySession($id: String!) {
       __typename
     }
     studentGradeLevel
+    sampleEssayName
     __typename
   }
 }
