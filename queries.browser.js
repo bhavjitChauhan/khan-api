@@ -20592,4 +20592,17 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  exerciseEditorConflictQuery: `query exerciseEditorConflictQuery($contentId: String!) {
+  latestRevision: exerciseRevisionById(id: $contentId) {
+    id
+    sha
+    creationDate
+    createdBy {
+      id
+      nickname
+      __typename
+    }
+    __typename
+  }
+}`,
 }
