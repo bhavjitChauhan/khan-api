@@ -20646,4 +20646,21 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  assignmentInfoForWritingCoach: `query assignmentInfoForWritingCoach($assignmentID: String!) {
+  user {
+    id
+    assignment(id: $assignmentID) {
+      id
+      dueDate
+      classroom {
+        cacheId
+        id
+        name
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
