@@ -721,7 +721,7 @@ export default {
   previewLearnerParentAIGuideActivatedEmail: 961900096,
   interimAssessmentCheckQuery: 1693632382,
   StreakQuery: 3728201606,
-  essaySessionHistory: 1017918727,
+  essaySessionHistory: 399868281,
   getCoachAssignmentReport: 628665323,
   previewTeacherToolsActivatedEmail: 831584000,
   SkillsToProficient_OverallProficiency: 2114668432,
@@ -742,4 +742,5 @@ export default {
   snapshotForOutlinePasteEvent: 2196080540,
   snapshotForTextPasteEvent: 3213388641,
   assignmentInfoForWritingCoach: 3773850409,
+  essaySessionProgress: 3263986398,
 }

@@ -20135,55 +20135,38 @@ fragment UserFields on User {
   essaySessionHistory: `query essaySessionHistory($essaySessionID: String!, $pageSize: Int!, $offset: Int!) {
   essaySession(essaySessionID: $essaySessionID) {
     id
-    outliningThreadID
-    draftingThreadID
-    draft {
-      id
-      feedbackList {
-        id
-        dimension
-        feedbackID
-        feedbackText
-        _USE_feedbackID_INSTEAD_: id
-        isPositive
-        isResolved
-        relevantParagraphId
-        relevantQuotedText
-        thread {
-          id
-          __typename
-        }
-        __typename
-      }
-      __typename
-    }
     history(pageSize: $pageSize, offset: $offset) {
-      hasMore
-      snapshots {
-        snapshotIndex
-        details {
-          firstIncludedVersion
-          firstIncludedEditTimestamp
-          lastIncludedVersion
-          lastIncludedEditTimestamp
-          content
-          __typename
-        }
-        ... on UserEssayTextSnapshot {
-          stage
-          learningTimeSeconds
-          __typename
-        }
-        ... on UserEssayOutlineSnapshot {
-          learningTimeSeconds
-          __typename
-        }
-        __typename
-      }
+      ...EssayHistory
       __typename
     }
     __typename
   }
+}
+
+fragment EssayHistory on UserEssayHistoryPage {
+  hasMore
+  snapshots {
+    snapshotIndex
+    details {
+      firstIncludedVersion
+      firstIncludedEditTimestamp
+      lastIncludedVersion
+      lastIncludedEditTimestamp
+      content
+      __typename
+    }
+    ... on UserEssayTextSnapshot {
+      stage
+      learningTimeSeconds
+      __typename
+    }
+    ... on UserEssayOutlineSnapshot {
+      learningTimeSeconds
+      __typename
+    }
+    __typename
+  }
+  __typename
 }`,
   getCoachAssignmentReport: `query getCoachAssignmentReport($assignmentId: String!, $teacherKaid: String!) {
   coach: user {
@@ -20662,5 +20645,62 @@ fragment ExerciseContentFields on LearnableContent {
     }
     __typename
   }
+}`,
+  essaySessionProgress: `query essaySessionProgress($essaySessionID: String!, $pageSize: Int!, $offset: Int!) {
+  essaySession(essaySessionID: $essaySessionID) {
+    id
+    outliningThreadID
+    draftingThreadID
+    draft {
+      id
+      feedbackList {
+        dimension
+        feedbackID
+        feedbackText
+        _USE_feedbackID_INSTEAD_: id
+        isPositive
+        isResolved
+        relevantParagraphId
+        relevantQuotedText
+        thread {
+          id
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    history(pageSize: $pageSize, offset: $offset) {
+      ...EssayHistory
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment EssayHistory on UserEssayHistoryPage {
+  hasMore
+  snapshots {
+    snapshotIndex
+    details {
+      firstIncludedVersion
+      firstIncludedEditTimestamp
+      lastIncludedVersion
+      lastIncludedEditTimestamp
+      content
+      __typename
+    }
+    ... on UserEssayTextSnapshot {
+      stage
+      learningTimeSeconds
+      __typename
+    }
+    ... on UserEssayOutlineSnapshot {
+      learningTimeSeconds
+      __typename
+    }
+    __typename
+  }
+  __typename
 }`,
 }

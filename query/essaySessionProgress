@@ -1,6 +1,27 @@
-query essaySessionHistory($essaySessionID: String!, $pageSize: Int!, $offset: Int!) {
+query essaySessionProgress($essaySessionID: String!, $pageSize: Int!, $offset: Int!) {
   essaySession(essaySessionID: $essaySessionID) {
     id
+    outliningThreadID
+    draftingThreadID
+    draft {
+      id
+      feedbackList {
+        dimension
+        feedbackID
+        feedbackText
+        _USE_feedbackID_INSTEAD_: id
+        isPositive
+        isResolved
+        relevantParagraphId
+        relevantQuotedText
+        thread {
+          id
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
     history(pageSize: $pageSize, offset: $offset) {
       ...EssayHistory
       __typename

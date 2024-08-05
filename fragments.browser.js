@@ -2263,4 +2263,29 @@ query ActivitiesList {
   }
   __typename
 }`,
+  EssayHistory: `fragment EssayHistory on UserEssayHistoryPage {
+  hasMore
+  snapshots {
+    snapshotIndex
+    details {
+      firstIncludedVersion
+      firstIncludedEditTimestamp
+      lastIncludedVersion
+      lastIncludedEditTimestamp
+      content
+      __typename
+    }
+    ... on UserEssayTextSnapshot {
+      stage
+      learningTimeSeconds
+      __typename
+    }
+    ... on UserEssayOutlineSnapshot {
+      learningTimeSeconds
+      __typename
+    }
+    __typename
+  }
+  __typename
+}`,
 }
