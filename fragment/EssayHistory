@@ -1,14 +1,3 @@
-query essaySessionHistory($essaySessionID: String!, $pageSize: Int!, $offset: Int!) {
-  essaySession(essaySessionID: $essaySessionID) {
-    id
-    history(pageSize: $pageSize, offset: $offset) {
-      ...EssayHistory
-      __typename
-    }
-    __typename
-  }
-}
-
 fragment EssayHistory on UserEssayHistoryPage {
   hasMore
   snapshots {
