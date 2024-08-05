@@ -741,4 +741,5 @@ export default {
   assignmentForWritingCoach: 2605700775,
   snapshotForOutlinePasteEvent: 2196080540,
   snapshotForTextPasteEvent: 3213388641,
+  assignmentInfoForWritingCoach: 3773850409,
 }
