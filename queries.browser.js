@@ -3862,6 +3862,10 @@ fragment CourseProgress on SubjectProgress {
       numRemovedSchoolAdmins
       numInGracePeriodStudents
       numInGracePeriodTeachers
+      status
+      failureReason
+      failureStacktrace
+      stackdriverLogUrl
       __typename
     }
     __typename
