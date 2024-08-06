@@ -9188,7 +9188,14 @@ fragment Badge on Badge {
       }
       classroomDistrictInfo {
         id
+        name
         classWillBeRemovedInDays
+        cdiAuditLogs {
+          kind
+          description
+          createdAt
+          __typename
+        }
         __typename
       }
       createdOn

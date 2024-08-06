@@ -227,7 +227,14 @@ query getUserDevAdminGeneral($kaid: String!) {
       }
       classroomDistrictInfo {
         id
+        name
         classWillBeRemovedInDays
+        cdiAuditLogs {
+          kind
+          description
+          createdAt
+          __typename
+        }
         __typename
       }
       createdOn
