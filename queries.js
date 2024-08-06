@@ -20649,6 +20649,7 @@ fragment ExerciseContentFields on LearnableContent {
   essaySessionProgress: `query essaySessionProgress($essaySessionID: String!, $pageSize: Int!, $offset: Int!) {
   essaySession(essaySessionID: $essaySessionID) {
     id
+    assignmentID
     outliningThreadID
     draftingThreadID
     draft {
