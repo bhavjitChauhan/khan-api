@@ -20715,4 +20715,20 @@ fragment EssayHistory on UserEssayHistoryPage {
   }
   __typename
 }`,
+  SkillsToProficient_LearnerRecommendations: `query SkillsToProficient_LearnerRecommendations($courseId: String, $classroomDescriptor: String, $numRecs: Int) {
+  user {
+    id
+    recommendations(
+      queryParams: {courseId: $courseId, classroomDescriptor: $classroomDescriptor, numRecs: $numRecs}
+    ) {
+      content {
+        id
+        defaultUrlPath
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
