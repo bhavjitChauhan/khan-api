@@ -25,6 +25,10 @@ query DistrictWithRosterJobs($districtId: ID!, $numJobs: Int!) {
       numRemovedSchoolAdmins
       numInGracePeriodStudents
       numInGracePeriodTeachers
+      status
+      failureReason
+      failureStacktrace
+      stackdriverLogUrl
       __typename
     }
     __typename

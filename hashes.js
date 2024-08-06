@@ -118,7 +118,7 @@ export default {
   districtsMetrics: 2006961705,
   DistrictStudentsWithSkillProgressQuery: 1089319111,
   districtTeachers: 2889441388,
-  DistrictWithRosterJobs: 3728459964,
+  DistrictWithRosterJobs: 1057332220,
   domainRevision: 767439321,
   domainRevisionsTreeQuery: 2359108733,
   DownloadTeachersGuide: 4255571,
