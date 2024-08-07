@@ -20731,4 +20731,18 @@ fragment EssayHistory on UserEssayHistoryPage {
     __typename
   }
 }`,
+  getDistrictRosteredGrades: `query getDistrictRosteredGrades($districtID: ID!) {
+  grades: activationReportByGradeLevel(districtId: $districtID, schoolIds: []) {
+    rows {
+      gradeLevel {
+        id
+        name
+        sortIndex
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }

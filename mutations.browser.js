@@ -12374,4 +12374,13 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
+  addDistrictGoal: `mutation addDistrictGoal($districtID: String!, $input: DistrictGoalInput!) {
+  addDistrictGoal(districtID: $districtID, input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
