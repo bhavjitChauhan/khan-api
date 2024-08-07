@@ -707,7 +707,7 @@ export default {
   devadminEssayOriginalityFlags: 2840630236,
   legalDocBySlug: 723734805,
   teacherKhanmigoActivity: 490349419,
-  PerseusItemCompletionQuery: 2615196925,
+  PerseusItemCompletionQuery: 1828110140,
   khanLibraryCanEditInterimAssessments: 1327017425,
   configurableInputsForActivity: 1805369147,
   teacherKhanmigoTotalUsage: 617684036,

@@ -1,8 +1,9 @@
-query PerseusItemCompletionQuery($exerciseDetails: ExerciseDetailsInput!, $templateDetails: PerseusTemplateInput!, $numItems: Int!) {
+query PerseusItemCompletionQuery($exerciseDetails: ExerciseDetailsInput!, $templateDetails: PerseusTemplateInput!, $numItems: Int!, $additionalInstructions: String) {
   perseusItemCompletion(
     exerciseDetails: $exerciseDetails
     templateDetails: $templateDetails
     numItems: $numItems
+    additionalInstructions: $additionalInstructions
   ) {
     items
     error {
