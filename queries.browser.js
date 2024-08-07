@@ -19927,11 +19927,12 @@ fragment UserFields on User {
     __typename
   }
 }`,
-  PerseusItemCompletionQuery: `query PerseusItemCompletionQuery($exerciseDetails: ExerciseDetailsInput!, $templateDetails: PerseusTemplateInput!, $numItems: Int!) {
+  PerseusItemCompletionQuery: `query PerseusItemCompletionQuery($exerciseDetails: ExerciseDetailsInput!, $templateDetails: PerseusTemplateInput!, $numItems: Int!, $additionalInstructions: String) {
   perseusItemCompletion(
     exerciseDetails: $exerciseDetails
     templateDetails: $templateDetails
     numItems: $numItems
+    additionalInstructions: $additionalInstructions
   ) {
     items
     error {
