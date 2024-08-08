@@ -283,6 +283,7 @@ fragment AssignmentInfoFragment on Assignment {
   contents {
     id
     title
+    kind
     __typename
   }
   studentList {
@@ -3690,6 +3691,7 @@ fragment AssignmentInfoFragment on Assignment {
   contents {
     id
     title
+    kind
     __typename
   }
   studentList {
@@ -7793,6 +7795,7 @@ fragment AssignmentInfoFragment on Assignment {
   contents {
     id
     title
+    kind
     __typename
   }
   studentList {
@@ -9372,6 +9375,7 @@ fragment AssignmentInfoFragment on Assignment {
   contents {
     id
     title
+    kind
     __typename
   }
   studentList {

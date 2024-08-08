@@ -195,6 +195,7 @@ export default {
   contents {
     id
     title
+    kind
     __typename
   }
   studentList {
