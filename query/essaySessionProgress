@@ -1,9 +1,22 @@
 query essaySessionProgress($essaySessionID: String!, $pageSize: Int!, $offset: Int!) {
   essaySession(essaySessionID: $essaySessionID) {
     id
-    assignmentID
+    kaid
+    gettingStartedThread {
+      id
+      lastUpdatedAt
+      __typename
+    }
     outliningThreadID
     draftingThreadID
+    assignmentId: assignmentID
+    essayInstructions
+    essayTitle
+    essayType
+    minimumWordCount
+    studentGradeLevel
+    mostRecentEditedText
+    completed
     draft {
       id
       feedbackList {
@@ -25,6 +38,10 @@ query essaySessionProgress($essaySessionID: String!, $pageSize: Int!, $offset: I
     }
     history(pageSize: $pageSize, offset: $offset) {
       ...EssayHistory
+      __typename
+    }
+    learningTime {
+      understandingSeconds: promptReviewingSeconds
       __typename
     }
     __typename

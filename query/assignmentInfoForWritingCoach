@@ -1,5 +1,5 @@
-query assignmentInfoForWritingCoach($assignmentID: String!) {
-  user {
+query assignmentInfoForWritingCoach($kaid: String!, $assignmentID: String!) {
+  user(kaid: $kaid) {
     id
     assignment(id: $assignmentID) {
       id

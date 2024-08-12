@@ -19187,6 +19187,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
 }`,
   writingCoachEssaySession: `query writingCoachEssaySession($id: String!) {
   essaySession(essaySessionID: $id) {
+    kaid
     assignmentID
     draft {
       feedbackList {
@@ -20641,8 +20642,8 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
-  assignmentInfoForWritingCoach: `query assignmentInfoForWritingCoach($assignmentID: String!) {
-  user {
+  assignmentInfoForWritingCoach: `query assignmentInfoForWritingCoach($kaid: String!, $assignmentID: String!) {
+  user(kaid: $kaid) {
     id
     assignment(id: $assignmentID) {
       id
@@ -20661,9 +20662,22 @@ fragment ExerciseContentFields on LearnableContent {
   essaySessionProgress: `query essaySessionProgress($essaySessionID: String!, $pageSize: Int!, $offset: Int!) {
   essaySession(essaySessionID: $essaySessionID) {
     id
-    assignmentID
+    kaid
+    gettingStartedThread {
+      id
+      lastUpdatedAt
+      __typename
+    }
     outliningThreadID
     draftingThreadID
+    assignmentId: assignmentID
+    essayInstructions
+    essayTitle
+    essayType
+    minimumWordCount
+    studentGradeLevel
+    mostRecentEditedText
+    completed
     draft {
       id
       feedbackList {
@@ -20685,6 +20699,10 @@ fragment ExerciseContentFields on LearnableContent {
     }
     history(pageSize: $pageSize, offset: $offset) {
       ...EssayHistory
+      __typename
+    }
+    learningTime {
+      understandingSeconds: promptReviewingSeconds
       __typename
     }
     __typename
