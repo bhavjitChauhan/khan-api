@@ -20809,4 +20809,11 @@ fragment EssayHistory on UserEssayHistoryPage {
     __typename
   }
 }`,
+  getTeacherToolbarTools: `query getTeacherToolbarTools {
+  aiGuideTeacherTools(order: TEACHER_TOOLBAR) {
+    id
+    configName
+    __typename
+  }
+}`,
 }
