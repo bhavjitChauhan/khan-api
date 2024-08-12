@@ -747,4 +747,5 @@ hashes = {
   getDistrictRosteredGrades: 221239703,
   SchoolsByRosterId: 1835126992,
   getTeacherToolbarTools: 3303114418,
+  guideLanguages: 61243617,
 }

@@ -20800,4 +20800,13 @@ fragment EssayHistory on UserEssayHistoryPage {
     __typename
   }
 }`,
+  guideLanguages: `query guideLanguages {
+  khanmigoSupportedKALocales {
+    id
+    khanmigoSupport
+    displayName
+    localName
+    __typename
+  }
+}`,
 }
