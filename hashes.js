@@ -746,4 +746,5 @@ export default {
   SkillsToProficient_LearnerRecommendations: 2475112327,
   getDistrictRosteredGrades: 221239703,
   SchoolsByRosterId: 1835126992,
+  getTeacherToolbarTools: 3303114418,
 }
