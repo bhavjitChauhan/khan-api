@@ -12391,4 +12391,17 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
+  activateCanvasTeacherTools: `mutation activateCanvasTeacherTools($termsUrl: String!, $userAcceptedTerms: Boolean!) {
+  activateCanvasTeacherTools(
+    termsUrl: $termsUrl
+    userAcceptedTerms: $userAcceptedTerms
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }

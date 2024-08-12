@@ -1,0 +1,9 @@
+query guideLanguages {
+  khanmigoSupportedKALocales {
+    id
+    khanmigoSupport
+    displayName
+    localName
+    __typename
+  }
+}
