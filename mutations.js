@@ -11920,6 +11920,10 @@ fragment ProjectRevision on ProjectRevision {
       debugMessage
       __typename
     }
+    notification {
+      classroomName
+      __typename
+    }
     __typename
   }
 }`,
