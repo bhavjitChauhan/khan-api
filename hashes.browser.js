@@ -1,7 +1,7 @@
 hashes = {
   activatedDistrictTeachers: 981358678,
   ActiveDistrictQuery: 3631997111,
-  ActivitySessionsQuery: 798505144,
+  ActivitySessionsQuery: 3452986102,
   aiGuideEnrollments: 729300038,
   aiGuideEnrollmentsMeta: 37654722,
   aiGuideInvitationInfo: 4261787513,
@@ -620,7 +620,7 @@ hashes = {
   getSatAccountSettings: 714630499,
   allCoacheeNames: 2231775310,
   courseChallengeCsvQuery: 277772492,
-  ActivitySessionsV2Query: 106895928,
+  ActivitySessionsV2Query: 2997890612,
   aiGuideConversionTrialInfo: 2182684421,
   pythonProgramQuery: 3788331147,
   allFolders: 3440687258,

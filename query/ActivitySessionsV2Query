@@ -29,6 +29,16 @@ query ActivitySessionsV2Query($studentKaid: String!, $endDate: Date, $startDate:
         sessions {
           ... on BasicActivitySession {
             ...ActivitySession
+            aiGuideThread {
+              title
+              id
+              __typename
+            }
+            essaySession {
+              essayTitle
+              id
+              __typename
+            }
             __typename
           }
           ... on MasteryActivitySession {
@@ -53,19 +63,6 @@ query ActivitySessionsV2Query($studentKaid: String!, $endDate: Date, $startDate:
           }
           ... on TestPrepActivitySession {
             ...ActivitySession
-            testPrepCorrectCount: correctCount
-            testPrepProblemCount: problemCount
-            testPrepSkillLevels: skillLevels {
-              id
-              skill {
-                translatedTitle
-                skillId
-                __typename
-              }
-              before
-              after
-              __typename
-            }
             __typename
           }
           __typename
