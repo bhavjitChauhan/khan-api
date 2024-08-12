@@ -53,19 +53,6 @@ query ActivitySessionsQuery($studentKaid: String!, $endDate: Date, $startDate: D
           }
           ... on TestPrepActivitySession {
             ...ActivitySession
-            testPrepCorrectCount: correctCount
-            testPrepProblemCount: problemCount
-            testPrepSkillLevels: skillLevels {
-              id
-              skill {
-                translatedTitle
-                skillId
-                __typename
-              }
-              before
-              after
-              __typename
-            }
             __typename
           }
           __typename

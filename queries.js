@@ -106,19 +106,6 @@ export default {
           }
           ... on TestPrepActivitySession {
             ...ActivitySession
-            testPrepCorrectCount: correctCount
-            testPrepProblemCount: problemCount
-            testPrepSkillLevels: skillLevels {
-              id
-              skill {
-                translatedTitle
-                skillId
-                __typename
-              }
-              before
-              after
-              __typename
-            }
             __typename
           }
           __typename
@@ -17960,6 +17947,16 @@ fragment ExerciseRevision on ExerciseRevision {
         sessions {
           ... on BasicActivitySession {
             ...ActivitySession
+            aiGuideThread {
+              title
+              id
+              __typename
+            }
+            essaySession {
+              essayTitle
+              id
+              __typename
+            }
             __typename
           }
           ... on MasteryActivitySession {
@@ -17984,19 +17981,6 @@ fragment ExerciseRevision on ExerciseRevision {
           }
           ... on TestPrepActivitySession {
             ...ActivitySession
-            testPrepCorrectCount: correctCount
-            testPrepProblemCount: problemCount
-            testPrepSkillLevels: skillLevels {
-              id
-              skill {
-                translatedTitle
-                skillId
-                __typename
-              }
-              before
-              after
-              __typename
-            }
             __typename
           }
           __typename
