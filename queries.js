@@ -20764,4 +20764,49 @@ fragment EssayHistory on UserEssayHistoryPage {
     __typename
   }
 }`,
+  SchoolsByRosterId: `query SchoolsByRosterId($rosterID: [ID!]!) {
+  eduOrgsAreInPartnership(eduOrgIDs: $rosterID) {
+    id
+    name
+    isKmapSchool
+    isKADSchool
+    khanmigoPreference
+    allOnGrades {
+      id
+      name
+      sortIndex
+      __typename
+    }
+    allOffGrades {
+      id
+      name
+      sortIndex
+      __typename
+    }
+    subsetGrades {
+      id
+      name
+      sortIndex
+      __typename
+    }
+    eduOrg {
+      id
+      name
+      locality
+      administrativeAreaLevel2
+      administrativeAreaLevel1
+      postalCode
+      country
+      location
+      __typename
+    }
+    schoolAuditLogs {
+      createdAt
+      kind
+      description
+      __typename
+    }
+    __typename
+  }
+}`,
 }
