@@ -18794,7 +18794,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   user {
     id
     age
-    isEnrolledInAIGuide
+    isFormalTeacher
     __typename
   }
 }`,

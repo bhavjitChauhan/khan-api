@@ -2,7 +2,7 @@ query getTeacherAIEligibilityData {
   user {
     id
     age
-    isEnrolledInAIGuide
+    isFormalTeacher
     __typename
   }
 }
