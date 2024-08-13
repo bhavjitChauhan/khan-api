@@ -12404,4 +12404,17 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
+  deleteAssessmentTask: `mutation deleteAssessmentTask($assessmentId: String!) {
+  deleteAssessmentTask(input: {assessmentId: $assessmentId}) {
+    result {
+      deletedTaskId
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

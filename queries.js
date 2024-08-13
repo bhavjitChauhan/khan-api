@@ -20826,4 +20826,16 @@ fragment EssayHistory on UserEssayHistoryPage {
     __typename
   }
 }`,
+  getAllCoursesForRegion: `query getAllCoursesForRegion($region: String!) {
+  groups: studentListTopics(region: $region) {
+    groupTitle: translatedTitle
+    courses: topics {
+      id
+      title: translatedTitle
+      domainSlug
+      __typename
+    }
+    __typename
+  }
+}`,
 }

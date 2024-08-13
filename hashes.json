@@ -748,5 +748,6 @@
   "SchoolsByRosterId": 1835126992,
   "getTeacherToolbarTools": 3303114418,
   "guideLanguages": 61243617,
-  "getAIInsightsForThread": 960422738
+  "getAIInsightsForThread": 960422738,
+  "getAllCoursesForRegion": 3179396099
 }

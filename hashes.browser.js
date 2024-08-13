@@ -749,4 +749,5 @@ hashes = {
   getTeacherToolbarTools: 3303114418,
   guideLanguages: 61243617,
   getAIInsightsForThread: 960422738,
+  getAllCoursesForRegion: 3179396099,
 }

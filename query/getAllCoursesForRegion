@@ -1,0 +1,12 @@
+query getAllCoursesForRegion($region: String!) {
+  groups: studentListTopics(region: $region) {
+    groupTitle: translatedTitle
+    courses: topics {
+      id
+      title: translatedTitle
+      domainSlug
+      __typename
+    }
+    __typename
+  }
+}
