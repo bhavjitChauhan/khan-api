@@ -18391,6 +18391,11 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     ... on MetaDistrict {
       id
       name
+      ancestors {
+        id
+        name
+        __typename
+      }
       levelLabel
       levelHeight
       countryCode
@@ -18436,6 +18441,11 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     ... on District {
       id
       name
+      ancestors {
+        id
+        name
+        __typename
+      }
       levelLabel
       levelHeight
       countryCode
@@ -19520,6 +19530,11 @@ fragment UserFields on User {
   districts(filter: $districtId, excludeTeacherDirected: $excludeTeacherDirected) {
     id
     name
+    ancestors {
+      id
+      name
+      __typename
+    }
     rosterID
     rosterSource
     nweaID
