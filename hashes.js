@@ -426,7 +426,7 @@ export default {
   programQuery: 2753000164,
   ProgressByGradeQuery: 2344111782,
   ProgressBySchoolQuery: 2643116922,
-  ProgressByStudent: 2007497225,
+  ProgressByStudent: 285644809,
   ProgressByTeacherQuery: 147340987,
   projectsAuthoredByUser: 96565169,
   PublishContent: 1106236,
@@ -748,4 +748,5 @@ export default {
   SchoolsByRosterId: 1835126992,
   getTeacherToolbarTools: 3303114418,
   guideLanguages: 61243617,
+  getAIInsightsForThread: 960422738,
 }
