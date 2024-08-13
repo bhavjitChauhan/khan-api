@@ -1,0 +1,15 @@
+query getAIInsightsForThread($assignmentId: String!, $threadId: String!) {
+  user {
+    id
+    assignmentByThisUser(id: $assignmentId) {
+      id
+      aiInsights(threadId: $threadId) {
+        summary
+        onTopic
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

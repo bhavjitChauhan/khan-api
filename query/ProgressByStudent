@@ -33,6 +33,8 @@ query ProgressByStudent($assignmentFilters: CoachAssignmentFilters, $classDescri
             threadID
             thread {
               id
+              flagged
+              lastUpdatedAt
               interactions {
                 id
                 answer

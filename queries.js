@@ -12807,6 +12807,8 @@ fragment ProblemAttemptFields on ProblemAttempt {
             threadID
             thread {
               id
+              flagged
+              lastUpdatedAt
               interactions {
                 id
                 answer
@@ -20806,6 +20808,21 @@ fragment EssayHistory on UserEssayHistoryPage {
     khanmigoSupport
     displayName
     localName
+    __typename
+  }
+}`,
+  getAIInsightsForThread: `query getAIInsightsForThread($assignmentId: String!, $threadId: String!) {
+  user {
+    id
+    assignmentByThisUser(id: $assignmentId) {
+      id
+      aiInsights(threadId: $threadId) {
+        summary
+        onTopic
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }`,
