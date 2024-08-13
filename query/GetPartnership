@@ -3,6 +3,11 @@ query GetPartnership($partnershipID: ID!) {
     ... on MetaDistrict {
       id
       name
+      ancestors {
+        id
+        name
+        __typename
+      }
       levelLabel
       levelHeight
       countryCode
@@ -48,6 +53,11 @@ query GetPartnership($partnershipID: ID!) {
     ... on District {
       id
       name
+      ancestors {
+        id
+        name
+        __typename
+      }
       levelLabel
       levelHeight
       countryCode

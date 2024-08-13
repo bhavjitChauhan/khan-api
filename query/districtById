@@ -2,6 +2,11 @@ query districtById($districtId: String!, $excludeTeacherDirected: Boolean!) {
   districts(filter: $districtId, excludeTeacherDirected: $excludeTeacherDirected) {
     id
     name
+    ancestors {
+      id
+      name
+      __typename
+    }
     rosterID
     rosterSource
     nweaID
