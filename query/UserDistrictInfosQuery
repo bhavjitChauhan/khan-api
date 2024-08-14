@@ -4,6 +4,11 @@ query UserDistrictInfosQuery($email: String, $rosterID: String) {
     district {
       id
       name
+      ancestors {
+        id
+        name
+        __typename
+      }
       __typename
     }
     createdAt

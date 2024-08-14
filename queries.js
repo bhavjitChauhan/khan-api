@@ -9113,6 +9113,11 @@ fragment Badge on Badge {
       district {
         id
         name
+        ancestors {
+          id
+          name
+          __typename
+        }
         __typename
       }
       createdAt
@@ -15133,6 +15138,11 @@ fragment AssignmentData on Assignment {
     district {
       id
       name
+      ancestors {
+        id
+        name
+        __typename
+      }
       __typename
     }
     createdAt
