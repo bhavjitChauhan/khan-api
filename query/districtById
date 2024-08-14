@@ -24,6 +24,12 @@ query districtById($districtId: String!, $excludeTeacherDirected: Boolean!) {
     goLiveDate
     region
     countryCode
+    districtAuditLogs {
+      createdAt
+      description
+      kind
+      __typename
+    }
     schools {
       id
       name

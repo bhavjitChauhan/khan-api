@@ -19552,6 +19552,12 @@ fragment UserFields on User {
     goLiveDate
     region
     countryCode
+    districtAuditLogs {
+      createdAt
+      description
+      kind
+      __typename
+    }
     schools {
       id
       name
