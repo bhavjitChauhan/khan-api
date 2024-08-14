@@ -750,4 +750,5 @@ hashes = {
   guideLanguages: 61243617,
   getAIInsightsForThread: 960422738,
   getAllCoursesForRegion: 3179396099,
+  getTeacherType: 2916037243,
 }
