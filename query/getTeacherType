@@ -1,0 +1,8 @@
+query getTeacherType($targetKaid: String!) {
+  user(kaid: $targetKaid) {
+    id
+    isK4dTeacher
+    isKmapTeacher
+    __typename
+  }
+}

@@ -20869,4 +20869,12 @@ fragment EssayHistory on UserEssayHistoryPage {
     __typename
   }
 }`,
+  getTeacherType: `query getTeacherType($targetKaid: String!) {
+  user(kaid: $targetKaid) {
+    id
+    isK4dTeacher
+    isKmapTeacher
+    __typename
+  }
+}`,
 }
