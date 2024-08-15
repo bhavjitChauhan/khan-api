@@ -36,6 +36,7 @@ query CoachAssignments($classDescriptor: String!, $assignmentFilters: CoachAssig
         }
         title
         instructions
+        configuredActivityInputs
         __typename
       }
       pageInfo {

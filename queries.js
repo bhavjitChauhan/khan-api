@@ -943,6 +943,7 @@ fragment AssignmentCsvData on Assignment {
         }
         title
         instructions
+        configuredActivityInputs
         __typename
       }
       pageInfo {
@@ -5649,6 +5650,7 @@ fragment Badge on Badge {
         startDate
         contents {
           id
+          contentDescriptor
           defaultUrlPath
           kind
           title
