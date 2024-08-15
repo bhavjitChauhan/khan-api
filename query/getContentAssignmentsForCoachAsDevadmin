@@ -17,6 +17,7 @@ query getContentAssignmentsForCoachAsDevadmin($after: ID, $assignmentFilters: Co
         startDate
         contents {
           id
+          contentDescriptor
           defaultUrlPath
           kind
           title
