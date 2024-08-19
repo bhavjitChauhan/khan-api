@@ -8,6 +8,7 @@ query teacherKhanmigoTotalUsage($filter: KhanmigoTeacherFilters!) {
         __typename
       }
       chats
+      messages
       avgMessagesPerChat
       activities
       __typename
