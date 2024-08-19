@@ -710,7 +710,7 @@ export default {
   PerseusItemCompletionQuery: 1828110140,
   khanLibraryCanEditInterimAssessments: 1327017425,
   configurableInputsForActivity: 1805369147,
-  teacherKhanmigoTotalUsage: 617684036,
+  teacherKhanmigoTotalUsage: 890882198,
   teacherKhanmigoUsageOvertime: 17695090,
   GetManagedPartnerships: 3143980386,
   GetPartnershipForAdminDashboard: 2922333438,

@@ -19991,6 +19991,7 @@ fragment UserFields on User {
         __typename
       }
       chats
+      messages
       avgMessagesPerChat
       activities
       __typename
