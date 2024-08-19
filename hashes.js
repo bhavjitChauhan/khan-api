@@ -751,4 +751,5 @@ export default {
   getAIInsightsForThread: 960422738,
   getAllCoursesForRegion: 3179396099,
   getTeacherType: 2916037243,
+  getParentKhanmigoEligibility: 640597873,
 }

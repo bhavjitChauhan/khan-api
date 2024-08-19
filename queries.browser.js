@@ -20880,4 +20880,17 @@ fragment EssayHistory on UserEssayHistoryPage {
     __typename
   }
 }`,
+  getParentKhanmigoEligibility: `query getParentKhanmigoEligibility($targetKaid: String!) {
+  user(kaid: $targetKaid) {
+    id
+    aiGuideDisabledReason
+    aiGuideAccessPlans {
+      id
+      enrollmentGroup
+      isActive
+      __typename
+    }
+    __typename
+  }
+}`,
 }

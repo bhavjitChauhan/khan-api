@@ -1,0 +1,13 @@
+query getParentKhanmigoEligibility($targetKaid: String!) {
+  user(kaid: $targetKaid) {
+    id
+    aiGuideDisabledReason
+    aiGuideAccessPlans {
+      id
+      enrollmentGroup
+      isActive
+      __typename
+    }
+    __typename
+  }
+}
