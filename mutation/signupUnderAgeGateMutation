@@ -12,7 +12,6 @@ mutation signupUnderAgeGateMutation($username: String!, $password: String!, $bir
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale

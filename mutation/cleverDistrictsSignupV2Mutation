@@ -10,7 +10,6 @@ mutation cleverDistrictsSignupV2Mutation($udiUuid: String!, $cleverId: String!) 
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale

@@ -376,7 +376,7 @@ hashes = {
   localesForLangPickerQuery: 4044929374,
   LocalesForStandardsEditor: 2011629293,
   LocalesIncludingEnglish: 227179359,
-  loggedInUserQuery: 1905444812,
+  loggedInUserQuery: 4265247518,
   lookupUser: 2106631114,
   ManageFolders_CoursesInFolder: 2869214164,
   ManageFolders_UsersInFolder: 492038127,

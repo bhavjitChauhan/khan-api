@@ -6,7 +6,6 @@ mutation loginWithFacebookMutation($token: String!, $role: UserRole, $inviteId: 
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale

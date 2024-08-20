@@ -11644,7 +11644,6 @@ fragment BaseFolder on Folder {
     canAccessDistrictsHomepage
     isTeacher
     hasUnresolvedInvitations
-    transferAuthToken
     preferredKaLocale {
       id
       kaLocale
