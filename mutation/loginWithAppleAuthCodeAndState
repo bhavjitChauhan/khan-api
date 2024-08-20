@@ -16,7 +16,6 @@ mutation loginWithAppleAuthCodeAndState($authCode: String!, $state: String!, $us
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale

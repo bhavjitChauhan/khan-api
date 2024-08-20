@@ -16,7 +16,6 @@ mutation completeSignupMutation($nickname: String!, $password: String!, $usernam
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale

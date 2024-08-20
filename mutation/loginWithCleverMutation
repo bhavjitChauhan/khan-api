@@ -25,7 +25,6 @@ mutation loginWithCleverMutation($code: String!, $reauth: Boolean!, $fromDevApp:
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale

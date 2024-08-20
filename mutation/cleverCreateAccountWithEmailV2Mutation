@@ -14,7 +14,6 @@ mutation cleverCreateAccountWithEmailV2Mutation($transferToken: String!, $email:
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale

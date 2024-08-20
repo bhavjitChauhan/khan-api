@@ -9,7 +9,6 @@ mutation loginWithClasslink($classlinkCode: String, $useDevClasslinkClient: Bool
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale

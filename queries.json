@@ -376,7 +376,7 @@
   "localesForLangPickerQuery": "query localesForLangPickerQuery {\n  localesForLanguagePicker(includeEnglish: true, includeFake: false) {\n    id\n    localName\n    kaLocale\n    __typename\n  }\n}",
   "LocalesForStandardsEditor": "query LocalesForStandardsEditor {\n  locales(includeEnglish: true, includeFake: false, liveOnly: true) {\n    id\n    displayName\n    __typename\n  }\n}",
   "LocalesIncludingEnglish": "query LocalesIncludingEnglish {\n  locales(includeEnglish: true) {\n    id\n    __typename\n  }\n}",
-  "loggedInUserQuery": "query loggedInUserQuery {\n  user {\n    id\n    kaid\n    canAccessDistrictsHomepage\n    isTeacher\n    hasUnresolvedInvitations\n    transferAuthToken\n    preferredKaLocale {\n      id\n      kaLocale\n      status\n      __typename\n    }\n    __typename\n  }\n}",
+  "loggedInUserQuery": "query loggedInUserQuery {\n  user {\n    id\n    kaid\n    canAccessDistrictsHomepage\n    isTeacher\n    hasUnresolvedInvitations\n    preferredKaLocale {\n      id\n      kaLocale\n      status\n      __typename\n    }\n    __typename\n  }\n}",
   "lookupUser": "query lookupUser($kaid: String, $email: String, $username: String) {\n  user(kaid: $kaid, email: $email, username: $username) {\n    id\n    kaid\n    email\n    username\n    __typename\n  }\n}",
   "ManageFolders_CoursesInFolder": "query ManageFolders_CoursesInFolder($folderID: String!) {\n  folderById(id: $folderID) {\n    id\n    courses {\n      id\n      contentId\n      title\n      __typename\n    }\n    __typename\n  }\n}",
   "ManageFolders_UsersInFolder": "query ManageFolders_UsersInFolder($kaids: [String!]!) {\n  users(kaids: $kaids) {\n    id\n    kaid\n    email\n    username\n    nickname\n    __typename\n  }\n}",

@@ -5,7 +5,6 @@ query loggedInUserQuery {
     canAccessDistrictsHomepage
     isTeacher
     hasUnresolvedInvitations
-    transferAuthToken
     preferredKaLocale {
       id
       kaLocale

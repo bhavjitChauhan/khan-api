@@ -709,7 +709,6 @@ fragment userExerciseFields on UserExercise {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale
@@ -733,7 +732,6 @@ fragment userExerciseFields on UserExercise {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale
@@ -773,7 +771,6 @@ fragment userExerciseFields on UserExercise {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale
@@ -7305,7 +7302,6 @@ fragment CourseRevisionStructure on CourseRevision {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale
@@ -7329,7 +7325,6 @@ fragment CourseRevisionStructure on CourseRevision {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale
@@ -7374,7 +7369,6 @@ fragment CourseRevisionStructure on CourseRevision {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale
@@ -7397,7 +7391,6 @@ fragment CourseRevisionStructure on CourseRevision {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale
@@ -7429,7 +7422,6 @@ fragment CourseRevisionStructure on CourseRevision {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale
@@ -7454,7 +7446,6 @@ fragment CourseRevisionStructure on CourseRevision {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale
@@ -8913,7 +8904,6 @@ fragment entry on TeamPageEntryForEditing {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale
@@ -8937,7 +8927,6 @@ fragment entry on TeamPageEntryForEditing {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale
@@ -8968,7 +8957,6 @@ fragment entry on TeamPageEntryForEditing {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale
@@ -8998,7 +8986,6 @@ fragment entry on TeamPageEntryForEditing {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale
@@ -9037,7 +9024,6 @@ fragment entry on TeamPageEntryForEditing {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale
@@ -9211,7 +9197,6 @@ fragment Program on Program {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale

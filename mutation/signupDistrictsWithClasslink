@@ -6,7 +6,6 @@ mutation signupDistrictsWithClasslink($options: ClasslinkSignupOptions) {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale
