@@ -2,35 +2,44 @@ query essaySessionHistory($essaySessionID: String!, $pageSize: Int!, $offset: In
   essaySession(essaySessionID: $essaySessionID) {
     id
     history(pageSize: $pageSize, offset: $offset) {
-      ...EssayHistory
+      hasMore
+      snapshots {
+        snapshotIndex
+        details {
+          firstIncludedVersion
+          firstIncludedEditTimestamp
+          lastIncludedVersion
+          lastIncludedEditTimestamp
+          content
+          __typename
+        }
+        ... on UserEssayTextSnapshot {
+          stage
+          learningTimeSeconds
+          pasteMetadata {
+            selectionStart
+            selectionEnd
+            text
+            __typename
+          }
+          feedbackRequestedAt
+          __typename
+        }
+        ... on UserEssayOutlineSnapshot {
+          learningTimeSeconds
+          pasteMetadata {
+            jsonPointer
+            selectionStart
+            selectionEnd
+            text
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
       __typename
     }
     __typename
   }
-}
-
-fragment EssayHistory on UserEssayHistoryPage {
-  hasMore
-  snapshots {
-    snapshotIndex
-    details {
-      firstIncludedVersion
-      firstIncludedEditTimestamp
-      lastIncludedVersion
-      lastIncludedEditTimestamp
-      content
-      __typename
-    }
-    ... on UserEssayTextSnapshot {
-      stage
-      learningTimeSeconds
-      __typename
-    }
-    ... on UserEssayOutlineSnapshot {
-      learningTimeSeconds
-      __typename
-    }
-    __typename
-  }
-  __typename
 }

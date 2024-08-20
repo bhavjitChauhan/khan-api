@@ -1,7 +1,12 @@
-query essaySessionProgress($essaySessionID: String!, $pageSize: Int!, $offset: Int!) {
+query essaySessionProgress($teacherKaid: String!, $essaySessionID: String!) {
   essaySession(essaySessionID: $essaySessionID) {
     id
     kaid
+    author {
+      id
+      coachNickname(teacherKaid: $teacherKaid)
+      __typename
+    }
     gettingStartedThread {
       id
       lastUpdatedAt
@@ -17,8 +22,28 @@ query essaySessionProgress($essaySessionID: String!, $pageSize: Int!, $offset: I
     studentGradeLevel
     mostRecentEditedText
     completed
+    currentStage
+    lastUpdated
+    wordCount
+    originalityFlags {
+      isCritical
+      ... on UserEssayOriginalityFlagPasteIntoOutline {
+        location
+        wordCount
+        outlineVersionBeforePaste
+        __typename
+      }
+      ... on UserEssayOriginalityFlagPasteIntoText {
+        stage
+        wordCount
+        essayVersionBeforePaste
+        __typename
+      }
+      __typename
+    }
     draft {
       id
+      submittedText
       feedbackList {
         dimension
         feedbackID
@@ -36,40 +61,17 @@ query essaySessionProgress($essaySessionID: String!, $pageSize: Int!, $offset: I
       }
       __typename
     }
-    history(pageSize: $pageSize, offset: $offset) {
-      ...EssayHistory
-      __typename
-    }
     learningTime {
       understandingSeconds: promptReviewingSeconds
+      outliningSeconds
+      draftingSeconds
+      revisingSeconds
+      __typename
+    }
+    latestSnapshot {
+      snapshotIndex
       __typename
     }
     __typename
   }
-}
-
-fragment EssayHistory on UserEssayHistoryPage {
-  hasMore
-  snapshots {
-    snapshotIndex
-    details {
-      firstIncludedVersion
-      firstIncludedEditTimestamp
-      lastIncludedVersion
-      lastIncludedEditTimestamp
-      content
-      __typename
-    }
-    ... on UserEssayTextSnapshot {
-      stage
-      learningTimeSeconds
-      __typename
-    }
-    ... on UserEssayOutlineSnapshot {
-      learningTimeSeconds
-      __typename
-    }
-    __typename
-  }
-  __typename
 }

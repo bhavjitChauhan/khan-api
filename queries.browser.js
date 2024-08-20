@@ -20170,37 +20170,46 @@ fragment UserFields on User {
   essaySession(essaySessionID: $essaySessionID) {
     id
     history(pageSize: $pageSize, offset: $offset) {
-      ...EssayHistory
+      hasMore
+      snapshots {
+        snapshotIndex
+        details {
+          firstIncludedVersion
+          firstIncludedEditTimestamp
+          lastIncludedVersion
+          lastIncludedEditTimestamp
+          content
+          __typename
+        }
+        ... on UserEssayTextSnapshot {
+          stage
+          learningTimeSeconds
+          pasteMetadata {
+            selectionStart
+            selectionEnd
+            text
+            __typename
+          }
+          feedbackRequestedAt
+          __typename
+        }
+        ... on UserEssayOutlineSnapshot {
+          learningTimeSeconds
+          pasteMetadata {
+            jsonPointer
+            selectionStart
+            selectionEnd
+            text
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
       __typename
     }
     __typename
   }
-}
-
-fragment EssayHistory on UserEssayHistoryPage {
-  hasMore
-  snapshots {
-    snapshotIndex
-    details {
-      firstIncludedVersion
-      firstIncludedEditTimestamp
-      lastIncludedVersion
-      lastIncludedEditTimestamp
-      content
-      __typename
-    }
-    ... on UserEssayTextSnapshot {
-      stage
-      learningTimeSeconds
-      __typename
-    }
-    ... on UserEssayOutlineSnapshot {
-      learningTimeSeconds
-      __typename
-    }
-    __typename
-  }
-  __typename
 }`,
   getCoachAssignmentReport: `query getCoachAssignmentReport($assignmentId: String!, $teacherKaid: String!) {
   coach: user {
@@ -20680,10 +20689,15 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
-  essaySessionProgress: `query essaySessionProgress($essaySessionID: String!, $pageSize: Int!, $offset: Int!) {
+  essaySessionProgress: `query essaySessionProgress($teacherKaid: String!, $essaySessionID: String!) {
   essaySession(essaySessionID: $essaySessionID) {
     id
     kaid
+    author {
+      id
+      coachNickname(teacherKaid: $teacherKaid)
+      __typename
+    }
     gettingStartedThread {
       id
       lastUpdatedAt
@@ -20699,8 +20713,28 @@ fragment ExerciseContentFields on LearnableContent {
     studentGradeLevel
     mostRecentEditedText
     completed
+    currentStage
+    lastUpdated
+    wordCount
+    originalityFlags {
+      isCritical
+      ... on UserEssayOriginalityFlagPasteIntoOutline {
+        location
+        wordCount
+        outlineVersionBeforePaste
+        __typename
+      }
+      ... on UserEssayOriginalityFlagPasteIntoText {
+        stage
+        wordCount
+        essayVersionBeforePaste
+        __typename
+      }
+      __typename
+    }
     draft {
       id
+      submittedText
       feedbackList {
         dimension
         feedbackID
@@ -20718,42 +20752,19 @@ fragment ExerciseContentFields on LearnableContent {
       }
       __typename
     }
-    history(pageSize: $pageSize, offset: $offset) {
-      ...EssayHistory
-      __typename
-    }
     learningTime {
       understandingSeconds: promptReviewingSeconds
+      outliningSeconds
+      draftingSeconds
+      revisingSeconds
+      __typename
+    }
+    latestSnapshot {
+      snapshotIndex
       __typename
     }
     __typename
   }
-}
-
-fragment EssayHistory on UserEssayHistoryPage {
-  hasMore
-  snapshots {
-    snapshotIndex
-    details {
-      firstIncludedVersion
-      firstIncludedEditTimestamp
-      lastIncludedVersion
-      lastIncludedEditTimestamp
-      content
-      __typename
-    }
-    ... on UserEssayTextSnapshot {
-      stage
-      learningTimeSeconds
-      __typename
-    }
-    ... on UserEssayOutlineSnapshot {
-      learningTimeSeconds
-      __typename
-    }
-    __typename
-  }
-  __typename
 }`,
   SkillsToProficient_LearnerRecommendations: `query SkillsToProficient_LearnerRecommendations($courseId: String, $classroomDescriptor: String, $numRecs: Int) {
   user {
