@@ -10,7 +10,7 @@ query courseEditorGetPublishedEntities($descriptors: [String!]!) {
     translatedTitle
     description
     translatedDescription
-    mappedStandards {
+    mappedStandards(region: "*") {
       id
       setId
       standardId

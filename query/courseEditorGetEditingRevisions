@@ -15,7 +15,7 @@ query courseEditorGetEditingRevisions($descriptors: [String!]!) {
       title
       translatedTitle
       description
-      mappedStandards {
+      mappedStandards(region: "*") {
         id
         setId
         standardId

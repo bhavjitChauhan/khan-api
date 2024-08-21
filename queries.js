@@ -2548,7 +2548,7 @@ fragment FolderCourseRevisionFragment on CourseRevision {
       title
       translatedTitle
       description
-      mappedStandards {
+      mappedStandards(region: "*") {
         id
         setId
         standardId
@@ -2751,7 +2751,7 @@ fragment FolderCourseRevisionFragment on CourseRevision {
     translatedTitle
     description
     translatedDescription
-    mappedStandards {
+    mappedStandards(region: "*") {
       id
       setId
       standardId
