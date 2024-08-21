@@ -3652,6 +3652,7 @@ fragment CourseProgress on SubjectProgress {
     isTest
     isKmapDistrict
     isK4dDistrict
+    isOldNWEA
     lastRostered
     lastTestPull
     goLiveDate
@@ -9116,6 +9117,7 @@ fragment Badge on Badge {
       district {
         id
         name
+        isOldNWEA
         kaLocale
         ancestors {
           id
@@ -19565,6 +19567,7 @@ fragment UserFields on User {
     lastRostered
     lastTestPull
     goLiveDate
+    isOldNWEA
     region
     countryCode
     districtAuditLogs {
