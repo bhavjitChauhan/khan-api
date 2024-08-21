@@ -22,6 +22,7 @@ query districtById($districtId: String!, $excludeTeacherDirected: Boolean!) {
     lastRostered
     lastTestPull
     goLiveDate
+    isOldNWEA
     region
     countryCode
     districtAuditLogs {
