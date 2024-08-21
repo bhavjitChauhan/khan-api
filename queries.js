@@ -9115,6 +9115,7 @@ fragment Badge on Badge {
       district {
         id
         name
+        kaLocale
         ancestors {
           id
           name
@@ -15138,6 +15139,7 @@ fragment AssignmentData on Assignment {
     id
     district {
       id
+      kaLocale
       name
       ancestors {
         id

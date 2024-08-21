@@ -3,6 +3,7 @@ query UserDistrictInfosQuery($email: String, $rosterID: String) {
     id
     district {
       id
+      kaLocale
       name
       ancestors {
         id
