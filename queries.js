@@ -5648,6 +5648,7 @@ fragment Badge on Badge {
         updatedDate
         dueDate
         startDate
+        title
         contents {
           id
           contentDescriptor

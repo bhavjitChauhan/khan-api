@@ -15,6 +15,7 @@ query getContentAssignmentsForCoachAsDevadmin($after: ID, $assignmentFilters: Co
         updatedDate
         dueDate
         startDate
+        title
         contents {
           id
           contentDescriptor
