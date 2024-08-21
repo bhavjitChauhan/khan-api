@@ -173,7 +173,7 @@ export default {
   getCombinedBadges: 3614321869,
   getCommoncore: 3758682353,
   getContentAssignmentChangesQuery: 750631727,
-  getContentAssignmentsForCoachAsDevadmin: 1673382968,
+  getContentAssignmentsForCoachAsDevadmin: 3886824242,
   getContentForStandard: 3890560725,
   getContentItemProgressesForSatSkill: 3679566124,
   getCourse: 2736096371,
