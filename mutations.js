@@ -12402,4 +12402,91 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
+  modifyDistrictWithOptions: `mutation modifyDistrictWithOptions($existingDistrictID: ID!, $modifyDistrictOptions: ModifyDistrictOptions!) {
+  modifyDistrictWithOptions(
+    existingDistrictID: $existingDistrictID
+    options: $modifyDistrictOptions
+  ) {
+    district {
+      id
+      rosterID
+      name
+      isKmapDistrict
+      isK4dDistrict
+      rosterSource
+      nweaID
+      ncesID
+      isTest
+      sendActivationEmails
+      rosterSyncingEnabled
+      goLiveDate
+      kaLocale
+      schoolYearDates {
+        start {
+          nthWeek
+          dayOfWeek
+          month
+          __typename
+        }
+        end {
+          nthWeek
+          dayOfWeek
+          month
+          __typename
+        }
+        __typename
+      }
+      region
+      khanmigoPreference
+      khanmigoIncludeNonStudents
+      khanmigoIncludeStudents
+      khanmigoAdmins
+      khanmigoTeachers
+      khanmigoStudents
+      khanmigoStart
+      khanmigoEnd
+      khanmigoIncludedUsers {
+        id
+        districtProvidedEmail
+        __typename
+      }
+      khanmigoExcludedUsers {
+        id
+        districtProvidedEmail
+        __typename
+      }
+      khanmigoGradeEnrollment {
+        id
+        districtID
+        allOnGrades {
+          id
+          name
+          sortIndex
+          __typename
+        }
+        allOffGrades {
+          id
+          name
+          sortIndex
+          __typename
+        }
+        subsetGrades {
+          id
+          name
+          sortIndex
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    khanmigoIncludeUserMissingEmails
+    khanmigoExcludeUserMissingEmails
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
