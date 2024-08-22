@@ -20918,4 +20918,20 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  SkillsToProficient_UnitRecommendations: `query SkillsToProficient_UnitRecommendations($courseId: String, $numRecs: Int, $unitId: String) {
+  user {
+    id
+    recommendations(
+      queryParams: {courseId: $courseId, numRecs: $numRecs, unitId: $unitId}
+    ) {
+      content {
+        id
+        defaultUrlPath
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
