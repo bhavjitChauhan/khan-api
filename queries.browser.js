@@ -20910,4 +20910,12 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  getLearnerKhanmigoEligibility: `query getLearnerKhanmigoEligibility {
+  user {
+    id
+    aiGuideDisabledReason
+    aiGuideActiveEnrollmentGroups
+    __typename
+  }
+}`,
 }
