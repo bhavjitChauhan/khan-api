@@ -752,4 +752,5 @@ hashes = {
   getAllCoursesForRegion: 3179396099,
   getTeacherType: 2916037243,
   getParentKhanmigoEligibility: 640597873,
+  getLearnerKhanmigoEligibility: 1904061006,
 }

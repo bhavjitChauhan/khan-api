@@ -751,5 +751,6 @@
   "getAIInsightsForThread": "query getAIInsightsForThread($assignmentId: String!, $threadId: String!) {\n  user {\n    id\n    assignmentByThisUser(id: $assignmentId) {\n      id\n      aiInsights(threadId: $threadId) {\n        summary\n        onTopic\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}",
   "getAllCoursesForRegion": "query getAllCoursesForRegion($region: String!) {\n  groups: studentListTopics(region: $region) {\n    groupTitle: translatedTitle\n    courses: topics {\n      id\n      title: translatedTitle\n      domainSlug\n      __typename\n    }\n    __typename\n  }\n}",
   "getTeacherType": "query getTeacherType($targetKaid: String!) {\n  user(kaid: $targetKaid) {\n    id\n    isK4dTeacher\n    isKmapTeacher\n    __typename\n  }\n}",
-  "getParentKhanmigoEligibility": "query getParentKhanmigoEligibility($targetKaid: String!) {\n  user(kaid: $targetKaid) {\n    id\n    aiGuideDisabledReason\n    aiGuideAccessPlans {\n      id\n      enrollmentGroup\n      isActive\n      __typename\n    }\n    __typename\n  }\n}"
+  "getParentKhanmigoEligibility": "query getParentKhanmigoEligibility($targetKaid: String!) {\n  user(kaid: $targetKaid) {\n    id\n    aiGuideDisabledReason\n    aiGuideAccessPlans {\n      id\n      enrollmentGroup\n      isActive\n      __typename\n    }\n    __typename\n  }\n}",
+  "getLearnerKhanmigoEligibility": "query getLearnerKhanmigoEligibility {\n  user {\n    id\n    aiGuideDisabledReason\n    aiGuideActiveEnrollmentGroups\n    __typename\n  }\n}"
 }

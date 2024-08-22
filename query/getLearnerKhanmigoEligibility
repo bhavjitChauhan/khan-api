@@ -1,0 +1,8 @@
+query getLearnerKhanmigoEligibility {
+  user {
+    id
+    aiGuideDisabledReason
+    aiGuideActiveEnrollmentGroups
+    __typename
+  }
+}
