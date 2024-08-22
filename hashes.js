@@ -753,4 +753,5 @@ export default {
   getTeacherType: 2916037243,
   getParentKhanmigoEligibility: 640597873,
   getLearnerKhanmigoEligibility: 1904061006,
+  SkillsToProficient_UnitRecommendations: 1775979915,
 }
