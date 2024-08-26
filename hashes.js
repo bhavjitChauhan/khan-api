@@ -754,4 +754,5 @@ export default {
   getParentKhanmigoEligibility: 640597873,
   getLearnerKhanmigoEligibility: 1904061006,
   SkillsToProficient_UnitRecommendations: 1775979915,
+  UserForDistrictSignup: 3537854947,
 }

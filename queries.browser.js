@@ -20936,4 +20936,23 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  UserForDistrictSignup: `query UserForDistrictSignup {
+  user {
+    id
+    kaid
+    canAccessDistrictsHomepage
+    isTeacher
+    hasUnresolvedInvitations
+    transferAuthToken
+    preferredKaLocale {
+      id
+      kaLocale
+      status
+      __typename
+    }
+    age
+    nickname
+    __typename
+  }
+}`,
 }
