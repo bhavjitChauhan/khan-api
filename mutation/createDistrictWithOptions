@@ -1,0 +1,14 @@
+mutation createDistrictWithOptions($options: CreateDistrictOptions!) {
+  createDistrictWithOptions(options: $options) {
+    error {
+      code
+      __typename
+    }
+    district {
+      id
+      name
+      __typename
+    }
+    __typename
+  }
+}
