@@ -10656,6 +10656,8 @@ fragment gtp_tpudFragment on TestPrepUserData {
         id
         pageType
         pageTitle
+        question
+        answer
         __typename
       }
       coeditingDocument {
