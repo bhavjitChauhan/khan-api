@@ -12489,4 +12489,18 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
+  createDistrictWithOptions: `mutation createDistrictWithOptions($options: CreateDistrictOptions!) {
+  createDistrictWithOptions(options: $options) {
+    error {
+      code
+      __typename
+    }
+    district {
+      id
+      name
+      __typename
+    }
+    __typename
+  }
+}`,
 }
