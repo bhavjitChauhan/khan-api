@@ -12418,11 +12418,6 @@ fragment CourseProgress on SubjectProgress {
   }
 }`,
   notTranslatedQuery: `query notTranslatedQuery($kaLocale: String!) {
-  user {
-    id
-    transferAuthToken
-    __typename
-  }
   locale(kaLocale: $kaLocale) {
     id
     localName
