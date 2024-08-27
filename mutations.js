@@ -7342,13 +7342,14 @@ fragment CourseRevisionStructure on CourseRevision {
     __typename
   }
 }`,
-  loginWithCleverMutation: `mutation loginWithCleverMutation($code: String!, $reauth: Boolean!, $fromDevApp: Boolean!, $isMap: Boolean!, $isLP: Boolean!, $referrerUrl: String!) {
+  loginWithCleverMutation: `mutation loginWithCleverMutation($code: String!, $reauth: Boolean!, $fromDevApp: Boolean!, $isMap: Boolean!, $isLP: Boolean!, $isCanvas: Boolean, $referrerUrl: String!) {
   loginWithClever(
     code: $code
     reauth: $reauth
     fromDevApp: $fromDevApp
     isMap: $isMap
     isLP: $isLP
+    isCanvas: $isCanvas
     referrerUrl: $referrerUrl
   ) {
     error {
