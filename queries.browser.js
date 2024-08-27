@@ -3625,6 +3625,15 @@ fragment CourseProgress on SubjectProgress {
     levelHeight
     goal {
       type
+      courseMasteryTargets {
+        course {
+          id
+          translatedTitle
+          __typename
+        }
+        gradeLevels
+        __typename
+      }
       createdBy {
         id
         kaid
@@ -20964,6 +20973,30 @@ fragment ExerciseContentFields on LearnableContent {
         checked
         __typename
       }
+      __typename
+    }
+    __typename
+  }
+}`,
+  districtDashboardCourseMastery: `query districtDashboardCourseMastery($filters: DistrictGrowthFilters!) {
+  districtDashboardCourseMastery(filters: $filters) {
+    header {
+      yearFirstWeekStart
+      yearFirstWeekEnd
+      yearLastWeekStart
+      yearLastWeekEnd
+      numberOfWeeksInTheSchoolYear
+      lastWeekAvg
+      yearToDateAvg
+      noData
+      __typename
+    }
+    rows {
+      weekStartDate
+      weekEndDate
+      overallMedianCMPercent
+      selectedSchoolsMedianCMPercent
+      targetPercentage
       __typename
     }
     __typename

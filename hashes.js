@@ -111,7 +111,7 @@ export default {
   districtHomepage: 2523966179,
   districtHomepageProgress: 1681650575,
   DistrictPrimaryOfferingAsTeacher: 15799337,
-  DistrictQuery: 340394050,
+  DistrictQuery: 1169451440,
   districts: 3901228474,
   DistrictSkillsMAPProgressQuery: 706683816,
   DistrictSkillsProgressQuery: 1223536634,
@@ -756,4 +756,5 @@ export default {
   SkillsToProficient_UnitRecommendations: 1775979915,
   UserForDistrictSignup: 3537854947,
   getUserIsSubscribedToAllEmails: 862738463,
+  districtDashboardCourseMastery: 3152001450,
 }
