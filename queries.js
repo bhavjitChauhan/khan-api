@@ -18823,6 +18823,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     id
     age
     isFormalTeacher
+    isK4dTeacher
     __typename
   }
 }`,

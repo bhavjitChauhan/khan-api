@@ -655,7 +655,7 @@ export default {
   districtKhanmigoUsageOvertime: 1661333824,
   getTeacherKhanmigoAccess: 2454313616,
   FoldersLibraryPermissionCheck: 1017450847,
-  getTeacherAIEligibilityData: 2764141255,
+  getTeacherAIEligibilityData: 1247937088,
   courseMetadata: 1342216916,
   programsGalleryGetDomain: 3335265948,
   freeForTeachersEnrollEligibility: 3124434581,
