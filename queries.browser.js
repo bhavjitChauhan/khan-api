@@ -20956,4 +20956,17 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  getUserIsSubscribedToAllEmails: `query getUserIsSubscribedToAllEmails($kaid: String) {
+  user(kaid: $kaid) {
+    id
+    emailSubscriptions {
+      allEmailSubscription {
+        checked
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
