@@ -1,0 +1,6 @@
+mutation createTransferAuthTokenMutation {
+  createTransferAuthToken {
+    token
+    __typename
+  }
+}

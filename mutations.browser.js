@@ -8415,7 +8415,6 @@ fragment entry on TeamPageEntryForEditing {
       region
       birthdate
       homepageUrl
-      transferAuthToken
       __typename
     }
     errors {
@@ -12501,6 +12500,12 @@ fragment TaskFragment on AssessmentTask {
       name
       __typename
     }
+    __typename
+  }
+}`,
+  createTransferAuthTokenMutation: `mutation createTransferAuthTokenMutation {
+  createTransferAuthToken {
+    token
     __typename
   }
 }`,

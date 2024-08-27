@@ -17,7 +17,6 @@ mutation SetBasicSettings($kaid: String!, $nickname: String, $username: String, 
       region
       birthdate
       homepageUrl
-      transferAuthToken
       __typename
     }
     errors {
