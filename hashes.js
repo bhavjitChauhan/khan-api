@@ -755,4 +755,5 @@ export default {
   getLearnerKhanmigoEligibility: 1904061006,
   SkillsToProficient_UnitRecommendations: 1775979915,
   UserForDistrictSignup: 3537854947,
+  getUserIsSubscribedToAllEmails: 862738463,
 }
