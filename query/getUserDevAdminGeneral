@@ -204,6 +204,7 @@ query getUserDevAdminGeneral($kaid: String!) {
     }
     walmartId
     walmartDivision
+    canvasUserId
     hasCoach
     isK4dStudent
     isKmapStudent

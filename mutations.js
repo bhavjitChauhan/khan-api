@@ -12527,4 +12527,17 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
+  ClearCanvasUserId: `mutation ClearCanvasUserId($kaid: String!) {
+  setCanvasInfoAsAdmin(kaid: $kaid, canvasUserId: null) {
+    error {
+      code
+      __typename
+    }
+    user {
+      id
+      __typename
+    }
+    __typename
+  }
+}`,
 }
