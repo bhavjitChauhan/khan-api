@@ -35,6 +35,10 @@ query StandaloneUserAssignments($after: ID, $pageSize: Int, $kaid: String!, $cla
             threadID
             __typename
           }
+          essaySession {
+            id
+            __typename
+          }
           __typename
         }
         __typename

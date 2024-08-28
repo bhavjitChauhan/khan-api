@@ -447,7 +447,7 @@ export default {
   SkillsMetadataAndNoStudentsQuery: 2936387112,
   SkillsMetadataAndStudentsQuery: 1442792154,
   SkillsQuery: 4225588104,
-  StandaloneUserAssignments: 2313312698,
+  StandaloneUserAssignments: 788876749,
   StudentKmapPlacementQuery: 1052070597,
   studentListByClassCode: 3602493530,
   StudentListHasAssignments: 225464054,
