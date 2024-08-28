@@ -13429,6 +13429,10 @@ fragment ProblemAttemptFields on ProblemAttempt {
             threadID
             __typename
           }
+          essaySession {
+            id
+            __typename
+          }
           __typename
         }
         __typename
