@@ -9165,6 +9165,7 @@ fragment Badge on Badge {
     }
     walmartId
     walmartDivision
+    canvasUserId
     hasCoach
     isK4dStudent
     isKmapStudent
