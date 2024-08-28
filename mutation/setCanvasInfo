@@ -1,0 +1,9 @@
+mutation setCanvasInfo($profileKeyName: String!) {
+  setCanvasInfo(profileKeyName: $profileKeyName) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

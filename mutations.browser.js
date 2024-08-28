@@ -12509,4 +12509,22 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
+  setCanvasInfo: `mutation setCanvasInfo($profileKeyName: String!) {
+  setCanvasInfo(profileKeyName: $profileKeyName) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  signUpWithCanvas: `mutation signUpWithCanvas($profileKeyName: String!) {
+  signupWithCanvas(profileKeyName: $profileKeyName) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

@@ -1,0 +1,9 @@
+mutation signUpWithCanvas($profileKeyName: String!) {
+  signupWithCanvas(profileKeyName: $profileKeyName) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
