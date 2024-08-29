@@ -11246,12 +11246,13 @@ fragment ExerciseRevision on ExerciseRevision {
     __typename
   }
 }`,
-  createKhanmigoCheckoutStripeSession: `mutation createKhanmigoCheckoutStripeSession($priceID: String!, $paymentFrequency: PaymentFrequency!, $cancelURL: String!, $successURL: String!) {
+  createKhanmigoCheckoutStripeSession: `mutation createKhanmigoCheckoutStripeSession($priceID: String!, $paymentFrequency: PaymentFrequency!, $cancelURL: String!, $successURL: String!, $couponID: String) {
   createStripeSession(
     priceID: $priceID
     paymentFrequency: $paymentFrequency
     cancelURL: $cancelURL
     successURL: $successURL
+    couponID: $couponID
   ) {
     redirectURL
     error {
