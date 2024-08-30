@@ -21002,4 +21002,35 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  getContentItem: `query getContentItem($descriptors: [String!]!) {
+  contentForDescriptors(descriptors: $descriptors) {
+    id
+    contentDescriptor
+    contentKind
+    title
+    description
+    mappedStandards {
+      id
+      setId
+      standardId
+      __typename
+    }
+    lesson: parentTopic {
+      id
+      title
+      unit: parent {
+        id
+        title
+        course: parent {
+          id
+          title
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
