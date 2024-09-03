@@ -1,9 +1,8 @@
-mutation SetBasicSettings($kaid: String!, $nickname: String, $username: String, $soundOn: Boolean, $userLanguage: String, $region: String, $birthdate: String) {
+mutation SetBasicSettings($kaid: String!, $nickname: String, $username: String, $userLanguage: String, $region: String, $birthdate: String) {
   setSettings(
     kaid: $kaid
     nickname: $nickname
     username: $username
-    soundOn: $soundOn
     userLanguage: $userLanguage
     region: $region
     birthdate: $birthdate
@@ -12,7 +11,6 @@ mutation SetBasicSettings($kaid: String!, $nickname: String, $username: String, 
       id
       nickname
       username
-      soundOn
       userLanguage
       region
       birthdate

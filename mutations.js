@@ -8341,18 +8341,20 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }`,
-  SetAccessibility: `mutation SetAccessibility($kaid: String!, $hideVisual: Boolean!, $prefersReducedMotion: Boolean!, $noColorInVideos: Boolean!) {
+  SetAccessibility: `mutation SetAccessibility($kaid: String!, $hideVisual: Boolean!, $prefersReducedMotion: Boolean!, $noColorInVideos: Boolean!, $soundOn: Boolean) {
   setSettings(
     kaid: $kaid
     hideVisual: $hideVisual
     prefersReducedMotion: $prefersReducedMotion
     noColorInVideos: $noColorInVideos
+    soundOn: $soundOn
   ) {
     user {
       id
       hideVisual
       prefersReducedMotion
       noColorInVideos
+      soundOn
       __typename
     }
     errors {
@@ -8396,12 +8398,11 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }`,
-  SetBasicSettings: `mutation SetBasicSettings($kaid: String!, $nickname: String, $username: String, $soundOn: Boolean, $userLanguage: String, $region: String, $birthdate: String) {
+  SetBasicSettings: `mutation SetBasicSettings($kaid: String!, $nickname: String, $username: String, $userLanguage: String, $region: String, $birthdate: String) {
   setSettings(
     kaid: $kaid
     nickname: $nickname
     username: $username
-    soundOn: $soundOn
     userLanguage: $userLanguage
     region: $region
     birthdate: $birthdate
@@ -8410,7 +8411,6 @@ fragment entry on TeamPageEntryForEditing {
       id
       nickname
       username
-      soundOn
       userLanguage
       region
       birthdate

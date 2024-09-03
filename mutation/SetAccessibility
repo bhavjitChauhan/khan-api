@@ -1,15 +1,17 @@
-mutation SetAccessibility($kaid: String!, $hideVisual: Boolean!, $prefersReducedMotion: Boolean!, $noColorInVideos: Boolean!) {
+mutation SetAccessibility($kaid: String!, $hideVisual: Boolean!, $prefersReducedMotion: Boolean!, $noColorInVideos: Boolean!, $soundOn: Boolean) {
   setSettings(
     kaid: $kaid
     hideVisual: $hideVisual
     prefersReducedMotion: $prefersReducedMotion
     noColorInVideos: $noColorInVideos
+    soundOn: $soundOn
   ) {
     user {
       id
       hideVisual
       prefersReducedMotion
       noColorInVideos
+      soundOn
       __typename
     }
     errors {
