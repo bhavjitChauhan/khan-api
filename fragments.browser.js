@@ -282,6 +282,7 @@ fragments = {
   hasAssignments
   id
   name
+  signupCode
   __typename
 }`,
   ClassroomData: `fragment ClassroomData on StudentList {

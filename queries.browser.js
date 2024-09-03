@@ -683,6 +683,7 @@ fragment AssignmentCsvData on Assignment {
     hasAssignments
     id
     name
+    signupCode
     __typename
   }
 }`,
@@ -15259,13 +15260,24 @@ fragment AssignmentData on Assignment {
     __typename
   }
 }`,
-  UserNextUpcomingAssignment: `query UserNextUpcomingAssignment {
+  UserNextUpcomingAssignment: `query UserNextUpcomingAssignment($contentDescriptors: [String!]!) {
   user {
     id
     assignmentDueNext {
       id
       studentList {
         ...Classroom
+        __typename
+      }
+      __typename
+    }
+    assignmentsPageForContentItems(contentDescriptors: $contentDescriptors) {
+      assignments {
+        id
+        studentList {
+          ...Classroom
+          __typename
+        }
         __typename
       }
       __typename
@@ -15281,6 +15293,7 @@ fragment Classroom on StudentList {
   hasAssignments
   id
   name
+  signupCode
   __typename
 }`,
   UserPermissionsByEmail: `query UserPermissionsByEmail($email: String!) {
