@@ -12523,6 +12523,7 @@ fragment TaskFragment on AssessmentTask {
   signupWithCanvas(profileKeyName: $profileKeyName) {
     error {
       code
+      email
       __typename
     }
     __typename

@@ -2,6 +2,7 @@ mutation signUpWithCanvas($profileKeyName: String!) {
   signupWithCanvas(profileKeyName: $profileKeyName) {
     error {
       code
+      email
       __typename
     }
     __typename
