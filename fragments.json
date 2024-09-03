@@ -11,7 +11,7 @@
   "BaseFolder": "fragment BaseFolder on Folder {\n  id\n  name\n  kaLocale\n  isEmpty\n  __typename\n}",
   "BasicContentItemProgress": "fragment BasicContentItemProgress on ContentItemProgress {\n  bestScore {\n    numAttempted\n    numCorrect\n    completedDate\n    __typename\n  }\n  completionStatus\n  content {\n    id\n    contentKind\n    contentDescriptor\n    progressKey\n    __typename\n  }\n  __typename\n}",
   "clarificationFragment": "fragment clarificationFragment on OfficialClarification {\n  id\n  text\n  openTimestamp\n  closeTimestamp\n  youtubeId\n  __typename\n}",
-  "Classroom": "fragment Classroom on StudentList {\n  cacheId\n  coachKaid\n  descriptor\n  hasAssignments\n  id\n  name\n  __typename\n}",
+  "Classroom": "fragment Classroom on StudentList {\n  cacheId\n  coachKaid\n  descriptor\n  hasAssignments\n  id\n  name\n  signupCode\n  __typename\n}",
   "ClassroomData": "fragment ClassroomData on StudentList {\n  cacheId\n  id\n  descriptor\n  name\n  key\n  signupCode\n  googleClassId\n  googleClassName\n  googleClassUrl\n  __typename\n}",
   "CleverCoachRequestField": "fragment CleverCoachRequestField on CleverCoachRequest {\n  id\n  email: studentIdentifier\n  __typename\n}\n\nfragment CoachRequestField on CoachRequest {\n  id\n  email: studentIdentifier\n  __typename\n}\n\nfragment InvitationsField on Invitation {\n  id\n  email\n  accepted\n  __typename\n}",
   "CommonContentItemProgressesFragment": "fragment CommonContentItemProgressesFragment on ContentItemProgress {\n  bestScore {\n    numAttempted\n    numCorrect\n    completedDate\n    __typename\n  }\n  completionStatus\n  content {\n    id\n    progressKey\n    __typename\n  }\n  __typename\n}",

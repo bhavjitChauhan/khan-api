@@ -6,6 +6,7 @@ query ClassroomByCode($classCode: String!) {
     hasAssignments
     id
     name
+    signupCode
     __typename
   }
 }
