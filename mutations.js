@@ -12542,4 +12542,22 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
+  addOrEditCourseMasteryTarget: `mutation addOrEditCourseMasteryTarget($districtID: String!, $input: [CourseMasteryTargetInput!]!) {
+  addOrEditCourseMasteryTarget(districtID: $districtID, input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  deleteAllCourseMasteryTargets: `mutation deleteAllCourseMasteryTargets($districtID: String!) {
+  deleteAllCourseMasteryTargets(districtID: $districtID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

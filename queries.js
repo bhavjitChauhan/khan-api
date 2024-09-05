@@ -3626,15 +3626,6 @@ fragment CourseProgress on SubjectProgress {
     levelHeight
     goal {
       type
-      courseMasteryTargets {
-        course {
-          id
-          translatedTitle
-          __typename
-        }
-        gradeLevels
-        __typename
-      }
       createdBy {
         id
         kaid
@@ -21039,6 +21030,24 @@ fragment ExerciseContentFields on LearnableContent {
           title
           __typename
         }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  getCourseMasteryTargets: `query getCourseMasteryTargets($districtID: ID!) {
+  districtById(districtId: $districtID) {
+    id
+    goal {
+      courseMasteryTargets {
+        course {
+          id
+          translatedTitle
+          __typename
+        }
+        gradeLevels
         __typename
       }
       __typename
