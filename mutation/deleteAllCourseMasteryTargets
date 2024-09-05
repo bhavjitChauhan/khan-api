@@ -1,0 +1,9 @@
+mutation deleteAllCourseMasteryTargets($districtID: String!) {
+  deleteAllCourseMasteryTargets(districtID: $districtID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

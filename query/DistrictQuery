@@ -33,15 +33,6 @@ query DistrictQuery($districtID: ID!) {
     levelHeight
     goal {
       type
-      courseMasteryTargets {
-        course {
-          id
-          translatedTitle
-          __typename
-        }
-        gradeLevels
-        __typename
-      }
       createdBy {
         id
         kaid
