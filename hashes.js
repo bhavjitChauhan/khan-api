@@ -759,4 +759,5 @@ export default {
   districtDashboardCourseMastery: 3152001450,
   getContentItem: 4044576611,
   getCourseMasteryTargets: 2395357128,
+  districtActivationTarget: 977318080,
 }

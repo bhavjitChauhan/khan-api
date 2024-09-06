@@ -21056,4 +21056,18 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  districtActivationTarget: `query districtActivationTarget($districtID: ID!) {
+  districtById(districtId: $districtID) {
+    id
+    goal {
+      activationTarget {
+        percentage
+        endDate
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
