@@ -5321,6 +5321,7 @@ fragment StudentField2 on StudentsPage {
       name
       signupCode
       countStudents
+      hasKADAiGuideEnrolledStudents
       __typename
     }
     __typename
