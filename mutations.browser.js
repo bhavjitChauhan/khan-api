@@ -7362,6 +7362,7 @@ fragment CourseRevisionStructure on CourseRevision {
       }
       transferToken
       udiUuid
+      kaLocale
       __typename
     }
     user {
@@ -7374,6 +7375,15 @@ fragment CourseRevisionStructure on CourseRevision {
         id
         kaLocale
         status
+        __typename
+      }
+      userDistrictInfos {
+        id
+        district {
+          id
+          kaLocale
+          __typename
+        }
         __typename
       }
       __typename
@@ -9189,6 +9199,7 @@ fragment Program on Program {
       }
       transferToken
       udiUuid
+      kaLocale
       __typename
     }
     user {
@@ -9201,6 +9212,15 @@ fragment Program on Program {
         id
         kaLocale
         status
+        __typename
+      }
+      userDistrictInfos {
+        id
+        district {
+          id
+          kaLocale
+          __typename
+        }
         __typename
       }
       __typename
