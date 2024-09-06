@@ -8,6 +8,7 @@ query getClassSelector {
       name
       signupCode
       countStudents
+      hasKADAiGuideEnrolledStudents
       __typename
     }
     __typename
