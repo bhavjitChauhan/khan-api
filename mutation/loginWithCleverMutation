@@ -18,6 +18,7 @@ mutation loginWithCleverMutation($code: String!, $reauth: Boolean!, $fromDevApp:
       }
       transferToken
       udiUuid
+      kaLocale
       __typename
     }
     user {
@@ -30,6 +31,15 @@ mutation loginWithCleverMutation($code: String!, $reauth: Boolean!, $fromDevApp:
         id
         kaLocale
         status
+        __typename
+      }
+      userDistrictInfos {
+        id
+        district {
+          id
+          kaLocale
+          __typename
+        }
         __typename
       }
       __typename
