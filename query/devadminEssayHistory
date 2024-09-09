@@ -27,6 +27,7 @@ query devadminEssayHistory($essaySessionId: String!, $pageSize: Int!, $offset: I
         ... on UserEssayOutlineSnapshot {
           learningTimeSeconds
           pasteMetadata {
+            location
             jsonPointer
             selectionStart
             selectionEnd
