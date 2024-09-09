@@ -208,7 +208,7 @@ hashes = {
   getEotMCCardDetails: 1549565732,
   getEotQuizCardDetails: 3661073670,
   getEotTestCardDetails: 2683866208,
-  getExerciseRevisionGo: 1670262489,
+  getExerciseRevisionGo: 3770216553,
   getFeedbackReplies: 284128182,
   getFeedbackRepliesPage: 226201627,
   getFlag: 1986245167,

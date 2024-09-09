@@ -6562,6 +6562,15 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     slug
     sha
     trackingDocumentUrl
+    interimAssessmentType
+    __typename
+  }
+  user {
+    id
+    canEditInterimAssessments: hasPermission(
+      name: "can_edit_interim_assessments"
+      scope: ANY_ON_CURRENT_LOCALE
+    )
     __typename
   }
 }`,
