@@ -61,6 +61,7 @@ query getCoachAssignmentReport($assignmentId: String!, $teacherKaid: String!) {
             feedbackList {
               id
               isResolved
+              isPositive
               __typename
             }
             __typename

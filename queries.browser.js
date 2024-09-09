@@ -19732,6 +19732,7 @@ fragment UserFields on User {
         ... on UserEssayOutlineSnapshot {
           learningTimeSeconds
           pasteMetadata {
+            location
             jsonPointer
             selectionStart
             selectionEnd
@@ -20233,6 +20234,7 @@ fragment UserFields on User {
         ... on UserEssayOutlineSnapshot {
           learningTimeSeconds
           pasteMetadata {
+            location
             jsonPointer
             selectionStart
             selectionEnd
@@ -20311,6 +20313,7 @@ fragment UserFields on User {
             feedbackList {
               id
               isResolved
+              isPositive
               __typename
             }
             __typename

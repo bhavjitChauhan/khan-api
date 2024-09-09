@@ -28,6 +28,7 @@ query essaySessionHistory($essaySessionID: String!, $pageSize: Int!, $offset: In
         ... on UserEssayOutlineSnapshot {
           learningTimeSeconds
           pasteMetadata {
+            location
             jsonPointer
             selectionStart
             selectionEnd
