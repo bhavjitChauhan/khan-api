@@ -484,5 +484,7 @@
   "signUpWithCanvas": "mutation signUpWithCanvas($profileKeyName: String!) {\n  signupWithCanvas(profileKeyName: $profileKeyName) {\n    error {\n      code\n      email\n      __typename\n    }\n    __typename\n  }\n}",
   "ClearCanvasUserId": "mutation ClearCanvasUserId($kaid: String!) {\n  setCanvasInfoAsAdmin(kaid: $kaid, canvasUserId: null) {\n    error {\n      code\n      __typename\n    }\n    user {\n      id\n      __typename\n    }\n    __typename\n  }\n}",
   "addOrEditCourseMasteryTarget": "mutation addOrEditCourseMasteryTarget($districtID: String!, $input: [CourseMasteryTargetInput!]!) {\n  addOrEditCourseMasteryTarget(districtID: $districtID, input: $input) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
-  "deleteAllCourseMasteryTargets": "mutation deleteAllCourseMasteryTargets($districtID: String!) {\n  deleteAllCourseMasteryTargets(districtID: $districtID) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}"
+  "deleteAllCourseMasteryTargets": "mutation deleteAllCourseMasteryTargets($districtID: String!) {\n  deleteAllCourseMasteryTargets(districtID: $districtID) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
+  "addOrEditLearningMinutesTarget": "mutation addOrEditLearningMinutesTarget($districtID: String!, $input: LearningMinutesTargetInput!) {\n  addOrEditLearningMinutesTarget(districtID: $districtID, input: $input) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
+  "deleteLearningMinutesTarget": "mutation deleteLearningMinutesTarget($districtID: String!) {\n  deleteLearningMinutesTarget(districtID: $districtID) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}"
 }

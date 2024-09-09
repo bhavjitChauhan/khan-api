@@ -689,7 +689,7 @@ export default {
   userBirthMonthYear: 1380270141,
   districtAdminName: 937404703,
   perseusTemplateCompletionQuery: 183494894,
-  districtDashboardLearningMinutes: 3958197028,
+  districtDashboardLearningMinutes: 421434657,
   districtDashboardActivation: 1719754234,
   districtDashboardSkillsLeveledUp: 1383756852,
   districtById: 3178323376,

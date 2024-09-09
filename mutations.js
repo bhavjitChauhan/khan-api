@@ -12580,4 +12580,22 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
+  addOrEditLearningMinutesTarget: `mutation addOrEditLearningMinutesTarget($districtID: String!, $input: LearningMinutesTargetInput!) {
+  addOrEditLearningMinutesTarget(districtID: $districtID, input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  deleteLearningMinutesTarget: `mutation deleteLearningMinutesTarget($districtID: String!) {
+  deleteLearningMinutesTarget(districtID: $districtID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
