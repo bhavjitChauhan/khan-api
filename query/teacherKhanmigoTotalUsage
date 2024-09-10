@@ -1,5 +1,18 @@
 query teacherKhanmigoTotalUsage($filter: KhanmigoTeacherFilters!) {
   teacherKhanmigoUsage(filter: $filter) {
+    overall {
+      possibleUsers
+      usersWithUsage
+      percentUsersWithUsage
+      chats
+      avgChats
+      flaggedChats
+      avgFlaggedChatsPerUser
+      messages
+      avgMessagesPerChat
+      avgMessagesPerUser
+      __typename
+    }
     byStudent {
       student {
         id
@@ -8,6 +21,7 @@ query teacherKhanmigoTotalUsage($filter: KhanmigoTeacherFilters!) {
         __typename
       }
       chats
+      flaggedChats
       messages
       avgMessagesPerChat
       activities

@@ -18675,6 +18675,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       usersWithUsage
       percentUsersWithUsage
       avgChats
+      avgFlaggedChatsPerUser
       avgMessagesPerChat
       avgMessagesPerUser
       __typename
@@ -18691,6 +18692,8 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
         percentUsersWithUsage
         chats
         avgChats
+        flaggedChats
+        avgFlaggedChatsPerUser
         messages
         avgMessagesPerChat
         avgMessagesPerUser
@@ -18716,6 +18719,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
         usersWithUsage
         percentUsersWithUsage
         avgChats
+        avgFlaggedChatsPerUser
         avgMessagesPerChat
         avgMessagesPerUser
         __typename
@@ -18744,6 +18748,8 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
         percentUsersWithUsage
         chats
         avgChats
+        flaggedChats
+        avgFlaggedChatsPerUser
         messages
         avgMessagesPerChat
         avgMessagesPerUser
@@ -18773,6 +18779,8 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
         percentUsersWithUsage
         chats
         avgChats
+        flaggedChats
+        avgFlaggedChatsPerUser
         messages
         avgMessagesPerChat
         avgMessagesPerUser
@@ -20021,6 +20029,19 @@ fragment UserFields on User {
 }`,
   teacherKhanmigoTotalUsage: `query teacherKhanmigoTotalUsage($filter: KhanmigoTeacherFilters!) {
   teacherKhanmigoUsage(filter: $filter) {
+    overall {
+      possibleUsers
+      usersWithUsage
+      percentUsersWithUsage
+      chats
+      avgChats
+      flaggedChats
+      avgFlaggedChatsPerUser
+      messages
+      avgMessagesPerChat
+      avgMessagesPerUser
+      __typename
+    }
     byStudent {
       student {
         id
@@ -20029,6 +20050,7 @@ fragment UserFields on User {
         __typename
       }
       chats
+      flaggedChats
       messages
       avgMessagesPerChat
       activities
