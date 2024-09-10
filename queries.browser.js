@@ -21088,4 +21088,24 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  getCoeditingDocument: `query getCoeditingDocument($documentID: String!) {
+  coeditingDocument(documentID: $documentID) {
+    id
+    ownerKaid
+    threadId
+    configName
+    title
+    latestSnapshot {
+      id
+      text {
+        prefix
+        selection
+        suffix
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
