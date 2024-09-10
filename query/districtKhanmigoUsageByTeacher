@@ -17,6 +17,8 @@ query districtKhanmigoUsageByTeacher($filter: KhanmigoDistrictFilters!, $schoolI
         percentUsersWithUsage
         chats
         avgChats
+        flaggedChats
+        avgFlaggedChatsPerUser
         messages
         avgMessagesPerChat
         avgMessagesPerUser
