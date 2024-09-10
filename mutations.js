@@ -12598,4 +12598,14 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
+  copyCoeditingDocument: `mutation copyCoeditingDocument($documentID: String!, $snapshotID: String!) {
+  copyCoeditingDocument(documentID: $documentID, snapshotID: $snapshotID) {
+    newDocumentID
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

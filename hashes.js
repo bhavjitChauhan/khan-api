@@ -760,4 +760,5 @@ export default {
   getContentItem: 4044576611,
   getCourseMasteryTargets: 2395357128,
   districtActivationTarget: 977318080,
+  getCoeditingDocument: 2466812127,
 }
