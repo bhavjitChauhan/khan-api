@@ -13,6 +13,11 @@ query districtDashboardSkillsLeveledUp($filters: DistrictDashboardFilters!, $upT
       yearToDateAvg
       __typename
     }
+    target {
+      skillsPerWeek
+      domains
+      __typename
+    }
     rows {
       weekStart
       weekEnd
