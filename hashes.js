@@ -761,4 +761,5 @@ export default {
   getCourseMasteryTargets: 2395357128,
   districtActivationTarget: 977318080,
   getCoeditingDocument: 2466812127,
+  getUserData: 932106019,
 }

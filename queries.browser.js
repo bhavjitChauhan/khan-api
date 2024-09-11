@@ -21130,4 +21130,11 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  getUserData: `query getUserData {
+  user {
+    id
+    hasKADClassroomWithAiGuideEnrolledStudents
+    __typename
+  }
+}`,
 }
