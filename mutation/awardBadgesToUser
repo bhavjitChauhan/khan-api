@@ -5,6 +5,7 @@ mutation awardBadgesToUser($kaid: String!, $badges: [String]!, $fromDevAdmin: Bo
     fromDevAdmin: $fromDevAdmin
   ) {
     errors {
+      code
       badgeName
       __typename
     }

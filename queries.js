@@ -6365,6 +6365,11 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     description
     __typename
   }
+  streaksEmailSubscription {
+    token
+    checked
+    __typename
+  }
   __typename
 }`,
   getEmailSettingsByToken: `query getEmailSettingsByToken($token: String!) {
@@ -6414,6 +6419,11 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     key
     checked
     description
+    __typename
+  }
+  streaksEmailSubscription {
+    token
+    checked
     __typename
   }
   __typename

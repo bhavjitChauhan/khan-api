@@ -530,6 +530,7 @@ fragment userExerciseFields on UserExercise {
     fromDevAdmin: $fromDevAdmin
   ) {
     errors {
+      code
       badgeName
       __typename
     }

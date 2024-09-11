@@ -61,5 +61,10 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     description
     __typename
   }
+  streaksEmailSubscription {
+    token
+    checked
+    __typename
+  }
   __typename
 }
