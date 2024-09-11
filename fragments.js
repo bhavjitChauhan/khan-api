@@ -752,6 +752,11 @@ fragment InvitationsField on Invitation {
     description
     __typename
   }
+  streaksEmailSubscription {
+    token
+    checked
+    __typename
+  }
   __typename
 }`,
   entry: `fragment entry on TeamPageEntryForEditing {
