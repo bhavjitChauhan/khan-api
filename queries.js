@@ -21152,4 +21152,16 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  getCurriculumAlignedCoursesForDistrict: `query getCurriculumAlignedCoursesForDistrict($districtId: ID!) {
+  districtById(districtId: $districtId) {
+    id
+    curriculumAlignedCourses {
+      id
+      title: translatedTitle
+      domainSlug
+      __typename
+    }
+    __typename
+  }
+}`,
 }

@@ -762,4 +762,5 @@ export default {
   districtActivationTarget: 977318080,
   getCoeditingDocument: 2466812127,
   getUserData: 932106019,
+  getCurriculumAlignedCoursesForDistrict: 1147697962,
 }
