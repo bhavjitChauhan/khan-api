@@ -1,0 +1,13 @@
+mutation addOrEditSkillsTarget($districtID: String!, $input: SkillsTargetInput!, $toProficient: Boolean!) {
+  addOrEditSkillsTarget(
+    districtID: $districtID
+    input: $input
+    toProficient: $toProficient
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

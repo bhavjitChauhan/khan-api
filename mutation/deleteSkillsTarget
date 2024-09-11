@@ -1,0 +1,9 @@
+mutation deleteSkillsTarget($districtID: String!, $toProficient: Boolean!) {
+  deleteSkillsTarget(districtID: $districtID, toProficient: $toProficient) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

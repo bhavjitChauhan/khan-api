@@ -19574,6 +19574,11 @@ fragment UserFields on User {
       yearToDateAvg
       __typename
     }
+    target {
+      skillsPerWeek
+      domains
+      __typename
+    }
     rows {
       weekStart
       weekEnd

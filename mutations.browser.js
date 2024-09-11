@@ -12608,4 +12608,26 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
+  addOrEditSkillsTarget: `mutation addOrEditSkillsTarget($districtID: String!, $input: SkillsTargetInput!, $toProficient: Boolean!) {
+  addOrEditSkillsTarget(
+    districtID: $districtID
+    input: $input
+    toProficient: $toProficient
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  deleteSkillsTarget: `mutation deleteSkillsTarget($districtID: String!, $toProficient: Boolean!) {
+  deleteSkillsTarget(districtID: $districtID, toProficient: $toProficient) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
