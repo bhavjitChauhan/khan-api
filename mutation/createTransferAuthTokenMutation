@@ -1,5 +1,5 @@
-mutation createTransferAuthTokenMutation {
-  createTransferAuthToken {
+mutation createTransferAuthTokenMutation($canvasProfileKeyName: String) {
+  createTransferAuthToken(canvasProfileKeyName: $canvasProfileKeyName) {
     token
     __typename
   }
