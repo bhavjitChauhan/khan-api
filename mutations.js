@@ -12525,8 +12525,8 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
-  createTransferAuthTokenMutation: `mutation createTransferAuthTokenMutation {
-  createTransferAuthToken {
+  createTransferAuthTokenMutation: `mutation createTransferAuthTokenMutation($canvasProfileKeyName: String) {
+  createTransferAuthToken(canvasProfileKeyName: $canvasProfileKeyName) {
     token
     __typename
   }
