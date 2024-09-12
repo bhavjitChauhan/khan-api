@@ -14866,6 +14866,10 @@ fragment tapTranslationFreshness on TAPTranslationFreshness {
             numAttempted
             __typename
           }
+          essaySession {
+            id
+            __typename
+          }
           __typename
         }
         exerciseConfig {
@@ -20384,6 +20388,7 @@ fragment UserFields on User {
           }
           __typename
         }
+        completedOn
         __typename
       }
       __typename

@@ -43,6 +43,10 @@ query UserAssignments($after: ID, $dueAfter: DateTime, $dueBefore: DateTime, $pa
             numAttempted
             __typename
           }
+          essaySession {
+            id
+            __typename
+          }
           __typename
         }
         exerciseConfig {
