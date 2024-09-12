@@ -17539,6 +17539,7 @@ fragment ProjectRevision on ProjectRevision {
     aiGuideSwagOwned {
       id
       name
+      altText
       description
       price
       __typename
@@ -17550,6 +17551,7 @@ fragment ProjectRevision on ProjectRevision {
   aiGuideSwag {
     id
     name
+    altText
     description
     price
     __typename

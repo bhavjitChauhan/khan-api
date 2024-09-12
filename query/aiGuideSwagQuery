@@ -2,6 +2,7 @@ query aiGuideSwagQuery {
   aiGuideSwag {
     id
     name
+    altText
     description
     price
     __typename
