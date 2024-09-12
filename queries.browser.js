@@ -8367,6 +8367,7 @@ fragment Badge on Badge {
     live
     eligibleLocale
     eligibleCountryCodes
+    audience
     campaignName
     promoSite
     signupStartDate
@@ -8377,45 +8378,6 @@ fragment Badge on Badge {
     bannerBeforeGraphic
     colorBg
     colorBgAccent
-    steps {
-      id
-      header
-      body
-      graphic
-      cta
-      headerShort
-      __typename
-      ... on TeacherCampaignVideoStep {
-        numberRequired
-        handouts
-        manualHandouts
-        manualHandoutDescriptions
-        videos
-        description
-        __typename
-      }
-      ... on TeacherCampaignResponseStep {
-        description
-        exercises {
-          title
-          description
-          introduction
-          questions
-          samples
-          __typename
-        }
-        __typename
-      }
-      ... on TeacherCampaignAwardStep {
-        headerOnCompletion
-        bodyOnCompletion
-        certificate
-        extraCredit
-        nextDrawTime
-        useGenericIcon
-        __typename
-      }
-    }
     __typename
   }
 }`,
