@@ -91,6 +91,7 @@ query getCoachAssignmentReport($assignmentId: String!, $teacherKaid: String!) {
           }
           __typename
         }
+        completedOn
         __typename
       }
       __typename
