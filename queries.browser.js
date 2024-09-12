@@ -19936,6 +19936,10 @@ fragment UserFields on User {
       totalUsers
       __typename
     }
+    target {
+      percentage
+      __typename
+    }
     __typename
   }
 }`,

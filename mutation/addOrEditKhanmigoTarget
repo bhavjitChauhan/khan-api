@@ -1,0 +1,9 @@
+mutation addOrEditKhanmigoTarget($districtID: String!, $input: KhanmigoTargetInput!) {
+  addOrEditKhanmigoTarget(districtID: $districtID, input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
