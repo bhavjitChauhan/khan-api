@@ -4,6 +4,7 @@ query aiGuideOwnedSwagQuery {
     aiGuideSwagOwned {
       id
       name
+      altText
       description
       price
       __typename
