@@ -12631,4 +12631,22 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
+  addOrEditKhanmigoTarget: `mutation addOrEditKhanmigoTarget($districtID: String!, $input: KhanmigoTargetInput!) {
+  addOrEditKhanmigoTarget(districtID: $districtID, input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  deleteKhanmigoTarget: `mutation deleteKhanmigoTarget($districtID: String!) {
+  deleteKhanmigoTarget(districtID: $districtID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
