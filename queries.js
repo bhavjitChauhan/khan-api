@@ -3620,6 +3620,7 @@ fragment CourseProgress on SubjectProgress {
     ancestors {
       id
       levelHeight
+      name
       __typename
     }
     countryCode
@@ -21146,6 +21147,99 @@ fragment ExerciseContentFields on LearnableContent {
       description
       title
       urlSlug
+      __typename
+    }
+    __typename
+  }
+}`,
+  DistrictWithUserPermissionsQuery: `query DistrictWithUserPermissionsQuery($districtID: ID!) {
+  districtById(districtId: $districtID) {
+    id
+    name
+    rosterSource
+    isTest
+    hasKhanmigo
+    isKmapDistrict
+    isK4dDistrict
+    region
+    activeGrades {
+      id
+      sortIndex
+      name
+      __typename
+    }
+    schools {
+      id
+      name
+      isKADSchool
+      isKmapSchool
+      __typename
+    }
+    schoolYearStart
+    schoolYearEnd
+    kaLocale
+    ancestors {
+      id
+      levelHeight
+      name
+      __typename
+    }
+    countryCode
+    levelHeight
+    goal {
+      type
+      createdBy {
+        id
+        kaid
+        __typename
+      }
+      __typename
+    }
+    schoolYearStart
+    __typename
+  }
+  user {
+    id
+    hasPermission(name: "CAN_ACT_LIKE_A_DISTRICT_ADMIN", scope: ANY)
+    userDistrictInfos {
+      id
+      district {
+        id
+        __typename
+      }
+      activatedAt
+      canSeeAllSchools
+      canManageAdmins
+      isKmap
+      isSuperAdmin
+      __typename
+    }
+    __typename
+  }
+}`,
+  GetManagedPartnershipsForDistrictsRoot: `query GetManagedPartnershipsForDistrictsRoot {
+  user {
+    id
+    homepageUrl
+    userChosenRoles
+    __typename
+  }
+  getPartnerships(includeDeleted: false, onlyTeacherDirected: false) {
+    ... on MetaDistrict {
+      id
+      name
+      countryCode
+      levelHeight
+      __typename
+    }
+    ... on District {
+      id
+      name
+      isTest
+      isKmapDistrict
+      isK4dDistrict
+      countryCode
+      levelHeight
       __typename
     }
     __typename

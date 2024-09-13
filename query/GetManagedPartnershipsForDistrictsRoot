@@ -1,0 +1,28 @@
+query GetManagedPartnershipsForDistrictsRoot {
+  user {
+    id
+    homepageUrl
+    userChosenRoles
+    __typename
+  }
+  getPartnerships(includeDeleted: false, onlyTeacherDirected: false) {
+    ... on MetaDistrict {
+      id
+      name
+      countryCode
+      levelHeight
+      __typename
+    }
+    ... on District {
+      id
+      name
+      isTest
+      isKmapDistrict
+      isK4dDistrict
+      countryCode
+      levelHeight
+      __typename
+    }
+    __typename
+  }
+}
