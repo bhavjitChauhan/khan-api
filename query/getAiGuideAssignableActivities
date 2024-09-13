@@ -1,0 +1,13 @@
+query getAiGuideAssignableActivities {
+  aiGuideAssignableActivities {
+    id
+    configName
+    teacherToolData {
+      description
+      title
+      urlSlug
+      __typename
+    }
+    __typename
+  }
+}
