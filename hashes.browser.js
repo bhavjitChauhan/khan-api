@@ -763,4 +763,5 @@ hashes = {
   getCoeditingDocument: 2466812127,
   getUserData: 932106019,
   getCurriculumAlignedCoursesForDistrict: 1147697962,
+  getAiGuideAssignableActivities: 1528884987,
 }

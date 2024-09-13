@@ -21137,4 +21137,17 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  getAiGuideAssignableActivities: `query getAiGuideAssignableActivities {
+  aiGuideAssignableActivities {
+    id
+    configName
+    teacherToolData {
+      description
+      title
+      urlSlug
+      __typename
+    }
+    __typename
+  }
+}`,
 }
