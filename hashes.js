@@ -111,7 +111,7 @@ export default {
   districtHomepage: 2523966179,
   districtHomepageProgress: 1681650575,
   DistrictPrimaryOfferingAsTeacher: 15799337,
-  DistrictQuery: 340394050,
+  DistrictQuery: 3382112047,
   districts: 3901228474,
   DistrictSkillsMAPProgressQuery: 706683816,
   DistrictSkillsProgressQuery: 1223536634,
@@ -764,4 +764,6 @@ export default {
   getUserData: 932106019,
   getCurriculumAlignedCoursesForDistrict: 1147697962,
   getAiGuideAssignableActivities: 1528884987,
+  DistrictWithUserPermissionsQuery: 1890961045,
+  GetManagedPartnershipsForDistrictsRoot: 3134713066,
 }
