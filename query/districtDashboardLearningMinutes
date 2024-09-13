@@ -16,6 +16,7 @@ query districtDashboardLearningMinutes($filters: DistrictDashboardFilters!) {
       domains
       __typename
     }
+    percentAtTarget
     rows {
       weekStart
       weekEnd

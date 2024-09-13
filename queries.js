@@ -19504,6 +19504,7 @@ fragment UserFields on User {
       domains
       __typename
     }
+    percentAtTarget
     rows {
       weekStart
       weekEnd
