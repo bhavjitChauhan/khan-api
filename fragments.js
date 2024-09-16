@@ -2266,6 +2266,11 @@ query ActivitiesList {
       itemData
       __typename
     }
+    ... on EYTQuestion {
+      conversationStarter
+      completionCriteria
+      __typename
+    }
     __typename
   }
   __typename
