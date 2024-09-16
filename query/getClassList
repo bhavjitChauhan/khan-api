@@ -25,6 +25,13 @@ query getClassList {
           id
           __typename
         }
+        district {
+          id
+          isCentrallyRostered
+          schoolYearStart
+          schoolYearEnd
+          __typename
+        }
         school {
           id
           eduOrg {

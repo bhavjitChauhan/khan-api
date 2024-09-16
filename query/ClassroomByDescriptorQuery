@@ -42,10 +42,12 @@ query ClassroomByDescriptorQuery($descriptor: String!) {
       isManuallyUnmarked
       district {
         id
+        isCentrallyRostered
         schoolYearStart
         schoolYearEnd
         __typename
       }
+      classWillBeRemovedInDays
       __typename
     }
     testPrepExams {
