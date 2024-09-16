@@ -12266,6 +12266,11 @@ fragment TaskFragment on AssessmentTask {
       itemData
       __typename
     }
+    ... on EYTQuestion {
+      conversationStarter
+      completionCriteria
+      __typename
+    }
     __typename
   }
   __typename
@@ -12336,6 +12341,11 @@ fragment TaskFragment on AssessmentTask {
       id
       exerciseId
       itemData
+      __typename
+    }
+    ... on EYTQuestion {
+      conversationStarter
+      completionCriteria
       __typename
     }
     __typename
