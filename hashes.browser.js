@@ -759,7 +759,7 @@ hashes = {
   districtDashboardCourseMastery: 3152001450,
   getContentItem: 4044576611,
   getCourseMasteryTargets: 2395357128,
-  districtActivationTarget: 977318080,
+  districtActivationTarget: 16257905,
   getCoeditingDocument: 2466812127,
   getUserData: 932106019,
   getCurriculumAlignedCoursesForDistrict: 1147697962,
