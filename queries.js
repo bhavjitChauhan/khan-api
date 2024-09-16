@@ -21101,7 +21101,6 @@ fragment ExerciseContentFields on LearnableContent {
     goal {
       activationTarget {
         percentage
-        endDate
         __typename
       }
       __typename

@@ -4,7 +4,6 @@ query districtActivationTarget($districtID: ID!) {
     goal {
       activationTarget {
         percentage
-        endDate
         __typename
       }
       __typename
