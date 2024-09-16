@@ -731,10 +731,12 @@ fragment AssignmentCsvData on Assignment {
       isManuallyUnmarked
       district {
         id
+        isCentrallyRostered
         schoolYearStart
         schoolYearEnd
         __typename
       }
+      classWillBeRemovedInDays
       __typename
     }
     testPrepExams {
@@ -5084,6 +5086,13 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
         courseSISName
         studentUserDistrictInfos {
           id
+          __typename
+        }
+        district {
+          id
+          isCentrallyRostered
+          schoolYearStart
+          schoolYearEnd
           __typename
         }
         school {
