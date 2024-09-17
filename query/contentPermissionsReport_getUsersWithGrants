@@ -12,7 +12,6 @@ query contentPermissionsReport_getUsersWithGrants($withRoles: [String!]) {
       }
       scope {
         contentKind
-        curationNodeId
         kaLocale
         __typename
       }

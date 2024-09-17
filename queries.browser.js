@@ -15297,7 +15297,6 @@ fragment Classroom on StudentList {
       granterEmail
       locale: kaLocale
       canPublish
-      topic: curationNodeSlug
       __typename
     }
     __typename
@@ -16507,7 +16506,6 @@ fragment contentSearchLearnableContent on LearnableContent {
       }
       scope {
         contentKind
-        curationNodeId
         kaLocale
         __typename
       }
