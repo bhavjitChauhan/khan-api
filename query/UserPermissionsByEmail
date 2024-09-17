@@ -12,7 +12,6 @@ query UserPermissionsByEmail($email: String!) {
       granterEmail
       locale: kaLocale
       canPublish
-      topic: curationNodeSlug
       __typename
     }
     __typename
