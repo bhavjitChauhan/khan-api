@@ -12,6 +12,8 @@ query DistrictActivationByGradeLevelContainerUsingNewService($districtId: ID!, $
       numTeachersTotal
       numTeachersActivated
       numStudentsStartedAnActivity
+      studentTargetStatus
+      teacherTargetStatus
       __typename
     }
     updatedAt
@@ -21,6 +23,12 @@ query DistrictActivationByGradeLevelContainerUsingNewService($districtId: ID!, $
       numTeachersTotal
       numTeachersActivated
       numStudentsStartedAnActivity
+      studentTargetStatus
+      teacherTargetStatus
+      __typename
+    }
+    target {
+      percentage
       __typename
     }
     __typename

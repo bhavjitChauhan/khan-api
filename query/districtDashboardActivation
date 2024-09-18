@@ -9,6 +9,10 @@ query districtDashboardActivation($filters: DistrictDashboardFilters!) {
     numStartedAnActivity
     percentStartedAnActivity
     lastUpdatedDate
+    target {
+      percentage
+      __typename
+    }
     __typename
   }
 }

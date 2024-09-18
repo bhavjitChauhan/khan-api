@@ -3388,6 +3388,8 @@ fragment CourseProgress on SubjectProgress {
       numTeachersTotal
       numTeachersActivated
       numStudentsStartedAnActivity
+      studentTargetStatus
+      teacherTargetStatus
       __typename
     }
     updatedAt
@@ -3397,6 +3399,12 @@ fragment CourseProgress on SubjectProgress {
       numTeachersTotal
       numTeachersActivated
       numStudentsStartedAnActivity
+      studentTargetStatus
+      teacherTargetStatus
+      __typename
+    }
+    target {
+      percentage
       __typename
     }
     __typename
@@ -3442,10 +3450,15 @@ fragment CourseProgress on SubjectProgress {
       numStudentsActivated
       isActivated
       numStudentsStartedAnActivity
+      studentTargetStatus
       __typename
     }
     totalCount
     updatedAt
+    target {
+      percentage
+      __typename
+    }
     __typename
   }
 }`,
@@ -19571,6 +19584,10 @@ fragment UserFields on User {
     numStartedAnActivity
     percentStartedAnActivity
     lastUpdatedDate
+    target {
+      percentage
+      __typename
+    }
     __typename
   }
 }`,
@@ -20514,6 +20531,8 @@ fragment ExerciseContentFields on LearnableContent {
       numTeachersTotal
       numTeachersActivated
       numStudentsStartedAnActivity
+      studentTargetStatus
+      teacherTargetStatus
       __typename
     }
     updatedAt
@@ -20523,6 +20542,12 @@ fragment ExerciseContentFields on LearnableContent {
       numTeachersTotal
       numTeachersActivated
       numStudentsStartedAnActivity
+      studentTargetStatus
+      teacherTargetStatus
+      __typename
+    }
+    target {
+      percentage
       __typename
     }
     __typename

@@ -12659,4 +12659,22 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
+  addOrEditActivationTarget: `mutation addOrEditActivationTarget($districtID: String!, $input: ActivationTargetInput!) {
+  addOrEditActivationTarget(districtID: $districtID, input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  deleteActivationTarget: `mutation deleteActivationTarget($districtID: String!) {
+  deleteActivationTarget(districtID: $districtID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
