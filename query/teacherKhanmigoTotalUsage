@@ -5,12 +5,15 @@ query teacherKhanmigoTotalUsage($filter: KhanmigoTeacherFilters!) {
       usersWithUsage
       percentUsersWithUsage
       chats
-      avgChats
+      avgChatsPerUsersWithUsage
+      avgChatsPerPossibleUsers
       flaggedChats
-      avgFlaggedChatsPerUser
+      avgFlaggedChatsPerUsersWithUsage
+      avgFlaggedChatsPerPossibleUsers
       messages
       avgMessagesPerChat
-      avgMessagesPerUser
+      avgMessagesPerUserWithUsage
+      avgMessagesPerPossibleUsers
       __typename
     }
     byStudent {

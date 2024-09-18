@@ -2,12 +2,19 @@ query districtKhanmigoTotalUsage($filter: KhanmigoDistrictFilters!) {
   districtKhanmigoUsage(filter: $filter) {
     groupType
     overall {
+      possibleUsers
       usersWithUsage
       percentUsersWithUsage
-      avgChats
-      avgFlaggedChatsPerUser
+      chats
+      avgChatsPerUsersWithUsage
+      avgChatsPerPossibleUsers
+      flaggedChats
+      avgFlaggedChatsPerUsersWithUsage
+      avgFlaggedChatsPerPossibleUsers
+      messages
       avgMessagesPerChat
-      avgMessagesPerUser
+      avgMessagesPerUserWithUsage
+      avgMessagesPerPossibleUsers
       __typename
     }
     bySchool {
@@ -21,12 +28,15 @@ query districtKhanmigoTotalUsage($filter: KhanmigoDistrictFilters!) {
         usersWithUsage
         percentUsersWithUsage
         chats
-        avgChats
+        avgChatsPerUsersWithUsage
+        avgChatsPerPossibleUsers
         flaggedChats
-        avgFlaggedChatsPerUser
+        avgFlaggedChatsPerUsersWithUsage
+        avgFlaggedChatsPerPossibleUsers
         messages
         avgMessagesPerChat
-        avgMessagesPerUser
+        avgMessagesPerUserWithUsage
+        avgMessagesPerPossibleUsers
         __typename
       }
       __typename
