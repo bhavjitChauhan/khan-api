@@ -491,5 +491,7 @@
   "addOrEditSkillsTarget": "mutation addOrEditSkillsTarget($districtID: String!, $input: SkillsTargetInput!, $toProficient: Boolean!) {\n  addOrEditSkillsTarget(\n    districtID: $districtID\n    input: $input\n    toProficient: $toProficient\n  ) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
   "deleteSkillsTarget": "mutation deleteSkillsTarget($districtID: String!, $toProficient: Boolean!) {\n  deleteSkillsTarget(districtID: $districtID, toProficient: $toProficient) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
   "addOrEditKhanmigoTarget": "mutation addOrEditKhanmigoTarget($districtID: String!, $input: KhanmigoTargetInput!) {\n  addOrEditKhanmigoTarget(districtID: $districtID, input: $input) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
-  "deleteKhanmigoTarget": "mutation deleteKhanmigoTarget($districtID: String!) {\n  deleteKhanmigoTarget(districtID: $districtID) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}"
+  "deleteKhanmigoTarget": "mutation deleteKhanmigoTarget($districtID: String!) {\n  deleteKhanmigoTarget(districtID: $districtID) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
+  "addOrEditActivationTarget": "mutation addOrEditActivationTarget($districtID: String!, $input: ActivationTargetInput!) {\n  addOrEditActivationTarget(districtID: $districtID, input: $input) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
+  "deleteActivationTarget": "mutation deleteActivationTarget($districtID: String!) {\n  deleteActivationTarget(districtID: $districtID) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}"
 }

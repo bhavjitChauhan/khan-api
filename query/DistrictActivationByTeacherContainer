@@ -13,10 +13,15 @@ query DistrictActivationByTeacherContainer($districtId: ID!, $schoolIds: [ID!], 
       numStudentsActivated
       isActivated
       numStudentsStartedAnActivity
+      studentTargetStatus
       __typename
     }
     totalCount
     updatedAt
+    target {
+      percentage
+      __typename
+    }
     __typename
   }
 }

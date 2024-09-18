@@ -1,0 +1,9 @@
+mutation deleteActivationTarget($districtID: String!) {
+  deleteActivationTarget(districtID: $districtID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
