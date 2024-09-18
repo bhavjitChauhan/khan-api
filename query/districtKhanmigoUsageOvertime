@@ -9,10 +9,15 @@ query districtKhanmigoUsageOvertime($filter: KhanmigoDistrictFilters!) {
         usersWithUsage
         percentUsersWithUsage
         chats
-        avgChats
+        avgChatsPerUsersWithUsage
+        avgChatsPerPossibleUsers
+        flaggedChats
+        avgFlaggedChatsPerUsersWithUsage
+        avgFlaggedChatsPerPossibleUsers
         messages
         avgMessagesPerChat
-        avgMessagesPerUser
+        avgChatsPerUsersWithUsage
+        avgMessagesPerPossibleUsers
         __typename
       }
       __typename

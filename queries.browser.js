@@ -18658,12 +18658,19 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   districtKhanmigoUsage(filter: $filter) {
     groupType
     overall {
+      possibleUsers
       usersWithUsage
       percentUsersWithUsage
-      avgChats
-      avgFlaggedChatsPerUser
+      chats
+      avgChatsPerUsersWithUsage
+      avgChatsPerPossibleUsers
+      flaggedChats
+      avgFlaggedChatsPerUsersWithUsage
+      avgFlaggedChatsPerPossibleUsers
+      messages
       avgMessagesPerChat
-      avgMessagesPerUser
+      avgMessagesPerUserWithUsage
+      avgMessagesPerPossibleUsers
       __typename
     }
     bySchool {
@@ -18677,12 +18684,15 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
         usersWithUsage
         percentUsersWithUsage
         chats
-        avgChats
+        avgChatsPerUsersWithUsage
+        avgChatsPerPossibleUsers
         flaggedChats
-        avgFlaggedChatsPerUser
+        avgFlaggedChatsPerUsersWithUsage
+        avgFlaggedChatsPerPossibleUsers
         messages
         avgMessagesPerChat
-        avgMessagesPerUser
+        avgMessagesPerUserWithUsage
+        avgMessagesPerPossibleUsers
         __typename
       }
       __typename
@@ -18702,12 +18712,19 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
         __typename
       }
       usage {
+        possibleUsers
         usersWithUsage
         percentUsersWithUsage
-        avgChats
-        avgFlaggedChatsPerUser
+        chats
+        avgChatsPerUsersWithUsage
+        avgChatsPerPossibleUsers
+        flaggedChats
+        avgFlaggedChatsPerUsersWithUsage
+        avgFlaggedChatsPerPossibleUsers
+        messages
         avgMessagesPerChat
-        avgMessagesPerUser
+        avgMessagesPerUserWithUsage
+        avgMessagesPerPossibleUsers
         __typename
       }
       __typename
@@ -18733,12 +18750,15 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
         usersWithUsage
         percentUsersWithUsage
         chats
-        avgChats
+        avgChatsPerUsersWithUsage
+        avgChatsPerPossibleUsers
         flaggedChats
-        avgFlaggedChatsPerUser
+        avgFlaggedChatsPerUsersWithUsage
+        avgFlaggedChatsPerPossibleUsers
         messages
         avgMessagesPerChat
-        avgMessagesPerUser
+        avgMessagesPerUserWithUsage
+        avgMessagesPerPossibleUsers
         __typename
       }
       __typename
@@ -18764,12 +18784,15 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
         usersWithUsage
         percentUsersWithUsage
         chats
-        avgChats
+        avgChatsPerUsersWithUsage
+        avgChatsPerPossibleUsers
         flaggedChats
-        avgFlaggedChatsPerUser
+        avgFlaggedChatsPerUsersWithUsage
+        avgFlaggedChatsPerPossibleUsers
         messages
         avgMessagesPerChat
-        avgMessagesPerUser
+        avgMessagesPerUserWithUsage
+        avgMessagesPerPossibleUsers
         __typename
       }
       __typename
@@ -18788,10 +18811,15 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
         usersWithUsage
         percentUsersWithUsage
         chats
-        avgChats
+        avgChatsPerUsersWithUsage
+        avgChatsPerPossibleUsers
+        flaggedChats
+        avgFlaggedChatsPerUsersWithUsage
+        avgFlaggedChatsPerPossibleUsers
         messages
         avgMessagesPerChat
-        avgMessagesPerUser
+        avgChatsPerUsersWithUsage
+        avgMessagesPerPossibleUsers
         __typename
       }
       __typename
@@ -20030,12 +20058,15 @@ fragment UserFields on User {
       usersWithUsage
       percentUsersWithUsage
       chats
-      avgChats
+      avgChatsPerUsersWithUsage
+      avgChatsPerPossibleUsers
       flaggedChats
-      avgFlaggedChatsPerUser
+      avgFlaggedChatsPerUsersWithUsage
+      avgFlaggedChatsPerPossibleUsers
       messages
       avgMessagesPerChat
-      avgMessagesPerUser
+      avgMessagesPerUserWithUsage
+      avgMessagesPerPossibleUsers
       __typename
     }
     byStudent {
