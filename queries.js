@@ -20601,8 +20601,8 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
-  getUserActiveEnrollmentGroups: `query getUserActiveEnrollmentGroups($kaid: String!) {
-  user(kaid: $kaid) {
+  getUserActiveEnrollmentGroups: `query getUserActiveEnrollmentGroups {
+  user {
     id
     aiGuideActiveEnrollmentGroups
     __typename
