@@ -1,5 +1,5 @@
-query getUserActiveEnrollmentGroups($kaid: String!) {
-  user(kaid: $kaid) {
+query getUserActiveEnrollmentGroups {
+  user {
     id
     aiGuideActiveEnrollmentGroups
     __typename
