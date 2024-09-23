@@ -14,6 +14,16 @@ query districtGrowthBySchool($filters: DistrictGrowthFilters!) {
         id
         __typename
       }
+      targetStatus
+      __typename
+    }
+    target {
+      course {
+        id
+        __typename
+      }
+      percentage
+      gradeLevels
       __typename
     }
     __typename

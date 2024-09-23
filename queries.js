@@ -19349,6 +19349,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       medianCMPercent
       wowPercentChange
       eoyPercentGuess
+      targetStatus
       __typename
     }
     __typename
@@ -19370,6 +19371,16 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
         id
         __typename
       }
+      targetStatus
+      __typename
+    }
+    target {
+      course {
+        id
+        __typename
+      }
+      percentage
+      gradeLevels
       __typename
     }
     __typename
@@ -19395,6 +19406,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       medianCMPercent
       wowPercentChange
       eoyPercentGuess
+      targetStatus
       __typename
     }
     __typename
@@ -19417,6 +19429,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       medianCMPercent
       wowPercentChange
       eoyPercentGuess
+      targetStatus
       __typename
     }
     __typename
@@ -19428,6 +19441,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     weekStartDate
     overallMedianCMPercent
     selectedSchoolsMedianCMPercent
+    targetPercentage
     __typename
   }
 }`,

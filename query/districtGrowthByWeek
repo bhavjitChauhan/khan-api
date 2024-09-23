@@ -4,6 +4,7 @@ query districtGrowthByWeek($filters: DistrictGrowthFilters!) {
     weekStartDate
     overallMedianCMPercent
     selectedSchoolsMedianCMPercent
+    targetPercentage
     __typename
   }
 }

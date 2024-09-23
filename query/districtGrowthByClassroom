@@ -17,6 +17,7 @@ query districtGrowthByClassroom($teacherKaid: String!, $schoolID: String!, $filt
       medianCMPercent
       wowPercentChange
       eoyPercentGuess
+      targetStatus
       __typename
     }
     __typename
