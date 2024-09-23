@@ -263,6 +263,16 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
           createdAt
           __typename
         }
+        userDistrictInfos(includeDeleted: false) {
+          id
+          uuid
+          district {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       summary
