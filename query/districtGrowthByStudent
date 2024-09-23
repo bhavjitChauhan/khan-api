@@ -18,6 +18,7 @@ query districtGrowthByStudent($classroomDescriptor: String!, $filters: DistrictG
       medianCMPercent
       wowPercentChange
       eoyPercentGuess
+      targetStatus
       __typename
     }
     __typename
