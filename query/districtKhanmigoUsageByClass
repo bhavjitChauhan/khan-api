@@ -21,6 +21,7 @@ query districtKhanmigoUsageByClass($filter: KhanmigoDistrictFilters!, $schoolID:
         avgFlaggedChatsPerPossibleUsers
         messages
         avgMessagesPerChat
+        targetStatus
         avgMessagesPerUserWithUsage
         avgMessagesPerPossibleUsers
         __typename

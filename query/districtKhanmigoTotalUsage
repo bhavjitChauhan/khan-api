@@ -15,6 +15,11 @@ query districtKhanmigoTotalUsage($filter: KhanmigoDistrictFilters!) {
       avgMessagesPerChat
       avgMessagesPerUserWithUsage
       avgMessagesPerPossibleUsers
+      targetStatus
+      __typename
+    }
+    target {
+      percentage
       __typename
     }
     bySchool {
@@ -35,6 +40,7 @@ query districtKhanmigoTotalUsage($filter: KhanmigoDistrictFilters!) {
         avgFlaggedChatsPerPossibleUsers
         messages
         avgMessagesPerChat
+        targetStatus
         avgMessagesPerUserWithUsage
         avgMessagesPerPossibleUsers
         __typename
