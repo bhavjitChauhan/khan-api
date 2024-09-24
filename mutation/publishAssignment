@@ -10,36 +10,3 @@ mutation publishAssignment($assignmentId: ID!, $startDate: DateTime!) {
     __typename
   }
 }
-
-fragment AssignmentInfoFragment on Assignment {
-  id
-  contents {
-    id
-    title
-    kind
-    __typename
-  }
-  studentList {
-    id
-    cacheId
-    name
-    __typename
-  }
-  students {
-    id
-    kaid
-    __typename
-  }
-  coach {
-    id
-    kaid
-    __typename
-  }
-  startDate
-  dueDate
-  isDraft
-  subjectSlug
-  title
-  instructions
-  __typename
-}
