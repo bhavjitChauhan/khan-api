@@ -5847,6 +5847,18 @@ fragment Badge on Badge {
       lastUpdatedDate
       __typename
     }
+    learningMinutesTarget {
+      minutesPerWeek
+      __typename
+    }
+    skillsLeveledUp {
+      skillsPerWeek
+      __typename
+    }
+    skillsToProficient {
+      skillsPerWeek
+      __typename
+    }
     rows {
       course {
         id
@@ -5869,6 +5881,9 @@ fragment Badge on Badge {
         familiarPercent
         proficientPercent
         masteredPercent
+        minutesTargetStatus
+        skillsLeveledUpTargetStatus
+        skillsToProficientTargetStatus
         __typename
       }
       __typename
@@ -5914,6 +5929,9 @@ fragment Badge on Badge {
         familiarPercent
         proficientPercent
         masteredPercent
+        minutesTargetStatus
+        skillsLeveledUpTargetStatus
+        skillsToProficientTargetStatus
         __typename
       }
       __typename
@@ -5927,6 +5945,18 @@ fragment Badge on Badge {
       from
       upTo
       lastUpdatedDate
+      __typename
+    }
+    learningMinutesTarget {
+      minutesPerWeek
+      __typename
+    }
+    skillsLeveledUp {
+      skillsPerWeek
+      __typename
+    }
+    skillsToProficient {
+      skillsPerWeek
       __typename
     }
     rows {
@@ -5950,6 +5980,9 @@ fragment Badge on Badge {
         familiarPercent
         proficientPercent
         masteredPercent
+        minutesTargetStatus
+        skillsLeveledUpTargetStatus
+        skillsToProficientTargetStatus
         __typename
       }
       __typename
@@ -5996,6 +6029,9 @@ fragment Badge on Badge {
         familiarPercent
         proficientPercent
         masteredPercent
+        minutesTargetStatus
+        skillsLeveledUpTargetStatus
+        skillsToProficientTargetStatus
         __typename
       }
       __typename
@@ -16173,6 +16209,18 @@ fragment contentSearchLearnableContent on LearnableContent {
       lastUpdatedDate
       __typename
     }
+    learningMinutesTarget {
+      minutesPerWeek
+      __typename
+    }
+    skillsLeveledUp {
+      skillsPerWeek
+      __typename
+    }
+    skillsToProficient {
+      skillsPerWeek
+      __typename
+    }
     rows {
       gradeLevel {
         id
@@ -16195,6 +16243,9 @@ fragment contentSearchLearnableContent on LearnableContent {
         familiarPercent
         proficientPercent
         masteredPercent
+        minutesTargetStatus
+        skillsLeveledUpTargetStatus
+        skillsToProficientTargetStatus
         __typename
       }
       __typename
@@ -16358,6 +16409,9 @@ fragment contentSearchLearnableContent on LearnableContent {
         familiarPercent
         proficientPercent
         masteredPercent
+        minutesTargetStatus
+        skillsLeveledUpTargetStatus
+        skillsToProficientTargetStatus
         __typename
       }
       __typename
@@ -16380,6 +16434,18 @@ fragment contentSearchLearnableContent on LearnableContent {
       from
       upTo
       lastUpdatedDate
+      __typename
+    }
+    learningMinutesTarget {
+      minutesPerWeek
+      __typename
+    }
+    skillsLeveledUp {
+      skillsPerWeek
+      __typename
+    }
+    skillsToProficient {
+      skillsPerWeek
       __typename
     }
     rows {
@@ -16408,6 +16474,9 @@ fragment contentSearchLearnableContent on LearnableContent {
         familiarPercent
         proficientPercent
         masteredPercent
+        minutesTargetStatus
+        skillsLeveledUpTargetStatus
+        skillsToProficientTargetStatus
         __typename
       }
       __typename
@@ -17494,6 +17563,26 @@ fragment ChallengeRevision on ChallengeRevision {
   }
   isEditableByCurrentUser(contentId: $contentId, contentKind: "Project")
   isPublishableByCurrentUser(contentId: $contentId, contentKind: "Project")
+}
+
+fragment ProjectRevision on ProjectRevision {
+  id
+  contentId
+  contentKind
+  sha
+  doNotPublish
+  slug
+  listed
+  title
+  description
+  projectEval
+  authorName
+  code
+  codeFormat
+  customTitleTag
+  customDescriptionTag
+  sourceKaLocale
+  __typename
 }`,
   getAdminsForDistrict: `query getAdminsForDistrict($districtID: String!) {
   getAdminsForDistrict(districtID: $districtID) {
@@ -21315,6 +21404,22 @@ fragment ExerciseContentFields on LearnableContent {
       levelHeight
       __typename
     }
+    __typename
+  }
+}`,
+  getTeacherAccessPermissionsData: `query getTeacherAccessPermissionsData {
+  user {
+    id
+    age
+    joined
+    isTeacher
+    isFormalTeacher
+    isK4dTeacher
+    hasAccessToAIGuideTeacher
+    isAIGuideEnabled
+    hasClasses
+    isKmapStudent
+    isK4dStudent
     __typename
   }
 }`,
