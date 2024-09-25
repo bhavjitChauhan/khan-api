@@ -493,5 +493,6 @@
   "addOrEditKhanmigoTarget": "mutation addOrEditKhanmigoTarget($districtID: String!, $input: KhanmigoTargetInput!) {\n  addOrEditKhanmigoTarget(districtID: $districtID, input: $input) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
   "deleteKhanmigoTarget": "mutation deleteKhanmigoTarget($districtID: String!) {\n  deleteKhanmigoTarget(districtID: $districtID) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
   "addOrEditActivationTarget": "mutation addOrEditActivationTarget($districtID: String!, $input: ActivationTargetInput!) {\n  addOrEditActivationTarget(districtID: $districtID, input: $input) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
-  "deleteActivationTarget": "mutation deleteActivationTarget($districtID: String!) {\n  deleteActivationTarget(districtID: $districtID) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}"
+  "deleteActivationTarget": "mutation deleteActivationTarget($districtID: String!) {\n  deleteActivationTarget(districtID: $districtID) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
+  "ltiDynamicRegistration": "mutation ltiDynamicRegistration($openIDConfigurationURL: String!, $registrationToken: String!) {\n  ltiCanvasDynamicRegistration(\n    openIDConfigurationURL: $openIDConfigurationURL\n    registrationToken: $registrationToken\n  ) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}"
 }
