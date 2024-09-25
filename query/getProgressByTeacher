@@ -6,6 +6,18 @@ query getProgressByTeacher($filters: DistrictCourseProgressFilters!) {
       lastUpdatedDate
       __typename
     }
+    learningMinutesTarget {
+      minutesPerWeek
+      __typename
+    }
+    skillsLeveledUp {
+      skillsPerWeek
+      __typename
+    }
+    skillsToProficient {
+      skillsPerWeek
+      __typename
+    }
     rows {
       user {
         id
@@ -32,6 +44,9 @@ query getProgressByTeacher($filters: DistrictCourseProgressFilters!) {
         familiarPercent
         proficientPercent
         masteredPercent
+        minutesTargetStatus
+        skillsLeveledUpTargetStatus
+        skillsToProficientTargetStatus
         __typename
       }
       __typename

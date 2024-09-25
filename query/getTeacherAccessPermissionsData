@@ -1,0 +1,16 @@
+query getTeacherAccessPermissionsData {
+  user {
+    id
+    age
+    joined
+    isTeacher
+    isFormalTeacher
+    isK4dTeacher
+    hasAccessToAIGuideTeacher
+    isAIGuideEnabled
+    hasClasses
+    isKmapStudent
+    isK4dStudent
+    __typename
+  }
+}

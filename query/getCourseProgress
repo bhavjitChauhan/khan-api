@@ -6,6 +6,18 @@ query getCourseProgress($filters: DistrictCourseProgressFilters!, $getKmapTopics
       lastUpdatedDate
       __typename
     }
+    learningMinutesTarget {
+      minutesPerWeek
+      __typename
+    }
+    skillsLeveledUp {
+      skillsPerWeek
+      __typename
+    }
+    skillsToProficient {
+      skillsPerWeek
+      __typename
+    }
     rows {
       course {
         id
@@ -28,6 +40,9 @@ query getCourseProgress($filters: DistrictCourseProgressFilters!, $getKmapTopics
         familiarPercent
         proficientPercent
         masteredPercent
+        minutesTargetStatus
+        skillsLeveledUpTargetStatus
+        skillsToProficientTargetStatus
         __typename
       }
       __typename

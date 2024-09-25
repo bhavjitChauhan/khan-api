@@ -6,6 +6,18 @@ query getCourseProgressBySchool($filters: DistrictCourseProgressFilters!, $cours
       lastUpdatedDate
       __typename
     }
+    learningMinutesTarget {
+      minutesPerWeek
+      __typename
+    }
+    skillsLeveledUp {
+      skillsPerWeek
+      __typename
+    }
+    skillsToProficient {
+      skillsPerWeek
+      __typename
+    }
     rows {
       school {
         id
@@ -27,6 +39,9 @@ query getCourseProgressBySchool($filters: DistrictCourseProgressFilters!, $cours
         familiarPercent
         proficientPercent
         masteredPercent
+        minutesTargetStatus
+        skillsLeveledUpTargetStatus
+        skillsToProficientTargetStatus
         __typename
       }
       __typename
