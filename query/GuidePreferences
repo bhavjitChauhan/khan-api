@@ -5,7 +5,6 @@ query GuidePreferences {
       readingLevel
       guideLanguageCode
       guideVoiceDescriptor
-      showDABs
       __typename
     }
     __typename
