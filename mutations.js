@@ -12061,4 +12061,16 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
+  ltiDynamicRegistration: `mutation ltiDynamicRegistration($openIDConfigurationURL: String!, $registrationToken: String!) {
+  ltiCanvasDynamicRegistration(
+    openIDConfigurationURL: $openIDConfigurationURL
+    registrationToken: $registrationToken
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
