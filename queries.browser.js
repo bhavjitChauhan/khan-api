@@ -21468,4 +21468,28 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  districtTeachersFromCursor: `query districtTeachersFromCursor($districtId: ID!, $schoolIds: [ID!], $pageSize: Int, $cursor: Int) {
+  activationReportByTeacher: activationReportByTeacherV2(
+    districtId: $districtId
+    schoolIds: $schoolIds
+    pageSize: $pageSize
+    cursor: $cursor
+  ) {
+    rows {
+      teacherId
+      teacherName
+      __typename
+    }
+    __typename
+  }
+}`,
+  districtTeachersTotalCount: `query districtTeachersTotalCount($districtId: ID!, $schoolIds: [ID!]) {
+  activationReportByTeacher: activationReportByTeacherV2(
+    districtId: $districtId
+    schoolIds: $schoolIds
+  ) {
+    totalCount
+    __typename
+  }
+}`,
 }

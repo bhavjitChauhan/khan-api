@@ -1,0 +1,15 @@
+query districtTeachersFromCursor($districtId: ID!, $schoolIds: [ID!], $pageSize: Int, $cursor: Int) {
+  activationReportByTeacher: activationReportByTeacherV2(
+    districtId: $districtId
+    schoolIds: $schoolIds
+    pageSize: $pageSize
+    cursor: $cursor
+  ) {
+    rows {
+      teacherId
+      teacherName
+      __typename
+    }
+    __typename
+  }
+}
