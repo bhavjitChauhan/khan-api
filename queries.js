@@ -21282,4 +21282,30 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
+  teacherAssignments: `query teacherAssignments($contentDescriptor: String!) {
+  user {
+    id
+    assignmentsForContentInClassroomsTaughtByThisUser(
+      contentDescriptor: $contentDescriptor
+    ) {
+      id
+      title
+      dueDate
+      classroom {
+        id
+        cacheId
+        name
+        signupCode
+        __typename
+      }
+      numStudentsCompleted
+      students {
+        id
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
