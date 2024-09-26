@@ -1,0 +1,9 @@
+query districtTeachersTotalCount($districtId: ID!, $schoolIds: [ID!]) {
+  activationReportByTeacher: activationReportByTeacherV2(
+    districtId: $districtId
+    schoolIds: $schoolIds
+  ) {
+    totalCount
+    __typename
+  }
+}

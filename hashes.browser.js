@@ -769,4 +769,6 @@ hashes = {
   getTeacherAccessPermissionsData: 3297558590,
   teacherAssignments: 2982345895,
   essaySnapshotPatches: 1530073442,
+  districtTeachersFromCursor: 3396686454,
+  districtTeachersTotalCount: 1158867036,
 }
