@@ -311,7 +311,7 @@
   "getVideoPlayerSettings": 2873868438,
   "getVideoSlug": 1944349933,
   "GetWalmartProfile": 904565532,
-  "gtp_getCheckpoints": 2825726112,
+  "gtp_getCheckpoints": 3597388057,
   "gtp_getDescriptors": 1258260582,
   "gtp_getEGUD": 4264015478,
   "gtp_getEGUDViaExam": 2771787897,
@@ -329,7 +329,7 @@
   "gtp_getTaskById": 3817034940,
   "gtp_getTestPrepHeaderInfo": 897246365,
   "gtp_getTestSectionTasks": 86065059,
-  "gtp_getTPUD": 3568619556,
+  "gtp_getTPUD": 2648698266,
   "gtp_onboardingStatus": 3646852342,
   "gtp_relatedContent": 3291890228,
   "guideTranscript": 1992580125,
@@ -767,5 +767,6 @@
   "DistrictWithUserPermissionsQuery": 1890961045,
   "GetManagedPartnershipsForDistrictsRoot": 3134713066,
   "getTeacherAccessPermissionsData": 3297558590,
-  "teacherAssignments": 2982345895
+  "teacherAssignments": 2982345895,
+  "essaySnapshotPatches": 1530073442
 }

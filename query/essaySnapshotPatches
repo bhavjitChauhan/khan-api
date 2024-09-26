@@ -1,0 +1,19 @@
+query essaySnapshotPatches($essaySessionId: String!, $snapshotIndex: Int!) {
+  essaySession(essaySessionID: $essaySessionId) {
+    id
+    snapshot(snapshotIndex: $snapshotIndex) {
+      ... on UserEssayTextSnapshot {
+        patches {
+          priorSnapshotStart
+          currentSnapshotStart
+          removed
+          added
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
