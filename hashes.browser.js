@@ -767,4 +767,5 @@ hashes = {
   DistrictWithUserPermissionsQuery: 1890961045,
   GetManagedPartnershipsForDistrictsRoot: 3134713066,
   getTeacherAccessPermissionsData: 3297558590,
+  teacherAssignments: 2982345895,
 }
