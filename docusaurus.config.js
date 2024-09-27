@@ -99,8 +99,12 @@ const config = {
             title: 'Pages',
             items: [
               {
+                label: 'Tutorials',
+                to: '/docs/getting-started',
+              },
+              {
                 label: 'Docs',
-                to: '/docs',
+                to: '/docs/api',
               },
             ],
           },
