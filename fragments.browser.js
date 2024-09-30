@@ -2256,9 +2256,20 @@ query ActivitiesList {
   expirationTime
   questionsCompleted
   estimatedQuestionsRemaining
+  questionsCompletedInSection
+  estimatedQuestionsRemainingInSection
+  assessment {
+    id
+    sections {
+      sectionId
+      __typename
+    }
+    __typename
+  }
   currentStep {
     stepNumber
     stepId
+    sectionId
     type
     assessmentItem {
       id
