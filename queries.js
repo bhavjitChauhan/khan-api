@@ -5136,32 +5136,6 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
         classWillBeRemovedInDays
         __typename
       }
-      testPrepExams {
-        id
-        examId
-        examGroup {
-          id
-          examGroupMetadata {
-            id
-            nameInfo {
-              groupName
-              __typename
-            }
-            __typename
-          }
-          __typename
-        }
-        metadata {
-          id
-          areas {
-            id
-            title
-            __typename
-          }
-          __typename
-        }
-        __typename
-      }
       topics {
         id
         key

@@ -163,7 +163,7 @@ export default {
   getChildrenOfTopic: 1598707302,
   getChronomancerStatus: 470968035,
   getClassesAndStudents: 4112328276,
-  getClassList: 22966333,
+  getClassList: 2968578522,
   getClassroomRoster: 3796170896,
   getClassroomsAndPrimaryOffering: 3980807925,
   getClassSelector: 319528866,
