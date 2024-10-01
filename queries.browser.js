@@ -350,35 +350,6 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     ...ArticleRevision
     __typename
   }
-}
-
-fragment ArticleRevision on ArticleRevision {
-  id
-  contentId
-  contentKind
-  creationDate
-  sha
-  authorKey
-  customDescriptionTag
-  customTitleTag
-  description
-  descriptionHtml: description
-  doNotPublish
-  sourceKaLocale
-  sourceLanguage: sourceKaLocale
-  slug
-  readableId: slug
-  title
-  sponsored
-  thumbnailData
-  thumbnailCache
-  alternateSlugs
-  assessmentItemTags
-  authorNames
-  clarificationsEnabled
-  perseusContent
-  listed
-  __typename
 }`,
   articleEditorRedirectQuery: `query articleEditorRedirectQuery($contentId: String!) {
   articleRevisionById(id: $contentId) {
@@ -460,6 +431,8 @@ fragment AssignmentCsvData on Assignment {
   startDate
   dueDate
   id
+  title
+  configuredActivityInputs
   contents {
     id
     title: translatedTitle
@@ -471,6 +444,7 @@ fragment AssignmentCsvData on Assignment {
     student {
       id
       coachNickname(teacherKaid: $teacherKaid)
+      profileRoot
       __typename
     }
     state
@@ -487,6 +461,54 @@ fragment AssignmentCsvData on Assignment {
       numAttempted
       numCorrect
       lastAttemptDate
+      __typename
+    }
+    activitySubmissions {
+      thread {
+        id
+        __typename
+      }
+      __typename
+    }
+    essaySession {
+      id
+      currentStage
+      completed
+      lastUpdated
+      wordCount
+      draft {
+        id
+        feedbackList {
+          id
+          isPositive
+          isResolved
+          __typename
+        }
+        __typename
+      }
+      learningTime {
+        promptReviewingSeconds
+        outliningSeconds
+        draftingSeconds
+        revisingSeconds
+        __typename
+      }
+      originalityFlags {
+        isCritical
+        ... on UserEssayOriginalityFlagPasteIntoOutline {
+          location
+          wordCount
+          outlineVersionBeforePaste
+          __typename
+        }
+        ... on UserEssayOriginalityFlagPasteIntoText {
+          stage
+          wordCount
+          essayVersionBeforePaste
+          __typename
+        }
+        __typename
+      }
       __typename
     }
     __typename
@@ -515,6 +537,8 @@ fragment AssignmentCsvData on Assignment {
   startDate
   dueDate
   id
+  title
+  configuredActivityInputs
   contents {
     id
     title: translatedTitle
@@ -526,6 +550,7 @@ fragment AssignmentCsvData on Assignment {
     student {
       id
       coachNickname(teacherKaid: $teacherKaid)
+      profileRoot
       __typename
     }
     state
@@ -542,6 +567,54 @@ fragment AssignmentCsvData on Assignment {
       numAttempted
       numCorrect
       lastAttemptDate
+      __typename
+    }
+    activitySubmissions {
+      thread {
+        id
+        __typename
+      }
+      __typename
+    }
+    essaySession {
+      id
+      currentStage
+      completed
+      lastUpdated
+      wordCount
+      draft {
+        id
+        feedbackList {
+          id
+          isPositive
+          isResolved
+          __typename
+        }
+        __typename
+      }
+      learningTime {
+        promptReviewingSeconds
+        outliningSeconds
+        draftingSeconds
+        revisingSeconds
+        __typename
+      }
+      originalityFlags {
+        isCritical
+        ... on UserEssayOriginalityFlagPasteIntoOutline {
+          location
+          wordCount
+          outlineVersionBeforePaste
+          __typename
+        }
+        ... on UserEssayOriginalityFlagPasteIntoText {
+          stage
+          wordCount
+          essayVersionBeforePaste
+          __typename
+        }
+        __typename
+      }
       __typename
     }
     __typename
@@ -15714,39 +15787,6 @@ fragment SharedFeedbackFields on Feedback {
     ...VideoRevision
     __typename
   }
-}
-
-fragment VideoRevision on VideoRevision {
-  id
-  contentId
-  contentKind
-  creationDate
-  sha
-  authorKey
-  customDescriptionTag
-  customTitleTag
-  description
-  descriptionHtml: description
-  doNotPublish
-  sourceKaLocale
-  sourceLanguage: sourceKaLocale
-  slug
-  readableId: slug
-  title
-  sponsored
-  thumbnailCache
-  thumbnailData
-  alternateSlugs
-  assessmentItemTags
-  augmentedTranscript
-  authorNames
-  clarificationsEnabled
-  duration
-  kaUserLicense
-  keywords
-  youtubeId
-  listed
-  __typename
 }`,
   WhatNextPrompt: `query WhatNextPrompt($assignmentsPageSize: Int, $assignmentsOrderBy: AssignmentOrder!, $assignmentsDueAfter: DateTime!) {
   user {

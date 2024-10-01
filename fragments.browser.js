@@ -75,6 +75,8 @@ fragments = {
   startDate
   dueDate
   id
+  title
+  configuredActivityInputs
   contents {
     id
     title: translatedTitle
@@ -86,6 +88,7 @@ fragments = {
     student {
       id
       coachNickname(teacherKaid: $teacherKaid)
+      profileRoot
       __typename
     }
     state
@@ -102,6 +105,54 @@ fragments = {
       numAttempted
       numCorrect
       lastAttemptDate
+      __typename
+    }
+    activitySubmissions {
+      thread {
+        id
+        __typename
+      }
+      __typename
+    }
+    essaySession {
+      id
+      currentStage
+      completed
+      lastUpdated
+      wordCount
+      draft {
+        id
+        feedbackList {
+          id
+          isPositive
+          isResolved
+          __typename
+        }
+        __typename
+      }
+      learningTime {
+        promptReviewingSeconds
+        outliningSeconds
+        draftingSeconds
+        revisingSeconds
+        __typename
+      }
+      originalityFlags {
+        isCritical
+        ... on UserEssayOriginalityFlagPasteIntoOutline {
+          location
+          wordCount
+          outlineVersionBeforePaste
+          __typename
+        }
+        ... on UserEssayOriginalityFlagPasteIntoText {
+          stage
+          wordCount
+          essayVersionBeforePaste
+          __typename
+        }
+        __typename
+      }
       __typename
     }
     __typename
