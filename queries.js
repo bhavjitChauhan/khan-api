@@ -749,32 +749,6 @@ fragment AssignmentCsvData on Assignment {
       classWillBeRemovedInDays
       __typename
     }
-    testPrepExams {
-      id
-      examId
-      examGroup {
-        id
-        examGroupMetadata {
-          id
-          nameInfo {
-            groupName
-            __typename
-          }
-          __typename
-        }
-        __typename
-      }
-      metadata {
-        id
-        areas {
-          id
-          title
-          __typename
-        }
-        __typename
-      }
-      __typename
-    }
     topics {
       id
       key
@@ -9687,6 +9661,44 @@ fragment CommonUserInfoFragment on User {
     ...gtp_checkpointFragment
     __typename
   }
+}
+
+fragment gtp_checkpointFragment on Checkpoint {
+  id
+  stages {
+    numCreditedTasks
+    creditedTaskIds
+    goalTasks
+    stageIndex
+    stageDisplayNumber
+    startedAt
+    completedAt
+    incomingLevels {
+      name
+      level
+      __typename
+    }
+    focusAreas {
+      skillTitle
+      areaId
+      areaTitle
+      __typename
+    }
+    __typename
+  }
+  checkpointIndex
+  startedAt
+  completedAt
+  drillMode
+  isComplete
+  removedFromSchedule
+  hasDonePracticeTasks
+  numStages
+  canCreateNewStage
+  hasDonePracticeTasks
+  miniSectionStages
+  tmsTaskIds
+  __typename
 }`,
   gtp_getDescriptors: `query gtp_getDescriptors($examId: String!, $checkpointStr: String) {
   descriptorList(examId: $examId, requestedCheckpoint: $checkpointStr) {
@@ -9800,20 +9812,6 @@ fragment gtp_egudFragment on ExamGroupUserData {
     ...gtp_essayScoresFragment
     __typename
   }
-}
-
-fragment gtp_essayScoresFragment on EssayScores {
-  areas {
-    translatedTitle
-    essays {
-      examCompletionDate
-      score
-      maxScore
-      __typename
-    }
-    __typename
-  }
-  __typename
 }`,
   gtp_getExamGroupMetadata: `query gtp_getExamGroupMetadata($examGroupId: String!) {
   examGroup(examGroupId: $examGroupId) {
@@ -10389,6 +10387,109 @@ fragment gtp_taskFragment on Task {
     ...gtp_tpudFragment
     __typename
   }
+}
+
+fragment gtp_checkpointFragment on Checkpoint {
+  id
+  stages {
+    numCreditedTasks
+    creditedTaskIds
+    goalTasks
+    stageIndex
+    stageDisplayNumber
+    startedAt
+    completedAt
+    incomingLevels {
+      name
+      level
+      __typename
+    }
+    focusAreas {
+      skillTitle
+      areaId
+      areaTitle
+      __typename
+    }
+    __typename
+  }
+  checkpointIndex
+  startedAt
+  completedAt
+  drillMode
+  isComplete
+  removedFromSchedule
+  hasDonePracticeTasks
+  numStages
+  canCreateNewStage
+  hasDonePracticeTasks
+  miniSectionStages
+  tmsTaskIds
+  __typename
+}
+
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+
+fragment gtp_tpudFragment on TestPrepUserData {
+  id
+  examId
+  currentStage
+  currentCheckpoint
+  targetScore
+  diagnosticsStates {
+    type
+    state
+    __typename
+  }
+  onboardingState
+  hasSeededSkillLevels
+  hasUnlockedDrillMode
+  scoreInfo {
+    minScore
+    maxScore
+    __typename
+  }
+  schedule {
+    examDate
+    practiceTestDates
+    __typename
+  }
+  __typename
 }`,
   gtp_onboardingStatus: `query gtp_onboardingStatus($examGroupId: String!) {
   egud(examGroupId: $examGroupId) {
@@ -17715,6 +17816,80 @@ fragment ProjectRevision on ProjectRevision {
     nickname
     __typename
   }
+}
+
+fragment AssessmentItemRevision on AssessmentItemRevision {
+  id
+  contentKind
+  contentId
+  sha
+  creationDate
+  name
+  authorNames
+  itemData
+  itemShapeType
+  perseusApiMajorVersion
+  requiresScreenOrMouse
+  aiGenerated
+  tags
+  __typename
+}
+
+fragment ExerciseRevision on ExerciseRevision {
+  id
+  contentKind
+  contentId
+  sha
+  creationDate
+  authorKey
+  doNotPublish
+  sourceKaLocale
+  sourceLanguage: sourceKaLocale
+  slug
+  name: slug
+  title
+  displayName: title
+  prettyDisplayName: title
+  description
+  descriptionHtml: description
+  customTitleTag
+  customDescriptionTag
+  thumbnailData
+  thumbnailCache
+  sponsored
+  alternateSlugs
+  authorName
+  covers
+  prerequisites
+  relatedContent
+  assessmentItemTags
+  difficultyLevel
+  suggestedCompletionCriteria
+  trackingDocumentUrl
+  problemTypeKind
+  interimAssessmentType
+  numQuestionsPerProblemType
+  problemTypes {
+    contentId
+    name
+    relatedVideos
+    items {
+      id
+      sha
+      perseusApiMajorVersion
+      requiresScreenOrMouse
+      aiGenerated
+      __typename
+    }
+    __typename
+  }
+  assessmentItems {
+    ...AssessmentItemRevision
+    __typename
+  }
+  listed
+  hasLintErrors
+  __typename
 }`,
   getSatAccountSettings: `query getSatAccountSettings($targetKaid: String) {
   target: user(kaid: $targetKaid) {
