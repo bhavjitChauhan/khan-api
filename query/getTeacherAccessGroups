@@ -1,8 +1,6 @@
 query getTeacherAccessGroups {
   user {
     id
-    hasAccessToAIGuideTeacher
-    hasAccessToAIGuidePremiumTeacher
     hasAccessToAIGuideDistrictClassroomTeacher
     __typename
   }
