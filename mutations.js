@@ -276,6 +276,39 @@ export default {
     }
     __typename
   }
+}
+
+fragment AssignmentInfoFragment on Assignment {
+  id
+  contents {
+    id
+    title
+    kind
+    __typename
+  }
+  studentList {
+    id
+    cacheId
+    name
+    __typename
+  }
+  students {
+    id
+    kaid
+    __typename
+  }
+  coach {
+    id
+    kaid
+    __typename
+  }
+  startDate
+  dueDate
+  isDraft
+  subjectSlug
+  title
+  instructions
+  __typename
 }`,
   archiveSubjectMasteryAssignment: `mutation archiveSubjectMasteryAssignment($assignmentId: ID!) {
   archiveSubjectMasteryAssignments(ids: [$assignmentId]) {
@@ -7154,6 +7187,39 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
+}
+
+fragment AssignmentInfoFragment on Assignment {
+  id
+  contents {
+    id
+    title
+    kind
+    __typename
+  }
+  studentList {
+    id
+    cacheId
+    name
+    __typename
+  }
+  students {
+    id
+    kaid
+    __typename
+  }
+  coach {
+    id
+    kaid
+    __typename
+  }
+  startDate
+  dueDate
+  isDraft
+  subjectSlug
+  title
+  instructions
+  __typename
 }`,
   publishStandardMappings: `mutation publishStandardMappings($set: String!, $content: String!) {
   publishStandardMappings(setId: $set, contentDescriptor: $content) {
@@ -12022,6 +12088,15 @@ fragment TaskFragment on AssessmentTask {
     openIDConfigurationURL: $openIDConfigurationURL
     registrationToken: $registrationToken
   ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  UpdatePhantomUserRole: `mutation UpdatePhantomUserRole($role: UserRole!, $operation: RoleOperation!) {
+  updateUserRole(role: $role, operation: $operation) {
     error {
       code
       __typename

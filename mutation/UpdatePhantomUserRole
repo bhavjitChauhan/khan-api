@@ -1,0 +1,9 @@
+mutation UpdatePhantomUserRole($role: UserRole!, $operation: RoleOperation!) {
+  updateUserRole(role: $role, operation: $operation) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
