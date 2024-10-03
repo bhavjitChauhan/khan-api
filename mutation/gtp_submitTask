@@ -39,3 +39,17 @@ mutation gtp_submitTask($taskId: ID!, $taskType: String!, $newTaskState: JSONStr
     __typename
   }
 }
+
+fragment gtp_essayScoresFragment on EssayScores {
+  areas {
+    translatedTitle
+    essays {
+      examCompletionDate
+      score
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
