@@ -1,0 +1,13 @@
+mutation writingCoachLogClientError($message: String!, $errorType: String!, $essaySessionID: String!) {
+  writingCoachLogClientError(
+    message: $message
+    errorType: $errorType
+    essaySessionID: $essaySessionID
+  ) {
+    error {
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
