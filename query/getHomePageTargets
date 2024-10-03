@@ -1,0 +1,34 @@
+query getHomePageTargets($districtID: ID!) {
+  districtById(districtId: $districtID) {
+    id
+    goal {
+      courseMasteryTargets {
+        course {
+          id
+          translatedTitle
+          __typename
+        }
+        gradeLevels
+        __typename
+      }
+      khanmigoTarget {
+        percentage
+        __typename
+      }
+      learningMinutesTarget {
+        percentage
+        __typename
+      }
+      skillsLeveledUp {
+        skillsPerWeek
+        __typename
+      }
+      skillsToProficient {
+        skillsPerWeek
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
