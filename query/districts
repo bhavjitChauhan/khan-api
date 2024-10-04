@@ -12,6 +12,7 @@ query districts($filter: String!, $excludeTeacherDirected: Boolean!) {
     deletedAt
     isDowngraded
     isTest
+    onlySevereAIModeration
     isKmapDistrict
     isK4dDistrict
     isOldNWEA
