@@ -1,0 +1,8 @@
+query courseEditorQuery($courseId: String!) {
+  contentEditingStatus {
+    editingDisabled
+    publishDisabled
+    __typename
+  }
+  isCourseEditableByCurrentUser(courseId: $courseId)
+}
