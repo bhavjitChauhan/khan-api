@@ -17,6 +17,7 @@ query districtById($districtId: String!, $excludeTeacherDirected: Boolean!) {
     deletedAt
     isDowngraded
     isTest
+    onlySevereAIModeration
     isKmapDistrict
     isK4dDistrict
     lastRostered
