@@ -5,7 +5,6 @@ query UserForDistrictSignup {
     canAccessDistrictsHomepage
     isTeacher
     hasUnresolvedInvitations
-    transferAuthToken
     preferredKaLocale {
       id
       kaLocale
