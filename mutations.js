@@ -5389,6 +5389,20 @@ fragment gtp_taskFragment on Task {
     }
     __typename
   }
+}
+
+fragment gtp_essayScoresFragment on EssayScores {
+  areas {
+    translatedTitle
+    essays {
+      examCompletionDate
+      score
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
 }`,
   gtp_updateExamGroupSettingsV2: `mutation gtp_updateExamGroupSettingsV2($examGroupId: String!, $practiceDaysInfo: [PracticeDaysInput!], $selectedCutoffs: [String!], $selectedExams: [String!], $extendedTimeMultiplier: Float, $exams: [ExamSettingsInput], $enableGtpSetupPage: Boolean) {
   updateExamGroupSettings(
@@ -11383,6 +11397,32 @@ fragment TaskFragment on AssessmentTask {
   ) {
     error {
       debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  Graphie2000_CreateGraphie: `mutation Graphie2000_CreateGraphie($svgBase64: String!, $data: JSONString!, $legacyJs: String) {
+  createGraphie(svgBase64: $svgBase64, data: $data, legacyJs: $legacyJs) {
+    hash
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  Graphie2000_DoGeneralAICompletion: `mutation Graphie2000_DoGeneralAICompletion($prompt: String!, $model: String, $temperature: Float, $maxTokens: Int, $stop: [String!]) {
+  doGeneralAICompletion(
+    input: {prompt: $prompt, model: $model, temperature: $temperature, maxTokens: $maxTokens, stop: $stop}
+  ) {
+    completion {
+      text
+      __typename
+    }
+    error {
+      code
       __typename
     }
     __typename

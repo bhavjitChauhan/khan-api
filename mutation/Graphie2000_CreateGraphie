@@ -1,0 +1,11 @@
+mutation Graphie2000_CreateGraphie($svgBase64: String!, $data: JSONString!, $legacyJs: String) {
+  createGraphie(svgBase64: $svgBase64, data: $data, legacyJs: $legacyJs) {
+    hash
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
