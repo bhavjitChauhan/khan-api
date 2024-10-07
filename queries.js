@@ -350,35 +350,6 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     ...ArticleRevision
     __typename
   }
-}
-
-fragment ArticleRevision on ArticleRevision {
-  id
-  contentId
-  contentKind
-  creationDate
-  sha
-  authorKey
-  customDescriptionTag
-  customTitleTag
-  description
-  descriptionHtml: description
-  doNotPublish
-  sourceKaLocale
-  sourceLanguage: sourceKaLocale
-  slug
-  readableId: slug
-  title
-  sponsored
-  thumbnailData
-  thumbnailCache
-  alternateSlugs
-  assessmentItemTags
-  authorNames
-  clarificationsEnabled
-  perseusContent
-  listed
-  __typename
 }`,
   articleEditorRedirectQuery: `query articleEditorRedirectQuery($contentId: String!) {
   articleRevisionById(id: $contentId) {
