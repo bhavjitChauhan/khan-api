@@ -1,0 +1,12 @@
+query GetUMIForLinking($uuid: ID!) {
+  userMetaInfoByUUID(uuid: $uuid) {
+    id
+    email
+    firstName
+    lastName
+    fullName
+    kaid
+    uuid
+    __typename
+  }
+}
