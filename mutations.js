@@ -12143,4 +12143,15 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
+  LinkCurrentUserToUMIByUUIDMutation: `mutation LinkCurrentUserToUMIByUUIDMutation($uuid: ID!) {
+  linkCurrentUserToUMIByUUID(uuid: $uuid) {
+    succeeded
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
