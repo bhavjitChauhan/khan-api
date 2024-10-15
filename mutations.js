@@ -276,6 +276,39 @@ export default {
     }
     __typename
   }
+}
+
+fragment AssignmentInfoFragment on Assignment {
+  id
+  contents {
+    id
+    title
+    kind
+    __typename
+  }
+  studentList {
+    id
+    cacheId
+    name
+    __typename
+  }
+  students {
+    id
+    kaid
+    __typename
+  }
+  coach {
+    id
+    kaid
+    __typename
+  }
+  startDate
+  dueDate
+  isDraft
+  subjectSlug
+  title
+  instructions
+  __typename
 }`,
   archiveSubjectMasteryAssignment: `mutation archiveSubjectMasteryAssignment($assignmentId: ID!) {
   archiveSubjectMasteryAssignments(ids: [$assignmentId]) {
@@ -3909,19 +3942,6 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     }
     __typename
   }
-}
-
-fragment Program on Program {
-  id
-  latestRevision {
-    id
-    code
-    __typename
-  }
-  title
-  url
-  userAuthoredContentType
-  __typename
 }`,
   createStudentAccounts: `mutation createStudentAccounts($studentListKey: String, $students: [CreateStudentsInput]!) {
   createStudents(students: $students, studentListKey: $studentListKey) {
@@ -4952,6 +4972,169 @@ fragment gtp_checkpointFragment on Checkpoint {
     }
     __typename
   }
+}
+
+fragment gtp_practiceTestFragment on PracticeTest {
+  id
+  practiceTestId
+  approxTestMins
+  testTitle
+  directions
+  formCode
+  hasStarted
+  completionStatus
+  completedAt
+  subScores {
+    name
+    score
+    __typename
+  }
+  sections {
+    sectionId
+    taskId
+    exerciseName
+    isScored
+    sectionTitle
+    numCorrect
+    numTotal
+    durationSeconds
+    breakDurationSeconds
+    hasUserGrading
+    completed
+    userProvidedScores {
+      score
+      minScore
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+
+fragment gtp_taskFragment on Task {
+  id
+  kaid
+  examId
+  taskType
+  secondsTaken
+  taskDurationSeconds
+  translatedTitle
+  creationDatetime
+  startDatetime
+  completed
+  receivedCredit
+  completionDatetime
+  stage
+  checkpoint
+  taskContent {
+    concepts {
+      item {
+        conceptId
+        translatedTitle
+        __typename
+      }
+      questions {
+        conceptId
+        translatedTitle
+        __typename
+      }
+      __typename
+    }
+    id
+    itemData
+    itemShapeType
+    skills {
+      item {
+        areaId
+        skillId
+        skillContentId
+        translatedTitle
+        __typename
+      }
+      questions {
+        areaId
+        skillId
+        skillContentId
+        translatedTitle
+        __typename
+      }
+      __typename
+    }
+    gradingMetadata {
+      instructions
+      promptTitle
+      responseTitle
+      minScore
+      maxScore
+      rubric {
+        article {
+          id
+          perseusContent
+          __typename
+        }
+        __typename
+      }
+      scoreExamples {
+        score
+        article {
+          id
+          perseusContent
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  taskState
+  taskStateHash
+  exerciseName
+  itemIds
+  areaId
+  areaTitle
+  ... on SkillTask {
+    skillId
+    skill {
+      description
+      __typename
+    }
+    level
+    incomingSkillLevelLabel {
+      label
+      skillLevel
+      __typename
+    }
+    outgoingSkillLevelLabel {
+      label
+      skillLevel
+      __typename
+    }
+    __typename
+  }
+  ... on TmsTask {
+    directions
+    extendedTaskState
+    startExtendedTimeDt
+    __typename
+  }
+  ... on TestSectionTask {
+    directions
+    __typename
+  }
+  ... on ExpressDiagnosticTask {
+    directions
+    skillLevels {
+      skillName
+      minLevel
+      maxLevel
+      level
+      __typename
+    }
+    __typename
+  }
+  __typename
 }`,
   gtp_resetPracticeTestMutation: `mutation gtp_resetPracticeTestMutation($examId: String!, $taskId: String!) {
   resetPracticeTest(examId: $examId, taskId: $taskId) {
@@ -7595,6 +7778,39 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
+}
+
+fragment AssignmentInfoFragment on Assignment {
+  id
+  contents {
+    id
+    title
+    kind
+    __typename
+  }
+  studentList {
+    id
+    cacheId
+    name
+    __typename
+  }
+  students {
+    id
+    kaid
+    __typename
+  }
+  coach {
+    id
+    kaid
+    __typename
+  }
+  startDate
+  dueDate
+  isDraft
+  subjectSlug
+  title
+  instructions
+  __typename
 }`,
   publishStandardMappings: `mutation publishStandardMappings($set: String!, $content: String!) {
   publishStandardMappings(setId: $set, contentDescriptor: $content) {
@@ -8888,19 +9104,6 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-
-fragment Program on Program {
-  id
-  latestRevision {
-    id
-    code
-    __typename
-  }
-  title
-  url
-  userAuthoredContentType
-  __typename
 }`,
   startMasteryTowerSession: `mutation startMasteryTowerSession($classDescriptor: String!) {
   startMasteryTowerSession(classDescriptor: $classDescriptor) {
