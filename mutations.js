@@ -5226,6 +5226,20 @@ fragment gtp_taskFragment on Task {
     }
     __typename
   }
+}
+
+fragment gtp_essayScoresFragment on EssayScores {
+  areas {
+    translatedTitle
+    essays {
+      examCompletionDate
+      score
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
 }`,
   gtp_updateExamGroupSettingsV2: `mutation gtp_updateExamGroupSettingsV2($examGroupId: String!, $practiceDaysInfo: [PracticeDaysInput!], $selectedCutoffs: [String!], $selectedExams: [String!], $extendedTimeMultiplier: Float, $exams: [ExamSettingsInput], $enableGtpSetupPage: Boolean) {
   updateExamGroupSettings(
