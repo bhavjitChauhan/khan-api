@@ -7,7 +7,6 @@ query csvReportStatus($kaid: String!, $districtID: String!) {
     adminReports {
       id
       kaid
-      districtKeyId
       status
       blobCreatedAt
       blobExpiresAt
