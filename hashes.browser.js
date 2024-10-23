@@ -9,7 +9,7 @@ hashes = {
   allFlaggedGuideThreads: 3341446274,
   allStandardsForSet: 3015316215,
   allTranslatableLocales: 419203518,
-  articleEditorQuery: 3393781286,
+  articleEditorQuery: 1661821936,
   articleEditorRedirectQuery: 4039343373,
   articleForDiff: 3813521305,
   articleRevisionsForDiff: 795341688,
