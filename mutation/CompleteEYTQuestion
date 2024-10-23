@@ -1,6 +1,6 @@
-mutation CompleteStandardQuestion($assessmentId: String!, $stepId: String!, $correct: Boolean!, $response: String!) {
-  complete: completeStandardQuestion(
-    input: {assessmentId: $assessmentId, stepId: $stepId, correct: $correct, response: $response}
+mutation CompleteEYTQuestion($assessmentId: String!, $stepId: String!, $response: String!, $updatedResponse: String, $correct: Boolean!, $updatedCorrect: Boolean, $conversationThreadID: String!) {
+  complete: completeEYTQuestion(
+    input: {assessmentId: $assessmentId, stepId: $stepId, response: $response, updatedResponse: $updatedResponse, correct: $correct, updatedCorrect: $updatedCorrect, conversationThreadID: $conversationThreadID}
   ) {
     result {
       task {
