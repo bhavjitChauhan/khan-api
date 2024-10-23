@@ -12295,7 +12295,7 @@ fragment TaskFragment on AssessmentTask {
   }
 }`,
   CompleteStandardQuestion: `mutation CompleteStandardQuestion($assessmentId: String!, $stepId: String!, $correct: Boolean!, $response: String!) {
-  completeStandardQuestion(
+  complete: completeStandardQuestion(
     input: {assessmentId: $assessmentId, stepId: $stepId, correct: $correct, response: $response}
   ) {
     result {
@@ -12744,5 +12744,60 @@ fragment TaskFragment on AssessmentTask {
     }
     __typename
   }
+}`,
+  CompleteEYTQuestion: `mutation CompleteEYTQuestion($assessmentId: String!, $stepId: String!, $response: String!, $updatedResponse: String, $correct: Boolean!, $updatedCorrect: Boolean, $conversationThreadID: String!) {
+  complete: completeEYTQuestion(
+    input: {assessmentId: $assessmentId, stepId: $stepId, response: $response, updatedResponse: $updatedResponse, correct: $correct, updatedCorrect: $updatedCorrect, conversationThreadID: $conversationThreadID}
+  ) {
+    result {
+      task {
+        ...TaskFragment
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment TaskFragment on AssessmentTask {
+  id
+  expirationTime
+  questionsCompleted
+  estimatedQuestionsRemaining
+  questionsCompletedInSection
+  estimatedQuestionsRemainingInSection
+  assessment {
+    id
+    sections {
+      sectionId
+      __typename
+    }
+    __typename
+  }
+  currentStep {
+    stepNumber
+    stepId
+    sectionId
+    type
+    assessmentItem {
+      id
+      exerciseId
+      itemData
+      __typename
+    }
+    ... on EYTQuestion {
+      conversationStarter
+      completionCriteria
+      __typename
+    }
+    __typename
+  }
+  __typename
 }`,
 }
