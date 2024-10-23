@@ -2362,4 +2362,35 @@ query ActivitiesList {
   }
   __typename
 }`,
+  AssignmentFields: `fragment AssignmentFields on Assignment {
+  id
+  studentKaids
+  isDraft
+  assignmentStatus
+  subjectSlug
+  numStudentsCompleted
+  assignedDate
+  startDate
+  dueDate
+  contentDescriptors
+  domainId
+  courseId
+  unitId
+  lessonId
+  contents {
+    id
+    title: translatedTitle
+    kind
+    defaultUrlPath
+    __typename
+  }
+  exerciseConfig {
+    itemPickerStrategy
+    __typename
+  }
+  title
+  instructions
+  configuredActivityInputs
+  __typename
+}`,
 }
