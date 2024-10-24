@@ -1,0 +1,17 @@
+query AssessmentSummary($slug: String!) {
+  user {
+    id
+    assessmentData {
+      assessmentStatus(assessmentSlug: $slug) {
+        summary {
+          questionsCorrect
+          questionsTotal
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

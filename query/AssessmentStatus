@@ -4,7 +4,11 @@ query AssessmentStatus($slug: String!) {
     assessmentData {
       assessmentStatus(assessmentSlug: $slug) {
         status
-        assessmentID
+        assessment {
+          id
+          name
+          __typename
+        }
         task {
           id
           expirationTime
