@@ -604,7 +604,7 @@ export default {
   TranslationEditor_GetAIGuideActivityStrings: 3594501385,
   previewDistrictKhamigoSevereFlagNotificationEmail: 3100203232,
   challengeEditorQuery: 348660258,
-  projectEditorQuery: 3001657297,
+  projectEditorQuery: 3793866615,
   getAdminsForDistrict: 3546558979,
   getKhanmigoModeratorsForDistrict: 3401983033,
   LearnPrototype_UserClassrooms: 4185575609,
@@ -729,7 +729,7 @@ export default {
   localesForTeacherToolsBanner: 3566806382,
   DistrictActivationBySchoolContainer: 192416926,
   SkillsToProficient_RecentCourses: 3216876520,
-  AssessmentStatus: 3269366830,
+  AssessmentStatus: 653136080,
   getUserActiveEnrollmentGroups: 1652978329,
   SkillsToProficient_ClassRecommendations: 1091891880,
   ClassroomDistrictInfoByRosterIdQuery: 3453419485,
@@ -775,4 +775,5 @@ export default {
   getHomePageTargets: 1046425019,
   courseEditorQuery: 1982507550,
   GetUMIForLinking: 3223285852,
+  AssessmentSummary: 3486087636,
 }
