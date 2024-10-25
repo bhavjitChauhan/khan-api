@@ -22,7 +22,9 @@ query getIndexedContentSearchResults($query: String!, $allowedTopicAncestors: [S
         id
         iconPath
         title
+        translatedTitle
         description
+        translatedDescription
         domainSlug
         contentKind
         relativeUrl
@@ -31,11 +33,13 @@ query getIndexedContentSearchResults($query: String!, $allowedTopicAncestors: [S
           iconPath
           contentKind
           title
+          translatedTitle
           parent {
             id
             iconPath
             contentKind
             title
+            translatedTitle
             __typename
           }
           __typename
@@ -45,23 +49,28 @@ query getIndexedContentSearchResults($query: String!, $allowedTopicAncestors: [S
       learnableContent {
         id
         title
+        translatedTitle
         description
+        translatedDescription
         defaultUrlPath
         parentTopic {
           id
           domainSlug
           title
+          translatedTitle
           contentKind
           iconPath
           parent {
             id
             title
+            translatedTitle
             contentKind
             relativeUrl
             iconPath
             parent {
               id
               title
+              translatedTitle
               contentKind
               relativeUrl
               iconPath
