@@ -5442,7 +5442,6 @@ fragment StudentField2 on StudentsPage {
     countStudents
     classroomDistrictInfo {
       id
-      name
       teacherUserDistrictInfoIDs {
         id
         displayNameForTeacher
