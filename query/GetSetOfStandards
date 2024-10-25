@@ -21,6 +21,10 @@ query GetSetOfStandards($setId: String!, $region: String) {
           defaultUrlPath
           __typename
         }
+        ... on Exercise {
+          interimAssessmentType
+          __typename
+        }
         __typename
       }
       __typename
