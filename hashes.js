@@ -167,7 +167,7 @@ export default {
   getClassroomRoster: 3796170896,
   getClassroomsAndPrimaryOffering: 3980807925,
   getClassSelector: 319528866,
-  getClassSettings: 4044966115,
+  getClassSettings: 3802444334,
   getCoach: 2317418679,
   getCoachExerciseReport: 1799232413,
   getCombinedBadges: 3614321869,
