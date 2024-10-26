@@ -17950,80 +17950,6 @@ fragment ProjectRevision on ProjectRevision {
     nickname
     __typename
   }
-}
-
-fragment AssessmentItemRevision on AssessmentItemRevision {
-  id
-  contentKind
-  contentId
-  sha
-  creationDate
-  name
-  authorNames
-  itemData
-  itemShapeType
-  perseusApiMajorVersion
-  requiresScreenOrMouse
-  aiGenerated
-  tags
-  __typename
-}
-
-fragment ExerciseRevision on ExerciseRevision {
-  id
-  contentKind
-  contentId
-  sha
-  creationDate
-  authorKey
-  doNotPublish
-  sourceKaLocale
-  sourceLanguage: sourceKaLocale
-  slug
-  name: slug
-  title
-  displayName: title
-  prettyDisplayName: title
-  description
-  descriptionHtml: description
-  customTitleTag
-  customDescriptionTag
-  thumbnailData
-  thumbnailCache
-  sponsored
-  alternateSlugs
-  authorName
-  covers
-  prerequisites
-  relatedContent
-  assessmentItemTags
-  difficultyLevel
-  suggestedCompletionCriteria
-  trackingDocumentUrl
-  problemTypeKind
-  interimAssessmentType
-  numQuestionsPerProblemType
-  problemTypes {
-    contentId
-    name
-    relatedVideos
-    items {
-      id
-      sha
-      perseusApiMajorVersion
-      requiresScreenOrMouse
-      aiGenerated
-      __typename
-    }
-    __typename
-  }
-  assessmentItems {
-    ...AssessmentItemRevision
-    __typename
-  }
-  listed
-  hasLintErrors
-  __typename
 }`,
   getSatAccountSettings: `query getSatAccountSettings($targetKaid: String) {
   target: user(kaid: $targetKaid) {
@@ -20324,6 +20250,11 @@ fragment UserFields on User {
       countryCode
       levelLabel
       levelHeight
+      treeLabels {
+        singular
+        generalized
+        __typename
+      }
       descendants {
         ... on MetaDistrict {
           id
@@ -20357,6 +20288,11 @@ fragment UserFields on User {
       name
       countryCode
       levelLabel
+      treeLabels {
+        singular
+        generalized
+        __typename
+      }
       levelHeight
       isTest
       __typename

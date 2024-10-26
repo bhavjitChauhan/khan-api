@@ -6,6 +6,11 @@ query GetPartnershipForAdminDashboard($partnershipID: ID!) {
       countryCode
       levelLabel
       levelHeight
+      treeLabels {
+        singular
+        generalized
+        __typename
+      }
       descendants {
         ... on MetaDistrict {
           id
@@ -39,6 +44,11 @@ query GetPartnershipForAdminDashboard($partnershipID: ID!) {
       name
       countryCode
       levelLabel
+      treeLabels {
+        singular
+        generalized
+        __typename
+      }
       levelHeight
       isTest
       __typename
