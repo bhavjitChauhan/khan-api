@@ -4,15 +4,16 @@ query getContentSearchResults($query: String!, $allowedTopicAncestors: [String],
     allowedTopicAncestors: $allowedTopicAncestors
     contentKinds: $contentKinds
     numResults: $numResults
+    region: "*"
   ) {
     results {
       contentId
       kind
       learnableContent {
         id
-        title
+        translatedTitle
         contentDescriptor
-        description
+        translatedDescription
         mappedStandards {
           id
           setId
@@ -21,15 +22,15 @@ query getContentSearchResults($query: String!, $allowedTopicAncestors: [String],
         }
         parentTopic {
           id
-          title
+          translatedTitle
           contentKind
           parent {
             id
-            title
+            translatedTitle
             contentKind
             parent {
               id
-              title
+              translatedTitle
               contentKind
               __typename
             }

@@ -17622,6 +17622,26 @@ fragment ChallengeRevision on ChallengeRevision {
   }
   isEditableByCurrentUser(contentId: $contentId, contentKind: "Project")
   isPublishableByCurrentUser(contentId: $contentId, contentKind: "Project")
+}
+
+fragment ProjectRevision on ProjectRevision {
+  id
+  contentId
+  contentKind
+  sha
+  doNotPublish
+  slug
+  listed
+  title
+  description
+  projectEval
+  authorName
+  code
+  codeFormat
+  customTitleTag
+  customDescriptionTag
+  sourceKaLocale
+  __typename
 }`,
   getAdminsForDistrict: `query getAdminsForDistrict($districtID: String!) {
   getAdminsForDistrict(districtID: $districtID) {
@@ -19091,15 +19111,16 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     allowedTopicAncestors: $allowedTopicAncestors
     contentKinds: $contentKinds
     numResults: $numResults
+    region: "*"
   ) {
     results {
       contentId
       kind
       learnableContent {
         id
-        title
+        translatedTitle
         contentDescriptor
-        description
+        translatedDescription
         mappedStandards {
           id
           setId
@@ -19108,15 +19129,15 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
         }
         parentTopic {
           id
-          title
+          translatedTitle
           contentKind
           parent {
             id
-            title
+            translatedTitle
             contentKind
             parent {
               id
-              title
+              translatedTitle
               contentKind
               __typename
             }
@@ -21266,8 +21287,8 @@ fragment ExerciseContentFields on LearnableContent {
     id
     contentDescriptor
     contentKind
-    title
-    description
+    translatedTitle
+    translatedDescription
     mappedStandards {
       id
       setId
@@ -21276,13 +21297,13 @@ fragment ExerciseContentFields on LearnableContent {
     }
     lesson: parentTopic {
       id
-      title
+      translatedTitle
       unit: parent {
         id
-        title
+        translatedTitle
         course: parent {
           id
-          title
+          translatedTitle
           __typename
         }
         __typename
