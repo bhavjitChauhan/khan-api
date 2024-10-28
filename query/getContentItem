@@ -3,8 +3,8 @@ query getContentItem($descriptors: [String!]!) {
     id
     contentDescriptor
     contentKind
-    title
-    description
+    translatedTitle
+    translatedDescription
     mappedStandards {
       id
       setId
@@ -13,13 +13,13 @@ query getContentItem($descriptors: [String!]!) {
     }
     lesson: parentTopic {
       id
-      title
+      translatedTitle
       unit: parent {
         id
-        title
+        translatedTitle
         course: parent {
           id
-          title
+          translatedTitle
           __typename
         }
         __typename
