@@ -11127,6 +11127,144 @@ fragment PublishedCourseRevisionFragment on CourseRevision {
     }
     __typename
   }
+}
+
+fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapArticleNode on TAPArticleNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapChallengeNode on TAPChallengeNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapContentItem on TAPContentItem {
+  id
+  contentKind
+  contentId
+  sha
+  isNativeContent
+  isUnlisted
+  slug
+  title
+  translatedTitle
+  __typename
+}
+
+fragment tapContentWordCounts on TAPContentWordCounts {
+  wordCount
+  translatableWordCount
+  translatedWordCount
+  translatedWordCount
+  approvedWordCount
+  __typename
+}
+
+fragment tapCourseNode on TAPCourseNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapUnitNode
+    __typename
+  }
+  __typename
+}
+
+fragment tapExerciseNode on TAPExerciseNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapInteractiveNode on TAPInteractiveNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapLessonNode on TAPLessonNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapAIGuideActivityNode
+    ...tapArticleNode
+    ...tapChallengeNode
+    ...tapExerciseNode
+    ...tapInteractiveNode
+    ...tapProjectNode
+    ...tapTalkthroughNode
+    ...tapVideoNode
+    __typename
+  }
+  __typename
+}
+
+fragment tapMetadataWordCounts on TAPMetadataWordCounts {
+  metadataWordCount
+  metadataTranslatableWordCount
+  metadataTranslatedWordCount
+  metadataApprovedWordCount
+  __typename
+}
+
+fragment tapProjectNode on TAPProjectNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapTalkthroughNode on TAPTalkthroughNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  isDubbed
+  isSubtitled
+  youtubeId
+  __typename
+}
+
+fragment tapUnitNode on TAPUnitNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapLessonNode
+    __typename
+  }
+  __typename
+}
+
+fragment tapVideoNode on TAPVideoNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  isDubbed
+  dubIsSubtitled
+  isSubtitled
+  translatedYoutubeId
+  youtubeId
+  __typename
 }`,
   khanLibraryGetLocalesLanguage: `query khanLibraryGetLocalesLanguage {
   localesForLanguagePicker(includeEnglish: true, includeFake: false) {
@@ -14104,6 +14242,104 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
+}
+
+fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapArticleNode on TAPArticleNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapChallengeNode on TAPChallengeNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapContentItem on TAPContentItem {
+  id
+  contentKind
+  contentId
+  sha
+  isNativeContent
+  isUnlisted
+  slug
+  title
+  translatedTitle
+  __typename
+}
+
+fragment tapContentWordCounts on TAPContentWordCounts {
+  wordCount
+  translatableWordCount
+  translatedWordCount
+  translatedWordCount
+  approvedWordCount
+  __typename
+}
+
+fragment tapExerciseNode on TAPExerciseNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapInteractiveNode on TAPInteractiveNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapMetadataWordCounts on TAPMetadataWordCounts {
+  metadataWordCount
+  metadataTranslatableWordCount
+  metadataTranslatedWordCount
+  metadataApprovedWordCount
+  __typename
+}
+
+fragment tapProjectNode on TAPProjectNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapTalkthroughNode on TAPTalkthroughNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  isDubbed
+  isSubtitled
+  youtubeId
+  __typename
+}
+
+fragment tapVideoNode on TAPVideoNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  isDubbed
+  dubIsSubtitled
+  isSubtitled
+  translatedYoutubeId
+  youtubeId
+  __typename
 }`,
   translationPortalCourseContentProgress: `query translationPortalCourseContentProgress($courseId: String!, $contentLocale: String!) {
   courseTranslationProgress(courseId: $courseId, contentKALocale: $contentLocale) {
@@ -14113,6 +14349,144 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
+}
+
+fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapArticleNode on TAPArticleNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapChallengeNode on TAPChallengeNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapContentItem on TAPContentItem {
+  id
+  contentKind
+  contentId
+  sha
+  isNativeContent
+  isUnlisted
+  slug
+  title
+  translatedTitle
+  __typename
+}
+
+fragment tapContentWordCounts on TAPContentWordCounts {
+  wordCount
+  translatableWordCount
+  translatedWordCount
+  translatedWordCount
+  approvedWordCount
+  __typename
+}
+
+fragment tapCourseNode on TAPCourseNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapUnitNode
+    __typename
+  }
+  __typename
+}
+
+fragment tapExerciseNode on TAPExerciseNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapInteractiveNode on TAPInteractiveNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapLessonNode on TAPLessonNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapAIGuideActivityNode
+    ...tapArticleNode
+    ...tapChallengeNode
+    ...tapExerciseNode
+    ...tapInteractiveNode
+    ...tapProjectNode
+    ...tapTalkthroughNode
+    ...tapVideoNode
+    __typename
+  }
+  __typename
+}
+
+fragment tapMetadataWordCounts on TAPMetadataWordCounts {
+  metadataWordCount
+  metadataTranslatableWordCount
+  metadataTranslatedWordCount
+  metadataApprovedWordCount
+  __typename
+}
+
+fragment tapProjectNode on TAPProjectNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapTalkthroughNode on TAPTalkthroughNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  isDubbed
+  isSubtitled
+  youtubeId
+  __typename
+}
+
+fragment tapUnitNode on TAPUnitNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapLessonNode
+    __typename
+  }
+  __typename
+}
+
+fragment tapVideoNode on TAPVideoNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  isDubbed
+  dubIsSubtitled
+  isSubtitled
+  translatedYoutubeId
+  youtubeId
+  __typename
 }`,
   translationPortalCourseContentProgressCached: `query translationPortalCourseContentProgressCached($courseId: String!, $contentLocale: String!) {
   courseTranslationProgress(courseId: $courseId, contentKALocale: $contentLocale) {
@@ -14122,6 +14496,144 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
+}
+
+fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapArticleNode on TAPArticleNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapChallengeNode on TAPChallengeNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapContentItem on TAPContentItem {
+  id
+  contentKind
+  contentId
+  sha
+  isNativeContent
+  isUnlisted
+  slug
+  title
+  translatedTitle
+  __typename
+}
+
+fragment tapContentWordCounts on TAPContentWordCounts {
+  wordCount
+  translatableWordCount
+  translatedWordCount
+  translatedWordCount
+  approvedWordCount
+  __typename
+}
+
+fragment tapCourseNode on TAPCourseNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapUnitNode
+    __typename
+  }
+  __typename
+}
+
+fragment tapExerciseNode on TAPExerciseNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapInteractiveNode on TAPInteractiveNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapLessonNode on TAPLessonNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapAIGuideActivityNode
+    ...tapArticleNode
+    ...tapChallengeNode
+    ...tapExerciseNode
+    ...tapInteractiveNode
+    ...tapProjectNode
+    ...tapTalkthroughNode
+    ...tapVideoNode
+    __typename
+  }
+  __typename
+}
+
+fragment tapMetadataWordCounts on TAPMetadataWordCounts {
+  metadataWordCount
+  metadataTranslatableWordCount
+  metadataTranslatedWordCount
+  metadataApprovedWordCount
+  __typename
+}
+
+fragment tapProjectNode on TAPProjectNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  ...tapContentWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapTalkthroughNode on TAPTalkthroughNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  isDubbed
+  isSubtitled
+  youtubeId
+  __typename
+}
+
+fragment tapUnitNode on TAPUnitNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  children {
+    ...tapLessonNode
+    __typename
+  }
+  __typename
+}
+
+fragment tapVideoNode on TAPVideoNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  isDubbed
+  dubIsSubtitled
+  isSubtitled
+  translatedYoutubeId
+  youtubeId
+  __typename
 }`,
   translationPortalCourseTitlesByIds: `query translationPortalCourseTitlesByIds($ids: [String]!) {
   topicsById(ids: $ids) {
@@ -14156,12 +14668,66 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
+}
+
+fragment tapContentItem on TAPContentItem {
+  id
+  contentKind
+  contentId
+  sha
+  isNativeContent
+  isUnlisted
+  slug
+  title
+  translatedTitle
+  __typename
+}
+
+fragment tapContentWordCounts on TAPContentWordCounts {
+  wordCount
+  translatableWordCount
+  translatedWordCount
+  translatedWordCount
+  approvedWordCount
+  __typename
+}
+
+fragment tapDomainNode on TAPDomainNode {
+  ...tapContentItem
+  ...tapMetadataWordCounts
+  fingerprint
+  __typename
+}
+
+fragment tapMetadataWordCounts on TAPMetadataWordCounts {
+  metadataWordCount
+  metadataTranslatableWordCount
+  metadataTranslatedWordCount
+  metadataApprovedWordCount
+  __typename
+}
+
+fragment tapPlatformNode on TAPPlatformNode {
+  ...tapContentWordCounts
+  id
+  slug
+  title
+  __typename
 }`,
   translationPortalTranslationFreshness: `query translationPortalTranslationFreshness {
   platformTranslationProgress {
     ...tapTranslationFreshness
     __typename
   }
+}
+
+fragment tapTranslationFreshness on TAPTranslationFreshness {
+  lastStringsUpdateDate
+  lastDubsUpdateDate
+  lastSubtitlesUpdateDate
+  oldestSubtitlesDate
+  updateDate
+  __typename
 }`,
   TranslationSearchQuery: `query TranslationSearchQuery($query: String!, $type: QueryType!) {
   stringSearch(query: $query, type: $type) {
@@ -17365,6 +17931,80 @@ fragment ChallengeRevision on ChallengeRevision {
     nickname
     __typename
   }
+}
+
+fragment AssessmentItemRevision on AssessmentItemRevision {
+  id
+  contentKind
+  contentId
+  sha
+  creationDate
+  name
+  authorNames
+  itemData
+  itemShapeType
+  perseusApiMajorVersion
+  requiresScreenOrMouse
+  aiGenerated
+  tags
+  __typename
+}
+
+fragment ExerciseRevision on ExerciseRevision {
+  id
+  contentKind
+  contentId
+  sha
+  creationDate
+  authorKey
+  doNotPublish
+  sourceKaLocale
+  sourceLanguage: sourceKaLocale
+  slug
+  name: slug
+  title
+  displayName: title
+  prettyDisplayName: title
+  description
+  descriptionHtml: description
+  customTitleTag
+  customDescriptionTag
+  thumbnailData
+  thumbnailCache
+  sponsored
+  alternateSlugs
+  authorName
+  covers
+  prerequisites
+  relatedContent
+  assessmentItemTags
+  difficultyLevel
+  suggestedCompletionCriteria
+  trackingDocumentUrl
+  problemTypeKind
+  interimAssessmentType
+  numQuestionsPerProblemType
+  problemTypes {
+    contentId
+    name
+    relatedVideos
+    items {
+      id
+      sha
+      perseusApiMajorVersion
+      requiresScreenOrMouse
+      aiGenerated
+      __typename
+    }
+    __typename
+  }
+  assessmentItems {
+    ...AssessmentItemRevision
+    __typename
+  }
+  listed
+  hasLintErrors
+  __typename
 }`,
   getSatAccountSettings: `query getSatAccountSettings($targetKaid: String) {
   target: user(kaid: $targetKaid) {
