@@ -25,6 +25,7 @@ query getClassSettings($classDescriptor: String!) {
     countStudents
     classroomDistrictInfo {
       id
+      name
       teacherUserDistrictInfoIDs {
         id
         displayNameForTeacher
