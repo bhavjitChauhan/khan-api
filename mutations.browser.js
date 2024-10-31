@@ -12800,4 +12800,22 @@ fragment TaskFragment on AssessmentTask {
   }
   __typename
 }`,
+  createTestDistrict: `mutation createTestDistrict($name: String!, $karfJson: String!) {
+  createTestDistrict(name: $name, karfJson: $karfJson) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  updateTestDistrictRoster: `mutation updateTestDistrictRoster($districtId: ID!, $karfJson: String!) {
+  updateTestDistrictRoster(districtID: $districtId, karfJson: $karfJson) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

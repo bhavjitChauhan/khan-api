@@ -1,0 +1,9 @@
+mutation createTestDistrict($name: String!, $karfJson: String!) {
+  createTestDistrict(name: $name, karfJson: $karfJson) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

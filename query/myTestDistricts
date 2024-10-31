@@ -1,0 +1,15 @@
+query myTestDistricts {
+  user {
+    id
+    engTestDistricts {
+      district {
+        id
+        name
+        __typename
+      }
+      karfJson
+      __typename
+    }
+    __typename
+  }
+}
