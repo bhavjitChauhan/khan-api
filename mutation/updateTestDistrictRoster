@@ -1,0 +1,9 @@
+mutation updateTestDistrictRoster($districtId: ID!, $karfJson: String!) {
+  updateTestDistrictRoster(districtID: $districtId, karfJson: $karfJson) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
