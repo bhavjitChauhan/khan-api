@@ -3797,6 +3797,7 @@ fragment CourseProgress on SubjectProgress {
     khanmigoTokenUsage
     khanmigoStart
     khanmigoEnd
+    hasAssessments
     __typename
   }
 }`,
@@ -11602,12 +11603,14 @@ fragment BaseFolder on Folder {
 }`,
   learnMenuTopicsQuery: `query learnMenuTopicsQuery($region: String) {
   learnMenuTopics(region: $region) {
+    domainId
     slug
     translatedTitle
     href
     isNew
     icon
     children {
+      courseId
       slug
       translatedTitle
       href
@@ -17623,6 +17626,26 @@ fragment ChallengeRevision on ChallengeRevision {
   }
   isEditableByCurrentUser(contentId: $contentId, contentKind: "Project")
   isPublishableByCurrentUser(contentId: $contentId, contentKind: "Project")
+}
+
+fragment ProjectRevision on ProjectRevision {
+  id
+  contentId
+  contentKind
+  sha
+  doNotPublish
+  slug
+  listed
+  title
+  description
+  projectEval
+  authorName
+  code
+  codeFormat
+  customTitleTag
+  customDescriptionTag
+  sourceKaLocale
+  __typename
 }`,
   getAdminsForDistrict: `query getAdminsForDistrict($districtID: String!) {
   getAdminsForDistrict(districtID: $districtID) {
@@ -19896,6 +19919,7 @@ fragment UserFields on User {
       }
       __typename
     }
+    hasAssessments
     __typename
   }
 }`,
