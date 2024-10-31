@@ -52,6 +52,7 @@ query districts($filter: String!, $excludeTeacherDirected: Boolean!) {
     khanmigoTokenUsage
     khanmigoStart
     khanmigoEnd
+    hasAssessments
     __typename
   }
 }

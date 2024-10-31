@@ -1,11 +1,13 @@
 query learnMenuTopicsQuery($region: String) {
   learnMenuTopics(region: $region) {
+    domainId
     slug
     translatedTitle
     href
     isNew
     icon
     children {
+      courseId
       slug
       translatedTitle
       href

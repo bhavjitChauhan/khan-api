@@ -124,6 +124,7 @@ query districtById($districtId: String!, $excludeTeacherDirected: Boolean!) {
       }
       __typename
     }
+    hasAssessments
     __typename
   }
 }
