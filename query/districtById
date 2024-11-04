@@ -7,6 +7,10 @@ query districtById($districtId: String!, $excludeTeacherDirected: Boolean!) {
       name
       __typename
     }
+    goal {
+      type
+      __typename
+    }
     rosterID
     rosterSource
     nweaID
