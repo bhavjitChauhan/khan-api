@@ -3,6 +3,11 @@ query AssessmentSummary($slug: String!) {
     id
     assessmentData {
       assessmentStatus(assessmentSlug: $slug) {
+        assessment {
+          id
+          surveySlug
+          __typename
+        }
         summary {
           questionsCorrect
           questionsTotal
