@@ -2,6 +2,7 @@ query getAiGuideAssignableActivities {
   aiGuideAssignableActivities {
     id
     configName
+    contentID
     teacherToolData {
       description
       title
