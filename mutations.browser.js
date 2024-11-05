@@ -12818,4 +12818,13 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
+  deleteDistrictGoal: `mutation deleteDistrictGoal($districtId: String!) {
+  deleteDistrictGoal(districtID: $districtId) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

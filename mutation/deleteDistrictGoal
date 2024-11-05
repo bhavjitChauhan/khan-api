@@ -1,0 +1,9 @@
+mutation deleteDistrictGoal($districtId: String!) {
+  deleteDistrictGoal(districtID: $districtId) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
