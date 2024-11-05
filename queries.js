@@ -9921,6 +9921,20 @@ fragment gtp_egudFragment on ExamGroupUserData {
     ...gtp_essayScoresFragment
     __typename
   }
+}
+
+fragment gtp_essayScoresFragment on EssayScores {
+  areas {
+    translatedTitle
+    essays {
+      examCompletionDate
+      score
+      maxScore
+      __typename
+    }
+    __typename
+  }
+  __typename
 }`,
   gtp_getExamGroupMetadata: `query gtp_getExamGroupMetadata($examGroupId: String!) {
   examGroup(examGroupId: $examGroupId) {
@@ -21382,6 +21396,7 @@ fragment ExerciseContentFields on LearnableContent {
   aiGuideAssignableActivities {
     id
     configName
+    contentID
     teacherToolData {
       description
       title
