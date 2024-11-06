@@ -1,0 +1,9 @@
+mutation ClearUMI($id: ID!) {
+  clearUMI(id: $id) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

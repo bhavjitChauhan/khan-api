@@ -1,5 +1,5 @@
-query getAdminsForInProductAdminRostering($districtID: String!) {
-  getAdminsForDistrict(districtID: $districtID, allowPartial: true) {
+query getAdminsForInProductAdminRostering($partnershipID: ID!) {
+  getVisibleAdminUDIs(partnershipID: $partnershipID, allowPartial: true) {
     id
     displayNameForTeacher
     districtProvidedEmail
@@ -19,6 +19,31 @@ query getAdminsForInProductAdminRostering($districtID: String!) {
       __typename
     }
     hasAdminDirectedInfo
+    __typename
+  }
+  getVisibleUMIs(partnershipID: $partnershipID) {
+    id
+    email
+    firstName
+    lastName
+    displayName
+    canManageAdmins
+    activationEmailSentAt
+    kaid
+    adminOf {
+      ... on MetaDistrict {
+        id
+        name
+        __typename
+      }
+      ... on District {
+        id
+        name
+        __typename
+      }
+      __typename
+    }
+    adminOfHeight
     __typename
   }
 }
