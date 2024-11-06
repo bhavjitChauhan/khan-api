@@ -21732,4 +21732,62 @@ fragment AssignmentFields on Assignment {
     __typename
   }
 }`,
+  findUsersByIpAndGetRestriction: `query findUsersByIpAndGetRestriction($ip: String!, $usersCursor: ID, $pageSize: Int) {
+  usersSearchByIpPage(ip: $ip, after: $usersCursor, pageSize: $pageSize) {
+    users {
+      ...UserFields
+      ...FilterFields
+      __typename
+    }
+    pageInfo {
+      nextCursor
+      __typename
+    }
+    totalCount
+    __typename
+  }
+  getIpRestrictionInfo(ip: $ip) {
+    isRestricted
+    isBlocked
+    __typename
+  }
+}
+
+fragment FilterFields on User {
+  id
+  nickname
+  coaches {
+    id
+    email
+    username
+    kaid
+    __typename
+  }
+  joined
+  discussionBanned
+  isChild
+  points
+  __typename
+}
+
+fragment UserFields on User {
+  id
+  kaid
+  lastLogin
+  points
+  profileRoot
+  nickname
+  joined
+  authEmails
+  userId
+  username
+  coaches {
+    id
+    email
+    username
+    kaid
+    __typename
+  }
+  __typename
+}`,
 }
