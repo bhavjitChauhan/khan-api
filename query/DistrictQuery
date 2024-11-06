@@ -7,6 +7,7 @@ query DistrictQuery($districtID: ID!) {
     hasKhanmigo
     isKmapDistrict
     isK4dDistrict
+    isCentrallyRostered
     region
     activeGrades {
       id

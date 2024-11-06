@@ -3705,6 +3705,7 @@ fragment CourseProgress on SubjectProgress {
     hasKhanmigo
     isKmapDistrict
     isK4dDistrict
+    isCentrallyRostered
     region
     activeGrades {
       id
@@ -21456,6 +21457,7 @@ fragment ExerciseContentFields on LearnableContent {
     hasKhanmigo
     isKmapDistrict
     isK4dDistrict
+    isCentrallyRostered
     region
     activeGrades {
       id
