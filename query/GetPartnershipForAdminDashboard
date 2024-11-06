@@ -32,6 +32,15 @@ query GetPartnershipForAdminDashboard($partnershipID: ID!) {
           name
           levelLabel
           levelHeight
+          isK4dDistrict
+          isKmapDistrict
+          schools {
+            id
+            name
+            isKADSchool
+            isKmapSchool
+            __typename
+          }
           isTest
           __typename
         }
@@ -47,6 +56,13 @@ query GetPartnershipForAdminDashboard($partnershipID: ID!) {
       treeLabels {
         singular
         generalized
+        __typename
+      }
+      schools {
+        id
+        name
+        isKADSchool
+        isKmapSchool
         __typename
       }
       levelHeight
