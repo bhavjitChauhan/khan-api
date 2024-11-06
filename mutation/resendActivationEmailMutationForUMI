@@ -1,0 +1,10 @@
+mutation resendActivationEmailMutationForUMI($id: ID!) {
+  resendActivationEmailForUMI(id: $id) {
+    emailSent
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
