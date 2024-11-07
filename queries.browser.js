@@ -21803,4 +21803,31 @@ fragment UserFields on User {
   }
   __typename
 }`,
+  additionalUserPageData: `query additionalUserPageData($ip: String!, $kaid: String!) {
+  getIpRestrictionInfo(ip: $ip) {
+    isRestricted
+    isBlocked
+    __typename
+  }
+  accountDeletionRequests(targetKaid: $kaid) {
+    user {
+      id
+      __typename
+    }
+    reason
+    processOnDate
+    __typename
+  }
+  userSummary(kaid: $kaid) {
+    hellbanActions {
+      date
+      isHellban
+      moderatorNickname
+      reason
+      urlsafeKey
+      __typename
+    }
+    __typename
+  }
+}`,
 }
