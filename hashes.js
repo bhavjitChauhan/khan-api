@@ -499,7 +499,7 @@ export default {
   UserClassroomsInfo: 2022932455,
   userDataForNewContentPermission: 3271565903,
   userDistrictInfoByEmailAndClassCode: 1552829798,
-  UserDistrictInfosQuery: 3791159066,
+  UserDistrictInfosQuery: 77315335,
   UserDistrictStudentsQuery: 3714038324,
   UserDowngradedQuery: 3196139705,
   UserEmailsQuery: 1523758591,
