@@ -34,6 +34,8 @@ query UserDistrictInfosQuery($email: String, $rosterID: String) {
       __typename
     }
     udiAuditLogs {
+      kind
+      changes
       actorKaid
       createdAt
       description

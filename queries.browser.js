@@ -15291,6 +15291,8 @@ fragment AssignmentData on Assignment {
       __typename
     }
     udiAuditLogs {
+      kind
+      changes
       actorKaid
       createdAt
       description
