@@ -1,6 +1,17 @@
 query DistrictWithUserPermissionsQuery($districtID: ID!) {
   districtById(districtId: $districtID) {
     id
+    partnership {
+      ... on MetaDistrict {
+        id
+        __typename
+      }
+      ... on District {
+        id
+        __typename
+      }
+      __typename
+    }
     name
     rosterSource
     isTest
