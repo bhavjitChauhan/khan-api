@@ -353,7 +353,7 @@ hashes = {
   khanLibraryCourseStructure: 835097584,
   khanLibraryGetDomainRevision: 1867428323,
   khanLibraryGetFolder: 4124889395,
-  khanLibraryGetFolderTranslationProgress: 726411578,
+  khanLibraryGetFolderTranslationProgress: 1712916635,
   khanLibraryGetLocalesLanguage: 1713094285,
   khanLibraryGetMyGroup: 3669965419,
   khanLibraryGetOtherGroup: 2423491915,
@@ -779,4 +779,5 @@ hashes = {
   myTestDistricts: 604300990,
   findUsersByIpAndGetRestriction: 3124377235,
   additionalUserPageData: 2293484049,
+  GetPartnershipDataForDashboard: 477179611,
 }

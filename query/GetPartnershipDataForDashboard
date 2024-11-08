@@ -1,0 +1,72 @@
+query GetPartnershipDataForDashboard($partnershipID: ID!) {
+  partnershipDataForDashboard(partnershipID: $partnershipID) {
+    root {
+      ... on MetaDistrict {
+        id
+        name
+        countryCode
+        levelLabel
+        levelHeight
+        treeLabels {
+          singular
+          generalized
+          __typename
+        }
+        __typename
+      }
+      ... on District {
+        id
+        name
+        countryCode
+        levelLabel
+        levelHeight
+        treeLabels {
+          singular
+          generalized
+          __typename
+        }
+        isTest
+        __typename
+      }
+      __typename
+    }
+    visibleNodes {
+      ... on MetaDistrict {
+        id
+        parent {
+          id
+          __typename
+        }
+        name
+        levelLabel
+        levelHeight
+        isAdministered
+        __typename
+      }
+      ... on District {
+        id
+        parent {
+          id
+          __typename
+        }
+        name
+        levelLabel
+        levelHeight
+        isK4dDistrict
+        isKmapDistrict
+        schools {
+          id
+          name
+          isKADSchool
+          isKmapSchool
+          __typename
+        }
+        isTest
+        isAdministered
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
