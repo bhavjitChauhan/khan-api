@@ -767,7 +767,7 @@ export default {
   DistrictWithUserPermissionsQuery: 2842545535,
   GetManagedPartnershipsForDistrictsRoot: 3134713066,
   getTeacherAccessPermissionsData: 3297558590,
-  teacherAssignments: 4090785664,
+  teacherAssignments: 778347130,
   essaySnapshotPatches: 1530073442,
   districtTeachersFromCursor: 3396686454,
   districtTeachersTotalCount: 1158867036,
