@@ -1,5 +1,9 @@
-query getAdminsForInProductAdminRostering($partnershipID: ID!) {
-  getVisibleAdminUDIs(partnershipID: $partnershipID, allowPartial: true) {
+query getAdminsForInProductAdminRostering($partnershipID: ID!, $districtID: ID!) {
+  getVisibleAdminUDIs(
+    partnershipID: $partnershipID
+    districtID: $districtID
+    allowPartial: true
+  ) {
     id
     displayNameForTeacher
     districtProvidedEmail
