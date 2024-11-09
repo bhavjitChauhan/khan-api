@@ -195,6 +195,8 @@ query getUserDevAdminGeneral($kaid: String!) {
       khanmigoStatus
       khanmigoReason
       udiAuditLogs {
+        kind
+        changes
         actorKaid
         createdAt
         description
