@@ -9935,20 +9935,6 @@ fragment gtp_egudFragment on ExamGroupUserData {
     ...gtp_essayScoresFragment
     __typename
   }
-}
-
-fragment gtp_essayScoresFragment on EssayScores {
-  areas {
-    translatedTitle
-    essays {
-      examCompletionDate
-      score
-      maxScore
-      __typename
-    }
-    __typename
-  }
-  __typename
 }`,
   gtp_getExamGroupMetadata: `query gtp_getExamGroupMetadata($examGroupId: String!) {
   examGroup(examGroupId: $examGroupId) {
@@ -17642,26 +17628,6 @@ fragment ChallengeRevision on ChallengeRevision {
   }
   isEditableByCurrentUser(contentId: $contentId, contentKind: "Project")
   isPublishableByCurrentUser(contentId: $contentId, contentKind: "Project")
-}
-
-fragment ProjectRevision on ProjectRevision {
-  id
-  contentId
-  contentKind
-  sha
-  doNotPublish
-  slug
-  listed
-  title
-  description
-  projectEval
-  authorName
-  code
-  codeFormat
-  customTitleTag
-  customDescriptionTag
-  sourceKaLocale
-  __typename
 }`,
   getAdminsForDistrict: `query getAdminsForDistrict($districtID: String!) {
   getAdminsForDistrict(districtID: $districtID) {
