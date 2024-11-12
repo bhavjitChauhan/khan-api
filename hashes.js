@@ -520,7 +520,7 @@ export default {
   videoByReadableId: 708480486,
   videoByYoutubeId: 454155533,
   videoDataYoutubeId: 2870307085,
-  videoEditorQuery: 2313984499,
+  videoEditorQuery: 2916281697,
   WhatNextPrompt: 3506691538,
   WhatNextUnitDataQuery: 3164465047,
   youtubeVideoInfoAddContent: 3645503053,
