@@ -12256,4 +12256,43 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
+  EditUMI: `mutation EditUMI($id: ID!, $params: WriteUMIParams!) {
+  editUMI(id: $id, params: $params) {
+    umi {
+      id
+      canManageAdmins
+      __typename
+    }
+    error {
+      code
+      conflictingUMI {
+        id
+        email
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  SetUpUMIs: `mutation SetUpUMIs($params: [WriteUMIParams!]!) {
+  setUpUMIs(params: $params) {
+    umi {
+      id
+      __typename
+    }
+    error {
+      code
+      conflictingUMI {
+        id
+        email
+        firstName
+        lastName
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }

@@ -1,0 +1,19 @@
+mutation EditUMI($id: ID!, $params: WriteUMIParams!) {
+  editUMI(id: $id, params: $params) {
+    umi {
+      id
+      canManageAdmins
+      __typename
+    }
+    error {
+      code
+      conflictingUMI {
+        id
+        email
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
