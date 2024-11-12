@@ -1,0 +1,20 @@
+mutation SetUpUMIs($params: [WriteUMIParams!]!) {
+  setUpUMIs(params: $params) {
+    umi {
+      id
+      __typename
+    }
+    error {
+      code
+      conflictingUMI {
+        id
+        email
+        firstName
+        lastName
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

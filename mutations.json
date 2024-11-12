@@ -505,5 +505,7 @@
   "updateTestDistrictRoster": "mutation updateTestDistrictRoster($districtId: ID!, $karfJson: String!) {\n  updateTestDistrictRoster(districtID: $districtId, karfJson: $karfJson) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
   "deleteDistrictGoal": "mutation deleteDistrictGoal($districtId: String!) {\n  deleteDistrictGoal(districtID: $districtId) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
   "ClearUMI": "mutation ClearUMI($id: ID!) {\n  clearUMI(id: $id) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
-  "resendActivationEmailMutationForUMI": "mutation resendActivationEmailMutationForUMI($id: ID!) {\n  resendActivationEmailForUMI(id: $id) {\n    emailSent\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}"
+  "resendActivationEmailMutationForUMI": "mutation resendActivationEmailMutationForUMI($id: ID!) {\n  resendActivationEmailForUMI(id: $id) {\n    emailSent\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
+  "EditUMI": "mutation EditUMI($id: ID!, $params: WriteUMIParams!) {\n  editUMI(id: $id, params: $params) {\n    umi {\n      id\n      canManageAdmins\n      __typename\n    }\n    error {\n      code\n      conflictingUMI {\n        id\n        email\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}",
+  "SetUpUMIs": "mutation SetUpUMIs($params: [WriteUMIParams!]!) {\n  setUpUMIs(params: $params) {\n    umi {\n      id\n      __typename\n    }\n    error {\n      code\n      conflictingUMI {\n        id\n        email\n        firstName\n        lastName\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}"
 }
