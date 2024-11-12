@@ -7160,6 +7160,7 @@ fragment CourseRevisionStructure on CourseRevision {
       id
       cacheId
       signupCode
+      name
       __typename
     }
     __typename

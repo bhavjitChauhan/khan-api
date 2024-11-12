@@ -10,6 +10,7 @@ mutation postloginJoinStudentMutation($classCode: String!) {
       id
       cacheId
       signupCode
+      name
       __typename
     }
     __typename
