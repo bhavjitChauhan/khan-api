@@ -1,7 +1,7 @@
 query AITeacherTools_ExerciseDetails($exerciseId: String!) {
   exerciseById(id: $exerciseId) {
     id
-    title
+    translatedTitle
     prerequisites
     defaultUrlPath
     parentTopic {
@@ -9,7 +9,7 @@ query AITeacherTools_ExerciseDetails($exerciseId: String!) {
       domainSlug
       allLearnableContent(includeUnlisted: false) {
         id
-        title
+        translatedTitle
         defaultUrlPath
         __typename
       }

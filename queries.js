@@ -11001,144 +11001,6 @@ fragment PublishedCourseRevisionFragment on CourseRevision {
     }
     __typename
   }
-}
-
-fragment tapAIGuideActivityNode on TAPAIGuideActivityNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapArticleNode on TAPArticleNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapChallengeNode on TAPChallengeNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapContentItem on TAPContentItem {
-  id
-  contentKind
-  contentId
-  sha
-  isNativeContent
-  isUnlisted
-  slug
-  title
-  translatedTitle
-  __typename
-}
-
-fragment tapContentWordCounts on TAPContentWordCounts {
-  wordCount
-  translatableWordCount
-  translatedWordCount
-  translatedWordCount
-  approvedWordCount
-  __typename
-}
-
-fragment tapCourseNode on TAPCourseNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  children {
-    ...tapUnitNode
-    __typename
-  }
-  __typename
-}
-
-fragment tapExerciseNode on TAPExerciseNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapInteractiveNode on TAPInteractiveNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapLessonNode on TAPLessonNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  children {
-    ...tapAIGuideActivityNode
-    ...tapArticleNode
-    ...tapChallengeNode
-    ...tapExerciseNode
-    ...tapInteractiveNode
-    ...tapProjectNode
-    ...tapTalkthroughNode
-    ...tapVideoNode
-    __typename
-  }
-  __typename
-}
-
-fragment tapMetadataWordCounts on TAPMetadataWordCounts {
-  metadataWordCount
-  metadataTranslatableWordCount
-  metadataTranslatedWordCount
-  metadataApprovedWordCount
-  __typename
-}
-
-fragment tapProjectNode on TAPProjectNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  ...tapContentWordCounts
-  fingerprint
-  __typename
-}
-
-fragment tapTalkthroughNode on TAPTalkthroughNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  isDubbed
-  isSubtitled
-  youtubeId
-  __typename
-}
-
-fragment tapUnitNode on TAPUnitNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  children {
-    ...tapLessonNode
-    __typename
-  }
-  __typename
-}
-
-fragment tapVideoNode on TAPVideoNode {
-  ...tapContentItem
-  ...tapMetadataWordCounts
-  fingerprint
-  isDubbed
-  dubIsSubtitled
-  isSubtitled
-  translatedYoutubeId
-  youtubeId
-  __typename
 }`,
   khanLibraryGetLocalesLanguage: `query khanLibraryGetLocalesLanguage {
   localesForLanguagePicker(includeEnglish: true, includeFake: false) {
@@ -18591,7 +18453,6 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     allowedTopicAncestors: $allowedTopicAncestors
     contentKinds: $contentKinds
     numResults: $numResults
-    region: "*"
   ) {
     results {
       contentId
@@ -18696,7 +18557,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   AITeacherTools_ArticleDetails: `query AITeacherTools_ArticleDetails($articleId: String) {
   articleById(id: $articleId) {
     id
-    title
+    translatedTitle
     defaultUrlPath
     translatedPerseusContent
     parentTopic {
@@ -18704,7 +18565,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       domainSlug
       allLearnableContent(includeUnlisted: false) {
         id
-        title
+        translatedTitle
         defaultUrlPath
         __typename
       }
@@ -18716,7 +18577,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   AITeacherTools_ExerciseDetails: `query AITeacherTools_ExerciseDetails($exerciseId: String!) {
   exerciseById(id: $exerciseId) {
     id
-    title
+    translatedTitle
     prerequisites
     defaultUrlPath
     parentTopic {
@@ -18724,7 +18585,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       domainSlug
       allLearnableContent(includeUnlisted: false) {
         id
-        title
+        translatedTitle
         defaultUrlPath
         __typename
       }
@@ -18743,14 +18604,14 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   AITeacherTools_VideoDetails: `query AITeacherTools_VideoDetails($videoId: String) {
   videoById(contentId: $videoId) {
     id
-    title
+    translatedTitle
     defaultUrlPath
     parentTopic {
       id
       domainSlug
       allLearnableContent(includeUnlisted: false) {
         id
-        title
+        translatedTitle
         defaultUrlPath
         __typename
       }

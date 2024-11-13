@@ -1,14 +1,14 @@
 query AITeacherTools_VideoDetails($videoId: String) {
   videoById(contentId: $videoId) {
     id
-    title
+    translatedTitle
     defaultUrlPath
     parentTopic {
       id
       domainSlug
       allLearnableContent(includeUnlisted: false) {
         id
-        title
+        translatedTitle
         defaultUrlPath
         __typename
       }

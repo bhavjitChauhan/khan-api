@@ -1,7 +1,7 @@
 query AITeacherTools_ArticleDetails($articleId: String) {
   articleById(id: $articleId) {
     id
-    title
+    translatedTitle
     defaultUrlPath
     translatedPerseusContent
     parentTopic {
@@ -9,7 +9,7 @@ query AITeacherTools_ArticleDetails($articleId: String) {
       domainSlug
       allLearnableContent(includeUnlisted: false) {
         id
-        title
+        translatedTitle
         defaultUrlPath
         __typename
       }

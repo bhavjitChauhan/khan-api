@@ -4,7 +4,6 @@ query getContentSearchResults($query: String!, $allowedTopicAncestors: [String],
     allowedTopicAncestors: $allowedTopicAncestors
     contentKinds: $contentKinds
     numResults: $numResults
-    region: "*"
   ) {
     results {
       contentId
