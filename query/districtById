@@ -30,6 +30,12 @@ query districtById($districtId: String!, $excludeTeacherDirected: Boolean!) {
     isOldNWEA
     region
     countryCode
+    createdBy {
+      id
+      kaid
+      email
+      __typename
+    }
     districtAuditLogs {
       createdAt
       description
