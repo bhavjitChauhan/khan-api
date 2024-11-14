@@ -15162,6 +15162,11 @@ fragment AssignmentData on Assignment {
       name
       __typename
     }
+    gracePeriod {
+      start
+      end
+      __typename
+    }
     udiAuditLogs {
       kind
       changes
@@ -17501,26 +17506,6 @@ fragment ChallengeRevision on ChallengeRevision {
   }
   isEditableByCurrentUser(contentId: $contentId, contentKind: "Project")
   isPublishableByCurrentUser(contentId: $contentId, contentKind: "Project")
-}
-
-fragment ProjectRevision on ProjectRevision {
-  id
-  contentId
-  contentKind
-  sha
-  doNotPublish
-  slug
-  listed
-  title
-  description
-  projectEval
-  authorName
-  code
-  codeFormat
-  customTitleTag
-  customDescriptionTag
-  sourceKaLocale
-  __typename
 }`,
   getAdminsForDistrict: `query getAdminsForDistrict($districtID: String!) {
   getAdminsForDistrict(districtID: $districtID) {
