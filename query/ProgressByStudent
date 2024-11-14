@@ -9,6 +9,16 @@ query ProgressByStudent($assignmentFilters: CoachAssignmentFilters, $classDescri
       coachNickname
       __typename
     }
+    classroomDistrictInfo {
+      id
+      studentUserDistrictInfos {
+        id
+        kaid
+        sisId
+        __typename
+      }
+      __typename
+    }
     assignmentsPage(filters: $assignmentFilters, after: $after, pageSize: $pageSize) {
       assignments {
         id
