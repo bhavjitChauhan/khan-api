@@ -33,6 +33,11 @@ query UserDistrictInfosQuery($email: String, $rosterID: String) {
       name
       __typename
     }
+    gracePeriod {
+      start
+      end
+      __typename
+    }
     udiAuditLogs {
       kind
       changes
