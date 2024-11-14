@@ -162,6 +162,11 @@ query getUserDevAdminGeneral($kaid: String!) {
         name
         __typename
       }
+      gracePeriod {
+        start
+        end
+        __typename
+      }
       district {
         id
         name
