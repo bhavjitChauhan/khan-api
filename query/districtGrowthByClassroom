@@ -10,6 +10,11 @@ query districtGrowthByClassroom($teacherKaid: String!, $schoolID: String!, $filt
       descriptor
       name
       coachKaid
+      classroomDistrictInfo {
+        id
+        name
+        __typename
+      }
       __typename
     }
     info {
