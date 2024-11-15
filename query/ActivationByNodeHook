@@ -1,0 +1,38 @@
+query ActivationByNodeHook($selectedNodeID: ID!, $childIDs: [ID!]) {
+  activationReportByAdminAggregate(
+    selectedNodeID: $selectedNodeID
+    childIDs: $childIDs
+  ) {
+    rows {
+      adminAggregate {
+        ... on District {
+          id
+          name
+          __typename
+        }
+        ... on MetaDistrict {
+          id
+          name
+          __typename
+        }
+        __typename
+      }
+      numStudentsTotal
+      numStudentsActivated
+      numStudentsStartedAnActivity
+      numTeachersTotal
+      numTeachersActivated
+      __typename
+    }
+    totalRow {
+      numStudentsTotal
+      numStudentsActivated
+      numStudentsStartedAnActivity
+      numTeachersTotal
+      numTeachersActivated
+      __typename
+    }
+    updatedAt
+    __typename
+  }
+}
