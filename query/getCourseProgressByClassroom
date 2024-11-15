@@ -12,6 +12,11 @@ query getCourseProgressByClassroom($filters: DistrictCourseProgressFilters!, $co
         cacheId
         name
         descriptor
+        classroomDistrictInfo {
+          id
+          name
+          __typename
+        }
         __typename
       }
       info {
