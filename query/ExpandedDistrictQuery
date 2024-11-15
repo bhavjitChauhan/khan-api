@@ -1,0 +1,83 @@
+query ExpandedDistrictQuery($districtID: ID!) {
+  districtById(districtId: $districtID) {
+    id
+    parent {
+      id
+      __typename
+    }
+    name
+    levelLabel
+    levelHeight
+    isK4dDistrict
+    isKmapDistrict
+    isTest
+    isAdministered
+    partnership {
+      ... on MetaDistrict {
+        id
+        __typename
+      }
+      ... on District {
+        id
+        __typename
+      }
+      __typename
+    }
+    hasKhanmigo
+    isCentrallyRostered
+    rosterSource
+    region
+    activeGrades {
+      id
+      sortIndex
+      name
+      __typename
+    }
+    schools {
+      id
+      name
+      isKADSchool
+      isKmapSchool
+      __typename
+    }
+    schoolYearStart
+    schoolYearEnd
+    kaLocale
+    ancestors {
+      id
+      levelHeight
+      name
+      __typename
+    }
+    countryCode
+    goal {
+      type
+      createdBy {
+        id
+        kaid
+        __typename
+      }
+      __typename
+    }
+    schoolYearStart
+    __typename
+  }
+  user {
+    id
+    hasPermission(name: "CAN_ACT_LIKE_A_DISTRICT_ADMIN", scope: ANY)
+    userDistrictInfos {
+      id
+      district {
+        id
+        __typename
+      }
+      activatedAt
+      canSeeAllSchools
+      canManageAdmins
+      isKmap
+      isSuperAdmin
+      __typename
+    }
+    __typename
+  }
+}

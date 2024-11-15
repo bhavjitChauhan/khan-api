@@ -9808,38 +9808,6 @@ fragment CommonUserInfoFragment on User {
     ...gtp_egudFragment
     __typename
   }
-}
-
-fragment gtp_egudFragment on ExamGroupUserData {
-  id
-  practiceDaysInfo {
-    day
-    hour
-    length
-    minute
-    __typename
-  }
-  selectedCutoffIdentifiers
-  selectedExams
-  initialSelectedExams
-  dailyActivityHistory {
-    date
-    activityHistory {
-      examsCompleted
-      problemsDone
-      secondsSpent
-      status
-      cta {
-        type
-        minutes
-        __typename
-      }
-      __typename
-    }
-    __typename
-  }
-  extendedTimeMultiplier
-  __typename
 }`,
   gtp_getEGUDViaExam: `query gtp_getEGUDViaExam($examId: String!) {
   exam(examId: $examId) {
@@ -9854,38 +9822,6 @@ fragment gtp_egudFragment on ExamGroupUserData {
     }
     __typename
   }
-}
-
-fragment gtp_egudFragment on ExamGroupUserData {
-  id
-  practiceDaysInfo {
-    day
-    hour
-    length
-    minute
-    __typename
-  }
-  selectedCutoffIdentifiers
-  selectedExams
-  initialSelectedExams
-  dailyActivityHistory {
-    date
-    activityHistory {
-      examsCompleted
-      problemsDone
-      secondsSpent
-      status
-      cta {
-        type
-        minutes
-        __typename
-      }
-      __typename
-    }
-    __typename
-  }
-  extendedTimeMultiplier
-  __typename
 }`,
   gtp_getEmailRemindersData: `query gtp_getEmailRemindersData($listName: String!) {
   user {
@@ -9931,60 +9867,12 @@ fragment gtp_essayScoresFragment on EssayScores {
     }
     __typename
   }
-}
-
-fragment gtp_examGroupMetadataFragment on ExamGroupMetadata {
-  id
-  testMaker
-  kaRelationshipToTestCopy
-  testMakerLogoImg
-  registrationUrl
-  __typename
 }`,
   gtp_getExamMetadata: `query gtp_getExamMetadata($examId: String!) {
   metadata(examId: $examId) {
     ...gtp_examMetadataFragment
     __typename
   }
-}
-
-fragment gtp_examMetadataFragment on ExamMetadata {
-  id
-  accommodationsUrl
-  accommodationsCopy
-  accommodationsOptions
-  numAvailableTests
-  offerFullTestDiagnostics
-  goalScoreContext
-  goalScoreResources {
-    url
-    description
-    __typename
-  }
-  skillLevelLabels {
-    skillLevel
-    label
-    __typename
-  }
-  examGroupMetadata {
-    examGroupId
-    exams {
-      examId
-      __typename
-    }
-    __typename
-  }
-  subExamMode
-  isPassFail
-  cutoffScoreSelectorContext
-  cutoffScoreDefaultText
-  passFailScoreCutoffs {
-    label
-    identifier
-    cutoffScoreThreshold
-    __typename
-  }
-  __typename
 }`,
   gtp_getExamOnboardingLessons: `query gtp_getExamOnboardingLessons($examId: String!) {
   exam(examId: $examId) {
@@ -10195,131 +10083,6 @@ fragment gtp_examMetadataFragment on ExamMetadata {
     ...gtp_taskFragment
     __typename
   }
-}
-
-fragment gtp_taskFragment on Task {
-  id
-  kaid
-  examId
-  taskType
-  secondsTaken
-  taskDurationSeconds
-  translatedTitle
-  creationDatetime
-  startDatetime
-  completed
-  receivedCredit
-  completionDatetime
-  stage
-  checkpoint
-  taskContent {
-    concepts {
-      item {
-        conceptId
-        translatedTitle
-        __typename
-      }
-      questions {
-        conceptId
-        translatedTitle
-        __typename
-      }
-      __typename
-    }
-    id
-    itemData
-    itemShapeType
-    skills {
-      item {
-        areaId
-        skillId
-        skillContentId
-        translatedTitle
-        __typename
-      }
-      questions {
-        areaId
-        skillId
-        skillContentId
-        translatedTitle
-        __typename
-      }
-      __typename
-    }
-    gradingMetadata {
-      instructions
-      promptTitle
-      responseTitle
-      minScore
-      maxScore
-      rubric {
-        article {
-          id
-          perseusContent
-          __typename
-        }
-        __typename
-      }
-      scoreExamples {
-        score
-        article {
-          id
-          perseusContent
-          __typename
-        }
-        __typename
-      }
-      __typename
-    }
-    __typename
-  }
-  taskState
-  taskStateHash
-  exerciseName
-  itemIds
-  areaId
-  areaTitle
-  ... on SkillTask {
-    skillId
-    skill {
-      description
-      __typename
-    }
-    level
-    incomingSkillLevelLabel {
-      label
-      skillLevel
-      __typename
-    }
-    outgoingSkillLevelLabel {
-      label
-      skillLevel
-      __typename
-    }
-    __typename
-  }
-  ... on TmsTask {
-    directions
-    extendedTaskState
-    startExtendedTimeDt
-    __typename
-  }
-  ... on TestSectionTask {
-    directions
-    __typename
-  }
-  ... on ExpressDiagnosticTask {
-    directions
-    skillLevels {
-      skillName
-      minLevel
-      maxLevel
-      level
-      __typename
-    }
-    __typename
-  }
-  __typename
 }`,
   gtp_getTestPrepHeaderInfo: `query gtp_getTestPrepHeaderInfo($examId: String!) {
   exam(examId: $examId) {
@@ -10343,131 +10106,6 @@ fragment gtp_taskFragment on Task {
     ...gtp_taskFragment
     __typename
   }
-}
-
-fragment gtp_taskFragment on Task {
-  id
-  kaid
-  examId
-  taskType
-  secondsTaken
-  taskDurationSeconds
-  translatedTitle
-  creationDatetime
-  startDatetime
-  completed
-  receivedCredit
-  completionDatetime
-  stage
-  checkpoint
-  taskContent {
-    concepts {
-      item {
-        conceptId
-        translatedTitle
-        __typename
-      }
-      questions {
-        conceptId
-        translatedTitle
-        __typename
-      }
-      __typename
-    }
-    id
-    itemData
-    itemShapeType
-    skills {
-      item {
-        areaId
-        skillId
-        skillContentId
-        translatedTitle
-        __typename
-      }
-      questions {
-        areaId
-        skillId
-        skillContentId
-        translatedTitle
-        __typename
-      }
-      __typename
-    }
-    gradingMetadata {
-      instructions
-      promptTitle
-      responseTitle
-      minScore
-      maxScore
-      rubric {
-        article {
-          id
-          perseusContent
-          __typename
-        }
-        __typename
-      }
-      scoreExamples {
-        score
-        article {
-          id
-          perseusContent
-          __typename
-        }
-        __typename
-      }
-      __typename
-    }
-    __typename
-  }
-  taskState
-  taskStateHash
-  exerciseName
-  itemIds
-  areaId
-  areaTitle
-  ... on SkillTask {
-    skillId
-    skill {
-      description
-      __typename
-    }
-    level
-    incomingSkillLevelLabel {
-      label
-      skillLevel
-      __typename
-    }
-    outgoingSkillLevelLabel {
-      label
-      skillLevel
-      __typename
-    }
-    __typename
-  }
-  ... on TmsTask {
-    directions
-    extendedTaskState
-    startExtendedTimeDt
-    __typename
-  }
-  ... on TestSectionTask {
-    directions
-    __typename
-  }
-  ... on ExpressDiagnosticTask {
-    directions
-    skillLevels {
-      skillName
-      minLevel
-      maxLevel
-      level
-      __typename
-    }
-    __typename
-  }
-  __typename
 }`,
   gtp_getTPUD: `query gtp_getTPUD($examId: String!) {
   checkpoints(examId: $examId) {
@@ -17525,6 +17163,26 @@ fragment ChallengeRevision on ChallengeRevision {
   }
   isEditableByCurrentUser(contentId: $contentId, contentKind: "Project")
   isPublishableByCurrentUser(contentId: $contentId, contentKind: "Project")
+}
+
+fragment ProjectRevision on ProjectRevision {
+  id
+  contentId
+  contentKind
+  sha
+  doNotPublish
+  slug
+  listed
+  title
+  description
+  projectEval
+  authorName
+  code
+  codeFormat
+  customTitleTag
+  customDescriptionTag
+  sourceKaLocale
+  __typename
 }`,
   getAdminsForDistrict: `query getAdminsForDistrict($districtID: String!) {
   getAdminsForDistrict(districtID: $districtID) {
@@ -21799,10 +21457,6 @@ fragment UserFields on User {
           __typename
         }
         name
-        levelLabel
-        levelHeight
-        isK4dDistrict
-        isKmapDistrict
         schools {
           id
           name
@@ -21810,10 +21464,135 @@ fragment UserFields on User {
           isKmapSchool
           __typename
         }
+        levelLabel
+        levelHeight
+        isK4dDistrict
+        isKmapDistrict
         isTest
         isAdministered
         __typename
       }
+      __typename
+    }
+    __typename
+  }
+}`,
+  ActivationByNodeHook: `query ActivationByNodeHook($selectedNodeID: ID!, $childIDs: [ID!]) {
+  activationReportByAdminAggregate(
+    selectedNodeID: $selectedNodeID
+    childIDs: $childIDs
+  ) {
+    rows {
+      adminAggregate {
+        ... on District {
+          id
+          name
+          __typename
+        }
+        ... on MetaDistrict {
+          id
+          name
+          __typename
+        }
+        __typename
+      }
+      numStudentsTotal
+      numStudentsActivated
+      numStudentsStartedAnActivity
+      numTeachersTotal
+      numTeachersActivated
+      __typename
+    }
+    totalRow {
+      numStudentsTotal
+      numStudentsActivated
+      numStudentsStartedAnActivity
+      numTeachersTotal
+      numTeachersActivated
+      __typename
+    }
+    updatedAt
+    __typename
+  }
+}`,
+  ExpandedDistrictQuery: `query ExpandedDistrictQuery($districtID: ID!) {
+  districtById(districtId: $districtID) {
+    id
+    parent {
+      id
+      __typename
+    }
+    name
+    levelLabel
+    levelHeight
+    isK4dDistrict
+    isKmapDistrict
+    isTest
+    isAdministered
+    partnership {
+      ... on MetaDistrict {
+        id
+        __typename
+      }
+      ... on District {
+        id
+        __typename
+      }
+      __typename
+    }
+    hasKhanmigo
+    isCentrallyRostered
+    rosterSource
+    region
+    activeGrades {
+      id
+      sortIndex
+      name
+      __typename
+    }
+    schools {
+      id
+      name
+      isKADSchool
+      isKmapSchool
+      __typename
+    }
+    schoolYearStart
+    schoolYearEnd
+    kaLocale
+    ancestors {
+      id
+      levelHeight
+      name
+      __typename
+    }
+    countryCode
+    goal {
+      type
+      createdBy {
+        id
+        kaid
+        __typename
+      }
+      __typename
+    }
+    schoolYearStart
+    __typename
+  }
+  user {
+    id
+    hasPermission(name: "CAN_ACT_LIKE_A_DISTRICT_ADMIN", scope: ANY)
+    userDistrictInfos {
+      id
+      district {
+        id
+        __typename
+      }
+      activatedAt
+      canSeeAllSchools
+      canManageAdmins
+      isKmap
+      isSuperAdmin
       __typename
     }
     __typename

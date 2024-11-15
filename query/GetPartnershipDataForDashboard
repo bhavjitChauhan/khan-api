@@ -50,10 +50,6 @@ query GetPartnershipDataForDashboard($partnershipID: ID!) {
           __typename
         }
         name
-        levelLabel
-        levelHeight
-        isK4dDistrict
-        isKmapDistrict
         schools {
           id
           name
@@ -61,6 +57,10 @@ query GetPartnershipDataForDashboard($partnershipID: ID!) {
           isKmapSchool
           __typename
         }
+        levelLabel
+        levelHeight
+        isK4dDistrict
+        isKmapDistrict
         isTest
         isAdministered
         __typename
