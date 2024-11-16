@@ -244,6 +244,8 @@ query getUserDevAdminGeneral($kaid: String!) {
         id
         name
         classWillBeRemovedInDays
+        districtProvidedIdentifier
+        rosterSource
         cdiAuditLogs {
           kind
           description
