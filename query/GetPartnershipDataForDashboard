@@ -12,6 +12,7 @@ query GetPartnershipDataForDashboard($partnershipID: ID!) {
           generalized
           __typename
         }
+        isAdministered
         __typename
       }
       ... on District {
@@ -26,6 +27,7 @@ query GetPartnershipDataForDashboard($partnershipID: ID!) {
           __typename
         }
         isTest
+        isAdministered
         __typename
       }
       __typename
