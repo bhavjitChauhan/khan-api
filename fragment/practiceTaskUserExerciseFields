@@ -1,0 +1,10 @@
+fragment practiceTaskUserExerciseFields on UserExercise {
+  exercise {
+    ...practiceTaskExerciseFields
+    __typename
+  }
+  fpmMasteryLevel
+  lastAttemptNumber
+  lastCountHints
+  __typename
+}

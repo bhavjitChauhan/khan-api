@@ -1,0 +1,13 @@
+fragment relatedContentFields on LearnableContent {
+  id
+  contentKind
+  thumbnailUrl
+  defaultUrlPath
+  translatedTitle
+  ... on Video {
+    duration
+    translatedYoutubeId
+    __typename
+  }
+  __typename
+}

@@ -2386,4 +2386,65 @@ query ActivitiesList {
   configuredActivityInputs
   __typename
 }`,
+  practiceTaskExerciseFields: `fragment practiceTaskExerciseFields on Exercise {
+  id
+  contentKind
+  slug
+  topicPaths {
+    path {
+      id
+      kind
+      __typename
+    }
+    __typename
+  }
+  problemTypeKind
+  numAssessmentItems
+  translatedDisplayName
+  relatedContent {
+    ...relatedContentFields
+    __typename
+  }
+  __typename
+}`,
+  practiceTaskFields: `fragment practiceTaskFields on PracticeTask {
+  id
+  key
+  exerciseLength
+  taskType
+  contentKey
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    correct
+    timeDone
+    seenHint
+    itemId
+    __typename
+  }
+  __typename
+}`,
+  practiceTaskUserExerciseFields: `fragment practiceTaskUserExerciseFields on UserExercise {
+  exercise {
+    ...practiceTaskExerciseFields
+    __typename
+  }
+  fpmMasteryLevel
+  lastAttemptNumber
+  lastCountHints
+  __typename
+}`,
+  relatedContentFields: `fragment relatedContentFields on LearnableContent {
+  id
+  contentKind
+  thumbnailUrl
+  defaultUrlPath
+  translatedTitle
+  ... on Video {
+    duration
+    translatedYoutubeId
+    __typename
+  }
+  __typename
+}`,
 }
