@@ -12,6 +12,11 @@ query getTopicPathBreadcrumbs($descriptors: [String!]!) {
             title
             __typename
           }
+          ... on LearnableContent {
+            id
+            title
+            __typename
+          }
           __typename
         }
         __typename
