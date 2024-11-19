@@ -17572,6 +17572,11 @@ fragment ChallengeRevision on ChallengeRevision {
       cacheId
       name
       descriptor
+      topics {
+        id
+        translatedTitle
+        __typename
+      }
       __typename
     }
     __typename

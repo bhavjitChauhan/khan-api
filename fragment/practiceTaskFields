@@ -1,0 +1,17 @@
+fragment practiceTaskFields on PracticeTask {
+  id
+  key
+  exerciseLength
+  taskType
+  contentKey
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    correct
+    timeDone
+    seenHint
+    itemId
+    __typename
+  }
+  __typename
+}

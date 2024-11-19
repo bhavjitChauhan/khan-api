@@ -1,0 +1,101 @@
+mutation LearnPrototype_PracticeTaskAttemptProblem($input: AttemptProblemInput!) {
+  attemptProblem(attempt: $input) {
+    result {
+      updatedUserExercise: userExercise {
+        ...practiceTaskUserExerciseFields
+        __typename
+      }
+      updatedTask {
+        ...practiceTaskFields
+        __typename
+      }
+      actionResults {
+        attemptCorrect
+        notificationsAdded {
+          avatarParts
+          badges
+          readable
+          toast
+          urgent
+          continueUrl
+          __typename
+        }
+        updatedStpStreakLength
+        updatedCourseProficiencyLevel
+        __typename
+      }
+      error {
+        code
+        debugMessage
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment practiceTaskExerciseFields on Exercise {
+  id
+  contentKind
+  slug
+  topicPaths {
+    path {
+      id
+      kind
+      __typename
+    }
+    __typename
+  }
+  problemTypeKind
+  numAssessmentItems
+  translatedDisplayName
+  relatedContent {
+    ...relatedContentFields
+    __typename
+  }
+  __typename
+}
+
+fragment practiceTaskFields on PracticeTask {
+  id
+  key
+  exerciseLength
+  taskType
+  contentKey
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    correct
+    timeDone
+    seenHint
+    itemId
+    __typename
+  }
+  __typename
+}
+
+fragment practiceTaskUserExerciseFields on UserExercise {
+  exercise {
+    ...practiceTaskExerciseFields
+    __typename
+  }
+  fpmMasteryLevel
+  lastAttemptNumber
+  lastCountHints
+  __typename
+}
+
+fragment relatedContentFields on LearnableContent {
+  id
+  contentKind
+  thumbnailUrl
+  defaultUrlPath
+  translatedTitle
+  ... on Video {
+    duration
+    translatedYoutubeId
+    __typename
+  }
+  __typename
+}
