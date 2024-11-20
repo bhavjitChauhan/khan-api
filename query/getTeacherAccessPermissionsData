@@ -11,6 +11,7 @@ query getTeacherAccessPermissionsData {
     hasClasses
     isKmapStudent
     isK4dStudent
+    hasAccessToAIGuideDistrictClassroomTeacher
     __typename
   }
 }
