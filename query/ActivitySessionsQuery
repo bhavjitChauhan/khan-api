@@ -27,12 +27,8 @@ query ActivitySessionsQuery($studentKaid: String!, $endDate: Date, $startDate: D
       }
       activitySessions(pageSize: $pageSize, after: $after) {
         sessions {
-          ... on BasicActivitySession {
-            ...ActivitySession
-            __typename
-          }
+          ...ActivitySession
           ... on MasteryActivitySession {
-            ...ActivitySession
             correctCount
             problemCount
             skillLevels {
@@ -49,10 +45,6 @@ query ActivitySessionsQuery($studentKaid: String!, $endDate: Date, $startDate: D
               isRestarted
               __typename
             }
-            __typename
-          }
-          ... on TestPrepActivitySession {
-            ...ActivitySession
             __typename
           }
           __typename

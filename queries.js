@@ -80,12 +80,8 @@ export default {
       }
       activitySessions(pageSize: $pageSize, after: $after) {
         sessions {
-          ... on BasicActivitySession {
-            ...ActivitySession
-            __typename
-          }
+          ...ActivitySession
           ... on MasteryActivitySession {
-            ...ActivitySession
             correctCount
             problemCount
             skillLevels {
@@ -102,10 +98,6 @@ export default {
               isRestarted
               __typename
             }
-            __typename
-          }
-          ... on TestPrepActivitySession {
-            ...ActivitySession
             __typename
           }
           __typename
@@ -17483,8 +17475,8 @@ fragment ExerciseRevision on ExerciseRevision {
       }
       activitySessions(pageSize: $pageSize, after: $after) {
         sessions {
+          ...ActivitySession
           ... on BasicActivitySession {
-            ...ActivitySession
             aiGuideThread {
               title
               id
@@ -17498,7 +17490,6 @@ fragment ExerciseRevision on ExerciseRevision {
             __typename
           }
           ... on MasteryActivitySession {
-            ...ActivitySession
             correctCount
             problemCount
             skillLevels {
@@ -17515,10 +17506,6 @@ fragment ExerciseRevision on ExerciseRevision {
               isRestarted
               __typename
             }
-            __typename
-          }
-          ... on TestPrepActivitySession {
-            ...ActivitySession
             __typename
           }
           __typename
