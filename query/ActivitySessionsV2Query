@@ -1,19 +1,6 @@
 query ActivitySessionsV2Query($studentKaid: String!, $endDate: Date, $startDate: Date, $courseType: String, $activityKind: String, $after: ID, $pageSize: Int) {
   user(kaid: $studentKaid) {
     id
-    exams {
-      id
-      examId
-      metadata {
-        id
-        nameInfo {
-          name
-          __typename
-        }
-        __typename
-      }
-      __typename
-    }
     activityLogV2(
       endDate: $endDate
       startDate: $startDate
