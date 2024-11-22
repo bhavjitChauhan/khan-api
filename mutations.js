@@ -12466,4 +12466,24 @@ fragment relatedContentFields on LearnableContent {
   }
   __typename
 }`,
+  createTrialDistrictAndSchool: `mutation createTrialDistrictAndSchool($districtName: String!, $schoolName: String!, $kaLocale: String!, $countryCode: String!, $region: String!) {
+  createTrialDistrictAndSchool(
+    districtName: $districtName
+    schoolName: $schoolName
+    kaLocale: $kaLocale
+    countryCode: $countryCode
+    region: $region
+  ) {
+    error {
+      code
+      __typename
+    }
+    district {
+      id
+      name
+      __typename
+    }
+    __typename
+  }
+}`,
 }

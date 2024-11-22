@@ -1,0 +1,15 @@
+query kadTrialDistricts {
+  kadTrialDistricts {
+    id
+    name
+    createdBy {
+      id
+      kaid
+      email
+      __typename
+    }
+    createdAt
+    isDowngraded
+    __typename
+  }
+}
