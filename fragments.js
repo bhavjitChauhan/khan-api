@@ -2447,4 +2447,28 @@ query ActivitiesList {
   }
   __typename
 }`,
+  ModerationResultFragment: `fragment ModerationResultFragment on AutoModerationResult {
+  autoModerationAction {
+    autoDelete
+    autoHide
+    __typename
+  }
+  autoHideCriteria {
+    isShortPost
+    containsLargeWords
+    containsASCIIArt
+    lowQualityScore {
+      totalScore
+      components {
+        code
+        totalScorePercentage
+        terms
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  __typename
+}`,
 }
