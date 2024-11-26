@@ -616,7 +616,7 @@ hashes = {
   AssignmentsPageForContentItems: 1181913380,
   getDistrictDisallowDiscussions: 762796058,
   getIndexedContentSearchResults: 3730215381,
-  exerciseEditorQuery: 1966364966,
+  exerciseEditorQuery: 1534415187,
   getSatAccountSettings: 714630499,
   allCoacheeNames: 2231775310,
   courseChallengeCsvQuery: 277772492,
@@ -785,4 +785,5 @@ hashes = {
   kadTrialDistricts: 2422363762,
   autoModerationResultByFeedbackKey: 1866303014,
   autoModerationResultByFeedbackType: 2382670733,
+  getBlooketQuestionSet: 3983694123,
 }
