@@ -1,11 +1,8 @@
-fragment practiceTaskFields on PracticeTask {
+fragment quizTaskFields on TopicQuizTask {
   id
   key
-  exerciseLength
   taskType
   contentKey
-  reservedItems
-  reservedItemsCompleted
   isCompleted
   taskAttemptHistory {
     ...exerciseTaskAttemptHistoryFields

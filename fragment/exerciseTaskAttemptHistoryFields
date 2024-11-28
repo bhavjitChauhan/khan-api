@@ -1,0 +1,7 @@
+fragment exerciseTaskAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  timeDone
+  seenHint
+  itemId
+  __typename
+}
