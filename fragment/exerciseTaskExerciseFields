@@ -1,0 +1,21 @@
+fragment exerciseTaskExerciseFields on Exercise {
+  id
+  contentKind
+  slug
+  topicPaths {
+    path {
+      id
+      kind
+      __typename
+    }
+    __typename
+  }
+  problemTypeKind
+  numAssessmentItems
+  translatedDisplayName
+  relatedContent {
+    ...relatedContentFields
+    __typename
+  }
+  __typename
+}

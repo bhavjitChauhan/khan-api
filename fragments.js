@@ -2415,11 +2415,9 @@ query ActivitiesList {
   contentKey
   reservedItems
   reservedItemsCompleted
+  isCompleted
   taskAttemptHistory {
-    correct
-    timeDone
-    seenHint
-    itemId
+    ...exerciseTaskAttemptHistoryFields
     __typename
   }
   __typename
@@ -2467,6 +2465,56 @@ query ActivitiesList {
       }
       __typename
     }
+    __typename
+  }
+  __typename
+}`,
+  exerciseTaskAttemptHistoryFields: `fragment exerciseTaskAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  timeDone
+  seenHint
+  itemId
+  __typename
+}`,
+  exerciseTaskExerciseFields: `fragment exerciseTaskExerciseFields on Exercise {
+  id
+  contentKind
+  slug
+  topicPaths {
+    path {
+      id
+      kind
+      __typename
+    }
+    __typename
+  }
+  problemTypeKind
+  numAssessmentItems
+  translatedDisplayName
+  relatedContent {
+    ...relatedContentFields
+    __typename
+  }
+  __typename
+}`,
+  exerciseTaskUserExerciseEntityFields: `fragment exerciseTaskUserExerciseEntityFields on UserExercise {
+  exercise {
+    ...exerciseTaskExerciseFields
+    __typename
+  }
+  fpmMasteryLevel
+  lastAttemptNumber
+  lastCountHints
+  __typename
+}`,
+  quizTaskFields: `fragment quizTaskFields on TopicQuizTask {
+  id
+  key
+  taskType
+  contentKey
+  isCompleted
+  taskAttemptHistory {
+    ...exerciseTaskAttemptHistoryFields
     __typename
   }
   __typename

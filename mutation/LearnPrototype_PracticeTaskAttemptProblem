@@ -2,7 +2,7 @@ mutation LearnPrototype_PracticeTaskAttemptProblem($input: AttemptProblemInput!)
   attemptProblem(attempt: $input) {
     result {
       updatedUserExercise: userExercise {
-        ...practiceTaskUserExerciseFields
+        ...exerciseTaskUserExerciseEntityFields
         __typename
       }
       updatedTask {
@@ -35,7 +35,15 @@ mutation LearnPrototype_PracticeTaskAttemptProblem($input: AttemptProblemInput!)
   }
 }
 
-fragment practiceTaskExerciseFields on Exercise {
+fragment exerciseTaskAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  timeDone
+  seenHint
+  itemId
+  __typename
+}
+
+fragment exerciseTaskExerciseFields on Exercise {
   id
   contentKind
   slug
@@ -57,6 +65,17 @@ fragment practiceTaskExerciseFields on Exercise {
   __typename
 }
 
+fragment exerciseTaskUserExerciseEntityFields on UserExercise {
+  exercise {
+    ...exerciseTaskExerciseFields
+    __typename
+  }
+  fpmMasteryLevel
+  lastAttemptNumber
+  lastCountHints
+  __typename
+}
+
 fragment practiceTaskFields on PracticeTask {
   id
   key
@@ -65,24 +84,11 @@ fragment practiceTaskFields on PracticeTask {
   contentKey
   reservedItems
   reservedItemsCompleted
+  isCompleted
   taskAttemptHistory {
-    correct
-    timeDone
-    seenHint
-    itemId
+    ...exerciseTaskAttemptHistoryFields
     __typename
   }
-  __typename
-}
-
-fragment practiceTaskUserExerciseFields on UserExercise {
-  exercise {
-    ...practiceTaskExerciseFields
-    __typename
-  }
-  fpmMasteryLevel
-  lastAttemptNumber
-  lastCountHints
   __typename
 }
 

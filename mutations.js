@@ -3942,6 +3942,19 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     }
     __typename
   }
+}
+
+fragment Program on Program {
+  id
+  latestRevision {
+    id
+    code
+    __typename
+  }
+  title
+  url
+  userAuthoredContentType
+  __typename
 }`,
   createStudentAccounts: `mutation createStudentAccounts($studentListKey: String, $students: [CreateStudentsInput]!) {
   createStudents(students: $students, studentListKey: $studentListKey) {
@@ -8514,6 +8527,19 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
+}
+
+fragment Program on Program {
+  id
+  latestRevision {
+    id
+    code
+    __typename
+  }
+  title
+  url
+  userAuthoredContentType
+  __typename
 }`,
   startMasteryTowerSession: `mutation startMasteryTowerSession($classDescriptor: String!) {
   startMasteryTowerSession(classDescriptor: $classDescriptor) {
@@ -12290,7 +12316,7 @@ fragment TaskFragment on AssessmentTask {
           __typename
         }
         userExercises {
-          ...practiceTaskUserExerciseFields
+          ...exerciseTaskUserExerciseEntityFields
           __typename
         }
         __typename
@@ -12301,7 +12327,15 @@ fragment TaskFragment on AssessmentTask {
   }
 }
 
-fragment practiceTaskExerciseFields on Exercise {
+fragment exerciseTaskAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  timeDone
+  seenHint
+  itemId
+  __typename
+}
+
+fragment exerciseTaskExerciseFields on Exercise {
   id
   contentKind
   slug
@@ -12323,6 +12357,17 @@ fragment practiceTaskExerciseFields on Exercise {
   __typename
 }
 
+fragment exerciseTaskUserExerciseEntityFields on UserExercise {
+  exercise {
+    ...exerciseTaskExerciseFields
+    __typename
+  }
+  fpmMasteryLevel
+  lastAttemptNumber
+  lastCountHints
+  __typename
+}
+
 fragment practiceTaskFields on PracticeTask {
   id
   key
@@ -12331,24 +12376,11 @@ fragment practiceTaskFields on PracticeTask {
   contentKey
   reservedItems
   reservedItemsCompleted
+  isCompleted
   taskAttemptHistory {
-    correct
-    timeDone
-    seenHint
-    itemId
+    ...exerciseTaskAttemptHistoryFields
     __typename
   }
-  __typename
-}
-
-fragment practiceTaskUserExerciseFields on UserExercise {
-  exercise {
-    ...practiceTaskExerciseFields
-    __typename
-  }
-  fpmMasteryLevel
-  lastAttemptNumber
-  lastCountHints
   __typename
 }
 
@@ -12369,7 +12401,7 @@ fragment relatedContentFields on LearnableContent {
   attemptProblem(attempt: $input) {
     result {
       updatedUserExercise: userExercise {
-        ...practiceTaskUserExerciseFields
+        ...exerciseTaskUserExerciseEntityFields
         __typename
       }
       updatedTask {
@@ -12402,7 +12434,15 @@ fragment relatedContentFields on LearnableContent {
   }
 }
 
-fragment practiceTaskExerciseFields on Exercise {
+fragment exerciseTaskAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  timeDone
+  seenHint
+  itemId
+  __typename
+}
+
+fragment exerciseTaskExerciseFields on Exercise {
   id
   contentKind
   slug
@@ -12424,6 +12464,17 @@ fragment practiceTaskExerciseFields on Exercise {
   __typename
 }
 
+fragment exerciseTaskUserExerciseEntityFields on UserExercise {
+  exercise {
+    ...exerciseTaskExerciseFields
+    __typename
+  }
+  fpmMasteryLevel
+  lastAttemptNumber
+  lastCountHints
+  __typename
+}
+
 fragment practiceTaskFields on PracticeTask {
   id
   key
@@ -12432,24 +12483,11 @@ fragment practiceTaskFields on PracticeTask {
   contentKey
   reservedItems
   reservedItemsCompleted
+  isCompleted
   taskAttemptHistory {
-    correct
-    timeDone
-    seenHint
-    itemId
+    ...exerciseTaskAttemptHistoryFields
     __typename
   }
-  __typename
-}
-
-fragment practiceTaskUserExerciseFields on UserExercise {
-  exercise {
-    ...practiceTaskExerciseFields
-    __typename
-  }
-  fpmMasteryLevel
-  lastAttemptNumber
-  lastCountHints
   __typename
 }
 
