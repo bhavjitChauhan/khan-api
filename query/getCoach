@@ -8,6 +8,16 @@ query getCoach {
     id
     tosForFormalTeacherStatus
     includesCentrallyOwnedDistrictData
+    userDistrictInfos {
+      id
+      rosterSource
+      district {
+        id
+        name
+        __typename
+      }
+      __typename
+    }
     schoolAffiliation {
       id
       name
