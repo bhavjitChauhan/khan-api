@@ -13,6 +13,7 @@ query GetPartnershipDataForDashboard($partnershipID: ID!) {
           __typename
         }
         isAdministered
+        hasLp
         __typename
       }
       ... on District {
@@ -28,6 +29,7 @@ query GetPartnershipDataForDashboard($partnershipID: ID!) {
         }
         isTest
         isAdministered
+        isKmapDistrict
         __typename
       }
       __typename
@@ -67,6 +69,56 @@ query GetPartnershipDataForDashboard($partnershipID: ID!) {
         isAdministered
         __typename
       }
+      __typename
+    }
+    __typename
+  }
+  user {
+    id
+    hasPermission(name: "CAN_ACT_LIKE_A_DISTRICT_ADMIN", scope: ANY)
+    userDistrictInfos {
+      id
+      district {
+        id
+        __typename
+      }
+      partnership {
+        ... on MetaDistrict {
+          id
+          __typename
+        }
+        ... on District {
+          id
+          __typename
+        }
+        __typename
+      }
+      activatedAt
+      canSeeAllSchools
+      canManageAdmins
+      isKmap
+      isAdmin
+      __typename
+    }
+    userMetaInfos {
+      id
+      partnership {
+        id
+        __typename
+      }
+      activatedAt
+      adminOf {
+        ... on MetaDistrict {
+          id
+          __typename
+        }
+        ... on District {
+          id
+          __typename
+        }
+        __typename
+      }
+      canManageAdmins
       __typename
     }
     __typename
