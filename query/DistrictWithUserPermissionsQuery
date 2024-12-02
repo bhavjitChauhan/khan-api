@@ -72,6 +72,39 @@ query DistrictWithUserPermissionsQuery($districtID: ID!) {
       isSuperAdmin
       __typename
     }
+    userMetaInfos {
+      id
+      partnership {
+        id
+        descendants(administeredOnly: true) {
+          ... on MetaDistrict {
+            id
+            __typename
+          }
+          ... on District {
+            id
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      adminOf {
+        ... on MetaDistrict {
+          id
+          __typename
+        }
+        ... on District {
+          id
+          __typename
+        }
+        __typename
+      }
+      activatedAt
+      canManageAdmins
+      isSuperAdmin(districtID: $districtID)
+      __typename
+    }
     __typename
   }
 }

@@ -20981,6 +20981,39 @@ fragment ExerciseContentFields on LearnableContent {
       isSuperAdmin
       __typename
     }
+    userMetaInfos {
+      id
+      partnership {
+        id
+        descendants(administeredOnly: true) {
+          ... on MetaDistrict {
+            id
+            __typename
+          }
+          ... on District {
+            id
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      adminOf {
+        ... on MetaDistrict {
+          id
+          __typename
+        }
+        ... on District {
+          id
+          __typename
+        }
+        __typename
+      }
+      activatedAt
+      canManageAdmins
+      isSuperAdmin(districtID: $districtID)
+      __typename
+    }
     __typename
   }
 }`,
@@ -21056,6 +21089,38 @@ fragment ExerciseContentFields on LearnableContent {
     }
     __typename
   }
+}
+
+fragment AssignmentFields on Assignment {
+  id
+  studentKaids
+  isDraft
+  assignmentStatus
+  subjectSlug
+  numStudentsCompleted
+  assignedDate
+  startDate
+  dueDate
+  contentDescriptors
+  domainId
+  courseId
+  unitId
+  lessonId
+  contents {
+    id
+    title: translatedTitle
+    kind
+    defaultUrlPath
+    __typename
+  }
+  exerciseConfig {
+    itemPickerStrategy
+    __typename
+  }
+  title
+  instructions
+  configuredActivityInputs
+  __typename
 }`,
   essaySnapshotPatches: `query essaySnapshotPatches($essaySessionId: String!, $snapshotIndex: Int!) {
   essaySession(essaySessionID: $essaySessionId) {
@@ -21298,6 +21363,7 @@ fragment UserFields on User {
           __typename
         }
         isAdministered
+        hasLp
         __typename
       }
       ... on District {
@@ -21313,6 +21379,7 @@ fragment UserFields on User {
         }
         isTest
         isAdministered
+        isKmapDistrict
         __typename
       }
       __typename
@@ -21356,6 +21423,56 @@ fragment UserFields on User {
     }
     __typename
   }
+  user {
+    id
+    hasPermission(name: "CAN_ACT_LIKE_A_DISTRICT_ADMIN", scope: ANY)
+    userDistrictInfos {
+      id
+      district {
+        id
+        __typename
+      }
+      partnership {
+        ... on MetaDistrict {
+          id
+          __typename
+        }
+        ... on District {
+          id
+          __typename
+        }
+        __typename
+      }
+      activatedAt
+      canSeeAllSchools
+      canManageAdmins
+      isKmap
+      isAdmin
+      __typename
+    }
+    userMetaInfos {
+      id
+      partnership {
+        id
+        __typename
+      }
+      activatedAt
+      adminOf {
+        ... on MetaDistrict {
+          id
+          __typename
+        }
+        ... on District {
+          id
+          __typename
+        }
+        __typename
+      }
+      canManageAdmins
+      __typename
+    }
+    __typename
+  }
 }`,
   ActivationByNodeHook: `query ActivationByNodeHook($selectedNodeID: ID!, $childIDs: [ID!]) {
   activationReportByAdminAggregate(
@@ -21395,7 +21512,7 @@ fragment UserFields on User {
     __typename
   }
 }`,
-  ExpandedDistrictQuery: `query ExpandedDistrictQuery($districtID: ID!) {
+  ExpandedDistrictQuery: `query ExpandedDistrictQuery($districtID: ID!, $districtIDStr: String!) {
   districtById(districtId: $districtID) {
     id
     parent {
@@ -21461,20 +21578,7 @@ fragment UserFields on User {
   }
   user {
     id
-    hasPermission(name: "CAN_ACT_LIKE_A_DISTRICT_ADMIN", scope: ANY)
-    userDistrictInfos {
-      id
-      district {
-        id
-        __typename
-      }
-      activatedAt
-      canSeeAllSchools
-      canManageAdmins
-      isKmap
-      isSuperAdmin
-      __typename
-    }
+    isSuperAdmin(districtID: $districtIDStr)
     __typename
   }
 }`,

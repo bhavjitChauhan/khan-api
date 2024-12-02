@@ -1,4 +1,4 @@
-query ExpandedDistrictQuery($districtID: ID!) {
+query ExpandedDistrictQuery($districtID: ID!, $districtIDStr: String!) {
   districtById(districtId: $districtID) {
     id
     parent {
@@ -64,20 +64,7 @@ query ExpandedDistrictQuery($districtID: ID!) {
   }
   user {
     id
-    hasPermission(name: "CAN_ACT_LIKE_A_DISTRICT_ADMIN", scope: ANY)
-    userDistrictInfos {
-      id
-      district {
-        id
-        __typename
-      }
-      activatedAt
-      canSeeAllSchools
-      canManageAdmins
-      isKmap
-      isSuperAdmin
-      __typename
-    }
+    isSuperAdmin(districtID: $districtIDStr)
     __typename
   }
 }
