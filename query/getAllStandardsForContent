@@ -1,7 +1,8 @@
-query getAllStandardsForContent($contentDescriptor: String!) {
-  standards: editableStandardsForContent(
+query getAllStandardsForContent($contentDescriptor: String!, $locale: String!) {
+  standards: standardMappingsForContent(
     contentDescriptor: $contentDescriptor
     region: "*"
+    locale: $locale
   ) {
     id
     standardId

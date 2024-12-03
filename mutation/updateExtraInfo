@@ -1,0 +1,9 @@
+mutation updateExtraInfo($nickname: String, $birthday: String) {
+  setSettings(nickname: $nickname, birthdate: $birthday) {
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+}
