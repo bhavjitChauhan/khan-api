@@ -1,0 +1,27 @@
+query getTrialTeacherInfos($districtID: ID!, $schoolID: String!) {
+  activationReportByTeacherV2(
+    districtId: $districtID
+    schoolIds: []
+    teacherIDs: []
+    pageSize: 50
+    cursor: 0
+  ) {
+    rows {
+      teacherId
+      teacherKaid
+      numStudentsTotal
+      __typename
+    }
+    __typename
+  }
+  getTeachersForSchool(schoolID: $schoolID) {
+    id
+    keyNameID
+    kaid
+    districtProvidedFirstName
+    districtProvidedLastName
+    districtProvidedEmail
+    cdiCount
+    __typename
+  }
+}

@@ -1,0 +1,10 @@
+mutation resendTeacherActivationEmailMutation($urlsafeKey: ID!) {
+  resendActivationEmail(urlsafeKey: $urlsafeKey) {
+    emailSent
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
