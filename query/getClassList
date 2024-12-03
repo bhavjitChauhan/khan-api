@@ -102,6 +102,16 @@ query getClassList {
     userDistrictInfos {
       id
       activatedAt
+      rosterSource
+      district {
+        id
+        name
+        schools(administeredOnly: false) {
+          id
+          __typename
+        }
+        __typename
+      }
       __typename
     }
     isFormalTeacher
