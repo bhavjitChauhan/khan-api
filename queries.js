@@ -329,35 +329,6 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     ...ArticleRevision
     __typename
   }
-}
-
-fragment ArticleRevision on ArticleRevision {
-  id
-  contentId
-  contentKind
-  creationDate
-  sha
-  authorKey
-  customDescriptionTag
-  customTitleTag
-  description
-  descriptionHtml: description
-  doNotPublish
-  sourceKaLocale
-  sourceLanguage: sourceKaLocale
-  slug
-  readableId: slug
-  title
-  sponsored
-  thumbnailData
-  thumbnailCache
-  alternateSlugs
-  assessmentItemTags
-  authorNames
-  clarificationsEnabled
-  perseusContent
-  listed
-  __typename
 }`,
   articleEditorRedirectQuery: `query articleEditorRedirectQuery($contentId: String!) {
   articleRevisionById(id: $contentId) {
@@ -4936,10 +4907,11 @@ fragment UserFields on User {
     __typename
   }
 }`,
-  getAllStandardsForContent: `query getAllStandardsForContent($contentDescriptor: String!) {
-  standards: editableStandardsForContent(
+  getAllStandardsForContent: `query getAllStandardsForContent($contentDescriptor: String!, $locale: String!) {
+  standards: standardMappingsForContent(
     contentDescriptor: $contentDescriptor
     region: "*"
+    locale: $locale
   ) {
     id
     standardId
@@ -17459,6 +17431,80 @@ fragment ProjectRevision on ProjectRevision {
     nickname
     __typename
   }
+}
+
+fragment AssessmentItemRevision on AssessmentItemRevision {
+  id
+  contentKind
+  contentId
+  sha
+  creationDate
+  name
+  authorNames
+  itemData
+  itemShapeType
+  perseusApiMajorVersion
+  requiresScreenOrMouse
+  aiGenerated
+  tags
+  __typename
+}
+
+fragment ExerciseRevision on ExerciseRevision {
+  id
+  contentKind
+  contentId
+  sha
+  creationDate
+  authorKey
+  doNotPublish
+  sourceKaLocale
+  sourceLanguage: sourceKaLocale
+  slug
+  name: slug
+  title
+  displayName: title
+  prettyDisplayName: title
+  description
+  descriptionHtml: description
+  customTitleTag
+  customDescriptionTag
+  thumbnailData
+  thumbnailCache
+  sponsored
+  alternateSlugs
+  authorName
+  covers
+  prerequisites
+  relatedContent
+  assessmentItemTags
+  difficultyLevel
+  suggestedCompletionCriteria
+  trackingDocumentUrl
+  problemTypeKind
+  interimAssessmentType
+  numQuestionsPerProblemType
+  problemTypes {
+    contentId
+    name
+    relatedVideos
+    items {
+      id
+      sha
+      perseusApiMajorVersion
+      requiresScreenOrMouse
+      aiGenerated
+      __typename
+    }
+    __typename
+  }
+  assessmentItems {
+    ...AssessmentItemRevision
+    __typename
+  }
+  listed
+  hasLintErrors
+  __typename
 }`,
   getSatAccountSettings: `query getSatAccountSettings($targetKaid: String) {
   target: user(kaid: $targetKaid) {

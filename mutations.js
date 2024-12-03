@@ -3942,6 +3942,19 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     }
     __typename
   }
+}
+
+fragment Program on Program {
+  id
+  latestRevision {
+    id
+    code
+    __typename
+  }
+  title
+  url
+  userAuthoredContentType
+  __typename
 }`,
   createStudentAccounts: `mutation createStudentAccounts($studentListKey: String, $students: [CreateStudentsInput]!) {
   createStudents(students: $students, studentListKey: $studentListKey) {
@@ -8514,6 +8527,19 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
+}
+
+fragment Program on Program {
+  id
+  latestRevision {
+    id
+    code
+    __typename
+  }
+  title
+  url
+  userAuthoredContentType
+  __typename
 }`,
   startMasteryTowerSession: `mutation startMasteryTowerSession($classDescriptor: String!) {
   startMasteryTowerSession(classDescriptor: $classDescriptor) {
@@ -12520,6 +12546,15 @@ fragment relatedContentFields on LearnableContent {
     questions: $questions
   ) {
     error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  updateExtraInfo: `mutation updateExtraInfo($nickname: String, $birthday: String) {
+  setSettings(nickname: $nickname, birthdate: $birthday) {
+    errors {
       code
       __typename
     }
