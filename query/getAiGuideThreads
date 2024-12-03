@@ -2,6 +2,7 @@ query getAiGuideThreads($kaid: String!, $hasCoeditor: Boolean!, $limit: Int!) {
   aiGuideThreads(kaid: $kaid, hasCoeditor: $hasCoeditor, limit: $limit) {
     threads {
       id
+      lastUpdatedAt
       coeditingDocument(excludeArchived: true) {
         id
         title
@@ -12,6 +13,12 @@ query getAiGuideThreads($kaid: String!, $hasCoeditor: Boolean!, $limit: Int!) {
           createdAt
           __typename
         }
+        __typename
+      }
+      blooketQuestionSet {
+        id
+        title
+        threadId
         __typename
       }
       __typename
