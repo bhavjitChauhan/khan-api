@@ -5262,6 +5262,16 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
     userDistrictInfos {
       id
       activatedAt
+      rosterSource
+      district {
+        id
+        name
+        schools(administeredOnly: false) {
+          id
+          __typename
+        }
+        __typename
+      }
       __typename
     }
     isFormalTeacher
@@ -15371,6 +15381,39 @@ fragment SharedFeedbackFields on Feedback {
     ...VideoRevision
     __typename
   }
+}
+
+fragment VideoRevision on VideoRevision {
+  id
+  contentId
+  contentKind
+  creationDate
+  sha
+  authorKey
+  customDescriptionTag
+  customTitleTag
+  description
+  descriptionHtml: description
+  doNotPublish
+  sourceKaLocale
+  sourceLanguage: sourceKaLocale
+  slug
+  readableId: slug
+  title
+  sponsored
+  thumbnailCache
+  thumbnailData
+  alternateSlugs
+  assessmentItemTags
+  augmentedTranscript
+  authorNames
+  clarificationsEnabled
+  duration
+  kaUserLicense
+  keywords
+  youtubeId
+  listed
+  __typename
 }`,
   WhatNextPrompt: `query WhatNextPrompt($assignmentsPageSize: Int, $assignmentsOrderBy: AssignmentOrder!, $assignmentsDueAfter: DateTime!) {
   user {
@@ -17101,6 +17144,30 @@ fragment contentSearchLearnableContent on LearnableContent {
   }
   isEditableByCurrentUser(contentId: $contentId, contentKind: "Challenge")
   isPublishableByCurrentUser(contentId: $contentId, contentKind: "Challenge")
+}
+
+fragment ChallengeRevision on ChallengeRevision {
+  id
+  contentId
+  contentKind
+  sha
+  doNotPublish
+  slug
+  listed
+  title
+  description
+  authorName
+  code
+  codeFormat
+  tests
+  testsFormat
+  height
+  width
+  userAuthoredContentType
+  customTitleTag
+  customDescriptionTag
+  sourceKaLocale
+  __typename
 }`,
   projectEditorQuery: `query projectEditorQuery($contentId: String!) {
   projectRevisionById(id: $contentId) {
@@ -17447,6 +17514,80 @@ fragment ProjectRevision on ProjectRevision {
     nickname
     __typename
   }
+}
+
+fragment AssessmentItemRevision on AssessmentItemRevision {
+  id
+  contentKind
+  contentId
+  sha
+  creationDate
+  name
+  authorNames
+  itemData
+  itemShapeType
+  perseusApiMajorVersion
+  requiresScreenOrMouse
+  aiGenerated
+  tags
+  __typename
+}
+
+fragment ExerciseRevision on ExerciseRevision {
+  id
+  contentKind
+  contentId
+  sha
+  creationDate
+  authorKey
+  doNotPublish
+  sourceKaLocale
+  sourceLanguage: sourceKaLocale
+  slug
+  name: slug
+  title
+  displayName: title
+  prettyDisplayName: title
+  description
+  descriptionHtml: description
+  customTitleTag
+  customDescriptionTag
+  thumbnailData
+  thumbnailCache
+  sponsored
+  alternateSlugs
+  authorName
+  covers
+  prerequisites
+  relatedContent
+  assessmentItemTags
+  difficultyLevel
+  suggestedCompletionCriteria
+  trackingDocumentUrl
+  problemTypeKind
+  interimAssessmentType
+  numQuestionsPerProblemType
+  problemTypes {
+    contentId
+    name
+    relatedVideos
+    items {
+      id
+      sha
+      perseusApiMajorVersion
+      requiresScreenOrMouse
+      aiGenerated
+      __typename
+    }
+    __typename
+  }
+  assessmentItems {
+    ...AssessmentItemRevision
+    __typename
+  }
+  listed
+  hasLintErrors
+  __typename
 }`,
   getSatAccountSettings: `query getSatAccountSettings($targetKaid: String) {
   target: user(kaid: $targetKaid) {
@@ -21051,6 +21192,38 @@ fragment ExerciseContentFields on LearnableContent {
     }
     __typename
   }
+}
+
+fragment AssignmentFields on Assignment {
+  id
+  studentKaids
+  isDraft
+  assignmentStatus
+  subjectSlug
+  numStudentsCompleted
+  assignedDate
+  startDate
+  dueDate
+  contentDescriptors
+  domainId
+  courseId
+  unitId
+  lessonId
+  contents {
+    id
+    title: translatedTitle
+    kind
+    defaultUrlPath
+    __typename
+  }
+  exerciseConfig {
+    itemPickerStrategy
+    __typename
+  }
+  title
+  instructions
+  configuredActivityInputs
+  __typename
 }`,
   essaySnapshotPatches: `query essaySnapshotPatches($essaySessionId: String!, $snapshotIndex: Int!) {
   essaySession(essaySessionID: $essaySessionId) {
