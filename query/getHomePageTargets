@@ -5,7 +5,7 @@ query getHomePageTargets($districtID: ID!) {
       courseMasteryTargets {
         course {
           id
-          translatedTitle
+          title: translatedTitle
           __typename
         }
         gradeLevels

@@ -16,6 +16,16 @@ query getClassSettings($classDescriptor: String!) {
         locality
         __typename
       }
+      userDistrictInfos {
+        id
+        rosterSource
+        district {
+          id
+          name
+          __typename
+        }
+        __typename
+      }
       __typename
     }
     descriptor
@@ -26,6 +36,7 @@ query getClassSettings($classDescriptor: String!) {
     classroomDistrictInfo {
       id
       name
+      rosterSource
       teacherUserDistrictInfoIDs {
         id
         displayNameForTeacher
