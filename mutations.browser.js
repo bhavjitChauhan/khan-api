@@ -12547,4 +12547,47 @@ fragment relatedContentFields on LearnableContent {
     __typename
   }
 }`,
+  createTeacherUDIForTrialAndHIPRDistrict: `mutation createTeacherUDIForTrialAndHIPRDistrict($districtID: ID!, $udiProperties: [CreateTeacherUDIForTrialAndHIPRDistrictInput!]!) {
+  createTeacherUDIForTrialAndHIPRDistrict(
+    districtID: $districtID
+    udiProperties: $udiProperties
+  ) {
+    udi {
+      id
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  resendTeacherActivationEmailMutation: `mutation resendTeacherActivationEmailMutation($urlsafeKey: ID!) {
+  resendActivationEmail(urlsafeKey: $urlsafeKey) {
+    emailSent
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  updateTeacherUDIForTrialAndHIPRDistrict: `mutation updateTeacherUDIForTrialAndHIPRDistrict($districtID: ID!, $udiID: ID!, $udiProperties: CreateTeacherUDIForTrialAndHIPRDistrictInput!) {
+  updateTeacherUDIForTrialAndHIPRDistrict(
+    districtID: $districtID
+    udiID: $udiID
+    udiProperties: $udiProperties
+  ) {
+    udi {
+      id
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
