@@ -1,0 +1,6 @@
+mutation UnlinkClassFromHiprDistrict($classDescriptor: String!) {
+  unmarkDistrictClass(classDescriptor: $classDescriptor) {
+    succeeded
+    __typename
+  }
+}
