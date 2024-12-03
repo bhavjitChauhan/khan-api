@@ -12535,4 +12535,16 @@ fragment relatedContentFields on LearnableContent {
     __typename
   }
 }`,
+  LinkClassToHiprDistrict: `mutation LinkClassToHiprDistrict($classDescriptor: String!, $schoolId: String!) {
+  markDistrictClass(classDescriptor: $classDescriptor, schoolID: $schoolId) {
+    succeeded
+    __typename
+  }
+}`,
+  UnlinkClassFromHiprDistrict: `mutation UnlinkClassFromHiprDistrict($classDescriptor: String!) {
+  unmarkDistrictClass(classDescriptor: $classDescriptor) {
+    succeeded
+    __typename
+  }
+}`,
 }

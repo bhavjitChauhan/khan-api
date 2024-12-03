@@ -1,0 +1,6 @@
+mutation LinkClassToHiprDistrict($classDescriptor: String!, $schoolId: String!) {
+  markDistrictClass(classDescriptor: $classDescriptor, schoolID: $schoolId) {
+    succeeded
+    __typename
+  }
+}
