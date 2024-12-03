@@ -5426,6 +5426,16 @@ fragment StudentField2 on StudentsPage {
         locality
         __typename
       }
+      userDistrictInfos {
+        id
+        rosterSource
+        district {
+          id
+          name
+          __typename
+        }
+        __typename
+      }
       __typename
     }
     descriptor
@@ -5436,6 +5446,7 @@ fragment StudentField2 on StudentsPage {
     classroomDistrictInfo {
       id
       name
+      rosterSource
       teacherUserDistrictInfoIDs {
         id
         displayNameForTeacher
@@ -17090,30 +17101,6 @@ fragment contentSearchLearnableContent on LearnableContent {
   }
   isEditableByCurrentUser(contentId: $contentId, contentKind: "Challenge")
   isPublishableByCurrentUser(contentId: $contentId, contentKind: "Challenge")
-}
-
-fragment ChallengeRevision on ChallengeRevision {
-  id
-  contentId
-  contentKind
-  sha
-  doNotPublish
-  slug
-  listed
-  title
-  description
-  authorName
-  code
-  codeFormat
-  tests
-  testsFormat
-  height
-  width
-  userAuthoredContentType
-  customTitleTag
-  customDescriptionTag
-  sourceKaLocale
-  __typename
 }`,
   projectEditorQuery: `query projectEditorQuery($contentId: String!) {
   projectRevisionById(id: $contentId) {
@@ -21122,7 +21109,7 @@ fragment ExerciseContentFields on LearnableContent {
       courseMasteryTargets {
         course {
           id
-          translatedTitle
+          title: translatedTitle
           __typename
         }
         gradeLevels
