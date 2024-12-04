@@ -276,6 +276,39 @@ export default {
     }
     __typename
   }
+}
+
+fragment AssignmentInfoFragment on Assignment {
+  id
+  contents {
+    id
+    title
+    kind
+    __typename
+  }
+  studentList {
+    id
+    cacheId
+    name
+    __typename
+  }
+  students {
+    id
+    kaid
+    __typename
+  }
+  coach {
+    id
+    kaid
+    __typename
+  }
+  startDate
+  dueDate
+  isDraft
+  subjectSlug
+  title
+  instructions
+  __typename
 }`,
   archiveSubjectMasteryAssignment: `mutation archiveSubjectMasteryAssignment($assignmentId: ID!) {
   archiveSubjectMasteryAssignments(ids: [$assignmentId]) {
@@ -3909,6 +3942,19 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     }
     __typename
   }
+}
+
+fragment Program on Program {
+  id
+  latestRevision {
+    id
+    code
+    __typename
+  }
+  title
+  url
+  userAuthoredContentType
+  __typename
 }`,
   createStudentAccounts: `mutation createStudentAccounts($studentListKey: String, $students: [CreateStudentsInput]!) {
   createStudents(students: $students, studentListKey: $studentListKey) {
@@ -7155,6 +7201,39 @@ fragment CourseRevisionStructure on CourseRevision {
     }
     __typename
   }
+}
+
+fragment AssignmentInfoFragment on Assignment {
+  id
+  contents {
+    id
+    title
+    kind
+    __typename
+  }
+  studentList {
+    id
+    cacheId
+    name
+    __typename
+  }
+  students {
+    id
+    kaid
+    __typename
+  }
+  coach {
+    id
+    kaid
+    __typename
+  }
+  startDate
+  dueDate
+  isDraft
+  subjectSlug
+  title
+  instructions
+  __typename
 }`,
   publishStandardMappings: `mutation publishStandardMappings($set: String!, $content: String!) {
   publishStandardMappings(setId: $set, contentDescriptor: $content) {
@@ -8448,6 +8527,19 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
+}
+
+fragment Program on Program {
+  id
+  latestRevision {
+    id
+    code
+    __typename
+  }
+  title
+  url
+  userAuthoredContentType
+  __typename
 }`,
   startMasteryTowerSession: `mutation startMasteryTowerSession($classDescriptor: String!) {
   startMasteryTowerSession(classDescriptor: $classDescriptor) {
@@ -10342,11 +10434,8 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
-  disableSevereModerationAlertsForAdmin: `mutation disableSevereModerationAlertsForAdmin($adminUDIUUID: String!, $districtID: String!) {
-  disableSevereModerationAlertsForAdmin(
-    adminUDIUUID: $adminUDIUUID
-    districtID: $districtID
-  ) {
+  disableSevereModerationAlertsForAdmin: `mutation disableSevereModerationAlertsForAdmin($udiID: String!) {
+  disableSevereModerationAlertsForAdmin(udiID: $udiID) {
     error {
       code
       __typename
@@ -10354,11 +10443,8 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
-  enableSevereModerationAlertsForAdmins: `mutation enableSevereModerationAlertsForAdmins($adminUDIUUIDs: [String!]!, $districtID: String!) {
-  enableSevereModerationAlertsForAdmins(
-    adminUDIUUIDs: $adminUDIUUIDs
-    districtID: $districtID
-  ) {
+  enableSevereModerationAlertsForAdmins: `mutation enableSevereModerationAlertsForAdmins($udiIDs: [String!]!) {
+  enableSevereModerationAlertsForAdmins(udiIDs: $udiIDs) {
     error {
       code
       __typename
@@ -10941,8 +11027,11 @@ fragment ChallengeRevision on ChallengeRevision {
   sourceKaLocale
   __typename
 }`,
-  updateShowDiscussions: `mutation updateShowDiscussions($districtID: String!, $enable: Boolean!) {
-  updateDistrictShowDiscussions(districtID: $districtID, enable: $enable) {
+  updateShowDiscussions: `mutation updateShowDiscussions($adminAggregateID: String!, $enable: Boolean!) {
+  updateShowDiscussionsForSubDistricts(
+    adminAggregateID: $adminAggregateID
+    enable: $enable
+  ) {
     error {
       code
       __typename

@@ -1,0 +1,14 @@
+query GetVisibleAdminUDIs($partnershipID: ID!, $districtID: ID!) {
+  getVisibleAdminUDIs(partnershipID: $partnershipID, districtID: $districtID) {
+    id
+    keyNameID
+    displayNameForTeacher
+    districtProvidedEmail
+    kaid
+    moderatorOfSchools {
+      id
+      __typename
+    }
+    __typename
+  }
+}

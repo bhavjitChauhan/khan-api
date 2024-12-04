@@ -1,8 +1,5 @@
-mutation disableSevereModerationAlertsForAdmin($adminUDIUUID: String!, $districtID: String!) {
-  disableSevereModerationAlertsForAdmin(
-    adminUDIUUID: $adminUDIUUID
-    districtID: $districtID
-  ) {
+mutation disableSevereModerationAlertsForAdmin($udiID: String!) {
+  disableSevereModerationAlertsForAdmin(udiID: $udiID) {
     error {
       code
       __typename
