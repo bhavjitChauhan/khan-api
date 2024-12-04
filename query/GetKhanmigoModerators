@@ -1,0 +1,14 @@
+query GetKhanmigoModerators($partnershipID: ID!, $districtID: ID!) {
+  getKhanmigoModerators(partnershipID: $partnershipID, districtID: $districtID) {
+    id
+    keyNameID
+    displayNameForTeacher
+    kaid
+    moderatorOfSchools {
+      id
+      name
+      __typename
+    }
+    __typename
+  }
+}

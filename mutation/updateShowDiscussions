@@ -1,5 +1,8 @@
-mutation updateShowDiscussions($districtID: String!, $enable: Boolean!) {
-  updateDistrictShowDiscussions(districtID: $districtID, enable: $enable) {
+mutation updateShowDiscussions($adminAggregateID: String!, $enable: Boolean!) {
+  updateShowDiscussionsForSubDistricts(
+    adminAggregateID: $adminAggregateID
+    enable: $enable
+  ) {
     error {
       code
       __typename

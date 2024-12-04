@@ -329,35 +329,6 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     ...ArticleRevision
     __typename
   }
-}
-
-fragment ArticleRevision on ArticleRevision {
-  id
-  contentId
-  contentKind
-  creationDate
-  sha
-  authorKey
-  customDescriptionTag
-  customTitleTag
-  description
-  descriptionHtml: description
-  doNotPublish
-  sourceKaLocale
-  sourceLanguage: sourceKaLocale
-  slug
-  readableId: slug
-  title
-  sponsored
-  thumbnailData
-  thumbnailCache
-  alternateSlugs
-  assessmentItemTags
-  authorNames
-  clarificationsEnabled
-  perseusContent
-  listed
-  __typename
 }`,
   articleEditorRedirectQuery: `query articleEditorRedirectQuery($contentId: String!) {
   articleRevisionById(id: $contentId) {
@@ -17124,6 +17095,26 @@ fragment contentSearchLearnableContent on LearnableContent {
   }
   isEditableByCurrentUser(contentId: $contentId, contentKind: "Project")
   isPublishableByCurrentUser(contentId: $contentId, contentKind: "Project")
+}
+
+fragment ProjectRevision on ProjectRevision {
+  id
+  contentId
+  contentKind
+  sha
+  doNotPublish
+  slug
+  listed
+  title
+  description
+  projectEval
+  authorName
+  code
+  codeFormat
+  customTitleTag
+  customDescriptionTag
+  sourceKaLocale
+  __typename
 }`,
   getAdminsForDistrict: `query getAdminsForDistrict($districtID: String!) {
   getAdminsForDistrict(districtID: $districtID) {
@@ -21635,6 +21626,34 @@ fragment ModerationResultFragment on AutoModerationResult {
     districtProvidedLastName
     districtProvidedEmail
     cdiCount
+    __typename
+  }
+}`,
+  GetKhanmigoModerators: `query GetKhanmigoModerators($partnershipID: ID!, $districtID: ID!) {
+  getKhanmigoModerators(partnershipID: $partnershipID, districtID: $districtID) {
+    id
+    keyNameID
+    displayNameForTeacher
+    kaid
+    moderatorOfSchools {
+      id
+      name
+      __typename
+    }
+    __typename
+  }
+}`,
+  GetVisibleAdminUDIs: `query GetVisibleAdminUDIs($partnershipID: ID!, $districtID: ID!) {
+  getVisibleAdminUDIs(partnershipID: $partnershipID, districtID: $districtID) {
+    id
+    keyNameID
+    displayNameForTeacher
+    districtProvidedEmail
+    kaid
+    moderatorOfSchools {
+      id
+      __typename
+    }
     __typename
   }
 }`,
