@@ -1,33 +1,8 @@
 query UserDistrictInfosQuery($email: String, $rosterID: String) {
   userDistrictInfos(email: $email, rosterID: $rosterID) {
     id
-    district {
-      id
-      kaLocale
-      name
-      ancestors {
-        id
-        name
-        __typename
-      }
-      __typename
-    }
-    createdAt
-    updatedAt
-    deletedAt
-    cleverId
-    classlinkId
     uuid
     kaid
-    activationEmailSentAt
-    activatedAt
-    activationMethod
-    districtProvidedEmail
-    districtProvidedFullName
-    primaryRole
-    rosterSource
-    isKmap
-    isKAD
     adminOfSchools {
       id
       name
@@ -38,6 +13,51 @@ query UserDistrictInfosQuery($email: String, $rosterID: String) {
       end
       __typename
     }
+    partnership {
+      ... on MetaDistrict {
+        id
+        name
+        __typename
+      }
+      ... on District {
+        id
+        name
+        __typename
+      }
+      __typename
+    }
+    district {
+      id
+      name
+      isOldNWEA
+      kaLocale
+      ancestors {
+        id
+        name
+        __typename
+      }
+      __typename
+    }
+    createdAt
+    deletedAt
+    updatedAt
+    cleverId
+    classlinkId
+    rosterSource
+    activationEmailSentAt
+    activatedAt
+    activationMethod
+    districtProvidedFullName
+    districtProvidedEmail
+    districtProvidedBirthMonth
+    districtProvidedBirthYear
+    primaryRole
+    isKmap
+    isKAD
+    gradeLevel
+    khanmigoShould
+    khanmigoStatus
+    khanmigoReason
     udiAuditLogs {
       kind
       changes

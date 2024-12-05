@@ -329,6 +329,35 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     ...ArticleRevision
     __typename
   }
+}
+
+fragment ArticleRevision on ArticleRevision {
+  id
+  contentId
+  contentKind
+  creationDate
+  sha
+  authorKey
+  customDescriptionTag
+  customTitleTag
+  description
+  descriptionHtml: description
+  doNotPublish
+  sourceKaLocale
+  sourceLanguage: sourceKaLocale
+  slug
+  readableId: slug
+  title
+  sponsored
+  thumbnailData
+  thumbnailCache
+  alternateSlugs
+  assessmentItemTags
+  authorNames
+  clarificationsEnabled
+  perseusContent
+  listed
+  __typename
 }`,
   articleEditorRedirectQuery: `query articleEditorRedirectQuery($contentId: String!) {
   articleRevisionById(id: $contentId) {
@@ -14838,33 +14867,8 @@ fragment AssignmentData on Assignment {
   UserDistrictInfosQuery: `query UserDistrictInfosQuery($email: String, $rosterID: String) {
   userDistrictInfos(email: $email, rosterID: $rosterID) {
     id
-    district {
-      id
-      kaLocale
-      name
-      ancestors {
-        id
-        name
-        __typename
-      }
-      __typename
-    }
-    createdAt
-    updatedAt
-    deletedAt
-    cleverId
-    classlinkId
     uuid
     kaid
-    activationEmailSentAt
-    activatedAt
-    activationMethod
-    districtProvidedEmail
-    districtProvidedFullName
-    primaryRole
-    rosterSource
-    isKmap
-    isKAD
     adminOfSchools {
       id
       name
@@ -14875,6 +14879,51 @@ fragment AssignmentData on Assignment {
       end
       __typename
     }
+    partnership {
+      ... on MetaDistrict {
+        id
+        name
+        __typename
+      }
+      ... on District {
+        id
+        name
+        __typename
+      }
+      __typename
+    }
+    district {
+      id
+      name
+      isOldNWEA
+      kaLocale
+      ancestors {
+        id
+        name
+        __typename
+      }
+      __typename
+    }
+    createdAt
+    deletedAt
+    updatedAt
+    cleverId
+    classlinkId
+    rosterSource
+    activationEmailSentAt
+    activatedAt
+    activationMethod
+    districtProvidedFullName
+    districtProvidedEmail
+    districtProvidedBirthMonth
+    districtProvidedBirthYear
+    primaryRole
+    isKmap
+    isKAD
+    gradeLevel
+    khanmigoShould
+    khanmigoStatus
+    khanmigoReason
     udiAuditLogs {
       kind
       changes
@@ -15413,6 +15462,39 @@ fragment SharedFeedbackFields on Feedback {
     ...VideoRevision
     __typename
   }
+}
+
+fragment VideoRevision on VideoRevision {
+  id
+  contentId
+  contentKind
+  creationDate
+  sha
+  authorKey
+  customDescriptionTag
+  customTitleTag
+  description
+  descriptionHtml: description
+  doNotPublish
+  sourceKaLocale
+  sourceLanguage: sourceKaLocale
+  slug
+  readableId: slug
+  title
+  sponsored
+  thumbnailCache
+  thumbnailData
+  alternateSlugs
+  assessmentItemTags
+  augmentedTranscript
+  authorNames
+  clarificationsEnabled
+  duration
+  kaUserLicense
+  keywords
+  youtubeId
+  listed
+  __typename
 }`,
   WhatNextPrompt: `query WhatNextPrompt($assignmentsPageSize: Int, $assignmentsOrderBy: AssignmentOrder!, $assignmentsDueAfter: DateTime!) {
   user {
