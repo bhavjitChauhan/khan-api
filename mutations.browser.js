@@ -276,39 +276,6 @@ mutations = {
     }
     __typename
   }
-}
-
-fragment AssignmentInfoFragment on Assignment {
-  id
-  contents {
-    id
-    title
-    kind
-    __typename
-  }
-  studentList {
-    id
-    cacheId
-    name
-    __typename
-  }
-  students {
-    id
-    kaid
-    __typename
-  }
-  coach {
-    id
-    kaid
-    __typename
-  }
-  startDate
-  dueDate
-  isDraft
-  subjectSlug
-  title
-  instructions
-  __typename
 }`,
   archiveSubjectMasteryAssignment: `mutation archiveSubjectMasteryAssignment($assignmentId: ID!) {
   archiveSubjectMasteryAssignments(ids: [$assignmentId]) {
@@ -11720,9 +11687,9 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
-  CompleteStandardQuestion: `mutation CompleteStandardQuestion($assessmentId: String!, $stepId: String!, $correct: Boolean!, $response: String!) {
+  CompleteStandardQuestion: `mutation CompleteStandardQuestion($assessmentId: String!, $stepId: String!, $correct: Boolean!, $response: String!, $userAgent: String!) {
   complete: completeStandardQuestion(
-    input: {assessmentId: $assessmentId, stepId: $stepId, correct: $correct, response: $response}
+    input: {assessmentId: $assessmentId, stepId: $stepId, correct: $correct, response: $response, userAgent: $userAgent}
   ) {
     result {
       task {
@@ -12164,9 +12131,9 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
-  CompleteEYTQuestion: `mutation CompleteEYTQuestion($assessmentId: String!, $stepId: String!, $response: String!, $updatedResponse: String, $correct: Boolean!, $updatedCorrect: Boolean, $conversationThreadID: String!, $hasKhanmigoError: Boolean) {
+  CompleteEYTQuestion: `mutation CompleteEYTQuestion($assessmentId: String!, $stepId: String!, $response: String!, $updatedResponse: String, $correct: Boolean!, $updatedCorrect: Boolean, $conversationThreadID: String!, $hasKhanmigoError: Boolean, $userAgent: String!) {
   complete: completeEYTQuestion(
-    input: {assessmentId: $assessmentId, stepId: $stepId, response: $response, updatedResponse: $updatedResponse, correct: $correct, updatedCorrect: $updatedCorrect, conversationThreadID: $conversationThreadID, hasKhanmigoError: $hasKhanmigoError}
+    input: {assessmentId: $assessmentId, stepId: $stepId, response: $response, updatedResponse: $updatedResponse, correct: $correct, updatedCorrect: $updatedCorrect, conversationThreadID: $conversationThreadID, hasKhanmigoError: $hasKhanmigoError, userAgent: $userAgent}
   ) {
     result {
       task {
