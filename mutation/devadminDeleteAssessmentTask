@@ -1,0 +1,9 @@
+mutation devadminDeleteAssessmentTask($kaid: String!, $assessmentId: String!) {
+  deleteAssessmentTask(input: {kaid: $kaid, assessmentId: $assessmentId}) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

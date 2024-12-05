@@ -1,0 +1,25 @@
+query devadminAssessmentStatus($kaid: String!, $assessmentSlug: String!) {
+  user(kaid: $kaid) {
+    id
+    assessmentData {
+      assessmentStatus(assessmentSlug: $assessmentSlug) {
+        status
+        assessment {
+          id
+          name
+          __typename
+        }
+        task {
+          id
+          expirationTime
+          questionsCompleted
+          estimatedQuestionsRemaining
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
