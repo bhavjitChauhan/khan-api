@@ -167,6 +167,19 @@ query getUserDevAdminGeneral($kaid: String!) {
         end
         __typename
       }
+      partnership {
+        ... on MetaDistrict {
+          id
+          name
+          __typename
+        }
+        ... on District {
+          id
+          name
+          __typename
+        }
+        __typename
+      }
       district {
         id
         name
@@ -202,6 +215,54 @@ query getUserDevAdminGeneral($kaid: String!) {
       udiAuditLogs {
         kind
         changes
+        actorKaid
+        createdAt
+        description
+        __typename
+      }
+      __typename
+    }
+    userMetaInfos {
+      id
+      uuid
+      kaid
+      partnership {
+        id
+        name
+        __typename
+      }
+      adminOf {
+        ... on MetaDistrict {
+          id
+          name
+          ancestors {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        ... on District {
+          id
+          name
+          ancestors {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      createdAt
+      deletedAt
+      updatedAt
+      activationEmailSentAt
+      activatedAt
+      fullName
+      email
+      umiAuditLogs {
+        kaid
         actorKaid
         createdAt
         description
