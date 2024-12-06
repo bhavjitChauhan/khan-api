@@ -258,6 +258,10 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
       lastUpdatedAt
       flagged
       flaggedCategories
+      insights {
+        languages
+        __typename
+      }
       interactions {
         id
         question

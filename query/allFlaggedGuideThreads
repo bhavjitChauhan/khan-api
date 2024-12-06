@@ -58,6 +58,10 @@ query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderatio
       lastUpdatedAt
       flagged
       flaggedCategories
+      insights {
+        languages
+        __typename
+      }
       interactions {
         id
         question
