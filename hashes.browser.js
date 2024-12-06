@@ -6,7 +6,7 @@ hashes = {
   aiGuideEnrollmentsMeta: 37654722,
   aiGuideInvitationInfo: 4261787513,
   allCurationNodes: 4291751251,
-  allFlaggedGuideThreads: 3341446274,
+  allFlaggedGuideThreads: 1533648175,
   allStandardsForSet: 3015316215,
   allTranslatableLocales: 419203518,
   articleEditorQuery: 1661821936,
