@@ -3942,19 +3942,6 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     }
     __typename
   }
-}
-
-fragment Program on Program {
-  id
-  latestRevision {
-    id
-    code
-    __typename
-  }
-  title
-  url
-  userAuthoredContentType
-  __typename
 }`,
   createStudentAccounts: `mutation createStudentAccounts($studentListKey: String, $students: [CreateStudentsInput]!) {
   createStudents(students: $students, studentListKey: $studentListKey) {
@@ -8527,19 +8514,6 @@ fragment entry on TeamPageEntryForEditing {
     }
     __typename
   }
-}
-
-fragment Program on Program {
-  id
-  latestRevision {
-    id
-    code
-    __typename
-  }
-  title
-  url
-  userAuthoredContentType
-  __typename
 }`,
   startMasteryTowerSession: `mutation startMasteryTowerSession($classDescriptor: String!) {
   startMasteryTowerSession(classDescriptor: $classDescriptor) {
@@ -12615,6 +12589,16 @@ fragment relatedContentFields on LearnableContent {
 }`,
   devadminDeleteAssessmentTask: `mutation devadminDeleteAssessmentTask($kaid: String!, $assessmentId: String!) {
   deleteAssessmentTask(input: {kaid: $kaid, assessmentId: $assessmentId}) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  exportQuestionSetToBlooket: `mutation exportQuestionSetToBlooket($threadId: String!) {
+  exportBlooketQuestionSet(threadId: $threadId) {
+    redirectURL
     error {
       code
       __typename

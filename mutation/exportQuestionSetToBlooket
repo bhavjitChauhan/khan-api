@@ -1,0 +1,10 @@
+mutation exportQuestionSetToBlooket($threadId: String!) {
+  exportBlooketQuestionSet(threadId: $threadId) {
+    redirectURL
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
