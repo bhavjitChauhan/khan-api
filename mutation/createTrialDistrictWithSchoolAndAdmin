@@ -1,0 +1,34 @@
+mutation createTrialDistrictWithSchoolAndAdmin($districtName: String!, $schoolName: String!, $districtAdminEmail: String!, $districtAdminFirstName: String!, $districtAdminLastName: String!, $kaLocale: String!, $countryCode: String!, $region: String!) {
+  createTrialDistrictWithSchoolAndAdmin(
+    districtName: $districtName
+    schoolName: $schoolName
+    districtAdminEmail: $districtAdminEmail
+    districtAdminFirstName: $districtAdminFirstName
+    districtAdminLastName: $districtAdminLastName
+    kaLocale: $kaLocale
+    countryCode: $countryCode
+    region: $region
+  ) {
+    error {
+      code
+      __typename
+    }
+    district {
+      id
+      name
+      __typename
+    }
+    school {
+      id
+      name
+      __typename
+    }
+    admin {
+      id
+      districtProvidedFirstName
+      districtProvidedLastName
+      __typename
+    }
+    __typename
+  }
+}
