@@ -22,6 +22,7 @@ query getTrialTeacherInfos($districtID: ID!, $schoolID: String!) {
     districtProvidedLastName
     districtProvidedEmail
     cdiCount
+    activationEmailSentAt
     __typename
   }
 }
