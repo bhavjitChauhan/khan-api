@@ -15466,6 +15466,39 @@ fragment SharedFeedbackFields on Feedback {
     ...VideoRevision
     __typename
   }
+}
+
+fragment VideoRevision on VideoRevision {
+  id
+  contentId
+  contentKind
+  creationDate
+  sha
+  authorKey
+  customDescriptionTag
+  customTitleTag
+  description
+  descriptionHtml: description
+  doNotPublish
+  sourceKaLocale
+  sourceLanguage: sourceKaLocale
+  slug
+  readableId: slug
+  title
+  sponsored
+  thumbnailCache
+  thumbnailData
+  alternateSlugs
+  assessmentItemTags
+  augmentedTranscript
+  authorNames
+  clarificationsEnabled
+  duration
+  kaUserLicense
+  keywords
+  youtubeId
+  listed
+  __typename
 }`,
   WhatNextPrompt: `query WhatNextPrompt($assignmentsPageSize: Int, $assignmentsOrderBy: AssignmentOrder!, $assignmentsDueAfter: DateTime!) {
   user {
@@ -17233,6 +17266,26 @@ fragment ChallengeRevision on ChallengeRevision {
   }
   isEditableByCurrentUser(contentId: $contentId, contentKind: "Project")
   isPublishableByCurrentUser(contentId: $contentId, contentKind: "Project")
+}
+
+fragment ProjectRevision on ProjectRevision {
+  id
+  contentId
+  contentKind
+  sha
+  doNotPublish
+  slug
+  listed
+  title
+  description
+  projectEval
+  authorName
+  code
+  codeFormat
+  customTitleTag
+  customDescriptionTag
+  sourceKaLocale
+  __typename
 }`,
   getAdminsForDistrict: `query getAdminsForDistrict($districtID: String!) {
   getAdminsForDistrict(districtID: $districtID) {
@@ -21225,6 +21278,38 @@ fragment ExerciseContentFields on LearnableContent {
     }
     __typename
   }
+}
+
+fragment AssignmentFields on Assignment {
+  id
+  studentKaids
+  isDraft
+  assignmentStatus
+  subjectSlug
+  numStudentsCompleted
+  assignedDate
+  startDate
+  dueDate
+  contentDescriptors
+  domainId
+  courseId
+  unitId
+  lessonId
+  contents {
+    id
+    title: translatedTitle
+    kind
+    defaultUrlPath
+    __typename
+  }
+  exerciseConfig {
+    itemPickerStrategy
+    __typename
+  }
+  title
+  instructions
+  configuredActivityInputs
+  __typename
 }`,
   essaySnapshotPatches: `query essaySnapshotPatches($essaySessionId: String!, $snapshotIndex: Int!) {
   essaySession(essaySessionID: $essaySessionId) {
