@@ -604,7 +604,7 @@ export default {
   TranslationEditor_GetAIGuideActivityStrings: 3594501385,
   previewDistrictKhamigoSevereFlagNotificationEmail: 3100203232,
   challengeEditorQuery: 348660258,
-  projectEditorQuery: 3001657297,
+  projectEditorQuery: 3793866615,
   getAdminsForDistrict: 3546558979,
   getKhanmigoModeratorsForDistrict: 3401983033,
   LearnPrototype_UserClassrooms: 686709783,
