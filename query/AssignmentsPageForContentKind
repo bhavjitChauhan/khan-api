@@ -1,0 +1,53 @@
+query AssignmentsPageForContentKind($contentKind: String!, $dueAfter: DateTime, $cursor: ID, $pageSize: Int) {
+  user {
+    id
+    assignmentsPageForContentKind(
+      contentKind: $contentKind
+      dueAfter: $dueAfter
+      after: $cursor
+      pageSize: $pageSize
+    ) {
+      pageInfo {
+        nextCursor
+        __typename
+      }
+      assignments {
+        id
+        dueDate
+        title
+        itemCompletionStates {
+          studentKaid
+          completedOn
+          __typename
+        }
+        contents {
+          ... on AIGuideActivity {
+            id
+            contentId
+            slug
+            translatedTitle
+            activityType
+            defaultUrlPath
+            __typename
+          }
+          __typename
+        }
+        classroom {
+          cacheId
+          id
+          name
+          descriptor
+          coach {
+            id
+            nickname
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
