@@ -1,0 +1,7 @@
+query getExerciseTitle($exerciseId: String!) {
+  exerciseById(id: $exerciseId) {
+    id
+    translatedTitle
+    __typename
+  }
+}
