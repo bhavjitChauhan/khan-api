@@ -73,6 +73,8 @@ query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderatio
           harassmentThreatening
           hate
           hateThreatening
+          illicit
+          illicitViolent
           selfHarm
           selfHarmInstructions
           selfHarmIntent
