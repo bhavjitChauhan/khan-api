@@ -11,6 +11,7 @@ query devadminAssessmentStatus($kaid: String!, $assessmentSlug: String!) {
         }
         task {
           id
+          creationTime
           expirationTime
           questionsCompleted
           estimatedQuestionsRemaining
