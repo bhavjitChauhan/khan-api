@@ -15,6 +15,13 @@ query devadminAssessmentStatus($kaid: String!, $assessmentSlug: String!) {
           expirationTime
           questionsCompleted
           estimatedQuestionsRemaining
+          responses {
+            exerciseId
+            itemId
+            finalResponse
+            isCorrect
+            __typename
+          }
           __typename
         }
         __typename
