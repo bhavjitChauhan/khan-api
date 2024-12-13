@@ -1,0 +1,47 @@
+query ProgressByNodeHook($filters: DistrictCourseProgressFilters!) {
+  districtCourseProgressByAdminAggregate(filters: $filters) {
+    dateInfo {
+      from
+      upTo
+      lastUpdatedDate
+      __typename
+    }
+    rows {
+      adminAggregate {
+        ... on District {
+          id
+          name
+          __typename
+        }
+        ... on MetaDistrict {
+          id
+          name
+          __typename
+        }
+        __typename
+      }
+      info {
+        activeLearners
+        totalLearners
+        averageMinutes
+        averageSkillsLeveledToProficient
+        averageSkillsLeveledUp
+        averageSkillsWorkedOn
+        percent0
+        percent1to15
+        percent15to30
+        percent30plus
+        attemptedPercent
+        familiarPercent
+        proficientPercent
+        masteredPercent
+        minutesTargetStatus
+        skillsLeveledUpTargetStatus
+        skillsToProficientTargetStatus
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

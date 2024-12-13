@@ -335,35 +335,6 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
     ...ArticleRevision
     __typename
   }
-}
-
-fragment ArticleRevision on ArticleRevision {
-  id
-  contentId
-  contentKind
-  creationDate
-  sha
-  authorKey
-  customDescriptionTag
-  customTitleTag
-  description
-  descriptionHtml: description
-  doNotPublish
-  sourceKaLocale
-  sourceLanguage: sourceKaLocale
-  slug
-  readableId: slug
-  title
-  sponsored
-  thumbnailData
-  thumbnailCache
-  alternateSlugs
-  assessmentItemTags
-  authorNames
-  clarificationsEnabled
-  perseusContent
-  listed
-  __typename
 }`,
   articleEditorRedirectQuery: `query articleEditorRedirectQuery($contentId: String!) {
   articleRevisionById(id: $contentId) {
@@ -14902,39 +14873,6 @@ fragment SharedFeedbackFields on Feedback {
     ...VideoRevision
     __typename
   }
-}
-
-fragment VideoRevision on VideoRevision {
-  id
-  contentId
-  contentKind
-  creationDate
-  sha
-  authorKey
-  customDescriptionTag
-  customTitleTag
-  description
-  descriptionHtml: description
-  doNotPublish
-  sourceKaLocale
-  sourceLanguage: sourceKaLocale
-  slug
-  readableId: slug
-  title
-  sponsored
-  thumbnailCache
-  thumbnailData
-  alternateSlugs
-  assessmentItemTags
-  augmentedTranscript
-  authorNames
-  clarificationsEnabled
-  duration
-  kaUserLicense
-  keywords
-  youtubeId
-  listed
-  __typename
 }`,
   WhatNextPrompt: `query WhatNextPrompt($assignmentsPageSize: Int, $assignmentsOrderBy: AssignmentOrder!, $assignmentsDueAfter: DateTime!) {
   user {
@@ -15708,8 +15646,8 @@ fragment contentSearchLearnableContent on LearnableContent {
   }
 }
 `,
-  getPrecachedDateRanges: `query getPrecachedDateRanges($districtID: String!) {
-  districtCourseProgressDates(districtID: $districtID) {
+  getPrecachedDateRanges: `query getPrecachedDateRanges($selectedNodeID: String!) {
+  districtCourseProgressDates(selectedNodeID: $selectedNodeID) {
     lastUpdatedDate
     startDate: from
     endDate: upTo
@@ -17035,80 +16973,6 @@ fragment ProjectRevision on ProjectRevision {
     nickname
     __typename
   }
-}
-
-fragment AssessmentItemRevision on AssessmentItemRevision {
-  id
-  contentKind
-  contentId
-  sha
-  creationDate
-  name
-  authorNames
-  itemData
-  itemShapeType
-  perseusApiMajorVersion
-  requiresScreenOrMouse
-  aiGenerated
-  tags
-  __typename
-}
-
-fragment ExerciseRevision on ExerciseRevision {
-  id
-  contentKind
-  contentId
-  sha
-  creationDate
-  authorKey
-  doNotPublish
-  sourceKaLocale
-  sourceLanguage: sourceKaLocale
-  slug
-  name: slug
-  title
-  displayName: title
-  prettyDisplayName: title
-  description
-  descriptionHtml: description
-  customTitleTag
-  customDescriptionTag
-  thumbnailData
-  thumbnailCache
-  sponsored
-  alternateSlugs
-  authorName
-  covers
-  prerequisites
-  relatedContent
-  assessmentItemTags
-  difficultyLevel
-  suggestedCompletionCriteria
-  trackingDocumentUrl
-  problemTypeKind
-  interimAssessmentType
-  numQuestionsPerProblemType
-  problemTypes {
-    contentId
-    name
-    relatedVideos
-    items {
-      id
-      sha
-      perseusApiMajorVersion
-      requiresScreenOrMouse
-      aiGenerated
-      __typename
-    }
-    __typename
-  }
-  assessmentItems {
-    ...AssessmentItemRevision
-    __typename
-  }
-  listed
-  hasLintErrors
-  __typename
 }`,
   getSatAccountSettings: `query getSatAccountSettings($targetKaid: String) {
   target: user(kaid: $targetKaid) {
@@ -21448,6 +21312,53 @@ fragment ModerationResultFragment on AutoModerationResult {
   exerciseById(id: $exerciseId) {
     id
     translatedTitle
+    __typename
+  }
+}`,
+  ProgressByNodeHook: `query ProgressByNodeHook($filters: DistrictCourseProgressFilters!) {
+  districtCourseProgressByAdminAggregate(filters: $filters) {
+    dateInfo {
+      from
+      upTo
+      lastUpdatedDate
+      __typename
+    }
+    rows {
+      adminAggregate {
+        ... on District {
+          id
+          name
+          __typename
+        }
+        ... on MetaDistrict {
+          id
+          name
+          __typename
+        }
+        __typename
+      }
+      info {
+        activeLearners
+        totalLearners
+        averageMinutes
+        averageSkillsLeveledToProficient
+        averageSkillsLeveledUp
+        averageSkillsWorkedOn
+        percent0
+        percent1to15
+        percent15to30
+        percent30plus
+        attemptedPercent
+        familiarPercent
+        proficientPercent
+        masteredPercent
+        minutesTargetStatus
+        skillsLeveledUpTargetStatus
+        skillsToProficientTargetStatus
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }`,

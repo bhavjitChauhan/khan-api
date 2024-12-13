@@ -1,6 +1,6 @@
-mutation removeDistrictCourseProgressDateRanges($districtID: String!, $dateRanges: [CustomDateRange!]!) {
+mutation removeDistrictCourseProgressDateRanges($selectedNodeID: String!, $dateRanges: [CustomDateRange!]!) {
   removeDistrictCourseProgressDateRanges(
-    districtID: $districtID
+    selectedNodeID: $selectedNodeID
     dateRanges: $dateRanges
   ) {
     dateRanges {
