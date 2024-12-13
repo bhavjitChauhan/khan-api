@@ -21717,6 +21717,13 @@ fragment ModerationResultFragment on AutoModerationResult {
           expirationTime
           questionsCompleted
           estimatedQuestionsRemaining
+          responses {
+            exerciseId
+            itemId
+            finalResponse
+            isCorrect
+            __typename
+          }
           __typename
         }
         __typename
