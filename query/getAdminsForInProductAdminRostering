@@ -9,6 +9,11 @@ query getAdminsForInProductAdminRostering($partnershipID: ID!, $districtID: ID!)
     districtProvidedEmail
     districtProvidedFirstName
     districtProvidedLastName
+    district {
+      id
+      name
+      __typename
+    }
     primaryRole
     canManageAdmins
     canSeeAllSchools
@@ -34,7 +39,7 @@ query getAdminsForInProductAdminRostering($partnershipID: ID!, $districtID: ID!)
     canManageAdmins
     activationEmailSentAt
     kaid
-    adminOf {
+    adminOf(administeredOnly: true) {
       ... on MetaDistrict {
         id
         name
