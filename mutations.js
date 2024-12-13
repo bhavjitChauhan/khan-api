@@ -10210,9 +10210,9 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }`,
-  addDistrictCourseProgressDateRange: `mutation addDistrictCourseProgressDateRange($districtID: String!, $dateRange: CustomDateRange!) {
+  addDistrictCourseProgressDateRange: `mutation addDistrictCourseProgressDateRange($selectedNodeID: String!, $dateRange: CustomDateRange!) {
   addDistrictCourseProgressDateRange(
-    districtID: $districtID
+    selectedNodeID: $selectedNodeID
     dateRange: $dateRange
   ) {
     dateRanges {
@@ -10232,9 +10232,9 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }`,
-  removeDistrictCourseProgressDateRanges: `mutation removeDistrictCourseProgressDateRanges($districtID: String!, $dateRanges: [CustomDateRange!]!) {
+  removeDistrictCourseProgressDateRanges: `mutation removeDistrictCourseProgressDateRanges($selectedNodeID: String!, $dateRanges: [CustomDateRange!]!) {
   removeDistrictCourseProgressDateRanges(
-    districtID: $districtID
+    selectedNodeID: $selectedNodeID
     dateRanges: $dateRanges
   ) {
     dateRanges {

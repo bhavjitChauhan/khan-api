@@ -1,5 +1,5 @@
-query getPrecachedDateRanges($districtID: String!) {
-  districtCourseProgressDates(districtID: $districtID) {
+query getPrecachedDateRanges($selectedNodeID: String!) {
+  districtCourseProgressDates(selectedNodeID: $selectedNodeID) {
     lastUpdatedDate
     startDate: from
     endDate: upTo

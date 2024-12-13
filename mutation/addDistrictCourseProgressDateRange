@@ -1,6 +1,6 @@
-mutation addDistrictCourseProgressDateRange($districtID: String!, $dateRange: CustomDateRange!) {
+mutation addDistrictCourseProgressDateRange($selectedNodeID: String!, $dateRange: CustomDateRange!) {
   addDistrictCourseProgressDateRange(
-    districtID: $districtID
+    selectedNodeID: $selectedNodeID
     dateRange: $dateRange
   ) {
     dateRanges {
