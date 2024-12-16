@@ -12677,4 +12677,16 @@ fragment relatedContentFields on LearnableContent {
     __typename
   }
 }`,
+  deleteTeacherUDIForTrialAndHIPRDistrict: `mutation deleteTeacherUDIForTrialAndHIPRDistrict($districtId: ID!, $udiIds: [ID!]!) {
+  deleteTeacherUDIForTrialAndHIPRDistrict(
+    districtID: $districtId
+    udiIDs: $udiIds
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
