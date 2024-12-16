@@ -793,4 +793,5 @@ hashes = {
   AssignmentsPageForContentKind: 1166652700,
   getExerciseTitle: 3933784518,
   ProgressByNodeHook: 1982247883,
+  getCanAddStudentToAssignment: 1860129909,
 }

@@ -22069,4 +22069,37 @@ fragment ModerationResultFragment on AutoModerationResult {
     __typename
   }
 }`,
+  getCanAddStudentToAssignment: `query getCanAddStudentToAssignment($assignmentId: ID!, $studentKaid: String!) {
+  canAddStudentToAssignment(
+    assignmentID: $assignmentId
+    studentKaid: $studentKaid
+  ) {
+    responseCode
+    assignment {
+      id
+      classroom {
+        id
+        cacheId
+        name
+        signupCode
+        __typename
+      }
+      contentDescriptors
+      dueDate
+      contents {
+        id
+        title
+        defaultUrlPath
+        __typename
+      }
+      title
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
