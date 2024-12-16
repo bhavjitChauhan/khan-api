@@ -794,4 +794,7 @@ export default {
   getExerciseTitle: 3933784518,
   ProgressByNodeHook: 1982247883,
   getCanAddStudentToAssignment: 1860129909,
+  exerciseEditorGetAllArticleRevisionsV2: 2443572127,
+  exerciseEditorGetAllExerciseRevisionsV2: 747767135,
+  exerciseEditorGetAllVideoRevisionsV2: 862806367,
 }

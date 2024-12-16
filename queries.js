@@ -22102,4 +22102,28 @@ fragment ModerationResultFragment on AutoModerationResult {
     __typename
   }
 }`,
+  exerciseEditorGetAllArticleRevisionsV2: `query exerciseEditorGetAllArticleRevisionsV2 {
+  allArticleRevisions {
+    id
+    slug
+    title
+    __typename
+  }
+}`,
+  exerciseEditorGetAllExerciseRevisionsV2: `query exerciseEditorGetAllExerciseRevisionsV2 {
+  allExerciseRevisions {
+    id
+    slug
+    title
+    __typename
+  }
+}`,
+  exerciseEditorGetAllVideoRevisionsV2: `query exerciseEditorGetAllVideoRevisionsV2 {
+  allVideoRevisions {
+    id
+    slug
+    title
+    __typename
+  }
+}`,
 }
