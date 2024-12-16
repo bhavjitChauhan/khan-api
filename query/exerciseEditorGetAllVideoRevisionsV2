@@ -1,0 +1,8 @@
+query exerciseEditorGetAllVideoRevisionsV2 {
+  allVideoRevisions {
+    id
+    slug
+    title
+    __typename
+  }
+}

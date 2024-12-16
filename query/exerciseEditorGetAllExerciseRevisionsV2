@@ -1,0 +1,8 @@
+query exerciseEditorGetAllExerciseRevisionsV2 {
+  allExerciseRevisions {
+    id
+    slug
+    title
+    __typename
+  }
+}
