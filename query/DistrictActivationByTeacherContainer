@@ -22,6 +22,10 @@ query DistrictActivationByTeacherContainer($districtId: ID!, $schoolIds: [ID!], 
       percentage
       __typename
     }
+    totalRow {
+      numStudentsTotal
+      __typename
+    }
     __typename
   }
 }

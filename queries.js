@@ -3534,6 +3534,10 @@ fragment CourseProgress on SubjectProgress {
       percentage
       __typename
     }
+    totalRow {
+      numStudentsTotal
+      __typename
+    }
     __typename
   }
 }`,

@@ -106,7 +106,7 @@ hashes = {
   DisplayNameQuery: 2131159056,
   DistrictActivationByGradeLevelContainerUsingNewService: 3734591168,
   DistrictActivationBySchoolContainerUsingNewService: 196245641,
-  DistrictActivationByTeacherContainer: 1099941583,
+  DistrictActivationByTeacherContainer: 417240880,
   DistrictGradeLevelsQuery: 650176803,
   districtHomepage: 2523966179,
   districtHomepageProgress: 1681650575,
