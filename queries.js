@@ -5193,6 +5193,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
         courseSISName
         studentUserDistrictInfos {
           id
+          isActivated
           __typename
         }
         district {
@@ -22127,6 +22128,36 @@ fragment ModerationResultFragment on AutoModerationResult {
     id
     slug
     title
+    __typename
+  }
+}`,
+  devadminAssessmentConfig: `query devadminAssessmentConfig($assessmentSlug: String!) {
+  interimAssessment(assessmentSlug: $assessmentSlug) {
+    id
+    name
+    slug
+    config {
+      eytSurveySlug
+      nonEYTSurveySlug
+      steps {
+        ... on InterimAssessmentStandardQuestionStep {
+          id
+          stepNumber
+          exerciseId
+          __typename
+        }
+        ... on InterimAssessmentEYTQuestionStep {
+          id
+          stepNumber
+          exerciseId
+          conversationStarter
+          completionCriteria
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }`,

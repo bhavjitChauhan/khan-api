@@ -163,7 +163,7 @@ hashes = {
   getChildrenOfTopic: 1598707302,
   getChronomancerStatus: 470968035,
   getClassesAndStudents: 4112328276,
-  getClassList: 664504841,
+  getClassList: 737870180,
   getClassroomRoster: 3796170896,
   getClassroomsAndPrimaryOffering: 3980807925,
   getClassSelector: 319528866,
@@ -797,4 +797,5 @@ hashes = {
   exerciseEditorGetAllArticleRevisionsV2: 2443572127,
   exerciseEditorGetAllExerciseRevisionsV2: 747767135,
   exerciseEditorGetAllVideoRevisionsV2: 862806367,
+  devadminAssessmentConfig: 3099213786,
 }

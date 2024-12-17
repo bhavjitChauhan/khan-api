@@ -23,6 +23,7 @@ query getClassList {
         courseSISName
         studentUserDistrictInfos {
           id
+          isActivated
           __typename
         }
         district {
