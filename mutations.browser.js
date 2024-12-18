@@ -12689,4 +12689,13 @@ fragment relatedContentFields on LearnableContent {
     __typename
   }
 }`,
+  deleteBlooketQuestionSet: `mutation deleteBlooketQuestionSet($threadId: String!) {
+  deleteBlooketQuestionSet(threadId: $threadId) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
