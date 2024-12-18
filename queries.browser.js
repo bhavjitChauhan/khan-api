@@ -22161,4 +22161,16 @@ fragment ModerationResultFragment on AutoModerationResult {
     __typename
   }
 }`,
+  getExerciseInfo: `query getExerciseInfo($exerciseId: String!) {
+  exerciseById(id: $exerciseId) {
+    id
+    translatedTitle
+    parentTopic {
+      id
+      domainSlug
+      __typename
+    }
+    __typename
+  }
+}`,
 }

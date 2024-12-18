@@ -798,4 +798,5 @@ export default {
   exerciseEditorGetAllExerciseRevisionsV2: 747767135,
   exerciseEditorGetAllVideoRevisionsV2: 862806367,
   devadminAssessmentConfig: 3099213786,
+  getExerciseInfo: 872940646,
 }
