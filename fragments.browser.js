@@ -2309,6 +2309,7 @@ query ActivitiesList {
   estimatedQuestionsRemaining
   assessment {
     id
+    surveySlug
     __typename
   }
   currentStep {
