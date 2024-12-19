@@ -11666,6 +11666,7 @@ fragment TaskFragment on AssessmentTask {
   estimatedQuestionsRemaining
   assessment {
     id
+    surveySlug
     __typename
   }
   currentStep {
@@ -11747,6 +11748,7 @@ fragment TaskFragment on AssessmentTask {
   estimatedQuestionsRemaining
   assessment {
     id
+    surveySlug
     __typename
   }
   currentStep {
@@ -12164,9 +12166,9 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
-  CompleteEYTQuestion: `mutation CompleteEYTQuestion($assessmentId: String!, $stepId: String!, $response: String!, $updatedResponse: String, $correct: Boolean!, $updatedCorrect: Boolean, $conversationThreadID: String!, $hasKhanmigoError: Boolean, $userAgent: String!) {
+  CompleteEYTQuestion: `mutation CompleteEYTQuestion($assessmentId: String!, $stepId: String!, $response: String!, $updatedResponse: String, $correct: Boolean!, $updatedCorrect: Boolean, $conversationThreadID: String!, $hasKhanmigoError: Boolean, $userAgent: String!, $reasonEYTEnded: ReasonEYTEnded!) {
   complete: completeEYTQuestion(
-    input: {assessmentId: $assessmentId, stepId: $stepId, response: $response, updatedResponse: $updatedResponse, correct: $correct, updatedCorrect: $updatedCorrect, conversationThreadID: $conversationThreadID, hasKhanmigoError: $hasKhanmigoError, userAgent: $userAgent}
+    input: {assessmentId: $assessmentId, stepId: $stepId, response: $response, updatedResponse: $updatedResponse, correct: $correct, updatedCorrect: $updatedCorrect, conversationThreadID: $conversationThreadID, hasKhanmigoError: $hasKhanmigoError, userAgent: $userAgent, reasonEYTEnded: $reasonEYTEnded}
   ) {
     result {
       task {
@@ -12191,6 +12193,7 @@ fragment TaskFragment on AssessmentTask {
   estimatedQuestionsRemaining
   assessment {
     id
+    surveySlug
     __typename
   }
   currentStep {

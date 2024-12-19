@@ -1,0 +1,9 @@
+query devadminAssessmentConfigs {
+  interimAssessments {
+    id
+    name
+    slug
+    enabled
+    __typename
+  }
+}

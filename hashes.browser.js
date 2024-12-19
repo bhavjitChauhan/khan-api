@@ -729,7 +729,7 @@ hashes = {
   localesForTeacherToolsBanner: 3566806382,
   DistrictActivationBySchoolContainer: 192416926,
   SkillsToProficient_RecentCourses: 3216876520,
-  AssessmentStatus: 653136080,
+  AssessmentStatus: 1013303689,
   getUserActiveEnrollmentGroups: 1652978329,
   SkillsToProficient_ClassRecommendations: 1091891880,
   ClassroomDistrictInfoByRosterIdQuery: 3453419485,
@@ -799,4 +799,5 @@ hashes = {
   exerciseEditorGetAllVideoRevisionsV2: 862806367,
   devadminAssessmentConfig: 3099213786,
   getExerciseInfo: 872940646,
+  devadminAssessmentConfigs: 663888832,
 }

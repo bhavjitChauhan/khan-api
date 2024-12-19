@@ -20479,6 +20479,7 @@ fragment ExerciseContentFields on LearnableContent {
         assessment {
           id
           name
+          surveySlug
           __typename
         }
         task {
@@ -22170,6 +22171,15 @@ fragment ModerationResultFragment on AutoModerationResult {
       domainSlug
       __typename
     }
+    __typename
+  }
+}`,
+  devadminAssessmentConfigs: `query devadminAssessmentConfigs {
+  interimAssessments {
+    id
+    name
+    slug
+    enabled
     __typename
   }
 }`,
