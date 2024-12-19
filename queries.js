@@ -22183,4 +22183,10 @@ fragment ModerationResultFragment on AutoModerationResult {
     __typename
   }
 }`,
+  GetDistrictTrialTOSAcceptanceByKaid: `query GetDistrictTrialTOSAcceptanceByKaid($kaid: String!) {
+  getDistrictTrialTOSAcceptanceByKaid(kaid: $kaid) {
+    id
+    __typename
+  }
+}`,
 }
