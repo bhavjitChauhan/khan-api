@@ -12701,4 +12701,15 @@ fragment relatedContentFields on LearnableContent {
     __typename
   }
 }`,
+  acceptDistrictTrialTOS: `mutation acceptDistrictTrialTOS($input: AcceptDistrictTrialTOSInput!) {
+  acceptDistrictTrialTOS(input: $input) {
+    districtID
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }

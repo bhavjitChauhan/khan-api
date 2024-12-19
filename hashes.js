@@ -800,4 +800,5 @@ export default {
   devadminAssessmentConfig: 3099213786,
   getExerciseInfo: 872940646,
   devadminAssessmentConfigs: 663888832,
+  GetDistrictTrialTOSAcceptanceByKaid: 1151928676,
 }
