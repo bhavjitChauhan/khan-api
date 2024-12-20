@@ -12584,6 +12584,12 @@ fragment relatedContentFields on LearnableContent {
     }
     error {
       code
+      dedupUDI {
+        id
+        keyNameID
+        districtProvidedEmail
+        __typename
+      }
       __typename
     }
     __typename
@@ -12611,6 +12617,12 @@ fragment relatedContentFields on LearnableContent {
     }
     error {
       code
+      dedupUDI {
+        id
+        keyNameID
+        districtProvidedEmail
+        __typename
+      }
       __typename
     }
     __typename
