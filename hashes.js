@@ -801,4 +801,6 @@ export default {
   getExerciseInfo: 872940646,
   devadminAssessmentConfigs: 663888832,
   GetDistrictTrialTOSAcceptanceByKaid: 1151928676,
+  districtKhanmigoTotalUsageByNode: 3287109996,
+  districtKhanmigoTotalUsageBySchool: 2487927343,
 }
