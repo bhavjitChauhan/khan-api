@@ -9,6 +9,12 @@ mutation createTeacherUDIForTrialAndHIPRDistrict($districtID: ID!, $udiPropertie
     }
     error {
       code
+      dedupUDI {
+        id
+        keyNameID
+        districtProvidedEmail
+        __typename
+      }
       __typename
     }
     __typename
