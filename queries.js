@@ -22189,4 +22189,116 @@ fragment ModerationResultFragment on AutoModerationResult {
     __typename
   }
 }`,
+  districtKhanmigoTotalUsageByNode: `query districtKhanmigoTotalUsageByNode($filter: KhanmigoDistrictFilters!) {
+  districtKhanmigoUsage(filter: $filter) {
+    groupType
+    overall {
+      possibleUsers
+      usersWithUsage
+      percentUsersWithUsage
+      chats
+      avgChatsPerUsersWithUsage
+      avgChatsPerPossibleUsers
+      flaggedChats
+      avgFlaggedChatsPerUsersWithUsage
+      avgFlaggedChatsPerPossibleUsers
+      messages
+      avgMessagesPerChat
+      avgMessagesPerUserWithUsage
+      avgMessagesPerPossibleUsers
+      targetStatus
+      __typename
+    }
+    target {
+      percentage
+      __typename
+    }
+    byAdminAggregate {
+      adminAggregate {
+        ... on District {
+          id
+          name
+          __typename
+        }
+        ... on MetaDistrict {
+          id
+          name
+          __typename
+        }
+        __typename
+      }
+      usage {
+        possibleUsers
+        usersWithUsage
+        percentUsersWithUsage
+        chats
+        avgChatsPerUsersWithUsage
+        avgChatsPerPossibleUsers
+        flaggedChats
+        avgFlaggedChatsPerUsersWithUsage
+        avgFlaggedChatsPerPossibleUsers
+        messages
+        avgMessagesPerChat
+        targetStatus
+        avgMessagesPerUserWithUsage
+        avgMessagesPerPossibleUsers
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  districtKhanmigoTotalUsageBySchool: `query districtKhanmigoTotalUsageBySchool($filter: KhanmigoDistrictFilters!) {
+  districtKhanmigoUsage(filter: $filter) {
+    groupType
+    overall {
+      possibleUsers
+      usersWithUsage
+      percentUsersWithUsage
+      chats
+      avgChatsPerUsersWithUsage
+      avgChatsPerPossibleUsers
+      flaggedChats
+      avgFlaggedChatsPerUsersWithUsage
+      avgFlaggedChatsPerPossibleUsers
+      messages
+      avgMessagesPerChat
+      avgMessagesPerUserWithUsage
+      avgMessagesPerPossibleUsers
+      targetStatus
+      __typename
+    }
+    target {
+      percentage
+      __typename
+    }
+    bySchool {
+      school {
+        id
+        name
+        __typename
+      }
+      usage {
+        possibleUsers
+        usersWithUsage
+        percentUsersWithUsage
+        chats
+        avgChatsPerUsersWithUsage
+        avgChatsPerPossibleUsers
+        flaggedChats
+        avgFlaggedChatsPerUsersWithUsage
+        avgFlaggedChatsPerPossibleUsers
+        messages
+        avgMessagesPerChat
+        targetStatus
+        avgMessagesPerUserWithUsage
+        avgMessagesPerPossibleUsers
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
