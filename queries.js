@@ -7442,8 +7442,8 @@ fragment userTaskFields on PracticeUserTask {
     __typename
   }
 }`,
-  getModerationResult: `query getModerationResult($input: String!) {
-  getModerationResult(input: $input) {
+  getModerationResult: `query getModerationResult($text: String, $image: String, $model: String) {
+  getModerationResult(text: $text, image: $image, model: $model) {
     categories
     categoryScores
     flagged
