@@ -232,7 +232,7 @@ export default {
   GetMappersSuggestions: 3305868520,
   getMasteryTowerEventsQuery: 3124531841,
   getModerationLogs: 660918364,
-  getModerationResult: 3043772591,
+  getModerationResult: 3793167885,
   GetNotationReadAloudsForAssessmentItem: 2518928772,
   getNotificationsForUser: 3066658907,
   getOffensiveTerms: 1905088201,

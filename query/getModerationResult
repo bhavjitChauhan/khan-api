@@ -1,5 +1,5 @@
-query getModerationResult($input: String!) {
-  getModerationResult(input: $input) {
+query getModerationResult($text: String, $image: String, $model: String) {
+  getModerationResult(text: $text, image: $image, model: $model) {
     categories
     categoryScores
     flagged
