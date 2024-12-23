@@ -3333,9 +3333,10 @@ fragment CourseProgress on SubjectProgress {
     __typename
   }
 }`,
-  csvReportStatus: `query csvReportStatus($kaid: String!, $districtID: String!) {
+  csvReportStatus: `query csvReportStatus($kaid: String!, $partnershipID: String, $districtID: String) {
   getLastNAdminReportsForUser(
     kaid: $kaid
+    partnershipID: $partnershipID
     districtID: $districtID
     topNResults: 1
   ) {
@@ -3348,7 +3349,56 @@ fragment CourseProgress on SubjectProgress {
       reportType
       startDate
       endDate
-      schools
+      selectedNode {
+        ... on MetaDistrict {
+          id
+          name
+          levelHeight
+          children {
+            ... on MetaDistrict {
+              id
+              __typename
+            }
+            ... on District {
+              id
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        ... on District {
+          id
+          name
+          levelHeight
+          schools {
+            id
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      children {
+        ... on MetaDistrict {
+          id
+          name
+          levelHeight
+          __typename
+        }
+        ... on District {
+          id
+          name
+          levelHeight
+          __typename
+        }
+        ... on School {
+          id
+          name
+          __typename
+        }
+        __typename
+      }
       createdAt
       fileName
       fileSize
@@ -21565,7 +21615,10 @@ fragment UserFields on User {
           __typename
         }
         isAdministered
+        hasKad
         hasLp
+        hasKhanmigo
+        hasCentralRostering
         __typename
       }
       ... on District {
@@ -21581,7 +21634,10 @@ fragment UserFields on User {
         }
         isTest
         isAdministered
+        isK4dDistrict
         isKmapDistrict
+        hasKhanmigo
+        isCentrallyRostered
         __typename
       }
       __typename

@@ -7431,14 +7431,14 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }`,
-  requestAdminReportCSV: `mutation requestAdminReportCSV($kaid: ID!, $districtID: ID!, $reportType: AdminReportType!, $startDate: DateTime!, $endDate: DateTime!, $schools: [String!]!, $grades: [String!], $teacherKaids: [String!], $courseSISValues: [String!], $courseID: String, $strandKey: String, $bands: [String!], $notifyByEmail: Boolean!, $kaLocale: String) {
+  requestAdminReportCSV: `mutation requestAdminReportCSV($kaid: ID!, $selectedNodeID: ID!, $childIDs: [String!]!, $reportType: AdminReportType!, $startDate: DateTime!, $endDate: DateTime!, $grades: [String!], $teacherKaids: [String!], $courseSISValues: [String!], $courseID: String, $strandKey: String, $bands: [String!], $notifyByEmail: Boolean!, $kaLocale: String) {
   requestAdminReportCSV(
     kaid: $kaid
-    districtID: $districtID
+    selectedNodeID: $selectedNodeID
+    childIDs: $childIDs
     reportType: $reportType
     startDate: $startDate
     endDate: $endDate
-    schools: $schools
     teacherKaids: $teacherKaids
     grades: $grades
     courseSISValues: $courseSISValues
