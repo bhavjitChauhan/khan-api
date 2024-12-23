@@ -13,7 +13,10 @@ query GetPartnershipDataForDashboard($partnershipID: ID!) {
           __typename
         }
         isAdministered
+        hasKad
         hasLp
+        hasKhanmigo
+        hasCentralRostering
         __typename
       }
       ... on District {
@@ -29,7 +32,10 @@ query GetPartnershipDataForDashboard($partnershipID: ID!) {
         }
         isTest
         isAdministered
+        isK4dDistrict
         isKmapDistrict
+        hasKhanmigo
+        isCentrallyRostered
         __typename
       }
       __typename
