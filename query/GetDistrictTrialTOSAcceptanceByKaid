@@ -1,5 +1,5 @@
-query GetDistrictTrialTOSAcceptanceByKaid($kaid: String!) {
-  getDistrictTrialTOSAcceptanceByKaid(kaid: $kaid) {
+query GetDistrictTrialTOSAcceptanceByKaid {
+  getDistrictTrialTOSAcceptanceByKaid {
     id
     __typename
   }
