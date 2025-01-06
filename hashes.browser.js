@@ -800,7 +800,7 @@ hashes = {
   devadminAssessmentConfig: 3099213786,
   getExerciseInfo: 872940646,
   devadminAssessmentConfigs: 663888832,
-  GetDistrictTrialTOSAcceptanceByKaid: 1151928676,
+  GetDistrictTrialTOSAcceptanceByKaid: 3203884727,
   districtKhanmigoTotalUsageByNode: 3287109996,
   districtKhanmigoTotalUsageBySchool: 2487927343,
   getClassroomsAndStudents: 2907918770,
