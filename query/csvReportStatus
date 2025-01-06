@@ -19,6 +19,7 @@ query csvReportStatus($kaid: String!, $partnershipID: String, $districtID: Strin
           id
           name
           levelHeight
+          hasCentralRostering
           children {
             ... on MetaDistrict {
               id
@@ -36,6 +37,13 @@ query csvReportStatus($kaid: String!, $partnershipID: String, $districtID: Strin
           id
           name
           levelHeight
+          isCentrallyRostered
+          activeGrades {
+            id
+            name
+            sortIndex
+            __typename
+          }
           schools {
             id
             __typename

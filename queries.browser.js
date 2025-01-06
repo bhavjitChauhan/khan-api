@@ -3354,6 +3354,7 @@ fragment CourseProgress on SubjectProgress {
           id
           name
           levelHeight
+          hasCentralRostering
           children {
             ... on MetaDistrict {
               id
@@ -3371,6 +3372,13 @@ fragment CourseProgress on SubjectProgress {
           id
           name
           levelHeight
+          isCentrallyRostered
+          activeGrades {
+            id
+            name
+            sortIndex
+            __typename
+          }
           schools {
             id
             __typename
