@@ -12724,4 +12724,39 @@ fragment relatedContentFields on LearnableContent {
     __typename
   }
 }`,
+  createClassroomForWritingCoach: `mutation createClassroomForWritingCoach($classroomName: String!) {
+  createClassroom(classroomName: $classroomName) {
+    classroom {
+      id
+      cacheId
+      descriptor
+      signupCode
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  createWritingCoachAssignments: `mutation createWritingCoachAssignments($classDescriptors: [String!]!, $qualifiedContentDescriptorsList: [String!], $startDate: DateTime!, $dueDate: DateTime, $isDraft: Boolean, $studentKaids: [ID], $subjectSlug: String!, $questionSetType: ExerciseItemPickerStrategy, $title: String, $instructions: String, $configuredActivityInputs: String) {
+  createAssignments(
+    assignment: {classroomDescriptors: $classDescriptors, qualifiedContentDescriptorsList: $qualifiedContentDescriptorsList, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft, studentKaids: $studentKaids, subjectSlug: $subjectSlug, exerciseItemPickerStrategy: $questionSetType, title: $title, instructions: $instructions, configuredActivityInputs: $configuredActivityInputs}
+  ) {
+    assignments {
+      id
+      classroom {
+        id
+        cacheId
+        name
+        signupCode
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
