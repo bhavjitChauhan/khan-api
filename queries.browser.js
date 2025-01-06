@@ -22357,4 +22357,24 @@ fragment ModerationResultFragment on AutoModerationResult {
     __typename
   }
 }`,
+  getClassroomsAndStudents: `query getClassroomsAndStudents {
+  user {
+    id
+    isK4dTeacher
+    classrooms: coachedStudentLists {
+      id
+      cacheId
+      classroomDescriptor: descriptor
+      name
+      studentKaidsAndNicknames {
+        id
+        kaid
+        nickname: coachNickname
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }

@@ -1,0 +1,17 @@
+mutation createClassroomForWritingCoach($classroomName: String!) {
+  createClassroom(classroomName: $classroomName) {
+    classroom {
+      id
+      cacheId
+      descriptor
+      signupCode
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
