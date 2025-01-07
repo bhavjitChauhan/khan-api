@@ -12759,4 +12759,14 @@ fragment relatedContentFields on LearnableContent {
     __typename
   }
 }`,
+  devadminCreateAssessmentConfig: `mutation devadminCreateAssessmentConfig($input: CreateInterimAssessmentInput!) {
+  createInterimAssessment(input: $input) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
