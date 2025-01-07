@@ -22201,6 +22201,7 @@ fragment ModerationResultFragment on AutoModerationResult {
     id
     name
     slug
+    enabled
     config {
       eytSurveySlug
       nonEYTSurveySlug

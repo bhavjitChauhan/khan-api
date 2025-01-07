@@ -3,6 +3,7 @@ query devadminAssessmentConfig($assessmentSlug: String!) {
     id
     name
     slug
+    enabled
     config {
       eytSurveySlug
       nonEYTSurveySlug
