@@ -10669,18 +10669,14 @@ fragment gtp_essayScoresFragment on EssayScores {
   }
 }
 `,
-  KhanCoursesQuery: `query KhanCoursesQuery($districtId: ID!, $kaLocale: String!) {
-  districtById(districtId: $districtId) {
+  KhanCoursesQuery: `query KhanCoursesQuery($adminAggregateID: ID!, $kaLocale: String!) {
+  coursesForAdminAggregate(id: $adminAggregateID, kaLocale: $kaLocale) {
     id
-    courses(kaLocale: $kaLocale) {
+    key
+    translatedTitle
+    domain: parent {
       id
-      key
       translatedTitle
-      domain: parent {
-        id
-        translatedTitle
-        __typename
-      }
       __typename
     }
     __typename
@@ -21623,10 +21619,11 @@ fragment UserFields on User {
           __typename
         }
         isAdministered
-        hasKad
-        hasLp
+        hasKAD: hasKad
+        hasLearningPaths: hasLp
         hasKhanmigo
         hasCentralRostering
+        kaLocale
         __typename
       }
       ... on District {
@@ -21642,10 +21639,11 @@ fragment UserFields on User {
         }
         isTest
         isAdministered
-        isK4dDistrict
-        isKmapDistrict
+        hasKAD: isK4dDistrict
+        hasLearningPaths: isKmapDistrict
         hasKhanmigo
-        isCentrallyRostered
+        hasCentralRostering: isCentrallyRostered
+        kaLocale
         __typename
       }
       __typename
