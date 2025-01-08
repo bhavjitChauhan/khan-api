@@ -1,15 +1,11 @@
-query KhanCoursesQuery($districtId: ID!, $kaLocale: String!) {
-  districtById(districtId: $districtId) {
+query KhanCoursesQuery($adminAggregateID: ID!, $kaLocale: String!) {
+  coursesForAdminAggregate(id: $adminAggregateID, kaLocale: $kaLocale) {
     id
-    courses(kaLocale: $kaLocale) {
+    key
+    translatedTitle
+    domain: parent {
       id
-      key
       translatedTitle
-      domain: parent {
-        id
-        translatedTitle
-        __typename
-      }
       __typename
     }
     __typename
