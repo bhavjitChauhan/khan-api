@@ -12769,4 +12769,24 @@ fragment relatedContentFields on LearnableContent {
     __typename
   }
 }`,
+  createWritingCoachEssaySession: `mutation createWritingCoachEssaySession($assignmentTitle: String!, $essayText: String!, $essayType: EssayType!, $essayVersion: Int!, $essayInstructions: String!, $minimumWordCount: Int, $studentGradeLevel: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!, $sampleEssayName: String) {
+  createEssaySession(
+    essayInstructions: $essayInstructions
+    essayText: $essayText
+    essayTitle: $assignmentTitle
+    essayType: $essayType
+    essayVersion: $essayVersion
+    minimumWordCount: $minimumWordCount
+    studentGradeLevel: $studentGradeLevel
+    paragraphIDToParagraphNumbers: $paragraphIDToParagraphNumbers
+    sampleEssayName: $sampleEssayName
+  ) {
+    essaySessionID
+    error {
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
