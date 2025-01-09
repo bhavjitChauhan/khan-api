@@ -22384,4 +22384,12 @@ fragment ModerationResultFragment on AutoModerationResult {
     __typename
   }
 }`,
+  devadminExerciseForAssessmentConfigEditor: `query devadminExerciseForAssessmentConfigEditor($id: String!) {
+  exerciseById(id: $id) {
+    id
+    slug
+    title
+    __typename
+  }
+}`,
 }

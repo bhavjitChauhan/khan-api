@@ -804,4 +804,5 @@ hashes = {
   districtKhanmigoTotalUsageByNode: 3287109996,
   districtKhanmigoTotalUsageBySchool: 2487927343,
   getClassroomsAndStudents: 2907918770,
+  devadminExerciseForAssessmentConfigEditor: 3759707019,
 }
