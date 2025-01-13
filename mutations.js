@@ -12568,6 +12568,11 @@ fragment relatedContentFields on LearnableContent {
   ) {
     error {
       code
+      conflictingDistrict {
+        id
+        name
+        __typename
+      }
       __typename
     }
     district {
