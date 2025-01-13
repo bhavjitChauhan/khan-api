@@ -1,0 +1,8 @@
+query lookUpClassroomByCode($code: String!) {
+  joinByClassCodeInfo(classCode: $code) {
+    cacheId
+    id
+    name
+    __typename
+  }
+}
