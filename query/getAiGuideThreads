@@ -2,7 +2,6 @@ query getAiGuideThreads($kaid: String!, $hasCoeditor: Boolean!, $limit: Int!) {
   aiGuideThreads(kaid: $kaid, hasCoeditor: $hasCoeditor, limit: $limit) {
     threads {
       id
-      lastUpdatedAt
       coeditingDocument(excludeArchived: true) {
         id
         title
@@ -19,6 +18,7 @@ query getAiGuideThreads($kaid: String!, $hasCoeditor: Boolean!, $limit: Int!) {
         id
         title
         threadId
+        lastUpdatedAt
         __typename
       }
       __typename
