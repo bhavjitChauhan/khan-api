@@ -12789,4 +12789,13 @@ fragment relatedContentFields on LearnableContent {
     __typename
   }
 }`,
+  joinClassroomByCode: `mutation joinClassroomByCode($code: String!) {
+  joinStudent(classCode: $code) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
