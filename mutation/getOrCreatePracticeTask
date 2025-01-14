@@ -1,4 +1,4 @@
-mutation getOrCreatePracticeTask($input: GetOrCreatePracticeTaskInput!) {
+mutation getOrCreatePracticeTask($input: GetOrCreatePracticeTaskInput!, $ancestorIds: [String!]!) {
   getOrCreatePracticeTask(input: $input) {
     result {
       error {
@@ -33,6 +33,8 @@ fragment userExerciseFields on UserExercise {
       kind
       thumbnailUrl
       translatedTitle
+      urlWithinCurationNode
+      urlWithinClosestAncestor(ancestorIds: $ancestorIds)
       topicPaths {
         path {
           id

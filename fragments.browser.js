@@ -910,6 +910,8 @@ fragment InvitationsField on Invitation {
       kind
       thumbnailUrl
       translatedTitle
+      urlWithinCurationNode
+      urlWithinClosestAncestor(ancestorIds: $ancestorIds)
       topicPaths {
         path {
           id
@@ -2015,6 +2017,8 @@ fragment InvitationsField on Invitation {
       kind
       thumbnailUrl
       translatedTitle
+      urlWithinCurationNode
+      urlWithinClosestAncestor(ancestorIds: $ancestorIds)
       topicPaths {
         path {
           id

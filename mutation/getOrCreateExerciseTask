@@ -1,4 +1,4 @@
-mutation getOrCreateExerciseTask($input: GetOrCreateExerciseTaskInput!) {
+mutation getOrCreateExerciseTask($input: GetOrCreateExerciseTaskInput!, $ancestorIds: [String!]!) {
   getOrCreateExerciseTask(input: $input) {
     result {
       error {
@@ -131,6 +131,8 @@ fragment exerciseTaskUserExerciseFields on UserExercise {
       kind
       thumbnailUrl
       translatedTitle
+      urlWithinCurationNode
+      urlWithinClosestAncestor(ancestorIds: $ancestorIds)
       topicPaths {
         path {
           id

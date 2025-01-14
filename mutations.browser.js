@@ -319,7 +319,7 @@ fragment AssignmentInfoFragment on Assignment {
     __typename
   }
 }`,
-  attemptProblem: `mutation attemptProblem($input: AttemptProblemInput!) {
+  attemptProblem: `mutation attemptProblem($input: AttemptProblemInput!, $ancestorIds: [String!]!) {
   attemptProblem(attempt: $input) {
     result {
       userExercise {
@@ -435,6 +435,8 @@ fragment userExerciseFields on UserExercise {
       kind
       thumbnailUrl
       translatedTitle
+      urlWithinCurationNode
+      urlWithinClosestAncestor(ancestorIds: $ancestorIds)
       topicPaths {
         path {
           id
@@ -4498,7 +4500,7 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }`,
-  getOrCreateExerciseTask: `mutation getOrCreateExerciseTask($input: GetOrCreateExerciseTaskInput!) {
+  getOrCreateExerciseTask: `mutation getOrCreateExerciseTask($input: GetOrCreateExerciseTaskInput!, $ancestorIds: [String!]!) {
   getOrCreateExerciseTask(input: $input) {
     result {
       error {
@@ -4631,6 +4633,8 @@ fragment exerciseTaskUserExerciseFields on UserExercise {
       kind
       thumbnailUrl
       translatedTitle
+      urlWithinCurationNode
+      urlWithinClosestAncestor(ancestorIds: $ancestorIds)
       topicPaths {
         path {
           id
@@ -4713,7 +4717,7 @@ fragment exerciseTaskUserExerciseFields on UserExercise {
   totalDone
   __typename
 }`,
-  getOrCreatePracticeTask: `mutation getOrCreatePracticeTask($input: GetOrCreatePracticeTaskInput!) {
+  getOrCreatePracticeTask: `mutation getOrCreatePracticeTask($input: GetOrCreatePracticeTaskInput!, $ancestorIds: [String!]!) {
   getOrCreatePracticeTask(input: $input) {
     result {
       error {
@@ -4748,6 +4752,8 @@ fragment userExerciseFields on UserExercise {
       kind
       thumbnailUrl
       translatedTitle
+      urlWithinCurationNode
+      urlWithinClosestAncestor(ancestorIds: $ancestorIds)
       topicPaths {
         path {
           id

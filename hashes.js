@@ -216,7 +216,7 @@ export default {
   getFpmMasteryForTopic: 2367143383,
   getFullUserProfile: 3451255386,
   getInfoForTotalStudentCountQuery: 3058507865,
-  getInitialDataForPrePhantomUser: 1309764977,
+  getInitialDataForPrePhantomUser: 2154082713,
   getIsClassCleverLibrarySynced: 1236091707,
   getIsDistrictSynced: 917643347,
   getItemsForExercise: 1632154855,
