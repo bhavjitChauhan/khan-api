@@ -21345,6 +21345,38 @@ fragment ExerciseContentFields on LearnableContent {
     }
     __typename
   }
+}
+
+fragment AssignmentFields on Assignment {
+  id
+  studentKaids
+  isDraft
+  assignmentStatus
+  subjectSlug
+  numStudentsCompleted
+  assignedDate
+  startDate
+  dueDate
+  contentDescriptors
+  domainId
+  courseId
+  unitId
+  lessonId
+  contents {
+    id
+    title: translatedTitle
+    kind
+    defaultUrlPath
+    __typename
+  }
+  exerciseConfig {
+    itemPickerStrategy
+    __typename
+  }
+  title
+  instructions
+  configuredActivityInputs
+  __typename
 }`,
   essaySnapshotPatches: `query essaySnapshotPatches($essaySessionId: String!, $snapshotIndex: Int!) {
   essaySession(essaySessionID: $essaySessionId) {
@@ -22112,23 +22144,7 @@ fragment ModerationResultFragment on AutoModerationResult {
   ) {
     responseCode
     assignment {
-      id
-      classroom {
-        id
-        cacheId
-        name
-        signupCode
-        __typename
-      }
-      contentDescriptors
-      dueDate
-      contents {
-        id
-        title
-        defaultUrlPath
-        __typename
-      }
-      title
+      ...assignmentFields
       __typename
     }
     error {
@@ -22137,6 +22153,48 @@ fragment ModerationResultFragment on AutoModerationResult {
     }
     __typename
   }
+}
+
+fragment assignmentFields on Assignment {
+  id
+  key
+  classroom {
+    id
+    cacheId
+    name
+    signupCode
+    __typename
+  }
+  contentDescriptors
+  startDate
+  dueDate
+  contents {
+    ...contentFieldsForContents
+    __typename
+  }
+  title
+  domainId
+  courseId
+  unitId
+  lessonId
+  __typename
+}
+
+fragment contentFieldsForContents on LearnableContent {
+  id
+  kind
+  title: translatedTitle
+  defaultUrlPath
+  topicPaths {
+    path {
+      id
+      kind
+      slug
+      __typename
+    }
+    __typename
+  }
+  __typename
 }`,
   exerciseEditorGetAllArticleRevisionsV2: `query exerciseEditorGetAllArticleRevisionsV2 {
   allArticleRevisions {

@@ -1,0 +1,16 @@
+fragment contentFieldsForContents on LearnableContent {
+  id
+  kind
+  title: translatedTitle
+  defaultUrlPath
+  topicPaths {
+    path {
+      id
+      kind
+      slug
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
