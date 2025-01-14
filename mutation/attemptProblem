@@ -1,4 +1,4 @@
-mutation attemptProblem($input: AttemptProblemInput!) {
+mutation attemptProblem($input: AttemptProblemInput!, $ancestorIds: [String!]!) {
   attemptProblem(attempt: $input) {
     result {
       userExercise {
@@ -114,6 +114,8 @@ fragment userExerciseFields on UserExercise {
       kind
       thumbnailUrl
       translatedTitle
+      urlWithinCurationNode
+      urlWithinClosestAncestor(ancestorIds: $ancestorIds)
       topicPaths {
         path {
           id

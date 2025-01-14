@@ -7050,7 +7050,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     __typename
   }
 }`,
-  getInitialDataForPrePhantomUser: `query getInitialDataForPrePhantomUser($exerciseId: ID!, $input: AssessmentItemInput!) {
+  getInitialDataForPrePhantomUser: `query getInitialDataForPrePhantomUser($exerciseId: ID!, $input: AssessmentItemInput!, $ancestorIds: [String!]!) {
   assessmentItem(input: $input) {
     item {
       id
@@ -7092,6 +7092,8 @@ fragment userExerciseFields on UserExercise {
       kind
       thumbnailUrl
       translatedTitle
+      urlWithinCurationNode
+      urlWithinClosestAncestor(ancestorIds: $ancestorIds)
       topicPaths {
         path {
           id
