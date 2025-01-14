@@ -2520,4 +2520,44 @@ query ActivitiesList {
   }
   __typename
 }`,
+  assignmentFields: `fragment assignmentFields on Assignment {
+  id
+  key
+  classroom {
+    id
+    cacheId
+    name
+    signupCode
+    __typename
+  }
+  contentDescriptors
+  startDate
+  dueDate
+  contents {
+    ...contentFieldsForContents
+    __typename
+  }
+  title
+  domainId
+  courseId
+  unitId
+  lessonId
+  __typename
+}`,
+  contentFieldsForContents: `fragment contentFieldsForContents on LearnableContent {
+  id
+  kind
+  title: translatedTitle
+  defaultUrlPath
+  topicPaths {
+    path {
+      id
+      kind
+      slug
+      __typename
+    }
+    __typename
+  }
+  __typename
+}`,
 }

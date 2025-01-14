@@ -1,0 +1,24 @@
+fragment assignmentFields on Assignment {
+  id
+  key
+  classroom {
+    id
+    cacheId
+    name
+    signupCode
+    __typename
+  }
+  contentDescriptors
+  startDate
+  dueDate
+  contents {
+    ...contentFieldsForContents
+    __typename
+  }
+  title
+  domainId
+  courseId
+  unitId
+  lessonId
+  __typename
+}

@@ -1,0 +1,10 @@
+mutation addStudentToAssignment($id: ID!, $studentKaid: String!) {
+  addStudentToAssignment(id: $id, studentKaid: $studentKaid) {
+    success
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
