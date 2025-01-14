@@ -616,7 +616,7 @@ export default {
   AssignmentsPageForContentItems: 1181913380,
   getDistrictDisallowDiscussions: 762796058,
   getIndexedContentSearchResults: 3730215381,
-  exerciseEditorQuery: 1534415187,
+  exerciseEditorQuery: 1966364966,
   getSatAccountSettings: 714630499,
   allCoacheeNames: 2231775310,
   courseChallengeCsvQuery: 277772492,
