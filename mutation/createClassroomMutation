@@ -1,7 +1,8 @@
-mutation createClassroomMutation($classroomName: String!, $subscribeToUpdates: Boolean) {
+mutation createClassroomMutation($classroomName: String!, $subscribeToUpdates: Boolean, $isTestClassroom: Boolean) {
   createClassroom(
     classroomName: $classroomName
     subscribeToUpdates: $subscribeToUpdates
+    isTestClassroom: $isTestClassroom
   ) {
     classroom {
       id
