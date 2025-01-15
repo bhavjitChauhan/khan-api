@@ -3738,10 +3738,11 @@ fragment AssignmentInfoFragment on Assignment {
     __typename
   }
 }`,
-  createClassroomMutation: `mutation createClassroomMutation($classroomName: String!, $subscribeToUpdates: Boolean) {
+  createClassroomMutation: `mutation createClassroomMutation($classroomName: String!, $subscribeToUpdates: Boolean, $isTestClassroom: Boolean) {
   createClassroom(
     classroomName: $classroomName
     subscribeToUpdates: $subscribeToUpdates
+    isTestClassroom: $isTestClassroom
   ) {
     classroom {
       id
