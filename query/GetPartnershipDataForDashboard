@@ -1,4 +1,4 @@
-query GetPartnershipDataForDashboard($partnershipID: ID!) {
+query GetPartnershipDataForDashboard($partnershipID: ID!, $kaLocale: String!) {
   partnershipDataForDashboard(partnershipID: $partnershipID) {
     root {
       ... on MetaDistrict {
@@ -7,7 +7,7 @@ query GetPartnershipDataForDashboard($partnershipID: ID!) {
         countryCode
         levelLabel
         levelHeight
-        treeLabels {
+        treeLabels(kaLocale: $kaLocale) {
           singular
           generalized
           __typename
@@ -26,7 +26,7 @@ query GetPartnershipDataForDashboard($partnershipID: ID!) {
         countryCode
         levelLabel
         levelHeight
-        treeLabels {
+        treeLabels(kaLocale: $kaLocale) {
           singular
           generalized
           __typename

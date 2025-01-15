@@ -21606,7 +21606,7 @@ fragment UserFields on User {
     __typename
   }
 }`,
-  GetPartnershipDataForDashboard: `query GetPartnershipDataForDashboard($partnershipID: ID!) {
+  GetPartnershipDataForDashboard: `query GetPartnershipDataForDashboard($partnershipID: ID!, $kaLocale: String!) {
   partnershipDataForDashboard(partnershipID: $partnershipID) {
     root {
       ... on MetaDistrict {
@@ -21615,7 +21615,7 @@ fragment UserFields on User {
         countryCode
         levelLabel
         levelHeight
-        treeLabels {
+        treeLabels(kaLocale: $kaLocale) {
           singular
           generalized
           __typename
@@ -21634,7 +21634,7 @@ fragment UserFields on User {
         countryCode
         levelLabel
         levelHeight
-        treeLabels {
+        treeLabels(kaLocale: $kaLocale) {
           singular
           generalized
           __typename
