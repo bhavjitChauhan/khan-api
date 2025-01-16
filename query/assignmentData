@@ -13,6 +13,12 @@ query assignmentData($assignmentID: String!) {
         }
         __typename
       }
+      classroom {
+        id
+        cacheId
+        name
+        __typename
+      }
       __typename
     }
     __typename
