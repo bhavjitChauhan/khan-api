@@ -11,6 +11,7 @@ query getStudents($classDescriptor: String!, $aiGuideEnabledStudentsOnly: Boolea
     students @include(if: $aiGuideEnabledStudentsOnly) {
       id
       kaid
+      hasAccessToAIGuideLearner
       isAIGuideEnabled
       __typename
     }

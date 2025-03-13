@@ -17,5 +17,10 @@ fragment exerciseTaskExerciseFields on Exercise {
     ...relatedContentFields
     __typename
   }
+  parentTopic {
+    id
+    domainSlug
+    __typename
+  }
   __typename
 }

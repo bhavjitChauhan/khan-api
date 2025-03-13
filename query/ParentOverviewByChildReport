@@ -1,0 +1,39 @@
+query ParentOverviewByChildReport($filters: ParentOverviewReportFilters!) {
+  parentOverviewByChildReport(filters: $filters) {
+    dateInfo {
+      lastUpdatedDate
+      from
+      upTo
+      __typename
+    }
+    rows {
+      user {
+        id
+        __typename
+      }
+      info {
+        minutes
+        workedOn
+        leveledUp
+        leveledToProficient
+        attempted
+        familiar
+        proficient
+        mastered
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  parent: user {
+    id
+    children {
+      id
+      kaid
+      nickname
+      __typename
+    }
+    __typename
+  }
+}

@@ -12,7 +12,7 @@ fragment AssignmentInfoFragment on Assignment {
   id
   contents {
     id
-    title
+    title: translatedTitle
     kind
     __typename
   }
@@ -20,6 +20,7 @@ fragment AssignmentInfoFragment on Assignment {
     id
     cacheId
     name
+    isK4dClassroom
     __typename
   }
   students {

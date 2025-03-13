@@ -1,0 +1,15 @@
+fragment prototypePracticeTaskFields on PracticeTask {
+  id
+  key
+  exerciseLength
+  taskType
+  contentKey
+  reservedItems
+  reservedItemsCompleted
+  isCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  __typename
+}

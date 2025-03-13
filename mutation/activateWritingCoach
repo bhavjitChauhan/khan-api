@@ -1,0 +1,10 @@
+mutation activateWritingCoach($role: WritingCoachRole!) {
+  activateWritingCoach(role: $role) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

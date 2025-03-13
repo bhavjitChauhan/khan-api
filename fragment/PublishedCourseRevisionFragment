@@ -3,6 +3,7 @@ fragment PublishedCourseRevisionFragment on CourseRevision {
   contentId
   kaLocale
   title
+  slug
   importable
   allowedExerciseTypes
   hasUnpublishedChanges

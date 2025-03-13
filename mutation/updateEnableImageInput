@@ -1,0 +1,9 @@
+mutation updateEnableImageInput($districtID: String!, $enable: Boolean!) {
+  updateEnableImageInputForDistrict(districtID: $districtID, enable: $enable) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

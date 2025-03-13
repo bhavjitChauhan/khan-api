@@ -1,0 +1,9 @@
+mutation setTeacherCourses($kaid: String!, $courses: [TeacherCourse!]!) {
+  setTeacherCourses(kaid: $kaid, teacherCourses: $courses) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

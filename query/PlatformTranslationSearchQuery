@@ -1,0 +1,32 @@
+query PlatformTranslationSearchQuery($query: String!, $type: QueryType!) {
+  platformStringSearch(query: $query, type: $type) {
+    results {
+      snapshotId
+      filename
+      entry {
+        msgKey
+        msgId
+        msgContext
+        occurrences {
+          file
+          __typename
+        }
+        timestamp
+        __typename
+      }
+      translations {
+        msgStr
+        approved
+        crowdinLocale
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,15 @@
+query getAssessmentItemForPreviewPage($input: AssessmentItemInput!) {
+  assessmentItem(input: $input) {
+    item {
+      id
+      itemData
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

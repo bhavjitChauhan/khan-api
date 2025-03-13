@@ -11,6 +11,7 @@ query getAccountSettings($targetKaid: String) {
     id
     isChild
     isParent
+    hasUserOptedOutFromABTesting
     tosForFormalTeacherStatus
     affiliationCountryCode
     schoolAffiliation {

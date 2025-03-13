@@ -1,0 +1,10 @@
+mutation devadminDeleteAssessmentConfig($assessmentSlug: String!) {
+  deleteInterimAssessment(assessmentSlug: $assessmentSlug) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

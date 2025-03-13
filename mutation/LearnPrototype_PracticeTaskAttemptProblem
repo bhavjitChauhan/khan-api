@@ -6,7 +6,7 @@ mutation LearnPrototype_PracticeTaskAttemptProblem($input: AttemptProblemInput!)
         __typename
       }
       updatedTask {
-        ...practiceTaskFields
+        ...prototypePracticeTaskFields
         __typename
       }
       actionResults {
@@ -35,14 +35,6 @@ mutation LearnPrototype_PracticeTaskAttemptProblem($input: AttemptProblemInput!)
   }
 }
 
-fragment exerciseTaskAttemptHistoryFields on TaskProblemAttempt {
-  correct
-  timeDone
-  seenHint
-  itemId
-  __typename
-}
-
 fragment exerciseTaskExerciseFields on Exercise {
   id
   contentKind
@@ -62,6 +54,11 @@ fragment exerciseTaskExerciseFields on Exercise {
     ...relatedContentFields
     __typename
   }
+  parentTopic {
+    id
+    domainSlug
+    __typename
+  }
   __typename
 }
 
@@ -76,7 +73,7 @@ fragment exerciseTaskUserExerciseEntityFields on UserExercise {
   __typename
 }
 
-fragment practiceTaskFields on PracticeTask {
+fragment prototypePracticeTaskFields on PracticeTask {
   id
   key
   exerciseLength
@@ -86,7 +83,7 @@ fragment practiceTaskFields on PracticeTask {
   reservedItemsCompleted
   isCompleted
   taskAttemptHistory {
-    ...exerciseTaskAttemptHistoryFields
+    ...taskAttemptHistoryFields
     __typename
   }
   __typename
@@ -103,5 +100,13 @@ fragment relatedContentFields on LearnableContent {
     translatedYoutubeId
     __typename
   }
+  __typename
+}
+
+fragment taskAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  timeDone
+  seenHint
+  itemId
   __typename
 }

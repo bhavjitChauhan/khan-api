@@ -1,5 +1,6 @@
-mutation SetAIGuideInteractionReaction($interactionId: ID!, $reaction: String, $note: String, $rewrittenResponse: String, $rating: Int, $sentiment: String) {
+mutation SetAIGuideInteractionReaction($threadId: ID!, $interactionId: ID!, $reaction: String, $note: String, $rewrittenResponse: String, $rating: Int, $sentiment: String) {
   setAIGuideInteractionReaction(
+    threadId: $threadId
     interactionId: $interactionId
     reaction: $reaction
     note: $note

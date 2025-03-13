@@ -29,6 +29,21 @@ query guideTranscript($transcriptId: String!) {
       traceID
       __typename
     }
+    blooketQuestionSet {
+      id
+      title
+      description
+      questions {
+        text
+        answers {
+          text
+          isCorrect
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
     coeditingDocument {
       id
       snapshots {

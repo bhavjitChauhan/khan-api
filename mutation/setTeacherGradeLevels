@@ -1,0 +1,9 @@
+mutation setTeacherGradeLevels($kaid: String!, $gradeLevels: [TeacherGradeLevel!]!) {
+  setTeacherGradeLevels(kaid: $kaid, teacherGradeLevels: $gradeLevels) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,7 @@
+query getTeacherCourses($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    teacherCourses
+    __typename
+  }
+}

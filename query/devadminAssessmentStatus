@@ -1,6 +1,11 @@
 query devadminAssessmentStatus($kaid: String!, $assessmentSlug: String!) {
+  actor: user {
+    id
+    __typename
+  }
   user(kaid: $kaid) {
     id
+    nickname
     assessmentData {
       assessmentStatus(assessmentSlug: $assessmentSlug) {
         status

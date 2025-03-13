@@ -1,5 +1,5 @@
-mutation deleteClassroomMutation($classroomId: String!) {
-  deleteClassroom(classroomId: $classroomId) {
+mutation deleteClassroomMutation($classroomDescriptor: String!) {
+  deleteClassroom(descriptor: $classroomDescriptor) {
     error {
       code
       __typename

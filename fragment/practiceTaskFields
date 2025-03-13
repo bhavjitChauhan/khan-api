@@ -1,14 +1,37 @@
 fragment practiceTaskFields on PracticeTask {
   id
   key
-  exerciseLength
-  taskType
+  bonusReservedItems
+  bonusReservedItemsCompleted
+  bonusTaskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  canRestart
+  completionCriteria {
+    name
+    __typename
+  }
   contentKey
+  exerciseLength
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
   reservedItems
   reservedItemsCompleted
-  isCompleted
+  slug
   taskAttemptHistory {
-    ...exerciseTaskAttemptHistoryFields
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  timeEstimate {
+    lowerBound
+    upperBound
     __typename
   }
   __typename

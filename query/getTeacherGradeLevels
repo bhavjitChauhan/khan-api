@@ -1,0 +1,7 @@
+query getTeacherGradeLevels($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    teacherGradeLevels
+    __typename
+  }
+}

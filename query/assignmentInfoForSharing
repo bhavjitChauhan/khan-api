@@ -1,0 +1,17 @@
+query assignmentInfoForSharing($assignmentID: String!) {
+  user {
+    id
+    assignmentByThisUser(id: $assignmentID) {
+      id
+      classroom {
+        cacheId
+        id
+        name
+        signupCode
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

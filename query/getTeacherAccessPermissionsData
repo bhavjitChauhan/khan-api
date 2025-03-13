@@ -12,6 +12,12 @@ query getTeacherAccessPermissionsData {
     isKmapStudent
     isK4dStudent
     hasAccessToAIGuideDistrictClassroomTeacher
+    classrooms {
+      id
+      cacheId
+      isK4dClassroom
+      __typename
+    }
     __typename
   }
 }

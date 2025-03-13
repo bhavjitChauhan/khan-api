@@ -53,6 +53,7 @@ query districts($filter: String!, $excludeTeacherDirected: Boolean!) {
     khanmigoStart
     khanmigoEnd
     hasAssessments
+    researchOptOut
     __typename
   }
 }

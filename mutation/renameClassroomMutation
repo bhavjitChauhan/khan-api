@@ -1,0 +1,16 @@
+mutation renameClassroomMutation($classroomDescriptor: String!, $name: String!) {
+  renameClassroom(descriptor: $classroomDescriptor, name: $name) {
+    classroom {
+      id
+      descriptor
+      cacheId
+      name
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

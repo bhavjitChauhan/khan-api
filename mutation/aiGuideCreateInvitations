@@ -1,0 +1,11 @@
+mutation aiGuideCreateInvitations($input: AIGuideCreateInvitationsInput!) {
+  aiGuideCreateInvitations(input: $input) {
+    invitations
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

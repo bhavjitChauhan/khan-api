@@ -5,6 +5,7 @@ query getCoeditingDocument($documentID: String!) {
     threadId
     configName
     title
+    persona
     latestSnapshot {
       id
       text {

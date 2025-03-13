@@ -1,0 +1,9 @@
+mutation writingCoachArchiveAssignments($assignmentIds: [ID]!) {
+  archiveAssignments(ids: $assignmentIds) {
+    assignments {
+      id
+      __typename
+    }
+    __typename
+  }
+}

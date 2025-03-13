@@ -1,0 +1,14 @@
+mutation optOutCoach($kaid: String) {
+  userOptOutOfABTesting(kaid: $kaid) {
+    user {
+      id
+      kaid
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

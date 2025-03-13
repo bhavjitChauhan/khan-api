@@ -1,0 +1,30 @@
+query ParentOverviewByCourseForChildReport($filters: ParentOverviewReportFilters!, $childKaid: String!) {
+  parentOverviewByCourseForChildReport(filters: $filters, childKaid: $childKaid) {
+    dateInfo {
+      lastUpdatedDate
+      from
+      upTo
+      __typename
+    }
+    rows {
+      course {
+        id
+        translatedTitle
+        __typename
+      }
+      info {
+        minutes
+        workedOn
+        leveledUp
+        leveledToProficient
+        attempted
+        familiar
+        proficient
+        mastered
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
