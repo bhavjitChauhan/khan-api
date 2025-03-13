@@ -1,0 +1,80 @@
+query getClassroomStruggleStats($classroomDescriptor: String!) {
+  getClassroomStruggleStats(classroomDescriptor: $classroomDescriptor) {
+    classroomStruggleStats {
+      skillsByStudentsWhoHaveWorkedOnSkill {
+        skillID
+        value
+        __typename
+      }
+      skillsWithMostProblemAttempts {
+        skillID
+        value
+        __typename
+      }
+      skillsWithMostCorrectAnswers {
+        skillID
+        value
+        __typename
+      }
+      skillsWithWorstCorrectPerAttemptRatio {
+        skillID
+        value
+        total
+        __typename
+      }
+      skillsWithMostTaskRestarts {
+        skillID
+        value
+        __typename
+      }
+      skillsWithHighestSkipRate {
+        skillID
+        value
+        __typename
+      }
+      skillsWithMostStudentsLast3AttemptIncorrect {
+        skillID
+        value
+        __typename
+      }
+      skillsWithMostStudentsLast5AttemptIncorrect {
+        skillID
+        value
+        __typename
+      }
+      skillsWithMostStudentsAtLeast3AttemptIncorrectInLast7 {
+        skillID
+        value
+        __typename
+      }
+      skillsWithMostStudentsAtLeast3AttemptIncorrectInLast7Twice {
+        skillID
+        value
+        __typename
+      }
+      skillsWithMostStudentsLastTaskAtAttempted {
+        skillID
+        value
+        __typename
+      }
+      skillsWithMostStudentsLast2TasksAtAttempted {
+        skillID
+        value
+        __typename
+      }
+      skillsWithMostStudentsLast3TasksAtAttempted {
+        skillID
+        value
+        __typename
+      }
+      __typename
+    }
+    skills {
+      skillID
+      skillTitle
+      skillUrl
+      __typename
+    }
+    __typename
+  }
+}

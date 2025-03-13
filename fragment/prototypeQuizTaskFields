@@ -1,0 +1,12 @@
+fragment prototypeQuizTaskFields on TopicQuizTask {
+  id
+  key
+  taskType
+  contentKey
+  isCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  __typename
+}

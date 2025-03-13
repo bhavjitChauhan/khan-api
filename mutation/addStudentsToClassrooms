@@ -5,6 +5,10 @@ mutation addStudentsToClassrooms($kaids: [ID!]!, $classroomIds: [ID!]!) {
       kaid
       __typename
     }
+    error {
+      code
+      __typename
+    }
     __typename
   }
 }

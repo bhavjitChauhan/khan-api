@@ -239,6 +239,10 @@ export default {
       kaid
       __typename
     }
+    error {
+      code
+      __typename
+    }
     __typename
   }
 }`,
@@ -282,7 +286,7 @@ fragment AssignmentInfoFragment on Assignment {
   id
   contents {
     id
-    title
+    title: translatedTitle
     kind
     __typename
   }
@@ -290,6 +294,7 @@ fragment AssignmentInfoFragment on Assignment {
     id
     cacheId
     name
+    isK4dClassroom
     __typename
   }
   students {
@@ -326,43 +331,37 @@ fragment AssignmentInfoFragment on Assignment {
         ...userExerciseFields
         __typename
       }
-      newTask {
-        cards {
-          done
-          cardType
-          ... on ProblemCard {
-            exerciseName
-            problemType
-            __typename
-          }
+      updatedTask {
+        ... on PracticeTask {
+          ...practiceTaskFields
           __typename
         }
-        includeSkipButton
+        ... on MasteryChallengeTask {
+          ...masteryChallengeTaskFields
+          __typename
+        }
+        ... on SubjectChallengeTask {
+          ...courseChallengeTaskFields
+          __typename
+        }
+        ... on TopicQuizTask {
+          ...quizTaskFields
+          __typename
+        }
+        ... on TopicUnitTestTask {
+          ...unitTestTaskFields
+          __typename
+        }
+        __typename
+      }
+      newTask {
+        cards {
+          ...problemCardFields
+          __typename
+        }
         task {
-          id
-          key
-          pointBounty
-          pointsEarned
-          taskType
-          completionCriteria {
-            name
-            __typename
-          }
           ... on PracticeTask {
-            promotionCriteria {
-              name
-              value
-              __typename
-            }
-            reservedItems
-            reservedItemsCompleted
-            taskAttemptHistory {
-              correct
-              timeDone
-              seenHint
-              itemId
-              __typename
-            }
+            ...practiceTaskFields
             __typename
           }
           __typename
@@ -416,6 +415,181 @@ fragment AssignmentInfoFragment on Assignment {
     }
     __typename
   }
+}
+
+fragment courseChallengeTaskFields on SubjectChallengeTask {
+  id
+  key
+  completionCriteria {
+    name
+    __typename
+  }
+  contentKey
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}
+
+fragment masteryChallengeTaskFields on MasteryChallengeTask {
+  id
+  key
+  completionCriteria {
+    name
+    __typename
+  }
+  expirationTime
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}
+
+fragment practiceTaskFields on PracticeTask {
+  id
+  key
+  bonusReservedItems
+  bonusReservedItemsCompleted
+  bonusTaskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  canRestart
+  completionCriteria {
+    name
+    __typename
+  }
+  contentKey
+  exerciseLength
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  slug
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  timeEstimate {
+    lowerBound
+    upperBound
+    __typename
+  }
+  __typename
+}
+
+fragment problemCardFields on ProblemCard {
+  cardType
+  done
+  exerciseName
+  problemType
+  __typename
+}
+
+fragment problemTypeFields on ProblemType {
+  items {
+    id
+    live
+    sha
+    __typename
+  }
+  name
+  relatedVideos
+  __typename
+}
+
+fragment promotionCriteriaFields on PromotionCriteria {
+  name
+  value
+  __typename
+}
+
+fragment quizTaskFields on TopicQuizTask {
+  id
+  key
+  canRestart
+  completionCriteria {
+    name
+    __typename
+  }
+  contentKey
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}
+
+fragment taskAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  timeDone
+  seenHint
+  itemId
+  __typename
+}
+
+fragment unitTestTaskFields on TopicUnitTestTask {
+  id
+  key
+  canRestart
+  completionCriteria {
+    name
+    __typename
+  }
+  contentKey
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
 }
 
 fragment userExerciseFields on UserExercise {
@@ -483,25 +657,11 @@ fragment userExerciseFields on UserExercise {
       __typename
     }
     problemTypes {
-      items {
-        id
-        live
-        sha
-        __typename
-      }
-      name
-      relatedVideos
+      ...problemTypeFields
       __typename
     }
     translatedProblemTypes {
-      items {
-        id
-        live
-        sha
-        __typename
-      }
-      name
-      relatedVideos
+      ...problemTypeFields
       __typename
     }
     __typename
@@ -3690,7 +3850,7 @@ fragment AssignmentInfoFragment on Assignment {
   id
   contents {
     id
-    title
+    title: translatedTitle
     kind
     __typename
   }
@@ -3698,6 +3858,7 @@ fragment AssignmentInfoFragment on Assignment {
     id
     cacheId
     name
+    isK4dClassroom
     __typename
   }
   students {
@@ -3738,10 +3899,11 @@ fragment AssignmentInfoFragment on Assignment {
     __typename
   }
 }`,
-  createClassroomMutation: `mutation createClassroomMutation($classroomName: String!, $subscribeToUpdates: Boolean) {
+  createClassroomMutation: `mutation createClassroomMutation($classroomName: String!, $subscribeToUpdates: Boolean, $isTestClassroom: Boolean) {
   createClassroom(
     classroomName: $classroomName
     subscribeToUpdates: $subscribeToUpdates
+    isTestClassroom: $isTestClassroom
   ) {
     classroom {
       id
@@ -4041,8 +4203,8 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }`,
-  deleteClassroomMutation: `mutation deleteClassroomMutation($classroomId: String!) {
-  deleteClassroom(classroomId: $classroomId) {
+  deleteClassroomMutation: `mutation deleteClassroomMutation($classroomDescriptor: String!) {
+  deleteClassroom(descriptor: $classroomDescriptor) {
     error {
       code
       __typename
@@ -4510,102 +4672,30 @@ fragment entry on TeamPageEntryForEditing {
       }
       userTask {
         cards {
-          done
-          cardType
-          ... on ProblemCard {
-            exerciseName
-            problemType
-            __typename
-          }
+          ...problemCardFields
           __typename
         }
-        includeSkipButton
         task {
-          id
-          key
-          pointBounty
-          pointsEarned
-          taskType
-          completionCriteria {
-            name
-            __typename
-          }
           ... on MasteryChallengeTask {
-            expirationTime
-            promotionCriteria {
-              name
-              value
-              __typename
-            }
-            reservedItems
-            reservedItemsCompleted
-            taskAttemptHistory {
-              correct
-              timeDone
-              seenHint
-              itemId
-              __typename
-            }
+            ...masteryChallengeTaskFields
             __typename
           }
           ... on SubjectChallengeTask {
-            contentKey
-            promotionCriteria {
-              name
-              value
-              __typename
-            }
-            reservedItems
-            reservedItemsCompleted
-            taskAttemptHistory {
-              correct
-              timeDone
-              seenHint
-              itemId
-              __typename
-            }
+            ...courseChallengeTaskFields
             __typename
           }
           ... on TopicQuizTask {
-            contentKey
-            promotionCriteria {
-              name
-              value
-              __typename
-            }
-            reservedItems
-            reservedItemsCompleted
-            taskAttemptHistory {
-              correct
-              timeDone
-              seenHint
-              itemId
-              __typename
-            }
+            ...quizTaskFields
             __typename
           }
           ... on TopicUnitTestTask {
-            contentKey
-            promotionCriteria {
-              name
-              value
-              __typename
-            }
-            reservedItems
-            reservedItemsCompleted
-            taskAttemptHistory {
-              correct
-              timeDone
-              seenHint
-              itemId
-              __typename
-            }
+            ...unitTestTaskFields
             __typename
           }
           __typename
         }
         userExercises {
-          ...exerciseTaskUserExerciseFields
+          ...userExerciseFields
           __typename
         }
         __typename
@@ -4616,123 +4706,140 @@ fragment entry on TeamPageEntryForEditing {
   }
 }
 
-fragment exerciseTaskUserExerciseFields on UserExercise {
-  exerciseModel: exercise {
-    id
-    assessmentItemCount: numAssessmentItems
-    displayName
-    isQuiz
-    isSkillCheck
+fragment courseChallengeTaskFields on SubjectChallengeTask {
+  id
+  key
+  completionCriteria {
     name
-    nodeSlug
-    progressKey
-    translatedDisplayName
-    relatedContent {
-      id
-      contentKind
-      kind
-      thumbnailUrl
-      translatedTitle
-      urlWithinCurationNode
-      urlWithinClosestAncestor(ancestorIds: $ancestorIds)
-      topicPaths {
-        path {
-          id
-          kind
-          slug
-          __typename
-        }
-        __typename
-      }
-      ... on Article {
-        kaUrl
-        nodeSlug
-        relativeUrl
-        slug
-        __typename
-      }
-      ... on Video {
-        duration
-        imageUrl
-        kaUrl
-        nodeSlug
-        relativeUrl
-        slug
-        translatedYoutubeId
-        __typename
-      }
-      __typename
-    }
-    relatedVideos {
-      contentKind
-      duration
-      id
-      imageUrl
-      kaUrl
-      kind
-      nodeSlug
-      progressKey
-      relativeUrl
-      slug
-      thumbnailUrl
-      translatedDescription
-      translatedTitle
-      translatedYoutubeId
-      __typename
-    }
-    problemTypes {
-      items {
-        id
-        live
-        sha
-        __typename
-      }
-      name
-      relatedVideos
-      __typename
-    }
-    translatedProblemTypes {
-      items {
-        id
-        live
-        sha
-        __typename
-      }
-      name
-      relatedVideos
-      __typename
-    }
     __typename
   }
-  exercise: exerciseName
-  fpmMasteryLevel
-  lastAttemptNumber
-  lastCountHints
-  lastDone
-  lastMasteryUpdate
-  longestStreak
-  maximumExerciseProgressDt: maximumExerciseProgressDate
-  streak
-  totalCorrect
-  totalDone
+  contentKey
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
   __typename
-}`,
-  getOrCreatePracticeTask: `mutation getOrCreatePracticeTask($input: GetOrCreatePracticeTaskInput!, $ancestorIds: [String!]!) {
-  getOrCreatePracticeTask(input: $input) {
-    result {
-      error {
-        code
-        debugMessage
-        __typename
-      }
-      userTask {
-        ...userTaskFields
-        __typename
-      }
-      __typename
-    }
+}
+
+fragment masteryChallengeTaskFields on MasteryChallengeTask {
+  id
+  key
+  completionCriteria {
+    name
     __typename
   }
+  expirationTime
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}
+
+fragment problemCardFields on ProblemCard {
+  cardType
+  done
+  exerciseName
+  problemType
+  __typename
+}
+
+fragment problemTypeFields on ProblemType {
+  items {
+    id
+    live
+    sha
+    __typename
+  }
+  name
+  relatedVideos
+  __typename
+}
+
+fragment promotionCriteriaFields on PromotionCriteria {
+  name
+  value
+  __typename
+}
+
+fragment quizTaskFields on TopicQuizTask {
+  id
+  key
+  canRestart
+  completionCriteria {
+    name
+    __typename
+  }
+  contentKey
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}
+
+fragment taskAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  timeDone
+  seenHint
+  itemId
+  __typename
+}
+
+fragment unitTestTaskFields on TopicUnitTestTask {
+  id
+  key
+  canRestart
+  completionCriteria {
+    name
+    __typename
+  }
+  contentKey
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
 }
 
 fragment userExerciseFields on UserExercise {
@@ -4800,25 +4907,11 @@ fragment userExerciseFields on UserExercise {
       __typename
     }
     problemTypes {
-      items {
-        id
-        live
-        sha
-        __typename
-      }
-      name
-      relatedVideos
+      ...problemTypeFields
       __typename
     }
     translatedProblemTypes {
-      items {
-        id
-        live
-        sha
-        __typename
-      }
-      name
-      relatedVideos
+      ...problemTypeFields
       __typename
     }
     __typename
@@ -4835,58 +4928,194 @@ fragment userExerciseFields on UserExercise {
   totalCorrect
   totalDone
   __typename
+}`,
+  getOrCreatePracticeTask: `mutation getOrCreatePracticeTask($input: GetOrCreatePracticeTaskInput!, $ancestorIds: [String!]!) {
+  getOrCreatePracticeTask(input: $input) {
+    result {
+      error {
+        code
+        debugMessage
+        __typename
+      }
+      userTask {
+        cards {
+          ...problemCardFields
+          __typename
+        }
+        task {
+          ...practiceTaskFields
+          __typename
+        }
+        userExercises {
+          ...userExerciseFields
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
 }
 
-fragment userTaskFields on PracticeUserTask {
-  cards {
-    done
-    cardType
-    ... on ProblemCard {
-      exerciseName
-      problemType
-      __typename
-    }
+fragment practiceTaskFields on PracticeTask {
+  id
+  key
+  bonusReservedItems
+  bonusReservedItemsCompleted
+  bonusTaskAttemptHistory {
+    ...taskAttemptHistoryFields
     __typename
   }
-  includeSkipButton
-  task {
-    contentKey
-    exerciseLength
+  canRestart
+  completionCriteria {
+    name
+    __typename
+  }
+  contentKey
+  exerciseLength
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  slug
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  timeEstimate {
+    lowerBound
+    upperBound
+    __typename
+  }
+  __typename
+}
+
+fragment problemCardFields on ProblemCard {
+  cardType
+  done
+  exerciseName
+  problemType
+  __typename
+}
+
+fragment problemTypeFields on ProblemType {
+  items {
     id
-    key
-    pointBounty
-    pointsEarned
-    slug
-    taskType
-    timeEstimate {
-      lowerBound
-      upperBound
+    live
+    sha
+    __typename
+  }
+  name
+  relatedVideos
+  __typename
+}
+
+fragment promotionCriteriaFields on PromotionCriteria {
+  name
+  value
+  __typename
+}
+
+fragment taskAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  timeDone
+  seenHint
+  itemId
+  __typename
+}
+
+fragment userExerciseFields on UserExercise {
+  exerciseModel: exercise {
+    id
+    assessmentItemCount: numAssessmentItems
+    displayName
+    isQuiz
+    isSkillCheck
+    name
+    nodeSlug
+    progressKey
+    translatedDisplayName
+    relatedContent {
+      id
+      contentKind
+      kind
+      thumbnailUrl
+      translatedTitle
+      urlWithinCurationNode
+      urlWithinClosestAncestor(ancestorIds: $ancestorIds)
+      topicPaths {
+        path {
+          id
+          kind
+          slug
+          __typename
+        }
+        __typename
+      }
+      ... on Article {
+        kaUrl
+        nodeSlug
+        relativeUrl
+        slug
+        __typename
+      }
+      ... on Video {
+        duration
+        imageUrl
+        kaUrl
+        nodeSlug
+        relativeUrl
+        slug
+        translatedYoutubeId
+        __typename
+      }
       __typename
     }
-    completionCriteria {
-      name
+    relatedVideos {
+      contentKind
+      duration
+      id
+      imageUrl
+      kaUrl
+      kind
+      nodeSlug
+      progressKey
+      relativeUrl
+      slug
+      thumbnailUrl
+      translatedDescription
+      translatedTitle
+      translatedYoutubeId
       __typename
     }
-    promotionCriteria {
-      name
-      value
+    problemTypes {
+      ...problemTypeFields
       __typename
     }
-    reservedItems
-    reservedItemsCompleted
-    taskAttemptHistory {
-      correct
-      timeDone
-      seenHint
-      itemId
+    translatedProblemTypes {
+      ...problemTypeFields
       __typename
     }
     __typename
   }
-  userExercises {
-    ...userExerciseFields
-    __typename
-  }
+  exercise: exerciseName
+  fpmMasteryLevel
+  lastAttemptNumber
+  lastCountHints
+  lastDone
+  lastMasteryUpdate
+  longestStreak
+  maximumExerciseProgressDt: maximumExerciseProgressDate
+  streak
+  totalCorrect
+  totalDone
   __typename
 }`,
   GetOrCreateReadAloud: `mutation GetOrCreateReadAloud($assessmentItemID: ID!, $exerciseID: ID!, $perseusSerializedState: String) {
@@ -6335,6 +6564,7 @@ fragment PublishedCourseRevisionFragment on CourseRevision {
   contentId
   kaLocale
   title
+  slug
   importable
   allowedExerciseTypes
   hasUnpublishedChanges
@@ -7213,7 +7443,7 @@ fragment AssignmentInfoFragment on Assignment {
   id
   contents {
     id
-    title
+    title: translatedTitle
     kind
     __typename
   }
@@ -7221,6 +7451,7 @@ fragment AssignmentInfoFragment on Assignment {
     id
     cacheId
     name
+    isK4dClassroom
     __typename
   }
   students {
@@ -7809,8 +8040,9 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }`,
-  SetAIGuideInteractionReaction: `mutation SetAIGuideInteractionReaction($interactionId: ID!, $reaction: String, $note: String, $rewrittenResponse: String, $rating: Int, $sentiment: String) {
+  SetAIGuideInteractionReaction: `mutation SetAIGuideInteractionReaction($threadId: ID!, $interactionId: ID!, $reaction: String, $note: String, $rewrittenResponse: String, $rating: Int, $sentiment: String) {
   setAIGuideInteractionReaction(
+    threadId: $threadId
     interactionId: $interactionId
     reaction: $reaction
     note: $note
@@ -8796,7 +9028,7 @@ fragment AssignmentInfoFragment on Assignment {
   id
   contents {
     id
-    title
+    title: translatedTitle
     kind
     __typename
   }
@@ -8804,6 +9036,7 @@ fragment AssignmentInfoFragment on Assignment {
     id
     cacheId
     name
+    isK4dClassroom
     __typename
   }
   students {
@@ -11059,7 +11292,7 @@ fragment ChallengeRevision on ChallengeRevision {
     __typename
   }
 }`,
-  coeditingAutosave: `mutation coeditingAutosave($configName: String!, $threadId: String!, $title: String!, $prefix: String!, $selection: String!, $suffix: String!) {
+  coeditingAutosave: `mutation coeditingAutosave($configName: String!, $threadId: String!, $title: String!, $prefix: String!, $selection: String!, $suffix: String!, $persona: AIGuidePersona!) {
   saveCoeditingSnapshot(
     configName: $configName
     threadId: $threadId
@@ -11067,6 +11300,7 @@ fragment ChallengeRevision on ChallengeRevision {
     prefix: $prefix
     selection: $selection
     suffix: $suffix
+    persona: $persona
   ) {
     error {
       code
@@ -11736,6 +11970,7 @@ fragment TaskFragment on AssessmentTask {
         ...TaskFragment
         __typename
       }
+      status
       __typename
     }
     error {
@@ -12172,15 +12407,16 @@ fragment TaskFragment on AssessmentTask {
     __typename
   }
 }`,
-  CompleteEYTQuestion: `mutation CompleteEYTQuestion($assessmentId: String!, $stepId: String!, $response: String!, $updatedResponse: String, $correct: Boolean!, $updatedCorrect: Boolean, $conversationThreadID: String!, $hasKhanmigoError: Boolean, $userAgent: String!, $reasonEYTEnded: ReasonEYTEnded!) {
+  CompleteEYTQuestion: `mutation CompleteEYTQuestion($assessmentId: String!, $stepId: String!, $response: String!, $updatedResponse: String, $correct: Boolean!, $updatedCorrect: Boolean, $conversationThreadID: String!, $hasKhanmigoError: Boolean, $userAgent: String!, $reasonEYTEnded: ReasonEYTEnded!, $userReportedKhanmigoIssue: String) {
   complete: completeEYTQuestion(
-    input: {assessmentId: $assessmentId, stepId: $stepId, response: $response, updatedResponse: $updatedResponse, correct: $correct, updatedCorrect: $updatedCorrect, conversationThreadID: $conversationThreadID, hasKhanmigoError: $hasKhanmigoError, userAgent: $userAgent, reasonEYTEnded: $reasonEYTEnded}
+    input: {assessmentId: $assessmentId, stepId: $stepId, response: $response, updatedResponse: $updatedResponse, correct: $correct, updatedCorrect: $updatedCorrect, conversationThreadID: $conversationThreadID, hasKhanmigoError: $hasKhanmigoError, userAgent: $userAgent, reasonEYTEnded: $reasonEYTEnded, userReportedKhanmigoIssueDescription: $userReportedKhanmigoIssue}
   ) {
     result {
       task {
         ...TaskFragment
         __typename
       }
+      status
       __typename
     }
     error {
@@ -12318,7 +12554,7 @@ fragment TaskFragment on AssessmentTask {
       }
       userTask {
         task {
-          ...practiceTaskFields
+          ...prototypePracticeTaskFields
           __typename
         }
         userExercises {
@@ -12331,14 +12567,6 @@ fragment TaskFragment on AssessmentTask {
     }
     __typename
   }
-}
-
-fragment exerciseTaskAttemptHistoryFields on TaskProblemAttempt {
-  correct
-  timeDone
-  seenHint
-  itemId
-  __typename
 }
 
 fragment exerciseTaskExerciseFields on Exercise {
@@ -12360,6 +12588,11 @@ fragment exerciseTaskExerciseFields on Exercise {
     ...relatedContentFields
     __typename
   }
+  parentTopic {
+    id
+    domainSlug
+    __typename
+  }
   __typename
 }
 
@@ -12374,7 +12607,7 @@ fragment exerciseTaskUserExerciseEntityFields on UserExercise {
   __typename
 }
 
-fragment practiceTaskFields on PracticeTask {
+fragment prototypePracticeTaskFields on PracticeTask {
   id
   key
   exerciseLength
@@ -12384,7 +12617,7 @@ fragment practiceTaskFields on PracticeTask {
   reservedItemsCompleted
   isCompleted
   taskAttemptHistory {
-    ...exerciseTaskAttemptHistoryFields
+    ...taskAttemptHistoryFields
     __typename
   }
   __typename
@@ -12402,6 +12635,14 @@ fragment relatedContentFields on LearnableContent {
     __typename
   }
   __typename
+}
+
+fragment taskAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  timeDone
+  seenHint
+  itemId
+  __typename
 }`,
   LearnPrototype_PracticeTaskAttemptProblem: `mutation LearnPrototype_PracticeTaskAttemptProblem($input: AttemptProblemInput!) {
   attemptProblem(attempt: $input) {
@@ -12411,7 +12652,7 @@ fragment relatedContentFields on LearnableContent {
         __typename
       }
       updatedTask {
-        ...practiceTaskFields
+        ...prototypePracticeTaskFields
         __typename
       }
       actionResults {
@@ -12440,14 +12681,6 @@ fragment relatedContentFields on LearnableContent {
   }
 }
 
-fragment exerciseTaskAttemptHistoryFields on TaskProblemAttempt {
-  correct
-  timeDone
-  seenHint
-  itemId
-  __typename
-}
-
 fragment exerciseTaskExerciseFields on Exercise {
   id
   contentKind
@@ -12467,6 +12700,11 @@ fragment exerciseTaskExerciseFields on Exercise {
     ...relatedContentFields
     __typename
   }
+  parentTopic {
+    id
+    domainSlug
+    __typename
+  }
   __typename
 }
 
@@ -12481,7 +12719,7 @@ fragment exerciseTaskUserExerciseEntityFields on UserExercise {
   __typename
 }
 
-fragment practiceTaskFields on PracticeTask {
+fragment prototypePracticeTaskFields on PracticeTask {
   id
   key
   exerciseLength
@@ -12491,7 +12729,7 @@ fragment practiceTaskFields on PracticeTask {
   reservedItemsCompleted
   isCompleted
   taskAttemptHistory {
-    ...exerciseTaskAttemptHistoryFields
+    ...taskAttemptHistoryFields
     __typename
   }
   __typename
@@ -12508,6 +12746,14 @@ fragment relatedContentFields on LearnableContent {
     translatedYoutubeId
     __typename
   }
+  __typename
+}
+
+fragment taskAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  timeDone
+  seenHint
+  itemId
   __typename
 }`,
   createTrialDistrictAndSchool: `mutation createTrialDistrictAndSchool($districtName: String!, $schoolName: String!, $kaLocale: String!, $countryCode: String!, $region: String!) {
@@ -12530,7 +12776,7 @@ fragment relatedContentFields on LearnableContent {
     __typename
   }
 }`,
-  createBlooket: `mutation createBlooket($threadId: String!, $title: String!, $description: String!, $questions: JSONString!, $persona: AIGuidePersona) {
+  createBlooket: `mutation createBlooket($threadId: String!, $title: String!, $description: String!, $questions: JSONString!, $persona: AIGuidePersona!) {
   createBlooketQuestionSet(
     threadId: $threadId
     title: $title
@@ -12759,13 +13005,6 @@ fragment relatedContentFields on LearnableContent {
   ) {
     assignments {
       id
-      classroom {
-        id
-        cacheId
-        name
-        signupCode
-        __typename
-      }
       __typename
     }
     __typename
@@ -12825,6 +13064,214 @@ fragment relatedContentFields on LearnableContent {
     error {
       code
       debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  activateWritingCoach: `mutation activateWritingCoach($role: WritingCoachRole!) {
+  activateWritingCoach(role: $role) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  aiGuideCreateInvitations: `mutation aiGuideCreateInvitations($input: AIGuideCreateInvitationsInput!) {
+  aiGuideCreateInvitations(input: $input) {
+    invitations
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  deleteCleverLibraryAndGrassrootsClassroomMutation: `mutation deleteCleverLibraryAndGrassrootsClassroomMutation($classroomDescriptor: String!) {
+  deleteClassroom(descriptor: $classroomDescriptor) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  devadminDeleteAssessmentConfig: `mutation devadminDeleteAssessmentConfig($assessmentSlug: String!) {
+  deleteInterimAssessment(assessmentSlug: $assessmentSlug) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  loginWithPasswordAndRecoveryCodeMutation: `mutation loginWithPasswordAndRecoveryCodeMutation($identifier: String!, $password: String!, $twoFactorRecoveryCode: String!) {
+  loginWithPassword(
+    identifier: $identifier
+    password: $password
+    twoFactorRecoveryCode: $twoFactorRecoveryCode
+  ) {
+    user {
+      id
+      kaid
+      canAccessDistrictsHomepage
+      isTeacher
+      hasUnresolvedInvitations
+      preferredKaLocale {
+        id
+        kaLocale
+        status
+        __typename
+      }
+      __typename
+    }
+    isFirstLogin
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  loginWithPasswordAndTwoFactorCodeMutation: `mutation loginWithPasswordAndTwoFactorCodeMutation($identifier: String!, $password: String!, $twoFactorAuthCode: String!) {
+  loginWithPassword(
+    identifier: $identifier
+    password: $password
+    twoFactorAuthCode: $twoFactorAuthCode
+  ) {
+    user {
+      id
+      kaid
+      canAccessDistrictsHomepage
+      isTeacher
+      hasUnresolvedInvitations
+      preferredKaLocale {
+        id
+        kaLocale
+        status
+        __typename
+      }
+      __typename
+    }
+    isFirstLogin
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  optInCoach: `mutation optInCoach($kaid: String) {
+  clearUserOptOutOfABTesting(kaid: $kaid) {
+    user {
+      id
+      kaid
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  optOutCoach: `mutation optOutCoach($kaid: String) {
+  userOptOutOfABTesting(kaid: $kaid) {
+    user {
+      id
+      kaid
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  renameClassroomMutation: `mutation renameClassroomMutation($classroomDescriptor: String!, $name: String!) {
+  renameClassroom(descriptor: $classroomDescriptor, name: $name) {
+    classroom {
+      id
+      descriptor
+      cacheId
+      name
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  setHasFormalTeacherStatusFixed: `mutation setHasFormalTeacherStatusFixed($tosForFormalTeacherStatus: Boolean) {
+  setSettings(tosForFormalTeacherStatus: $tosForFormalTeacherStatus) {
+    user {
+      id
+      tosForFormalTeacherStatus
+      __typename
+    }
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  setParentHomeschoolStatus: `mutation setParentHomeschoolStatus($isHomeschoolParent: Boolean!) {
+  setParentHomeschoolStatus(isHomeschoolParent: $isHomeschoolParent) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  setTeacherCourses: `mutation setTeacherCourses($kaid: String!, $courses: [TeacherCourse!]!) {
+  setTeacherCourses(kaid: $kaid, teacherCourses: $courses) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  setTeacherGradeLevels: `mutation setTeacherGradeLevels($kaid: String!, $gradeLevels: [TeacherGradeLevel!]!) {
+  setTeacherGradeLevels(kaid: $kaid, teacherGradeLevels: $gradeLevels) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  updateEnableImageInput: `mutation updateEnableImageInput($districtID: String!, $enable: Boolean!) {
+  updateEnableImageInputForDistrict(districtID: $districtID, enable: $enable) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  updateWritingCoachAssignment: `mutation updateWritingCoachAssignment($assignmentId: ID!, $input: UpdateAssignmentInput!) {
+  updateAssignment(id: $assignmentId, assignment: $input) {
+    assignment {
+      id
+      __typename
+    }
+    __typename
+  }
+}`,
+  writingCoachArchiveAssignments: `mutation writingCoachArchiveAssignments($assignmentIds: [ID]!) {
+  archiveAssignments(ids: $assignmentIds) {
+    assignments {
+      id
       __typename
     }
     __typename

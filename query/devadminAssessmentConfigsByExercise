@@ -1,0 +1,9 @@
+query devadminAssessmentConfigsByExercise($exerciseId: String!) {
+  interimAssessmentsByExercise(exerciseId: $exerciseId) {
+    id
+    name
+    slug
+    enabled
+    __typename
+  }
+}

@@ -1,0 +1,5 @@
+fragment promotionCriteriaFields on PromotionCriteria {
+  name
+  value
+  __typename
+}

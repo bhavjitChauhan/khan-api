@@ -4,13 +4,6 @@ mutation createWritingCoachAssignments($classDescriptors: [String!]!, $qualified
   ) {
     assignments {
       id
-      classroom {
-        id
-        cacheId
-        name
-        signupCode
-        __typename
-      }
       __typename
     }
     __typename

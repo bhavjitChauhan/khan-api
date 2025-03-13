@@ -1,0 +1,9 @@
+mutation setParentHomeschoolStatus($isHomeschoolParent: Boolean!) {
+  setParentHomeschoolStatus(isHomeschoolParent: $isHomeschoolParent) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

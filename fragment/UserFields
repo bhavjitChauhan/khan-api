@@ -16,5 +16,11 @@ fragment UserFields on User {
     kaid
     __typename
   }
+  aiGuideAccessPlans {
+    id
+    isActive
+    enrollmentGroup
+    __typename
+  }
   __typename
 }

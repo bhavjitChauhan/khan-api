@@ -1,4 +1,4 @@
-mutation coeditingAutosave($configName: String!, $threadId: String!, $title: String!, $prefix: String!, $selection: String!, $suffix: String!) {
+mutation coeditingAutosave($configName: String!, $threadId: String!, $title: String!, $prefix: String!, $selection: String!, $suffix: String!, $persona: AIGuidePersona!) {
   saveCoeditingSnapshot(
     configName: $configName
     threadId: $threadId
@@ -6,6 +6,7 @@ mutation coeditingAutosave($configName: String!, $threadId: String!, $title: Str
     prefix: $prefix
     selection: $selection
     suffix: $suffix
+    persona: $persona
   ) {
     error {
       code

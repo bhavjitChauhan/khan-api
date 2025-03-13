@@ -1,0 +1,18 @@
+query userForAuthorization {
+  user {
+    id
+    birthMonthYear
+    hasAccessToAIGuideLearner
+    hasAccessToWritingCoachLearner
+    hasAccessToWritingCoachTeacher
+    isAIGuideEnabled
+    isCleverLibraryTeacher
+    isFormalTeacher
+    isK4dStudent
+    isK4dTeacher
+    isKmapStudent
+    isKmapTeacher
+    isTeacher
+    __typename
+  }
+}

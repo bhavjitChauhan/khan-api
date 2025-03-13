@@ -5,43 +5,37 @@ mutation attemptProblem($input: AttemptProblemInput!, $ancestorIds: [String!]!) 
         ...userExerciseFields
         __typename
       }
-      newTask {
-        cards {
-          done
-          cardType
-          ... on ProblemCard {
-            exerciseName
-            problemType
-            __typename
-          }
+      updatedTask {
+        ... on PracticeTask {
+          ...practiceTaskFields
           __typename
         }
-        includeSkipButton
+        ... on MasteryChallengeTask {
+          ...masteryChallengeTaskFields
+          __typename
+        }
+        ... on SubjectChallengeTask {
+          ...courseChallengeTaskFields
+          __typename
+        }
+        ... on TopicQuizTask {
+          ...quizTaskFields
+          __typename
+        }
+        ... on TopicUnitTestTask {
+          ...unitTestTaskFields
+          __typename
+        }
+        __typename
+      }
+      newTask {
+        cards {
+          ...problemCardFields
+          __typename
+        }
         task {
-          id
-          key
-          pointBounty
-          pointsEarned
-          taskType
-          completionCriteria {
-            name
-            __typename
-          }
           ... on PracticeTask {
-            promotionCriteria {
-              name
-              value
-              __typename
-            }
-            reservedItems
-            reservedItemsCompleted
-            taskAttemptHistory {
-              correct
-              timeDone
-              seenHint
-              itemId
-              __typename
-            }
+            ...practiceTaskFields
             __typename
           }
           __typename
@@ -95,6 +89,181 @@ mutation attemptProblem($input: AttemptProblemInput!, $ancestorIds: [String!]!) 
     }
     __typename
   }
+}
+
+fragment courseChallengeTaskFields on SubjectChallengeTask {
+  id
+  key
+  completionCriteria {
+    name
+    __typename
+  }
+  contentKey
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}
+
+fragment masteryChallengeTaskFields on MasteryChallengeTask {
+  id
+  key
+  completionCriteria {
+    name
+    __typename
+  }
+  expirationTime
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}
+
+fragment practiceTaskFields on PracticeTask {
+  id
+  key
+  bonusReservedItems
+  bonusReservedItemsCompleted
+  bonusTaskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  canRestart
+  completionCriteria {
+    name
+    __typename
+  }
+  contentKey
+  exerciseLength
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  slug
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  timeEstimate {
+    lowerBound
+    upperBound
+    __typename
+  }
+  __typename
+}
+
+fragment problemCardFields on ProblemCard {
+  cardType
+  done
+  exerciseName
+  problemType
+  __typename
+}
+
+fragment problemTypeFields on ProblemType {
+  items {
+    id
+    live
+    sha
+    __typename
+  }
+  name
+  relatedVideos
+  __typename
+}
+
+fragment promotionCriteriaFields on PromotionCriteria {
+  name
+  value
+  __typename
+}
+
+fragment quizTaskFields on TopicQuizTask {
+  id
+  key
+  canRestart
+  completionCriteria {
+    name
+    __typename
+  }
+  contentKey
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}
+
+fragment taskAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  timeDone
+  seenHint
+  itemId
+  __typename
+}
+
+fragment unitTestTaskFields on TopicUnitTestTask {
+  id
+  key
+  canRestart
+  completionCriteria {
+    name
+    __typename
+  }
+  contentKey
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
 }
 
 fragment userExerciseFields on UserExercise {
@@ -162,25 +331,11 @@ fragment userExerciseFields on UserExercise {
       __typename
     }
     problemTypes {
-      items {
-        id
-        live
-        sha
-        __typename
-      }
-      name
-      relatedVideos
+      ...problemTypeFields
       __typename
     }
     translatedProblemTypes {
-      items {
-        id
-        live
-        sha
-        __typename
-      }
-      name
-      relatedVideos
+      ...problemTypeFields
       __typename
     }
     __typename

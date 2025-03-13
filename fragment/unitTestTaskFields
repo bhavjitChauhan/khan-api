@@ -1,0 +1,25 @@
+fragment unitTestTaskFields on TopicUnitTestTask {
+  id
+  key
+  canRestart
+  completionCriteria {
+    name
+    __typename
+  }
+  contentKey
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}

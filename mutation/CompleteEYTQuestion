@@ -1,12 +1,13 @@
-mutation CompleteEYTQuestion($assessmentId: String!, $stepId: String!, $response: String!, $updatedResponse: String, $correct: Boolean!, $updatedCorrect: Boolean, $conversationThreadID: String!, $hasKhanmigoError: Boolean, $userAgent: String!, $reasonEYTEnded: ReasonEYTEnded!) {
+mutation CompleteEYTQuestion($assessmentId: String!, $stepId: String!, $response: String!, $updatedResponse: String, $correct: Boolean!, $updatedCorrect: Boolean, $conversationThreadID: String!, $hasKhanmigoError: Boolean, $userAgent: String!, $reasonEYTEnded: ReasonEYTEnded!, $userReportedKhanmigoIssue: String) {
   complete: completeEYTQuestion(
-    input: {assessmentId: $assessmentId, stepId: $stepId, response: $response, updatedResponse: $updatedResponse, correct: $correct, updatedCorrect: $updatedCorrect, conversationThreadID: $conversationThreadID, hasKhanmigoError: $hasKhanmigoError, userAgent: $userAgent, reasonEYTEnded: $reasonEYTEnded}
+    input: {assessmentId: $assessmentId, stepId: $stepId, response: $response, updatedResponse: $updatedResponse, correct: $correct, updatedCorrect: $updatedCorrect, conversationThreadID: $conversationThreadID, hasKhanmigoError: $hasKhanmigoError, userAgent: $userAgent, reasonEYTEnded: $reasonEYTEnded, userReportedKhanmigoIssueDescription: $userReportedKhanmigoIssue}
   ) {
     result {
       task {
         ...TaskFragment
         __typename
       }
+      status
       __typename
     }
     error {

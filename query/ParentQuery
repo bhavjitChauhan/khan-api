@@ -1,7 +1,6 @@
 query ParentQuery {
   user {
     id
-    nickname
     underAgeGatePendingApprovals {
       username
       daysUntilCutoff

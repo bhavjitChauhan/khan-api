@@ -1,4 +1,4 @@
-mutation createBlooket($threadId: String!, $title: String!, $description: String!, $questions: JSONString!, $persona: AIGuidePersona) {
+mutation createBlooket($threadId: String!, $title: String!, $description: String!, $questions: JSONString!, $persona: AIGuidePersona!) {
   createBlooketQuestionSet(
     threadId: $threadId
     title: $title

@@ -16,11 +16,95 @@ query getInitialDataForPrePhantomUser($exerciseId: ID!, $input: AssessmentItemIn
   }
   getDummyPracticeTaskForPrePhantomUser(exerciseId: $exerciseId) {
     userTask {
-      ...userTaskFields
+      cards {
+        ...problemCardFields
+        __typename
+      }
+      task {
+        ...practiceTaskFields
+        __typename
+      }
+      userExercises {
+        ...userExerciseFields
+        __typename
+      }
       __typename
     }
     __typename
   }
+}
+
+fragment practiceTaskFields on PracticeTask {
+  id
+  key
+  bonusReservedItems
+  bonusReservedItemsCompleted
+  bonusTaskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  canRestart
+  completionCriteria {
+    name
+    __typename
+  }
+  contentKey
+  exerciseLength
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  slug
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  timeEstimate {
+    lowerBound
+    upperBound
+    __typename
+  }
+  __typename
+}
+
+fragment problemCardFields on ProblemCard {
+  cardType
+  done
+  exerciseName
+  problemType
+  __typename
+}
+
+fragment problemTypeFields on ProblemType {
+  items {
+    id
+    live
+    sha
+    __typename
+  }
+  name
+  relatedVideos
+  __typename
+}
+
+fragment promotionCriteriaFields on PromotionCriteria {
+  name
+  value
+  __typename
+}
+
+fragment taskAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  timeDone
+  seenHint
+  itemId
+  __typename
 }
 
 fragment userExerciseFields on UserExercise {
@@ -88,25 +172,11 @@ fragment userExerciseFields on UserExercise {
       __typename
     }
     problemTypes {
-      items {
-        id
-        live
-        sha
-        __typename
-      }
-      name
-      relatedVideos
+      ...problemTypeFields
       __typename
     }
     translatedProblemTypes {
-      items {
-        id
-        live
-        sha
-        __typename
-      }
-      name
-      relatedVideos
+      ...problemTypeFields
       __typename
     }
     __typename
@@ -122,58 +192,5 @@ fragment userExerciseFields on UserExercise {
   streak
   totalCorrect
   totalDone
-  __typename
-}
-
-fragment userTaskFields on PracticeUserTask {
-  cards {
-    done
-    cardType
-    ... on ProblemCard {
-      exerciseName
-      problemType
-      __typename
-    }
-    __typename
-  }
-  includeSkipButton
-  task {
-    contentKey
-    exerciseLength
-    id
-    key
-    pointBounty
-    pointsEarned
-    slug
-    taskType
-    timeEstimate {
-      lowerBound
-      upperBound
-      __typename
-    }
-    completionCriteria {
-      name
-      __typename
-    }
-    promotionCriteria {
-      name
-      value
-      __typename
-    }
-    reservedItems
-    reservedItemsCompleted
-    taskAttemptHistory {
-      correct
-      timeDone
-      seenHint
-      itemId
-      __typename
-    }
-    __typename
-  }
-  userExercises {
-    ...userExerciseFields
-    __typename
-  }
   __typename
 }

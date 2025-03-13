@@ -983,6 +983,7 @@ fragment AssignmentCsvData on Assignment {
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
     cacheId
+    isK4dClassroom
     assignmentsPage(
       filters: $assignmentFilters
       orderBy: $orderBy
@@ -3857,6 +3858,7 @@ fragment CourseProgress on SubjectProgress {
     khanmigoStart
     khanmigoEnd
     hasAssessments
+    researchOptOut
     __typename
   }
 }`,
@@ -4851,6 +4853,7 @@ fragment UserFields on User {
     id
     isChild
     isParent
+    hasUserOptedOutFromABTesting
     tosForFormalTeacherStatus
     affiliationCountryCode
     schoolAffiliation {
@@ -5332,6 +5335,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
       id
       activatedAt
       rosterSource
+      primaryRole
       district {
         id
         name
@@ -5482,6 +5486,7 @@ fragment StudentField2 on StudentsPage {
       signupCode
       countStudents
       hasKADAiGuideEnrolledStudents
+      isK4dClassroom
       __typename
     }
     __typename
@@ -7068,11 +7073,95 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
   }
   getDummyPracticeTaskForPrePhantomUser(exerciseId: $exerciseId) {
     userTask {
-      ...userTaskFields
+      cards {
+        ...problemCardFields
+        __typename
+      }
+      task {
+        ...practiceTaskFields
+        __typename
+      }
+      userExercises {
+        ...userExerciseFields
+        __typename
+      }
       __typename
     }
     __typename
   }
+}
+
+fragment practiceTaskFields on PracticeTask {
+  id
+  key
+  bonusReservedItems
+  bonusReservedItemsCompleted
+  bonusTaskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  canRestart
+  completionCriteria {
+    name
+    __typename
+  }
+  contentKey
+  exerciseLength
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  slug
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  timeEstimate {
+    lowerBound
+    upperBound
+    __typename
+  }
+  __typename
+}
+
+fragment problemCardFields on ProblemCard {
+  cardType
+  done
+  exerciseName
+  problemType
+  __typename
+}
+
+fragment problemTypeFields on ProblemType {
+  items {
+    id
+    live
+    sha
+    __typename
+  }
+  name
+  relatedVideos
+  __typename
+}
+
+fragment promotionCriteriaFields on PromotionCriteria {
+  name
+  value
+  __typename
+}
+
+fragment taskAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  timeDone
+  seenHint
+  itemId
+  __typename
 }
 
 fragment userExerciseFields on UserExercise {
@@ -7140,25 +7229,11 @@ fragment userExerciseFields on UserExercise {
       __typename
     }
     problemTypes {
-      items {
-        id
-        live
-        sha
-        __typename
-      }
-      name
-      relatedVideos
+      ...problemTypeFields
       __typename
     }
     translatedProblemTypes {
-      items {
-        id
-        live
-        sha
-        __typename
-      }
-      name
-      relatedVideos
+      ...problemTypeFields
       __typename
     }
     __typename
@@ -7174,59 +7249,6 @@ fragment userExerciseFields on UserExercise {
   streak
   totalCorrect
   totalDone
-  __typename
-}
-
-fragment userTaskFields on PracticeUserTask {
-  cards {
-    done
-    cardType
-    ... on ProblemCard {
-      exerciseName
-      problemType
-      __typename
-    }
-    __typename
-  }
-  includeSkipButton
-  task {
-    contentKey
-    exerciseLength
-    id
-    key
-    pointBounty
-    pointsEarned
-    slug
-    taskType
-    timeEstimate {
-      lowerBound
-      upperBound
-      __typename
-    }
-    completionCriteria {
-      name
-      __typename
-    }
-    promotionCriteria {
-      name
-      value
-      __typename
-    }
-    reservedItems
-    reservedItemsCompleted
-    taskAttemptHistory {
-      correct
-      timeDone
-      seenHint
-      itemId
-      __typename
-    }
-    __typename
-  }
-  userExercises {
-    ...userExerciseFields
-    __typename
-  }
   __typename
 }`,
   getIsClassCleverLibrarySynced: `query getIsClassCleverLibrarySynced($classDescriptor: String!) {
@@ -8453,6 +8475,7 @@ fragment Badge on Badge {
     students @include(if: $aiGuideEnabledStudentsOnly) {
       id
       kaid
+      hasAccessToAIGuideLearner
       isAIGuideEnabled
       __typename
     }
@@ -10402,6 +10425,21 @@ fragment gtp_essayScoresFragment on EssayScores {
       traceID
       __typename
     }
+    blooketQuestionSet {
+      id
+      title
+      description
+      questions {
+        text
+        answers {
+          text
+          isCorrect
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
     coeditingDocument {
       id
       snapshots {
@@ -12225,7 +12263,6 @@ fragment CourseProgress on SubjectProgress {
   ParentQuery: `query ParentQuery {
   user {
     id
-    nickname
     underAgeGatePendingApprovals {
       username
       daysUntilCutoff
@@ -14591,6 +14628,7 @@ fragment tapTranslationFreshness on TAPTranslationFreshness {
   UserAssignments: `query UserAssignments($after: ID, $dueAfter: DateTime, $dueBefore: DateTime, $pageSize: Int, $orderBy: AssignmentOrder!, $studentListId: String, $coachKaid: String) {
   user {
     id
+    hasAccessToAIGuideLearner
     isAIGuideEnabled
     kaid
     assignmentsPage(
@@ -17203,6 +17241,7 @@ fragment contentSearchLearnableContent on LearnableContent {
   getKhanmigoEnabled: `query getKhanmigoEnabled {
   user {
     id
+    hasAccessToAIGuideLearner
     isAIGuideEnabled
     __typename
   }
@@ -18826,6 +18865,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       isActive
       __typename
     }
+    age
     birthdate
     email
     username
@@ -19020,6 +19060,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   districtById(districtId: $districtID) {
     id
     showDiscussions
+    enableImageInput
     __typename
   }
 }`,
@@ -19122,6 +19163,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
         title
         configName
         threadId
+        persona
         latestSnapshot {
           id
           createdAt
@@ -19133,6 +19175,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
         id
         title
         threadId
+        persona
         lastUpdatedAt
         __typename
       }
@@ -19671,6 +19714,7 @@ fragment UserFields on User {
       __typename
     }
     hasAssessments
+    researchOptOut
     __typename
   }
 }`,
@@ -21124,6 +21168,7 @@ fragment ExerciseContentFields on LearnableContent {
     threadId
     configName
     title
+    persona
     latestSnapshot {
       id
       text {
@@ -21323,6 +21368,12 @@ fragment ExerciseContentFields on LearnableContent {
     isKmapStudent
     isK4dStudent
     hasAccessToAIGuideDistrictClassroomTeacher
+    classrooms {
+      id
+      cacheId
+      isK4dClassroom
+      __typename
+    }
     __typename
   }
 }`,
@@ -21581,6 +21632,12 @@ fragment UserFields on User {
     email
     username
     kaid
+    __typename
+  }
+  aiGuideAccessPlans {
+    id
+    isActive
+    enrollmentGroup
     __typename
   }
   __typename
@@ -22006,8 +22063,13 @@ fragment ModerationResultFragment on AutoModerationResult {
   }
 }`,
   devadminAssessmentStatus: `query devadminAssessmentStatus($kaid: String!, $assessmentSlug: String!) {
+  actor: user {
+    id
+    __typename
+  }
   user(kaid: $kaid) {
     id
+    nickname
     assessmentData {
       assessmentStatus(assessmentSlug: $assessmentSlug) {
         status
@@ -22431,6 +22493,413 @@ fragment contentFieldsForContents on LearnableContent {
     cacheId
     id
     name
+    __typename
+  }
+}`,
+  ContentTranslationSearchQuery: `query ContentTranslationSearchQuery($query: String!, $type: QueryType!) {
+  stringSearch(query: $query, type: $type) {
+    snapshotId
+    filename
+    entry {
+      msgKey
+      msgId
+      comment
+      occurrences {
+        file
+        line
+        __typename
+      }
+      timestamp
+      deleted
+      __typename
+    }
+    translations {
+      crowdinLocale
+      msgStr
+      approved
+      lintError
+      __typename
+    }
+    __typename
+  }
+}`,
+  ParentOverviewByChildReport: `query ParentOverviewByChildReport($filters: ParentOverviewReportFilters!) {
+  parentOverviewByChildReport(filters: $filters) {
+    dateInfo {
+      lastUpdatedDate
+      from
+      upTo
+      __typename
+    }
+    rows {
+      user {
+        id
+        __typename
+      }
+      info {
+        minutes
+        workedOn
+        leveledUp
+        leveledToProficient
+        attempted
+        familiar
+        proficient
+        mastered
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  parent: user {
+    id
+    children {
+      id
+      kaid
+      nickname
+      __typename
+    }
+    __typename
+  }
+}`,
+  ParentOverviewByCourseForChildReport: `query ParentOverviewByCourseForChildReport($filters: ParentOverviewReportFilters!, $childKaid: String!) {
+  parentOverviewByCourseForChildReport(filters: $filters, childKaid: $childKaid) {
+    dateInfo {
+      lastUpdatedDate
+      from
+      upTo
+      __typename
+    }
+    rows {
+      course {
+        id
+        translatedTitle
+        __typename
+      }
+      info {
+        minutes
+        workedOn
+        leveledUp
+        leveledToProficient
+        attempted
+        familiar
+        proficient
+        mastered
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  PlatformTranslationSearchQuery: `query PlatformTranslationSearchQuery($query: String!, $type: QueryType!) {
+  platformStringSearch(query: $query, type: $type) {
+    results {
+      snapshotId
+      filename
+      entry {
+        msgKey
+        msgId
+        msgContext
+        occurrences {
+          file
+          __typename
+        }
+        timestamp
+        __typename
+      }
+      translations {
+        msgStr
+        approved
+        crowdinLocale
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  assignmentForAction: `query assignmentForAction($assignmentId: String!, $teacherKaid: String!) {
+  coach: user {
+    id
+    assignment: assignmentByThisUser(id: $assignmentId) {
+      id
+      contentDescriptors
+      title
+      assignedDate
+      startDate
+      dueDate
+      configuredActivityInputs
+      students {
+        id
+        kaid
+        coachNickname(teacherKaid: $teacherKaid)
+        __typename
+      }
+      classroom {
+        id
+        cacheId
+        descriptor
+        name
+        signupCode
+        __typename
+      }
+      itemCompletionStatesForAllStudents {
+        studentKaid
+        essaySession {
+          id
+          currentStage
+          __typename
+        }
+        completedOn
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  assignmentInfoForSharing: `query assignmentInfoForSharing($assignmentID: String!) {
+  user {
+    id
+    assignmentByThisUser(id: $assignmentID) {
+      id
+      classroom {
+        cacheId
+        id
+        name
+        signupCode
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  devadminAssessmentConfigsByExercise: `query devadminAssessmentConfigsByExercise($exerciseId: String!) {
+  interimAssessmentsByExercise(exerciseId: $exerciseId) {
+    id
+    name
+    slug
+    enabled
+    __typename
+  }
+}`,
+  getAssessmentItemForPreviewPage: `query getAssessmentItemForPreviewPage($input: AssessmentItemInput!) {
+  assessmentItem(input: $input) {
+    item {
+      id
+      itemData
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  getClassroomStruggleStats: `query getClassroomStruggleStats($classroomDescriptor: String!) {
+  getClassroomStruggleStats(classroomDescriptor: $classroomDescriptor) {
+    classroomStruggleStats {
+      skillsByStudentsWhoHaveWorkedOnSkill {
+        skillID
+        value
+        __typename
+      }
+      skillsWithMostProblemAttempts {
+        skillID
+        value
+        __typename
+      }
+      skillsWithMostCorrectAnswers {
+        skillID
+        value
+        __typename
+      }
+      skillsWithWorstCorrectPerAttemptRatio {
+        skillID
+        value
+        total
+        __typename
+      }
+      skillsWithMostTaskRestarts {
+        skillID
+        value
+        __typename
+      }
+      skillsWithHighestSkipRate {
+        skillID
+        value
+        __typename
+      }
+      skillsWithMostStudentsLast3AttemptIncorrect {
+        skillID
+        value
+        __typename
+      }
+      skillsWithMostStudentsLast5AttemptIncorrect {
+        skillID
+        value
+        __typename
+      }
+      skillsWithMostStudentsAtLeast3AttemptIncorrectInLast7 {
+        skillID
+        value
+        __typename
+      }
+      skillsWithMostStudentsAtLeast3AttemptIncorrectInLast7Twice {
+        skillID
+        value
+        __typename
+      }
+      skillsWithMostStudentsLastTaskAtAttempted {
+        skillID
+        value
+        __typename
+      }
+      skillsWithMostStudentsLast2TasksAtAttempted {
+        skillID
+        value
+        __typename
+      }
+      skillsWithMostStudentsLast3TasksAtAttempted {
+        skillID
+        value
+        __typename
+      }
+      __typename
+    }
+    skills {
+      skillID
+      skillTitle
+      skillUrl
+      __typename
+    }
+    __typename
+  }
+}`,
+  getParentTools: `query getParentTools {
+  aiGuideParentTools {
+    id
+    configName
+    __typename
+  }
+}`,
+  getTeacherCourses: `query getTeacherCourses($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    teacherCourses
+    __typename
+  }
+}`,
+  getTeacherGradeLevels: `query getTeacherGradeLevels($kaid: String!) {
+  user(kaid: $kaid) {
+    id
+    teacherGradeLevels
+    __typename
+  }
+}`,
+  getUDIDetails: `query getUDIDetails($uuid: ID!) {
+  userDistrictInfo(uuid: $uuid, includeDeleted: true) {
+    id
+    uuid
+    kaid
+    adminOfSchools {
+      id
+      name
+      __typename
+    }
+    gracePeriod {
+      start
+      end
+      __typename
+    }
+    partnership {
+      ... on MetaDistrict {
+        id
+        name
+        __typename
+      }
+      ... on District {
+        id
+        name
+        __typename
+      }
+      __typename
+    }
+    district {
+      id
+      name
+      isOldNWEA
+      kaLocale
+      ancestors {
+        id
+        name
+        __typename
+      }
+      __typename
+    }
+    createdAt
+    deletedAt
+    updatedAt
+    cleverId
+    classlinkId
+    rosterSource
+    activationEmailSentAt
+    activatedAt
+    activationMethod
+    districtProvidedFullName
+    districtProvidedEmail
+    districtProvidedBirthMonth
+    districtProvidedBirthYear
+    primaryRole
+    isKmap
+    isKAD
+    gradeLevel
+    khanmigoShould
+    khanmigoStatus
+    khanmigoReason
+    udiAuditLogs {
+      kind
+      changes
+      actorKaid
+      createdAt
+      description
+      __typename
+    }
+    __typename
+  }
+}`,
+  userForAuthorization: `query userForAuthorization {
+  user {
+    id
+    birthMonthYear
+    hasAccessToAIGuideLearner
+    hasAccessToWritingCoachLearner
+    hasAccessToWritingCoachTeacher
+    isAIGuideEnabled
+    isCleverLibraryTeacher
+    isFormalTeacher
+    isK4dStudent
+    isK4dTeacher
+    isKmapStudent
+    isKmapTeacher
+    isTeacher
+    __typename
+  }
+}`,
+  userMayInputImages: `query userMayInputImages {
+  user {
+    id
+    includesDistrictOwnedData
+    districtEnableImageInput
     __typename
   }
 }`,

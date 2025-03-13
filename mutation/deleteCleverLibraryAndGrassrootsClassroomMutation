@@ -1,0 +1,9 @@
+mutation deleteCleverLibraryAndGrassrootsClassroomMutation($classroomDescriptor: String!) {
+  deleteClassroom(descriptor: $classroomDescriptor) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

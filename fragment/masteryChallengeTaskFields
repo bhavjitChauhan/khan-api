@@ -1,0 +1,24 @@
+fragment masteryChallengeTaskFields on MasteryChallengeTask {
+  id
+  key
+  completionCriteria {
+    name
+    __typename
+  }
+  expirationTime
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}

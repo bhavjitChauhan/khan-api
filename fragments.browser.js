@@ -245,7 +245,7 @@ fragments = {
   id
   contents {
     id
-    title
+    title: translatedTitle
     kind
     __typename
   }
@@ -253,6 +253,7 @@ fragments = {
     id
     cacheId
     name
+    isK4dClassroom
     __typename
   }
   students {
@@ -1774,6 +1775,7 @@ fragment InvitationsField on Invitation {
   contentId
   kaLocale
   title
+  slug
   importable
   allowedExerciseTypes
   hasUnpublishedChanges
@@ -2065,25 +2067,11 @@ fragment InvitationsField on Invitation {
       __typename
     }
     problemTypes {
-      items {
-        id
-        live
-        sha
-        __typename
-      }
-      name
-      relatedVideos
+      ...problemTypeFields
       __typename
     }
     translatedProblemTypes {
-      items {
-        id
-        live
-        sha
-        __typename
-      }
-      name
-      relatedVideos
+      ...problemTypeFields
       __typename
     }
     __typename
@@ -2117,6 +2105,12 @@ fragment InvitationsField on Invitation {
     email
     username
     kaid
+    __typename
+  }
+  aiGuideAccessPlans {
+    id
+    isActive
+    enrollmentGroup
     __typename
   }
   __typename
@@ -2415,14 +2409,37 @@ query ActivitiesList {
   practiceTaskFields: `fragment practiceTaskFields on PracticeTask {
   id
   key
-  exerciseLength
-  taskType
+  bonusReservedItems
+  bonusReservedItemsCompleted
+  bonusTaskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  canRestart
+  completionCriteria {
+    name
+    __typename
+  }
   contentKey
+  exerciseLength
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
   reservedItems
   reservedItemsCompleted
-  isCompleted
+  slug
   taskAttemptHistory {
-    ...exerciseTaskAttemptHistoryFields
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  timeEstimate {
+    lowerBound
+    upperBound
     __typename
   }
   __typename
@@ -2500,6 +2517,11 @@ query ActivitiesList {
     ...relatedContentFields
     __typename
   }
+  parentTopic {
+    id
+    domainSlug
+    __typename
+  }
   __typename
 }`,
   exerciseTaskUserExerciseEntityFields: `fragment exerciseTaskUserExerciseEntityFields on UserExercise {
@@ -2515,13 +2537,26 @@ query ActivitiesList {
   quizTaskFields: `fragment quizTaskFields on TopicQuizTask {
   id
   key
-  taskType
-  contentKey
-  isCompleted
-  taskAttemptHistory {
-    ...exerciseTaskAttemptHistoryFields
+  canRestart
+  completionCriteria {
+    name
     __typename
   }
+  contentKey
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
   __typename
 }`,
   assignmentFields: `fragment assignmentFields on Assignment {
@@ -2562,6 +2597,136 @@ query ActivitiesList {
     }
     __typename
   }
+  __typename
+}`,
+  courseChallengeTaskFields: `fragment courseChallengeTaskFields on SubjectChallengeTask {
+  id
+  key
+  completionCriteria {
+    name
+    __typename
+  }
+  contentKey
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}`,
+  masteryChallengeTaskFields: `fragment masteryChallengeTaskFields on MasteryChallengeTask {
+  id
+  key
+  completionCriteria {
+    name
+    __typename
+  }
+  expirationTime
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}`,
+  problemCardFields: `fragment problemCardFields on ProblemCard {
+  cardType
+  done
+  exerciseName
+  problemType
+  __typename
+}`,
+  problemTypeFields: `fragment problemTypeFields on ProblemType {
+  items {
+    id
+    live
+    sha
+    __typename
+  }
+  name
+  relatedVideos
+  __typename
+}`,
+  promotionCriteriaFields: `fragment promotionCriteriaFields on PromotionCriteria {
+  name
+  value
+  __typename
+}`,
+  prototypePracticeTaskFields: `fragment prototypePracticeTaskFields on PracticeTask {
+  id
+  key
+  exerciseLength
+  taskType
+  contentKey
+  reservedItems
+  reservedItemsCompleted
+  isCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  __typename
+}`,
+  prototypeQuizTaskFields: `fragment prototypeQuizTaskFields on TopicQuizTask {
+  id
+  key
+  taskType
+  contentKey
+  isCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  __typename
+}`,
+  taskAttemptHistoryFields: `fragment taskAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  timeDone
+  seenHint
+  itemId
+  __typename
+}`,
+  unitTestTaskFields: `fragment unitTestTaskFields on TopicUnitTestTask {
+  id
+  key
+  canRestart
+  completionCriteria {
+    name
+    __typename
+  }
+  contentKey
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
   __typename
 }`,
 }

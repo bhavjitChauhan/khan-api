@@ -1,0 +1,9 @@
+mutation updateWritingCoachAssignment($assignmentId: ID!, $input: UpdateAssignmentInput!) {
+  updateAssignment(id: $assignmentId, assignment: $input) {
+    assignment {
+      id
+      __typename
+    }
+    __typename
+  }
+}

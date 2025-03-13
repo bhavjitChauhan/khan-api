@@ -1,0 +1,71 @@
+query getUDIDetails($uuid: ID!) {
+  userDistrictInfo(uuid: $uuid, includeDeleted: true) {
+    id
+    uuid
+    kaid
+    adminOfSchools {
+      id
+      name
+      __typename
+    }
+    gracePeriod {
+      start
+      end
+      __typename
+    }
+    partnership {
+      ... on MetaDistrict {
+        id
+        name
+        __typename
+      }
+      ... on District {
+        id
+        name
+        __typename
+      }
+      __typename
+    }
+    district {
+      id
+      name
+      isOldNWEA
+      kaLocale
+      ancestors {
+        id
+        name
+        __typename
+      }
+      __typename
+    }
+    createdAt
+    deletedAt
+    updatedAt
+    cleverId
+    classlinkId
+    rosterSource
+    activationEmailSentAt
+    activatedAt
+    activationMethod
+    districtProvidedFullName
+    districtProvidedEmail
+    districtProvidedBirthMonth
+    districtProvidedBirthYear
+    primaryRole
+    isKmap
+    isKAD
+    gradeLevel
+    khanmigoShould
+    khanmigoStatus
+    khanmigoReason
+    udiAuditLogs {
+      kind
+      changes
+      actorKaid
+      createdAt
+      description
+      __typename
+    }
+    __typename
+  }
+}

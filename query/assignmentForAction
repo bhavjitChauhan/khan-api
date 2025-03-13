@@ -1,0 +1,40 @@
+query assignmentForAction($assignmentId: String!, $teacherKaid: String!) {
+  coach: user {
+    id
+    assignment: assignmentByThisUser(id: $assignmentId) {
+      id
+      contentDescriptors
+      title
+      assignedDate
+      startDate
+      dueDate
+      configuredActivityInputs
+      students {
+        id
+        kaid
+        coachNickname(teacherKaid: $teacherKaid)
+        __typename
+      }
+      classroom {
+        id
+        cacheId
+        descriptor
+        name
+        signupCode
+        __typename
+      }
+      itemCompletionStatesForAllStudents {
+        studentKaid
+        essaySession {
+          id
+          currentStage
+          __typename
+        }
+        completedOn
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

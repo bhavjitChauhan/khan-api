@@ -8,102 +8,30 @@ mutation getOrCreateExerciseTask($input: GetOrCreateExerciseTaskInput!, $ancesto
       }
       userTask {
         cards {
-          done
-          cardType
-          ... on ProblemCard {
-            exerciseName
-            problemType
-            __typename
-          }
+          ...problemCardFields
           __typename
         }
-        includeSkipButton
         task {
-          id
-          key
-          pointBounty
-          pointsEarned
-          taskType
-          completionCriteria {
-            name
-            __typename
-          }
           ... on MasteryChallengeTask {
-            expirationTime
-            promotionCriteria {
-              name
-              value
-              __typename
-            }
-            reservedItems
-            reservedItemsCompleted
-            taskAttemptHistory {
-              correct
-              timeDone
-              seenHint
-              itemId
-              __typename
-            }
+            ...masteryChallengeTaskFields
             __typename
           }
           ... on SubjectChallengeTask {
-            contentKey
-            promotionCriteria {
-              name
-              value
-              __typename
-            }
-            reservedItems
-            reservedItemsCompleted
-            taskAttemptHistory {
-              correct
-              timeDone
-              seenHint
-              itemId
-              __typename
-            }
+            ...courseChallengeTaskFields
             __typename
           }
           ... on TopicQuizTask {
-            contentKey
-            promotionCriteria {
-              name
-              value
-              __typename
-            }
-            reservedItems
-            reservedItemsCompleted
-            taskAttemptHistory {
-              correct
-              timeDone
-              seenHint
-              itemId
-              __typename
-            }
+            ...quizTaskFields
             __typename
           }
           ... on TopicUnitTestTask {
-            contentKey
-            promotionCriteria {
-              name
-              value
-              __typename
-            }
-            reservedItems
-            reservedItemsCompleted
-            taskAttemptHistory {
-              correct
-              timeDone
-              seenHint
-              itemId
-              __typename
-            }
+            ...unitTestTaskFields
             __typename
           }
           __typename
         }
         userExercises {
-          ...exerciseTaskUserExerciseFields
+          ...userExerciseFields
           __typename
         }
         __typename
@@ -114,7 +42,143 @@ mutation getOrCreateExerciseTask($input: GetOrCreateExerciseTaskInput!, $ancesto
   }
 }
 
-fragment exerciseTaskUserExerciseFields on UserExercise {
+fragment courseChallengeTaskFields on SubjectChallengeTask {
+  id
+  key
+  completionCriteria {
+    name
+    __typename
+  }
+  contentKey
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}
+
+fragment masteryChallengeTaskFields on MasteryChallengeTask {
+  id
+  key
+  completionCriteria {
+    name
+    __typename
+  }
+  expirationTime
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}
+
+fragment problemCardFields on ProblemCard {
+  cardType
+  done
+  exerciseName
+  problemType
+  __typename
+}
+
+fragment problemTypeFields on ProblemType {
+  items {
+    id
+    live
+    sha
+    __typename
+  }
+  name
+  relatedVideos
+  __typename
+}
+
+fragment promotionCriteriaFields on PromotionCriteria {
+  name
+  value
+  __typename
+}
+
+fragment quizTaskFields on TopicQuizTask {
+  id
+  key
+  canRestart
+  completionCriteria {
+    name
+    __typename
+  }
+  contentKey
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}
+
+fragment taskAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  timeDone
+  seenHint
+  itemId
+  __typename
+}
+
+fragment unitTestTaskFields on TopicUnitTestTask {
+  id
+  key
+  canRestart
+  completionCriteria {
+    name
+    __typename
+  }
+  contentKey
+  isCompleted
+  pointBounty
+  pointsEarned
+  promotionCriteria {
+    ...promotionCriteriaFields
+    __typename
+  }
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}
+
+fragment userExerciseFields on UserExercise {
   exerciseModel: exercise {
     id
     assessmentItemCount: numAssessmentItems
@@ -179,25 +243,11 @@ fragment exerciseTaskUserExerciseFields on UserExercise {
       __typename
     }
     problemTypes {
-      items {
-        id
-        live
-        sha
-        __typename
-      }
-      name
-      relatedVideos
+      ...problemTypeFields
       __typename
     }
     translatedProblemTypes {
-      items {
-        id
-        live
-        sha
-        __typename
-      }
-      name
-      relatedVideos
+      ...problemTypeFields
       __typename
     }
     __typename

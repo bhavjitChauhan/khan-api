@@ -2,6 +2,7 @@ query CoachAssignments($classDescriptor: String!, $assignmentFilters: CoachAssig
   classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     id
     cacheId
+    isK4dClassroom
     assignmentsPage(
       filters: $assignmentFilters
       orderBy: $orderBy

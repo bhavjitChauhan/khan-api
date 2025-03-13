@@ -1,0 +1,8 @@
+query userMayInputImages {
+  user {
+    id
+    includesDistrictOwnedData
+    districtEnableImageInput
+    __typename
+  }
+}

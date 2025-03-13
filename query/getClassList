@@ -104,6 +104,7 @@ query getClassList {
       id
       activatedAt
       rosterSource
+      primaryRole
       district {
         id
         name
