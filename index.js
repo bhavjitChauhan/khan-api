@@ -135,7 +135,6 @@ console.log('Fetched homepage script')
 
 console.log('Fetching script URLs...')
 const runtimeScript = await fetch(runtimeScriptURL).then(r => r.text())
-//let scriptURLs = Object.entries(eval('(' + runtimeScript.match(/(\{[\w",:-]+\})\[\w+\]\+"\.js"/)[1] + ')')).map(([key, value]) => `https://cdn.kastatic.org/genwebpack/prod/en/${key}.${value}.js`)
 let scriptURLs = [...runtimeScript.matchAll(/(\d+):"(\w+)"/g)].map(([,key,value]) => `https://cdn.kastatic.org/genwebpack/prod/en/${key}.${value}.js`)
 const allHtmlScriptURLs = Array.from(html.matchAll(/src=(?:"|')(https?:\/\/cdn\.kastatic\.org\/.+\.js)(?:"|')/g), match => match[1])
 scriptURLs.push(...allHtmlScriptURLs)
@@ -166,8 +165,8 @@ console.log(`Fetched ${scriptFetchedCount}/${scriptURLs.length} scripts`)
 
 
 let documents = scripts
-    .map(script => [...script?.matchAll(/`\n\s+((?:query|mutation|fragment)[^`]+)/g)]
-        .map(match => match[1]?.trim().replaceAll('${0}', '')))
+    .map(script => [...script?.matchAll(/"(\\n    (?:query|mutation|fragment)[^"]+)/g)]
+        .map(match => match[1]?.trim().replaceAll('${0}', '').replaceAll('\\n', '\n')))
     .flat()
     .map(document => {
         try {
