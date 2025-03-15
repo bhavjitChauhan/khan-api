@@ -1,18 +1,24 @@
-## QAExpandKeyInfo(variables, init)
+## Call Signature
 
-> **QAExpandKeyInfo**(`variables`, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CQaExpandKeyInfo%5Ctype-aliases%5CResponse.md)\>\>
+> **QAExpandKeyInfo**(`variables`, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CQaExpandKeyInfo%5Ctype-aliases%5CResponse.md)\>\>
+
+Defined in: [src/queries/QAExpandKeyInfo.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/QAExpandKeyInfo.ts#L42)
 
 Low-level function for making a `QAExpandKeyInfo` request.
 
 ### Parameters
 
-• **variables**: [`Variables`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CQaExpandKeyInfo%5Cinterfaces%5CVariables.md)
+#### variables
 
-• **init?**: `RequestInit`
+[`Variables`](api/namespaces%5Cqueries%5Cnamespaces%5CQaExpandKeyInfo%5Cinterfaces%5CVariables.md)
+
+#### init?
+
+`RequestInit`
 
 ### Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CQaExpandKeyInfo%5Ctype-aliases%5CResponse.md)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CQaExpandKeyInfo%5Ctype-aliases%5CResponse.md)\>\>
 
 ### Link
 
@@ -29,23 +35,25 @@ const json = await response.json()
 const unencryptedKey = json.data.qaExpandKeyInfo?.unencryptedKey
 ```
 
-### Source
+## Call Signature
 
-[src/queries/QAExpandKeyInfo.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/QAExpandKeyInfo.ts#L42)
+> **QAExpandKeyInfo**(`encryptedKey`, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CQaExpandKeyInfo%5Ctype-aliases%5CResponse.md)\>\>
 
-## QAExpandKeyInfo(encryptedKey, init)
-
-> **QAExpandKeyInfo**(`encryptedKey`, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CQaExpandKeyInfo%5Ctype-aliases%5CResponse.md)\>\>
+Defined in: [src/queries/QAExpandKeyInfo.ts:55](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/QAExpandKeyInfo.ts#L55)
 
 ### Parameters
 
-• **encryptedKey**: \`kaencrypted\_$\{string\}\_$\{string\}\`
+#### encryptedKey
 
-• **init?**: `RequestInit`
+`` `kaencrypted_${string}_${string}` ``
+
+#### init?
+
+`RequestInit`
 
 ### Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CQaExpandKeyInfo%5Ctype-aliases%5CResponse.md)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CQaExpandKeyInfo%5Ctype-aliases%5CResponse.md)\>\>
 
 ### Example
 
@@ -55,7 +63,3 @@ const response = await queries.QAExpandKeyInfo('kaencrypted_e1af9ca95e8bf24e1ceb
 const json = await response.json()
 const unencryptedKey = json.data.qaExpandKeyInfo?.unencryptedKey
 ```
-
-### Source
-
-[src/queries/QAExpandKeyInfo.ts:55](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/QAExpandKeyInfo.ts#L55)

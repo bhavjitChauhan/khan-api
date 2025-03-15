@@ -1,12 +1,12 @@
+Defined in: [src/types/schema.ts:278](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L278)
+
 ## Properties
 
 ### \_\_typename
 
 > **\_\_typename**: `"FeedbackForFocus"`
 
-#### Source
-
-[src/types/schema.ts:275](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L275)
+Defined in: [src/types/schema.ts:279](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L279)
 
 ***
 
@@ -14,19 +14,15 @@
 
 > **cursor**: `null` \| `string`
 
-#### Source
-
-[src/types/schema.ts:276](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L276)
+Defined in: [src/types/schema.ts:280](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L280)
 
 ***
 
 ### feedback
 
-> **feedback**: `null` \| [`BasicFeedbackSchema`](api%5Cinterfaces%5CBasicFeedbackSchema.md)[] \| [`QuestionFeedbackSchema`](api%5Cinterfaces%5CQuestionFeedbackSchema.md)[] \| [`AnswerFeedbackSchema`](api%5Cinterfaces%5CAnswerFeedbackSchema.md)[]
+> **feedback**: `null` \| [`BasicFeedbackSchema`](api/interfaces%5CBasicFeedbackSchema.md)[] \| [`QuestionFeedbackSchema`](api/interfaces%5CQuestionFeedbackSchema.md)[] \| [`AnswerFeedbackSchema`](api/interfaces%5CAnswerFeedbackSchema.md)[]
 
-#### Source
-
-[src/types/schema.ts:277](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L277)
+Defined in: [src/types/schema.ts:281](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L281)
 
 ***
 
@@ -34,9 +30,7 @@
 
 > **isComplete**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:282](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L282)
+Defined in: [src/types/schema.ts:286](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L286)
 
 ***
 
@@ -44,6 +38,4 @@
 
 > **sortedByDate**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:283](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L283)
+Defined in: [src/types/schema.ts:287](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L287)

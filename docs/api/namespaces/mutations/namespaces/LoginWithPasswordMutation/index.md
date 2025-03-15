@@ -1,17 +1,15 @@
-## Index
+## Enumerations
 
-### Enumerations
+- [ErrorCode](api/namespaces%5Cmutations%5Cnamespaces%5CLoginWithPasswordMutation%5Cenumerations%5CErrorCode.md)
 
-- [ErrorCode](api%5Cnamespaces%5Cmutations%5Cnamespaces%5CLoginWithPasswordMutation%5Cenumerations%5CErrorCode.md)
+## Interfaces
 
-### Interfaces
+- [Variables](api/namespaces%5Cmutations%5Cnamespaces%5CLoginWithPasswordMutation%5Cinterfaces%5CVariables.md)
 
-- [Variables](api%5Cnamespaces%5Cmutations%5Cnamespaces%5CLoginWithPasswordMutation%5Cinterfaces%5CVariables.md)
+## Type Aliases
 
-### Type Aliases
+- [Response](api/namespaces%5Cmutations%5Cnamespaces%5CLoginWithPasswordMutation%5Ctype-aliases%5CResponse.md)
 
-- [Response](api%5Cnamespaces%5Cmutations%5Cnamespaces%5CLoginWithPasswordMutation%5Ctype-aliases%5CResponse.md)
+## Variables
 
-### Variables
-
-- [query](api%5Cnamespaces%5Cmutations%5Cnamespaces%5CLoginWithPasswordMutation%5Cvariables%5Cquery.md)
+- [query](api/namespaces%5Cmutations%5Cnamespaces%5CLoginWithPasswordMutation%5Cvariables%5Cquery.md)

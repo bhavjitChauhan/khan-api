@@ -1,3 +1,5 @@
+Defined in: [src/types/enums.ts:40](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L40)
+
 ## Remarks
 
 Not all feedback types are supported by every query/mutation.
@@ -12,9 +14,7 @@ Not all feedback types are supported by every query/mutation.
 
 > **ALL\_PROJECT\_ANSWER**: `"ALL_PROJECT_ANSWER"`
 
-#### Source
-
-[src/types/enums.ts:41](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L41)
+Defined in: [src/types/enums.ts:41](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L41)
 
 ***
 
@@ -22,9 +22,7 @@ Not all feedback types are supported by every query/mutation.
 
 > **ALL\_PROJECT\_QUESTION**: `"ALL_PROJECT_QUESTION"`
 
-#### Source
-
-[src/types/enums.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L42)
+Defined in: [src/types/enums.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L42)
 
 ***
 
@@ -32,9 +30,7 @@ Not all feedback types are supported by every query/mutation.
 
 > **ANSWER**: `"ANSWER"`
 
-#### Source
-
-[src/types/enums.ts:43](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L43)
+Defined in: [src/types/enums.ts:43](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L43)
 
 ***
 
@@ -42,9 +38,7 @@ Not all feedback types are supported by every query/mutation.
 
 > **COMMENT**: `"COMMENT"`
 
-#### Source
-
-[src/types/enums.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L44)
+Defined in: [src/types/enums.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L44)
 
 ***
 
@@ -52,19 +46,7 @@ Not all feedback types are supported by every query/mutation.
 
 > **PROGRAM**: `"PROGRAM"`
 
-#### Source
-
-[src/types/enums.ts:45](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L45)
-
-***
-
-### PROJECTFEEDBACK
-
-> **PROJECTFEEDBACK**: `"PROJECTFEEDBACK"`
-
-#### Source
-
-[src/types/enums.ts:46](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L46)
+Defined in: [src/types/enums.ts:45](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L45)
 
 ***
 
@@ -72,9 +54,7 @@ Not all feedback types are supported by every query/mutation.
 
 > **PROJECT\_CRITIQUE\_ANSWER**: `"PROJECT_CRITIQUE_ANSWER"`
 
-#### Source
-
-[src/types/enums.ts:47](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L47)
+Defined in: [src/types/enums.ts:47](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L47)
 
 ***
 
@@ -82,9 +62,7 @@ Not all feedback types are supported by every query/mutation.
 
 > **PROJECT\_CRITIQUE\_QUESTION**: `"PROJECT_CRITIQUE_QUESTION"`
 
-#### Source
-
-[src/types/enums.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L48)
+Defined in: [src/types/enums.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L48)
 
 ***
 
@@ -92,9 +70,7 @@ Not all feedback types are supported by every query/mutation.
 
 > **PROJECT\_EVAL\_ANSWER**: `"PROJECT_EVAL_ANSWER"`
 
-#### Source
-
-[src/types/enums.ts:49](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L49)
+Defined in: [src/types/enums.ts:49](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L49)
 
 ***
 
@@ -102,9 +78,7 @@ Not all feedback types are supported by every query/mutation.
 
 > **PROJECT\_EVAL\_QUESTION**: `"PROJECT_EVAL_QUESTION"`
 
-#### Source
-
-[src/types/enums.ts:50](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L50)
+Defined in: [src/types/enums.ts:50](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L50)
 
 ***
 
@@ -112,9 +86,7 @@ Not all feedback types are supported by every query/mutation.
 
 > **PROJECT\_HELP\_ANSWER**: `"PROJECT_HELP_ANSWER"`
 
-#### Source
-
-[src/types/enums.ts:51](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L51)
+Defined in: [src/types/enums.ts:51](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L51)
 
 ***
 
@@ -122,9 +94,15 @@ Not all feedback types are supported by every query/mutation.
 
 > **PROJECT\_HELP\_QUESTION**: `"PROJECT_HELP_QUESTION"`
 
-#### Source
+Defined in: [src/types/enums.ts:52](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L52)
 
-[src/types/enums.ts:52](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L52)
+***
+
+### PROJECTFEEDBACK
+
+> **PROJECTFEEDBACK**: `"PROJECTFEEDBACK"`
+
+Defined in: [src/types/enums.ts:46](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L46)
 
 ***
 
@@ -132,9 +110,7 @@ Not all feedback types are supported by every query/mutation.
 
 > **QUESTION**: `"QUESTION"`
 
-#### Source
-
-[src/types/enums.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L53)
+Defined in: [src/types/enums.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L53)
 
 ***
 
@@ -142,9 +118,7 @@ Not all feedback types are supported by every query/mutation.
 
 > **REPLY**: `"REPLY"`
 
-#### Source
-
-[src/types/enums.ts:54](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L54)
+Defined in: [src/types/enums.ts:54](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L54)
 
 ***
 
@@ -152,6 +126,4 @@ Not all feedback types are supported by every query/mutation.
 
 > **SUGGESTED\_CLARIFICATION**: `"SUGGESTED_CLARIFICATION"`
 
-#### Source
-
-[src/types/enums.ts:55](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L55)
+Defined in: [src/types/enums.ts:55](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L55)

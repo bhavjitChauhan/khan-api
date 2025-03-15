@@ -1,5 +1,3 @@
-> **AvatarURL**: [`AvatarSVG`](api%5Ctype-aliases%5CAvatarSVG.md) \| [`AvatarPNG`](api%5Ctype-aliases%5CAvatarPNG.md)
+> **AvatarURL**: [`AvatarSVG`](api/type-aliases%5CAvatarSVG.md) \| [`AvatarPNG`](api/type-aliases%5CAvatarPNG.md)
 
-## Source
-
-[src/types/strings.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/strings.ts#L33)
+Defined in: [src/types/strings.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/strings.ts#L33)

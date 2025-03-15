@@ -1,21 +1,25 @@
-> **post**\<`Response`\>(`url`, `body`, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<`Response`\>\>
+> **post**\<`Response`\>(`url`, `body`, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<`Response`\>\>
 
-## Type parameters
+Defined in: [src/utils/fetch.ts:24](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/utils/fetch.ts#L24)
+
+## Type Parameters
 
 • **Response**
 
 ## Parameters
 
-• **url**: `string`
+### url
 
-• **body**: `Record`\<`string`, `unknown`\>
+`string`
 
-• **init?**: `RequestInit`
+### body
+
+`Record`\<`string`, `unknown`\>
+
+### init?
+
+`RequestInit`
 
 ## Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<`Response`\>\>
-
-## Source
-
-[src/utils/fetch.ts:24](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/utils/fetch.ts#L24)
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<`Response`\>\>

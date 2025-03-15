@@ -1,78 +1,82 @@
+Defined in: [src/Program.ts:56](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L56)
+
 ## Extends
 
-- `default`\<[`ProgramSchema`](api%5Cinterfaces%5CProgramSchema.md)\<[`UserSchema`](api%5Cinterfaces%5CUserSchema.md)\>, [`IProgram`](api%5Cinterfaces%5CIProgram.md)\>
+- `default`\<[`ProgramSchema`](api/interfaces%5CProgramSchema.md)\<[`UserSchema`](api/interfaces%5CUserSchema.md)\>, [`IProgram`](api/interfaces%5CIProgram.md)\>
 
 ## Implements
 
-- [`IProgram`](api%5Cinterfaces%5CIProgram.md)
+- [`IProgram`](api/interfaces%5CIProgram.md)
 
 ## Constructors
 
 ### new Program()
 
-> **new Program**(`data`?): [`Program`](api%5Cclasses%5CProgram.md)
+> **new Program**(`data`?): [`Program`](api/classes%5CProgram.md)
+
+Defined in: [src/lib/Wrapper.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/Wrapper.ts#L36)
 
 Creates a new class instance
 
 #### Parameters
 
-• **data?**: [`IProgram`](api%5Cinterfaces%5CIProgram.md)
+##### data?
+
+[`IProgram`](api/interfaces%5CIProgram.md)
 
 #### Returns
 
-[`Program`](api%5Cclasses%5CProgram.md)
+[`Program`](api/classes%5CProgram.md)
 
 #### Inherited from
 
 `Wrapper<ProgramSchema<UserSchema>, IProgram>.constructor`
-
-#### Source
-
-[src/lib/Wrapper.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/Wrapper.ts#L36)
 
 ### new Program()
 
-> **new Program**(`client`, `data`?): [`Program`](api%5Cclasses%5CProgram.md)
+> **new Program**(`client`, `data`?): [`Program`](api/classes%5CProgram.md)
+
+Defined in: [src/lib/Wrapper.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/Wrapper.ts#L37)
 
 #### Parameters
 
-• **client**: [`Client`](api%5Cclasses%5CClient.md)
+##### client
 
-• **data?**: [`IProgram`](api%5Cinterfaces%5CIProgram.md)
+[`Client`](api/classes%5CClient.md)
+
+##### data?
+
+[`IProgram`](api/interfaces%5CIProgram.md)
 
 #### Returns
 
-[`Program`](api%5Cclasses%5CProgram.md)
+[`Program`](api/classes%5CProgram.md)
 
 #### Inherited from
 
 `Wrapper<ProgramSchema<UserSchema>, IProgram>.constructor`
-
-#### Source
-
-[src/lib/Wrapper.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/Wrapper.ts#L37)
 
 ## Properties
 
 ### author?
 
-> `optional` `readonly` **author**: [`User`](api%5Cclasses%5CUser.md)
+> `readonly` `optional` **author**: [`User`](api/classes%5CUser.md)
+
+Defined in: [src/Program.ts:78](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L78)
 
 The author of the program.
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`author`](api%5Cinterfaces%5CIProgram.md#author)
-
-#### Source
-
-[src/Program.ts:78](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L78)
+[`IProgram`](api/interfaces%5CIProgram.md).[`author`](api/interfaces%5CIProgram.md#author)
 
 ***
 
 ### client?
 
-> `optional` **client**: [`Client`](api%5Cclasses%5CClient.md)
+> `optional` **client**: [`Client`](api/classes%5CClient.md)
+
+Defined in: [src/lib/Wrapper.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/Wrapper.ts#L15)
 
 The client that this base was fetched with.
 
@@ -80,79 +84,69 @@ The client that this base was fetched with.
 
 `Wrapper.client`
 
-#### Source
-
-[src/lib/Wrapper.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/Wrapper.ts#L15)
-
 ***
 
 ### code?
 
-> `optional` `readonly` **code**: `string`
+> `readonly` `optional` **code**: `string`
+
+Defined in: [src/Program.ts:118](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L118)
 
 The code of the program.
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`code`](api%5Cinterfaces%5CIProgram.md#code)
-
-#### Source
-
-[src/Program.ts:118](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L118)
+[`IProgram`](api/interfaces%5CIProgram.md).[`code`](api/interfaces%5CIProgram.md#code)
 
 ***
 
 ### created?
 
-> `optional` `readonly` **created**: `Date`
+> `readonly` `optional` **created**: `Date`
+
+Defined in: [src/Program.ts:82](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L82)
 
 The date the program was created.
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`created`](api%5Cinterfaces%5CIProgram.md#created)
-
-#### Source
-
-[src/Program.ts:82](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L82)
+[`IProgram`](api/interfaces%5CIProgram.md).[`created`](api/interfaces%5CIProgram.md#created)
 
 ***
 
 ### deleted?
 
-> `optional` `readonly` **deleted**: `boolean`
+> `readonly` `optional` **deleted**: `boolean`
+
+Defined in: [src/Program.ts:147](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L147)
 
 Whether the program has been deleted.
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`deleted`](api%5Cinterfaces%5CIProgram.md#deleted)
-
-#### Source
-
-[src/Program.ts:147](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L147)
+[`IProgram`](api/interfaces%5CIProgram.md).[`deleted`](api/interfaces%5CIProgram.md#deleted)
 
 ***
 
 ### description?
 
-> `optional` `readonly` **description**: `null` \| `string`
+> `readonly` `optional` **description**: `null` \| `string`
+
+Defined in: [src/Program.ts:143](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L143)
 
 The description of the program. Set to `null` if the description is empty string.
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`description`](api%5Cinterfaces%5CIProgram.md#description)
-
-#### Source
-
-[src/Program.ts:143](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L143)
+[`IProgram`](api/interfaces%5CIProgram.md).[`description`](api/interfaces%5CIProgram.md#description)
 
 ***
 
 ### height?
 
-> `optional` `readonly` **height**: `number`
+> `readonly` `optional` **height**: `number`
+
+Defined in: [src/Program.ts:103](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L103)
 
 The height of the program in pixels.
 
@@ -162,107 +156,93 @@ Constrained between 400 and 600. May be any value in between.
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`height`](api%5Cinterfaces%5CIProgram.md#height)
-
-#### Source
-
-[src/Program.ts:103](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L103)
+[`IProgram`](api/interfaces%5CIProgram.md).[`height`](api/interfaces%5CIProgram.md#height)
 
 ***
 
 ### helpRequests?
 
-> `optional` `readonly` **helpRequests**: [`Question`](api%5Cclasses%5CQuestion.md)[]
+> `readonly` `optional` **helpRequests**: [`Question`](api/classes%5CQuestion.md)[]
+
+Defined in: [src/Program.ts:164](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L164)
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`helpRequests`](api%5Cinterfaces%5CIProgram.md#helprequests)
-
-#### Source
-
-[src/Program.ts:164](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L164)
+[`IProgram`](api/interfaces%5CIProgram.md).[`helpRequests`](api/interfaces%5CIProgram.md#helprequests)
 
 ***
 
 ### hidden?
 
-> `optional` `readonly` **hidden**: `boolean`
+> `readonly` `optional` **hidden**: `boolean`
+
+Defined in: [src/Program.ts:122](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L122)
 
 Whether the program is hidden from the hotlist.
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`hidden`](api%5Cinterfaces%5CIProgram.md#hidden)
-
-#### Source
-
-[src/Program.ts:122](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L122)
+[`IProgram`](api/interfaces%5CIProgram.md).[`hidden`](api/interfaces%5CIProgram.md#hidden)
 
 ***
 
 ### id?
 
-> `optional` `readonly` **id**: `number`
+> `readonly` `optional` **id**: `number`
+
+Defined in: [src/Program.ts:70](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L70)
 
 The ID of the program.
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`id`](api%5Cinterfaces%5CIProgram.md#id)
-
-#### Source
-
-[src/Program.ts:70](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L70)
+[`IProgram`](api/interfaces%5CIProgram.md).[`id`](api/interfaces%5CIProgram.md#id)
 
 ***
 
 ### key?
 
-> `optional` `readonly` **key**: \`ag5zfmtoYW4tYWNhZGVteXI$\{string\}CxIKU2NyYXRjaHBhZB$\{string\}$\{string\}\`
+> `readonly` `optional` **key**: `` `ag5zfmtoYW4tYWNhZGVteXI${string}CxIKU2NyYXRjaHBhZB${string}${string}` ``
+
+Defined in: [src/Program.ts:132](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L132)
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`key`](api%5Cinterfaces%5CIProgram.md#key)
-
-#### Source
-
-[src/Program.ts:132](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L132)
+[`IProgram`](api/interfaces%5CIProgram.md).[`key`](api/interfaces%5CIProgram.md#key)
 
 ***
 
 ### origin?
 
-> `optional` `readonly` **origin**: `null` \| [`Program`](api%5Cclasses%5CProgram.md)
+> `readonly` `optional` **origin**: `null` \| [`Program`](api/classes%5CProgram.md)
+
+Defined in: [src/Program.ts:131](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L131)
 
 The original program that this program is a spin-off of.
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`origin`](api%5Cinterfaces%5CIProgram.md#origin)
-
-#### Source
-
-[src/Program.ts:131](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L131)
+[`IProgram`](api/interfaces%5CIProgram.md).[`origin`](api/interfaces%5CIProgram.md#origin)
 
 ***
 
 ### questions?
 
-> `optional` `readonly` **questions**: [`Question`](api%5Cclasses%5CQuestion.md)[]
+> `readonly` `optional` **questions**: [`Question`](api/classes%5CQuestion.md)[]
+
+Defined in: [src/Program.ts:163](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L163)
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`questions`](api%5Cinterfaces%5CIProgram.md#questions)
-
-#### Source
-
-[src/Program.ts:163](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L163)
+[`IProgram`](api/interfaces%5CIProgram.md).[`questions`](api/interfaces%5CIProgram.md#questions)
 
 ***
 
 ### rawData?
 
-> `optional` **rawData**: `RecursivePartial`\<[`ProgramSchema`](api%5Cinterfaces%5CProgramSchema.md)\<[`UserSchema`](api%5Cinterfaces%5CUserSchema.md)\<[`AvatarSchema`](api%5Cinterfaces%5CAvatarSchema.md), [`ProfileSchema`](api%5Cinterfaces%5CProfileSchema.md), [`ListProgramsSchema`](api%5Cinterfaces%5CListProgramsSchema.md)\<`unknown`\>\>\>\>
+> `optional` **rawData**: `RecursivePartial`\<[`ProgramSchema`](api/interfaces%5CProgramSchema.md)\<[`UserSchema`](api/interfaces%5CUserSchema.md)\<[`AvatarSchema`](api/interfaces%5CAvatarSchema.md), [`ProfileSchema`](api/interfaces%5CProfileSchema.md), [`ListProgramsSchema`](api/interfaces%5CListProgramsSchema.md)\<`unknown`\>\>\>\>
+
+Defined in: [src/lib/Wrapper.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/Wrapper.ts#L22)
 
 The raw base schema data
 
@@ -274,71 +254,63 @@ Only set if the base was created from a user schema.
 
 `Wrapper.rawData`
 
-#### Source
-
-[src/lib/Wrapper.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/Wrapper.ts#L22)
-
 ***
 
 ### selfFlagged?
 
-> `optional` `readonly` **selfFlagged**: `boolean`
+> `readonly` `optional` **selfFlagged**: `boolean`
+
+Defined in: [src/Program.ts:154](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L154)
 
 Whether the program has been flagged by the client's authenticated user.
 
 #### See
 
-[client](api%5Cclasses%5CUser.md#client)
+[client](api/classes%5CUser.md#client-1)
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`selfFlagged`](api%5Cinterfaces%5CIProgram.md#selfflagged)
-
-#### Source
-
-[src/Program.ts:154](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L154)
+[`IProgram`](api/interfaces%5CIProgram.md).[`selfFlagged`](api/interfaces%5CIProgram.md#selfflagged)
 
 ***
 
 ### selfVoted?
 
-> `optional` `readonly` **selfVoted**: `boolean`
+> `readonly` `optional` **selfVoted**: `boolean`
+
+Defined in: [src/Program.ts:160](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L160)
 
 Whether the program has been voted by the client's authenticated user.
 
 #### See
 
-[client](api%5Cclasses%5CUser.md#client)
+[client](api/classes%5CUser.md#client-1)
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`selfVoted`](api%5Cinterfaces%5CIProgram.md#selfvoted)
-
-#### Source
-
-[src/Program.ts:160](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L160)
+[`IProgram`](api/interfaces%5CIProgram.md).[`selfVoted`](api/interfaces%5CIProgram.md#selfvoted)
 
 ***
 
 ### spinOffCount?
 
-> `optional` `readonly` **spinOffCount**: `number`
+> `readonly` `optional` **spinOffCount**: `number`
+
+Defined in: [src/Program.ts:114](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L114)
 
 The number of spin-offs the program has.
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`spinOffCount`](api%5Cinterfaces%5CIProgram.md#spinoffcount)
-
-#### Source
-
-[src/Program.ts:114](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L114)
+[`IProgram`](api/interfaces%5CIProgram.md).[`spinOffCount`](api/interfaces%5CIProgram.md#spinoffcount)
 
 ***
 
 ### thumbnailID?
 
-> `optional` `readonly` **thumbnailID**: `number`
+> `readonly` `optional` **thumbnailID**: `number`
+
+Defined in: [src/Program.ts:139](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L139)
 
 The ID of the latest thumbnail image of the program.
 
@@ -348,63 +320,55 @@ Previous thumbnails are not guaranteed to be available.
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`thumbnailID`](api%5Cinterfaces%5CIProgram.md#thumbnailid)
-
-#### Source
-
-[src/Program.ts:139](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L139)
+[`IProgram`](api/interfaces%5CIProgram.md).[`thumbnailID`](api/interfaces%5CIProgram.md#thumbnailid)
 
 ***
 
 ### tipsAndThanks?
 
-> `optional` `readonly` **tipsAndThanks**: [`TipsAndThanks`](api%5Cclasses%5CTipsAndThanks.md)[]
+> `readonly` `optional` **tipsAndThanks**: [`TipsAndThanks`](api/classes%5CTipsAndThanks.md)[]
+
+Defined in: [src/Program.ts:162](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L162)
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`tipsAndThanks`](api%5Cinterfaces%5CIProgram.md#tipsandthanks)
-
-#### Source
-
-[src/Program.ts:162](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L162)
+[`IProgram`](api/interfaces%5CIProgram.md).[`tipsAndThanks`](api/interfaces%5CIProgram.md#tipsandthanks)
 
 ***
 
 ### title?
 
-> `optional` `readonly` **title**: `string`
+> `readonly` `optional` **title**: `string`
+
+Defined in: [src/Program.ts:74](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L74)
 
 The title of the program.
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`title`](api%5Cinterfaces%5CIProgram.md#title)
-
-#### Source
-
-[src/Program.ts:74](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L74)
+[`IProgram`](api/interfaces%5CIProgram.md).[`title`](api/interfaces%5CIProgram.md#title)
 
 ***
 
 ### type?
 
-> `optional` `readonly` **type**: [`ProgramType`](api%5Cenumerations%5CProgramType.md)
+> `readonly` `optional` **type**: [`ProgramType`](api/enumerations%5CProgramType.md)
+
+Defined in: [src/Program.ts:126](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L126)
 
 The type of program.
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`type`](api%5Cinterfaces%5CIProgram.md#type)
-
-#### Source
-
-[src/Program.ts:126](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L126)
+[`IProgram`](api/interfaces%5CIProgram.md).[`type`](api/interfaces%5CIProgram.md#type)
 
 ***
 
 ### updated?
 
-> `optional` `readonly` **updated**: `null` \| `Date`
+> `readonly` `optional` **updated**: `null` \| `Date`
+
+Defined in: [src/Program.ts:89](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L89)
 
 The date the program was last updated.
 
@@ -414,17 +378,15 @@ Set to `null` if the program has never been updated.
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`updated`](api%5Cinterfaces%5CIProgram.md#updated)
-
-#### Source
-
-[src/Program.ts:89](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L89)
+[`IProgram`](api/interfaces%5CIProgram.md).[`updated`](api/interfaces%5CIProgram.md#updated)
 
 ***
 
 ### votes?
 
-> `optional` `readonly` **votes**: `number`
+> `readonly` `optional` **votes**: `number`
+
+Defined in: [src/Program.ts:110](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L110)
 
 The number of votes the program has received.
 
@@ -434,17 +396,15 @@ Note that a program has 1 vote on creation.
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`votes`](api%5Cinterfaces%5CIProgram.md#votes)
-
-#### Source
-
-[src/Program.ts:110](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L110)
+[`IProgram`](api/interfaces%5CIProgram.md).[`votes`](api/interfaces%5CIProgram.md#votes)
 
 ***
 
 ### width?
 
-> `optional` `readonly` **width**: `number`
+> `readonly` `optional` **width**: `number`
+
+Defined in: [src/Program.ts:96](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L96)
 
 The height of the program in pixels.
 
@@ -454,141 +414,125 @@ Constrained between 400 and 600. May be any value in between.
 
 #### Implementation of
 
-[`IProgram`](api%5Cinterfaces%5CIProgram.md).[`width`](api%5Cinterfaces%5CIProgram.md#width)
-
-#### Source
-
-[src/Program.ts:96](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L96)
+[`IProgram`](api/interfaces%5CIProgram.md).[`width`](api/interfaces%5CIProgram.md#width)
 
 ***
 
 ### Type
 
-> `static` `readonly` **Type**: *typeof* [`ProgramType`](api%5Cenumerations%5CProgramType.md) = `ProgramType`
+> `readonly` `static` **Type**: *typeof* [`ProgramType`](api/enumerations%5CProgramType.md) = `ProgramType`
+
+Defined in: [src/Program.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L65)
 
 Aliases for the program types.
 
 #### Raw
 
-[ProgramRevisionSchema.editorType](api%5Cinterfaces%5CProgramRevisionSchema.md#editortype)
-
-#### Source
-
-[src/Program.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L65)
+[ProgramRevisionSchema.editorType](api/interfaces%5CProgramRevisionSchema.md#editortype)
 
 ## Accessors
 
 ### lines
 
-> `get` **lines**(): `null` \| `number`
+#### Get Signature
+
+> **get** **lines**(): `null` \| `number`
+
+Defined in: [src/Program.ts:173](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L173)
 
 Number of lines of code in the program.
 
-#### Returns
+##### Returns
 
 `null` \| `number`
-
-#### Source
-
-[src/Program.ts:173](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L173)
 
 ***
 
 ### shortUrl
 
-> `get` **shortUrl**(): `null` \| `string`
+#### Get Signature
+
+> **get** **shortUrl**(): `null` \| `string`
+
+Defined in: [src/Program.ts:192](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L192)
 
 Short URL of the program.
 
-#### Returns
+##### Returns
 
 `null` \| `string`
-
-#### Source
-
-[src/Program.ts:192](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L192)
 
 ***
 
 ### spinoff
 
-> `get` **spinoff**(): `null` \| `boolean`
+#### Get Signature
 
-#### Returns
+> **get** **spinoff**(): `null` \| `boolean`
+
+Defined in: [src/Program.ts:166](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L166)
+
+##### Returns
 
 `null` \| `boolean`
-
-#### Source
-
-[src/Program.ts:166](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L166)
 
 ***
 
 ### thumbnailUrl
 
-> `get` **thumbnailUrl**(): `null` \| `string`
+#### Get Signature
+
+> **get** **thumbnailUrl**(): `null` \| `string`
+
+Defined in: [src/Program.ts:203](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L203)
 
 Thumbnail image URL of the program.
 
-#### Description
+##### Description
 
 To get the latest thumbnail image, use 'latest' as the thumbnail ID instead.
 
-#### Returns
+##### Returns
 
 `null` \| `string`
-
-#### Source
-
-[src/Program.ts:203](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L203)
 
 ***
 
 ### url
 
-> `get` **url**(): `null` \| `string`
+#### Get Signature
+
+> **get** **url**(): `null` \| `string`
+
+Defined in: [src/Program.ts:181](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L181)
 
 URL of the program.
 
-#### Returns
+##### Returns
 
 `null` \| `string`
 
-#### Source
-
-[src/Program.ts:181](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L181)
-
 ## Methods
-
-### #resolveIdentifier()
-
-> `private` **#resolveIdentifier**(): `number` \| \`ag5zfmtoYW4tYWNhZGVteXI$\{string\}CxIKU2NyYXRjaHBhZB$\{string\}$\{string\}\`
-
-#### Returns
-
-`number` \| \`ag5zfmtoYW4tYWNhZGVteXI$\{string\}CxIKU2NyYXRjaHBhZB$\{string\}$\{string\}\`
-
-#### Source
-
-[src/Program.ts:231](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L231)
-
-***
 
 ### copy()
 
-> **copy**(`data`): [`Program`](api%5Cclasses%5CProgram.md)
+> **copy**(`data`): [`Program`](api/classes%5CProgram.md)
+
+Defined in: [src/lib/Wrapper.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/Wrapper.ts#L53)
 
 Updates data into the class
 
 #### Parameters
 
-• **data**: [`IProgram`](api%5Cinterfaces%5CIProgram.md)
+##### data
+
+[`IProgram`](api/interfaces%5CIProgram.md)
 
 The data to copy from
 
 #### Returns
 
-[`Program`](api%5Cclasses%5CProgram.md)
+[`Program`](api/classes%5CProgram.md)
 
 The class instance
 
@@ -596,27 +540,27 @@ The class instance
 
 `Wrapper.copy`
 
-#### Source
-
-[src/lib/Wrapper.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/Wrapper.ts#L53)
-
 ***
 
 ### copyFromSchema()
 
-> **copyFromSchema**(`schema`): [`Program`](api%5Cclasses%5CProgram.md)
+> **copyFromSchema**(`schema`): [`Program`](api/classes%5CProgram.md)
+
+Defined in: [src/lib/Wrapper.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/Wrapper.ts#L65)
 
 Updates data from a schema into the instance
 
 #### Parameters
 
-• **schema**: `RecursivePartial`\<[`ProgramSchema`](api%5Cinterfaces%5CProgramSchema.md)\<[`UserSchema`](api%5Cinterfaces%5CUserSchema.md)\<[`AvatarSchema`](api%5Cinterfaces%5CAvatarSchema.md), [`ProfileSchema`](api%5Cinterfaces%5CProfileSchema.md), [`ListProgramsSchema`](api%5Cinterfaces%5CListProgramsSchema.md)\<`unknown`\>\>\>\>
+##### schema
+
+`RecursivePartial`\<[`ProgramSchema`](api/interfaces%5CProgramSchema.md)\<[`UserSchema`](api/interfaces%5CUserSchema.md)\<[`AvatarSchema`](api/interfaces%5CAvatarSchema.md), [`ProfileSchema`](api/interfaces%5CProfileSchema.md), [`ListProgramsSchema`](api/interfaces%5CListProgramsSchema.md)\<`unknown`\>\>\>\>
 
 The schema to copy from
 
 #### Returns
 
-[`Program`](api%5Cclasses%5CProgram.md)
+[`Program`](api/classes%5CProgram.md)
 
 The class instance
 
@@ -624,151 +568,163 @@ The class instance
 
 `Wrapper.copyFromSchema`
 
-#### Source
-
-[src/lib/Wrapper.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/Wrapper.ts#L65)
-
 ***
 
 ### get()
 
-> **get**(`client`): `Promise`\<[`Program`](api%5Cclasses%5CProgram.md)\>
+> **get**(`client`): `Promise`\<[`Program`](api/classes%5CProgram.md)\>
+
+Defined in: [src/Program.ts:325](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L325)
+
+Gets and updates the instance's data
 
 #### Parameters
 
-• **client**: [`Client`](api%5Cclasses%5CClient.md)= `undefined`
+##### client
+
+[`Client`](api/classes%5CClient.md) = `...`
+
+The API client to use
 
 #### Returns
 
-`Promise`\<[`Program`](api%5Cclasses%5CProgram.md)\>
+`Promise`\<[`Program`](api/classes%5CProgram.md)\>
 
 #### Overrides
 
 `Wrapper.get`
 
-#### Source
-
-[src/Program.ts:325](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L325)
-
 ***
 
 ### getAllHelpRequests()
 
-> **getAllHelpRequests**(`client`, `sort`?): `Promise`\<[`Program`](api%5Cclasses%5CProgram.md)\>
+> **getAllHelpRequests**(`client`, `sort`?): `Promise`\<[`Program`](api/classes%5CProgram.md)\>
+
+Defined in: [src/Program.ts:405](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L405)
 
 #### Parameters
 
-• **client**: [`Client`](api%5Cclasses%5CClient.md)= `undefined`
+##### client
 
-• **sort?**: [`FeedbackSort`](api%5Cenumerations%5CFeedbackSort.md)
+[`Client`](api/classes%5CClient.md) = `...`
+
+##### sort?
+
+[`FeedbackSort`](api/enumerations%5CFeedbackSort.md)
 
 #### Returns
 
-`Promise`\<[`Program`](api%5Cclasses%5CProgram.md)\>
-
-#### Source
-
-[src/Program.ts:405](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L405)
+`Promise`\<[`Program`](api/classes%5CProgram.md)\>
 
 ***
 
 ### getAllQuestions()
 
-> **getAllQuestions**(`client`, `sort`?): `Promise`\<[`Program`](api%5Cclasses%5CProgram.md)\>
+> **getAllQuestions**(`client`, `sort`?): `Promise`\<[`Program`](api/classes%5CProgram.md)\>
+
+Defined in: [src/Program.ts:377](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L377)
 
 #### Parameters
 
-• **client**: [`Client`](api%5Cclasses%5CClient.md)= `undefined`
+##### client
 
-• **sort?**: [`FeedbackSort`](api%5Cenumerations%5CFeedbackSort.md)
+[`Client`](api/classes%5CClient.md) = `...`
+
+##### sort?
+
+[`FeedbackSort`](api/enumerations%5CFeedbackSort.md)
 
 #### Returns
 
-`Promise`\<[`Program`](api%5Cclasses%5CProgram.md)\>
-
-#### Source
-
-[src/Program.ts:377](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L377)
+`Promise`\<[`Program`](api/classes%5CProgram.md)\>
 
 ***
 
 ### getAllTipsAndThanks()
 
-> **getAllTipsAndThanks**(`client`, `sort`?): `Promise`\<[`Program`](api%5Cclasses%5CProgram.md)\>
+> **getAllTipsAndThanks**(`client`, `sort`?): `Promise`\<[`Program`](api/classes%5CProgram.md)\>
+
+Defined in: [src/Program.ts:349](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L349)
 
 #### Parameters
 
-• **client**: [`Client`](api%5Cclasses%5CClient.md)= `undefined`
+##### client
 
-• **sort?**: [`FeedbackSort`](api%5Cenumerations%5CFeedbackSort.md)
+[`Client`](api/classes%5CClient.md) = `...`
+
+##### sort?
+
+[`FeedbackSort`](api/enumerations%5CFeedbackSort.md)
 
 #### Returns
 
-`Promise`\<[`Program`](api%5Cclasses%5CProgram.md)\>
-
-#### Source
-
-[src/Program.ts:349](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L349)
+`Promise`\<[`Program`](api/classes%5CProgram.md)\>
 
 ***
 
 ### getHelpRequests()
 
-> **getHelpRequests**(`client`, `sort`?): `AsyncGenerator`\<[`Question`](api%5Cclasses%5CQuestion.md)[], [`Program`](api%5Cclasses%5CProgram.md), `unknown`\>
+> **getHelpRequests**(`client`, `sort`?): `AsyncGenerator`\<[`Question`](api/classes%5CQuestion.md)[], [`Program`](api/classes%5CProgram.md), `unknown`\>
+
+Defined in: [src/Program.ts:389](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L389)
 
 #### Parameters
 
-• **client**: [`Client`](api%5Cclasses%5CClient.md)= `undefined`
+##### client
 
-• **sort?**: [`FeedbackSort`](api%5Cenumerations%5CFeedbackSort.md)
+[`Client`](api/classes%5CClient.md) = `...`
+
+##### sort?
+
+[`FeedbackSort`](api/enumerations%5CFeedbackSort.md)
 
 #### Returns
 
-`AsyncGenerator`\<[`Question`](api%5Cclasses%5CQuestion.md)[], [`Program`](api%5Cclasses%5CProgram.md), `unknown`\>
-
-#### Source
-
-[src/Program.ts:389](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L389)
+`AsyncGenerator`\<[`Question`](api/classes%5CQuestion.md)[], [`Program`](api/classes%5CProgram.md), `unknown`\>
 
 ***
 
 ### getQuestions()
 
-> **getQuestions**(`client`, `sort`?): `AsyncGenerator`\<[`Question`](api%5Cclasses%5CQuestion.md)[], [`Program`](api%5Cclasses%5CProgram.md), `unknown`\>
+> **getQuestions**(`client`, `sort`?): `AsyncGenerator`\<[`Question`](api/classes%5CQuestion.md)[], [`Program`](api/classes%5CProgram.md), `unknown`\>
+
+Defined in: [src/Program.ts:361](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L361)
 
 #### Parameters
 
-• **client**: [`Client`](api%5Cclasses%5CClient.md)= `undefined`
+##### client
 
-• **sort?**: [`FeedbackSort`](api%5Cenumerations%5CFeedbackSort.md)
+[`Client`](api/classes%5CClient.md) = `...`
+
+##### sort?
+
+[`FeedbackSort`](api/enumerations%5CFeedbackSort.md)
 
 #### Returns
 
-`AsyncGenerator`\<[`Question`](api%5Cclasses%5CQuestion.md)[], [`Program`](api%5Cclasses%5CProgram.md), `unknown`\>
-
-#### Source
-
-[src/Program.ts:361](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L361)
+`AsyncGenerator`\<[`Question`](api/classes%5CQuestion.md)[], [`Program`](api/classes%5CProgram.md), `unknown`\>
 
 ***
 
 ### getTipsAndThanks()
 
-> **getTipsAndThanks**(`client`, `sort`?): `AsyncGenerator`\<[`TipsAndThanks`](api%5Cclasses%5CTipsAndThanks.md)[], [`Program`](api%5Cclasses%5CProgram.md), `unknown`\>
+> **getTipsAndThanks**(`client`, `sort`?): `AsyncGenerator`\<[`TipsAndThanks`](api/classes%5CTipsAndThanks.md)[], [`Program`](api/classes%5CProgram.md), `unknown`\>
+
+Defined in: [src/Program.ts:333](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L333)
 
 #### Parameters
 
-• **client**: [`Client`](api%5Cclasses%5CClient.md)= `undefined`
+##### client
 
-• **sort?**: [`FeedbackSort`](api%5Cenumerations%5CFeedbackSort.md)
+[`Client`](api/classes%5CClient.md) = `...`
+
+##### sort?
+
+[`FeedbackSort`](api/enumerations%5CFeedbackSort.md)
 
 #### Returns
 
-`AsyncGenerator`\<[`TipsAndThanks`](api%5Cclasses%5CTipsAndThanks.md)[], [`Program`](api%5Cclasses%5CProgram.md), `unknown`\>
-
-#### Source
-
-[src/Program.ts:333](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L333)
+`AsyncGenerator`\<[`TipsAndThanks`](api/classes%5CTipsAndThanks.md)[], [`Program`](api/classes%5CProgram.md), `unknown`\>
 
 ***
 
@@ -776,9 +732,15 @@ The class instance
 
 > **is**(`program`): `boolean`
 
+Defined in: [src/Program.ts:417](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L417)
+
+Checks if the data represents the same instance
+
 #### Parameters
 
-• **program**: [`IProgram`](api%5Cinterfaces%5CIProgram.md)
+##### program
+
+[`IProgram`](api/interfaces%5CIProgram.md)
 
 #### Returns
 
@@ -788,21 +750,21 @@ The class instance
 
 `Wrapper.is`
 
-#### Source
-
-[src/Program.ts:417](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L417)
-
 ***
 
 ### isSchema()
 
 > **isSchema**(`schema`): `boolean`
 
+Defined in: [src/lib/Wrapper.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/Wrapper.ts#L88)
+
 Checks if the schema represents the same instance
 
 #### Parameters
 
-• **schema**: `RecursivePartial`\<[`ProgramSchema`](api%5Cinterfaces%5CProgramSchema.md)\<[`UserSchema`](api%5Cinterfaces%5CUserSchema.md)\<[`AvatarSchema`](api%5Cinterfaces%5CAvatarSchema.md), [`ProfileSchema`](api%5Cinterfaces%5CProfileSchema.md), [`ListProgramsSchema`](api%5Cinterfaces%5CListProgramsSchema.md)\<`unknown`\>\>\>\>
+##### schema
+
+`RecursivePartial`\<[`ProgramSchema`](api/interfaces%5CProgramSchema.md)\<[`UserSchema`](api/interfaces%5CUserSchema.md)\<[`AvatarSchema`](api/interfaces%5CAvatarSchema.md), [`ProfileSchema`](api/interfaces%5CProfileSchema.md), [`ListProgramsSchema`](api/interfaces%5CListProgramsSchema.md)\<`unknown`\>\>\>\>
 
 #### Returns
 
@@ -812,19 +774,23 @@ Checks if the schema represents the same instance
 
 `Wrapper.isSchema`
 
-#### Source
-
-[src/lib/Wrapper.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/Wrapper.ts#L88)
-
 ***
 
 ### transformSchema()
 
 > **transformSchema**(`schema`): `object`
 
+Defined in: [src/Program.ts:238](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L238)
+
+Transforms a API schema into an abstracted interface
+
 #### Parameters
 
-• **schema**: `RecursivePartial`\<[`ProgramSchema`](api%5Cinterfaces%5CProgramSchema.md)\<[`UserSchema`](api%5Cinterfaces%5CUserSchema.md)\<[`AvatarSchema`](api%5Cinterfaces%5CAvatarSchema.md), [`ProfileSchema`](api%5Cinterfaces%5CProfileSchema.md), [`ListProgramsSchema`](api%5Cinterfaces%5CListProgramsSchema.md)\<`unknown`\>\>\>\>
+##### schema
+
+`RecursivePartial`\<[`ProgramSchema`](api/interfaces%5CProgramSchema.md)\<[`UserSchema`](api/interfaces%5CUserSchema.md)\<[`AvatarSchema`](api/interfaces%5CAvatarSchema.md), [`ProfileSchema`](api/interfaces%5CProfileSchema.md), [`ListProgramsSchema`](api/interfaces%5CListProgramsSchema.md)\<`unknown`\>\>\>\>
+
+The schema to transform
 
 #### Returns
 
@@ -832,7 +798,7 @@ Checks if the schema represents the same instance
 
 ##### author
 
-> **author**: `undefined` \| [`User`](api%5Cclasses%5CUser.md)
+> **author**: `undefined` \| [`User`](api/classes%5CUser.md)
 
 ##### code
 
@@ -864,11 +830,11 @@ Checks if the schema represents the same instance
 
 ##### key
 
-> **key**: `undefined` \| \`ag5zfmtoYW4tYWNhZGVteXI$\{string\}CxIKU2NyYXRjaHBhZB$\{string\}$\{string\}\` = `schema.key`
+> **key**: `undefined` \| `` `ag5zfmtoYW4tYWNhZGVteXI${string}CxIKU2NyYXRjaHBhZB${string}${string}` `` = `schema.key`
 
 ##### origin
 
-> **origin**: `undefined` \| `null` \| [`Program`](api%5Cclasses%5CProgram.md)
+> **origin**: `undefined` \| `null` \| [`Program`](api/classes%5CProgram.md)
 
 ##### selfFlagged
 
@@ -892,7 +858,7 @@ Checks if the schema represents the same instance
 
 ##### type
 
-> **type**: [`ProgramType`](api%5Cenumerations%5CProgramType.md)
+> **type**: [`ProgramType`](api/enumerations%5CProgramType.md)
 
 ##### updated
 
@@ -910,42 +876,38 @@ Checks if the schema represents the same instance
 
 `Wrapper.transformSchema`
 
-#### Source
-
-[src/Program.ts:238](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L238)
-
 ***
 
 ### fromIdentifier()
 
-> `static` **fromIdentifier**(`identifier`): [`Program`](api%5Cclasses%5CProgram.md)
+> `static` **fromIdentifier**(`identifier`): [`Program`](api/classes%5CProgram.md)
+
+Defined in: [src/Program.ts:219](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L219)
 
 #### Parameters
 
-• **identifier**: [`ProgramID`](api%5Ctype-aliases%5CProgramID.md) \| \`http$\{string\}://$\{string\}khanacademy.$\{string\}/$\{string\}/$\{string\}/$\{number\}\` \| \`ag5zfmtoYW4tYWNhZGVteXI$\{string\}CxIKU2NyYXRjaHBhZB$\{string\}$\{string\}\`
+##### identifier
+
+[`ProgramID`](api/type-aliases%5CProgramID.md) | `` `http${string}://${string}khanacademy.${string}/${string}/${string}/${number}` `` | `` `ag5zfmtoYW4tYWNhZGVteXI${string}CxIKU2NyYXRjaHBhZB${string}${string}` ``
 
 #### Returns
 
-[`Program`](api%5Cclasses%5CProgram.md)
-
-#### Source
-
-[src/Program.ts:219](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L219)
+[`Program`](api/classes%5CProgram.md)
 
 ***
 
 ### fromSchema()
 
-> `static` **fromSchema**(`schema`): [`Program`](api%5Cclasses%5CProgram.md)
+> `static` **fromSchema**(`schema`): [`Program`](api/classes%5CProgram.md)
+
+Defined in: [src/Program.ts:211](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/Program.ts#L211)
 
 #### Parameters
 
-• **schema**: `RecursivePartial`\<[`ProgramSchema`](api%5Cinterfaces%5CProgramSchema.md)\<[`UserSchema`](api%5Cinterfaces%5CUserSchema.md)\<[`AvatarSchema`](api%5Cinterfaces%5CAvatarSchema.md), [`ProfileSchema`](api%5Cinterfaces%5CProfileSchema.md), [`ListProgramsSchema`](api%5Cinterfaces%5CListProgramsSchema.md)\<`unknown`\>\>\>\>
+##### schema
+
+`RecursivePartial`\<[`ProgramSchema`](api/interfaces%5CProgramSchema.md)\<[`UserSchema`](api/interfaces%5CUserSchema.md)\<[`AvatarSchema`](api/interfaces%5CAvatarSchema.md), [`ProfileSchema`](api/interfaces%5CProfileSchema.md), [`ListProgramsSchema`](api/interfaces%5CListProgramsSchema.md)\<`unknown`\>\>\>\>
 
 #### Returns
 
-[`Program`](api%5Cclasses%5CProgram.md)
-
-#### Source
-
-[src/Program.ts:211](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/Program.ts#L211)
+[`Program`](api/classes%5CProgram.md)

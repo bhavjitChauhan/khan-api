@@ -1,18 +1,24 @@
-## programQuery(variables, init)
+## Call Signature
 
-> **programQuery**(`variables`, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CProgramQuery%5Ctype-aliases%5CResponse.md)\>\>
+> **programQuery**(`variables`, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CProgramQuery%5Ctype-aliases%5CResponse.md)\>\>
+
+Defined in: [src/queries/programQuery.ts:143](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/programQuery.ts#L143)
 
 Low-level function for making a `programQuery` request.
 
 ### Parameters
 
-• **variables**: [`Variables`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CProgramQuery%5Cinterfaces%5CVariables.md)
+#### variables
 
-• **init?**: `RequestInit`
+[`Variables`](api/namespaces%5Cqueries%5Cnamespaces%5CProgramQuery%5Cinterfaces%5CVariables.md)
+
+#### init?
+
+`RequestInit`
 
 ### Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CProgramQuery%5Ctype-aliases%5CResponse.md)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CProgramQuery%5Ctype-aliases%5CResponse.md)\>\>
 
 ### Link
 
@@ -20,7 +26,7 @@ Low-level function for making a `programQuery` request.
 
 ### See
 
-[Client.getProgram](api%5Cclasses%5CClient.md#getprogram)
+[Client.getProgram](api/classes%5CClient.md#getprogram)
 
 ### Example
 
@@ -33,23 +39,25 @@ const json = await response.json()
 const program = json.data.programById
 ```
 
-### Source
+## Call Signature
 
-[src/queries/programQuery.ts:143](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/programQuery.ts#L143)
+> **programQuery**(`programId`, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CProgramQuery%5Ctype-aliases%5CResponse.md)\>\>
 
-## programQuery(programId, init)
-
-> **programQuery**(`programId`, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CProgramQuery%5Ctype-aliases%5CResponse.md)\>\>
+Defined in: [src/queries/programQuery.ts:156](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/programQuery.ts#L156)
 
 ### Parameters
 
-• **programId**: [`ProgramID`](api%5Ctype-aliases%5CProgramID.md)
+#### programId
 
-• **init?**: `RequestInit`
+[`ProgramID`](api/type-aliases%5CProgramID.md)
+
+#### init?
+
+`RequestInit`
 
 ### Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CProgramQuery%5Ctype-aliases%5CResponse.md)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CProgramQuery%5Ctype-aliases%5CResponse.md)\>\>
 
 ### Example
 
@@ -59,7 +67,3 @@ const response = await queries.programQuery(6058668928843776)
 const json = await response.json()
 const program = json.data.programById
 ```
-
-### Source
-
-[src/queries/programQuery.ts:156](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/programQuery.ts#L156)

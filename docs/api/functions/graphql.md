@@ -1,6 +1,8 @@
-> **graphql**\<`Variables`, `Response`\>(`url`, `query`, `variables`, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<`Response`\>\>
+> **graphql**\<`Variables`, `Response`\>(`url`, `query`, `variables`, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<`Response`\>\>
 
-## Type parameters
+Defined in: [src/utils/fetch.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/utils/fetch.ts#L33)
+
+## Type Parameters
 
 • **Variables**
 
@@ -8,18 +10,22 @@
 
 ## Parameters
 
-• **url**: `string`
+### url
 
-• **query**: `string`
+`string`
 
-• **variables**: `Variables`= `undefined`
+### query
 
-• **init?**: `RequestInit`
+`string`
+
+### variables
+
+`Variables` = `...`
+
+### init?
+
+`RequestInit`
 
 ## Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<`Response`\>\>
-
-## Source
-
-[src/utils/fetch.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/utils/fetch.ts#L33)
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<`Response`\>\>

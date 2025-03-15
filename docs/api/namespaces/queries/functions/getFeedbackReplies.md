@@ -1,18 +1,24 @@
-## getFeedbackReplies(variables, init)
+## Call Signature
 
-> **getFeedbackReplies**(`variables`, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetFeedbackReplies%5Ctype-aliases%5CResponse.md)\>\>
+> **getFeedbackReplies**(`variables`, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetFeedbackReplies%5Ctype-aliases%5CResponse.md)\>\>
+
+Defined in: [src/queries/getFeedbackReplies.ts:106](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/getFeedbackReplies.ts#L106)
 
 Low-level function for making a `getFeedbackReplies` request.
 
 ### Parameters
 
-• **variables**: [`Variables`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetFeedbackReplies%5Cinterfaces%5CVariables.md)
+#### variables
 
-• **init?**: `RequestInit`
+[`Variables`](api/namespaces%5Cqueries%5Cnamespaces%5CGetFeedbackReplies%5Cinterfaces%5CVariables.md)
+
+#### init?
+
+`RequestInit`
 
 ### Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetFeedbackReplies%5Ctype-aliases%5CResponse.md)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetFeedbackReplies%5Ctype-aliases%5CResponse.md)\>\>
 
 ### Link
 
@@ -29,23 +35,25 @@ const json = await response.json()
 const replies = json.data.feedbackReplies
 ```
 
-### Source
+## Call Signature
 
-[src/queries/getFeedbackReplies.ts:106](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/getFeedbackReplies.ts#L106)
+> **getFeedbackReplies**(`postKey`, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetFeedbackReplies%5Ctype-aliases%5CResponse.md)\>\>
 
-## getFeedbackReplies(postKey, init)
-
-> **getFeedbackReplies**(`postKey`, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetFeedbackReplies%5Ctype-aliases%5CResponse.md)\>\>
+Defined in: [src/queries/getFeedbackReplies.ts:119](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/getFeedbackReplies.ts#L119)
 
 ### Parameters
 
-• **postKey**: \`ag5zfmtoYW4tYWNhZGVteX$\{string\}CxIIVXNlckRhdGEi$\{string\}thaWRf$\{string\}$\{string\}$\{string\}\` \| \`kaencrypted\_$\{string\}\_$\{string\}\`
+#### postKey
 
-• **init?**: `RequestInit`
+`` `ag5zfmtoYW4tYWNhZGVteX${string}CxIIVXNlckRhdGEi${string}thaWRf${string}${string}${string}` `` | `` `kaencrypted_${string}_${string}` ``
+
+#### init?
+
+`RequestInit`
 
 ### Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetFeedbackReplies%5Ctype-aliases%5CResponse.md)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetFeedbackReplies%5Ctype-aliases%5CResponse.md)\>\>
 
 ### Example
 
@@ -55,7 +63,3 @@ const await queries.getFeedbackReplies('ag5zfmtoYW4tYWNhZGVteXJBCxIIVXNlckRhdGEi
 const json = await response.json()
 const replies = json.data.feedbackReplies
 ```
-
-### Source
-
-[src/queries/getFeedbackReplies.ts:119](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/getFeedbackReplies.ts#L119)

@@ -1,12 +1,12 @@
+Defined in: [src/types/schema.ts:154](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L154)
+
 ## Properties
 
 ### \_\_typename
 
 > **\_\_typename**: `"Locale"`
 
-#### Source
-
-[src/types/schema.ts:151](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L151)
+Defined in: [src/types/schema.ts:155](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L155)
 
 ***
 
@@ -14,9 +14,7 @@
 
 > **id**: `string`
 
-#### Source
-
-[src/types/schema.ts:152](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L152)
+Defined in: [src/types/schema.ts:156](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L156)
 
 ***
 
@@ -24,9 +22,7 @@
 
 > **kaLocale**: `"as"` \| `"az"` \| `"cs"` \| `"da"` \| `"el"` \| `"gu"` \| `"hu"` \| `"id"` \| `"it"` \| `"lt"` \| `"ja"` \| `"kk"` \| `"kn"` \| `"ky"` \| `"lv"` \| `"mn"` \| `"mr"` \| `"my"` \| `"nl"` \| `"pt-pt"` \| `"ru"` \| `"sv"` \| `"ta"` \| `"uz"` \| `"bg"` \| `"bn"` \| `"de"` \| `"en"` \| `"es"` \| `"fr"` \| `"hi"` \| `"hy"` \| `"ka"` \| `"km"` \| `"ko"` \| `"nb"` \| `"pa"` \| `"pl"` \| `"pt"` \| `"ro"` \| `"sr"` \| `"tr"` \| `"vi"` \| `"zh-hans"` \| `"sgn-us"`
 
-#### Source
-
-[src/types/schema.ts:153](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L153)
+Defined in: [src/types/schema.ts:157](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L157)
 
 ***
 
@@ -34,6 +30,4 @@
 
 > **status**: `unknown`
 
-#### Source
-
-[src/types/schema.ts:154](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L154)
+Defined in: [src/types/schema.ts:158](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L158)

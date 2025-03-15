@@ -1,5 +1,3 @@
-> **ITipsAndThanks**: [`IMessage`](api%5Cinterfaces%5CIMessage.md)
+> **ITipsAndThanks**: [`IMessage`](api/interfaces%5CIMessage.md)
 
-## Source
-
-[src/lib/messages/TipsAndThanks.ts:7](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/TipsAndThanks.ts#L7)
+Defined in: [src/lib/messages/TipsAndThanks.ts:7](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/TipsAndThanks.ts#L7)

@@ -1,14 +1,14 @@
+Defined in: [src/mutations/loginWithPasswordMutation.ts:32](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/mutations/loginWithPasswordMutation.ts#L32)
+
 ## Properties
 
 ### identifier
 
 > **identifier**: `string`
 
+Defined in: [src/mutations/loginWithPasswordMutation.ts:34](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/mutations/loginWithPasswordMutation.ts#L34)
+
 Email or username
-
-#### Source
-
-[src/mutations/loginWithPasswordMutation.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/mutations/loginWithPasswordMutation.ts#L35)
 
 ***
 
@@ -16,6 +16,4 @@ Email or username
 
 > **password**: `string`
 
-#### Source
-
-[src/mutations/loginWithPasswordMutation.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/mutations/loginWithPasswordMutation.ts#L36)
+Defined in: [src/mutations/loginWithPasswordMutation.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/mutations/loginWithPasswordMutation.ts#L35)

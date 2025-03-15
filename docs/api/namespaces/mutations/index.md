@@ -1,11 +1,9 @@
 Mutations
 
-## Index
+## Namespaces
 
-### Namespaces
+- [LoginWithPasswordMutation](api/namespaces%5Cmutations%5Cnamespaces%5CLoginWithPasswordMutation%5Cindex.md)
 
-- [LoginWithPasswordMutation](api%5Cnamespaces%5Cmutations%5Cnamespaces%5CLoginWithPasswordMutation%5Cindex.md)
+## Functions
 
-### Functions
-
-- [loginWithPasswordMutation](api%5Cnamespaces%5Cmutations%5Cfunctions%5CloginWithPasswordMutation.md)
+- [loginWithPasswordMutation](api/namespaces%5Cmutations%5Cfunctions%5CloginWithPasswordMutation.md)

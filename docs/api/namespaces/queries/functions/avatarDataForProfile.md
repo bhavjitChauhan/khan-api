@@ -1,18 +1,24 @@
-## avatarDataForProfile(variables, init)
+## Call Signature
 
-> **avatarDataForProfile**(`variables`, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CAvatarDataForProfile%5Ctype-aliases%5CResponse.md)\>\>
+> **avatarDataForProfile**(`variables`, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CAvatarDataForProfile%5Ctype-aliases%5CResponse.md)\>\>
+
+Defined in: [src/queries/avatarDataForProfile.ts:50](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/avatarDataForProfile.ts#L50)
 
 Low-level function for making a `avatarDataForProfile` request.
 
 ### Parameters
 
-• **variables**: [`Variables`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CAvatarDataForProfile%5Cinterfaces%5CVariables.md)
+#### variables
 
-• **init?**: `RequestInit`
+[`Variables`](api/namespaces%5Cqueries%5Cnamespaces%5CAvatarDataForProfile%5Cinterfaces%5CVariables.md)
+
+#### init?
+
+`RequestInit`
 
 ### Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CAvatarDataForProfile%5Ctype-aliases%5CResponse.md)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CAvatarDataForProfile%5Ctype-aliases%5CResponse.md)\>\>
 
 ### Link
 
@@ -30,23 +36,25 @@ const profile = json.data.user
 const avatar = profile.avatar
 ```
 
-### Source
+## Call Signature
 
-[src/queries/avatarDataForProfile.ts:50](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/avatarDataForProfile.ts#L50)
+> **avatarDataForProfile**(`kaid`, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CAvatarDataForProfile%5Ctype-aliases%5CResponse.md)\>\>
 
-## avatarDataForProfile(kaid, init)
-
-> **avatarDataForProfile**(`kaid`, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CAvatarDataForProfile%5Ctype-aliases%5CResponse.md)\>\>
+Defined in: [src/queries/avatarDataForProfile.ts:64](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/avatarDataForProfile.ts#L64)
 
 ### Parameters
 
-• **kaid**: \`kaid\_$\{number\}\`
+#### kaid
 
-• **init?**: `RequestInit`
+`` `kaid_${number}` ``
+
+#### init?
+
+`RequestInit`
 
 ### Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CAvatarDataForProfile%5Ctype-aliases%5CResponse.md)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CAvatarDataForProfile%5Ctype-aliases%5CResponse.md)\>\>
 
 ### Example
 
@@ -57,7 +65,3 @@ const json = await response.json()
 const profile = json.data.user
 const avatar = profile.avatar
 ```
-
-### Source
-
-[src/queries/avatarDataForProfile.ts:64](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/avatarDataForProfile.ts#L64)

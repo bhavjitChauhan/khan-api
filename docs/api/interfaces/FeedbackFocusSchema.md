@@ -1,12 +1,12 @@
+Defined in: [src/types/schema.ts:343](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L343)
+
 ## Properties
 
 ### \_\_typename
 
 > **\_\_typename**: `"FeedbackFocus"`
 
-#### Source
-
-[src/types/schema.ts:340](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L340)
+Defined in: [src/types/schema.ts:344](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L344)
 
 ***
 
@@ -14,19 +14,15 @@
 
 > **id**: `string`
 
-#### Source
-
-[src/types/schema.ts:341](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L341)
+Defined in: [src/types/schema.ts:345](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L345)
 
 ***
 
 ### kind
 
-> **kind**: [`FeedbackFocusKind`](api%5Cenumerations%5CFeedbackFocusKind.md)
+> **kind**: [`FeedbackFocusKind`](api/enumerations%5CFeedbackFocusKind.md)
 
-#### Source
-
-[src/types/schema.ts:342](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L342)
+Defined in: [src/types/schema.ts:346](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L346)
 
 ***
 
@@ -34,9 +30,7 @@
 
 > **relativeUrl**: `string`
 
-#### Source
-
-[src/types/schema.ts:343](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L343)
+Defined in: [src/types/schema.ts:347](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L347)
 
 ***
 
@@ -44,6 +38,4 @@
 
 > **translatedTitle**: `string`
 
-#### Source
-
-[src/types/schema.ts:344](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L344)
+Defined in: [src/types/schema.ts:348](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L348)

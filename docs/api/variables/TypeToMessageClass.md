@@ -1,19 +1,17 @@
 > `const` **TypeToMessageClass**: `object`
 
+Defined in: [src/utils/messages.ts:38](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/utils/messages.ts#L38)
+
 ## Type declaration
 
 ### COMMENT
 
-> `readonly` **COMMENT**: *typeof* [`TipsAndThanks`](api%5Cclasses%5CTipsAndThanks.md) = `TipsAndThanks`
+> `readonly` **COMMENT**: *typeof* [`TipsAndThanks`](api/classes%5CTipsAndThanks.md) = `TipsAndThanks`
 
 ### PROJECT\_HELP\_QUESTION
 
-> `readonly` **PROJECT\_HELP\_QUESTION**: *typeof* [`Question`](api%5Cclasses%5CQuestion.md) = `Question`
+> `readonly` **PROJECT\_HELP\_QUESTION**: *typeof* [`Question`](api/classes%5CQuestion.md) = `Question`
 
 ### QUESTION
 
-> `readonly` **QUESTION**: *typeof* [`Question`](api%5Cclasses%5CQuestion.md) = `Question`
-
-## Source
-
-[src/utils/messages.ts:38](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/utils/messages.ts#L38)
+> `readonly` **QUESTION**: *typeof* [`Question`](api/classes%5CQuestion.md) = `Question`

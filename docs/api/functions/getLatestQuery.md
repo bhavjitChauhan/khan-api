@@ -1,10 +1,14 @@
 > **getLatestQuery**(`query`): `Promise`\<`null` \| `string`\>
 
+Defined in: [src/utils/safelist.ts:14](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/utils/safelist.ts#L14)
+
 Gets the latest version of a query from the Safelist.
 
 ## Parameters
 
-• **query**: `string`
+### query
+
+`string`
 
 The operation name of the query
 
@@ -21,7 +25,3 @@ The operation name of the query
 ```ts
 const GET_FULL_USER_PROFILE_QUERY = await getLatestQuery('getFullUserProfile')
 ```
-
-## Source
-
-[src/utils/safelist.ts:14](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/utils/safelist.ts#L14)

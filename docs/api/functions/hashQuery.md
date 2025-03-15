@@ -1,10 +1,14 @@
 > **hashQuery**(`document`): `number`
 
+Defined in: [src/utils/safelist.ts:64](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/utils/safelist.ts#L64)
+
 Generates the djb2 hash for a query.
 
 ## Parameters
 
-• **document**: `string`
+### document
+
+`string`
 
 ## Returns
 
@@ -25,7 +29,3 @@ const url = `https://www.khanacademy.org/api/internal/graphql/getFullUserProfile
 const response = await fetch(url)
 const data = await response.json()
 ```
-
-## Source
-
-[src/utils/safelist.ts:64](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/utils/safelist.ts#L64)

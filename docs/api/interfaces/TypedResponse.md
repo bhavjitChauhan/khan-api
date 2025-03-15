@@ -1,8 +1,10 @@
+Defined in: [src/utils/fetch.ts:5](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/utils/fetch.ts#L5)
+
 ## Extends
 
 - `Response`
 
-## Type parameters
+## Type Parameters
 
 • **T**
 
@@ -10,7 +12,9 @@
 
 ### body
 
-> `readonly` **body**: `null` \| `ReadableStream`\<`Uint8Array`\>
+> `readonly` **body**: `null` \| `ReadableStream`\<`Uint8Array`\<`ArrayBufferLike`\>\>
+
+Defined in: node\_modules/typescript/lib/lib.dom.d.ts:3534
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/body)
 
@@ -18,15 +22,13 @@
 
 `Response.body`
 
-#### Source
-
-node\_modules/typescript/lib/lib.dom.d.ts:3151
-
 ***
 
 ### bodyUsed
 
 > `readonly` **bodyUsed**: `boolean`
+
+Defined in: node\_modules/typescript/lib/lib.dom.d.ts:3536
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bodyUsed)
 
@@ -34,15 +36,13 @@ node\_modules/typescript/lib/lib.dom.d.ts:3151
 
 `Response.bodyUsed`
 
-#### Source
-
-node\_modules/typescript/lib/lib.dom.d.ts:3153
-
 ***
 
 ### headers
 
 > `readonly` **headers**: `Headers`
+
+Defined in: node\_modules/typescript/lib/lib.dom.d.ts:19881
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/headers)
 
@@ -50,15 +50,13 @@ node\_modules/typescript/lib/lib.dom.d.ts:3153
 
 `Response.headers`
 
-#### Source
-
-node\_modules/typescript/lib/lib.dom.d.ts:18936
-
 ***
 
 ### ok
 
 > `readonly` **ok**: `boolean`
+
+Defined in: node\_modules/typescript/lib/lib.dom.d.ts:19883
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/ok)
 
@@ -66,15 +64,13 @@ node\_modules/typescript/lib/lib.dom.d.ts:18936
 
 `Response.ok`
 
-#### Source
-
-node\_modules/typescript/lib/lib.dom.d.ts:18938
-
 ***
 
 ### redirected
 
 > `readonly` **redirected**: `boolean`
+
+Defined in: node\_modules/typescript/lib/lib.dom.d.ts:19885
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/redirected)
 
@@ -82,15 +78,13 @@ node\_modules/typescript/lib/lib.dom.d.ts:18938
 
 `Response.redirected`
 
-#### Source
-
-node\_modules/typescript/lib/lib.dom.d.ts:18940
-
 ***
 
 ### status
 
 > `readonly` **status**: `number`
+
+Defined in: node\_modules/typescript/lib/lib.dom.d.ts:19887
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/status)
 
@@ -98,15 +92,13 @@ node\_modules/typescript/lib/lib.dom.d.ts:18940
 
 `Response.status`
 
-#### Source
-
-node\_modules/typescript/lib/lib.dom.d.ts:18942
-
 ***
 
 ### statusText
 
 > `readonly` **statusText**: `string`
+
+Defined in: node\_modules/typescript/lib/lib.dom.d.ts:19889
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/statusText)
 
@@ -114,15 +106,13 @@ node\_modules/typescript/lib/lib.dom.d.ts:18942
 
 `Response.statusText`
 
-#### Source
-
-node\_modules/typescript/lib/lib.dom.d.ts:18944
-
 ***
 
 ### type
 
 > `readonly` **type**: `ResponseType`
+
+Defined in: node\_modules/typescript/lib/lib.dom.d.ts:19891
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/type)
 
@@ -130,15 +120,13 @@ node\_modules/typescript/lib/lib.dom.d.ts:18944
 
 `Response.type`
 
-#### Source
-
-node\_modules/typescript/lib/lib.dom.d.ts:18946
-
 ***
 
 ### url
 
 > `readonly` **url**: `string`
+
+Defined in: node\_modules/typescript/lib/lib.dom.d.ts:19893
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/url)
 
@@ -146,15 +134,13 @@ node\_modules/typescript/lib/lib.dom.d.ts:18946
 
 `Response.url`
 
-#### Source
-
-node\_modules/typescript/lib/lib.dom.d.ts:18948
-
 ## Methods
 
 ### arrayBuffer()
 
 > **arrayBuffer**(): `Promise`\<`ArrayBuffer`\>
+
+Defined in: node\_modules/typescript/lib/lib.dom.d.ts:3538
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/arrayBuffer)
 
@@ -166,15 +152,13 @@ node\_modules/typescript/lib/lib.dom.d.ts:18948
 
 `Response.arrayBuffer`
 
-#### Source
-
-node\_modules/typescript/lib/lib.dom.d.ts:3155
-
 ***
 
 ### blob()
 
 > **blob**(): `Promise`\<`Blob`\>
+
+Defined in: node\_modules/typescript/lib/lib.dom.d.ts:3540
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/blob)
 
@@ -186,15 +170,31 @@ node\_modules/typescript/lib/lib.dom.d.ts:3155
 
 `Response.blob`
 
-#### Source
+***
 
-node\_modules/typescript/lib/lib.dom.d.ts:3157
+### bytes()
+
+> **bytes**(): `Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
+
+Defined in: node\_modules/typescript/lib/lib.dom.d.ts:3542
+
+[MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bytes)
+
+#### Returns
+
+`Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
+
+#### Inherited from
+
+`Response.bytes`
 
 ***
 
 ### clone()
 
 > **clone**(): `Response`
+
+Defined in: node\_modules/typescript/lib/lib.dom.d.ts:19895
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/clone)
 
@@ -206,15 +206,13 @@ node\_modules/typescript/lib/lib.dom.d.ts:3157
 
 `Response.clone`
 
-#### Source
-
-node\_modules/typescript/lib/lib.dom.d.ts:18950
-
 ***
 
 ### formData()
 
 > **formData**(): `Promise`\<`FormData`\>
+
+Defined in: node\_modules/typescript/lib/lib.dom.d.ts:3544
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/formData)
 
@@ -226,15 +224,15 @@ node\_modules/typescript/lib/lib.dom.d.ts:18950
 
 `Response.formData`
 
-#### Source
-
-node\_modules/typescript/lib/lib.dom.d.ts:3159
-
 ***
 
 ### json()
 
 > **json**(): `Promise`\<`T`\>
+
+Defined in: [src/utils/fetch.ts:6](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/utils/fetch.ts#L6)
+
+[MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/json)
 
 #### Returns
 
@@ -244,15 +242,13 @@ node\_modules/typescript/lib/lib.dom.d.ts:3159
 
 `Response.json`
 
-#### Source
-
-[src/utils/fetch.ts:6](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/utils/fetch.ts#L6)
-
 ***
 
 ### text()
 
 > **text**(): `Promise`\<`string`\>
+
+Defined in: node\_modules/typescript/lib/lib.dom.d.ts:3548
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/text)
 
@@ -263,7 +259,3 @@ node\_modules/typescript/lib/lib.dom.d.ts:3159
 #### Inherited from
 
 `Response.text`
-
-#### Source
-
-node\_modules/typescript/lib/lib.dom.d.ts:3163

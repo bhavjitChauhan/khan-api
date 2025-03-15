@@ -1,10 +1,14 @@
 > **getLatestMutation**(`mutation`): `Promise`\<`null` \| `string`\>
 
+Defined in: [src/utils/safelist.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/utils/safelist.ts#L28)
+
 Gets the latest version of a mutation from the Safelist.
 
 ## Parameters
 
-• **mutation**: `string`
+### mutation
+
+`string`
 
 The operation name of the mutation
 
@@ -15,7 +19,3 @@ The operation name of the mutation
 ## See
 
 [Safelisted Mutations](https://github.com/bhavjitChauhan/khan-api/tree/safelist/mutation)
-
-## Source
-
-[src/utils/safelist.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/utils/safelist.ts#L28)

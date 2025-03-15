@@ -1,12 +1,12 @@
+Defined in: [src/queries/hotlist.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/hotlist.ts#L35)
+
 ## Properties
 
 ### curationNodeId?
 
 > `optional` **curationNodeId**: `null` \| `string`
 
-#### Source
-
-[src/queries/hotlist.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/hotlist.ts#L36)
+Defined in: [src/queries/hotlist.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/hotlist.ts#L36)
 
 ***
 
@@ -14,15 +14,15 @@
 
 > **onlyOfficialProjectSpinoffs**: `boolean`
 
-#### Source
-
-[src/queries/hotlist.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/hotlist.ts#L37)
+Defined in: [src/queries/hotlist.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/hotlist.ts#L37)
 
 ***
 
 ### pageInfo?
 
 > `optional` **pageInfo**: `object`
+
+Defined in: [src/queries/hotlist.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/hotlist.ts#L39)
 
 #### cursor?
 
@@ -32,16 +32,10 @@
 
 > **itemsPerPage**: `number`
 
-#### Source
-
-[src/queries/hotlist.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/hotlist.ts#L39)
-
 ***
 
 ### sort?
 
-> `optional` **sort**: `null` \| [`ListProgramSortOrder`](api%5Cenumerations%5CListProgramSortOrder.md)
+> `optional` **sort**: `null` \| [`ListProgramSortOrder`](api/enumerations%5CListProgramSortOrder.md)
 
-#### Source
-
-[src/queries/hotlist.ts:38](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/hotlist.ts#L38)
+Defined in: [src/queries/hotlist.ts:38](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/hotlist.ts#L38)

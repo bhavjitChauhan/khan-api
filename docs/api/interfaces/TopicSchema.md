@@ -1,12 +1,12 @@
+Defined in: [src/types/schema.ts:269](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L269)
+
 ## Properties
 
 ### \_\_typename
 
 > **\_\_typename**: `"Topic"`
 
-#### Source
-
-[src/types/schema.ts:266](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L266)
+Defined in: [src/types/schema.ts:270](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L270)
 
 ***
 
@@ -14,9 +14,7 @@
 
 > **id**: `string`
 
-#### Source
-
-[src/types/schema.ts:267](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L267)
+Defined in: [src/types/schema.ts:271](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L271)
 
 ***
 
@@ -24,9 +22,7 @@
 
 > **nodeSlug**: `string`
 
-#### Source
-
-[src/types/schema.ts:268](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L268)
+Defined in: [src/types/schema.ts:272](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L272)
 
 ***
 
@@ -34,9 +30,7 @@
 
 > **relativeUrl**: `string`
 
-#### Source
-
-[src/types/schema.ts:269](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L269)
+Defined in: [src/types/schema.ts:273](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L273)
 
 ***
 
@@ -44,9 +38,7 @@
 
 > **slug**: `string`
 
-#### Source
-
-[src/types/schema.ts:270](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L270)
+Defined in: [src/types/schema.ts:274](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L274)
 
 ***
 
@@ -54,6 +46,4 @@
 
 > **translatedTitle**: `string`
 
-#### Source
-
-[src/types/schema.ts:271](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L271)
+Defined in: [src/types/schema.ts:275](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L275)

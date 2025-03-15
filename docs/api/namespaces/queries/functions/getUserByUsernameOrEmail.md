@@ -1,18 +1,24 @@
-## getUserByUsernameOrEmail(variables, init)
+## Call Signature
 
-> **getUserByUsernameOrEmail**(`variables`, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetUserByUsernameOrEmail%5Ctype-aliases%5CResponse.md)\>\>
+> **getUserByUsernameOrEmail**(`variables`, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetUserByUsernameOrEmail%5Ctype-aliases%5CResponse.md)\>\>
+
+Defined in: [src/queries/getUserByUsernameOrEmail.ts:54](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/getUserByUsernameOrEmail.ts#L54)
 
 Get KAID by username or email.
 
 ### Parameters
 
-• **variables**: [`Variables`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetUserByUsernameOrEmail%5Cinterfaces%5CVariables.md)
+#### variables
 
-• **init?**: `RequestInit`
+[`Variables`](api/namespaces%5Cqueries%5Cnamespaces%5CGetUserByUsernameOrEmail%5Cinterfaces%5CVariables.md)
+
+#### init?
+
+`RequestInit`
 
 ### Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetUserByUsernameOrEmail%5Ctype-aliases%5CResponse.md)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetUserByUsernameOrEmail%5Ctype-aliases%5CResponse.md)\>\>
 
 ### Link
 
@@ -38,23 +44,25 @@ const json = await response.json()
 const kaid = json.data.user?.kaid
 ```
 
-### Source
+## Call Signature
 
-[src/queries/getUserByUsernameOrEmail.ts:54](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/getUserByUsernameOrEmail.ts#L54)
+> **getUserByUsernameOrEmail**(`username`, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetUserByUsernameOrEmail%5Ctype-aliases%5CResponse.md)\>\>
 
-## getUserByUsernameOrEmail(username, init)
-
-> **getUserByUsernameOrEmail**(`username`, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetUserByUsernameOrEmail%5Ctype-aliases%5CResponse.md)\>\>
+Defined in: [src/queries/getUserByUsernameOrEmail.ts:67](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/getUserByUsernameOrEmail.ts#L67)
 
 ### Parameters
 
-• **username**: `string`
+#### username
 
-• **init?**: `RequestInit`
+`string`
+
+#### init?
+
+`RequestInit`
 
 ### Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetUserByUsernameOrEmail%5Ctype-aliases%5CResponse.md)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetUserByUsernameOrEmail%5Ctype-aliases%5CResponse.md)\>\>
 
 ### Example
 
@@ -65,23 +73,25 @@ const json = await response.json()
 const kaid = json.data.user?.kaid
 ```
 
-### Source
+## Call Signature
 
-[src/queries/getUserByUsernameOrEmail.ts:67](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/getUserByUsernameOrEmail.ts#L67)
+> **getUserByUsernameOrEmail**(`email`, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetUserByUsernameOrEmail%5Ctype-aliases%5CResponse.md)\>\>
 
-## getUserByUsernameOrEmail(email, init)
-
-> **getUserByUsernameOrEmail**(`email`, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetUserByUsernameOrEmail%5Ctype-aliases%5CResponse.md)\>\>
+Defined in: [src/queries/getUserByUsernameOrEmail.ts:80](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/getUserByUsernameOrEmail.ts#L80)
 
 ### Parameters
 
-• **email**: \`$\{string\}@$\{string\}.$\{string\}\`
+#### email
 
-• **init?**: `RequestInit`
+`` `${string}@${string}.${string}` ``
+
+#### init?
+
+`RequestInit`
 
 ### Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetUserByUsernameOrEmail%5Ctype-aliases%5CResponse.md)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetUserByUsernameOrEmail%5Ctype-aliases%5CResponse.md)\>\>
 
 ### Example
 
@@ -91,7 +101,3 @@ const response = await queries.getUserByUsernameOrEmail('sal@khanacademy.org')
 const json = await response.json()
 const kaid = json.data.user?.kaid
 ```
-
-### Source
-
-[src/queries/getUserByUsernameOrEmail.ts:80](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/getUserByUsernameOrEmail.ts#L80)

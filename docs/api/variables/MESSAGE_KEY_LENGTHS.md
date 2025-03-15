@@ -1,5 +1,3 @@
-> `const` **MESSAGE\_KEY\_LENGTHS**: readonly [`106`, `107`, `108`, `110`, `111`]
+> `const` **MESSAGE\_KEY\_LENGTHS**: readonly \[`106`, `107`, `108`, `110`, `111`\]
 
-## Source
-
-[src/utils/regexes.ts:169](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/utils/regexes.ts#L169)
+Defined in: [src/utils/regexes.ts:169](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/utils/regexes.ts#L169)

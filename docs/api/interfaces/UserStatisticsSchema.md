@@ -1,12 +1,12 @@
+Defined in: [src/types/schema.ts:192](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L192)
+
 ## Properties
 
 ### \_\_typename
 
 > **\_\_typename**: `"UserStatistics"`
 
-#### Source
-
-[src/types/schema.ts:189](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L189)
+Defined in: [src/types/schema.ts:193](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L193)
 
 ***
 
@@ -14,9 +14,7 @@
 
 > **answers**: `number`
 
-#### Source
-
-[src/types/schema.ts:190](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L190)
+Defined in: [src/types/schema.ts:194](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L194)
 
 ***
 
@@ -24,9 +22,7 @@
 
 > **comments**: `number`
 
-#### Source
-
-[src/types/schema.ts:191](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L191)
+Defined in: [src/types/schema.ts:195](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L195)
 
 ***
 
@@ -34,9 +30,7 @@
 
 > **flags**: `number`
 
-#### Source
-
-[src/types/schema.ts:192](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L192)
+Defined in: [src/types/schema.ts:196](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L196)
 
 ***
 
@@ -44,9 +38,7 @@
 
 > **projectanswers**: `number`
 
-#### Source
-
-[src/types/schema.ts:193](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L193)
+Defined in: [src/types/schema.ts:197](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L197)
 
 ***
 
@@ -54,9 +46,7 @@
 
 > **projectquestions**: `number`
 
-#### Source
-
-[src/types/schema.ts:194](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L194)
+Defined in: [src/types/schema.ts:198](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L198)
 
 ***
 
@@ -64,9 +54,7 @@
 
 > **questions**: `number`
 
-#### Source
-
-[src/types/schema.ts:195](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L195)
+Defined in: [src/types/schema.ts:199](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L199)
 
 ***
 
@@ -74,9 +62,7 @@
 
 > **replies**: `number`
 
-#### Source
-
-[src/types/schema.ts:196](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L196)
+Defined in: [src/types/schema.ts:200](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L200)
 
 ***
 
@@ -84,6 +70,4 @@
 
 > **votes**: `number`
 
-#### Source
-
-[src/types/schema.ts:197](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L197)
+Defined in: [src/types/schema.ts:201](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L201)

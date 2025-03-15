@@ -1,14 +1,12 @@
-## Index
+## Interfaces
 
-### Interfaces
+- [Variables](api/namespaces%5Cqueries%5Cnamespaces%5CGetProfileWidgets%5Cinterfaces%5CVariables.md)
 
-- [Variables](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetProfileWidgets%5Cinterfaces%5CVariables.md)
+## Type Aliases
 
-### Type Aliases
+- [Data](api/namespaces%5Cqueries%5Cnamespaces%5CGetProfileWidgets%5Ctype-aliases%5CData.md)
+- [Response](api/namespaces%5Cqueries%5Cnamespaces%5CGetProfileWidgets%5Ctype-aliases%5CResponse.md)
 
-- [Data](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetProfileWidgets%5Ctype-aliases%5CData.md)
-- [Response](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetProfileWidgets%5Ctype-aliases%5CResponse.md)
+## Variables
 
-### Variables
-
-- [query](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetProfileWidgets%5Cvariables%5Cquery.md)
+- [query](api/namespaces%5Cqueries%5Cnamespaces%5CGetProfileWidgets%5Cvariables%5Cquery.md)

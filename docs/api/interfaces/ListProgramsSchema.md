@@ -1,4 +1,6 @@
-## Type parameters
+Defined in: [src/types/schema.ts:180](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L180)
+
+## Type Parameters
 
 • **ProgramData** = `unknown`
 
@@ -8,9 +10,7 @@
 
 > **\_\_typename**: `"ListPrograms"`
 
-#### Source
-
-[src/types/schema.ts:177](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L177)
+Defined in: [src/types/schema.ts:181](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L181)
 
 ***
 
@@ -18,9 +18,7 @@
 
 > **complete**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:178](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L178)
+Defined in: [src/types/schema.ts:182](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L182)
 
 ***
 
@@ -28,9 +26,7 @@
 
 > **cursor**: `string`
 
-#### Source
-
-[src/types/schema.ts:179](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L179)
+Defined in: [src/types/schema.ts:183](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L183)
 
 ***
 
@@ -38,6 +34,4 @@
 
 > **programs**: `ProgramData`[]
 
-#### Source
-
-[src/types/schema.ts:180](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L180)
+Defined in: [src/types/schema.ts:184](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L184)

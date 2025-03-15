@@ -1,12 +1,12 @@
+Defined in: [src/types/enums.ts:26](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L26)
+
 ## Enumeration Members
 
 ### Challenge
 
 > **Challenge**: `"Challenge"`
 
-#### Source
-
-[src/types/enums.ts:27](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L27)
+Defined in: [src/types/enums.ts:27](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L27)
 
 ***
 
@@ -14,9 +14,7 @@
 
 > **Interactive**: `"Interactive"`
 
-#### Source
-
-[src/types/enums.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L28)
+Defined in: [src/types/enums.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L28)
 
 ***
 
@@ -24,9 +22,7 @@
 
 > **Project**: `"Project"`
 
-#### Source
-
-[src/types/enums.ts:29](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L29)
+Defined in: [src/types/enums.ts:29](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L29)
 
 ***
 
@@ -34,9 +30,7 @@
 
 > **Scratchpad**: `"Scratchpad"`
 
-#### Source
-
-[src/types/enums.ts:30](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L30)
+Defined in: [src/types/enums.ts:30](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L30)
 
 ***
 
@@ -44,6 +38,4 @@
 
 > **Talkthrough**: `"Talkthrough"`
 
-#### Source
-
-[src/types/enums.ts:31](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/enums.ts#L31)
+Defined in: [src/types/enums.ts:31](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/enums.ts#L31)

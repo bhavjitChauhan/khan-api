@@ -1,11 +1,3 @@
-> **Response**: [`StandardResponse`](api%5Ctype-aliases%5CStandardResponse.md)\<`object`\>
+> **Response**: [`StandardResponse`](api/type-aliases%5CStandardResponse.md)\<\{ `loginWithPassword`: \{ `__typename`: `"LoginWithPasswordMutation"`; `error`: \{ `__typename`: `"LoginWithPasswordMutationError"`; `code`: [`ErrorCode`](api/namespaces%5Cmutations%5Cnamespaces%5CLoginWithPasswordMutation%5Cenumerations%5CErrorCode.md); \} \| `null`; `isFirstLogin`: `boolean` \| `null`; `user`: `Pick`\<[`UserSchema`](api/interfaces%5CUserSchema.md), `"__typename"` \| `"canAccessDistrictsHomepage"` \| `"hasUnresolvedInvitations"` \| `"id"` \| `"isTeacher"` \| `"kaid"` \| `"preferredKaLocale"`\> \| `null`; \} \| `null`; \}\>
 
-## Type declaration
-
-### loginWithPassword
-
-> **loginWithPassword**: `object` \| `null`
-
-## Source
-
-[src/mutations/loginWithPasswordMutation.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/mutations/loginWithPasswordMutation.ts#L39)
+Defined in: [src/mutations/loginWithPasswordMutation.ts:38](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/mutations/loginWithPasswordMutation.ts#L38)

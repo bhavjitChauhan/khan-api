@@ -1,18 +1,18 @@
+Defined in: [src/types/schema.ts:290](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L290)
+
 ## Extended by
 
-- [`BasicFeedbackSchema`](api%5Cinterfaces%5CBasicFeedbackSchema.md)
-- [`QuestionFeedbackSchema`](api%5Cinterfaces%5CQuestionFeedbackSchema.md)
-- [`AnswerFeedbackSchema`](api%5Cinterfaces%5CAnswerFeedbackSchema.md)
+- [`BasicFeedbackSchema`](api/interfaces%5CBasicFeedbackSchema.md)
+- [`QuestionFeedbackSchema`](api/interfaces%5CQuestionFeedbackSchema.md)
+- [`AnswerFeedbackSchema`](api/interfaces%5CAnswerFeedbackSchema.md)
 
 ## Properties
 
 ### \_\_typename
 
-> **\_\_typename**: [`FeedbackTypename`](api%5Cenumerations%5CFeedbackTypename.md)
+> **\_\_typename**: [`FeedbackTypename`](api/enumerations%5CFeedbackTypename.md)
 
-#### Source
-
-[src/types/schema.ts:287](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L287)
+Defined in: [src/types/schema.ts:291](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L291)
 
 ***
 
@@ -20,19 +20,15 @@
 
 > **appearsAsDeleted**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:288](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L288)
+Defined in: [src/types/schema.ts:292](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L292)
 
 ***
 
 ### author
 
-> **author**: `Pick`\<[`UserSchema`](api%5Cinterfaces%5CUserSchema.md)\<`Pick`\<[`AvatarSchema`](api%5Cinterfaces%5CAvatarSchema.md), `"__typename"` \| `"imageSrc"` \| `"name"`\>, [`ProfileSchema`](api%5Cinterfaces%5CProfileSchema.md), [`ListProgramsSchema`](api%5Cinterfaces%5CListProgramsSchema.md)\<`unknown`\>\>, `"id"` \| `"__typename"` \| `"kaid"` \| `"nickname"` \| `"avatar"`\>
+> **author**: `Pick`\<[`UserSchema`](api/interfaces%5CUserSchema.md)\<`Pick`\<[`AvatarSchema`](api/interfaces%5CAvatarSchema.md), `"__typename"` \| `"imageSrc"` \| `"name"`\>, [`ProfileSchema`](api/interfaces%5CProfileSchema.md), [`ListProgramsSchema`](api/interfaces%5CListProgramsSchema.md)\<`unknown`\>\>, `"id"` \| `"__typename"` \| `"kaid"` \| `"nickname"` \| `"avatar"`\>
 
-#### Source
-
-[src/types/schema.ts:289](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L289)
+Defined in: [src/types/schema.ts:293](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L293)
 
 ***
 
@@ -40,11 +36,9 @@
 
 > **badges**: `unknown`
 
+Defined in: [src/types/schema.ts:300](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L300)
+
 Always `null`
-
-#### Source
-
-[src/types/schema.ts:296](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L296)
 
 ***
 
@@ -52,9 +46,7 @@ Always `null`
 
 > **content**: `string`
 
-#### Source
-
-[src/types/schema.ts:297](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L297)
+Defined in: [src/types/schema.ts:301](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L301)
 
 ***
 
@@ -62,9 +54,7 @@ Always `null`
 
 > **date**: `string`
 
-#### Source
-
-[src/types/schema.ts:298](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L298)
+Defined in: [src/types/schema.ts:302](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L302)
 
 ***
 
@@ -72,9 +62,7 @@ Always `null`
 
 > **definitelyNotSpam**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:299](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L299)
+Defined in: [src/types/schema.ts:303](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L303)
 
 ***
 
@@ -82,9 +70,7 @@ Always `null`
 
 > **deleted**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:300](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L300)
+Defined in: [src/types/schema.ts:304](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L304)
 
 ***
 
@@ -92,9 +78,7 @@ Always `null`
 
 > **downVoted**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:301](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L301)
+Defined in: [src/types/schema.ts:305](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L305)
 
 ***
 
@@ -102,19 +86,15 @@ Always `null`
 
 > **expandKey**: `string`
 
-#### Source
-
-[src/types/schema.ts:302](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L302)
+Defined in: [src/types/schema.ts:306](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L306)
 
 ***
 
 ### feedbackType
 
-> **feedbackType**: [`FeedbackType`](api%5Cenumerations%5CFeedbackType.md)
+> **feedbackType**: [`FeedbackType`](api/enumerations%5CFeedbackType.md)
 
-#### Source
-
-[src/types/schema.ts:303](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L303)
+Defined in: [src/types/schema.ts:307](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L307)
 
 ***
 
@@ -122,11 +102,9 @@ Always `null`
 
 > **flaggedBy**: `unknown`
 
+Defined in: [src/types/schema.ts:311](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L311)
+
 Always `null`
-
-#### Source
-
-[src/types/schema.ts:307](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L307)
 
 ***
 
@@ -134,9 +112,7 @@ Always `null`
 
 > **flaggedByUser**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:308](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L308)
+Defined in: [src/types/schema.ts:312](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L312)
 
 ***
 
@@ -144,21 +120,17 @@ Always `null`
 
 > **flags**: `unknown`
 
+Defined in: [src/types/schema.ts:316](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L316)
+
 Always `null`
-
-#### Source
-
-[src/types/schema.ts:312](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L312)
 
 ***
 
 ### focus
 
-> **focus**: [`FeedbackFocusSchema`](api%5Cinterfaces%5CFeedbackFocusSchema.md)
+> **focus**: [`FeedbackFocusSchema`](api/interfaces%5CFeedbackFocusSchema.md)
 
-#### Source
-
-[src/types/schema.ts:313](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L313)
+Defined in: [src/types/schema.ts:317](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L317)
 
 ***
 
@@ -166,9 +138,7 @@ Always `null`
 
 > **focusUrl**: `string`
 
-#### Source
-
-[src/types/schema.ts:314](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L314)
+Defined in: [src/types/schema.ts:318](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L318)
 
 ***
 
@@ -176,9 +146,7 @@ Always `null`
 
 > **fromVideoAuthor**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:315](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L315)
+Defined in: [src/types/schema.ts:319](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L319)
 
 ***
 
@@ -186,9 +154,7 @@ Always `null`
 
 > **isLocked**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:316](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L316)
+Defined in: [src/types/schema.ts:320](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L320)
 
 ***
 
@@ -196,9 +162,7 @@ Always `null`
 
 > **isPinned**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:317](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L317)
+Defined in: [src/types/schema.ts:321](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L321)
 
 ***
 
@@ -206,11 +170,9 @@ Always `null`
 
 > **key**: `string`
 
+Defined in: [src/types/schema.ts:325](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L325)
+
 Encrypted ID
-
-#### Source
-
-[src/types/schema.ts:321](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L321)
 
 ***
 
@@ -218,9 +180,7 @@ Encrypted ID
 
 > **lowQualityScore**: `number`
 
-#### Source
-
-[src/types/schema.ts:322](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L322)
+Defined in: [src/types/schema.ts:326](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L326)
 
 ***
 
@@ -228,9 +188,7 @@ Encrypted ID
 
 > **notifyOnAnswer**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:323](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L323)
+Defined in: [src/types/schema.ts:327](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L327)
 
 ***
 
@@ -238,9 +196,7 @@ Encrypted ID
 
 > **permalink**: `string`
 
-#### Source
-
-[src/types/schema.ts:324](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L324)
+Defined in: [src/types/schema.ts:328](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L328)
 
 ***
 
@@ -248,9 +204,7 @@ Encrypted ID
 
 > **qualityKind**: `string`
 
-#### Source
-
-[src/types/schema.ts:325](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L325)
+Defined in: [src/types/schema.ts:329](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L329)
 
 ***
 
@@ -258,21 +212,17 @@ Encrypted ID
 
 > **replyCount**: `number`
 
-#### Source
-
-[src/types/schema.ts:326](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L326)
+Defined in: [src/types/schema.ts:330](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L330)
 
 ***
 
 ### replyExpandKeys
 
-> **replyExpandKeys**: \`ag5zfmtoYW4tYWNhZGVteX$\{string\}CxIIVXNlckRhdGEi$\{string\}thaWRf$\{string\}$\{string\}$\{string\}\` \| \`ag5zfmtoYW4tYWNhZGVteX$\{string\}CxIIVXNlckRhdGEi$\{string\}thaWRf$\{string\}$\{string\}$\{string\}\`[]
+> **replyExpandKeys**: `` `ag5zfmtoYW4tYWNhZGVteX${string}CxIIVXNlckRhdGEi${string}thaWRf${string}${string}${string}` `` \| `` `ag5zfmtoYW4tYWNhZGVteX${string}CxIIVXNlckRhdGEi${string}thaWRf${string}${string}${string}` ``[]
+
+Defined in: [src/types/schema.ts:334](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L334)
 
 Expand keys for parent feedback. Always 1-2 elements
-
-#### Source
-
-[src/types/schema.ts:330](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L330)
 
 ***
 
@@ -280,11 +230,9 @@ Expand keys for parent feedback. Always 1-2 elements
 
 > **showLowQualityNotice**: `boolean`
 
+Defined in: [src/types/schema.ts:338](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L338)
+
 Always `false`? May depend on the user
-
-#### Source
-
-[src/types/schema.ts:334](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L334)
 
 ***
 
@@ -292,9 +240,7 @@ Always `false`? May depend on the user
 
 > **sumVotesIncremented**: `number`
 
-#### Source
-
-[src/types/schema.ts:335](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L335)
+Defined in: [src/types/schema.ts:339](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L339)
 
 ***
 
@@ -302,6 +248,4 @@ Always `false`? May depend on the user
 
 > **upVoted**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:336](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L336)
+Defined in: [src/types/schema.ts:340](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L340)

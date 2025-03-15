@@ -1,18 +1,24 @@
-## getUserHoverCardProfile(variables, init)
+## Call Signature
 
-> **getUserHoverCardProfile**(`variables`, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetUserHoverCardProfile%5Ctype-aliases%5CResponse.md)\>\>
+> **getUserHoverCardProfile**(`variables`, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetUserHoverCardProfile%5Ctype-aliases%5CResponse.md)\>\>
+
+Defined in: [src/queries/getUserHoverCardProfile.ts:70](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/getUserHoverCardProfile.ts#L70)
 
 Low-level function for making a `getUserHoverCardProfile` request.
 
 ### Parameters
 
-• **variables**: [`Variables`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetUserHoverCardProfile%5Cinterfaces%5CVariables.md)
+#### variables
 
-• **init?**: `RequestInit`
+[`Variables`](api/namespaces%5Cqueries%5Cnamespaces%5CGetUserHoverCardProfile%5Cinterfaces%5CVariables.md)
+
+#### init?
+
+`RequestInit`
 
 ### Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetUserHoverCardProfile%5Ctype-aliases%5CResponse.md)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetUserHoverCardProfile%5Ctype-aliases%5CResponse.md)\>\>
 
 ### Link
 
@@ -29,23 +35,25 @@ const json = await response.json()
 const profile = json.data.user
 ```
 
-### Source
+## Call Signature
 
-[src/queries/getUserHoverCardProfile.ts:70](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/getUserHoverCardProfile.ts#L70)
+> **getUserHoverCardProfile**(`kaid`, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetUserHoverCardProfile%5Ctype-aliases%5CResponse.md)\>\>
 
-## getUserHoverCardProfile(kaid, init)
-
-> **getUserHoverCardProfile**(`kaid`, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetUserHoverCardProfile%5Ctype-aliases%5CResponse.md)\>\>
+Defined in: [src/queries/getUserHoverCardProfile.ts:83](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/getUserHoverCardProfile.ts#L83)
 
 ### Parameters
 
-• **kaid**: \`kaid\_$\{number\}\`
+#### kaid
 
-• **init?**: `RequestInit`
+`` `kaid_${number}` ``
+
+#### init?
+
+`RequestInit`
 
 ### Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetUserHoverCardProfile%5Ctype-aliases%5CResponse.md)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetUserHoverCardProfile%5Ctype-aliases%5CResponse.md)\>\>
 
 ### Example
 
@@ -55,7 +63,3 @@ const response = await queries.getUserHoverCardProfile('kaid_3264655772603825279
 const json = await response.json()
 const profile = json.data.user
 ```
-
-### Source
-
-[src/queries/getUserHoverCardProfile.ts:83](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/getUserHoverCardProfile.ts#L83)

@@ -1,322 +1,302 @@
+Defined in: [src/lib/messages/Question.ts:20](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/Question.ts#L20)
+
 ## Remarks
 
 Note that Help Requests are a type of Question.
 
 ## Raw
 
-[QuestionFeedbackSchema](api%5Cinterfaces%5CQuestionFeedbackSchema.md)
+[QuestionFeedbackSchema](api/interfaces%5CQuestionFeedbackSchema.md)
 
 ## Extends
 
-- [`Message`](api%5Cclasses%5CMessage.md)
+- [`Message`](api/classes%5CMessage.md)
 
 ## Implements
 
-- [`IQuestion`](api%5Cinterfaces%5CIQuestion.md)
+- [`IQuestion`](api/interfaces%5CIQuestion.md)
 
 ## Constructors
 
 ### new Question()
 
-> **new Question**(`data`?): [`Question`](api%5Cclasses%5CQuestion.md)
+> **new Question**(`data`?): [`Question`](api/classes%5CQuestion.md)
+
+Defined in: [src/lib/Wrapper.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/Wrapper.ts#L36)
 
 Creates a new class instance
 
 #### Parameters
 
-• **data?**: [`IBaseMessage`](api%5Cinterfaces%5CIBaseMessage.md)
+##### data?
+
+[`IBaseMessage`](api/interfaces%5CIBaseMessage.md)
 
 #### Returns
 
-[`Question`](api%5Cclasses%5CQuestion.md)
+[`Question`](api/classes%5CQuestion.md)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`constructor`](api%5Cclasses%5CMessage.md#constructors)
-
-#### Source
-
-[src/lib/Wrapper.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/Wrapper.ts#L36)
+[`Message`](api/classes%5CMessage.md).[`constructor`](api/classes%5CMessage.md#constructors)
 
 ### new Question()
 
-> **new Question**(`client`, `data`?): [`Question`](api%5Cclasses%5CQuestion.md)
+> **new Question**(`client`, `data`?): [`Question`](api/classes%5CQuestion.md)
+
+Defined in: [src/lib/Wrapper.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/Wrapper.ts#L37)
 
 #### Parameters
 
-• **client**: [`Client`](api%5Cclasses%5CClient.md)
+##### client
 
-• **data?**: [`IBaseMessage`](api%5Cinterfaces%5CIBaseMessage.md)
+[`Client`](api/classes%5CClient.md)
+
+##### data?
+
+[`IBaseMessage`](api/interfaces%5CIBaseMessage.md)
 
 #### Returns
 
-[`Question`](api%5Cclasses%5CQuestion.md)
+[`Question`](api/classes%5CQuestion.md)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`constructor`](api%5Cclasses%5CMessage.md#constructors)
-
-#### Source
-
-[src/lib/Wrapper.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/Wrapper.ts#L37)
+[`Message`](api/classes%5CMessage.md).[`constructor`](api/classes%5CMessage.md#constructors)
 
 ## Properties
 
 ### answerCount?
 
-> `optional` `readonly` **answerCount**: `number`
+> `readonly` `optional` **answerCount**: `number`
+
+Defined in: [src/lib/messages/Question.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/Question.ts#L21)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`answerCount`](api%5Cinterfaces%5CIQuestion.md#answercount)
-
-#### Source
-
-[src/lib/messages/Question.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Question.ts#L21)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`answerCount`](api/interfaces%5CIQuestion.md#answercount)
 
 ***
 
 ### answers?
 
-> `optional` `readonly` **answers**: [`Answer`](api%5Cclasses%5CAnswer.md)[]
+> `readonly` `optional` **answers**: [`Answer`](api/classes%5CAnswer.md)[]
+
+Defined in: [src/lib/messages/Question.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/Question.ts#L22)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`answers`](api%5Cinterfaces%5CIQuestion.md#answers)
-
-#### Source
-
-[src/lib/messages/Question.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Question.ts#L22)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`answers`](api/interfaces%5CIQuestion.md#answers)
 
 ***
 
 ### author?
 
-> `optional` `readonly` **author**: [`User`](api%5Cclasses%5CUser.md)
+> `readonly` `optional` **author**: [`User`](api/classes%5CUser.md)
+
+Defined in: [src/lib/messages/BaseMessage.ts:34](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L34)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`author`](api%5Cinterfaces%5CIQuestion.md#author)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`author`](api/interfaces%5CIQuestion.md#author)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`author`](api%5Cclasses%5CMessage.md#author)
-
-#### Source
-
-[src/lib/messages/BaseMessage.ts:34](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L34)
+[`Message`](api/classes%5CMessage.md).[`author`](api/classes%5CMessage.md#author)
 
 ***
 
 ### byVideoAuthor?
 
-> `optional` `readonly` **byVideoAuthor**: `boolean`
+> `readonly` `optional` **byVideoAuthor**: `boolean`
+
+Defined in: [src/lib/messages/BaseMessage.ts:74](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L74)
 
 #### Raw
 
-[FeedbackSchemaBase.fromVideoAuthor](api%5Cinterfaces%5CFeedbackSchemaBase.md#fromvideoauthor)
+[FeedbackSchemaBase.fromVideoAuthor](api/interfaces%5CFeedbackSchemaBase.md#fromvideoauthor)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`byVideoAuthor`](api%5Cinterfaces%5CIQuestion.md#byvideoauthor)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`byVideoAuthor`](api/interfaces%5CIQuestion.md#byvideoauthor)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`byVideoAuthor`](api%5Cclasses%5CMessage.md#byvideoauthor)
-
-#### Source
-
-[src/lib/messages/BaseMessage.ts:74](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L74)
+[`Message`](api/classes%5CMessage.md).[`byVideoAuthor`](api/classes%5CMessage.md#byvideoauthor)
 
 ***
 
 ### client?
 
-> `optional` **client**: [`Client`](api%5Cclasses%5CClient.md)
+> `optional` **client**: [`Client`](api/classes%5CClient.md)
+
+Defined in: [src/lib/Wrapper.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/Wrapper.ts#L15)
 
 The client that this base was fetched with.
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`client`](api%5Cclasses%5CMessage.md#client)
-
-#### Source
-
-[src/lib/Wrapper.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/Wrapper.ts#L15)
+[`Message`](api/classes%5CMessage.md).[`client`](api/classes%5CMessage.md#client-1)
 
 ***
 
 ### created?
 
-> `optional` `readonly` **created**: `Date`
+> `readonly` `optional` **created**: `Date`
+
+Defined in: [src/lib/messages/BaseMessage.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L39)
 
 #### Raw
 
-[FeedbackSchemaBase.date](api%5Cinterfaces%5CFeedbackSchemaBase.md#date)
+[FeedbackSchemaBase.date](api/interfaces%5CFeedbackSchemaBase.md#date)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`created`](api%5Cinterfaces%5CIQuestion.md#created)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`created`](api/interfaces%5CIQuestion.md#created)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`created`](api%5Cclasses%5CMessage.md#created)
-
-#### Source
-
-[src/lib/messages/BaseMessage.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L39)
+[`Message`](api/classes%5CMessage.md).[`created`](api/classes%5CMessage.md#created)
 
 ***
 
 ### deleted?
 
-> `optional` `readonly` **deleted**: `boolean`
+> `readonly` `optional` **deleted**: `boolean`
+
+Defined in: [src/lib/messages/BaseMessage.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L53)
 
 #### Raw
 
-[FeedbackSchemaBase.appearsAsDeleted](api%5Cinterfaces%5CFeedbackSchemaBase.md#appearsasdeleted)
+[FeedbackSchemaBase.appearsAsDeleted](api/interfaces%5CFeedbackSchemaBase.md#appearsasdeleted)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`deleted`](api%5Cinterfaces%5CIQuestion.md#deleted)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`deleted`](api/interfaces%5CIQuestion.md#deleted)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`deleted`](api%5Cclasses%5CMessage.md#deleted)
-
-#### Source
-
-[src/lib/messages/BaseMessage.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L53)
+[`Message`](api/classes%5CMessage.md).[`deleted`](api/classes%5CMessage.md#deleted)
 
 ***
 
 ### encryptedKey?
 
-> `optional` `readonly` **encryptedKey**: \`kaencrypted\_$\{string\}\_$\{string\}\`
+> `readonly` `optional` **encryptedKey**: `` `kaencrypted_${string}_${string}` ``
+
+Defined in: [src/lib/messages/BaseMessage.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L48)
 
 #### Raw
 
-[FeedbackSchemaBase.key](api%5Cinterfaces%5CFeedbackSchemaBase.md#key)
+[FeedbackSchemaBase.key](api/interfaces%5CFeedbackSchemaBase.md#key)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`encryptedKey`](api%5Cinterfaces%5CIQuestion.md#encryptedkey)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`encryptedKey`](api/interfaces%5CIQuestion.md#encryptedkey)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`encryptedKey`](api%5Cclasses%5CMessage.md#encryptedkey)
-
-#### Source
-
-[src/lib/messages/BaseMessage.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L48)
+[`Message`](api/classes%5CMessage.md).[`encryptedKey`](api/classes%5CMessage.md#encryptedkey)
 
 ***
 
 ### key?
 
-> `optional` `readonly` **key**: \`ag5zfmtoYW4tYWNhZGVteX$\{string\}CxIIVXNlckRhdGEi$\{string\}thaWRf$\{string\}$\{string\}$\{string\}\`
+> `readonly` `optional` **key**: `` `ag5zfmtoYW4tYWNhZGVteX${string}CxIIVXNlckRhdGEi${string}thaWRf${string}${string}${string}` ``
+
+Defined in: [src/lib/messages/BaseMessage.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L44)
 
 #### Raw
 
-[FeedbackSchemaBase.expandKey](api%5Cinterfaces%5CFeedbackSchemaBase.md#expandkey)
+[FeedbackSchemaBase.expandKey](api/interfaces%5CFeedbackSchemaBase.md#expandkey)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`key`](api%5Cinterfaces%5CIQuestion.md#key)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`key`](api/interfaces%5CIQuestion.md#key)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`key`](api%5Cclasses%5CMessage.md#key)
-
-#### Source
-
-[src/lib/messages/BaseMessage.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L44)
+[`Message`](api/classes%5CMessage.md).[`key`](api/classes%5CMessage.md#key)
 
 ***
 
 ### locked?
 
-> `optional` `readonly` **locked**: `boolean`
+> `readonly` `optional` **locked**: `boolean`
+
+Defined in: [src/lib/messages/BaseMessage.ts:57](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L57)
 
 #### Raw
 
-[FeedbackSchemaBase.isLocked](api%5Cinterfaces%5CFeedbackSchemaBase.md#islocked)
+[FeedbackSchemaBase.isLocked](api/interfaces%5CFeedbackSchemaBase.md#islocked)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`locked`](api%5Cinterfaces%5CIQuestion.md#locked)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`locked`](api/interfaces%5CIQuestion.md#locked)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`locked`](api%5Cclasses%5CMessage.md#locked)
-
-#### Source
-
-[src/lib/messages/BaseMessage.ts:57](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L57)
+[`Message`](api/classes%5CMessage.md).[`locked`](api/classes%5CMessage.md#locked)
 
 ***
 
 ### old?
 
-> `optional` `readonly` **old**: `boolean`
+> `readonly` `optional` **old**: `boolean`
+
+Defined in: [src/lib/messages/Question.ts:26](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/Question.ts#L26)
 
 #### Raw
 
-[QuestionFeedbackSchema.isOld](api%5Cinterfaces%5CQuestionFeedbackSchema.md#isold)
+[QuestionFeedbackSchema.isOld](api/interfaces%5CQuestionFeedbackSchema.md#isold)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`old`](api%5Cinterfaces%5CIQuestion.md#old)
-
-#### Source
-
-[src/lib/messages/Question.ts:26](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Question.ts#L26)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`old`](api/interfaces%5CIQuestion.md#old)
 
 ***
 
 ### pinned?
 
-> `optional` `readonly` **pinned**: `boolean`
+> `readonly` `optional` **pinned**: `boolean`
+
+Defined in: [src/lib/messages/BaseMessage.ts:61](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L61)
 
 #### Raw
 
-[FeedbackSchemaBase.isPinned](api%5Cinterfaces%5CFeedbackSchemaBase.md#ispinned)
+[FeedbackSchemaBase.isPinned](api/interfaces%5CFeedbackSchemaBase.md#ispinned)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`pinned`](api%5Cinterfaces%5CIQuestion.md#pinned)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`pinned`](api/interfaces%5CIQuestion.md#pinned)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`pinned`](api%5Cclasses%5CMessage.md#pinned)
-
-#### Source
-
-[src/lib/messages/BaseMessage.ts:61](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L61)
+[`Message`](api/classes%5CMessage.md).[`pinned`](api/classes%5CMessage.md#pinned)
 
 ***
 
 ### program?
 
-> `optional` `readonly` **program**: [`Program`](api%5Cclasses%5CProgram.md)
+> `readonly` `optional` **program**: [`Program`](api/classes%5CProgram.md)
+
+Defined in: [src/lib/messages/BaseMessage.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L35)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`program`](api%5Cinterfaces%5CIQuestion.md#program)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`program`](api/interfaces%5CIQuestion.md#program)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`program`](api%5Cclasses%5CMessage.md#program)
-
-#### Source
-
-[src/lib/messages/BaseMessage.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L35)
+[`Message`](api/classes%5CMessage.md).[`program`](api/classes%5CMessage.md#program)
 
 ***
 
 ### rawData?
 
-> `optional` **rawData**: `RecursivePartial`\<[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md)\>
+> `optional` **rawData**: `RecursivePartial`\<[`FeedbackSchemaBase`](api/interfaces%5CFeedbackSchemaBase.md)\>
+
+Defined in: [src/lib/Wrapper.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/Wrapper.ts#L22)
 
 The raw base schema data
 
@@ -326,299 +306,273 @@ Only set if the base was created from a user schema.
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`rawData`](api%5Cclasses%5CMessage.md#rawdata)
-
-#### Source
-
-[src/lib/Wrapper.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/Wrapper.ts#L22)
+[`Message`](api/classes%5CMessage.md).[`rawData`](api/classes%5CMessage.md#rawdata)
 
 ***
 
 ### replies?
 
-> `optional` `readonly` **replies**: [`Reply`](api%5Cclasses%5CReply.md)[]
+> `readonly` `optional` **replies**: [`Reply`](api/classes%5CReply.md)[]
+
+Defined in: [src/lib/messages/Message.ts:50](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/Message.ts#L50)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`replies`](api%5Cinterfaces%5CIQuestion.md#replies)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`replies`](api/interfaces%5CIQuestion.md#replies)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`replies`](api%5Cclasses%5CMessage.md#replies)
-
-#### Source
-
-[src/lib/messages/Message.ts:50](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Message.ts#L50)
+[`Message`](api/classes%5CMessage.md).[`replies`](api/classes%5CMessage.md#replies)
 
 ***
 
 ### replyCount?
 
-> `optional` `readonly` **replyCount**: `number`
+> `readonly` `optional` **replyCount**: `number`
+
+Defined in: [src/lib/messages/Message.ts:49](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/Message.ts#L49)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`replyCount`](api%5Cinterfaces%5CIQuestion.md#replycount)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`replyCount`](api/interfaces%5CIQuestion.md#replycount)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`replyCount`](api%5Cclasses%5CMessage.md#replycount)
-
-#### Source
-
-[src/lib/messages/Message.ts:49](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Message.ts#L49)
+[`Message`](api/classes%5CMessage.md).[`replyCount`](api/classes%5CMessage.md#replycount)
 
 ***
 
 ### score?
 
-> `optional` `readonly` **score**: `number`
+> `readonly` `optional` **score**: `number`
+
+Defined in: [src/lib/messages/BaseMessage.ts:69](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L69)
 
 #### Raw
 
-[FeedbackSchemaBase.lowQualityScore](api%5Cinterfaces%5CFeedbackSchemaBase.md#lowqualityscore)
+[FeedbackSchemaBase.lowQualityScore](api/interfaces%5CFeedbackSchemaBase.md#lowqualityscore)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`score`](api%5Cinterfaces%5CIQuestion.md#score)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`score`](api/interfaces%5CIQuestion.md#score)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`score`](api%5Cclasses%5CMessage.md#score)
-
-#### Source
-
-[src/lib/messages/BaseMessage.ts:69](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L69)
+[`Message`](api/classes%5CMessage.md).[`score`](api/classes%5CMessage.md#score)
 
 ***
 
 ### selfDownvoted?
 
-> `optional` `readonly` **selfDownvoted**: `boolean`
+> `readonly` `optional` **selfDownvoted**: `boolean`
+
+Defined in: [src/lib/messages/Message.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/Message.ts#L48)
 
 #### Raw
 
-[FeedbackSchemaBase.downVoted](api%5Cinterfaces%5CFeedbackSchemaBase.md#downvoted)
+[FeedbackSchemaBase.downVoted](api/interfaces%5CFeedbackSchemaBase.md#downvoted)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`selfDownvoted`](api%5Cinterfaces%5CIQuestion.md#selfdownvoted)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`selfDownvoted`](api/interfaces%5CIQuestion.md#selfdownvoted)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`selfDownvoted`](api%5Cclasses%5CMessage.md#selfdownvoted)
-
-#### Source
-
-[src/lib/messages/Message.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Message.ts#L48)
+[`Message`](api/classes%5CMessage.md).[`selfDownvoted`](api/classes%5CMessage.md#selfdownvoted)
 
 ***
 
 ### selfFlagged?
 
-> `optional` `readonly` **selfFlagged**: `boolean`
+> `readonly` `optional` **selfFlagged**: `boolean`
+
+Defined in: [src/lib/messages/BaseMessage.ts:79](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L79)
 
 #### Raw
 
-[FeedbackSchemaBase.flaggedByUser](api%5Cinterfaces%5CFeedbackSchemaBase.md#flaggedbyuser)
+[FeedbackSchemaBase.flaggedByUser](api/interfaces%5CFeedbackSchemaBase.md#flaggedbyuser)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`selfFlagged`](api%5Cinterfaces%5CIQuestion.md#selfflagged)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`selfFlagged`](api/interfaces%5CIQuestion.md#selfflagged)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`selfFlagged`](api%5Cclasses%5CMessage.md#selfflagged)
-
-#### Source
-
-[src/lib/messages/BaseMessage.ts:79](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L79)
+[`Message`](api/classes%5CMessage.md).[`selfFlagged`](api/classes%5CMessage.md#selfflagged)
 
 ***
 
 ### selfUpvoted?
 
-> `optional` `readonly` **selfUpvoted**: `boolean`
+> `readonly` `optional` **selfUpvoted**: `boolean`
+
+Defined in: [src/lib/messages/Message.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/Message.ts#L44)
 
 #### Raw
 
-[FeedbackSchemaBase.upVoted](api%5Cinterfaces%5CFeedbackSchemaBase.md#upvoted)
+[FeedbackSchemaBase.upVoted](api/interfaces%5CFeedbackSchemaBase.md#upvoted)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`selfUpvoted`](api%5Cinterfaces%5CIQuestion.md#selfupvoted)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`selfUpvoted`](api/interfaces%5CIQuestion.md#selfupvoted)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`selfUpvoted`](api%5Cclasses%5CMessage.md#selfupvoted)
-
-#### Source
-
-[src/lib/messages/Message.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Message.ts#L44)
+[`Message`](api/classes%5CMessage.md).[`selfUpvoted`](api/classes%5CMessage.md#selfupvoted)
 
 ***
 
 ### text?
 
-> `optional` `readonly` **text**: `string`
+> `readonly` `optional` **text**: `string`
+
+Defined in: [src/lib/messages/BaseMessage.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L33)
 
 #### Raw
 
-[FeedbackSchemaBase.content](api%5Cinterfaces%5CFeedbackSchemaBase.md#content)
+[FeedbackSchemaBase.content](api/interfaces%5CFeedbackSchemaBase.md#content)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`text`](api%5Cinterfaces%5CIQuestion.md#text)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`text`](api/interfaces%5CIQuestion.md#text)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`text`](api%5Cclasses%5CMessage.md#text)
-
-#### Source
-
-[src/lib/messages/BaseMessage.ts:33](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L33)
+[`Message`](api/classes%5CMessage.md).[`text`](api/classes%5CMessage.md#text)
 
 ***
 
 ### verified?
 
-> `optional` `readonly` **verified**: `boolean`
+> `readonly` `optional` **verified**: `boolean`
+
+Defined in: [src/lib/messages/BaseMessage.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L65)
 
 #### Raw
 
-[FeedbackSchemaBase.definitelyNotSpam](api%5Cinterfaces%5CFeedbackSchemaBase.md#definitelynotspam)
+[FeedbackSchemaBase.definitelyNotSpam](api/interfaces%5CFeedbackSchemaBase.md#definitelynotspam)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`verified`](api%5Cinterfaces%5CIQuestion.md#verified)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`verified`](api/interfaces%5CIQuestion.md#verified)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`verified`](api%5Cclasses%5CMessage.md#verified)
-
-#### Source
-
-[src/lib/messages/BaseMessage.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L65)
+[`Message`](api/classes%5CMessage.md).[`verified`](api/classes%5CMessage.md#verified)
 
 ***
 
 ### votes?
 
-> `optional` `readonly` **votes**: `number`
+> `readonly` `optional` **votes**: `number`
+
+Defined in: [src/lib/messages/Message.ts:40](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/Message.ts#L40)
 
 #### Raw
 
-[FeedbackSchemaBase.sumVotesIncremented](api%5Cinterfaces%5CFeedbackSchemaBase.md#sumvotesincremented)
+[FeedbackSchemaBase.sumVotesIncremented](api/interfaces%5CFeedbackSchemaBase.md#sumvotesincremented)
 
 #### Implementation of
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md).[`votes`](api%5Cinterfaces%5CIQuestion.md#votes)
+[`IQuestion`](api/interfaces%5CIQuestion.md).[`votes`](api/interfaces%5CIQuestion.md#votes)
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`votes`](api%5Cclasses%5CMessage.md#votes)
-
-#### Source
-
-[src/lib/messages/Message.ts:40](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Message.ts#L40)
+[`Message`](api/classes%5CMessage.md).[`votes`](api/classes%5CMessage.md#votes)
 
 ***
 
 ### Type
 
-> `static` `readonly` **Type**: *typeof* [`MessageType`](api%5Cenumerations%5CMessageType.md) = `MessageType`
+> `readonly` `static` **Type**: *typeof* [`MessageType`](api/enumerations%5CMessageType.md) = `MessageType`
+
+Defined in: [src/lib/messages/Message.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/Message.ts#L35)
 
 Aliases for the message types.
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`Type`](api%5Cclasses%5CMessage.md#type)
-
-#### Source
-
-[src/lib/messages/Message.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Message.ts#L35)
+[`Message`](api/classes%5CMessage.md).[`Type`](api/classes%5CMessage.md#type)
 
 ## Accessors
 
 ### bySelf
 
-> `get` **bySelf**(): `boolean`
+#### Get Signature
+
+> **get** **bySelf**(): `boolean`
+
+Defined in: [src/lib/messages/BaseMessage.ts:84](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L84)
 
 Checks if the message was written by the client user
 
-#### Returns
+##### Returns
 
 `boolean`
 
-#### Source
+#### Inherited from
 
-[src/lib/messages/BaseMessage.ts:84](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L84)
+[`Message`](api/classes%5CMessage.md).[`bySelf`](api/classes%5CMessage.md#byself)
 
 ***
 
 ### selfVoted
 
-> `get` **selfVoted**(): `null` \| `1` \| `0` \| `-1`
+#### Get Signature
 
-#### See
+> **get** **selfVoted**(): `null` \| `1` \| `0` \| `-1`
 
- - [Message.selfUpvoted](api%5Cclasses%5CMessage.md#selfupvoted)
- - [Message.selfDownvoted](api%5Cclasses%5CMessage.md#selfdownvoted)
+Defined in: [src/lib/messages/Message.ts:59](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/Message.ts#L59)
 
-#### Returns
+##### See
+
+ - [Message.selfUpvoted](api/classes%5CMessage.md#selfupvoted)
+ - [Message.selfDownvoted](api/classes%5CMessage.md#selfdownvoted)
+
+##### Returns
 
 `null` \| `1` \| `0` \| `-1`
 
 `1` if the message was upvoted by the user, `-1` if it was downvoted,
 and `0` if it was not voted on. `null` if the user is not logged in.
 
-#### Source
+#### Inherited from
 
-[src/lib/messages/Message.ts:59](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Message.ts#L59)
+[`Message`](api/classes%5CMessage.md).[`selfVoted`](api/classes%5CMessage.md#selfvoted)
 
 ***
 
 ### url
 
-> `get` **url**(): `null` \| `string`
+#### Get Signature
 
-#### Returns
+> **get** **url**(): `null` \| `string`
+
+Defined in: [src/lib/messages/BaseMessage.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L88)
+
+##### Returns
 
 `null` \| `string`
 
-#### Source
-
-[src/lib/messages/BaseMessage.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L88)
-
-## Methods
-
-### #resolveIdentifier()
-
-> `private` **#resolveIdentifier**(): \`ag5zfmtoYW4tYWNhZGVteX$\{string\}CxIIVXNlckRhdGEi$\{string\}thaWRf$\{string\}$\{string\}$\{string\}\` \| \`kaencrypted\_$\{string\}\_$\{string\}\`
-
-#### Returns
-
-\`ag5zfmtoYW4tYWNhZGVteX$\{string\}CxIIVXNlckRhdGEi$\{string\}thaWRf$\{string\}$\{string\}$\{string\}\` \| \`kaencrypted\_$\{string\}\_$\{string\}\`
-
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`#resolveIdentifier`](api%5Cclasses%5CMessage.md##resolveidentifier)
+[`Message`](api/classes%5CMessage.md).[`url`](api/classes%5CMessage.md#url)
 
-#### Source
-
-[src/lib/messages/Message.ts:84](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Message.ts#L84)
-
-***
+## Methods
 
 ### byUser()
 
 > **byUser**(`user`): `boolean`
 
+Defined in: [src/lib/messages/BaseMessage.ts:138](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L138)
+
 Checks if the message was written by the given user
 
 #### Parameters
 
-• **user**: [`User`](api%5Cclasses%5CUser.md)
+##### user
+
+[`User`](api/classes%5CUser.md)
 
 #### Returns
 
@@ -626,147 +580,143 @@ Checks if the message was written by the given user
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`byUser`](api%5Cclasses%5CMessage.md#byuser)
-
-#### Source
-
-[src/lib/messages/BaseMessage.ts:138](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L138)
+[`Message`](api/classes%5CMessage.md).[`byUser`](api/classes%5CMessage.md#byuser)
 
 ***
 
 ### copy()
 
-> **copy**(`question`): [`Question`](api%5Cclasses%5CQuestion.md)
+> **copy**(`question`): [`Question`](api/classes%5CQuestion.md)
+
+Defined in: [src/lib/messages/Question.ts:60](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/Question.ts#L60)
 
 Updates data into the class
 
 #### Parameters
 
-• **question**: [`IQuestion`](api%5Cinterfaces%5CIQuestion.md)
+##### question
 
-The data to copy from
+[`IQuestion`](api/interfaces%5CIQuestion.md)
 
 #### Returns
 
-[`Question`](api%5Cclasses%5CQuestion.md)
+[`Question`](api/classes%5CQuestion.md)
 
 The class instance
 
 #### Overrides
 
-[`Message`](api%5Cclasses%5CMessage.md).[`copy`](api%5Cclasses%5CMessage.md#copy)
-
-#### Source
-
-[src/lib/messages/Question.ts:60](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Question.ts#L60)
+[`Message`](api/classes%5CMessage.md).[`copy`](api/classes%5CMessage.md#copy)
 
 ***
 
 ### copyFromSchema()
 
-> **copyFromSchema**(`schema`): [`Question`](api%5Cclasses%5CQuestion.md)
+> **copyFromSchema**(`schema`): [`Question`](api/classes%5CQuestion.md)
+
+Defined in: [src/lib/Wrapper.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/Wrapper.ts#L65)
 
 Updates data from a schema into the instance
 
 #### Parameters
 
-• **schema**: `RecursivePartial`\<[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md)\>
+##### schema
+
+`RecursivePartial`\<[`FeedbackSchemaBase`](api/interfaces%5CFeedbackSchemaBase.md)\>
 
 The schema to copy from
 
 #### Returns
 
-[`Question`](api%5Cclasses%5CQuestion.md)
+[`Question`](api/classes%5CQuestion.md)
 
 The class instance
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`copyFromSchema`](api%5Cclasses%5CMessage.md#copyfromschema)
-
-#### Source
-
-[src/lib/Wrapper.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/Wrapper.ts#L65)
+[`Message`](api/classes%5CMessage.md).[`copyFromSchema`](api/classes%5CMessage.md#copyfromschema)
 
 ***
 
 ### get()
 
-> **get**(`client`): `Promise`\<[`Question`](api%5Cclasses%5CQuestion.md)\>
+> **get**(`client`): `Promise`\<[`Question`](api/classes%5CQuestion.md)\>
+
+Defined in: [src/lib/messages/Message.ts:109](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/Message.ts#L109)
 
 Gets and updates the instance's data
 
 #### Parameters
 
-• **client**: [`Client`](api%5Cclasses%5CClient.md)= `undefined`
+##### client
+
+[`Client`](api/classes%5CClient.md) = `...`
 
 The API client to use
 
 #### Returns
 
-`Promise`\<[`Question`](api%5Cclasses%5CQuestion.md)\>
+`Promise`\<[`Question`](api/classes%5CQuestion.md)\>
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`get`](api%5Cclasses%5CMessage.md#get)
-
-#### Source
-
-[src/lib/messages/Message.ts:109](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Message.ts#L109)
+[`Message`](api/classes%5CMessage.md).[`get`](api/classes%5CMessage.md#get)
 
 ***
 
 ### getAllReplies()
 
-> **getAllReplies**(`client`): `Promise`\<[`Question`](api%5Cclasses%5CQuestion.md)\>
+> **getAllReplies**(`client`): `Promise`\<[`Question`](api/classes%5CQuestion.md)\>
+
+Defined in: [src/lib/messages/Message.ts:134](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/Message.ts#L134)
 
 #### Parameters
 
-• **client**: [`Client`](api%5Cclasses%5CClient.md)= `undefined`
+##### client
+
+[`Client`](api/classes%5CClient.md) = `...`
 
 #### Returns
 
-`Promise`\<[`Question`](api%5Cclasses%5CQuestion.md)\>
-
-#### Inherited from
-
-[`Message`](api%5Cclasses%5CMessage.md).[`getAllReplies`](api%5Cclasses%5CMessage.md#getallreplies)
+`Promise`\<[`Question`](api/classes%5CQuestion.md)\>
 
 #### See
 
-[Client.getAllMessageReplies](api%5Cclasses%5CClient.md#getallmessagereplies)
+[Client.getAllMessageReplies](api/classes%5CClient.md#getallmessagereplies)
 
-#### Source
+#### Inherited from
 
-[src/lib/messages/Message.ts:134](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Message.ts#L134)
+[`Message`](api/classes%5CMessage.md).[`getAllReplies`](api/classes%5CMessage.md#getallreplies)
 
 ***
 
 ### getReplies()
 
-> **getReplies**(`client`, `limit`?): `AsyncGenerator`\<[`Reply`](api%5Cclasses%5CReply.md)[], [`Question`](api%5Cclasses%5CQuestion.md), `unknown`\>
+> **getReplies**(`client`, `limit`?): `AsyncGenerator`\<[`Reply`](api/classes%5CReply.md)[], [`Question`](api/classes%5CQuestion.md), `unknown`\>
+
+Defined in: [src/lib/messages/Message.ts:118](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/Message.ts#L118)
 
 #### Parameters
 
-• **client**: [`Client`](api%5Cclasses%5CClient.md)= `undefined`
+##### client
 
-• **limit?**: `number`
+[`Client`](api/classes%5CClient.md) = `...`
+
+##### limit?
+
+`number`
 
 #### Returns
 
-`AsyncGenerator`\<[`Reply`](api%5Cclasses%5CReply.md)[], [`Question`](api%5Cclasses%5CQuestion.md), `unknown`\>
-
-#### Inherited from
-
-[`Message`](api%5Cclasses%5CMessage.md).[`getReplies`](api%5Cclasses%5CMessage.md#getreplies)
+`AsyncGenerator`\<[`Reply`](api/classes%5CReply.md)[], [`Question`](api/classes%5CQuestion.md), `unknown`\>
 
 #### See
 
-[Client.getMessageReplies](api%5Cclasses%5CClient.md#getmessagereplies)
+[Client.getMessageReplies](api/classes%5CClient.md#getmessagereplies)
 
-#### Source
+#### Inherited from
 
-[src/lib/messages/Message.ts:118](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Message.ts#L118)
+[`Message`](api/classes%5CMessage.md).[`getReplies`](api/classes%5CMessage.md#getreplies)
 
 ***
 
@@ -774,11 +724,15 @@ The API client to use
 
 > **is**(`message`): `boolean`
 
+Defined in: [src/lib/messages/BaseMessage.ts:145](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L145)
+
 Checks if the message is the same as the given message
 
 #### Parameters
 
-• **message**: [`IBaseMessage`](api%5Cinterfaces%5CIBaseMessage.md) \| [`BaseMessage`](api%5Cclasses%5CBaseMessage.md)
+##### message
+
+[`IBaseMessage`](api/interfaces%5CIBaseMessage.md) | [`BaseMessage`](api/classes%5CBaseMessage.md)
 
 #### Returns
 
@@ -786,11 +740,7 @@ Checks if the message is the same as the given message
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`is`](api%5Cclasses%5CMessage.md#is)
-
-#### Source
-
-[src/lib/messages/BaseMessage.ts:145](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L145)
+[`Message`](api/classes%5CMessage.md).[`is`](api/classes%5CMessage.md#is)
 
 ***
 
@@ -798,11 +748,15 @@ Checks if the message is the same as the given message
 
 > **isSchema**(`schema`): `boolean`
 
+Defined in: [src/lib/Wrapper.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/Wrapper.ts#L88)
+
 Checks if the schema represents the same instance
 
 #### Parameters
 
-• **schema**: `RecursivePartial`\<[`FeedbackSchemaBase`](api%5Cinterfaces%5CFeedbackSchemaBase.md)\>
+##### schema
+
+`RecursivePartial`\<[`FeedbackSchemaBase`](api/interfaces%5CFeedbackSchemaBase.md)\>
 
 #### Returns
 
@@ -810,74 +764,74 @@ Checks if the schema represents the same instance
 
 #### Inherited from
 
-[`Message`](api%5Cclasses%5CMessage.md).[`isSchema`](api%5Cclasses%5CMessage.md#isschema)
-
-#### Source
-
-[src/lib/Wrapper.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/Wrapper.ts#L88)
+[`Message`](api/classes%5CMessage.md).[`isSchema`](api/classes%5CMessage.md#isschema)
 
 ***
 
 ### transformSchema()
 
-> **transformSchema**(`schema`): [`IQuestion`](api%5Cinterfaces%5CIQuestion.md)
+> **transformSchema**(`schema`): [`IQuestion`](api/interfaces%5CIQuestion.md)
+
+Defined in: [src/lib/messages/Question.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/Question.ts#L44)
+
+Transforms a API schema into an abstracted interface
 
 #### Parameters
 
-• **schema**: `RecursivePartial`\<[`QuestionFeedbackSchema`](api%5Cinterfaces%5CQuestionFeedbackSchema.md)\>
+##### schema
+
+`RecursivePartial`\<[`QuestionFeedbackSchema`](api/interfaces%5CQuestionFeedbackSchema.md)\>
+
+The schema to transform
 
 #### Returns
 
-[`IQuestion`](api%5Cinterfaces%5CIQuestion.md)
+[`IQuestion`](api/interfaces%5CIQuestion.md)
 
 #### Overrides
 
-[`Message`](api%5Cclasses%5CMessage.md).[`transformSchema`](api%5Cclasses%5CMessage.md#transformschema)
-
-#### Source
-
-[src/lib/messages/Question.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Question.ts#L44)
+[`Message`](api/classes%5CMessage.md).[`transformSchema`](api/classes%5CMessage.md#transformschema)
 
 ***
 
 ### fromIdentifier()
 
-> `static` **fromIdentifier**(`identifier`): [`Question`](api%5Cclasses%5CQuestion.md)
+> `static` **fromIdentifier**(`identifier`): [`Question`](api/classes%5CQuestion.md)
+
+Defined in: [src/lib/messages/Question.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/Question.ts#L35)
 
 #### Parameters
 
-• **identifier**: \`ag5zfmtoYW4tYWNhZGVteX$\{string\}CxIIVXNlckRhdGEi$\{string\}thaWRf$\{string\}$\{string\}$\{string\}\` \| \`kaencrypted\_$\{string\}\_$\{string\}\`
+##### identifier
+
+`` `ag5zfmtoYW4tYWNhZGVteX${string}CxIIVXNlckRhdGEi${string}thaWRf${string}${string}${string}` `` | `` `kaencrypted_${string}_${string}` ``
 
 #### Returns
 
-[`Question`](api%5Cclasses%5CQuestion.md)
+[`Question`](api/classes%5CQuestion.md)
 
 #### Overrides
 
-[`Message`](api%5Cclasses%5CMessage.md).[`fromIdentifier`](api%5Cclasses%5CMessage.md#fromidentifier)
-
-#### Source
-
-[src/lib/messages/Question.ts:35](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Question.ts#L35)
+[`Message`](api/classes%5CMessage.md).[`fromIdentifier`](api/classes%5CMessage.md#fromidentifier)
 
 ***
 
 ### fromSchema()
 
-> `static` **fromSchema**(`schema`): [`Question`](api%5Cclasses%5CQuestion.md)
+> `static` **fromSchema**(`schema`): [`Question`](api/classes%5CQuestion.md)
+
+Defined in: [src/lib/messages/Question.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/Question.ts#L28)
 
 #### Parameters
 
-• **schema**: `RecursivePartial`\<[`QuestionFeedbackSchema`](api%5Cinterfaces%5CQuestionFeedbackSchema.md)\>
+##### schema
+
+`RecursivePartial`\<[`QuestionFeedbackSchema`](api/interfaces%5CQuestionFeedbackSchema.md)\>
 
 #### Returns
 
-[`Question`](api%5Cclasses%5CQuestion.md)
+[`Question`](api/classes%5CQuestion.md)
 
 #### Overrides
 
-[`Message`](api%5Cclasses%5CMessage.md).[`fromSchema`](api%5Cclasses%5CMessage.md#fromschema)
-
-#### Source
-
-[src/lib/messages/Question.ts:28](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/Question.ts#L28)
+[`Message`](api/classes%5CMessage.md).[`fromSchema`](api/classes%5CMessage.md#fromschema)

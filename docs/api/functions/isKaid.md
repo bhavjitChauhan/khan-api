@@ -1,13 +1,13 @@
-> **isKaid**(`str`): str is \`kaid\_$\{number\}\`
+> **isKaid**(`str`): `` str is `kaid_${number}` ``
+
+Defined in: [src/utils/regexes.ts:70](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/utils/regexes.ts#L70)
 
 ## Parameters
 
-• **str**: `string`
+### str
+
+`string`
 
 ## Returns
 
-str is \`kaid\_$\{number\}\`
-
-## Source
-
-[src/utils/regexes.ts:70](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/utils/regexes.ts#L70)
+`` str is `kaid_${number}` ``

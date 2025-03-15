@@ -1,13 +1,13 @@
 > **isInputErrorResponse**(`response`): `response is InputErrorResponse`
 
+Defined in: [src/types/responses.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/responses.ts#L44)
+
 ## Parameters
 
-• **response**: [`StandardResponse`](api%5Ctype-aliases%5CStandardResponse.md)\<`unknown`\>
+### response
+
+[`StandardResponse`](api/type-aliases%5CStandardResponse.md)
 
 ## Returns
 
 `response is InputErrorResponse`
-
-## Source
-
-[src/types/responses.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/responses.ts#L44)

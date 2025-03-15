@@ -1,10 +1,8 @@
+Defined in: [src/types/schema.ts:31](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L31)
+
 ## File
 
 GraphQL Schema
-
-## Summary
-
-This file contains the GraphQL schema types for the KA API.
 
 ## Description
 
@@ -12,13 +10,13 @@ This file exists to reduce code duplication and because GraphQL operates using s
 
 Khan Academy's safelisted GraphQL queries will usually not request any schema entirely so TypeScript's `Pick` and `Omit` utility types may come in handy.
 
-## Type parameters
+## Type Parameters
 
-• **AvatarData** = [`AvatarSchema`](api%5Cinterfaces%5CAvatarSchema.md)
+• **AvatarData** = [`AvatarSchema`](api/interfaces%5CAvatarSchema.md)
 
-• **ProfileData** = [`ProfileSchema`](api%5Cinterfaces%5CProfileSchema.md)
+• **ProfileData** = [`ProfileSchema`](api/interfaces%5CProfileSchema.md)
 
-• **ListProgramsData** = [`ListProgramsSchema`](api%5Cinterfaces%5CListProgramsSchema.md)
+• **ListProgramsData** = [`ListProgramsSchema`](api/interfaces%5CListProgramsSchema.md)
 
 ## Properties
 
@@ -26,9 +24,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **\_\_typename**: `"User"`
 
-#### Source
-
-[src/types/schema.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L36)
+Defined in: [src/types/schema.ts:36](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L36)
 
 ***
 
@@ -36,9 +32,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **actorHasUserScopedPermission**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L37)
+Defined in: [src/types/schema.ts:37](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L37)
 
 ***
 
@@ -46,9 +40,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **authEmails**: `null` \| `string`[]
 
-#### Source
-
-[src/types/schema.ts:38](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L38)
+Defined in: [src/types/schema.ts:38](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L38)
 
 ***
 
@@ -56,9 +48,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **autocontinueOn**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L39)
+Defined in: [src/types/schema.ts:39](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L39)
 
 ***
 
@@ -66,9 +56,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **avatar**: `AvatarData`
 
-#### Source
-
-[src/types/schema.ts:40](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L40)
+Defined in: [src/types/schema.ts:40](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L40)
 
 ***
 
@@ -76,9 +64,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **badgeCounts**: `string`
 
-#### Source
-
-[src/types/schema.ts:41](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L41)
+Defined in: [src/types/schema.ts:41](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L41)
 
 ***
 
@@ -86,9 +72,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **bio**: `string`
 
-#### Source
-
-[src/types/schema.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L42)
+Defined in: [src/types/schema.ts:42](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L42)
 
 ***
 
@@ -96,9 +80,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **birthMonthYear**: `unknown`
 
-#### Source
-
-[src/types/schema.ts:43](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L43)
+Defined in: [src/types/schema.ts:43](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L43)
 
 ***
 
@@ -106,9 +88,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **canAccessDistrictsHomepage**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L44)
+Defined in: [src/types/schema.ts:44](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L44)
 
 ***
 
@@ -116,9 +96,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **canHellban**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:45](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L45)
+Defined in: [src/types/schema.ts:45](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L45)
 
 ***
 
@@ -126,9 +104,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **canMessageUsers**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:46](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L46)
+Defined in: [src/types/schema.ts:46](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L46)
 
 ***
 
@@ -136,9 +112,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **canModifyCoaches**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:47](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L47)
+Defined in: [src/types/schema.ts:47](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L47)
 
 ***
 
@@ -146,9 +120,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **countVideosCompleted**: `number`
 
-#### Source
-
-[src/types/schema.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L48)
+Defined in: [src/types/schema.ts:48](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L48)
 
 ***
 
@@ -156,9 +128,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **email**: `null` \| `string`
 
-#### Source
-
-[src/types/schema.ts:49](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L49)
+Defined in: [src/types/schema.ts:49](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L49)
 
 ***
 
@@ -166,29 +136,55 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **gaUserId**: `null` \| `string`
 
-#### Source
+Defined in: [src/types/schema.ts:50](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L50)
 
-[src/types/schema.ts:50](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L50)
+***
+
+### hasAccessToAIGuideCompanionMode
+
+> **hasAccessToAIGuideCompanionMode**: `null` \| `boolean`
+
+Defined in: [src/types/schema.ts:52](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L52)
 
 ***
 
 ### hasAccessToAIGuideDev
 
-> **hasAccessToAIGuideDev**: `boolean`
+> **hasAccessToAIGuideDev**: `null` \| `boolean`
 
-#### Source
+Defined in: [src/types/schema.ts:51](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L51)
 
-[src/types/schema.ts:51](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L51)
+***
+
+### hasAccessToAIGuideDistrictAdmin
+
+> **hasAccessToAIGuideDistrictAdmin**: `null` \| `boolean`
+
+Defined in: [src/types/schema.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L53)
+
+***
+
+### hasAccessToAIGuideLearner
+
+> **hasAccessToAIGuideLearner**: `null` \| `boolean`
+
+Defined in: [src/types/schema.ts:54](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L54)
+
+***
+
+### hasAccessToAIGuideParent
+
+> **hasAccessToAIGuideParent**: `null` \| `boolean`
+
+Defined in: [src/types/schema.ts:55](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L55)
 
 ***
 
 ### hasAccessToAIGuideTeacher
 
-> **hasAccessToAIGuideTeacher**: `boolean`
+> **hasAccessToAIGuideTeacher**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:52](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L52)
+Defined in: [src/types/schema.ts:56](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L56)
 
 ***
 
@@ -196,9 +192,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **hasChildren**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:53](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L53)
+Defined in: [src/types/schema.ts:57](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L57)
 
 ***
 
@@ -206,9 +200,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **hasClasses**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:54](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L54)
+Defined in: [src/types/schema.ts:58](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L58)
 
 ***
 
@@ -216,9 +208,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **hasCoach**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:55](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L55)
+Defined in: [src/types/schema.ts:59](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L59)
 
 ***
 
@@ -226,9 +216,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **hasStudents**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:56](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L56)
+Defined in: [src/types/schema.ts:60](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L60)
 
 ***
 
@@ -236,9 +224,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **hasUnresolvedInvitations**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:57](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L57)
+Defined in: [src/types/schema.ts:61](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L61)
 
 ***
 
@@ -246,9 +232,7 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **hideVisual**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:58](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L58)
+Defined in: [src/types/schema.ts:62](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L62)
 
 ***
 
@@ -256,21 +240,17 @@ Khan Academy's safelisted GraphQL queries will usually not request any schema en
 
 > **homepageUrl**: `null` \| `string`
 
-#### Source
-
-[src/types/schema.ts:59](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L59)
+Defined in: [src/types/schema.ts:63](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L63)
 
 ***
 
 ### id
 
-> **id**: `null` \| \`kaid\_$\{number\}\`
+> **id**: `null` \| `` `kaid_${number}` ``
+
+Defined in: [src/types/schema.ts:67](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L67)
 
 Same as KAID unless the user is anonymous
-
-#### Source
-
-[src/types/schema.ts:63](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L63)
 
 ***
 
@@ -278,9 +258,7 @@ Same as KAID unless the user is anonymous
 
 > **includesDistrictOwnedData**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:64](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L64)
+Defined in: [src/types/schema.ts:68](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L68)
 
 ***
 
@@ -288,9 +266,7 @@ Same as KAID unless the user is anonymous
 
 > **includesK4dDistrictOwnedData**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:65](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L65)
+Defined in: [src/types/schema.ts:69](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L69)
 
 ***
 
@@ -298,19 +274,7 @@ Same as KAID unless the user is anonymous
 
 > **includesKmapDistrictOwnedData**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:66](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L66)
-
-***
-
-### isAIGuideEnabled
-
-> **isAIGuideEnabled**: `boolean`
-
-#### Source
-
-[src/types/schema.ts:67](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L67)
+Defined in: [src/types/schema.ts:70](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L70)
 
 ***
 
@@ -318,9 +282,15 @@ Same as KAID unless the user is anonymous
 
 > **isActor**: `boolean`
 
-#### Source
+Defined in: [src/types/schema.ts:72](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L72)
 
-[src/types/schema.ts:68](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L68)
+***
+
+### isAIGuideEnabled
+
+> **isAIGuideEnabled**: `boolean`
+
+Defined in: [src/types/schema.ts:71](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L71)
 
 ***
 
@@ -328,9 +298,7 @@ Same as KAID unless the user is anonymous
 
 > **isChild**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:69](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L69)
+Defined in: [src/types/schema.ts:73](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L73)
 
 ***
 
@@ -338,9 +306,7 @@ Same as KAID unless the user is anonymous
 
 > **isCoachedByActor**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:70](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L70)
+Defined in: [src/types/schema.ts:74](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L74)
 
 ***
 
@@ -348,9 +314,7 @@ Same as KAID unless the user is anonymous
 
 > **isCoachingLoggedInUser**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:71](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L71)
+Defined in: [src/types/schema.ts:75](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L75)
 
 ***
 
@@ -358,9 +322,7 @@ Same as KAID unless the user is anonymous
 
 > **isCreator**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:72](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L72)
+Defined in: [src/types/schema.ts:76](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L76)
 
 ***
 
@@ -368,9 +330,7 @@ Same as KAID unless the user is anonymous
 
 > **isCurator**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:73](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L73)
+Defined in: [src/types/schema.ts:77](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L77)
 
 ***
 
@@ -378,9 +338,7 @@ Same as KAID unless the user is anonymous
 
 > **isDataCollectible**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:74](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L74)
+Defined in: [src/types/schema.ts:78](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L78)
 
 ***
 
@@ -388,9 +346,7 @@ Same as KAID unless the user is anonymous
 
 > **isDeveloper**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:75](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L75)
+Defined in: [src/types/schema.ts:79](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L79)
 
 ***
 
@@ -398,9 +354,7 @@ Same as KAID unless the user is anonymous
 
 > **isFormalTeacher**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:76](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L76)
+Defined in: [src/types/schema.ts:80](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L80)
 
 ***
 
@@ -408,9 +362,7 @@ Same as KAID unless the user is anonymous
 
 > **isK4dStudent**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:77](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L77)
+Defined in: [src/types/schema.ts:81](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L81)
 
 ***
 
@@ -418,9 +370,7 @@ Same as KAID unless the user is anonymous
 
 > **isKmapStudent**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:78](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L78)
+Defined in: [src/types/schema.ts:82](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L82)
 
 ***
 
@@ -428,9 +378,7 @@ Same as KAID unless the user is anonymous
 
 > **isMidsignupPhantom**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:79](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L79)
+Defined in: [src/types/schema.ts:83](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L83)
 
 ***
 
@@ -438,9 +386,7 @@ Same as KAID unless the user is anonymous
 
 > **isModerator**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:80](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L80)
+Defined in: [src/types/schema.ts:84](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L84)
 
 ***
 
@@ -448,9 +394,7 @@ Same as KAID unless the user is anonymous
 
 > **isOrphan**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:81](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L81)
+Defined in: [src/types/schema.ts:85](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L85)
 
 ***
 
@@ -458,9 +402,7 @@ Same as KAID unless the user is anonymous
 
 > **isParent**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:82](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L82)
+Defined in: [src/types/schema.ts:86](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L86)
 
 ***
 
@@ -468,9 +410,7 @@ Same as KAID unless the user is anonymous
 
 > **isPhantom**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:83](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L83)
+Defined in: [src/types/schema.ts:87](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L87)
 
 ***
 
@@ -478,9 +418,7 @@ Same as KAID unless the user is anonymous
 
 > **isPublisher**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:84](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L84)
+Defined in: [src/types/schema.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L88)
 
 ***
 
@@ -488,9 +426,7 @@ Same as KAID unless the user is anonymous
 
 > **isSatStudent**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:85](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L85)
+Defined in: [src/types/schema.ts:89](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L89)
 
 ***
 
@@ -498,9 +434,7 @@ Same as KAID unless the user is anonymous
 
 > **isSelf**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:86](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L86)
+Defined in: [src/types/schema.ts:90](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L90)
 
 ***
 
@@ -508,9 +442,7 @@ Same as KAID unless the user is anonymous
 
 > **isTeacher**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:87](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L87)
+Defined in: [src/types/schema.ts:91](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L91)
 
 ***
 
@@ -518,21 +450,17 @@ Same as KAID unless the user is anonymous
 
 > **joined**: `string`
 
-#### Source
-
-[src/types/schema.ts:88](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L88)
+Defined in: [src/types/schema.ts:92](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L92)
 
 ***
 
 ### kaid
 
-> **kaid**: `""` \| \`kaid\_$\{number\}\`
+> **kaid**: `""` \| `` `kaid_${number}` ``
+
+Defined in: [src/types/schema.ts:96](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L96)
 
 Will always be a string if requested in the GraphQL query. Defaults to empty string (`''`) for anonymous users.
-
-#### Source
-
-[src/types/schema.ts:92](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L92)
 
 ***
 
@@ -540,9 +468,7 @@ Will always be a string if requested in the GraphQL query. Defaults to empty str
 
 > **key**: `null` \| `string`
 
-#### Source
-
-[src/types/schema.ts:93](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L93)
+Defined in: [src/types/schema.ts:97](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L97)
 
 ***
 
@@ -550,9 +476,7 @@ Will always be a string if requested in the GraphQL query. Defaults to empty str
 
 > **lastLoginCountry**: `null` \| `string`
 
-#### Source
-
-[src/types/schema.ts:94](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L94)
+Defined in: [src/types/schema.ts:98](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L98)
 
 ***
 
@@ -560,9 +484,7 @@ Will always be a string if requested in the GraphQL query. Defaults to empty str
 
 > **muteVideos**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:95](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L95)
+Defined in: [src/types/schema.ts:99](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L99)
 
 ***
 
@@ -570,9 +492,7 @@ Will always be a string if requested in the GraphQL query. Defaults to empty str
 
 > **newNotificationCount**: `null` \| `number`
 
-#### Source
-
-[src/types/schema.ts:96](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L96)
+Defined in: [src/types/schema.ts:100](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L100)
 
 ***
 
@@ -580,9 +500,7 @@ Will always be a string if requested in the GraphQL query. Defaults to empty str
 
 > **nickname**: `null` \| `string`
 
-#### Source
-
-[src/types/schema.ts:97](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L97)
+Defined in: [src/types/schema.ts:101](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L101)
 
 ***
 
@@ -590,19 +508,15 @@ Will always be a string if requested in the GraphQL query. Defaults to empty str
 
 > **noColorInVideos**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:98](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L98)
+Defined in: [src/types/schema.ts:102](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L102)
 
 ***
 
 ### pendingEmailVerifications
 
-> **pendingEmailVerifications**: `null` \| [`PendingEmailVerificationSchema`](api%5Cinterfaces%5CPendingEmailVerificationSchema.md)[]
+> **pendingEmailVerifications**: `null` \| [`PendingEmailVerificationSchema`](api/interfaces%5CPendingEmailVerificationSchema.md)[]
 
-#### Source
-
-[src/types/schema.ts:99](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L99)
+Defined in: [src/types/schema.ts:103](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L103)
 
 ***
 
@@ -610,19 +524,15 @@ Will always be a string if requested in the GraphQL query. Defaults to empty str
 
 > **points**: `number`
 
-#### Source
-
-[src/types/schema.ts:100](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L100)
+Defined in: [src/types/schema.ts:104](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L104)
 
 ***
 
 ### preferredKaLocale
 
-> **preferredKaLocale**: `null` \| [`LocaleSchema`](api%5Cinterfaces%5CLocaleSchema.md)
+> **preferredKaLocale**: `null` \| [`LocaleSchema`](api/interfaces%5CLocaleSchema.md)
 
-#### Source
-
-[src/types/schema.ts:101](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L101)
+Defined in: [src/types/schema.ts:105](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L105)
 
 ***
 
@@ -630,9 +540,7 @@ Will always be a string if requested in the GraphQL query. Defaults to empty str
 
 > **prefersReducedMotion**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:102](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L102)
+Defined in: [src/types/schema.ts:106](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L106)
 
 ***
 
@@ -640,21 +548,17 @@ Will always be a string if requested in the GraphQL query. Defaults to empty str
 
 > **profile**: `ProfileData`
 
-#### Source
-
-[src/types/schema.ts:103](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L103)
+Defined in: [src/types/schema.ts:107](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L107)
 
 ***
 
 ### profileRoot
 
-> **profileRoot**: `null` \| \`/profile/$\{string\}/\`
+> **profileRoot**: `null` \| `` `/profile/${string}/` ``
+
+Defined in: [src/types/schema.ts:111](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L111)
 
 Defaults to `null` for anonymous users.
-
-#### Source
-
-[src/types/schema.ts:107](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L107)
 
 ***
 
@@ -662,15 +566,15 @@ Defaults to `null` for anonymous users.
 
 > **programs**: `ListProgramsData`
 
-#### Source
-
-[src/types/schema.ts:108](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L108)
+Defined in: [src/types/schema.ts:112](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L112)
 
 ***
 
 ### ~~qualarooId~~
 
-> **qualarooId**: `null` \| \`kaid\_$\{number\}\` \| \`\_gae\_bingo\_random:$\{string\}\`
+> **qualarooId**: `null` \| `` `kaid_${number}` `` \| `` `_gae_bingo_random:${string}` ``
+
+Defined in: [src/types/schema.ts:120](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L120)
 
 Either Qualaroo ID or KAID
 
@@ -682,19 +586,13 @@ https://github.com/kamens/gae_bingo
 
 Since 2023-04-24
 
-#### Source
-
-[src/types/schema.ts:116](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L116)
-
 ***
 
 ### region
 
 > **region**: `unknown`
 
-#### Source
-
-[src/types/schema.ts:117](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L117)
+Defined in: [src/types/schema.ts:121](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L121)
 
 ***
 
@@ -702,9 +600,7 @@ Since 2023-04-24
 
 > **shouldShowAgeCheck**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:118](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L118)
+Defined in: [src/types/schema.ts:122](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L122)
 
 ***
 
@@ -712,9 +608,7 @@ Since 2023-04-24
 
 > **showCaptions**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:119](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L119)
+Defined in: [src/types/schema.ts:123](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L123)
 
 ***
 
@@ -722,9 +616,7 @@ Since 2023-04-24
 
 > **signupDataIfUnverified**: `unknown`
 
-#### Source
-
-[src/types/schema.ts:120](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L120)
+Defined in: [src/types/schema.ts:124](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L124)
 
 ***
 
@@ -732,9 +624,7 @@ Since 2023-04-24
 
 > **soundOn**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:121](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L121)
+Defined in: [src/types/schema.ts:125](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L125)
 
 ***
 
@@ -742,9 +632,7 @@ Since 2023-04-24
 
 > **tosAccepted**: `null` \| `boolean`
 
-#### Source
-
-[src/types/schema.ts:122](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L122)
+Defined in: [src/types/schema.ts:126](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L126)
 
 ***
 
@@ -752,9 +640,7 @@ Since 2023-04-24
 
 > **transferAuthToken**: `string`
 
-#### Source
-
-[src/types/schema.ts:123](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L123)
+Defined in: [src/types/schema.ts:127](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L127)
 
 ***
 
@@ -762,31 +648,17 @@ Since 2023-04-24
 
 > **underAgeGate**: `unknown`
 
-#### Source
-
-[src/types/schema.ts:124](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L124)
+Defined in: [src/types/schema.ts:128](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L128)
 
 ***
 
 ### userId
 
-> **userId**: \`kaid\_$\{number\}\` \| \`http://googleid.khanacademy.org/$\{number\}\`
+> **userId**: `` `kaid_${number}` `` \| `` `http://googleid.khanacademy.org/${number}` ``
+
+Defined in: [src/types/schema.ts:132](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L132)
 
 Either Google ID or KAID
-
-#### Source
-
-[src/types/schema.ts:128](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L128)
-
-***
-
-### userSummaryIsVisibleToActor
-
-> **userSummaryIsVisibleToActor**: `boolean`
-
-#### Source
-
-[src/types/schema.ts:129](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L129)
 
 ***
 
@@ -794,6 +666,12 @@ Either Google ID or KAID
 
 > **username**: `string`
 
-#### Source
+Defined in: [src/types/schema.ts:134](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L134)
 
-[src/types/schema.ts:130](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L130)
+***
+
+### userSummaryIsVisibleToActor
+
+> **userSummaryIsVisibleToActor**: `boolean`
+
+Defined in: [src/types/schema.ts:133](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L133)

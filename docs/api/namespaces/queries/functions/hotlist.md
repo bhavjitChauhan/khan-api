@@ -1,16 +1,22 @@
-> **hotlist**(`variables`, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CHotlist%5Ctype-aliases%5CResponse.md)\>\>
+> **hotlist**(`variables`, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CHotlist%5Ctype-aliases%5CResponse.md)\>\>
+
+Defined in: [src/queries/hotlist.ts:81](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/hotlist.ts#L81)
 
 Low-level function for making a `hotlist` request.
 
 ## Parameters
 
-• **variables**: [`Variables`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CHotlist%5Cinterfaces%5CVariables.md)
+### variables
 
-• **init?**: `RequestInit`
+[`Variables`](api/namespaces%5Cqueries%5Cnamespaces%5CHotlist%5Cinterfaces%5CVariables.md)
+
+### init?
+
+`RequestInit`
 
 ## Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CHotlist%5Ctype-aliases%5CResponse.md)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CHotlist%5Ctype-aliases%5CResponse.md)\>\>
 
 ## Link
 
@@ -26,7 +32,3 @@ const response = await queries.hotlist({
 const json = await response.json()
 const programs = json.data.listTopPrograms.programs
 ```
-
-## Source
-
-[src/queries/hotlist.ts:81](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/hotlist.ts#L81)

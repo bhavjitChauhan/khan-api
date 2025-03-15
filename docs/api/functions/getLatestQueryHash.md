@@ -1,10 +1,14 @@
 > **getLatestQueryHash**(`query`): `Promise`\<`null` \| `number`\>
 
+Defined in: [src/utils/safelist.ts:85](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/utils/safelist.ts#L85)
+
 Gets the latest version of a query from the Safelist and returns its hash.
 
 ## Parameters
 
-• **query**: `string`
+### query
+
+`string`
 
 ## Returns
 
@@ -23,8 +27,4 @@ const data = await response.json()
 
 ## See
 
-[hashQuery](api%5Cfunctions%5ChashQuery.md)
-
-## Source
-
-[src/utils/safelist.ts:85](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/utils/safelist.ts#L85)
+[hashQuery](api/functions%5ChashQuery.md)

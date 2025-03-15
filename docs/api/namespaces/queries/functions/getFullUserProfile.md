@@ -1,20 +1,26 @@
-## getFullUserProfile(variables, init)
+## Call Signature
 
-> **getFullUserProfile**(`variables`?, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetFullUserProfile%5Ctype-aliases%5CResponse.md)\>\>
+> **getFullUserProfile**(`variables`?, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetFullUserProfile%5Ctype-aliases%5CResponse.md)\>\>
+
+Defined in: [src/queries/getFullUserProfile.ts:248](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/getFullUserProfile.ts#L248)
 
 Low-level function for making a `getFullUserProfile` request.
 
 ### Parameters
 
-• **variables?**: [`Variables`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetFullUserProfile%5Cinterfaces%5CVariables.md)
+#### variables?
+
+[`Variables`](api/namespaces%5Cqueries%5Cnamespaces%5CGetFullUserProfile%5Cinterfaces%5CVariables.md)
 
 Fetches profile associated with any cookies if not provided
 
-• **init?**: `RequestInit`
+#### init?
+
+`RequestInit`
 
 ### Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetFullUserProfile%5Ctype-aliases%5CResponse.md)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetFullUserProfile%5Ctype-aliases%5CResponse.md)\>\>
 
 ### Remarks
 
@@ -30,7 +36,7 @@ will use `kaid` and ignore `username`.
 
 ### See
 
-[Client.getUser](api%5Cclasses%5CClient.md#getuser)
+[Client.getUser](api/classes%5CClient.md#getuser)
 
 ### Examples
 
@@ -59,23 +65,25 @@ const json = await response.json()
 const profile = json.data.user
 ```
 
-### Source
+## Call Signature
 
-[src/queries/getFullUserProfile.ts:241](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/getFullUserProfile.ts#L241)
+> **getFullUserProfile**(`kaid`?, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetFullUserProfile%5Ctype-aliases%5CResponse.md)\>\>
 
-## getFullUserProfile(kaid, init)
-
-> **getFullUserProfile**(`kaid`?, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetFullUserProfile%5Ctype-aliases%5CResponse.md)\>\>
+Defined in: [src/queries/getFullUserProfile.ts:261](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/getFullUserProfile.ts#L261)
 
 ### Parameters
 
-• **kaid?**: \`kaid\_$\{number\}\`
+#### kaid?
 
-• **init?**: `RequestInit`
+`` `kaid_${number}` ``
+
+#### init?
+
+`RequestInit`
 
 ### Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetFullUserProfile%5Ctype-aliases%5CResponse.md)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetFullUserProfile%5Ctype-aliases%5CResponse.md)\>\>
 
 ### Example
 
@@ -86,23 +94,25 @@ const json = await response.json()
 const profile = json.data.user
 ```
 
-### Source
+## Call Signature
 
-[src/queries/getFullUserProfile.ts:254](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/getFullUserProfile.ts#L254)
+> **getFullUserProfile**(`username`?, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetFullUserProfile%5Ctype-aliases%5CResponse.md)\>\>
 
-## getFullUserProfile(username, init)
-
-> **getFullUserProfile**(`username`?, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetFullUserProfile%5Ctype-aliases%5CResponse.md)\>\>
+Defined in: [src/queries/getFullUserProfile.ts:274](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/getFullUserProfile.ts#L274)
 
 ### Parameters
 
-• **username?**: `string`
+#### username?
 
-• **init?**: `RequestInit`
+`string`
+
+#### init?
+
+`RequestInit`
 
 ### Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetFullUserProfile%5Ctype-aliases%5CResponse.md)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetFullUserProfile%5Ctype-aliases%5CResponse.md)\>\>
 
 ### Example
 
@@ -112,7 +122,3 @@ const response = await queries.getFullUserProfile('sal')
 const json = await response.json()
 const profile = json.data.user
 ```
-
-### Source
-
-[src/queries/getFullUserProfile.ts:267](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/getFullUserProfile.ts#L267)

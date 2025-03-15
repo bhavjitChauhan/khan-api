@@ -1,39 +1,47 @@
-## getProfileWidgets(variables, init)
+## Call Signature
 
-> **getProfileWidgets**(`variables`, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetProfileWidgets%5Ctype-aliases%5CResponse.md)\>\>
+> **getProfileWidgets**(`variables`, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetProfileWidgets%5Ctype-aliases%5CResponse.md)\>\>
+
+Defined in: [src/queries/getProfileWidgets.ts:118](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/getProfileWidgets.ts#L118)
 
 ### Parameters
 
-• **variables**: [`Variables`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetProfileWidgets%5Cinterfaces%5CVariables.md)
+#### variables
 
-• **init?**: `RequestInit`
+[`Variables`](api/namespaces%5Cqueries%5Cnamespaces%5CGetProfileWidgets%5Cinterfaces%5CVariables.md)
+
+#### init?
+
+`RequestInit`
 
 ### Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetProfileWidgets%5Ctype-aliases%5CResponse.md)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetProfileWidgets%5Ctype-aliases%5CResponse.md)\>\>
 
 ### Link
 
 [Reference](https://khan-api.bhavjit.com/reference/view/19553924/2s8YzQUiXU#d88fe317-8705-43d7-a811-5d93316dd4a2)
 
-### Source
+## Call Signature
 
-[src/queries/getProfileWidgets.ts:118](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/getProfileWidgets.ts#L118)
+> **getProfileWidgets**(`kaid`, `init`?): `Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetProfileWidgets%5Ctype-aliases%5CResponse.md)\>\>
 
-## getProfileWidgets(kaid, init)
-
-> **getProfileWidgets**(`kaid`, `init`?): `Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetProfileWidgets%5Ctype-aliases%5CResponse.md)\>\>
+Defined in: [src/queries/getProfileWidgets.ts:122](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/queries/getProfileWidgets.ts#L122)
 
 ### Parameters
 
-• **kaid**: \`kaid\_$\{number\}\`
+#### kaid
 
-• **init?**: `RequestInit`
+`` `kaid_${number}` ``
+
+#### init?
+
+`RequestInit`
 
 ### Returns
 
-`Promise`\<[`TypedResponse`](api%5Cinterfaces%5CTypedResponse.md)\<[`Response`](api%5Cnamespaces%5Cqueries%5Cnamespaces%5CGetProfileWidgets%5Ctype-aliases%5CResponse.md)\>\>
+`Promise`\<[`TypedResponse`](api/interfaces%5CTypedResponse.md)\<[`Response`](api/namespaces%5Cqueries%5Cnamespaces%5CGetProfileWidgets%5Ctype-aliases%5CResponse.md)\>\>
 
-### Source
+### Link
 
-[src/queries/getProfileWidgets.ts:122](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/queries/getProfileWidgets.ts#L122)
+[Reference](https://khan-api.bhavjit.com/reference/view/19553924/2s8YzQUiXU#d88fe317-8705-43d7-a811-5d93316dd4a2)

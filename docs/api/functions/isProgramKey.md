@@ -1,14 +1,18 @@
-> **isProgramKey**(`str`): str is \`ag5zfmtoYW4tYWNhZGVteXI$\{string\}CxIKU2NyYXRjaHBhZB$\{string\}$\{string\}\`
+> **isProgramKey**(`str`): `` str is `ag5zfmtoYW4tYWNhZGVteXI${string}CxIKU2NyYXRjaHBhZB${string}${string}` ``
+
+Defined in: [src/utils/regexes.ts:155](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/utils/regexes.ts#L155)
 
 Checks if a string is a valid program key
 
 ## Parameters
 
-• **str**: `string`
+### str
+
+`string`
 
 ## Returns
 
-str is \`ag5zfmtoYW4tYWNhZGVteXI$\{string\}CxIKU2NyYXRjaHBhZB$\{string\}$\{string\}\`
+`` str is `ag5zfmtoYW4tYWNhZGVteXI${string}CxIKU2NyYXRjaHBhZB${string}${string}` ``
 
 ## Remarks
 
@@ -20,7 +24,3 @@ that may look similar at first glance.
 
 This function has been tested against more than 1,000,000 program keys but it
 is possible that in the future, new program key formats will be introduced.
-
-## Source
-
-[src/utils/regexes.ts:155](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/utils/regexes.ts#L155)

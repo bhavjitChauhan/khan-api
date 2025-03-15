@@ -1,17 +1,17 @@
+Defined in: [src/lib/messages/BaseMessage.ts:10](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L10)
+
 ## Extended by
 
-- [`IMessage`](api%5Cinterfaces%5CIMessage.md)
-- [`IReply`](api%5Cinterfaces%5CIReply.md)
+- [`IMessage`](api/interfaces%5CIMessage.md)
+- [`IReply`](api/interfaces%5CIReply.md)
 
 ## Properties
 
 ### author?
 
-> `optional` **author**: [`User`](api%5Cclasses%5CUser.md)
+> `optional` **author**: [`User`](api/classes%5CUser.md)
 
-#### Source
-
-[src/lib/messages/BaseMessage.ts:11](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L11)
+Defined in: [src/lib/messages/BaseMessage.ts:11](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L11)
 
 ***
 
@@ -19,9 +19,7 @@
 
 > `optional` **byVideoAuthor**: `boolean`
 
-#### Source
-
-[src/lib/messages/BaseMessage.ts:12](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L12)
+Defined in: [src/lib/messages/BaseMessage.ts:12](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L12)
 
 ***
 
@@ -29,9 +27,7 @@
 
 > `optional` **created**: `Date`
 
-#### Source
-
-[src/lib/messages/BaseMessage.ts:13](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L13)
+Defined in: [src/lib/messages/BaseMessage.ts:13](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L13)
 
 ***
 
@@ -39,9 +35,7 @@
 
 > `optional` **deleted**: `boolean`
 
-#### Source
-
-[src/lib/messages/BaseMessage.ts:14](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L14)
+Defined in: [src/lib/messages/BaseMessage.ts:14](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L14)
 
 ***
 
@@ -49,9 +43,7 @@
 
 > `optional` **encryptedKey**: `string`
 
-#### Source
-
-[src/lib/messages/BaseMessage.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L15)
+Defined in: [src/lib/messages/BaseMessage.ts:15](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L15)
 
 ***
 
@@ -59,9 +51,7 @@
 
 > `optional` **key**: `string`
 
-#### Source
-
-[src/lib/messages/BaseMessage.ts:17](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L17)
+Defined in: [src/lib/messages/BaseMessage.ts:17](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L17)
 
 ***
 
@@ -69,9 +59,7 @@
 
 > `optional` **locked**: `boolean`
 
-#### Source
-
-[src/lib/messages/BaseMessage.ts:16](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L16)
+Defined in: [src/lib/messages/BaseMessage.ts:16](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L16)
 
 ***
 
@@ -79,19 +67,15 @@
 
 > `optional` **pinned**: `boolean`
 
-#### Source
-
-[src/lib/messages/BaseMessage.ts:18](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L18)
+Defined in: [src/lib/messages/BaseMessage.ts:18](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L18)
 
 ***
 
 ### program?
 
-> `optional` **program**: [`Program`](api%5Cclasses%5CProgram.md)
+> `optional` **program**: [`Program`](api/classes%5CProgram.md)
 
-#### Source
-
-[src/lib/messages/BaseMessage.ts:19](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L19)
+Defined in: [src/lib/messages/BaseMessage.ts:19](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L19)
 
 ***
 
@@ -99,9 +83,7 @@
 
 > `optional` **score**: `number`
 
-#### Source
-
-[src/lib/messages/BaseMessage.ts:20](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L20)
+Defined in: [src/lib/messages/BaseMessage.ts:20](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L20)
 
 ***
 
@@ -109,9 +91,7 @@
 
 > `optional` **selfFlagged**: `boolean`
 
-#### Source
-
-[src/lib/messages/BaseMessage.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L21)
+Defined in: [src/lib/messages/BaseMessage.ts:21](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L21)
 
 ***
 
@@ -119,9 +99,7 @@
 
 > `optional` **text**: `string`
 
-#### Source
-
-[src/lib/messages/BaseMessage.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L22)
+Defined in: [src/lib/messages/BaseMessage.ts:22](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L22)
 
 ***
 
@@ -129,6 +107,4 @@
 
 > `optional` **verified**: `boolean`
 
-#### Source
-
-[src/lib/messages/BaseMessage.ts:23](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/lib/messages/BaseMessage.ts#L23)
+Defined in: [src/lib/messages/BaseMessage.ts:23](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/lib/messages/BaseMessage.ts#L23)

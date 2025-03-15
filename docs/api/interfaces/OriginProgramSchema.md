@@ -1,12 +1,12 @@
+Defined in: [src/types/schema.ts:252](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L252)
+
 ## Properties
 
 ### \_\_typename
 
 > **\_\_typename**: `"OriginProgram"`
 
-#### Source
-
-[src/types/schema.ts:249](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L249)
+Defined in: [src/types/schema.ts:253](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L253)
 
 ***
 
@@ -14,9 +14,7 @@
 
 > **deleted**: `boolean`
 
-#### Source
-
-[src/types/schema.ts:250](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L250)
+Defined in: [src/types/schema.ts:254](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L254)
 
 ***
 
@@ -24,9 +22,7 @@
 
 > **translatedTitle**: `string`
 
-#### Source
-
-[src/types/schema.ts:251](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L251)
+Defined in: [src/types/schema.ts:255](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L255)
 
 ***
 
@@ -34,6 +30,4 @@
 
 > **url**: `string`
 
-#### Source
-
-[src/types/schema.ts:252](https://github.com/bhavjitChauhan/khan-api/blob/214cc6672777162cd3ec638a3ad3a22f7fe37e04/src/types/schema.ts#L252)
+Defined in: [src/types/schema.ts:256](https://github.com/bhavjitChauhan/khan-api/blob/67d30ab4498111952301bcaddbef9a132bf75105/src/types/schema.ts#L256)
