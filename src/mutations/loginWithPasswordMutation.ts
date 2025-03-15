@@ -12,7 +12,6 @@ export namespace LoginWithPasswordMutation {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
-      transferAuthToken
       preferredKaLocale {
         id
         kaLocale
@@ -53,7 +52,6 @@ export namespace LoginWithPasswordMutation {
         | 'isTeacher'
         | 'kaid'
         | 'preferredKaLocale'
-        | 'transferAuthToken'
       > | null
     } | null
   }>
