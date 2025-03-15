@@ -478,7 +478,7 @@ export default class Client {
         `Copied the client's user data to program ${
           program.title
             ? `"${truncate(program.title, 32)}"`
-            : program.id ?? 'unknown'
+            : (program.id ?? 'unknown')
         } because the program's author matches the client user`
       )
     }
