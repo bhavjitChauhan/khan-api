@@ -48,8 +48,12 @@ export interface UserSchema<
   countVideosCompleted: number
   email: string | null
   gaUserId: string | null
-  hasAccessToAIGuideDev: boolean
-  hasAccessToAIGuideTeacher: boolean
+  hasAccessToAIGuideDev: boolean | null
+  hasAccessToAIGuideCompanionMode: boolean | null
+  hasAccessToAIGuideDistrictAdmin: boolean | null
+  hasAccessToAIGuideLearner: boolean | null
+  hasAccessToAIGuideParent: boolean | null
+  hasAccessToAIGuideTeacher: boolean | null
   hasChildren: boolean | null
   hasClasses: boolean | null
   hasCoach: boolean | null
