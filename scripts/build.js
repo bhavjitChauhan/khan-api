@@ -18,7 +18,7 @@ import esbuild from 'esbuild'
 import minimist from 'minimist'
 import { existsSync } from 'fs'
 import { mkdir, writeFile } from 'fs/promises'
-import packageInfo from '../package.json' assert { type: 'json' }
+import packageInfo from '../package.json' with { type: 'json' }
 
 const argv = minimist(process.argv.slice(2), {
   alias: {
