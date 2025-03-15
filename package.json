@@ -20,7 +20,10 @@
   "main": "./node/cjs/khan-api.cjs",
   "browser": "./browser/iife/khan-api.js",
   "types": "./index.d.ts",
-  "repository": "github:bhavjitChauhan/khan-api",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhavjitChauhan/khan-api.git"
+  },
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
