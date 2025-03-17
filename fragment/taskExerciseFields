@@ -1,0 +1,9 @@
+fragment taskExerciseFields on Exercise {
+  id
+  contentKind
+  numAssessmentItems
+  isDoAll: isQuiz
+  slug
+  translatedDisplayName
+  __typename
+}

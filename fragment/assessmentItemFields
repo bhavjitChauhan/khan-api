@@ -1,0 +1,7 @@
+fragment assessmentItemFields on AssessmentItem {
+  id
+  sha
+  problemType
+  itemData
+  __typename
+}

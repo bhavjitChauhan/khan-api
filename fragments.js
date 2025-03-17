@@ -2729,4 +2729,56 @@ query ActivitiesList {
   taskType
   __typename
 }`,
+  assessmentItemFields: `fragment assessmentItemFields on AssessmentItem {
+  id
+  sha
+  problemType
+  itemData
+  __typename
+}`,
+  singleExercisePracticeTaskFields: `fragment singleExercisePracticeTaskFields on PracticeTask {
+  id
+  key
+  bonusReservedItems
+  bonusReservedItemsCompleted
+  bonusTaskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  exerciseLength
+  isCompleted
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}`,
+  taskExerciseFields: `fragment taskExerciseFields on Exercise {
+  id
+  contentKind
+  numAssessmentItems
+  isDoAll: isQuiz
+  slug
+  translatedDisplayName
+  __typename
+}`,
+  taskProblemAttemptHistoryFields: `fragment taskProblemAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  seenHint
+  itemId
+  __typename
+}`,
+  taskUserExerciseFields: `fragment taskUserExerciseFields on UserExercise {
+  exercise {
+    ...taskExerciseFields
+    __typename
+  }
+  lastAttemptNumber
+  lastCountHints
+  totalDone
+  __typename
+}`,
 }

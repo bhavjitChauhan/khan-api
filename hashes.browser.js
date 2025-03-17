@@ -821,4 +821,5 @@ hashes = {
   getUDIDetails: 1195156946,
   userForAuthorization: 3533927714,
   userMayInputImages: 4193134424,
+  KAClassroom_GetAssessmentItem: 3312138084,
 }
