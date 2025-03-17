@@ -1,0 +1,46 @@
+query ParentOverviewBySkillForChildForCourseReport($filters: ParentOverviewReportFilters!, $childKaid: String!, $courseId: String!) {
+  parentOverviewBySkillForChildForCourseReport(
+    filters: $filters
+    childKaid: $childKaid
+  ) {
+    dateInfo {
+      lastUpdatedDate
+      from
+      upTo
+      __typename
+    }
+    rows {
+      skill {
+        id
+        translatedTitle
+        __typename
+      }
+      info {
+        minutes
+        workedOn
+        leveledUp
+        leveledToProficient
+        attempted
+        familiar
+        proficient
+        mastered
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  courseById(id: $courseId) {
+    id
+    unitChildren {
+      id
+      translatedTitle
+      filteredContent(kinds: ["Exercise"]) {
+        __typename
+        id
+      }
+      __typename
+    }
+    __typename
+  }
+}
