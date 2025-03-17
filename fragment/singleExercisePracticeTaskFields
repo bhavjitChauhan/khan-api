@@ -1,0 +1,20 @@
+fragment singleExercisePracticeTaskFields on PracticeTask {
+  id
+  key
+  bonusReservedItems
+  bonusReservedItemsCompleted
+  bonusTaskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  exerciseLength
+  isCompleted
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}

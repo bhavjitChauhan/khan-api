@@ -1,0 +1,6 @@
+fragment taskProblemAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  seenHint
+  itemId
+  __typename
+}

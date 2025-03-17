@@ -22903,4 +22903,26 @@ fragment contentFieldsForContents on LearnableContent {
     __typename
   }
 }`,
+  KAClassroom_GetAssessmentItem: `query KAClassroom_GetAssessmentItem($input: AssessmentItemInput!) {
+  assessmentItem(input: $input) {
+    item {
+      ...assessmentItemFields
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment assessmentItemFields on AssessmentItem {
+  id
+  sha
+  problemType
+  itemData
+  __typename
+}`,
 }

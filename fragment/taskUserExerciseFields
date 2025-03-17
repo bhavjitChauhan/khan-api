@@ -1,0 +1,10 @@
+fragment taskUserExerciseFields on UserExercise {
+  exercise {
+    ...taskExerciseFields
+    __typename
+  }
+  lastAttemptNumber
+  lastCountHints
+  totalDone
+  __typename
+}

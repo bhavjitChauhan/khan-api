@@ -1,0 +1,75 @@
+mutation KAClassroom_GetOrCreateSingleExerciseTask($exerciseId: String!, $assignmentKey: String) {
+  getOrCreatePracticeTask(
+    input: {exerciseId: $exerciseId, assignmentKey: $assignmentKey, canReserveItems: true}
+  ) {
+    result {
+      error {
+        code
+        debugMessage
+        __typename
+      }
+      userTask {
+        task {
+          ...singleExercisePracticeTaskFields
+          __typename
+        }
+        userExercises {
+          ...taskUserExerciseFields
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment singleExercisePracticeTaskFields on PracticeTask {
+  id
+  key
+  bonusReservedItems
+  bonusReservedItemsCompleted
+  bonusTaskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  exerciseLength
+  isCompleted
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}
+
+fragment taskExerciseFields on Exercise {
+  id
+  contentKind
+  numAssessmentItems
+  isDoAll: isQuiz
+  slug
+  translatedDisplayName
+  __typename
+}
+
+fragment taskProblemAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  seenHint
+  itemId
+  __typename
+}
+
+fragment taskUserExerciseFields on UserExercise {
+  exercise {
+    ...taskExerciseFields
+    __typename
+  }
+  lastAttemptNumber
+  lastCountHints
+  totalDone
+  __typename
+}
