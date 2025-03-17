@@ -13328,8 +13328,9 @@ fragment singleExercisePracticeTaskFields on PracticeTask {
 fragment taskExerciseFields on Exercise {
   id
   contentKind
-  numAssessmentItems
   isDoAll: isQuiz
+  numAssessmentItems
+  problemTypeKind
   slug
   translatedDisplayName
   __typename
