@@ -1,7 +1,8 @@
-mutation cancelStripeSubscription($customerId: String!, $subscriptionId: String!) {
-  cancelStripeSubscription(customerId: $customerId, subscriptionId: $subscriptionId) {
+mutation CancelStripeSubscription($subscriptionId: String!) {
+  cancelStripeSubscription(subscriptionId: $subscriptionId) {
     error {
       code
+      debugMessage
       __typename
     }
     __typename

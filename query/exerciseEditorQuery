@@ -3,6 +3,17 @@ query exerciseEditorQuery($contentId: String!) {
     ...ExerciseRevision
     __typename
   }
+  exerciseById(id: $contentId) {
+    id
+    contentId
+    assessmentItems {
+      id
+      contentId
+      sha
+      __typename
+    }
+    __typename
+  }
   contentEditingStatus {
     editingDisabled
     publishDisabled

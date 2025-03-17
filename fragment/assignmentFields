@@ -1,24 +1,31 @@
-fragment assignmentFields on Assignment {
+fragment AssignmentFields on Assignment {
   id
-  key
-  classroom {
-    id
-    cacheId
-    name
-    signupCode
-    __typename
-  }
-  contentDescriptors
+  studentKaids
+  isDraft
+  assignmentStatus
+  subjectSlug
+  numStudentsCompleted
+  assignedDate
   startDate
   dueDate
-  contents {
-    ...contentFieldsForContents
-    __typename
-  }
-  title
+  contentDescriptors
   domainId
   courseId
   unitId
   lessonId
+  contents {
+    id
+    title: translatedTitle
+    kind
+    defaultUrlPath
+    __typename
+  }
+  exerciseConfig {
+    itemPickerStrategy
+    __typename
+  }
+  title
+  instructions
+  configuredActivityInputs
   __typename
 }

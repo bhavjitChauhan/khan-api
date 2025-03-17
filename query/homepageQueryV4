@@ -1,6 +1,7 @@
 query homepageQueryV4($kaid: String, $username: String) {
   actorUser: user {
     id
+    hasAccessToAIGuideLearner
     isAIGuideEnabled
     canViewAiGuideHistory: hasPermission(name: "can_view_ai_guide_history")
     canManageDistrictStudent(studentKaid: $kaid)
