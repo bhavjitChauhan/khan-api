@@ -6994,12 +6994,6 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     includesKmapDistrictOwnedData
     includesK4dDistrictOwnedData
     canAccessDistrictsHomepage
-    preferredKaLocale {
-      id
-      kaLocale
-      status
-      __typename
-    }
     underAgeGate {
       parentEmail
       daysUntilCutoff
@@ -10520,6 +10514,7 @@ fragment gtp_essayScoresFragment on EssayScores {
   homepageQueryV4: `query homepageQueryV4($kaid: String, $username: String) {
   actorUser: user {
     id
+    hasAccessToAIGuideLearner
     isAIGuideEnabled
     canViewAiGuideHistory: hasPermission(name: "can_view_ai_guide_history")
     canManageDistrictStudent(studentKaid: $kaid)
@@ -17689,6 +17684,17 @@ fragment ProjectRevision on ProjectRevision {
     ...ExerciseRevision
     __typename
   }
+  exerciseById(id: $contentId) {
+    id
+    contentId
+    assessmentItems {
+      id
+      contentId
+      sha
+      __typename
+    }
+    __typename
+  }
   contentEditingStatus {
     editingDisabled
     publishDisabled
@@ -18491,6 +18497,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       readingLevel
       guideLanguageCode
       guideVoiceDescriptor
+      showDABs
       __typename
     }
     __typename
@@ -22924,5 +22931,51 @@ fragment assessmentItemFields on AssessmentItem {
   problemType
   itemData
   __typename
+}`,
+  ParentOverviewBySkillForChildForCourseReport: `query ParentOverviewBySkillForChildForCourseReport($filters: ParentOverviewReportFilters!, $childKaid: String!, $courseId: String!) {
+  parentOverviewBySkillForChildForCourseReport(
+    filters: $filters
+    childKaid: $childKaid
+  ) {
+    dateInfo {
+      lastUpdatedDate
+      from
+      upTo
+      __typename
+    }
+    rows {
+      skill {
+        id
+        translatedTitle
+        __typename
+      }
+      info {
+        minutes
+        workedOn
+        leveledUp
+        leveledToProficient
+        attempted
+        familiar
+        proficient
+        mastered
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  courseById(id: $courseId) {
+    id
+    unitChildren {
+      id
+      translatedTitle
+      filteredContent(kinds: ["Exercise"]) {
+        __typename
+        id
+      }
+      __typename
+    }
+    __typename
+  }
 }`,
 }
