@@ -61,7 +61,7 @@ function extractFragments(str) {
 
 /**
  * Sorts the fragments in a GraphQL document (query, mutation, etc.) alphabetically.
- * 
+ *
  * @param {string} str The GraphQL document (query, mutation, etc.) to sort the fragments of.
  */
 function sortDocumentFragments(str) {
@@ -165,7 +165,7 @@ console.log(`Fetched ${scriptFetchedCount}/${scriptURLs.length} scripts`)
 
 
 let documents = scripts
-    .map(script => [...script?.matchAll(/"(\\n    (?:query|mutation|fragment)[^"]+)/g)]
+    .map(script => [...script?.matchAll(/"(\\n    (?:query|mutation|fragment)[^"]+)/g), ...script?.matchAll(/'(\\n    (?:query|mutation|fragment)[^']+)/g)]
         .map(match => match[1]?.trim().replaceAll('${0}', '').replaceAll('\\n', '\n')))
     .flat()
     .map(document => {
