@@ -823,4 +823,5 @@ export default {
   userMayInputImages: 4193134424,
   KAClassroom_GetAssessmentItem: 3312138084,
   ParentOverviewBySkillForChildForCourseReport: 2415590477,
+  KAClassroom_GetClassroomCourses: 2065639528,
 }
