@@ -8440,12 +8440,12 @@ fragment Badge on Badge {
     __typename
   }
 }`,
-  getStudentListEmailSubscriptions: `query getStudentListEmailSubscriptions($studentListId: String!) {
+  getStudentListEmailSubscriptions: `query getStudentListEmailSubscriptions($classroomDescriptor: String!) {
   coach: user {
     id
     emailSubscriptions {
-      coachReportSubscription: classroomEmailSubscriptionForClassroomID(
-        classroomID: $studentListId
+      coachReportSubscription: classroomEmailSubscriptionForClassroomDescriptor(
+        classroomDescriptor: $classroomDescriptor
       ) {
         checked
         token

@@ -1,9 +1,9 @@
-query getStudentListEmailSubscriptions($studentListId: String!) {
+query getStudentListEmailSubscriptions($classroomDescriptor: String!) {
   coach: user {
     id
     emailSubscriptions {
-      coachReportSubscription: classroomEmailSubscriptionForClassroomID(
-        classroomID: $studentListId
+      coachReportSubscription: classroomEmailSubscriptionForClassroomDescriptor(
+        classroomDescriptor: $classroomDescriptor
       ) {
         checked
         token
