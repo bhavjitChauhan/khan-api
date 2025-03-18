@@ -21691,10 +21691,10 @@ fragment UserFields on User {
           __typename
         }
         isAdministered
-        hasKAD: hasKad
-        hasLearningPaths: hasLp
-        hasKhanmigo
-        hasCentralRostering
+        hasKAD: hasKad(scopeToActor: true)
+        hasLearningPaths: hasLp(scopeToActor: true)
+        hasKhanmigo(scopeToActor: true)
+        hasCentralRostering(scopeToActor: true)
         kaLocale
         __typename
       }
@@ -21711,9 +21711,9 @@ fragment UserFields on User {
         }
         isTest
         isAdministered
-        hasKAD: isK4dDistrict
-        hasLearningPaths: isKmapDistrict
-        hasKhanmigo
+        hasKAD: isK4dDistrict(scopeToActor: true)
+        hasLearningPaths: isKmapDistrict(scopeToActor: true)
+        hasKhanmigo: hasKhanmigo(scopeToActor: true)
         hasCentralRostering: isCentrallyRostered
         kaLocale
         __typename
