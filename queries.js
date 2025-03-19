@@ -6556,6 +6556,7 @@ fragment StudentField1 on StudentsPage {
       ...EmailSubscriptionFields
       __typename
     }
+    hasClasses
     __typename
   }
 }
@@ -6612,6 +6613,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
       ...EmailSubscriptionFields
       __typename
     }
+    hasClasses
     __typename
   }
 }
