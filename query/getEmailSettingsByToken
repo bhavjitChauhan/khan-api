@@ -10,6 +10,7 @@ query getEmailSettingsByToken($token: String!) {
       ...EmailSubscriptionFields
       __typename
     }
+    hasClasses
     __typename
   }
 }

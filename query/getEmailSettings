@@ -24,6 +24,7 @@ query getEmailSettings($targetKaid: String) {
       ...EmailSubscriptionFields
       __typename
     }
+    hasClasses
     __typename
   }
 }
