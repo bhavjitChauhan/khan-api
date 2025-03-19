@@ -13353,4 +13353,13 @@ fragment taskUserExerciseFields on UserExercise {
   totalDone
   __typename
 }`,
+  toggleDistrictLMSConnect: `mutation toggleDistrictLMSConnect($districtId: ID!, $lmsProviderId: ID!) {
+  updateLMSProviderID(districtID: $districtId, lmsProviderID: $lmsProviderId) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
