@@ -6,7 +6,7 @@ export default {
   aiGuideEnrollmentsMeta: 37654722,
   aiGuideInvitationInfo: 4261787513,
   allCurationNodes: 4291751251,
-  allFlaggedGuideThreads: 1594235852,
+  allFlaggedGuideThreads: 3475181778,
   allStandardsForSet: 3015316215,
   allTranslatableLocales: 419203518,
   articleEditorQuery: 1661821936,

@@ -285,9 +285,71 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
           kaOffensiveTerms
           __typename
         }
+        traceID
         url
         pageTitle
         pageType
+        moderationFlagDetails {
+          flags {
+            text {
+              category
+              severity
+              __typename
+            }
+            textWithImages {
+              category
+              severity
+              __typename
+            }
+            wordSpotting {
+              category
+              severity
+              __typename
+            }
+            __typename
+          }
+          moderationResults {
+            textResults {
+              model
+              result {
+                categories {
+                  category
+                  value
+                  __typename
+                }
+                categoryScores {
+                  category
+                  value
+                  __typename
+                }
+                flagged
+                __typename
+              }
+              __typename
+            }
+            textWithImagesResults {
+              model
+              result {
+                categories {
+                  category
+                  value
+                  __typename
+                }
+                categoryScores {
+                  category
+                  value
+                  __typename
+                }
+                flagged
+                __typename
+              }
+              __typename
+            }
+            wordSpottingResults
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       moderatorKAID
