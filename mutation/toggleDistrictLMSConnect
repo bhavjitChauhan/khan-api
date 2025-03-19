@@ -1,0 +1,9 @@
+mutation toggleDistrictLMSConnect($districtId: ID!, $lmsProviderId: ID!) {
+  updateLMSProviderID(districtID: $districtId, lmsProviderID: $lmsProviderId) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
