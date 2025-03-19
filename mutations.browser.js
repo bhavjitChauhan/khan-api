@@ -9011,10 +9011,10 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
   relatedContentId: lessonId
   __typename
 }`,
-  updateAssignment: `mutation updateAssignment($assignmentId: ID!, $studentKaids: [ID], $contentDescriptors: [String], $startDate: DateTime, $dueDate: DateTime, $isDraft: Boolean) {
+  updateAssignment: `mutation updateAssignment($assignmentId: ID!, $studentKaids: [ID], $studentKaidsToAdd: [ID], $studentKaidsToRemove: [ID], $contentDescriptors: [String], $startDate: DateTime, $dueDate: DateTime, $isDraft: Boolean) {
   updateAssignment(
     id: $assignmentId
-    assignment: {studentKaids: $studentKaids, contentDescriptors: $contentDescriptors, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft}
+    assignment: {studentKaids: $studentKaids, contentDescriptors: $contentDescriptors, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft, studentKaidsToAdd: $studentKaidsToAdd, studentKaidsToRemove: $studentKaidsToRemove}
   ) {
     assignment {
       ...AssignmentInfoFragment
