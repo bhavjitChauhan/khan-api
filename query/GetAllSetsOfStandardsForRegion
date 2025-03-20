@@ -1,4 +1,4 @@
-query GetAllSetsOfStandardsForRegion($isDiscoverable: Boolean, $regionSlug: String!) {
+query GetAllSetsOfStandardsForRegion($regionSlug: String!, $domain: String!, $isDiscoverable: Boolean) {
   standardRegions(isDiscoverable: $isDiscoverable, slug: $regionSlug) {
     error {
       code
@@ -14,7 +14,7 @@ query GetAllSetsOfStandardsForRegion($isDiscoverable: Boolean, $regionSlug: Stri
     __typename
   }
   allSetsOfStandards(
-    domain: "math"
+    domain: $domain
     isDiscoverable: $isDiscoverable
     regionSlug: $regionSlug
   ) {

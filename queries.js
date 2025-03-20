@@ -16755,7 +16755,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     __typename
   }
 }`,
-  GetAllSetsOfStandardsForRegion: `query GetAllSetsOfStandardsForRegion($isDiscoverable: Boolean, $regionSlug: String!) {
+  GetAllSetsOfStandardsForRegion: `query GetAllSetsOfStandardsForRegion($regionSlug: String!, $domain: String!, $isDiscoverable: Boolean) {
   standardRegions(isDiscoverable: $isDiscoverable, slug: $regionSlug) {
     error {
       code
@@ -16771,7 +16771,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     __typename
   }
   allSetsOfStandards(
-    domain: "math"
+    domain: $domain
     isDiscoverable: $isDiscoverable
     regionSlug: $regionSlug
   ) {
