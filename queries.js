@@ -3921,6 +3921,7 @@ fragment CourseProgress on SubjectProgress {
     khanmigoEnd
     hasAssessments
     researchOptOut
+    hasLMSConnect
     __typename
   }
 }`,
@@ -16054,6 +16055,7 @@ fragment contentSearchLearnableContent on LearnableContent {
         endingFpmLevel
         masteryLevelChange
         pointsEarned
+        bonusNumCorrect
         __typename
       }
       __typename
@@ -19786,6 +19788,7 @@ fragment UserFields on User {
     }
     hasAssessments
     researchOptOut
+    hasLMSConnect
     __typename
   }
 }`,
@@ -23047,8 +23050,9 @@ fragment assessmentItemFields on AssessmentItem {
     cacheId
     id
     descriptor
-    topics {
+    courses: topics {
       id
+      title: translatedStandaloneTitle
       __typename
     }
     __typename

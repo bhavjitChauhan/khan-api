@@ -136,6 +136,7 @@ query districtById($districtId: String!, $excludeTeacherDirected: Boolean!) {
     }
     hasAssessments
     researchOptOut
+    hasLMSConnect
     __typename
   }
 }

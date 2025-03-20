@@ -10,6 +10,7 @@ query getEotCardDetails($taskId: String!) {
         endingFpmLevel
         masteryLevelChange
         pointsEarned
+        bonusNumCorrect
         __typename
       }
       __typename
