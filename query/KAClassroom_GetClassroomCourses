@@ -3,8 +3,9 @@ query KAClassroom_GetClassroomCourses($classCode: String!) {
     cacheId
     id
     descriptor
-    topics {
+    courses: topics {
       id
+      title: translatedStandaloneTitle
       __typename
     }
     __typename

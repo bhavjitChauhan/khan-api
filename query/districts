@@ -54,6 +54,7 @@ query districts($filter: String!, $excludeTeacherDirected: Boolean!) {
     khanmigoEnd
     hasAssessments
     researchOptOut
+    hasLMSConnect
     __typename
   }
 }
