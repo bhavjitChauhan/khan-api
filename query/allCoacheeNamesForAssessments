@@ -1,0 +1,22 @@
+query allCoacheeNamesForAssessments {
+  user {
+    id
+    coachedClassrooms {
+      descriptor
+      cacheId
+      id
+      studentKaidsAndNicknames {
+        id
+        coachNickname
+        __typename
+      }
+      __typename
+    }
+    children {
+      id
+      nickname
+      __typename
+    }
+    __typename
+  }
+}

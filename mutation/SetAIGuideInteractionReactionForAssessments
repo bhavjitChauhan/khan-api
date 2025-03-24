@@ -1,0 +1,17 @@
+mutation SetAIGuideInteractionReactionForAssessments($threadId: ID!, $interactionId: ID!, $reaction: String, $note: String, $rewrittenResponse: String, $rating: Int, $sentiment: String) {
+  setAIGuideInteractionReaction(
+    threadId: $threadId
+    interactionId: $interactionId
+    reaction: $reaction
+    note: $note
+    rewrittenResponse: $rewrittenResponse
+    rating: $rating
+    sentiment: $sentiment
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

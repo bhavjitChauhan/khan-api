@@ -23071,4 +23071,40 @@ fragment assessmentItemFields on AssessmentItem {
     __typename
   }
 }`,
+  allCoacheeNamesForAssessments: `query allCoacheeNamesForAssessments {
+  user {
+    id
+    coachedClassrooms {
+      descriptor
+      cacheId
+      id
+      studentKaidsAndNicknames {
+        id
+        coachNickname
+        __typename
+      }
+      __typename
+    }
+    children {
+      id
+      nickname
+      __typename
+    }
+    __typename
+  }
+}`,
+  coachDetailsForAssessments: `query coachDetailsForAssessments {
+  user {
+    id
+    parents {
+      id
+      __typename
+    }
+    teachers: coaches(coachType: TEACHER) {
+      id
+      __typename
+    }
+    __typename
+  }
+}`,
 }

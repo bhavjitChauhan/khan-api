@@ -1,5 +1,7 @@
-mutation getOrCreateAssessmentTask($assessmentId: String!) {
-  getOrCreateAssessmentTask(input: {assessmentId: $assessmentId}) {
+mutation getOrCreateAssessmentTask($assessmentId: String!, $growthBookFeatures: String!) {
+  getOrCreateAssessmentTask(
+    input: {assessmentId: $assessmentId, growthBookFeatures: $growthBookFeatures}
+  ) {
     result {
       task {
         ...TaskFragment

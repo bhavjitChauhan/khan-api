@@ -1,0 +1,14 @@
+query coachDetailsForAssessments {
+  user {
+    id
+    parents {
+      id
+      __typename
+    }
+    teachers: coaches(coachType: TEACHER) {
+      id
+      __typename
+    }
+    __typename
+  }
+}
