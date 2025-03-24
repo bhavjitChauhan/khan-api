@@ -21,6 +21,7 @@ query guideTranscript($transcriptId: String!) {
       id
       answer
       question
+      userInputImage
       url
       createdAt
       flagged
