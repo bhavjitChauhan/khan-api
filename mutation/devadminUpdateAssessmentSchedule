@@ -1,0 +1,10 @@
+mutation devadminUpdateAssessmentSchedule($input: UpdateInterimAssessmentTestingScheduleInput!) {
+  updateInterimAssessmentTestingSchedule(input: $input) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

@@ -825,4 +825,6 @@ hashes = {
   ParentOverviewBySkillForChildForCourseReport: 2415590477,
   KAClassroom_GetClassroomCourses: 1531116267,
   KAClassroom_GetDomains: 3889704386,
+  allCoacheeNamesForAssessments: 3293112976,
+  coachDetailsForAssessments: 158836463,
 }

@@ -1,0 +1,15 @@
+mutation DoGeneralAICompletionForAssessments($prompt: String!, $model: String, $temperature: Float, $maxTokens: Int, $stop: [String!]) {
+  doGeneralAICompletion(
+    input: {prompt: $prompt, model: $model, temperature: $temperature, maxTokens: $maxTokens, stop: $stop}
+  ) {
+    completion {
+      text
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -11886,8 +11886,10 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
-  getOrCreateAssessmentTask: `mutation getOrCreateAssessmentTask($assessmentId: String!) {
-  getOrCreateAssessmentTask(input: {assessmentId: $assessmentId}) {
+  getOrCreateAssessmentTask: `mutation getOrCreateAssessmentTask($assessmentId: String!, $growthBookFeatures: String!) {
+  getOrCreateAssessmentTask(
+    input: {assessmentId: $assessmentId, growthBookFeatures: $growthBookFeatures}
+  ) {
     result {
       task {
         ...TaskFragment
@@ -13369,6 +13371,66 @@ fragment taskUserExerciseFields on UserExercise {
   ) {
     error {
       code
+      __typename
+    }
+    __typename
+  }
+}`,
+  DoGeneralAICompletionForAssessments: `mutation DoGeneralAICompletionForAssessments($prompt: String!, $model: String, $temperature: Float, $maxTokens: Int, $stop: [String!]) {
+  doGeneralAICompletion(
+    input: {prompt: $prompt, model: $model, temperature: $temperature, maxTokens: $maxTokens, stop: $stop}
+  ) {
+    completion {
+      text
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  SetAIGuideInteractionReactionForAssessments: `mutation SetAIGuideInteractionReactionForAssessments($threadId: ID!, $interactionId: ID!, $reaction: String, $note: String, $rewrittenResponse: String, $rating: Int, $sentiment: String) {
+  setAIGuideInteractionReaction(
+    threadId: $threadId
+    interactionId: $interactionId
+    reaction: $reaction
+    note: $note
+    rewrittenResponse: $rewrittenResponse
+    rating: $rating
+    sentiment: $sentiment
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  SetPromotionMutationForAssessments: `mutation SetPromotionMutationForAssessments($promoName: String!) {
+  recordPromo(promoName: $promoName) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  StopResponseForAssessments: `mutation StopResponseForAssessments($input: StopResponseInput!) {
+  stopResponse(input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  devadminUpdateAssessmentSchedule: `mutation devadminUpdateAssessmentSchedule($input: UpdateInterimAssessmentTestingScheduleInput!) {
+  updateInterimAssessmentTestingSchedule(input: $input) {
+    error {
+      code
+      debugMessage
       __typename
     }
     __typename

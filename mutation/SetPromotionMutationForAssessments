@@ -1,0 +1,9 @@
+mutation SetPromotionMutationForAssessments($promoName: String!) {
+  recordPromo(promoName: $promoName) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
