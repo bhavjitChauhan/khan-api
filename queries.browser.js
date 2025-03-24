@@ -10476,6 +10476,7 @@ fragment gtp_essayScoresFragment on EssayScores {
       id
       answer
       question
+      userInputImage
       url
       createdAt
       flagged
