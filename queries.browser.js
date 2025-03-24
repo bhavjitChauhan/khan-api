@@ -23058,4 +23058,16 @@ fragment assessmentItemFields on AssessmentItem {
     __typename
   }
 }`,
+  KAClassroom_GetDomains: `query KAClassroom_GetDomains($region: String!) {
+  domains: studentListTopics(region: $region) {
+    translatedTitle
+    courses: topics {
+      id
+      key
+      translatedTitle
+      __typename
+    }
+    __typename
+  }
+}`,
 }

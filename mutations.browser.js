@@ -13362,4 +13362,16 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
+  KAClassroom_SetClassroomCourses: `mutation KAClassroom_SetClassroomCourses($classDescriptor: String!, $courseKeys: [String!]!) {
+  setClassroomCourses(
+    classroomDescriptor: $classDescriptor
+    courseKeys: $courseKeys
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
