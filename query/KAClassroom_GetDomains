@@ -1,0 +1,12 @@
+query KAClassroom_GetDomains($region: String!) {
+  domains: studentListTopics(region: $region) {
+    translatedTitle
+    courses: topics {
+      id
+      key
+      translatedTitle
+      __typename
+    }
+    __typename
+  }
+}

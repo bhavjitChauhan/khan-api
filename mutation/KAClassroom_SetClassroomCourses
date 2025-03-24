@@ -1,0 +1,12 @@
+mutation KAClassroom_SetClassroomCourses($classDescriptor: String!, $courseKeys: [String!]!) {
+  setClassroomCourses(
+    classroomDescriptor: $classDescriptor
+    courseKeys: $courseKeys
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
