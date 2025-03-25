@@ -449,7 +449,7 @@ export default {
   SkillsQuery: 4225588104,
   StandaloneUserAssignments: 788876749,
   StudentKmapPlacementQuery: 1052070597,
-  studentListByClassCode: 3602493530,
+  studentListByClassCode: 2035745059,
   StudentListHasAssignments: 225464054,
   StudentListsQuery: 2872271610,
   StudentMasteryGoals: 1005438753,

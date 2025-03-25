@@ -13438,6 +13438,7 @@ fragment TranslatedContentFields on LearnableContent {
     cacheId
     name
     signupCode
+    descriptor
     includesCentrallyOwnedDistrictData
     classroomDistrictInfo {
       id

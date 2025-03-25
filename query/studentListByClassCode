@@ -4,6 +4,7 @@ query studentListByClassCode($classCode: String!) {
     cacheId
     name
     signupCode
+    descriptor
     includesCentrallyOwnedDistrictData
     classroomDistrictInfo {
       id
