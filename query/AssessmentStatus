@@ -7,7 +7,7 @@ query AssessmentStatus($slug: String!) {
         assessment {
           id
           name
-          surveySlug
+          surveyURL
           __typename
         }
         task {
@@ -15,12 +15,14 @@ query AssessmentStatus($slug: String!) {
           expirationTime
           questionsCompleted
           estimatedQuestionsRemaining
+          hasSubmittedLearnerInsightsFeedback
           __typename
         }
         __typename
       }
       __typename
     }
+    nickname
     __typename
   }
 }
