@@ -11906,9 +11906,10 @@ fragment TaskFragment on AssessmentTask {
   expirationTime
   questionsCompleted
   estimatedQuestionsRemaining
+  hasSubmittedLearnerInsightsFeedback
   assessment {
     id
-    surveySlug
+    surveyURL
     __typename
   }
   currentStep {
@@ -11989,9 +11990,10 @@ fragment TaskFragment on AssessmentTask {
   expirationTime
   questionsCompleted
   estimatedQuestionsRemaining
+  hasSubmittedLearnerInsightsFeedback
   assessment {
     id
-    surveySlug
+    surveyURL
     __typename
   }
   currentStep {
@@ -12435,9 +12437,10 @@ fragment TaskFragment on AssessmentTask {
   expirationTime
   questionsCompleted
   estimatedQuestionsRemaining
+  hasSubmittedLearnerInsightsFeedback
   assessment {
     id
-    surveySlug
+    surveyURL
     __typename
   }
   currentStep {
@@ -13428,6 +13431,26 @@ fragment taskUserExerciseFields on UserExercise {
 }`,
   devadminUpdateAssessmentSchedule: `mutation devadminUpdateAssessmentSchedule($input: UpdateInterimAssessmentTestingScheduleInput!) {
   updateInterimAssessmentTestingSchedule(input: $input) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  submitLearnerInsightsFeedback: `mutation submitLearnerInsightsFeedback($assessmentId: String!, $rating: Int!) {
+  submitLearnerInsightsFeedback(
+    input: {assessmentId: $assessmentId, rating: $rating}
+  ) {
+    result {
+      task {
+        id
+        hasSubmittedLearnerInsightsFeedback
+        __typename
+      }
+      __typename
+    }
     error {
       code
       debugMessage

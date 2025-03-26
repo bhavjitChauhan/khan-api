@@ -20661,7 +20661,7 @@ fragment ExerciseContentFields on LearnableContent {
         assessment {
           id
           name
-          surveySlug
+          surveyURL
           __typename
         }
         task {
@@ -20669,12 +20669,14 @@ fragment ExerciseContentFields on LearnableContent {
           expirationTime
           questionsCompleted
           estimatedQuestionsRemaining
+          hasSubmittedLearnerInsightsFeedback
           __typename
         }
         __typename
       }
       __typename
     }
+    nickname
     __typename
   }
 }`,

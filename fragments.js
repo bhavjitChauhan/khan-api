@@ -2305,9 +2305,10 @@ query ActivitiesList {
   expirationTime
   questionsCompleted
   estimatedQuestionsRemaining
+  hasSubmittedLearnerInsightsFeedback
   assessment {
     id
-    surveySlug
+    surveyURL
     __typename
   }
   currentStep {

@@ -1,0 +1,20 @@
+mutation submitLearnerInsightsFeedback($assessmentId: String!, $rating: Int!) {
+  submitLearnerInsightsFeedback(
+    input: {assessmentId: $assessmentId, rating: $rating}
+  ) {
+    result {
+      task {
+        id
+        hasSubmittedLearnerInsightsFeedback
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
