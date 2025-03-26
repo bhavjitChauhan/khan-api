@@ -67,12 +67,12 @@ queries = {
       }
       activitySessions(pageSize: $pageSize, after: $after) {
         sessions {
-          ...ActivitySession
+          ...ActivitySessionV1
           ... on MasteryActivitySession {
             correctCount
             problemCount
             skillLevels {
-              ...ActivitySessionSkillLevels
+              ...ActivitySessionSkillLevelsV1
               exercise {
                 id
                 translatedTitle
@@ -101,7 +101,14 @@ queries = {
   }
 }
 
-fragment ActivitySession on ActivitySession {
+fragment ActivitySessionSkillLevelsV1 on SkillLevelChange {
+  id
+  before
+  after
+  __typename
+}
+
+fragment ActivitySessionV1 on ActivitySession {
   id
   title
   subtitle
@@ -112,13 +119,6 @@ fragment ActivitySession on ActivitySession {
   durationMinutes
   eventTimestamp
   skillType
-  __typename
-}
-
-fragment ActivitySessionSkillLevels on SkillLevelChange {
-  id
-  before
-  after
   __typename
 }`,
   aiGuideEnrollments: `query aiGuideEnrollments($kaids: [String!]) {

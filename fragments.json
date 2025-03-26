@@ -112,5 +112,7 @@
   "singleExercisePracticeTaskFields": "fragment singleExercisePracticeTaskFields on PracticeTask {\n  id\n  key\n  bonusReservedItems\n  bonusReservedItemsCompleted\n  bonusTaskAttemptHistory {\n    ...taskProblemAttemptHistoryFields\n    __typename\n  }\n  exerciseLength\n  isCompleted\n  reservedItems\n  reservedItemsCompleted\n  taskAttemptHistory {\n    ...taskProblemAttemptHistoryFields\n    __typename\n  }\n  taskType\n  __typename\n}",
   "taskExerciseFields": "fragment taskExerciseFields on Exercise {\n  id\n  contentKind\n  isDoAll: isQuiz\n  numAssessmentItems\n  problemTypeKind\n  slug\n  translatedDisplayName\n  __typename\n}",
   "taskProblemAttemptHistoryFields": "fragment taskProblemAttemptHistoryFields on TaskProblemAttempt {\n  correct\n  seenHint\n  itemId\n  __typename\n}",
-  "taskUserExerciseFields": "fragment taskUserExerciseFields on UserExercise {\n  exercise {\n    ...taskExerciseFields\n    __typename\n  }\n  lastAttemptNumber\n  lastCountHints\n  totalDone\n  __typename\n}"
+  "taskUserExerciseFields": "fragment taskUserExerciseFields on UserExercise {\n  exercise {\n    ...taskExerciseFields\n    __typename\n  }\n  lastAttemptNumber\n  lastCountHints\n  totalDone\n  __typename\n}",
+  "ActivitySessionSkillLevelsV1": "fragment ActivitySessionSkillLevelsV1 on SkillLevelChange {\n  id\n  before\n  after\n  __typename\n}",
+  "ActivitySessionV1": "fragment ActivitySessionV1 on ActivitySession {\n  id\n  title\n  subtitle\n  activityKind {\n    id\n    __typename\n  }\n  durationMinutes\n  eventTimestamp\n  skillType\n  __typename\n}"
 }

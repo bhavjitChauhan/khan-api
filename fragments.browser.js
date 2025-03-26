@@ -2782,4 +2782,23 @@ query ActivitiesList {
   totalDone
   __typename
 }`,
+  ActivitySessionSkillLevelsV1: `fragment ActivitySessionSkillLevelsV1 on SkillLevelChange {
+  id
+  before
+  after
+  __typename
+}`,
+  ActivitySessionV1: `fragment ActivitySessionV1 on ActivitySession {
+  id
+  title
+  subtitle
+  activityKind {
+    id
+    __typename
+  }
+  durationMinutes
+  eventTimestamp
+  skillType
+  __typename
+}`,
 }
