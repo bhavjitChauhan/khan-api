@@ -23110,4 +23110,14 @@ fragment assessmentItemFields on AssessmentItem {
     __typename
   }
 }`,
+  assignmentInfoForRedirect: `query assignmentInfoForRedirect($assignmentId: String!) {
+  user {
+    id
+    assignmentByThisUser(id: $assignmentId) {
+      id
+      __typename
+    }
+    __typename
+  }
+}`,
 }

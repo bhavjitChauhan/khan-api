@@ -827,4 +827,5 @@ export default {
   KAClassroom_GetDomains: 3889704386,
   allCoacheeNamesForAssessments: 3293112976,
   coachDetailsForAssessments: 158836463,
+  assignmentInfoForRedirect: 3951360328,
 }
