@@ -14,12 +14,12 @@ query ActivitySessionsQuery($studentKaid: String!, $endDate: Date, $startDate: D
       }
       activitySessions(pageSize: $pageSize, after: $after) {
         sessions {
-          ...ActivitySession
+          ...ActivitySessionV1
           ... on MasteryActivitySession {
             correctCount
             problemCount
             skillLevels {
-              ...ActivitySessionSkillLevels
+              ...ActivitySessionSkillLevelsV1
               exercise {
                 id
                 translatedTitle
@@ -48,7 +48,14 @@ query ActivitySessionsQuery($studentKaid: String!, $endDate: Date, $startDate: D
   }
 }
 
-fragment ActivitySession on ActivitySession {
+fragment ActivitySessionSkillLevelsV1 on SkillLevelChange {
+  id
+  before
+  after
+  __typename
+}
+
+fragment ActivitySessionV1 on ActivitySession {
   id
   title
   subtitle
@@ -59,12 +66,5 @@ fragment ActivitySession on ActivitySession {
   durationMinutes
   eventTimestamp
   skillType
-  __typename
-}
-
-fragment ActivitySessionSkillLevels on SkillLevelChange {
-  id
-  before
-  after
   __typename
 }

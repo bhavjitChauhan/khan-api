@@ -1,7 +1,7 @@
 hashes = {
   activatedDistrictTeachers: 981358678,
   ActiveDistrictQuery: 3631997111,
-  ActivitySessionsQuery: 114021635,
+  ActivitySessionsQuery: 3615134435,
   aiGuideEnrollments: 729300038,
   aiGuideEnrollmentsMeta: 37654722,
   aiGuideInvitationInfo: 4261787513,
