@@ -1,0 +1,11 @@
+mutation PlaytestingUpdateAssessmentTaskCreationTime($kaid: String!, $assessmentId: String!, $creationTime: DateTime!) {
+  updateAssessmentTaskCreationTime(
+    input: {kaid: $kaid, assessmentId: $assessmentId, creationTime: $creationTime}
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

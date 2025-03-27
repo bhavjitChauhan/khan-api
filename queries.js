@@ -20691,6 +20691,7 @@ fragment ExerciseContentFields on LearnableContent {
           questionsCompleted
           estimatedQuestionsRemaining
           hasSubmittedLearnerInsightsFeedback
+          surveyMonkeyID
           __typename
         }
         __typename
@@ -23159,6 +23160,13 @@ fragment assessmentItemFields on AssessmentItem {
       kaid
       __typename
     }
+    __typename
+  }
+}`,
+  AssessmentsPlaytestingKaid: `query AssessmentsPlaytestingKaid {
+  user {
+    id
+    kaid
     __typename
   }
 }`,

@@ -26,5 +26,6 @@ fragment TaskFragment on AssessmentTask {
     }
     __typename
   }
+  surveyMonkeyID
   __typename
 }
