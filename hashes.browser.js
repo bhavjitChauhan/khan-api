@@ -729,7 +729,7 @@ hashes = {
   localesForTeacherToolsBanner: 3566806382,
   DistrictActivationBySchoolContainer: 192416926,
   SkillsToProficient_RecentCourses: 3216876520,
-  AssessmentStatus: 2934744739,
+  AssessmentStatus: 2421605025,
   getUserActiveEnrollmentGroups: 1652978329,
   SkillsToProficient_ClassRecommendations: 1091891880,
   ClassroomDistrictInfoByRosterIdQuery: 3453419485,
@@ -830,4 +830,5 @@ hashes = {
   assignmentInfoForRedirect: 3951360328,
   getChildAssignmentsClassrooms: 635812792,
   getChildren: 1041616280,
+  AssessmentsPlaytestingKaid: 1733851707,
 }

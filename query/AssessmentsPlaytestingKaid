@@ -1,0 +1,7 @@
+query AssessmentsPlaytestingKaid {
+  user {
+    id
+    kaid
+    __typename
+  }
+}

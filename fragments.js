@@ -2328,6 +2328,7 @@ query ActivitiesList {
     }
     __typename
   }
+  surveyMonkeyID
   __typename
 }`,
   EssayHistory: `fragment EssayHistory on UserEssayHistoryPage {

@@ -16,6 +16,7 @@ query AssessmentStatus($slug: String!) {
           questionsCompleted
           estimatedQuestionsRemaining
           hasSubmittedLearnerInsightsFeedback
+          surveyMonkeyID
           __typename
         }
         __typename

@@ -11931,6 +11931,7 @@ fragment TaskFragment on AssessmentTask {
     }
     __typename
   }
+  surveyMonkeyID
   __typename
 }`,
   writingCoachAssociateThreadWithFeedback: `mutation writingCoachAssociateThreadWithFeedback($essaySessionID: String!, $feedbackID: String!, $threadID: String!) {
@@ -12015,6 +12016,7 @@ fragment TaskFragment on AssessmentTask {
     }
     __typename
   }
+  surveyMonkeyID
   __typename
 }`,
   createUserCertificate: `mutation createUserCertificate($courseID: String!) {
@@ -12462,6 +12464,7 @@ fragment TaskFragment on AssessmentTask {
     }
     __typename
   }
+  surveyMonkeyID
   __typename
 }`,
   createTestDistrict: `mutation createTestDistrict($name: String!, $karfJson: String!) {
@@ -13456,6 +13459,26 @@ fragment taskUserExerciseFields on UserExercise {
     error {
       code
       debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  PlaytestingDeleteAssessmentTask: `mutation PlaytestingDeleteAssessmentTask($kaid: String!, $assessmentId: String!) {
+  deleteAssessmentTask(input: {kaid: $kaid, assessmentId: $assessmentId}) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  PlaytestingUpdateAssessmentTaskCreationTime: `mutation PlaytestingUpdateAssessmentTaskCreationTime($kaid: String!, $assessmentId: String!, $creationTime: DateTime!) {
+  updateAssessmentTaskCreationTime(
+    input: {kaid: $kaid, assessmentId: $assessmentId, creationTime: $creationTime}
+  ) {
+    error {
+      code
       __typename
     }
     __typename
