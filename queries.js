@@ -23120,4 +23120,25 @@ fragment assessmentItemFields on AssessmentItem {
     __typename
   }
 }`,
+  getChildAssignmentsClassrooms: `query getChildAssignmentsClassrooms($parentKaid: String!) {
+  childAssignmentsClassroomsForParent(parentKaid: $parentKaid) {
+    id
+    cacheId
+    name
+    studentKaids
+    __typename
+  }
+}`,
+  getChildren: `query getChildren($targetKaid: String!) {
+  user(kaid: $targetKaid) {
+    id
+    children {
+      id
+      nickname
+      kaid
+      __typename
+    }
+    __typename
+  }
+}`,
 }

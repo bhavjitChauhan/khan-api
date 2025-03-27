@@ -1,8 +1,9 @@
-mutation createClassroomMutation($classroomName: String!, $subscribeToUpdates: Boolean, $isTestClassroom: Boolean) {
+mutation createClassroomMutation($classroomName: String!, $subscribeToUpdates: Boolean, $isTestClassroom: Boolean, $isChildAssignmentsClassroom: Boolean) {
   createClassroom(
     classroomName: $classroomName
     subscribeToUpdates: $subscribeToUpdates
     isTestClassroom: $isTestClassroom
+    isChildAssignmentsClassroom: $isChildAssignmentsClassroom
   ) {
     classroom {
       id
@@ -11,6 +12,7 @@ mutation createClassroomMutation($classroomName: String!, $subscribeToUpdates: B
       key
       name
       signupCode
+      isChildAssignmentsClassroom
       __typename
     }
     error {

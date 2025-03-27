@@ -828,4 +828,6 @@ export default {
   allCoacheeNamesForAssessments: 3293112976,
   coachDetailsForAssessments: 158836463,
   assignmentInfoForRedirect: 3951360328,
+  getChildAssignmentsClassrooms: 635812792,
+  getChildren: 1041616280,
 }
