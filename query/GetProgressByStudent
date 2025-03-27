@@ -6,6 +6,18 @@ query GetProgressByStudent($filters: TeacherOverviewReportFilters!, $classDescri
       lastUpdatedDate
       __typename
     }
+    learningMinutesTarget {
+      minutesPerWeek
+      __typename
+    }
+    skillsLeveledUp {
+      skillsPerWeek
+      __typename
+    }
+    skillsToProficient {
+      skillsPerWeek
+      __typename
+    }
     rows {
       user {
         id
@@ -21,6 +33,9 @@ query GetProgressByStudent($filters: TeacherOverviewReportFilters!, $classDescri
         familiar
         proficient
         mastered
+        minutesTargetStatus
+        skillsLeveledUpTargetStatus
+        skillsToProficientTargetStatus
         __typename
       }
       __typename

@@ -16561,6 +16561,9 @@ fragment contentSearchLearnableContent on LearnableContent {
         familiar
         proficient
         mastered
+        minutesTargetStatus
+        skillsLeveledUpTargetStatus
+        skillsToProficientTargetStatus
         __typename
       }
       __typename
@@ -16574,6 +16577,18 @@ fragment contentSearchLearnableContent on LearnableContent {
       from
       upTo
       lastUpdatedDate
+      __typename
+    }
+    learningMinutesTarget {
+      minutesPerWeek
+      __typename
+    }
+    skillsLeveledUp {
+      skillsPerWeek
+      __typename
+    }
+    skillsToProficient {
+      skillsPerWeek
       __typename
     }
     rows {
@@ -16591,6 +16606,9 @@ fragment contentSearchLearnableContent on LearnableContent {
         familiar
         proficient
         mastered
+        minutesTargetStatus
+        skillsLeveledUpTargetStatus
+        skillsToProficientTargetStatus
         __typename
       }
       __typename
@@ -16654,6 +16672,9 @@ fragment contentSearchLearnableContent on LearnableContent {
         familiar
         proficient
         mastered
+        minutesTargetStatus
+        skillsLeveledUpTargetStatus
+        skillsToProficientTargetStatus
         __typename
       }
       __typename

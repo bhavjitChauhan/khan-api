@@ -24,6 +24,9 @@ query GetProgressByCourseForStudent($filters: TeacherOverviewReportFilters!, $st
         familiar
         proficient
         mastered
+        minutesTargetStatus
+        skillsLeveledUpTargetStatus
+        skillsToProficientTargetStatus
         __typename
       }
       __typename
