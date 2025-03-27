@@ -3899,11 +3899,12 @@ fragment AssignmentInfoFragment on Assignment {
     __typename
   }
 }`,
-  createClassroomMutation: `mutation createClassroomMutation($classroomName: String!, $subscribeToUpdates: Boolean, $isTestClassroom: Boolean) {
+  createClassroomMutation: `mutation createClassroomMutation($classroomName: String!, $subscribeToUpdates: Boolean, $isTestClassroom: Boolean, $isChildAssignmentsClassroom: Boolean) {
   createClassroom(
     classroomName: $classroomName
     subscribeToUpdates: $subscribeToUpdates
     isTestClassroom: $isTestClassroom
+    isChildAssignmentsClassroom: $isChildAssignmentsClassroom
   ) {
     classroom {
       id
@@ -3912,6 +3913,7 @@ fragment AssignmentInfoFragment on Assignment {
       key
       name
       signupCode
+      isChildAssignmentsClassroom
       __typename
     }
     error {

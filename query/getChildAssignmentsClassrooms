@@ -1,0 +1,9 @@
+query getChildAssignmentsClassrooms($parentKaid: String!) {
+  childAssignmentsClassroomsForParent(parentKaid: $parentKaid) {
+    id
+    cacheId
+    name
+    studentKaids
+    __typename
+  }
+}

@@ -1,0 +1,12 @@
+query getChildren($targetKaid: String!) {
+  user(kaid: $targetKaid) {
+    id
+    children {
+      id
+      nickname
+      kaid
+      __typename
+    }
+    __typename
+  }
+}
