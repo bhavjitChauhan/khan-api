@@ -150,6 +150,16 @@ query allFlaggedGuideThreads($moderationCategory: ModerationCategory, $moderatio
           }
           __typename
         }
+        imageMetadata {
+          id
+          llmSummary
+          llmDetailedDescription
+          llmPedagogicalContext
+          llmContentWarningCheck
+          llmImageType
+          llmMood
+          __typename
+        }
         __typename
       }
       moderatorKAID

@@ -350,6 +350,16 @@ fragment ActivitySessionV1 on ActivitySession {
           }
           __typename
         }
+        imageMetadata {
+          id
+          llmSummary
+          llmDetailedDescription
+          llmPedagogicalContext
+          llmContentWarningCheck
+          llmImageType
+          llmMood
+          __typename
+        }
         __typename
       }
       moderatorKAID
