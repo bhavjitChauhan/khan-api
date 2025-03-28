@@ -831,4 +831,5 @@ hashes = {
   getChildAssignmentsClassrooms: 635812792,
   getChildren: 1041616280,
   AssessmentsPlaytestingKaid: 1733851707,
+  KAClassroom_GetLearnerAssignmentData: 3263012174,
 }
