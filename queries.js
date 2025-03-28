@@ -23170,4 +23170,49 @@ fragment assessmentItemFields on AssessmentItem {
     __typename
   }
 }`,
+  KAClassroom_GetLearnerAssignmentData: `query KAClassroom_GetLearnerAssignmentData($input: LearningDashboardQueryInput) {
+  learningDashboard(input: $input) {
+    kaid
+    classroomDescriptor
+    queue {
+      id
+      completionState
+      dueDate
+      ... on ContentAssignment {
+        content {
+          id
+          translatedTitle
+          description
+          contentKind
+          contentDescriptor
+          __typename
+        }
+        assignment {
+          id
+          title
+          unit {
+            id
+            translatedTitle
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      ... on UnitPacingSuggestion {
+        content {
+          id
+          translatedTitle
+          description
+          contentKind
+          contentDescriptor
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
