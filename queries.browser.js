@@ -23081,8 +23081,8 @@ fragment assessmentItemFields on AssessmentItem {
     __typename
   }
 }`,
-  KAClassroom_GetClassroomCourses: `query KAClassroom_GetClassroomCourses($classCode: String!) {
-  classroom(classCode: $classCode) {
+  KAClassroom_GetClassroomCourses: `query KAClassroom_GetClassroomCourses($classDescriptor: String!) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     cacheId
     id
     descriptor
