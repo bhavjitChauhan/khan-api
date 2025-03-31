@@ -1,5 +1,5 @@
-query KAClassroom_GetClassroomCourses($classCode: String!) {
-  classroom(classCode: $classCode) {
+query KAClassroom_GetClassroomCourses($classDescriptor: String!) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
     cacheId
     id
     descriptor
