@@ -13484,4 +13484,21 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
+  getOrCreateLearnerInsights: `mutation getOrCreateLearnerInsights($assessmentId: String!) {
+  getOrCreateLearnerInsights(input: {assessmentId: $assessmentId}) {
+    result {
+      learnerInsightsForStudent {
+        overallSummary
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
