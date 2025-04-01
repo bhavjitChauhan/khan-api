@@ -13501,4 +13501,13 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
+  sendTestRealTimeMessage: `mutation sendTestRealTimeMessage($channel: String!, $message: String!) {
+  sendTestRealTimeMessage(channel: $channel, message: $message) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
