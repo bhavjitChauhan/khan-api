@@ -23218,6 +23218,15 @@ fragment assessmentItemFields on AssessmentItem {
           contentDescriptor
           __typename
         }
+        masteryAssignment {
+          id
+          unit {
+            id
+            translatedTitle
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       __typename
