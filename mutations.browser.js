@@ -7566,12 +7566,17 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }`,
-  reauthWithPasswordMutation: `mutation reauthWithPasswordMutation($password: String!) {
-  reauthWithPassword(password: $password) {
+  reauthWithPasswordMutation: `mutation reauthWithPasswordMutation($password: String!, $twoFactorAuthCode: String, $twoFactorRecoveryCode: String) {
+  reauthWithPassword(
+    password: $password
+    twoFactorAuthCode: $twoFactorAuthCode
+    twoFactorRecoveryCode: $twoFactorRecoveryCode
+  ) {
     error {
       code
       __typename
     }
+    noRecoveryCodesRemaining
     __typename
   }
 }`,

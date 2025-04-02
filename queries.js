@@ -5385,6 +5385,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
         id
         __typename
       }
+      isChildAssignmentsClassroom
       __typename
     }
     schoolAffiliation {
@@ -5657,6 +5658,7 @@ fragment StudentField2 on StudentsPage {
     }
     includesCentrallyOwnedDistrictData
     isK4dClassroom
+    isChildAssignmentsClassroom
     __typename
   }
 }`,
@@ -9325,6 +9327,7 @@ fragment Badge on Badge {
     isPhantom
     isParent
     isTeacher
+    isTotpTwoFactorEnabled
     isFormalTeacher
     joined
     kaid

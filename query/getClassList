@@ -81,6 +81,7 @@ query getClassList {
         id
         __typename
       }
+      isChildAssignmentsClassroom
       __typename
     }
     schoolAffiliation {
