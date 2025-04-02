@@ -1,0 +1,10 @@
+query extraInfoQuery {
+  user {
+    id
+    nickname
+    email
+    birthMonthYear
+    tosForFormalTeacherStatus
+    __typename
+  }
+}

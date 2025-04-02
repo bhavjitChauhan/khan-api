@@ -23237,4 +23237,21 @@ fragment assessmentItemFields on AssessmentItem {
     __typename
   }
 }`,
+  extraInfoQuery: `query extraInfoQuery {
+  user {
+    id
+    nickname
+    email
+    birthMonthYear
+    tosForFormalTeacherStatus
+    __typename
+  }
+}`,
+  getAdminTools: `query getAdminTools {
+  aiGuideAdminTools {
+    id
+    configName
+    __typename
+  }
+}`,
 }
