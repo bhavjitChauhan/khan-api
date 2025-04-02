@@ -68,6 +68,7 @@ query getUserDevAdminGeneral($kaid: String!) {
     isPhantom
     isParent
     isTeacher
+    isTotpTwoFactorEnabled
     isFormalTeacher
     joined
     kaid

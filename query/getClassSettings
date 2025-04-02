@@ -90,6 +90,7 @@ query getClassSettings($classDescriptor: String!) {
     }
     includesCentrallyOwnedDistrictData
     isK4dClassroom
+    isChildAssignmentsClassroom
     __typename
   }
 }
