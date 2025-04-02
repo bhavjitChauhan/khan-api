@@ -1,0 +1,7 @@
+query getAdminTools {
+  aiGuideAdminTools {
+    id
+    configName
+    __typename
+  }
+}

@@ -832,4 +832,6 @@ hashes = {
   getChildren: 1041616280,
   AssessmentsPlaytestingKaid: 1733851707,
   KAClassroom_GetLearnerAssignmentData: 1084630,
+  extraInfoQuery: 254409846,
+  getAdminTools: 2110735508,
 }
