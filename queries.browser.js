@@ -18639,6 +18639,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     assignmentId: assignmentID
     completed
     sampleEssayName
+    essayMode
     __typename
   }
   user {
@@ -18647,6 +18648,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
       id
       title
       dueDate
+      configuredActivityInputs
       __typename
     }
     __typename
@@ -19340,6 +19342,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     completed
     draftingThreadID
     essayInstructions
+    essayMode
     essayTitle
     essayType
     essayVersion
@@ -20934,6 +20937,7 @@ fragment ExerciseContentFields on LearnableContent {
     draftingThreadID
     assignmentId: assignmentID
     essayInstructions
+    essayMode
     essayTitle
     essayType
     minimumWordCount

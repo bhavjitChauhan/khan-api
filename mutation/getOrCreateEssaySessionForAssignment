@@ -2,6 +2,7 @@ mutation getOrCreateEssaySessionForAssignment($assignmentId: String!) {
   getOrCreateEssaySessionForAssignment(assignmentID: $assignmentId) {
     essaySession {
       id
+      essayMode
       essayTitle
       lastUpdated
       currentStage

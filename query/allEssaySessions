@@ -7,6 +7,7 @@ query allEssaySessions($contentDescriptor: String!) {
     assignmentId: assignmentID
     completed
     sampleEssayName
+    essayMode
     __typename
   }
   user {
@@ -15,6 +16,7 @@ query allEssaySessions($contentDescriptor: String!) {
       id
       title
       dueDate
+      configuredActivityInputs
       __typename
     }
     __typename

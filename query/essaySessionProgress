@@ -16,6 +16,7 @@ query essaySessionProgress($teacherKaid: String!, $essaySessionID: String!) {
     draftingThreadID
     assignmentId: assignmentID
     essayInstructions
+    essayMode
     essayTitle
     essayType
     minimumWordCount

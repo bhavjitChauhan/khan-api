@@ -1,9 +1,10 @@
-mutation createWritingCoachEssaySession($assignmentTitle: String!, $essayText: String!, $essayType: EssayType!, $essayVersion: Int!, $essayInstructions: String!, $minimumWordCount: Int, $studentGradeLevel: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!, $sampleEssayName: String) {
+mutation createWritingCoachEssaySession($assignmentTitle: String!, $essayText: String!, $essayType: EssayType!, $essayMode: EssayMode!, $essayVersion: Int!, $essayInstructions: String!, $minimumWordCount: Int, $studentGradeLevel: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!, $sampleEssayName: String) {
   createEssaySession(
     essayInstructions: $essayInstructions
     essayText: $essayText
     essayTitle: $assignmentTitle
     essayType: $essayType
+    essayMode: $essayMode
     essayVersion: $essayVersion
     minimumWordCount: $minimumWordCount
     studentGradeLevel: $studentGradeLevel
