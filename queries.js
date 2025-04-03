@@ -927,6 +927,7 @@ fragment AssignmentCsvData on Assignment {
     }
     isK4dClassroom
     includesCentrallyOwnedDistrictData
+    isChildAssignmentsClassroom
     __typename
   }
   teacher: user {

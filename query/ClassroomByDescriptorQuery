@@ -69,6 +69,7 @@ query ClassroomByDescriptorQuery($descriptor: String!) {
     }
     isK4dClassroom
     includesCentrallyOwnedDistrictData
+    isChildAssignmentsClassroom
     __typename
   }
   teacher: user {
