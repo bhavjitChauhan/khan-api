@@ -23259,4 +23259,34 @@ fragment assessmentItemFields on AssessmentItem {
     __typename
   }
 }`,
+  getAiGuideThreadsForMyDocuments: `query getAiGuideThreadsForMyDocuments($kaid: String!, $hasCoeditor: Boolean!, $limit: Int!) {
+  aiGuideThreads(kaid: $kaid, hasCoeditor: $hasCoeditor, limit: $limit) {
+    threads {
+      id
+      coeditingDocument(excludeArchived: true) {
+        id
+        title
+        configName
+        threadId
+        persona
+        latestSnapshot {
+          id
+          createdAt
+          __typename
+        }
+        __typename
+      }
+      blooketQuestionSet {
+        id
+        title
+        threadId
+        persona
+        lastUpdatedAt
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }

@@ -1,0 +1,9 @@
+mutation deleteBlooketQuestionSetFromAiTools($threadId: String!) {
+  deleteBlooketQuestionSet(threadId: $threadId) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

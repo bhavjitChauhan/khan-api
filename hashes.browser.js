@@ -834,4 +834,5 @@ hashes = {
   KAClassroom_GetLearnerAssignmentData: 3466208080,
   extraInfoQuery: 254409846,
   getAdminTools: 2110735508,
+  getAiGuideThreadsForMyDocuments: 59708907,
 }

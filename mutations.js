@@ -13517,4 +13517,22 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
+  archiveCoeditingDocumentFromAiTools: `mutation archiveCoeditingDocumentFromAiTools($threadID: String!) {
+  archiveCoeditingDocument(threadID: $threadID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  deleteBlooketQuestionSetFromAiTools: `mutation deleteBlooketQuestionSetFromAiTools($threadId: String!) {
+  deleteBlooketQuestionSet(threadId: $threadId) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
