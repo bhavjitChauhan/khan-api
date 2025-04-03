@@ -23194,6 +23194,7 @@ fragment assessmentItemFields on AssessmentItem {
     queue {
       id
       completionState
+      completedOn
       dueDate
       ... on ContentAssignment {
         content {
