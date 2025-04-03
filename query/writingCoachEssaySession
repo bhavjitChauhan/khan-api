@@ -33,6 +33,7 @@ query writingCoachEssaySession($id: String!) {
     completed
     draftingThreadID
     essayInstructions
+    essayMode
     essayTitle
     essayType
     essayVersion

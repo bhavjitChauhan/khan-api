@@ -11630,6 +11630,7 @@ fragment ProjectRevision on ProjectRevision {
   getOrCreateEssaySessionForAssignment(assignmentID: $assignmentId) {
     essaySession {
       id
+      essayMode
       essayTitle
       lastUpdated
       currentStage
@@ -13035,12 +13036,13 @@ fragment taskAttemptHistoryFields on TaskProblemAttempt {
     __typename
   }
 }`,
-  createWritingCoachEssaySession: `mutation createWritingCoachEssaySession($assignmentTitle: String!, $essayText: String!, $essayType: EssayType!, $essayVersion: Int!, $essayInstructions: String!, $minimumWordCount: Int, $studentGradeLevel: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!, $sampleEssayName: String) {
+  createWritingCoachEssaySession: `mutation createWritingCoachEssaySession($assignmentTitle: String!, $essayText: String!, $essayType: EssayType!, $essayMode: EssayMode!, $essayVersion: Int!, $essayInstructions: String!, $minimumWordCount: Int, $studentGradeLevel: Int!, $paragraphIDToParagraphNumbers: [ParagraphIDToParagraphNumbersInputEntry!]!, $sampleEssayName: String) {
   createEssaySession(
     essayInstructions: $essayInstructions
     essayText: $essayText
     essayTitle: $assignmentTitle
     essayType: $essayType
+    essayMode: $essayMode
     essayVersion: $essayVersion
     minimumWordCount: $minimumWordCount
     studentGradeLevel: $studentGradeLevel
