@@ -28,7 +28,7 @@ hashes = {
   ClassDescriptorByClassCodeQuery: 1267889878,
   ClassInfo: 2622688273,
   ClassroomByCode: 2300250233,
-  ClassroomByDescriptorQuery: 1104490025,
+  ClassroomByDescriptorQuery: 3861385314,
   ClassroomDistrictInfosQuery: 3368645794,
   classroomHasCourseMasteryAssignments: 2215210122,
   ClassSubjectMasteryProgress: 2241509294,
