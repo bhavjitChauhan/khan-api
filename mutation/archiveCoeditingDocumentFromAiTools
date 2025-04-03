@@ -1,0 +1,9 @@
+mutation archiveCoeditingDocumentFromAiTools($threadID: String!) {
+  archiveCoeditingDocument(threadID: $threadID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
