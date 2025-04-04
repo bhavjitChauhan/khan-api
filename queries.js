@@ -23290,4 +23290,26 @@ fragment assessmentItemFields on AssessmentItem {
     __typename
   }
 }`,
+  khanmigoToolsAvailableTeacherTools: `query khanmigoToolsAvailableTeacherTools {
+  aiGuideTeacherTools(order: TEACHER_TOOLS_PAGE) {
+    id
+    configName
+    __typename
+  }
+}`,
+  khanmigoToolsFavoritedTeacherTools: `query khanmigoToolsFavoritedTeacherTools {
+  aiGuideFavoritedTeacherTools {
+    id
+    configName
+    __typename
+  }
+}`,
+  khanmigoToolsLocalesForTeacherToolsBanner: `query khanmigoToolsLocalesForTeacherToolsBanner {
+  localesForLanguagePicker(includeEnglish: false, includeFake: false) {
+    id
+    localName
+    kaLocale
+    __typename
+  }
+}`,
 }

@@ -1,0 +1,15 @@
+mutation khanmigoToolsAddFavoritedTeacherTool($toolID: ID!, $configName: String!) {
+  aiGuideAddFavoritedTeacherTool(toolID: $toolID, configName: $configName) {
+    favoritedTool {
+      id
+      configName
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

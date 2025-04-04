@@ -1,0 +1,7 @@
+query khanmigoToolsAvailableTeacherTools {
+  aiGuideTeacherTools(order: TEACHER_TOOLS_PAGE) {
+    id
+    configName
+    __typename
+  }
+}

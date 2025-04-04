@@ -1,0 +1,15 @@
+mutation khanmigoToolsDeleteFavoritedTeacherTool($toolID: ID!, $configName: String!) {
+  aiGuideDeleteFavoritedTeacherTool(toolID: $toolID, configName: $configName) {
+    favoritedTool {
+      id
+      configName
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
