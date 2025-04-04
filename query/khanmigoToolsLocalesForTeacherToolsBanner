@@ -1,0 +1,8 @@
+query khanmigoToolsLocalesForTeacherToolsBanner {
+  localesForLanguagePicker(includeEnglish: false, includeFake: false) {
+    id
+    localName
+    kaLocale
+    __typename
+  }
+}

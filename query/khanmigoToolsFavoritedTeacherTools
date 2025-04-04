@@ -1,0 +1,7 @@
+query khanmigoToolsFavoritedTeacherTools {
+  aiGuideFavoritedTeacherTools {
+    id
+    configName
+    __typename
+  }
+}

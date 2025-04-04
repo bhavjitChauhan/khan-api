@@ -835,4 +835,7 @@ export default {
   extraInfoQuery: 254409846,
   getAdminTools: 2110735508,
   getAiGuideThreadsForMyDocuments: 59708907,
+  khanmigoToolsAvailableTeacherTools: 2027294001,
+  khanmigoToolsFavoritedTeacherTools: 566875817,
+  khanmigoToolsLocalesForTeacherToolsBanner: 1321691557,
 }

@@ -13535,4 +13535,34 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
+  khanmigoToolsAddFavoritedTeacherTool: `mutation khanmigoToolsAddFavoritedTeacherTool($toolID: ID!, $configName: String!) {
+  aiGuideAddFavoritedTeacherTool(toolID: $toolID, configName: $configName) {
+    favoritedTool {
+      id
+      configName
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  khanmigoToolsDeleteFavoritedTeacherTool: `mutation khanmigoToolsDeleteFavoritedTeacherTool($toolID: ID!, $configName: String!) {
+  aiGuideDeleteFavoritedTeacherTool(toolID: $toolID, configName: $configName) {
+    favoritedTool {
+      id
+      configName
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
