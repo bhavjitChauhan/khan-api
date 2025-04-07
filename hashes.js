@@ -838,4 +838,5 @@ export default {
   khanmigoToolsAvailableTeacherTools: 2027294001,
   khanmigoToolsFavoritedTeacherTools: 566875817,
   khanmigoToolsLocalesForTeacherToolsBanner: 1321691557,
+  KAClassroom_GetActionableInsights: 482270200,
 }
