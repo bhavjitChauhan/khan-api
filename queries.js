@@ -23312,4 +23312,15 @@ fragment assessmentItemFields on AssessmentItem {
     __typename
   }
 }`,
+  KAClassroom_GetActionableInsights: `query KAClassroom_GetActionableInsights($classroomDescriptor: String) {
+  actionableInsights(queryBy: {classroomDescriptor: $classroomDescriptor}) {
+    id
+    type
+    callsToAction {
+      type
+      __typename
+    }
+    __typename
+  }
+}`,
 }

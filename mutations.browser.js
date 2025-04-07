@@ -13565,4 +13565,12 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
+  KAClassroom_RecordActionableInsightAction: `mutation KAClassroom_RecordActionableInsightAction($insightID: ID!, $actionType: ActionableInsightActionType!) {
+  recordActionableInsightAction(
+    input: {actionableInsightId: $insightID, actionType: $actionType}
+  ) {
+    success
+    __typename
+  }
+}`,
 }
