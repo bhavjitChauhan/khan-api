@@ -3418,6 +3418,8 @@ fragment CourseProgress on SubjectProgress {
       id
       kaid
       status
+      numSchoolsCompleted
+      totalSchools
       blobCreatedAt
       blobExpiresAt
       reportType
@@ -23318,6 +23320,19 @@ fragment assessmentItemFields on AssessmentItem {
     type
     callsToAction {
       type
+      __typename
+    }
+    __typename
+  }
+}`,
+  khanmigoToolsCoachedClassrooms: `query khanmigoToolsCoachedClassrooms {
+  user {
+    id
+    coachedClassrooms {
+      id
+      cacheId
+      descriptor
+      name
       __typename
     }
     __typename

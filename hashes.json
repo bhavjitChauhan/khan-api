@@ -96,7 +96,7 @@
   "CourseMenuEditor_DefaultCourseMenu": 1697678709,
   "courseProgresses": 4018553270,
   "CoursesUnitsQuery": 3917796323,
-  "csvReportStatus": 3310660256,
+  "csvReportStatus": 2440784857,
   "curationNodePublishedInfo": 1042148120,
   "curationPageRevision": 3306111379,
   "curriculumsQuery": 2648919930,
@@ -838,5 +838,6 @@
   "khanmigoToolsAvailableTeacherTools": 2027294001,
   "khanmigoToolsFavoritedTeacherTools": 566875817,
   "khanmigoToolsLocalesForTeacherToolsBanner": 1321691557,
-  "KAClassroom_GetActionableInsights": 482270200
+  "KAClassroom_GetActionableInsights": 482270200,
+  "khanmigoToolsCoachedClassrooms": 190625030
 }
