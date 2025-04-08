@@ -9,6 +9,8 @@ query csvReportStatus($kaid: String!, $partnershipID: String, $districtID: Strin
       id
       kaid
       status
+      numSchoolsCompleted
+      totalSchools
       blobCreatedAt
       blobExpiresAt
       reportType

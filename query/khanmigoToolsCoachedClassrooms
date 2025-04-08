@@ -1,0 +1,13 @@
+query khanmigoToolsCoachedClassrooms {
+  user {
+    id
+    coachedClassrooms {
+      id
+      cacheId
+      descriptor
+      name
+      __typename
+    }
+    __typename
+  }
+}
