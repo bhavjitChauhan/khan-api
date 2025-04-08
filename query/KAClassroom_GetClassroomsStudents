@@ -1,0 +1,19 @@
+query KAClassroom_GetClassroomsStudents {
+  user {
+    id
+    coachedClassrooms {
+      id
+      cacheId
+      name
+      descriptor
+      studentKaidsAndNicknames {
+        id
+        kaid
+        coachNickname
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

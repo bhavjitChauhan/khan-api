@@ -23338,4 +23338,30 @@ fragment assessmentItemFields on AssessmentItem {
     __typename
   }
 }`,
+  KAClassroom_GetClassroomsStudents: `query KAClassroom_GetClassroomsStudents {
+  user {
+    id
+    coachedClassrooms {
+      id
+      cacheId
+      name
+      descriptor
+      studentKaidsAndNicknames {
+        id
+        kaid
+        coachNickname
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  KAClassroom_GetExercisesGroup: `query KAClassroom_GetExercisesGroup($exerciseIds: [String!]!) {
+  exercisesByIds(ids: $exerciseIds) {
+    id
+    problemTypeKind
+    __typename
+  }
+}`,
 }
