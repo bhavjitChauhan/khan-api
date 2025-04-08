@@ -839,5 +839,7 @@
   "khanmigoToolsFavoritedTeacherTools": "query khanmigoToolsFavoritedTeacherTools {\n  aiGuideFavoritedTeacherTools {\n    id\n    configName\n    __typename\n  }\n}",
   "khanmigoToolsLocalesForTeacherToolsBanner": "query khanmigoToolsLocalesForTeacherToolsBanner {\n  localesForLanguagePicker(includeEnglish: false, includeFake: false) {\n    id\n    localName\n    kaLocale\n    __typename\n  }\n}",
   "KAClassroom_GetActionableInsights": "query KAClassroom_GetActionableInsights($classroomDescriptor: String) {\n  actionableInsights(queryBy: {classroomDescriptor: $classroomDescriptor}) {\n    id\n    type\n    callsToAction {\n      type\n      __typename\n    }\n    __typename\n  }\n}",
-  "khanmigoToolsCoachedClassrooms": "query khanmigoToolsCoachedClassrooms {\n  user {\n    id\n    coachedClassrooms {\n      id\n      cacheId\n      descriptor\n      name\n      __typename\n    }\n    __typename\n  }\n}"
+  "khanmigoToolsCoachedClassrooms": "query khanmigoToolsCoachedClassrooms {\n  user {\n    id\n    coachedClassrooms {\n      id\n      cacheId\n      descriptor\n      name\n      __typename\n    }\n    __typename\n  }\n}",
+  "KAClassroom_GetClassroomsStudents": "query KAClassroom_GetClassroomsStudents {\n  user {\n    id\n    coachedClassrooms {\n      id\n      cacheId\n      name\n      descriptor\n      studentKaidsAndNicknames {\n        id\n        kaid\n        coachNickname\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}",
+  "KAClassroom_GetExercisesGroup": "query KAClassroom_GetExercisesGroup($exerciseIds: [String!]!) {\n  exercisesByIds(ids: $exerciseIds) {\n    id\n    problemTypeKind\n    __typename\n  }\n}"
 }

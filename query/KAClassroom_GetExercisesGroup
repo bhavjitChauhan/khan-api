@@ -1,0 +1,7 @@
+query KAClassroom_GetExercisesGroup($exerciseIds: [String!]!) {
+  exercisesByIds(ids: $exerciseIds) {
+    id
+    problemTypeKind
+    __typename
+  }
+}
