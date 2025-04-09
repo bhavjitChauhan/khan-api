@@ -8,6 +8,7 @@ query getTeacherAccessPermissionsData {
     isK4dTeacher
     hasAccessToAIGuideTeacher
     isAIGuideEnabled
+    hasChildren
     hasClasses
     isKmapStudent
     isK4dStudent
@@ -16,6 +17,16 @@ query getTeacherAccessPermissionsData {
       id
       cacheId
       isK4dClassroom
+      __typename
+    }
+    coachedChildAssignmentsClassrooms {
+      id
+      cacheId
+      students {
+        id
+        includesDistrictOwnedData
+        __typename
+      }
       __typename
     }
     __typename
