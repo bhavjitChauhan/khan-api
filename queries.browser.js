@@ -21484,6 +21484,7 @@ fragment ExerciseContentFields on LearnableContent {
     isK4dTeacher
     hasAccessToAIGuideTeacher
     isAIGuideEnabled
+    hasChildren
     hasClasses
     isKmapStudent
     isK4dStudent
@@ -21492,6 +21493,16 @@ fragment ExerciseContentFields on LearnableContent {
       id
       cacheId
       isK4dClassroom
+      __typename
+    }
+    coachedChildAssignmentsClassrooms {
+      id
+      cacheId
+      students {
+        id
+        includesDistrictOwnedData
+        __typename
+      }
       __typename
     }
     __typename
