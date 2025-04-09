@@ -261,11 +261,6 @@ export default {
     kaid
     __typename
   }
-  coach {
-    id
-    kaid
-    __typename
-  }
   startDate
   dueDate
   isDraft

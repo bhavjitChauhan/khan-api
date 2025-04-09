@@ -302,11 +302,6 @@ fragment AssignmentInfoFragment on Assignment {
     kaid
     __typename
   }
-  coach {
-    id
-    kaid
-    __typename
-  }
   startDate
   dueDate
   isDraft
@@ -3862,11 +3857,6 @@ fragment AssignmentInfoFragment on Assignment {
     __typename
   }
   students {
-    id
-    kaid
-    __typename
-  }
-  coach {
     id
     kaid
     __typename
@@ -7461,11 +7451,6 @@ fragment AssignmentInfoFragment on Assignment {
     kaid
     __typename
   }
-  coach {
-    id
-    kaid
-    __typename
-  }
   startDate
   dueDate
   isDraft
@@ -9047,11 +9032,6 @@ fragment AssignmentInfoFragment on Assignment {
     __typename
   }
   students {
-    id
-    kaid
-    __typename
-  }
-  coach {
     id
     kaid
     __typename
