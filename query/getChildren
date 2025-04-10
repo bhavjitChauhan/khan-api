@@ -5,6 +5,7 @@ query getChildren($targetKaid: String!) {
       id
       nickname
       kaid
+      isK4dStudent
       __typename
     }
     __typename
