@@ -23375,4 +23375,10 @@ fragment assessmentItemFields on AssessmentItem {
     __typename
   }
 }`,
+  AiGuideActivityConfigGrowthbookFeaturesAsPromptVariables: `query AiGuideActivityConfigGrowthbookFeaturesAsPromptVariables($threadId: String!) {
+  aiGuideActivityConfigByThreadId(threadId: $threadId) {
+    growthbookFeaturesAsPromptVariables
+    __typename
+  }
+}`,
 }

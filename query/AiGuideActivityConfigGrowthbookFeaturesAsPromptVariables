@@ -1,0 +1,6 @@
+query AiGuideActivityConfigGrowthbookFeaturesAsPromptVariables($threadId: String!) {
+  aiGuideActivityConfigByThreadId(threadId: $threadId) {
+    growthbookFeaturesAsPromptVariables
+    __typename
+  }
+}
