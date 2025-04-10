@@ -23189,6 +23189,7 @@ fragment assessmentItemFields on AssessmentItem {
       id
       nickname
       kaid
+      isK4dStudent
       __typename
     }
     __typename
