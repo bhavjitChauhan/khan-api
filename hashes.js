@@ -842,4 +842,5 @@ export default {
   khanmigoToolsCoachedClassrooms: 190625030,
   KAClassroom_GetClassroomsStudents: 3015652722,
   KAClassroom_GetExercisesGroup: 1173567619,
+  AiGuideActivityConfigGrowthbookFeaturesAsPromptVariables: 2092698037,
 }
