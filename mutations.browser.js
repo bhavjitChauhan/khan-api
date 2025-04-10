@@ -13553,4 +13553,19 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
+  khanmigoToolsCoeditingAutosave: `mutation khanmigoToolsCoeditingAutosave($configName: String!, $threadId: String!, $title: String!, $jsonData: String!, $persona: AIGuidePersona!) {
+  saveCoeditingV2Snapshot(
+    configName: $configName
+    threadId: $threadId
+    title: $title
+    jsonData: $jsonData
+    persona: $persona
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
