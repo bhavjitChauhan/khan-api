@@ -1,6 +1,6 @@
 {
   "name": "@bhavjit/khan-api",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "A Khan Academy API client and wrapper",
   "keywords": [
     "khan-academy",
