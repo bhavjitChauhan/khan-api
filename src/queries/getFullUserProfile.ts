@@ -63,12 +63,6 @@ export namespace GetFullUserProfile {
     includesKmapDistrictOwnedData
     includesK4dDistrictOwnedData
     canAccessDistrictsHomepage
-    preferredKaLocale {
-      id
-      kaLocale
-      status
-      __typename
-    }
     underAgeGate {
       parentEmail
       daysUntilCutoff
@@ -184,7 +178,6 @@ export namespace GetFullUserProfile {
       | 'noColorInVideos'
       | 'pendingEmailVerifications'
       | 'points'
-      | 'preferredKaLocale'
       | 'prefersReducedMotion'
       | 'profile'
       | 'profileRoot'
