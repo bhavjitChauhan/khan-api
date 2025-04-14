@@ -1,0 +1,10 @@
+query KAClassroom_GetContentAssignmentStatus($classDescriptor: String!, $contentDescriptors: [String!]!) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    contentAssignmentStatuses: nonDraftAssignmentStatusesForContentDescriptors(
+      contentDescriptors: $contentDescriptors
+    )
+    __typename
+  }
+}

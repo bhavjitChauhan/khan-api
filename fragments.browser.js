@@ -2800,4 +2800,23 @@ query ActivitiesList {
   skillType
   __typename
 }`,
+  KAClassroom_QuizAndTestFields: `fragment KAClassroom_QuizAndTestFields on LearnableContent {
+  ... on TopicQuiz {
+    coveredTutorials {
+      id
+      title: translatedTitle
+      __typename
+    }
+    defaultUrlPath
+    expectedDoNCount: exerciseLength
+    index
+    __typename
+  }
+  ... on TopicUnitTest {
+    defaultUrlPath
+    expectedDoNCount: exerciseLength
+    __typename
+  }
+  __typename
+}`,
 }
