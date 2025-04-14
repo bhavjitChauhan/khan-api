@@ -23517,4 +23517,60 @@ fragment KAClassroom_QuizAndTestFields on LearnableContent {
     __typename
   }
 }`,
+  KAClassroom_GetCourse: `query KAClassroom_GetCourse($courseId: String!, $region: String!, $locale: String!) {
+  courseById(id: $courseId) {
+    id
+    parent {
+      id
+      __typename
+    }
+    unitChildren {
+      id
+      translatedTitle
+      allOrderedChildren {
+        ... on Lesson {
+          id
+          translatedTitle
+          allLearnableContent {
+            ...LearnableContentBasic
+            contentKind
+            mappedStandardIds(locale: $locale, region: $region)
+            ... on Video {
+              duration
+              __typename
+            }
+            ... on Exercise {
+              exerciseLength(useDefault: true)
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        ... on TopicQuiz {
+          ...LearnableContentBasic
+          __typename
+        }
+        ... on TopicUnitTest {
+          ...LearnableContentBasic
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    courseChallenge {
+      ...LearnableContentBasic
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment LearnableContentBasic on LearnableContent {
+  id
+  urlWithinTopic
+  translatedTitle
+  __typename
+}`,
 }
