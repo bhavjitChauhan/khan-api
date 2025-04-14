@@ -295,6 +295,8 @@ fragment AssignmentInfoFragment on Assignment {
     cacheId
     name
     isK4dClassroom
+    isChildAssignmentsClassroom
+    signupCode
     __typename
   }
   students {
@@ -3854,6 +3856,8 @@ fragment AssignmentInfoFragment on Assignment {
     cacheId
     name
     isK4dClassroom
+    isChildAssignmentsClassroom
+    signupCode
     __typename
   }
   students {
@@ -9029,6 +9033,8 @@ fragment AssignmentInfoFragment on Assignment {
     cacheId
     name
     isK4dClassroom
+    isChildAssignmentsClassroom
+    signupCode
     __typename
   }
   students {
