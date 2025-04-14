@@ -843,4 +843,6 @@ export default {
   KAClassroom_GetClassroomsStudents: 3015652722,
   KAClassroom_GetExercisesGroup: 1173567619,
   AiGuideActivityConfigGrowthbookFeaturesAsPromptVariables: 2092698037,
+  KAClassroom_ContentThreeLevel: 4101224164,
+  KAClassroom_GetContentAssignmentStatus: 3186049731,
 }

@@ -23382,4 +23382,132 @@ fragment assessmentItemFields on AssessmentItem {
     __typename
   }
 }`,
+  KAClassroom_ContentThreeLevel: `query KAClassroom_ContentThreeLevel($courseId: String!, $region: String!, $locale: String!) {
+  courseById(id: $courseId) {
+    id
+    children: curatedChildren {
+      ...KAClassroom_CourseFieldsThreeLevels
+      ...KAClassroom_LessonAndChildrenFieldsThreeLevels
+      ... on Unit {
+        id
+        description
+        iconPath
+        key
+        kind
+        mappedStandardIds(locale: $locale, region: $region)
+        title: translatedTitle
+        children: allOrderedChildren {
+          __typename
+          ...KAClassroom_LearnableContentFieldsThreeLevels
+          ...KAClassroom_QuizAndTestFields
+          ...KAClassroom_LessonAndChildrenFieldsThreeLevels
+        }
+        __typename
+      }
+      __typename
+    }
+    courseChallenge {
+      id
+      contentId
+      defaultUrlPath
+      description
+      kind
+      mappedStandardIds(locale: $locale, region: $region)
+      title: translatedTitle
+      expectedDoNCount: exerciseLength
+      __typename
+    }
+    domain: parent {
+      id
+      contentKind
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment KAClassroom_CourseFieldsThreeLevels on Course {
+  ... on Course {
+    id
+    description
+    iconPath
+    key
+    kind
+    mappedStandardIds(locale: $locale, region: $region)
+    title: translatedTitle
+    __typename
+  }
+  __typename
+}
+
+fragment KAClassroom_LearnableContentFieldsThreeLevels on LearnableContent {
+  contentId
+  description
+  kind
+  mappedStandardIds(locale: $locale, region: $region)
+  nodeUrl: urlWithinTopic
+  slug
+  title: translatedTitle
+  __typename
+}
+
+fragment KAClassroom_LessonAndChildrenFieldsThreeLevels on Lesson {
+  ... on Lesson {
+    id
+    description
+    iconPath
+    key
+    kind
+    mappedStandardIds(locale: $locale, region: $region)
+    title: translatedTitle
+    children {
+      __typename
+      ...KAClassroom_LearnableContentFieldsThreeLevels
+      ... on Video {
+        duration
+        imageUrl
+        translatedYoutubeId
+        youtubeId
+        __typename
+      }
+      ... on Exercise {
+        expectedDoNCount: exerciseLength(useDefault: true)
+        problemTypeKind
+        __typename
+      }
+    }
+    __typename
+  }
+  __typename
+}
+
+fragment KAClassroom_QuizAndTestFields on LearnableContent {
+  ... on TopicQuiz {
+    coveredTutorials {
+      id
+      title: translatedTitle
+      __typename
+    }
+    defaultUrlPath
+    expectedDoNCount: exerciseLength
+    index
+    __typename
+  }
+  ... on TopicUnitTest {
+    defaultUrlPath
+    expectedDoNCount: exerciseLength
+    __typename
+  }
+  __typename
+}`,
+  KAClassroom_GetContentAssignmentStatus: `query KAClassroom_GetContentAssignmentStatus($classDescriptor: String!, $contentDescriptors: [String!]!) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    contentAssignmentStatuses: nonDraftAssignmentStatusesForContentDescriptors(
+      contentDescriptors: $contentDescriptors
+    )
+    __typename
+  }
+}`,
 }

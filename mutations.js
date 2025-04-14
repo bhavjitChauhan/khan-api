@@ -7448,6 +7448,8 @@ fragment AssignmentInfoFragment on Assignment {
     cacheId
     name
     isK4dClassroom
+    isChildAssignmentsClassroom
+    signupCode
     __typename
   }
   students {
@@ -13569,6 +13571,23 @@ fragment taskUserExerciseFields on UserExercise {
   ) {
     error {
       code
+      __typename
+    }
+    __typename
+  }
+}`,
+  KAClassroom_CreateAssignment: `mutation KAClassroom_CreateAssignment($courseSlug: String!, $classDescriptors: [String!]!, $qualifiedContentDescriptorsList: [String!], $startDate: DateTime!, $dueDate: DateTime, $isDraft: Boolean, $studentKaids: [ID], $questionSetType: ExerciseItemPickerStrategy) {
+  createAssignments(
+    assignment: {courseSlug: $courseSlug, classroomDescriptors: $classDescriptors, qualifiedContentDescriptorsList: $qualifiedContentDescriptorsList, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft, studentKaids: $studentKaids, exerciseItemPickerStrategy: $questionSetType}
+  ) {
+    assignments {
+      id
+      classroom {
+        id
+        cacheId
+        descriptor
+        __typename
+      }
       __typename
     }
     __typename

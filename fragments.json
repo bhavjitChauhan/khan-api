@@ -114,5 +114,6 @@
   "taskProblemAttemptHistoryFields": "fragment taskProblemAttemptHistoryFields on TaskProblemAttempt {\n  correct\n  seenHint\n  itemId\n  __typename\n}",
   "taskUserExerciseFields": "fragment taskUserExerciseFields on UserExercise {\n  exercise {\n    ...taskExerciseFields\n    __typename\n  }\n  lastAttemptNumber\n  lastCountHints\n  totalDone\n  __typename\n}",
   "ActivitySessionSkillLevelsV1": "fragment ActivitySessionSkillLevelsV1 on SkillLevelChange {\n  id\n  before\n  after\n  __typename\n}",
-  "ActivitySessionV1": "fragment ActivitySessionV1 on ActivitySession {\n  id\n  title\n  subtitle\n  activityKind {\n    id\n    __typename\n  }\n  durationMinutes\n  eventTimestamp\n  skillType\n  __typename\n}"
+  "ActivitySessionV1": "fragment ActivitySessionV1 on ActivitySession {\n  id\n  title\n  subtitle\n  activityKind {\n    id\n    __typename\n  }\n  durationMinutes\n  eventTimestamp\n  skillType\n  __typename\n}",
+  "KAClassroom_QuizAndTestFields": "fragment KAClassroom_QuizAndTestFields on LearnableContent {\n  ... on TopicQuiz {\n    coveredTutorials {\n      id\n      title: translatedTitle\n      __typename\n    }\n    defaultUrlPath\n    expectedDoNCount: exerciseLength\n    index\n    __typename\n  }\n  ... on TopicUnitTest {\n    defaultUrlPath\n    expectedDoNCount: exerciseLength\n    __typename\n  }\n  __typename\n}"
 }
