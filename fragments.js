@@ -254,6 +254,8 @@ export default {
     cacheId
     name
     isK4dClassroom
+    isChildAssignmentsClassroom
+    signupCode
     __typename
   }
   students {
