@@ -23510,4 +23510,11 @@ fragment KAClassroom_QuizAndTestFields on LearnableContent {
     __typename
   }
 }`,
+  DistrictGradesByEduOrg: `query DistrictGradesByEduOrg($eduOrgID: String!) {
+  userFacingGradeLevels(eduOrgID: $eduOrgID) {
+    id
+    name
+    __typename
+  }
+}`,
 }

@@ -845,4 +845,5 @@ export default {
   AiGuideActivityConfigGrowthbookFeaturesAsPromptVariables: 2092698037,
   KAClassroom_ContentThreeLevel: 4101224164,
   KAClassroom_GetContentAssignmentStatus: 3186049731,
+  DistrictGradesByEduOrg: 579575613,
 }
