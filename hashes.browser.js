@@ -846,4 +846,5 @@ hashes = {
   KAClassroom_ContentThreeLevel: 4101224164,
   KAClassroom_GetContentAssignmentStatus: 3186049731,
   DistrictGradesByEduOrg: 579575613,
+  KAClassroom_GetCourse: 4129994459,
 }
