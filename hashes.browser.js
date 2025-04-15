@@ -838,7 +838,7 @@ hashes = {
   khanmigoToolsAvailableTeacherTools: 2027294001,
   khanmigoToolsFavoritedTeacherTools: 566875817,
   khanmigoToolsLocalesForTeacherToolsBanner: 1321691557,
-  KAClassroom_GetActionableInsights: 482270200,
+  KAClassroom_GetActionableInsights: 3043823835,
   khanmigoToolsCoachedClassrooms: 190625030,
   KAClassroom_GetClassroomsStudents: 3015652722,
   KAClassroom_GetExercisesGroup: 1173567619,
