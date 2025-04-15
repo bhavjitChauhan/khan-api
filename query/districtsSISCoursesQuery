@@ -1,0 +1,10 @@
+query districtsSISCoursesQuery($districtID: ID!) {
+  getCourseSISAndSisSubjectLinesForDistrict(districtID: $districtID) {
+    courseSIS {
+      name
+      __typename
+    }
+    subjectLines
+    __typename
+  }
+}

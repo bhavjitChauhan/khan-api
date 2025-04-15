@@ -1,0 +1,20 @@
+query districtsKACourseMenuTopicsQuery($region: String!) {
+  learnMenuTopics(region: $region) {
+    domainId
+    slug
+    translatedTitle
+    icon
+    href
+    isNew
+    children {
+      courseId
+      slug
+      translatedTitle
+      href
+      isNew
+      nonContentLink
+      __typename
+    }
+    __typename
+  }
+}

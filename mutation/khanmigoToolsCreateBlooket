@@ -1,0 +1,15 @@
+mutation khanmigoToolsCreateBlooket($threadId: String!, $title: String!, $description: String!, $questions: JSONString!, $persona: AIGuidePersona!) {
+  createBlooketQuestionSet(
+    threadId: $threadId
+    title: $title
+    description: $description
+    questions: $questions
+    persona: $persona
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

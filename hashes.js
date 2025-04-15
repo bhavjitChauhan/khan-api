@@ -847,4 +847,9 @@ export default {
   KAClassroom_GetContentAssignmentStatus: 3186049731,
   DistrictGradesByEduOrg: 579575613,
   KAClassroom_GetCourse: 4129994459,
+  GetCourseSISGroupings: 1291171560,
+  districtsKACourseDetailsQuery: 3131533087,
+  districtsKACourseMenuTopicsQuery: 720552240,
+  districtsSISCoursesQuery: 3668076402,
+  khanmigoToolsGetBlooketQuestionSet: 286157504,
 }
