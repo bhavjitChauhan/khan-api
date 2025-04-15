@@ -5309,7 +5309,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
   coach: user {
     id
     nickname
-    studentLists: coachedStudentLists {
+    studentLists: coachedClassrooms {
       name
       id
       signupCode

@@ -2,7 +2,7 @@ query getClassList {
   coach: user {
     id
     nickname
-    studentLists: coachedStudentLists {
+    studentLists: coachedClassrooms {
       name
       id
       signupCode
