@@ -1,0 +1,9 @@
+mutation khanmigoToolsDeleteBlooketQuestionSet($threadId: String!) {
+  deleteBlooketQuestionSet(threadId: $threadId) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

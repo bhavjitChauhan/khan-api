@@ -23573,4 +23573,150 @@ fragment LearnableContentBasic on LearnableContent {
   translatedTitle
   __typename
 }`,
+  GetCourseSISGroupings: `query GetCourseSISGroupings($districtID: ID!, $subjectLines: [SISSubjectLine!], $domainID: String!) {
+  getCourseSISGroupingsForDomainAndSubjectLines(
+    districtID: $districtID
+    subjectLines: $subjectLines
+    domainID: $domainID
+  ) {
+    approvedCourseGroups {
+      courseSISInfos {
+        name
+        __typename
+      }
+      course {
+        id
+        __typename
+      }
+      unitInfos {
+        dueDate
+        unit {
+          id
+          __typename
+        }
+        __typename
+      }
+      areUnitsSubsetOfApprovedCourse
+      __typename
+    }
+    recommendedCourseGroups {
+      courseSISInfos {
+        name
+        __typename
+      }
+      course {
+        id
+        __typename
+      }
+      unitInfos {
+        dueDate
+        unit {
+          id
+          __typename
+        }
+        __typename
+      }
+      areUnitsSubsetOfApprovedCourse
+      __typename
+    }
+    noRecommendationCourseGroups {
+      courseSISInfos {
+        name
+        __typename
+      }
+      course {
+        id
+        __typename
+      }
+      unitInfos {
+        dueDate
+        unit {
+          id
+          __typename
+        }
+        __typename
+      }
+      areUnitsSubsetOfApprovedCourse
+      __typename
+    }
+    __typename
+  }
+}`,
+  districtsKACourseDetailsQuery: `query districtsKACourseDetailsQuery($ids: [String!]!) {
+  coursesByIds(ids: $ids) {
+    id
+    translatedTitle
+    contentKind
+    unitChildren {
+      id
+      translatedTitle
+      masteryEnabled
+      allLearnableContent {
+        id
+        ... on Exercise {
+          translatedTitle
+          __typename
+        }
+        __typename
+      }
+      learnableContentSummary {
+        countExercises
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  districtsKACourseMenuTopicsQuery: `query districtsKACourseMenuTopicsQuery($region: String!) {
+  learnMenuTopics(region: $region) {
+    domainId
+    slug
+    translatedTitle
+    icon
+    href
+    isNew
+    children {
+      courseId
+      slug
+      translatedTitle
+      href
+      isNew
+      nonContentLink
+      __typename
+    }
+    __typename
+  }
+}`,
+  districtsSISCoursesQuery: `query districtsSISCoursesQuery($districtID: ID!) {
+  getCourseSISAndSisSubjectLinesForDistrict(districtID: $districtID) {
+    courseSIS {
+      name
+      __typename
+    }
+    subjectLines
+    __typename
+  }
+}`,
+  khanmigoToolsGetBlooketQuestionSet: `query khanmigoToolsGetBlooketQuestionSet($threadId: String!) {
+  blooketQuestionSet(threadId: $threadId) {
+    id
+    ownerKaid
+    threadId
+    title
+    description
+    questions {
+      text
+      timeLimit
+      randomizeAnswers
+      answers {
+        text
+        isCorrect
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }

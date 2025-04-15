@@ -1,0 +1,26 @@
+query districtsKACourseDetailsQuery($ids: [String!]!) {
+  coursesByIds(ids: $ids) {
+    id
+    translatedTitle
+    contentKind
+    unitChildren {
+      id
+      translatedTitle
+      masteryEnabled
+      allLearnableContent {
+        id
+        ... on Exercise {
+          translatedTitle
+          __typename
+        }
+        __typename
+      }
+      learnableContentSummary {
+        countExercises
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,69 @@
+query GetCourseSISGroupings($districtID: ID!, $subjectLines: [SISSubjectLine!], $domainID: String!) {
+  getCourseSISGroupingsForDomainAndSubjectLines(
+    districtID: $districtID
+    subjectLines: $subjectLines
+    domainID: $domainID
+  ) {
+    approvedCourseGroups {
+      courseSISInfos {
+        name
+        __typename
+      }
+      course {
+        id
+        __typename
+      }
+      unitInfos {
+        dueDate
+        unit {
+          id
+          __typename
+        }
+        __typename
+      }
+      areUnitsSubsetOfApprovedCourse
+      __typename
+    }
+    recommendedCourseGroups {
+      courseSISInfos {
+        name
+        __typename
+      }
+      course {
+        id
+        __typename
+      }
+      unitInfos {
+        dueDate
+        unit {
+          id
+          __typename
+        }
+        __typename
+      }
+      areUnitsSubsetOfApprovedCourse
+      __typename
+    }
+    noRecommendationCourseGroups {
+      courseSISInfos {
+        name
+        __typename
+      }
+      course {
+        id
+        __typename
+      }
+      unitInfos {
+        dueDate
+        unit {
+          id
+          __typename
+        }
+        __typename
+      }
+      areUnitsSubsetOfApprovedCourse
+      __typename
+    }
+    __typename
+  }
+}

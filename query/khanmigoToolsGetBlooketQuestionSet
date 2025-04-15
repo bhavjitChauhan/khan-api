@@ -1,0 +1,21 @@
+query khanmigoToolsGetBlooketQuestionSet($threadId: String!) {
+  blooketQuestionSet(threadId: $threadId) {
+    id
+    ownerKaid
+    threadId
+    title
+    description
+    questions {
+      text
+      timeLimit
+      randomizeAnswers
+      answers {
+        text
+        isCorrect
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,14 @@
+mutation khanmigoToolsUpdateBlooket($threadId: String!, $title: String!, $description: String!, $questions: JSONString!) {
+  updateBlooketQuestionSet(
+    threadId: $threadId
+    title: $title
+    description: $description
+    questions: $questions
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

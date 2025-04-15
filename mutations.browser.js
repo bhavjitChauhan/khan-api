@@ -13597,4 +13597,61 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
+  khanmigoToolsArchiveCoeditingDocument: `mutation khanmigoToolsArchiveCoeditingDocument($threadID: String!) {
+  archiveCoeditingDocument(threadID: $threadID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  khanmigoToolsCreateBlooket: `mutation khanmigoToolsCreateBlooket($threadId: String!, $title: String!, $description: String!, $questions: JSONString!, $persona: AIGuidePersona!) {
+  createBlooketQuestionSet(
+    threadId: $threadId
+    title: $title
+    description: $description
+    questions: $questions
+    persona: $persona
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  khanmigoToolsDeleteBlooketQuestionSet: `mutation khanmigoToolsDeleteBlooketQuestionSet($threadId: String!) {
+  deleteBlooketQuestionSet(threadId: $threadId) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  khanmigoToolsExportQuestionSetToBlooket: `mutation khanmigoToolsExportQuestionSetToBlooket($threadId: String!) {
+  exportBlooketQuestionSet(threadId: $threadId) {
+    redirectURL
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  khanmigoToolsUpdateBlooket: `mutation khanmigoToolsUpdateBlooket($threadId: String!, $title: String!, $description: String!, $questions: JSONString!) {
+  updateBlooketQuestionSet(
+    threadId: $threadId
+    title: $title
+    description: $description
+    questions: $questions
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
