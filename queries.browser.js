@@ -23334,6 +23334,12 @@ fragment assessmentItemFields on AssessmentItem {
       type
       __typename
     }
+    classroom {
+      id
+      cacheId
+      name
+      __typename
+    }
     __typename
   }
 }`,
