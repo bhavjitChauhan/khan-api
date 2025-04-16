@@ -292,7 +292,7 @@ export default {
   getUserByUsernameOrEmail: 3512411562,
   getUserChangeLogsAsDevadmin: 4069684887,
   getUserCoaches: 716038065,
-  getUserDevAdminGeneral: 2176146209,
+  getUserDevAdminGeneral: 344248266,
   getUserHasUsedProduct: 27707820,
   getUserHoverCardProfile: 2464641677,
   getUserInfoForLinking: 765816848,

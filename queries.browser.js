@@ -9593,6 +9593,7 @@ fragment Badge on Badge {
         __typename
       }
       masteryTowerCurrentWeekScore
+      isChildAssignmentsClassroom
       __typename
     }
     __typename
