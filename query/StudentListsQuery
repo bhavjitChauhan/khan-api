@@ -12,6 +12,7 @@ query StudentListsQuery {
         translatedStandaloneTitle
         __typename
       }
+      isChildAssignmentsClassroom
       __typename
     }
     __typename
