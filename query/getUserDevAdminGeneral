@@ -331,6 +331,7 @@ query getUserDevAdminGeneral($kaid: String!) {
         __typename
       }
       masteryTowerCurrentWeekScore
+      isChildAssignmentsClassroom
       __typename
     }
     __typename
