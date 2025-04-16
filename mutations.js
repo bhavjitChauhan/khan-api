@@ -13654,4 +13654,13 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
+  invalidatePracticeTaskByID: `mutation invalidatePracticeTaskByID($taskID: String!) {
+  invalidatePracticeTaskByID(taskID: $taskID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
