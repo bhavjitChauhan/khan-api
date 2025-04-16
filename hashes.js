@@ -451,7 +451,7 @@ export default {
   StudentKmapPlacementQuery: 1052070597,
   studentListByClassCode: 2035745059,
   StudentListHasAssignments: 225464054,
-  StudentListsQuery: 2872271610,
+  StudentListsQuery: 1212228273,
   StudentMasteryGoals: 1005438753,
   studentPageByDescriptorQuery: 3328204319,
   StudentSkillsProgressKADQuery: 633965639,

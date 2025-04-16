@@ -13487,6 +13487,7 @@ fragment TranslatedContentFields on LearnableContent {
         translatedStandaloneTitle
         __typename
       }
+      isChildAssignmentsClassroom
       __typename
     }
     __typename
