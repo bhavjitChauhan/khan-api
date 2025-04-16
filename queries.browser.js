@@ -23746,4 +23746,14 @@ fragment LearnableContentBasic on LearnableContent {
     __typename
   }
 }`,
+  getInProgressPracticeTasksForUser: `query getInProgressPracticeTasksForUser($kaid: String!) {
+  getInProgressPracticeTasksForUser(kaid: $kaid) {
+    ... on PracticeTask {
+      slug
+      id
+      __typename
+    }
+    __typename
+  }
+}`,
 }
