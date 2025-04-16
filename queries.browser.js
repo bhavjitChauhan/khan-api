@@ -23726,4 +23726,23 @@ fragment LearnableContentBasic on LearnableContent {
     __typename
   }
 }`,
+  essayTextHistory: `query essayTextHistory($essaySessionID: String!, $pageSize: Int!, $cursor: String) {
+  essaySession(essaySessionID: $essaySessionID) {
+    id
+    textHistory(pageSize: $pageSize, cursor: $cursor) {
+      cursor
+      snapshots {
+        details {
+          content
+          lastIncludedEditTimestamp
+          __typename
+        }
+        snapshotIndex
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }

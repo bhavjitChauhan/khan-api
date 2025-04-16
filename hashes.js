@@ -852,4 +852,5 @@ export default {
   districtsKACourseMenuTopicsQuery: 720552240,
   districtsSISCoursesQuery: 3668076402,
   khanmigoToolsGetBlooketQuestionSet: 286157504,
+  essayTextHistory: 3727824282,
 }
