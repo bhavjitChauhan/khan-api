@@ -23542,7 +23542,13 @@ fragment KAClassroom_QuizAndTestFields on LearnableContent {
           allLearnableContent {
             ...LearnableContentBasic
             contentKind
-            mappedStandardIds(locale: $locale, region: $region)
+            mappedStandards(locale: $locale, region: $region) {
+              id
+              standardId
+              description
+              relativeUrl
+              __typename
+            }
             ... on Video {
               duration
               __typename
@@ -23568,7 +23574,10 @@ fragment KAClassroom_QuizAndTestFields on LearnableContent {
       __typename
     }
     courseChallenge {
-      ...LearnableContentBasic
+      id
+      contentDescriptor
+      defaultUrlPath
+      translatedTitle
       __typename
     }
     __typename
@@ -23577,6 +23586,7 @@ fragment KAClassroom_QuizAndTestFields on LearnableContent {
 
 fragment LearnableContentBasic on LearnableContent {
   id
+  contentDescriptor
   urlWithinTopic
   translatedTitle
   __typename
