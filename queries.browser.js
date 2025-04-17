@@ -23766,4 +23766,82 @@ fragment LearnableContentBasic on LearnableContent {
     __typename
   }
 }`,
+  writingCoachAssignmentReport: `query writingCoachAssignmentReport($assignmentId: String!, $teacherKaid: String!) {
+  coach: user {
+    id
+    assignment: assignmentByThisUser(id: $assignmentId) {
+      id
+      title
+      dueDate
+      configuredActivityInputs
+      students {
+        id
+        kaid
+        coachNickname(teacherKaid: $teacherKaid)
+        __typename
+      }
+      classroom {
+        id
+        cacheId
+        name
+        signupCode
+        __typename
+      }
+      itemCompletionStatesForAllStudents {
+        completedOn
+        studentKaid
+        student {
+          id
+          kaid
+          coachNickname(teacherKaid: $teacherKaid)
+          __typename
+        }
+        essaySession {
+          id
+          currentStage
+          completed
+          lastUpdated
+          wordCount
+          draft {
+            id
+            feedbackList {
+              id
+              isPositive
+              isResolved
+              __typename
+            }
+            __typename
+          }
+          learningTime {
+            draftingSeconds
+            outliningSeconds
+            promptReviewingSeconds
+            revisingSeconds
+            __typename
+          }
+          originalityFlags {
+            isCritical
+            ... on UserEssayOriginalityFlagPasteIntoOutline {
+              location
+              wordCount
+              outlineVersionBeforePaste
+              __typename
+            }
+            ... on UserEssayOriginalityFlagPasteIntoText {
+              stage
+              wordCount
+              essayVersionBeforePaste
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
