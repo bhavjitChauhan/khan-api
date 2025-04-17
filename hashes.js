@@ -854,4 +854,5 @@ export default {
   khanmigoToolsGetBlooketQuestionSet: 286157504,
   essayTextHistory: 3727824282,
   getInProgressPracticeTasksForUser: 4252401097,
+  writingCoachAssignmentReport: 1833883088,
 }
