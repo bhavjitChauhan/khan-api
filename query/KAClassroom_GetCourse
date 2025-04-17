@@ -15,7 +15,13 @@ query KAClassroom_GetCourse($courseId: String!, $region: String!, $locale: Strin
           allLearnableContent {
             ...LearnableContentBasic
             contentKind
-            mappedStandardIds(locale: $locale, region: $region)
+            mappedStandards(locale: $locale, region: $region) {
+              id
+              standardId
+              description
+              relativeUrl
+              __typename
+            }
             ... on Video {
               duration
               __typename
@@ -41,7 +47,10 @@ query KAClassroom_GetCourse($courseId: String!, $region: String!, $locale: Strin
       __typename
     }
     courseChallenge {
-      ...LearnableContentBasic
+      id
+      contentDescriptor
+      defaultUrlPath
+      translatedTitle
       __typename
     }
     __typename
@@ -50,6 +59,7 @@ query KAClassroom_GetCourse($courseId: String!, $region: String!, $locale: Strin
 
 fragment LearnableContentBasic on LearnableContent {
   id
+  contentDescriptor
   urlWithinTopic
   translatedTitle
   __typename
