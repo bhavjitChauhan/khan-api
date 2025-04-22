@@ -23849,4 +23849,16 @@ fragment LearnableContentBasic on LearnableContent {
     __typename
   }
 }`,
+  classroomByIdQuery: `query classroomByIdQuery($classroomId: String!) {
+  coach: user {
+    id
+    classroom(id: $classroomId) {
+      id
+      cacheId
+      isChildAssignmentsClassroom
+      __typename
+    }
+    __typename
+  }
+}`,
 }

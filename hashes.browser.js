@@ -855,4 +855,5 @@ hashes = {
   essayTextHistory: 3727824282,
   getInProgressPracticeTasksForUser: 4252401097,
   writingCoachAssignmentReport: 1833883088,
+  classroomByIdQuery: 462030571,
 }
