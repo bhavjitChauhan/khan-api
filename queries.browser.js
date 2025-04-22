@@ -10500,6 +10500,11 @@ fragment gtp_essayScoresFragment on EssayScores {
       flaggedCategories
       responseWasStoppedByUser
       traceID
+      imageMetadata {
+        id
+        llmSummary
+        __typename
+      }
       __typename
     }
     blooketQuestionSet {

@@ -28,6 +28,11 @@ query guideTranscript($transcriptId: String!) {
       flaggedCategories
       responseWasStoppedByUser
       traceID
+      imageMetadata {
+        id
+        llmSummary
+        __typename
+      }
       __typename
     }
     blooketQuestionSet {
