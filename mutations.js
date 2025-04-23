@@ -13664,4 +13664,146 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
+  KAClassroom_AttemptProblem: `mutation KAClassroom_AttemptProblem($input: AttemptProblemInput!) {
+  attemptProblem(attempt: $input) {
+    result {
+      updatedUserExercise: userExercise {
+        ...taskUserExerciseFields
+        __typename
+      }
+      updatedTask {
+        ... on PracticeTask {
+          ...singleExercisePracticeTaskFields
+          __typename
+        }
+        ... on TopicQuizTask {
+          ...mixedExerciseQuizTaskFields
+          __typename
+        }
+        ... on TopicUnitTestTask {
+          ...mixedExerciseUnitTestTaskFields
+          __typename
+        }
+        ... on SubjectChallengeTask {
+          ...mixedExerciseCourseChallengeTaskFields
+          __typename
+        }
+        ... on MasteryChallengeTask {
+          ...mixedExerciseMasteryChallengeTaskFields
+          __typename
+        }
+        __typename
+      }
+      error {
+        code
+        debugMessage
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment mixedExerciseCourseChallengeTaskFields on SubjectChallengeTask {
+  id
+  key
+  isCompleted
+  taskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}
+
+fragment mixedExerciseMasteryChallengeTaskFields on MasteryChallengeTask {
+  id
+  key
+  expirationTime
+  isCompleted
+  taskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}
+
+fragment mixedExerciseQuizTaskFields on TopicQuizTask {
+  id
+  key
+  contentKey
+  isCompleted
+  taskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}
+
+fragment mixedExerciseUnitTestTaskFields on TopicUnitTestTask {
+  id
+  key
+  contentKey
+  isCompleted
+  taskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}
+
+fragment singleExercisePracticeTaskFields on PracticeTask {
+  id
+  key
+  contentKey
+  bonusReservedItems
+  bonusReservedItemsCompleted
+  bonusTaskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  exerciseLength
+  isCompleted
+  reservedItems
+  reservedItemsCompleted
+  taskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}
+
+fragment taskExerciseFields on Exercise {
+  id
+  contentKind
+  isDoAll: isQuiz
+  numAssessmentItems
+  problemTypeKind
+  slug
+  translatedDisplayName
+  __typename
+}
+
+fragment taskProblemAttemptHistoryFields on TaskProblemAttempt {
+  correct
+  seenHint
+  itemId
+  __typename
+}
+
+fragment taskUserExerciseFields on UserExercise {
+  exercise {
+    ...taskExerciseFields
+    __typename
+  }
+  lastAttemptNumber
+  lastCountHints
+  totalDone
+  __typename
+}`,
 }

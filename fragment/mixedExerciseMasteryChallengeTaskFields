@@ -1,0 +1,12 @@
+fragment mixedExerciseMasteryChallengeTaskFields on MasteryChallengeTask {
+  id
+  key
+  expirationTime
+  isCompleted
+  taskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}

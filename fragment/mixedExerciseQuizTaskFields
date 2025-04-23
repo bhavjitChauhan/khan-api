@@ -1,0 +1,12 @@
+fragment mixedExerciseQuizTaskFields on TopicQuizTask {
+  id
+  key
+  contentKey
+  isCompleted
+  taskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}

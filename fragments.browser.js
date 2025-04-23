@@ -2820,4 +2820,51 @@ query ActivitiesList {
   }
   __typename
 }`,
+  mixedExerciseCourseChallengeTaskFields: `fragment mixedExerciseCourseChallengeTaskFields on SubjectChallengeTask {
+  id
+  key
+  isCompleted
+  taskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}`,
+  mixedExerciseMasteryChallengeTaskFields: `fragment mixedExerciseMasteryChallengeTaskFields on MasteryChallengeTask {
+  id
+  key
+  expirationTime
+  isCompleted
+  taskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}`,
+  mixedExerciseQuizTaskFields: `fragment mixedExerciseQuizTaskFields on TopicQuizTask {
+  id
+  key
+  contentKey
+  isCompleted
+  taskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}`,
+  mixedExerciseUnitTestTaskFields: `fragment mixedExerciseUnitTestTaskFields on TopicUnitTestTask {
+  id
+  key
+  contentKey
+  isCompleted
+  taskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}`,
 }

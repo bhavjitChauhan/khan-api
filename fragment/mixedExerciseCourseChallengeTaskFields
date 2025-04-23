@@ -1,0 +1,11 @@
+fragment mixedExerciseCourseChallengeTaskFields on SubjectChallengeTask {
+  id
+  key
+  isCompleted
+  taskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}

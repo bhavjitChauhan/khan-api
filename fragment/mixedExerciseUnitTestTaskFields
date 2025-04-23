@@ -1,0 +1,12 @@
+fragment mixedExerciseUnitTestTaskFields on TopicUnitTestTask {
+  id
+  key
+  contentKey
+  isCompleted
+  taskAttemptHistory {
+    ...taskProblemAttemptHistoryFields
+    __typename
+  }
+  taskType
+  __typename
+}
