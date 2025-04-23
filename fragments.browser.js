@@ -2738,6 +2738,7 @@ query ActivitiesList {
   singleExercisePracticeTaskFields: `fragment singleExercisePracticeTaskFields on PracticeTask {
   id
   key
+  contentKey
   bonusReservedItems
   bonusReservedItemsCompleted
   bonusTaskAttemptHistory {

@@ -19,6 +19,7 @@ query getCoachAssignmentReport($assignmentId: String!, $teacherKaid: String!) {
         cacheId
         name
         signupCode
+        isChildAssignmentsClassroom
         __typename
       }
       contents {

@@ -20456,6 +20456,7 @@ fragment UserFields on User {
         cacheId
         name
         signupCode
+        isChildAssignmentsClassroom
         __typename
       }
       contents {

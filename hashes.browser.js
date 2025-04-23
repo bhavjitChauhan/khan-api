@@ -722,7 +722,7 @@ hashes = {
   interimAssessmentCheckQuery: 1693632382,
   StreakQuery: 3728201606,
   essaySessionHistory: 2369643136,
-  getCoachAssignmentReport: 3949432854,
+  getCoachAssignmentReport: 3259467261,
   previewTeacherToolsActivatedEmail: 831584000,
   SkillsToProficient_OverallProficiency: 2114668432,
   ActiveAssignmentsAndGoalsQuery: 3443580987,
