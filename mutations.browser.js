@@ -13806,4 +13806,13 @@ fragment taskUserExerciseFields on UserExercise {
   totalDone
   __typename
 }`,
+  KAClassroom_CreateMasteryAssignment: `mutation KAClassroom_CreateMasteryAssignment($input: CreateMasteryAssignmentsInput!) {
+  createMasteryAssignments(input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

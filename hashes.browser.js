@@ -856,4 +856,5 @@ hashes = {
   getInProgressPracticeTasksForUser: 4252401097,
   writingCoachAssignmentReport: 1833883088,
   classroomByIdQuery: 462030571,
+  KAClassroom_GetCourseUnits: 2122950462,
 }

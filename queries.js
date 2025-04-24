@@ -23862,4 +23862,20 @@ fragment LearnableContentBasic on LearnableContent {
     __typename
   }
 }`,
+  KAClassroom_GetCourseUnits: `query KAClassroom_GetCourseUnits($courseId: String!) {
+  courseById(id: $courseId) {
+    id
+    unitChildren {
+      id
+      translatedTitle
+      filteredContent(kinds: ["Video", "Article"]) {
+        id
+        contentKind
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
