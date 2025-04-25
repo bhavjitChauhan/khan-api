@@ -13815,4 +13815,13 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
+  ApproveUMGsForCourseSISs: `mutation ApproveUMGsForCourseSISs($districtID: ID!, $domainID: String!, $approvedCourseGroups: [ApprovedCourseGroup!]!) {
+  approveUMGsForCourseSISs(
+    districtID: $districtID
+    domainID: $domainID
+    approvedCourseGroups: $approvedCourseGroups
+  ) {
+    __typename
+  }
+}`,
 }
