@@ -13824,4 +13824,14 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
+  RemarkDistrictClass: `mutation RemarkDistrictClass($classDescriptor: String!, $eduOrgID: String!, $grade: DistrictGradeLevel!) {
+  remarkDistrictClass(
+    classDescriptor: $classDescriptor
+    eduOrgID: $eduOrgID
+    grade: $grade
+  ) {
+    succeeded
+    __typename
+  }
+}`,
 }

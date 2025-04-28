@@ -47,6 +47,11 @@ query getClassList {
           }
           __typename
         }
+        teacherDirectedGrade {
+          id
+          name
+          __typename
+        }
         isManuallyUnmarked
         classWillBeRemovedInDays
         __typename

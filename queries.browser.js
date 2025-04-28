@@ -5354,6 +5354,11 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
           }
           __typename
         }
+        teacherDirectedGrade {
+          id
+          name
+          __typename
+        }
         isManuallyUnmarked
         classWillBeRemovedInDays
         __typename
@@ -5626,6 +5631,11 @@ fragment StudentField2 on StudentsPage {
           locality
           __typename
         }
+        __typename
+      }
+      teacherDirectedGrade {
+        id
+        name
         __typename
       }
       isManuallyUnmarked

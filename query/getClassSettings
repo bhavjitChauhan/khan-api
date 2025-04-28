@@ -57,6 +57,11 @@ query getClassSettings($classDescriptor: String!) {
         }
         __typename
       }
+      teacherDirectedGrade {
+        id
+        name
+        __typename
+      }
       isManuallyUnmarked
       __typename
     }
