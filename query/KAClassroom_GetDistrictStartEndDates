@@ -1,0 +1,17 @@
+query KAClassroom_GetDistrictStartEndDates($classCode: String!) {
+  classroom(classCode: $classCode) {
+    id
+    cacheId
+    classroomDistrictInfo {
+      id
+      district {
+        id
+        schoolYearStart
+        schoolYearEnd
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

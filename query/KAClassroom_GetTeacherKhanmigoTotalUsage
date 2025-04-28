@@ -1,0 +1,35 @@
+query KAClassroom_GetTeacherKhanmigoTotalUsage($filter: KhanmigoTeacherFilters!) {
+  teacherKhanmigoUsage(filter: $filter) {
+    overall {
+      possibleUsers
+      usersWithUsage
+      percentUsersWithUsage
+      chats
+      avgChatsPerUsersWithUsage
+      avgChatsPerPossibleUsers
+      flaggedChats
+      avgFlaggedChatsPerUsersWithUsage
+      avgFlaggedChatsPerPossibleUsers
+      messages
+      avgMessagesPerChat
+      avgMessagesPerUserWithUsage
+      avgMessagesPerPossibleUsers
+      __typename
+    }
+    byStudent {
+      student {
+        id
+        kaid
+        coachNickname
+        __typename
+      }
+      chats
+      flaggedChats
+      messages
+      avgMessagesPerChat
+      activities
+      __typename
+    }
+    __typename
+  }
+}

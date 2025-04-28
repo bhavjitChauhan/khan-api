@@ -23888,4 +23888,92 @@ fragment LearnableContentBasic on LearnableContent {
     __typename
   }
 }`,
+  KAClassroom_GetDistrictStartEndDates: `query KAClassroom_GetDistrictStartEndDates($classCode: String!) {
+  classroom(classCode: $classCode) {
+    id
+    cacheId
+    classroomDistrictInfo {
+      id
+      district {
+        id
+        schoolYearStart
+        schoolYearEnd
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  KAClassroom_GetStudentSelectorStudents: `query KAClassroom_GetStudentSelectorStudents($classDescriptor: String!, $aiGuideEnabledStudentsOnly: Boolean!) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    studentKaidsAndNicknames {
+      id
+      kaid
+      coachNickname
+      __typename
+    }
+    students @include(if: $aiGuideEnabledStudentsOnly) {
+      id
+      kaid
+      hasAccessToAIGuideLearner
+      isAIGuideEnabled
+      __typename
+    }
+    __typename
+  }
+}`,
+  KAClassroom_GetTeacherKhanmigoTotalUsage: `query KAClassroom_GetTeacherKhanmigoTotalUsage($filter: KhanmigoTeacherFilters!) {
+  teacherKhanmigoUsage(filter: $filter) {
+    overall {
+      possibleUsers
+      usersWithUsage
+      percentUsersWithUsage
+      chats
+      avgChatsPerUsersWithUsage
+      avgChatsPerPossibleUsers
+      flaggedChats
+      avgFlaggedChatsPerUsersWithUsage
+      avgFlaggedChatsPerPossibleUsers
+      messages
+      avgMessagesPerChat
+      avgMessagesPerUserWithUsage
+      avgMessagesPerPossibleUsers
+      __typename
+    }
+    byStudent {
+      student {
+        id
+        kaid
+        coachNickname
+        __typename
+      }
+      chats
+      flaggedChats
+      messages
+      avgMessagesPerChat
+      activities
+      __typename
+    }
+    __typename
+  }
+}`,
+  KAClassroom_GetTeacherKhanmigoUsageOverTime: `query KAClassroom_GetTeacherKhanmigoUsageOverTime($filter: KhanmigoTeacherFilters!) {
+  teacherKhanmigoUsage(filter: $filter) {
+    groupType
+    overTime {
+      rangeStartDate
+      rangeEndDate
+      usage {
+        usersWithUsage
+        percentUsersWithUsage
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }

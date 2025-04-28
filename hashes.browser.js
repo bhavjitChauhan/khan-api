@@ -857,4 +857,8 @@ hashes = {
   writingCoachAssignmentReport: 1833883088,
   classroomByIdQuery: 462030571,
   KAClassroom_GetCourseUnits: 2122950462,
+  KAClassroom_GetDistrictStartEndDates: 1600146006,
+  KAClassroom_GetStudentSelectorStudents: 1863652396,
+  KAClassroom_GetTeacherKhanmigoTotalUsage: 3096991441,
+  KAClassroom_GetTeacherKhanmigoUsageOverTime: 3103055104,
 }

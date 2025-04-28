@@ -1,0 +1,20 @@
+query KAClassroom_GetStudentSelectorStudents($classDescriptor: String!, $aiGuideEnabledStudentsOnly: Boolean!) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    studentKaidsAndNicknames {
+      id
+      kaid
+      coachNickname
+      __typename
+    }
+    students @include(if: $aiGuideEnabledStudentsOnly) {
+      id
+      kaid
+      hasAccessToAIGuideLearner
+      isAIGuideEnabled
+      __typename
+    }
+    __typename
+  }
+}

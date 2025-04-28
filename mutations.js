@@ -13834,4 +13834,19 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
+  KAClassroom_GetOrCreateGemChallenge: `mutation KAClassroom_GetOrCreateGemChallenge($input: GemChallengeInput!) {
+  getOrCreateGemChallenge(input: $input) {
+    gemChallenge {
+      classroomId
+      targetGems
+      currentClassroomGems
+      __typename
+    }
+    error {
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
