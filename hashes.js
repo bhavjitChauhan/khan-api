@@ -142,7 +142,7 @@ export default {
   FlaggedFeedback: 2069690321,
   FlaggedPrograms: 2533089937,
   footerDomainsQuery: 1787263692,
-  getAccountSettings: 3911633659,
+  getAccountSettings: 526070863,
   getActiveDonationAsks: 3597106041,
   getAIGuideWaitlistStatus: 2365343376,
   getAllBadges: 2975773868,

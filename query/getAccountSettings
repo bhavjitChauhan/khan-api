@@ -11,6 +11,7 @@ query getAccountSettings($targetKaid: String) {
     id
     isChild
     isParent
+    isTeacher
     hasUserOptedOutFromABTesting
     tosForFormalTeacherStatus
     affiliationCountryCode
@@ -78,6 +79,7 @@ query getAccountSettings($targetKaid: String) {
       __typename
     }
     hasChildren
+    hasClasses
     includesDistrictOwnedData
     includesCentrallyOwnedDistrictData
     badgeCounts

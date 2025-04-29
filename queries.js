@@ -4929,6 +4929,7 @@ fragment UserFields on User {
     id
     isChild
     isParent
+    isTeacher
     hasUserOptedOutFromABTesting
     tosForFormalTeacherStatus
     affiliationCountryCode
@@ -4996,6 +4997,7 @@ fragment UserFields on User {
       __typename
     }
     hasChildren
+    hasClasses
     includesDistrictOwnedData
     includesCentrallyOwnedDistrictData
     badgeCounts
