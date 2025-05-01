@@ -8691,6 +8691,7 @@ fragment entry on TeamPageEntryForEditing {
         id
         cacheId
         signupCode
+        name
         __typename
       }
       __typename

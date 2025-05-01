@@ -22,6 +22,7 @@ mutation signupUnderAgeGateMutation($username: String!, $password: String!, $bir
         id
         cacheId
         signupCode
+        name
         __typename
       }
       __typename
