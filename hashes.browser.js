@@ -861,4 +861,5 @@ hashes = {
   KAClassroom_GetStudentSelectorStudents: 1863652396,
   KAClassroom_GetTeacherKhanmigoTotalUsage: 3096991441,
   KAClassroom_GetTeacherKhanmigoUsageOverTime: 3103055104,
+  KAClassroom_GetAiGuideAssignableActivities: 3866064670,
 }

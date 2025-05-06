@@ -23978,4 +23978,19 @@ fragment LearnableContentBasic on LearnableContent {
     __typename
   }
 }`,
+  KAClassroom_GetAiGuideAssignableActivities: `query KAClassroom_GetAiGuideAssignableActivities {
+  aiGuideAssignableActivities {
+    id
+    configName
+    contentID
+    reportingLabelID
+    teacherToolData {
+      description
+      title
+      urlSlug
+      __typename
+    }
+    __typename
+  }
+}`,
 }
