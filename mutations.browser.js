@@ -13850,4 +13850,15 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
+  AwardGemsMutation: `mutation AwardGemsMutation($input: AwardGemsInput!) {
+  awardGems(input: $input) {
+    success
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }

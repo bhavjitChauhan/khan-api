@@ -838,7 +838,7 @@ export default {
   khanmigoToolsAvailableTeacherTools: 2027294001,
   khanmigoToolsFavoritedTeacherTools: 566875817,
   khanmigoToolsLocalesForTeacherToolsBanner: 1321691557,
-  KAClassroom_GetActionableInsights: 3043823835,
+  KAClassroom_GetActionableInsights: 653321811,
   khanmigoToolsCoachedClassrooms: 190625030,
   KAClassroom_GetClassroomsStudents: 3015652722,
   KAClassroom_GetExercisesGroup: 1173567619,
@@ -862,4 +862,7 @@ export default {
   KAClassroom_GetTeacherKhanmigoTotalUsage: 3096991441,
   KAClassroom_GetTeacherKhanmigoUsageOverTime: 3103055104,
   KAClassroom_GetAiGuideAssignableActivities: 3866064670,
+  KAClassroom_GetCoursesAndUnits: 108948170,
+  KAClassroom_GetSkillsLevels: 2592326261,
+  KAClassroom_GetSkillsMetadata: 3976940739,
 }

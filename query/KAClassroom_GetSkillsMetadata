@@ -1,0 +1,47 @@
+query KAClassroom_GetSkillsMetadata($selectedMasteryCourseIds: [String]!, $classDescriptor: String!, $region: String!, $locale: String!) {
+  classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    studentKaidsAndNicknames {
+      id
+      kaid
+      coachNickname
+      __typename
+    }
+    __typename
+  }
+  coursesByIds(ids: $selectedMasteryCourseIds) {
+    id
+    translatedTitle
+    unitChildren {
+      id
+      translatedTitle
+      filteredContent(kinds: ["Exercise"]) {
+        ... on Exercise {
+          id
+          translatedTitle
+          translatedDescription
+          defaultUrlPath
+          mappedStandards(region: $region, locale: $locale) {
+            id
+            standardId
+            __typename
+          }
+          topicPaths {
+            path {
+              id
+              __typename
+            }
+            __typename
+          }
+          imageUrl
+          imageUrl256
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

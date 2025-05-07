@@ -23362,6 +23362,8 @@ fragment assessmentItemFields on AssessmentItem {
       id
       cacheId
       name
+      descriptor
+      signupCode
       __typename
     }
     __typename
@@ -23992,6 +23994,92 @@ fragment LearnableContentBasic on LearnableContent {
       description
       title
       urlSlug
+      __typename
+    }
+    __typename
+  }
+}`,
+  KAClassroom_GetCoursesAndUnits: `query KAClassroom_GetCoursesAndUnits($selectedMasteryCourseIds: [String]!) {
+  coursesByIds(ids: $selectedMasteryCourseIds) {
+    id
+    slug
+    translatedTitle
+    unitChildren {
+      ...CourseUnit
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment CourseUnit on Unit {
+  id
+  translatedTitle
+  learnableContentSummary {
+    countExercises
+    __typename
+  }
+  __typename
+}`,
+  KAClassroom_GetSkillsLevels: `query KAClassroom_GetSkillsLevels($classDescriptor: String!, $skillIds: [String]!, $studentKaid: String) {
+  teacherOverallProgressReport(
+    classroomDescriptor: $classDescriptor
+    filters: {studentKaid: $studentKaid}
+  ) {
+    skillsLevels(skillIds: $skillIds) {
+      skillId
+      studentLevels {
+        studentKaid
+        skillLevel
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  KAClassroom_GetSkillsMetadata: `query KAClassroom_GetSkillsMetadata($selectedMasteryCourseIds: [String]!, $classDescriptor: String!, $region: String!, $locale: String!) {
+  classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    studentKaidsAndNicknames {
+      id
+      kaid
+      coachNickname
+      __typename
+    }
+    __typename
+  }
+  coursesByIds(ids: $selectedMasteryCourseIds) {
+    id
+    translatedTitle
+    unitChildren {
+      id
+      translatedTitle
+      filteredContent(kinds: ["Exercise"]) {
+        ... on Exercise {
+          id
+          translatedTitle
+          translatedDescription
+          defaultUrlPath
+          mappedStandards(region: $region, locale: $locale) {
+            id
+            standardId
+            __typename
+          }
+          topicPaths {
+            path {
+              id
+              __typename
+            }
+            __typename
+          }
+          imageUrl
+          imageUrl256
+          __typename
+        }
+        __typename
+      }
       __typename
     }
     __typename

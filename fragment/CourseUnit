@@ -1,0 +1,9 @@
+fragment CourseUnit on Unit {
+  id
+  translatedTitle
+  learnableContentSummary {
+    countExercises
+    __typename
+  }
+  __typename
+}

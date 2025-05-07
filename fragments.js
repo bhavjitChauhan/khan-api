@@ -2867,4 +2867,13 @@ query ActivitiesList {
   taskType
   __typename
 }`,
+  CourseUnit: `fragment CourseUnit on Unit {
+  id
+  translatedTitle
+  learnableContentSummary {
+    countExercises
+    __typename
+  }
+  __typename
+}`,
 }

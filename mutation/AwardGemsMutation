@@ -1,0 +1,11 @@
+mutation AwardGemsMutation($input: AwardGemsInput!) {
+  awardGems(input: $input) {
+    success
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

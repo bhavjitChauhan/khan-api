@@ -1,0 +1,17 @@
+query KAClassroom_GetSkillsLevels($classDescriptor: String!, $skillIds: [String]!, $studentKaid: String) {
+  teacherOverallProgressReport(
+    classroomDescriptor: $classDescriptor
+    filters: {studentKaid: $studentKaid}
+  ) {
+    skillsLevels(skillIds: $skillIds) {
+      skillId
+      studentLevels {
+        studentKaid
+        skillLevel
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,22 @@
+query KAClassroom_GetCoursesAndUnits($selectedMasteryCourseIds: [String]!) {
+  coursesByIds(ids: $selectedMasteryCourseIds) {
+    id
+    slug
+    translatedTitle
+    unitChildren {
+      ...CourseUnit
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment CourseUnit on Unit {
+  id
+  translatedTitle
+  learnableContentSummary {
+    countExercises
+    __typename
+  }
+  __typename
+}
