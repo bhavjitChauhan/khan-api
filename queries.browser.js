@@ -24156,4 +24156,20 @@ fragment CourseUnit on Unit {
     __typename
   }
 }`,
+  khanmigoCoeditingGetLatestSnapshot: `query khanmigoCoeditingGetLatestSnapshot($threadId: String!) {
+  aiGuideThread(threadId: $threadId) {
+    id
+    coeditingDocument {
+      id
+      title
+      latestSnapshot {
+        id
+        data
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }

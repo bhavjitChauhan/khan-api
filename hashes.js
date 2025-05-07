@@ -868,4 +868,5 @@ export default {
   conflictingRecommendedCourses: 593378886,
   getLicenseOptions: 3387217432,
   productById: 1189668558,
+  khanmigoCoeditingGetLatestSnapshot: 2523646677,
 }
