@@ -2738,6 +2738,7 @@ query ActivitiesList {
   singleExercisePracticeTaskFields: `fragment singleExercisePracticeTaskFields on PracticeTask {
   id
   key
+  canRestart
   contentKey
   bonusReservedItems
   bonusReservedItemsCompleted
@@ -2846,6 +2847,7 @@ query ActivitiesList {
   mixedExerciseQuizTaskFields: `fragment mixedExerciseQuizTaskFields on TopicQuizTask {
   id
   key
+  canRestart
   contentKey
   isCompleted
   taskAttemptHistory {
@@ -2858,6 +2860,7 @@ query ActivitiesList {
   mixedExerciseUnitTestTaskFields: `fragment mixedExerciseUnitTestTaskFields on TopicUnitTestTask {
   id
   key
+  canRestart
   contentKey
   isCompleted
   taskAttemptHistory {

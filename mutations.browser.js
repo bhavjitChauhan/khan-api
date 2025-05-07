@@ -13317,6 +13317,7 @@ fragment taskAttemptHistoryFields on TaskProblemAttempt {
 fragment singleExercisePracticeTaskFields on PracticeTask {
   id
   key
+  canRestart
   contentKey
   bonusReservedItems
   bonusReservedItemsCompleted
@@ -13734,6 +13735,7 @@ fragment mixedExerciseMasteryChallengeTaskFields on MasteryChallengeTask {
 fragment mixedExerciseQuizTaskFields on TopicQuizTask {
   id
   key
+  canRestart
   contentKey
   isCompleted
   taskAttemptHistory {
@@ -13747,6 +13749,7 @@ fragment mixedExerciseQuizTaskFields on TopicQuizTask {
 fragment mixedExerciseUnitTestTaskFields on TopicUnitTestTask {
   id
   key
+  canRestart
   contentKey
   isCompleted
   taskAttemptHistory {
@@ -13760,6 +13763,7 @@ fragment mixedExerciseUnitTestTaskFields on TopicUnitTestTask {
 fragment singleExercisePracticeTaskFields on PracticeTask {
   id
   key
+  canRestart
   contentKey
   bonusReservedItems
   bonusReservedItemsCompleted
@@ -13892,6 +13896,16 @@ fragment taskUserExerciseFields on UserExercise {
   ) {
     error {
       code
+      __typename
+    }
+    __typename
+  }
+}`,
+  KAClassroom_RestartExerciseTask: `mutation KAClassroom_RestartExerciseTask($taskKey: String!) {
+  restartTask(input: {key: $taskKey}) {
+    error {
+      code
+      debugMessage
       __typename
     }
     __typename

@@ -1,6 +1,7 @@
 fragment mixedExerciseUnitTestTaskFields on TopicUnitTestTask {
   id
   key
+  canRestart
   contentKey
   isCompleted
   taskAttemptHistory {

@@ -1,6 +1,7 @@
 fragment singleExercisePracticeTaskFields on PracticeTask {
   id
   key
+  canRestart
   contentKey
   bonusReservedItems
   bonusReservedItemsCompleted

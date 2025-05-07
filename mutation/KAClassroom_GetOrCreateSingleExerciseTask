@@ -28,6 +28,7 @@ mutation KAClassroom_GetOrCreateSingleExerciseTask($exerciseId: String!, $assign
 fragment singleExercisePracticeTaskFields on PracticeTask {
   id
   key
+  canRestart
   contentKey
   bonusReservedItems
   bonusReservedItemsCompleted

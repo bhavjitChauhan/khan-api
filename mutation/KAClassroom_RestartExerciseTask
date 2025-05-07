@@ -1,0 +1,10 @@
+mutation KAClassroom_RestartExerciseTask($taskKey: String!) {
+  restartTask(input: {key: $taskKey}) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

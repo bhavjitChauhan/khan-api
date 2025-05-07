@@ -1,6 +1,7 @@
 fragment mixedExerciseQuizTaskFields on TopicQuizTask {
   id
   key
+  canRestart
   contentKey
   isCompleted
   taskAttemptHistory {
