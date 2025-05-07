@@ -1,0 +1,10 @@
+query getLicenseOptions {
+  allLicenseOptions {
+    id
+    name
+    fullName
+    deedURL
+    logoURL
+    __typename
+  }
+}

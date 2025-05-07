@@ -1,0 +1,40 @@
+query conflictingRecommendedCourses($districtID: ID!, $classroomDescriptor: String!) {
+  conflictingRecommendedCourses(
+    districtID: $districtID
+    classroomDescriptor: $classroomDescriptor
+  ) {
+    course {
+      id
+      title
+      __typename
+    }
+    recommendedUMGs {
+      unit {
+        id
+        title
+        learnableContentSummary {
+          countExercises
+          __typename
+        }
+        __typename
+      }
+      dueDate
+      __typename
+    }
+    existingUMGs {
+      unit {
+        id
+        title
+        learnableContentSummary {
+          countExercises
+          __typename
+        }
+        __typename
+      }
+      dueDate
+      isAssignedToEntireClass
+      __typename
+    }
+    __typename
+  }
+}

@@ -865,4 +865,7 @@ export default {
   KAClassroom_GetCoursesAndUnits: 108948170,
   KAClassroom_GetSkillsLevels: 2592326261,
   KAClassroom_GetSkillsMetadata: 3976940739,
+  conflictingRecommendedCourses: 593378886,
+  getLicenseOptions: 3387217432,
+  productById: 1189668558,
 }

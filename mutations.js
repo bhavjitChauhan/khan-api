@@ -13861,4 +13861,25 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
+  acceptDistrictUnitMasteryAssignmentsForCourse: `mutation acceptDistrictUnitMasteryAssignmentsForCourse($input: AcceptDistrictUnitMasteryAssignmentsForCourseInput!) {
+  acceptDistrictUnitMasteryAssignmentsForCourse(input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  dismissClassCourseRecommendation: `mutation dismissClassCourseRecommendation($classroomDescriptor: String!, $courseID: String!) {
+  dismissClassCourseRecommendation(
+    classroomDescriptor: $classroomDescriptor
+    courseID: $courseID
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

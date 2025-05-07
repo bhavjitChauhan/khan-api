@@ -1,0 +1,21 @@
+query productById($id: ID) {
+  product(id: $id) {
+    id
+    name
+    isActive
+    description
+    extProductID
+    validationBillingCountries
+    prices {
+      currency
+      extProductID
+      id
+      recurringInterval
+      recurringIntervalCount
+      type
+      unitAmount
+      __typename
+    }
+    __typename
+  }
+}

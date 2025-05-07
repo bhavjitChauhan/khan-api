@@ -1,0 +1,12 @@
+mutation dismissClassCourseRecommendation($classroomDescriptor: String!, $courseID: String!) {
+  dismissClassCourseRecommendation(
+    classroomDescriptor: $classroomDescriptor
+    courseID: $courseID
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

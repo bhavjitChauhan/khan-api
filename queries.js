@@ -24085,4 +24085,75 @@ fragment CourseUnit on Unit {
     __typename
   }
 }`,
+  conflictingRecommendedCourses: `query conflictingRecommendedCourses($districtID: ID!, $classroomDescriptor: String!) {
+  conflictingRecommendedCourses(
+    districtID: $districtID
+    classroomDescriptor: $classroomDescriptor
+  ) {
+    course {
+      id
+      title
+      __typename
+    }
+    recommendedUMGs {
+      unit {
+        id
+        title
+        learnableContentSummary {
+          countExercises
+          __typename
+        }
+        __typename
+      }
+      dueDate
+      __typename
+    }
+    existingUMGs {
+      unit {
+        id
+        title
+        learnableContentSummary {
+          countExercises
+          __typename
+        }
+        __typename
+      }
+      dueDate
+      isAssignedToEntireClass
+      __typename
+    }
+    __typename
+  }
+}`,
+  getLicenseOptions: `query getLicenseOptions {
+  allLicenseOptions {
+    id
+    name
+    fullName
+    deedURL
+    logoURL
+    __typename
+  }
+}`,
+  productById: `query productById($id: ID) {
+  product(id: $id) {
+    id
+    name
+    isActive
+    description
+    extProductID
+    validationBillingCountries
+    prices {
+      currency
+      extProductID
+      id
+      recurringInterval
+      recurringIntervalCount
+      type
+      unitAmount
+      __typename
+    }
+    __typename
+  }
+}`,
 }
