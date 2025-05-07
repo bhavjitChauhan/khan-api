@@ -308,6 +308,10 @@ query getUserDevAdminGeneral($kaid: String!) {
         classWillBeRemovedInDays
         districtProvidedIdentifier
         rosterSource
+        teacherDirectedGrade {
+          id
+          __typename
+        }
         cdiAuditLogs {
           kind
           description

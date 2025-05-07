@@ -9582,6 +9582,10 @@ fragment Badge on Badge {
         classWillBeRemovedInDays
         districtProvidedIdentifier
         rosterSource
+        teacherDirectedGrade {
+          id
+          __typename
+        }
         cdiAuditLogs {
           kind
           description
