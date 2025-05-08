@@ -14726,7 +14726,7 @@ fragment tapTranslationFreshness on TAPTranslationFreshness {
     __typename
   }
 }`,
-  UserAssignments: `query UserAssignments($after: ID, $dueAfter: DateTime, $dueBefore: DateTime, $pageSize: Int, $orderBy: AssignmentOrder!, $studentListId: String, $coachKaid: String) {
+  UserAssignments: `query UserAssignments($after: ID, $dueAfter: DateTime, $dueBefore: DateTime, $pageSize: Int, $orderBy: AssignmentOrder!, $classroomDescriptor: String) {
   user {
     id
     hasAccessToAIGuideLearner
@@ -14738,8 +14738,7 @@ fragment tapTranslationFreshness on TAPTranslationFreshness {
       dueBefore: $dueBefore
       pageSize: $pageSize
       orderBy: $orderBy
-      studentListId: $studentListId
-      coachKaid: $coachKaid
+      classroomDescriptor: $classroomDescriptor
     ) {
       assignments {
         id

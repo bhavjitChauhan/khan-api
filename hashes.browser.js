@@ -493,7 +493,7 @@ hashes = {
   unprocessedAIGuideWaitlistEntries: 244207222,
   UntranslatedContentCheck: 3969709385,
   UserAfterUDIDeactivationQuery: 1867138279,
-  UserAssignments: 2163208549,
+  UserAssignments: 3025319763,
   UserAssignmentsForContent: 1698985054,
   UserAssignmentsPage: 1276239254,
   UserClassroomsInfo: 2022932455,
