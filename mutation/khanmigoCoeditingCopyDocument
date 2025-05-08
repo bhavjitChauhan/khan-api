@@ -1,0 +1,10 @@
+mutation khanmigoCoeditingCopyDocument($documentId: String!, $snapshotId: String!) {
+  copyCoeditingDocument(documentID: $documentId, snapshotID: $snapshotId) {
+    newDocumentID
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

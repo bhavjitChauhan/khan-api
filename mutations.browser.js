@@ -13911,4 +13911,14 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
+  khanmigoCoeditingCopyDocument: `mutation khanmigoCoeditingCopyDocument($documentId: String!, $snapshotId: String!) {
+  copyCoeditingDocument(documentID: $documentId, snapshotID: $snapshotId) {
+    newDocumentID
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

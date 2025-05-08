@@ -874,4 +874,5 @@ export default {
   classroomGrowthByWeek: 2929702705,
   KAClassroom_GetActivityDcul: 13195307,
   KAClassroom_GetKhanmigoClassroomsStudents: 2612107517,
+  khanmigoCoeditingDocument: 2426388558,
 }

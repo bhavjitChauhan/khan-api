@@ -24296,4 +24296,20 @@ fragment CourseUnit on Unit {
     __typename
   }
 }`,
+  khanmigoCoeditingDocument: `query khanmigoCoeditingDocument($documentId: String!) {
+  coeditingDocument(documentID: $documentId) {
+    id
+    ownerKaid
+    threadId
+    configName
+    title
+    persona
+    latestSnapshot {
+      id
+      data
+      __typename
+    }
+    __typename
+  }
+}`,
 }
