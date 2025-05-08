@@ -24171,4 +24171,88 @@ fragment CourseUnit on Unit {
     __typename
   }
 }`,
+  classroomByDescriptor: `query classroomByDescriptor($descriptor: String!) {
+  classroomByDescriptorV2(descriptor: $descriptor) {
+    id
+    cacheId
+    topics {
+      id
+      key
+      translatedTitle
+      domainSlug
+      parent {
+        id
+        translatedTitle
+        __typename
+      }
+      __typename
+    }
+    students {
+      id
+      kaid
+      coachNickname
+      __typename
+    }
+    isK4dClassroom
+    isKmapClassroom
+    classroomDistrictInfo {
+      id
+      district {
+        id
+        goal {
+          courseMasteryTargets {
+            course {
+              id
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  classroomGrowthByStudent: `query classroomGrowthByStudent($filters: ClassroomGrowthFilters!, $classroomDescriptor: String!) {
+  classroomGrowthByStudent(
+    filters: $filters
+    classroomDescriptor: $classroomDescriptor
+  ) {
+    user {
+      id
+      kaid
+      userDistrictInfos {
+        id
+        displayNameForTeacher
+        __typename
+      }
+      __typename
+    }
+    info {
+      numStudents
+      medianCMPercent
+      wowPercentChange
+      eoyPercentGuess
+      targetStatus
+      __typename
+    }
+    __typename
+  }
+}`,
+  classroomGrowthByWeek: `query classroomGrowthByWeek($filters: ClassroomGrowthFilters!, $classroomDescriptor: String!) {
+  classroomGrowthByWeek(
+    filters: $filters
+    classroomDescriptor: $classroomDescriptor
+  ) {
+    weekEndDate
+    weekStartDate
+    overallMedianCMPercent
+    selectedStudentsMedianCMPercent
+    targetPercentage
+    __typename
+  }
+}`,
 }

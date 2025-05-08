@@ -869,4 +869,7 @@ hashes = {
   getLicenseOptions: 3387217432,
   productById: 1189668558,
   khanmigoCoeditingGetLatestSnapshot: 2523646677,
+  classroomByDescriptor: 1862256425,
+  classroomGrowthByStudent: 1815107931,
+  classroomGrowthByWeek: 2929702705,
 }

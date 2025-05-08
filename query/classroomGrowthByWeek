@@ -1,0 +1,13 @@
+query classroomGrowthByWeek($filters: ClassroomGrowthFilters!, $classroomDescriptor: String!) {
+  classroomGrowthByWeek(
+    filters: $filters
+    classroomDescriptor: $classroomDescriptor
+  ) {
+    weekEndDate
+    weekStartDate
+    overallMedianCMPercent
+    selectedStudentsMedianCMPercent
+    targetPercentage
+    __typename
+  }
+}

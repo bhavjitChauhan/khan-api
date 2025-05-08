@@ -1,0 +1,45 @@
+query classroomByDescriptor($descriptor: String!) {
+  classroomByDescriptorV2(descriptor: $descriptor) {
+    id
+    cacheId
+    topics {
+      id
+      key
+      translatedTitle
+      domainSlug
+      parent {
+        id
+        translatedTitle
+        __typename
+      }
+      __typename
+    }
+    students {
+      id
+      kaid
+      coachNickname
+      __typename
+    }
+    isK4dClassroom
+    isKmapClassroom
+    classroomDistrictInfo {
+      id
+      district {
+        id
+        goal {
+          courseMasteryTargets {
+            course {
+              id
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,26 @@
+query classroomGrowthByStudent($filters: ClassroomGrowthFilters!, $classroomDescriptor: String!) {
+  classroomGrowthByStudent(
+    filters: $filters
+    classroomDescriptor: $classroomDescriptor
+  ) {
+    user {
+      id
+      kaid
+      userDistrictInfos {
+        id
+        displayNameForTeacher
+        __typename
+      }
+      __typename
+    }
+    info {
+      numStudents
+      medianCMPercent
+      wowPercentChange
+      eoyPercentGuess
+      targetStatus
+      __typename
+    }
+    __typename
+  }
+}
