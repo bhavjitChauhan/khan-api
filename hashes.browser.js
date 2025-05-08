@@ -872,4 +872,6 @@ hashes = {
   classroomByDescriptor: 1862256425,
   classroomGrowthByStudent: 1815107931,
   classroomGrowthByWeek: 2929702705,
+  KAClassroom_GetActivityDcul: 13195307,
+  KAClassroom_GetKhanmigoClassroomsStudents: 2612107517,
 }

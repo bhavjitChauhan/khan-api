@@ -24255,4 +24255,45 @@ fragment CourseUnit on Unit {
     __typename
   }
 }`,
+  KAClassroom_GetActivityDcul: `query KAClassroom_GetActivityDcul($activityID: String!) {
+  aiGuideActivityById(id: $activityID) {
+    id
+    lesson: parentTopic {
+      id
+      unit: parent {
+        id
+        course: parent {
+          id
+          domainId: parentTopicId
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  KAClassroom_GetKhanmigoClassroomsStudents: `query KAClassroom_GetKhanmigoClassroomsStudents {
+  user {
+    id
+    coachedClassrooms {
+      id
+      cacheId
+      name
+      descriptor
+      hasKADAiGuideEnrolledStudents
+      students {
+        id
+        kaid
+        coachNickname
+        hasAccessToAIGuideLearner
+        isAIGuideEnabled
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }

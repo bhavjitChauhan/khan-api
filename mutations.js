@@ -13583,9 +13583,9 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
-  KAClassroom_CreateAssignment: `mutation KAClassroom_CreateAssignment($courseSlug: String!, $classDescriptors: [String!]!, $qualifiedContentDescriptorsList: [String!], $startDate: DateTime!, $dueDate: DateTime, $isDraft: Boolean, $studentKaids: [ID], $questionSetType: ExerciseItemPickerStrategy) {
+  KAClassroom_CreateAssignment: `mutation KAClassroom_CreateAssignment($courseSlug: String!, $classDescriptors: [String!]!, $qualifiedContentDescriptorsList: [String!], $startDate: DateTime!, $dueDate: DateTime, $isDraft: Boolean, $studentKaids: [ID], $questionSetType: ExerciseItemPickerStrategy, $title: String, $instructions: String) {
   createAssignments(
-    assignment: {courseSlug: $courseSlug, classroomDescriptors: $classDescriptors, qualifiedContentDescriptorsList: $qualifiedContentDescriptorsList, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft, studentKaids: $studentKaids, exerciseItemPickerStrategy: $questionSetType}
+    assignment: {courseSlug: $courseSlug, classroomDescriptors: $classDescriptors, qualifiedContentDescriptorsList: $qualifiedContentDescriptorsList, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft, studentKaids: $studentKaids, exerciseItemPickerStrategy: $questionSetType, title: $title, instructions: $instructions}
   ) {
     assignments {
       id

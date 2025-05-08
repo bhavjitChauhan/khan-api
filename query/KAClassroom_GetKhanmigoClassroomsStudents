@@ -1,0 +1,22 @@
+query KAClassroom_GetKhanmigoClassroomsStudents {
+  user {
+    id
+    coachedClassrooms {
+      id
+      cacheId
+      name
+      descriptor
+      hasKADAiGuideEnrolledStudents
+      students {
+        id
+        kaid
+        coachNickname
+        hasAccessToAIGuideLearner
+        isAIGuideEnabled
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

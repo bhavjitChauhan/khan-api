@@ -1,0 +1,19 @@
+query KAClassroom_GetActivityDcul($activityID: String!) {
+  aiGuideActivityById(id: $activityID) {
+    id
+    lesson: parentTopic {
+      id
+      unit: parent {
+        id
+        course: parent {
+          id
+          domainId: parentTopicId
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
