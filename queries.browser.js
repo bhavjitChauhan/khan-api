@@ -26,8 +26,8 @@ queries = {
     }
     activeGrades(from: $from, upTo: $upTo, schoolIds: $schoolIds) {
       id
-      sortIndex
-      name
+      sortIndex(adminAggregateID: $districtId)
+      name(adminAggregateID: $districtId)
       __typename
     }
     activeCourseSISNumbers(
@@ -3407,11 +3407,10 @@ fragment CourseProgress on SubjectProgress {
     __typename
   }
 }`,
-  csvReportStatus: `query csvReportStatus($kaid: String!, $partnershipID: String, $districtID: String) {
+  csvReportStatus: `query csvReportStatus($kaid: String!, $partnershipID: String, $adminAggregateID: ID!) {
   getLastNAdminReportsForUser(
     kaid: $kaid
     partnershipID: $partnershipID
-    districtID: $districtID
     topNResults: 1
   ) {
     adminReports {
@@ -3451,8 +3450,8 @@ fragment CourseProgress on SubjectProgress {
           isCentrallyRostered
           activeGrades {
             id
-            name
-            sortIndex
+            name(adminAggregateID: $adminAggregateID)
+            sortIndex(adminAggregateID: $adminAggregateID)
             __typename
           }
           schools {
@@ -3497,7 +3496,12 @@ fragment CourseProgress on SubjectProgress {
         masteryEnabled
         __typename
       }
-      grades
+      gradeLevels {
+        id
+        name(adminAggregateID: $adminAggregateID)
+        sortIndex(adminAggregateID: $adminAggregateID)
+        __typename
+      }
       strandKey
       notifyByEmail
       __typename
@@ -3588,8 +3592,8 @@ fragment CourseProgress on SubjectProgress {
     rows {
       gradeLevel {
         id
-        name
-        sortIndex
+        name(adminAggregateID: $districtId)
+        sortIndex(adminAggregateID: $districtId)
         __typename
       }
       numStudentsTotal
@@ -6453,8 +6457,8 @@ fragment StudentField1 on StudentsPage {
     id
     activeGrades {
       id
-      sortIndex
-      name
+      sortIndex(adminAggregateID: $districtId)
+      name(adminAggregateID: $districtId)
       __typename
     }
     __typename
@@ -16103,7 +16107,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     __typename
   }
 }`,
-  getGradesProgress: `query getGradesProgress($filters: DistrictCourseProgressFilters!) {
+  getGradesProgress: `query getGradesProgress($filters: DistrictCourseProgressFilters!, $selectedNodeID: ID!) {
   districtCourseProgressByGrade(filters: $filters) {
     dateInfo {
       from
@@ -16126,8 +16130,8 @@ fragment contentSearchLearnableContent on LearnableContent {
     rows {
       gradeLevel {
         id
-        name
-        sortIndex
+        name(adminAggregateID: $selectedNodeID)
+        sortIndex(adminAggregateID: $selectedNodeID)
         __typename
       }
       info {
@@ -22027,8 +22031,8 @@ fragment UserFields on User {
     region
     activeGrades {
       id
-      sortIndex
-      name
+      sortIndex(adminAggregateID: $districtID)
+      name(adminAggregateID: $districtID)
       __typename
     }
     schools {

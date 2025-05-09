@@ -1,8 +1,7 @@
-query csvReportStatus($kaid: String!, $partnershipID: String, $districtID: String) {
+query csvReportStatus($kaid: String!, $partnershipID: String, $adminAggregateID: ID!) {
   getLastNAdminReportsForUser(
     kaid: $kaid
     partnershipID: $partnershipID
-    districtID: $districtID
     topNResults: 1
   ) {
     adminReports {
@@ -42,8 +41,8 @@ query csvReportStatus($kaid: String!, $partnershipID: String, $districtID: Strin
           isCentrallyRostered
           activeGrades {
             id
-            name
-            sortIndex
+            name(adminAggregateID: $adminAggregateID)
+            sortIndex(adminAggregateID: $adminAggregateID)
             __typename
           }
           schools {
@@ -88,7 +87,12 @@ query csvReportStatus($kaid: String!, $partnershipID: String, $districtID: Strin
         masteryEnabled
         __typename
       }
-      grades
+      gradeLevels {
+        id
+        name(adminAggregateID: $adminAggregateID)
+        sortIndex(adminAggregateID: $adminAggregateID)
+        __typename
+      }
       strandKey
       notifyByEmail
       __typename

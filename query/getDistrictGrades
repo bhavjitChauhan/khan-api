@@ -3,8 +3,8 @@ query getDistrictGrades($districtId: ID!) {
     id
     activeGrades {
       id
-      sortIndex
-      name
+      sortIndex(adminAggregateID: $districtId)
+      name(adminAggregateID: $districtId)
       __typename
     }
     __typename

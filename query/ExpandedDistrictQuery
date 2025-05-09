@@ -30,8 +30,8 @@ query ExpandedDistrictQuery($districtID: ID!, $districtIDStr: String!) {
     region
     activeGrades {
       id
-      sortIndex
-      name
+      sortIndex(adminAggregateID: $districtID)
+      name(adminAggregateID: $districtID)
       __typename
     }
     schools {

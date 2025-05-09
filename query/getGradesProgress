@@ -1,4 +1,4 @@
-query getGradesProgress($filters: DistrictCourseProgressFilters!) {
+query getGradesProgress($filters: DistrictCourseProgressFilters!, $selectedNodeID: ID!) {
   districtCourseProgressByGrade(filters: $filters) {
     dateInfo {
       from
@@ -21,8 +21,8 @@ query getGradesProgress($filters: DistrictCourseProgressFilters!) {
     rows {
       gradeLevel {
         id
-        name
-        sortIndex
+        name(adminAggregateID: $selectedNodeID)
+        sortIndex(adminAggregateID: $selectedNodeID)
         __typename
       }
       info {
