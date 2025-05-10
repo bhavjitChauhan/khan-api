@@ -125,7 +125,7 @@ let failed = false
 
 console.log('Fetching homepage script...')
 const html = await fetch('https://www.khanacademy.org/').then(r => r.text())
-const runtimeScriptURL = html.match(/src=(?:"|')(https?:\/\/cdn\.kastatic\.org\/genwebpack\/prod\/en\/runtime\.[\w.]+\.js)(?:"|')/)?.[1]
+const runtimeScriptURL = html.match(/src=(?:"|')(https?:\/\/cdn\.kastatic\.org\/[\w./]+runtime[\w.]+\.js)(?:"|')/)?.[1]
 if (!runtimeScriptURL) {
     console.error('Failed to find runtime script URL')
     process.exit(1)
