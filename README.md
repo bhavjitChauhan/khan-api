@@ -1,5 +1,7 @@
 # Khan API Safelist
 
+![](https://data.jsdelivr.com/v1/package/gh/bhavjitChauhan/khan-api/badge)
+
 Safelisted GraphQL documents used by Khan Academy's internal API.
 
 <details open>
@@ -8,8 +10,11 @@ Safelisted GraphQL documents used by Khan Academy's internal API.
 
 - [Documentation](https://khan-api.bhavjit.com)
 - [API Reference](https://khan-api.bhavjit.com/reference)
+- [Proxy](https://github.com/bhavjitChauhan/khan-api/tree/proxy "Khan Academy API CORS proxy")
 
 </details>
+
+This project is based on an idea originally by [WKoA](https://github.com/Reginald-Gillespie).
 
 ## Why?
 
@@ -19,7 +24,7 @@ Khan Academy's internal GraphQL API only allows a set of "safelisted" queries an
 
 ### [Khan API Library](https://github.com/bhavjitChauhan/khan-api/)
 
-Since version [0.6.0](https://github.com/bhavjitChauhan/khan-api/releases/tag/v0.6.0), the library will seemlessly fall back to using the safelist if any query is outdated.
+Since version [0.6.0](https://github.com/bhavjitChauhan/khan-api/releases/tag/v0.6.0), the library will seamlessly fall back to using the safelist if any query is outdated.
 
 ### Manual
 
