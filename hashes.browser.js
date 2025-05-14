@@ -626,7 +626,7 @@ hashes = {
   allFolders: 3440687258,
   khanLibraryCanCreateCourses: 1407808137,
   getFocusModeByClass: 3259050936,
-  getCooldownStatus: 3932999064,
+  getCooldownStatus: 2591200214,
   courseEditorAdminCourseSnapshotJsons: 1796704488,
   GuideExtensionAllowedUrls: 3439108051,
   courseEditorAdminCourseOperationJsons: 315062600,
