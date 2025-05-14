@@ -1,0 +1,82 @@
+query KAClassroom_GetClassroomAssignments($classDescriptor: String!, $dueAfter: DateTime, $dueBefore: DateTime, $includeNotPostedToStudents: Boolean!, $isDraft: Boolean, $activeCursor: ID, $draftScheduleCursor: ID) {
+  classroomByDescriptorV2(descriptor: $classDescriptor) {
+    cacheId
+    id
+    descriptor
+    activeAssignments: assignmentsPage(
+      filters: {dueAfter: $dueAfter, dueBefore: $dueBefore, isDraft: $isDraft}
+      after: $activeCursor
+    ) {
+      assignments {
+        ...ContentAssignmentFields
+        __typename
+      }
+      pageInfo {
+        nextCursor
+        __typename
+      }
+      __typename
+    }
+    draftScheduleAssignments: assignmentsPage(
+      filters: {includeNotPostedToStudents: true, dueAfter: $dueAfter, dueBefore: $dueBefore}
+      after: $draftScheduleCursor
+    ) @include(if: $includeNotPostedToStudents) {
+      assignments {
+        ...ContentAssignmentFields
+        __typename
+      }
+      pageInfo {
+        nextCursor
+        __typename
+      }
+      __typename
+    }
+    masteryAssignments(
+      contextFilter: NO_KMAP
+      activeFilter: ACTIVE
+      curationNodeLevel: UNIT
+    ) {
+      id
+      dueDate
+      unit {
+        id
+        translatedTitle
+        __typename
+      }
+      studentProgressMedian
+      studentData {
+        kaid
+        __typename
+      }
+      includeVideos
+      includeArticles
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment ContentAssignmentFields on Assignment {
+  id
+  dueDate
+  assignmentStatus
+  numStudentsCompleted
+  studentKaids
+  contents {
+    id
+    contentDescriptor
+    contentKind
+    defaultUrlPath
+    translatedTitle
+    ... on Video {
+      duration
+      __typename
+    }
+    ... on Exercise {
+      exerciseLength(useDefault: true)
+      __typename
+    }
+    __typename
+  }
+  __typename
+}

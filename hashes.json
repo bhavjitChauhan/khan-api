@@ -875,5 +875,6 @@
   "KAClassroom_GetActivityDcul": 13195307,
   "KAClassroom_GetKhanmigoClassroomsStudents": 2612107517,
   "khanmigoCoeditingDocument": 2426388558,
-  "getDistrictGoals": 3258580075
+  "getDistrictGoals": 3258580075,
+  "KAClassroom_GetClassroomAssignments": 1366227471
 }

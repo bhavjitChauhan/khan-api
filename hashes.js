@@ -876,4 +876,5 @@ export default {
   KAClassroom_GetKhanmigoClassroomsStudents: 2612107517,
   khanmigoCoeditingDocument: 2426388558,
   getDistrictGoals: 3258580075,
+  KAClassroom_GetClassroomAssignments: 1366227471,
 }
