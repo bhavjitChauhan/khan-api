@@ -615,7 +615,7 @@ hashes = {
   devadminGetKhanmigoModeratorsForDistrict: 2818001886,
   AssignmentsPageForContentItems: 1181913380,
   getDistrictDisallowDiscussions: 762796058,
-  getIndexedContentSearchResults: 3730215381,
+  getIndexedContentSearchResults: 3927897259,
   exerciseEditorQuery: 1990778416,
   getSatAccountSettings: 714630499,
   allCoacheeNames: 2231775310,
@@ -838,7 +838,7 @@ hashes = {
   khanmigoToolsAvailableTeacherTools: 2027294001,
   khanmigoToolsFavoritedTeacherTools: 566875817,
   khanmigoToolsLocalesForTeacherToolsBanner: 1321691557,
-  KAClassroom_GetActionableInsights: 653321811,
+  KAClassroom_GetActionableInsights: 2862982326,
   khanmigoToolsCoachedClassrooms: 190625030,
   KAClassroom_GetClassroomsStudents: 3015652722,
   KAClassroom_GetExercisesGroup: 1173567619,
@@ -875,4 +875,5 @@ hashes = {
   KAClassroom_GetActivityDcul: 13195307,
   KAClassroom_GetKhanmigoClassroomsStudents: 2612107517,
   khanmigoCoeditingDocument: 2426388558,
+  getDistrictGoals: 3258580075,
 }

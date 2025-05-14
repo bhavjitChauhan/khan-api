@@ -14,6 +14,29 @@ query KAClassroom_GetActionableInsights($classroomDescriptor: String) {
       signupCode
       __typename
     }
+    referencedContent {
+      id
+      title
+      __typename
+    }
+    referencedUsers {
+      id
+      kaid
+      username
+      nickname
+      __typename
+    }
+    referencedThreads {
+      id
+      flagged
+      lastUpdatedAt
+      __typename
+    }
+    referencedAssignments {
+      id
+      dueDate
+      __typename
+    }
     __typename
   }
 }

@@ -1,0 +1,33 @@
+query getDistrictGoals($districtID: ID!) {
+  districtById(districtId: $districtID) {
+    id
+    goal {
+      type
+      courseMasteryTargets {
+        course {
+          id
+          title
+          __typename
+        }
+        percentage
+        gradeLevels
+        __typename
+      }
+      khanmigoTarget {
+        percentage
+        __typename
+      }
+      learningMinutesTarget {
+        percentage
+        minutesPerWeek
+        __typename
+      }
+      skillsToProficient {
+        skillsPerWeek
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

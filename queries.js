@@ -17721,12 +17721,13 @@ fragment ProjectRevision on ProjectRevision {
     __typename
   }
 }`,
-  getIndexedContentSearchResults: `query getIndexedContentSearchResults($query: String!, $allowedTopicAncestors: [String], $contentKinds: [String], $pageNum: Int) {
+  getIndexedContentSearchResults: `query getIndexedContentSearchResults($query: String!, $allowedTopicAncestors: [String], $contentKinds: [String], $pageNum: Int, $numResults: Int) {
   searchPage(
     query: $query
     allowedTopicAncestors: $allowedTopicAncestors
     contentKinds: $contentKinds
     pageNum: $pageNum
+    numResults: $numResults
   ) {
     metadata {
       currentPage
@@ -17743,26 +17744,27 @@ fragment ProjectRevision on ProjectRevision {
       kind
       curationNode {
         id
-        iconPath
-        title
-        translatedTitle
-        description
-        translatedDescription
-        domainSlug
         contentKind
+        slug
+        iconPath
+        translatedTitle
+        translatedDescription
         relativeUrl
-        parent {
-          id
-          iconPath
-          contentKind
-          title
-          translatedTitle
-          parent {
+        topicPaths {
+          path {
             id
-            iconPath
-            contentKind
-            title
-            translatedTitle
+            kind
+            slug
+            content {
+              ... on Topic {
+                id
+                curriculumKey
+                iconPath
+                translatedTitle
+                __typename
+              }
+              __typename
+            }
             __typename
           }
           __typename
@@ -17771,32 +17773,24 @@ fragment ProjectRevision on ProjectRevision {
       }
       learnableContent {
         id
-        title
+        contentKind
+        slug
         translatedTitle
-        description
         translatedDescription
         defaultUrlPath
-        parentTopic {
-          id
-          domainSlug
-          title
-          translatedTitle
-          contentKind
-          iconPath
-          parent {
+        topicPaths {
+          path {
             id
-            title
-            translatedTitle
-            contentKind
-            relativeUrl
-            iconPath
-            parent {
-              id
-              title
-              translatedTitle
-              contentKind
-              relativeUrl
-              iconPath
+            kind
+            slug
+            content {
+              ... on Topic {
+                id
+                curriculumKey
+                iconPath
+                translatedTitle
+                __typename
+              }
               __typename
             }
             __typename
@@ -23369,6 +23363,29 @@ fragment assessmentItemFields on AssessmentItem {
       signupCode
       __typename
     }
+    referencedContent {
+      id
+      title
+      __typename
+    }
+    referencedUsers {
+      id
+      kaid
+      username
+      nickname
+      __typename
+    }
+    referencedThreads {
+      id
+      flagged
+      lastUpdatedAt
+      __typename
+    }
+    referencedAssignments {
+      id
+      dueDate
+      __typename
+    }
     __typename
   }
 }`,
@@ -24311,6 +24328,39 @@ fragment CourseUnit on Unit {
     latestSnapshot {
       id
       data
+      __typename
+    }
+    __typename
+  }
+}`,
+  getDistrictGoals: `query getDistrictGoals($districtID: ID!) {
+  districtById(districtId: $districtID) {
+    id
+    goal {
+      type
+      courseMasteryTargets {
+        course {
+          id
+          title
+          __typename
+        }
+        percentage
+        gradeLevels
+        __typename
+      }
+      khanmigoTarget {
+        percentage
+        __typename
+      }
+      learningMinutesTarget {
+        percentage
+        minutesPerWeek
+        __typename
+      }
+      skillsToProficient {
+        skillsPerWeek
+        __typename
+      }
       __typename
     }
     __typename

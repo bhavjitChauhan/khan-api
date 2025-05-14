@@ -13921,4 +13921,18 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
+  updateNickname: `mutation updateNickname($nickname: String) {
+  setSettings(nickname: $nickname) {
+    user {
+      id
+      nickname
+      __typename
+    }
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
