@@ -6514,6 +6514,12 @@ fragment gtp_taskFragment on Task {
   joinStudentMutation: `mutation joinStudentMutation($classCode: String!) {
   joinStudent(classCode: $classCode) {
     errors
+    error {
+      code
+      signupCode
+      classroomName
+      __typename
+    }
     __typename
   }
 }`,
