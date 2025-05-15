@@ -18414,6 +18414,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     id
     assignment(id: $assignmentID) {
       id
+      instructions
       title
       itemCompletionStates {
         studentKaid

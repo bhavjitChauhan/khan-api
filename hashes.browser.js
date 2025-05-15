@@ -637,7 +637,7 @@ hashes = {
   getNonProfileKhanmigoCheckoutEligibilityData: 4182812904,
   contentEditorGetAIGuideActivityRevision: 1505188525,
   GuideExtensionUserDistrictStatus: 201483435,
-  assignmentData: 142819258,
+  assignmentData: 458873595,
   districtKhanmigoActivity: 409433101,
   GetPartnership: 2276602369,
   GetPartnerships: 2436432226,

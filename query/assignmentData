@@ -3,6 +3,7 @@ query assignmentData($assignmentID: String!) {
     id
     assignment(id: $assignmentID) {
       id
+      instructions
       title
       itemCompletionStates {
         studentKaid
