@@ -567,7 +567,7 @@ export default {
   allClassroomCoachedStudentNames: 3269883250,
   previewAiGuideDisabledEmailChildrenInClassroom: 263819580,
   getMasteryAssignmentStudentProgress: 441346993,
-  CourseIntroContent: 2191456130,
+  CourseIntroContent: 3387691569,
   CourseIntroCurationNode: 4073988870,
   getUserInterests: 2604473325,
   GetAllSetsOfStandardsForRegion: 1943670336,

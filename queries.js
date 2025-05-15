@@ -16788,10 +16788,10 @@ fragment contentSearchLearnableContent on LearnableContent {
     __typename
   }
 }`,
-  CourseIntroContent: `query CourseIntroContent($descriptor: String!) {
+  CourseIntroContent: `query CourseIntroContent($descriptor: String!, $parentCourseId: String!) {
   learnableContentByDescriptors(contentDescriptors: [$descriptor]) {
     id
-    defaultUrlPath
+    urlWithinClosestAncestor(ancestorIds: [$parentCourseId])
     contentKind
     ... on Video {
       duration
