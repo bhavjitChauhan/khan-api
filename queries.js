@@ -24465,4 +24465,43 @@ fragment ContentAssignmentFields on Assignment {
     __typename
   }
 }`,
+  KAClassroom_GetDistrictTargets: `query KAClassroom_GetDistrictTargets($districtId: ID!) {
+  districtById(districtId: $districtId) {
+    id
+    goal {
+      activationTarget {
+        percentage
+        __typename
+      }
+      courseMasteryTargets {
+        course {
+          id
+          translatedTitle
+          __typename
+        }
+        percentage
+        __typename
+      }
+      khanmigoTarget {
+        percentage
+        __typename
+      }
+      learningMinutesTarget {
+        minutesPerWeek
+        percentage
+        __typename
+      }
+      skillsLeveledUp {
+        skillsPerWeek
+        __typename
+      }
+      skillsToProficient {
+        skillsPerWeek
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
