@@ -24448,4 +24448,20 @@ fragment ContentAssignmentFields on Assignment {
   }
   __typename
 }`,
+  KAClassroom_GetPracticeTaskAttemptSummary: `query KAClassroom_GetPracticeTaskAttemptSummary($taskId: String!) {
+  user {
+    id
+    exerciseData {
+      practiceAttempt(taskId: $taskId) {
+        taskKey: id
+        numAttempted
+        numCorrect
+        endingMasteryLevel: endingFpmLevel
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }
