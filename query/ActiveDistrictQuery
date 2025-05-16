@@ -10,8 +10,8 @@ query ActiveDistrictQuery($districtId: ID!, $from: DateTime, $upTo: DateTime, $s
     }
     activeGrades(from: $from, upTo: $upTo, schoolIds: $schoolIds) {
       id
-      sortIndex(adminAggregateID: $districtId)
-      name(adminAggregateID: $districtId)
+      sortIndex
+      name
       __typename
     }
     activeCourseSISNumbers(

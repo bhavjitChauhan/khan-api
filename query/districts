@@ -16,6 +16,7 @@ query districts($filter: String!, $excludeTeacherDirected: Boolean!) {
     isKmapDistrict
     isK4dDistrict
     isOldNWEA
+    isKhanClassroomDistrict
     lastRostered
     lastTestPull
     goLiveDate

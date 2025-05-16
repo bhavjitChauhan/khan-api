@@ -3,8 +3,8 @@ query DistrictActivationByGradeLevelContainerUsingNewService($districtId: ID!, $
     rows {
       gradeLevel {
         id
-        name(adminAggregateID: $districtId)
-        sortIndex(adminAggregateID: $districtId)
+        name
+        sortIndex
         __typename
       }
       numStudentsTotal

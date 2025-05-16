@@ -24,6 +24,7 @@ query districtById($districtId: String!, $excludeTeacherDirected: Boolean!) {
     onlySevereAIModeration
     isKmapDistrict
     isK4dDistrict
+    isKhanClassroomDistrict
     lastRostered
     lastTestPull
     goLiveDate
