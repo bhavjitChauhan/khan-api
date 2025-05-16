@@ -13347,6 +13347,7 @@ fragment taskExerciseFields on Exercise {
   id
   contentKind
   isDoAll: isQuiz
+  nodeSlug
   numAssessmentItems
   problemTypeKind
   slug
@@ -13793,6 +13794,7 @@ fragment taskExerciseFields on Exercise {
   id
   contentKind
   isDoAll: isQuiz
+  nodeSlug
   numAssessmentItems
   problemTypeKind
   slug

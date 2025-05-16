@@ -24519,4 +24519,26 @@ fragment ContentAssignmentFields on Assignment {
     __typename
   }
 }`,
+  GemChallenges: `query GemChallenges($userKaid: String!, $classroomDescriptors: [String!]) {
+  user(kaid: $userKaid) {
+    id
+    classrooms {
+      id
+      cacheId
+      descriptor
+      name
+      __typename
+    }
+    gemChallenges(classroomDescriptors: $classroomDescriptors) {
+      classroomDescriptor
+      targetGems
+      currentClassGems
+      userGemsContributed
+      deadline
+      reward
+      __typename
+    }
+    __typename
+  }
+}`,
 }

@@ -880,4 +880,5 @@ hashes = {
   KAClassroom_GetPracticeTaskAttemptSummary: 3693372284,
   KAClassroom_GetDistrictTargets: 490324773,
   KAClassroom_GetStudents: 2954934489,
+  GemChallenges: 1108858474,
 }

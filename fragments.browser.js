@@ -2761,6 +2761,7 @@ query ActivitiesList {
   id
   contentKind
   isDoAll: isQuiz
+  nodeSlug
   numAssessmentItems
   problemTypeKind
   slug
