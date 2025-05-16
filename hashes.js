@@ -879,4 +879,5 @@ export default {
   KAClassroom_GetClassroomAssignments: 1366227471,
   KAClassroom_GetPracticeTaskAttemptSummary: 3693372284,
   KAClassroom_GetDistrictTargets: 490324773,
+  KAClassroom_GetStudents: 2954934489,
 }

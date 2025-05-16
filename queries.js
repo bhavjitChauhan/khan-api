@@ -24504,4 +24504,19 @@ fragment ContentAssignmentFields on Assignment {
     __typename
   }
 }`,
+  KAClassroom_GetStudents: `query KAClassroom_GetStudents($classDescriptor: String!) {
+  classroomByDescriptorV2(descriptor: $classDescriptor) {
+    id
+    cacheId
+    descriptor
+    students {
+      id
+      nickname
+      coachNickname
+      email
+      __typename
+    }
+    __typename
+  }
+}`,
 }
