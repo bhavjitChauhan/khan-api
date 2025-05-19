@@ -24513,9 +24513,13 @@ fragment ContentAssignmentFields on Assignment {
     descriptor
     students {
       id
-      nickname
       coachNickname
       email
+      userDistrictInfos {
+        id
+        isActivated
+        __typename
+      }
       __typename
     }
     __typename

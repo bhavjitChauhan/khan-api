@@ -879,6 +879,6 @@ export default {
   KAClassroom_GetClassroomAssignments: 1366227471,
   KAClassroom_GetPracticeTaskAttemptSummary: 3693372284,
   KAClassroom_GetDistrictTargets: 490324773,
-  KAClassroom_GetStudents: 2954934489,
+  KAClassroom_GetStudents: 1435409384,
   GemChallenges: 1108858474,
 }
