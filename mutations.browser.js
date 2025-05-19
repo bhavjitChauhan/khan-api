@@ -13953,4 +13953,13 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
+  KAClassroom_UpdateContentAssignment: `mutation KAClassroom_UpdateContentAssignment($id: ID!, $assignment: UpdateAssignmentInput!) {
+  updateAssignment(id: $id, assignment: $assignment) {
+    assignment {
+      id
+      __typename
+    }
+    __typename
+  }
+}`,
 }

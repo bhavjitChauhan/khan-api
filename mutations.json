@@ -587,5 +587,6 @@
   "KAClassroom_RestartExerciseTask": "mutation KAClassroom_RestartExerciseTask($taskKey: String!) {\n  restartTask(input: {key: $taskKey}) {\n    error {\n      code\n      debugMessage\n      __typename\n    }\n    __typename\n  }\n}",
   "khanmigoCoeditingCopyDocument": "mutation khanmigoCoeditingCopyDocument($documentId: String!, $snapshotId: String!) {\n  copyCoeditingDocument(documentID: $documentId, snapshotID: $snapshotId) {\n    newDocumentID\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
   "updateNickname": "mutation updateNickname($nickname: String) {\n  setSettings(nickname: $nickname) {\n    user {\n      id\n      nickname\n      __typename\n    }\n    errors {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
-  "updateWritingCoachAccess": "mutation updateWritingCoachAccess {\n  updateWritingCoachAccess {\n    error {\n      code\n      debugMessage\n      __typename\n    }\n    __typename\n  }\n}"
+  "updateWritingCoachAccess": "mutation updateWritingCoachAccess {\n  updateWritingCoachAccess {\n    error {\n      code\n      debugMessage\n      __typename\n    }\n    __typename\n  }\n}",
+  "KAClassroom_UpdateContentAssignment": "mutation KAClassroom_UpdateContentAssignment($id: ID!, $assignment: UpdateAssignmentInput!) {\n  updateAssignment(id: $id, assignment: $assignment) {\n    assignment {\n      id\n      __typename\n    }\n    __typename\n  }\n}"
 }

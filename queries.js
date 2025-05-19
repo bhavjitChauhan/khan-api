@@ -24375,6 +24375,12 @@ fragment CourseUnit on Unit {
     cacheId
     id
     descriptor
+    studentKaidsAndNicknames {
+      id
+      kaid
+      coachNickname
+      __typename
+    }
     activeAssignments: assignmentsPage(
       filters: {dueAfter: $dueAfter, dueBefore: $dueBefore, isDraft: $isDraft}
       after: $activeCursor
@@ -24434,6 +24440,11 @@ fragment ContentAssignmentFields on Assignment {
   assignmentStatus
   numStudentsCompleted
   studentKaids
+  startDate
+  exerciseConfig {
+    itemPickerStrategy
+    __typename
+  }
   contents {
     id
     contentDescriptor

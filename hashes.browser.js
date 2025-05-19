@@ -876,7 +876,7 @@ hashes = {
   KAClassroom_GetKhanmigoClassroomsStudents: 2612107517,
   khanmigoCoeditingDocument: 2426388558,
   getDistrictGoals: 3258580075,
-  KAClassroom_GetClassroomAssignments: 1366227471,
+  KAClassroom_GetClassroomAssignments: 1176053868,
   KAClassroom_GetPracticeTaskAttemptSummary: 3693372284,
   KAClassroom_GetDistrictTargets: 490324773,
   KAClassroom_GetStudents: 1435409384,
