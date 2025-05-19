@@ -19373,6 +19373,7 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     essayVersion
     gettingStartedThreadID
     id
+    isAssignmentPastDueDateGracePeriod
     mostRecentEditedText
     minimumWordCount
     outline
@@ -24542,6 +24543,21 @@ fragment ContentAssignmentFields on Assignment {
       userGemsContributed
       deadline
       reward
+      __typename
+    }
+    __typename
+  }
+}`,
+  writingCoachThreadById: `query writingCoachThreadById($threadId: String!) {
+  aiGuideThread(threadId: $threadId) {
+    id
+    interactions {
+      annotations
+      answer
+      createdAt
+      flagged
+      id
+      question
       __typename
     }
     __typename

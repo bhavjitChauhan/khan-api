@@ -675,7 +675,7 @@ hashes = {
   coeditingLatestSnapshot: 2234147930,
   getAiGuideThreads: 2085710232,
   gettingStartedEssaySession: 3075146673,
-  writingCoachEssaySession: 4269686260,
+  writingCoachEssaySession: 919994486,
   getUserEmailByKaid: 3896469412,
   districtGrowthByClassroom: 2032275273,
   districtGrowthBySchool: 960990957,
@@ -881,4 +881,5 @@ hashes = {
   KAClassroom_GetDistrictTargets: 490324773,
   KAClassroom_GetStudents: 1435409384,
   GemChallenges: 1108858474,
+  writingCoachThreadById: 4124009652,
 }

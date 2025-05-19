@@ -39,6 +39,7 @@ query writingCoachEssaySession($id: String!) {
     essayVersion
     gettingStartedThreadID
     id
+    isAssignmentPastDueDateGracePeriod
     mostRecentEditedText
     minimumWordCount
     outline

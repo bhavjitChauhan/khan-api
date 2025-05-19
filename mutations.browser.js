@@ -13943,4 +13943,14 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
+  updateWritingCoachAccess: `mutation updateWritingCoachAccess {
+  updateWritingCoachAccess {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
