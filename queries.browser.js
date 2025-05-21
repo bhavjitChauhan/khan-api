@@ -18238,6 +18238,7 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
         nickname
         __typename
       }
+      expiresInSeconds
       __typename
     }
     __typename

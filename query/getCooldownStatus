@@ -13,6 +13,7 @@ query getCooldownStatus {
         nickname
         __typename
       }
+      expiresInSeconds
       __typename
     }
     __typename
