@@ -13956,11 +13956,41 @@ fragment taskUserExerciseFields on UserExercise {
   KAClassroom_UpdateContentAssignment: `mutation KAClassroom_UpdateContentAssignment($id: ID!, $assignment: UpdateAssignmentInput!) {
   updateAssignment(id: $id, assignment: $assignment) {
     assignment {
-      id
+      ...ContentAssignmentFields
       __typename
     }
     __typename
   }
+}
+
+fragment ContentAssignmentFields on Assignment {
+  id
+  dueDate
+  assignmentStatus
+  numStudentsCompleted
+  studentKaids
+  startDate
+  exerciseConfig {
+    itemPickerStrategy
+    __typename
+  }
+  contents {
+    id
+    contentDescriptor
+    contentKind
+    defaultUrlPath
+    translatedTitle
+    ... on Video {
+      duration
+      __typename
+    }
+    ... on Exercise {
+      exerciseLength(useDefault: true)
+      __typename
+    }
+    __typename
+  }
+  __typename
 }`,
   KAClassroom_GetOrCreateMixedExerciseTask: `mutation KAClassroom_GetOrCreateMixedExerciseTask($taskType: LearningTaskType!, $courseOrUnitId: String!, $positionKey: String) {
   getOrCreateExerciseTask(

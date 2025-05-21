@@ -1,13 +1,3 @@
-mutation KAClassroom_UpdateContentAssignment($id: ID!, $assignment: UpdateAssignmentInput!) {
-  updateAssignment(id: $id, assignment: $assignment) {
-    assignment {
-      ...ContentAssignmentFields
-      __typename
-    }
-    __typename
-  }
-}
-
 fragment ContentAssignmentFields on Assignment {
   id
   dueDate

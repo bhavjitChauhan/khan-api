@@ -24377,7 +24377,7 @@ fragment CourseUnit on Unit {
     __typename
   }
 }`,
-  KAClassroom_GetClassroomAssignments: `query KAClassroom_GetClassroomAssignments($classDescriptor: String!, $dueAfter: DateTime, $dueBefore: DateTime, $includeNotPostedToStudents: Boolean!, $isDraft: Boolean, $activeCursor: ID, $draftScheduleCursor: ID) {
+  KAClassroom_GetClassroomAssignments: `query KAClassroom_GetClassroomAssignments($classDescriptor: String!, $dueAfter: DateTime, $dueBefore: DateTime, $activeCursor: ID, $scheduledCursor: ID, $draftCursor: ID, $includeActive: Boolean!, $includeScheduled: Boolean!, $includeDraft: Boolean!, $includeMasteryAssignments: Boolean!) {
   classroomByDescriptorV2(descriptor: $classDescriptor) {
     cacheId
     id
@@ -24389,9 +24389,10 @@ fragment CourseUnit on Unit {
       __typename
     }
     activeAssignments: assignmentsPage(
-      filters: {dueAfter: $dueAfter, dueBefore: $dueBefore, isDraft: $isDraft}
+      filters: {dueAfter: $dueAfter, dueBefore: $dueBefore}
+      orderBy: DUE_DATE_ASC
       after: $activeCursor
-    ) {
+    ) @include(if: $includeActive) {
       assignments {
         ...ContentAssignmentFields
         __typename
@@ -24402,10 +24403,26 @@ fragment CourseUnit on Unit {
       }
       __typename
     }
-    draftScheduleAssignments: assignmentsPage(
+    scheduledAssignments: assignmentsPage(
       filters: {includeNotPostedToStudents: true, dueAfter: $dueAfter, dueBefore: $dueBefore}
-      after: $draftScheduleCursor
-    ) @include(if: $includeNotPostedToStudents) {
+      orderBy: DUE_DATE_ASC
+      after: $scheduledCursor
+    ) @include(if: $includeScheduled) {
+      assignments {
+        ...ContentAssignmentFields
+        __typename
+      }
+      pageInfo {
+        nextCursor
+        __typename
+      }
+      __typename
+    }
+    draftAssignments: assignmentsPage(
+      filters: {includeNotPostedToStudents: true, isDraft: true, dueAfter: $dueAfter, dueBefore: $dueBefore}
+      orderBy: DUE_DATE_ASC
+      after: $draftCursor
+    ) @include(if: $includeDraft) {
       assignments {
         ...ContentAssignmentFields
         __typename
@@ -24420,7 +24437,7 @@ fragment CourseUnit on Unit {
       contextFilter: NO_KMAP
       activeFilter: ACTIVE
       curationNodeLevel: UNIT
-    ) {
+    ) @include(if: $includeMasteryAssignments) {
       id
       dueDate
       unit {

@@ -2886,4 +2886,33 @@ query ActivitiesList {
   after
   __typename
 }`,
+  ContentAssignmentFields: `fragment ContentAssignmentFields on Assignment {
+  id
+  dueDate
+  assignmentStatus
+  numStudentsCompleted
+  studentKaids
+  startDate
+  exerciseConfig {
+    itemPickerStrategy
+    __typename
+  }
+  contents {
+    id
+    contentDescriptor
+    contentKind
+    defaultUrlPath
+    translatedTitle
+    ... on Video {
+      duration
+      __typename
+    }
+    ... on Exercise {
+      exerciseLength(useDefault: true)
+      __typename
+    }
+    __typename
+  }
+  __typename
+}`,
 }
