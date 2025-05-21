@@ -24574,4 +24574,82 @@ fragment ContentAssignmentFields on Assignment {
     __typename
   }
 }`,
+  KAClassroom_GetCourseChallengeTaskAttemptSummary: `query KAClassroom_GetCourseChallengeTaskAttemptSummary($taskId: String!, $courseId: String!) {
+  user {
+    id
+    exerciseData {
+      subjectChallengeAttempt(taskId: $taskId, topicId: $courseId) {
+        taskKey: id
+        numAttempted
+        numCorrect
+        skillLevelChanges {
+          ...skillLevelChangeFields
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment skillLevelChangeFields on SkillLevelChange {
+  id
+  skillId
+  after
+  __typename
+}`,
+  KAClassroom_GetQuizTaskAttemptSummary: `query KAClassroom_GetQuizTaskAttemptSummary($taskId: String!, $unitId: String!) {
+  user {
+    id
+    exerciseData {
+      quizAttempt(taskId: $taskId, topicId: $unitId) {
+        taskKey: id
+        numAttempted
+        numCorrect
+        skillLevelChanges {
+          ...skillLevelChangeFields
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment skillLevelChangeFields on SkillLevelChange {
+  id
+  skillId
+  after
+  __typename
+}`,
+  KAClassroom_GetUnitTestTaskAttemptSummary: `query KAClassroom_GetUnitTestTaskAttemptSummary($taskId: String!, $unitId: String!) {
+  user {
+    id
+    exerciseData {
+      unitTestAttempt(taskId: $taskId, topicId: $unitId) {
+        taskKey: id
+        numAttempted
+        numCorrect
+        skillLevelChanges {
+          ...skillLevelChangeFields
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment skillLevelChangeFields on SkillLevelChange {
+  id
+  skillId
+  after
+  __typename
+}`,
 }

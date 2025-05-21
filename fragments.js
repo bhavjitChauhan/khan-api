@@ -2880,4 +2880,10 @@ query ActivitiesList {
   }
   __typename
 }`,
+  skillLevelChangeFields: `fragment skillLevelChangeFields on SkillLevelChange {
+  id
+  skillId
+  after
+  __typename
+}`,
 }

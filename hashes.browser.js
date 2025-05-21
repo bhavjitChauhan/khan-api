@@ -882,4 +882,7 @@ hashes = {
   KAClassroom_GetStudents: 1435409384,
   GemChallenges: 1108858474,
   writingCoachThreadById: 4124009652,
+  KAClassroom_GetCourseChallengeTaskAttemptSummary: 4217041416,
+  KAClassroom_GetQuizTaskAttemptSummary: 1582754633,
+  KAClassroom_GetUnitTestTaskAttemptSummary: 2763519689,
 }
