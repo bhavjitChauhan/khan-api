@@ -333,7 +333,7 @@ hashes = {
   gtp_onboardingStatus: 3646852342,
   gtp_relatedContent: 3291890228,
   guideTranscript: 792705140,
-  guideTranscripts: 1302937574,
+  guideTranscripts: 2828849792,
   hasChangedAvatar: 1861878399,
   hasUsedTestPrepProductQuery: 659116580,
   hellbanActionsyQuery: 845134658,

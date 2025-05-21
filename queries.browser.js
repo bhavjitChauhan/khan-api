@@ -10567,19 +10567,21 @@ fragment gtp_essayScoresFragment on EssayScores {
     __typename
   }
 }`,
-  guideTranscripts: `query guideTranscripts($kaid: String!, $cursor: String, $startDate: DateTime, $endDate: DateTime, $moderationStatus: ModerationStatus) {
+  guideTranscripts: `query guideTranscripts($kaid: String!, $cursor: String, $startDate: DateTime, $endDate: DateTime, $moderationStatus: ModerationStatus, $limit: Int) {
   aiGuideThreads(
     kaid: $kaid
     cursor: $cursor
     startDate: $startDate
     endDate: $endDate
     moderationStatus: $moderationStatus
+    limit: $limit
   ) {
     threads {
       id
       lastUpdatedAt
       flagged
       title
+      summary
       interactions {
         id
         pageType
