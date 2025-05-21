@@ -1479,9 +1479,12 @@ fragment contentEditorLearnableContent on LearnableContentRevision {
     __typename
   }
 }`,
-  ContentForLearnableContent: `query ContentForLearnableContent($id: String!, $kind: String!, $kaLocale: KALocale!) {
-  publishedContentVersion(kaLocale: $kaLocale) {
-    contentVersion
+  ContentForLearnableContent: `query ContentForLearnableContent($id: String!, $kind: String!) {
+  content {
+    metadata {
+      commitSha
+      __typename
+    }
     __typename
   }
   learnableContent(id: $id, kind: $kind) {
@@ -1682,9 +1685,12 @@ fragment LearnableContentData on LearnableContent {
   }
   __typename
 }`,
-  ContentForPath: `query ContentForPath($path: String!, $countryCode: String!, $kaLocale: KALocale!) {
-  publishedContentVersion(kaLocale: $kaLocale) {
-    contentVersion
+  ContentForPath: `query ContentForPath($path: String!, $countryCode: String!) {
+  content {
+    metadata {
+      commitSha
+      __typename
+    }
     __typename
   }
   contentRoute(path: $path, countryCode: $countryCode) {

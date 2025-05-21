@@ -1,6 +1,9 @@
-query ContentForPath($path: String!, $countryCode: String!, $kaLocale: KALocale!) {
-  publishedContentVersion(kaLocale: $kaLocale) {
-    contentVersion
+query ContentForPath($path: String!, $countryCode: String!) {
+  content {
+    metadata {
+      commitSha
+      __typename
+    }
     __typename
   }
   contentRoute(path: $path, countryCode: $countryCode) {

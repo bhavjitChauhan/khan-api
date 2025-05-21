@@ -1,6 +1,9 @@
-query ContentForLearnableContent($id: String!, $kind: String!, $kaLocale: KALocale!) {
-  publishedContentVersion(kaLocale: $kaLocale) {
-    contentVersion
+query ContentForLearnableContent($id: String!, $kind: String!) {
+  content {
+    metadata {
+      commitSha
+      __typename
+    }
     __typename
   }
   learnableContent(id: $id, kind: $kind) {
