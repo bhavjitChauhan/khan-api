@@ -24678,4 +24678,55 @@ fragment skillLevelChangeFields on SkillLevelChange {
   after
   __typename
 }`,
+  getTeacherClassCourses: `query getTeacherClassCourses($districtID: String!, $teacherKaid: String!) {
+  districtCourseProgressByClassroom(
+    filters: {districtID: $districtID, teacherKaids: [$teacherKaid]}
+    courseID: ""
+  ) {
+    rows {
+      classroom {
+        id
+        cacheId
+        descriptor
+        name
+        __typename
+      }
+      info {
+        totalLearners
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  getTeacherClasses: `query getTeacherClasses($teacherKaid: String!) {
+  user(kaid: $teacherKaid) {
+    id
+    coachedClassrooms {
+      id
+      cacheId
+      descriptor
+      name
+      studentKaids
+      topics {
+        id
+        key
+        translatedTitle
+        domainSlug
+        __typename
+      }
+      classroomDistrictInfo {
+        id
+        district {
+          id
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }

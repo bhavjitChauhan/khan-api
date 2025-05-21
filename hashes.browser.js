@@ -885,4 +885,6 @@ hashes = {
   KAClassroom_GetCourseChallengeTaskAttemptSummary: 4217041416,
   KAClassroom_GetQuizTaskAttemptSummary: 1582754633,
   KAClassroom_GetUnitTestTaskAttemptSummary: 2763519689,
+  getTeacherClassCourses: 1612868233,
+  getTeacherClasses: 3039798597,
 }

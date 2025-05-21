@@ -1,0 +1,22 @@
+query getTeacherClassCourses($districtID: String!, $teacherKaid: String!) {
+  districtCourseProgressByClassroom(
+    filters: {districtID: $districtID, teacherKaids: [$teacherKaid]}
+    courseID: ""
+  ) {
+    rows {
+      classroom {
+        id
+        cacheId
+        descriptor
+        name
+        __typename
+      }
+      info {
+        totalLearners
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,29 @@
+query getTeacherClasses($teacherKaid: String!) {
+  user(kaid: $teacherKaid) {
+    id
+    coachedClassrooms {
+      id
+      cacheId
+      descriptor
+      name
+      studentKaids
+      topics {
+        id
+        key
+        translatedTitle
+        domainSlug
+        __typename
+      }
+      classroomDistrictInfo {
+        id
+        district {
+          id
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

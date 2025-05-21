@@ -13703,6 +13703,10 @@ fragment taskUserExerciseFields on UserExercise {
         }
         __typename
       }
+      actionResults {
+        ...attemptProblemActionResultsFields
+        __typename
+      }
       error {
         code
         debugMessage
@@ -13712,6 +13716,11 @@ fragment taskUserExerciseFields on UserExercise {
     }
     __typename
   }
+}
+
+fragment attemptProblemActionResultsFields on AttemptProblemActionResults {
+  updatedStpStreakLength
+  __typename
 }
 
 fragment mixedExerciseCourseChallengeTaskFields on SubjectChallengeTask {

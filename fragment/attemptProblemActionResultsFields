@@ -1,0 +1,4 @@
+fragment attemptProblemActionResultsFields on AttemptProblemActionResults {
+  updatedStpStreakLength
+  __typename
+}

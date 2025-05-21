@@ -2915,4 +2915,8 @@ query ActivitiesList {
   }
   __typename
 }`,
+  attemptProblemActionResultsFields: `fragment attemptProblemActionResultsFields on AttemptProblemActionResults {
+  updatedStpStreakLength
+  __typename
+}`,
 }

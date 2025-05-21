@@ -28,6 +28,10 @@ mutation KAClassroom_AttemptProblem($input: AttemptProblemInput!) {
         }
         __typename
       }
+      actionResults {
+        ...attemptProblemActionResultsFields
+        __typename
+      }
       error {
         code
         debugMessage
@@ -37,6 +41,11 @@ mutation KAClassroom_AttemptProblem($input: AttemptProblemInput!) {
     }
     __typename
   }
+}
+
+fragment attemptProblemActionResultsFields on AttemptProblemActionResults {
+  updatedStpStreakLength
+  __typename
 }
 
 fragment mixedExerciseCourseChallengeTaskFields on SubjectChallengeTask {
