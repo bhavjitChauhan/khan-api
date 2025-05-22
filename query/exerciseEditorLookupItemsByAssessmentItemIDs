@@ -1,0 +1,10 @@
+query exerciseEditorLookupItemsByAssessmentItemIDs($exerciseEditorAssessmentItemIDs: [String!]!) {
+  lookupItemsByExerciseEditorAssessmentItemIDs(
+    exerciseEditorAssessmentItemIDs: $exerciseEditorAssessmentItemIDs
+  ) {
+    itemId
+    exerciseEditorContentId
+    status
+    __typename
+  }
+}

@@ -887,4 +887,6 @@ export default {
   KAClassroom_GetUnitTestTaskAttemptSummary: 2763519689,
   getTeacherClassCourses: 1612868233,
   getTeacherClasses: 3039798597,
+  assessmentItemMetadata: 3011447873,
+  exerciseEditorLookupItemsByAssessmentItemIDs: 3677108668,
 }

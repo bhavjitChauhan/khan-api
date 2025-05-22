@@ -24734,4 +24734,65 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  assessmentItemMetadata: `query assessmentItemMetadata($assessmentItemIds: [String!]!) {
+  lookupItemsByExerciseEditorAssessmentItemIDs(
+    exerciseEditorAssessmentItemIDs: $assessmentItemIds
+  ) {
+    itemId
+    author {
+      id
+      nickname
+      __typename
+    }
+    status
+    aspectOfRigor
+    name
+    description
+    irtDifficulty
+    cttDifficulty
+    cttDiscrimination
+    presentationType
+    revisions {
+      calculatorAllowed
+      __typename
+    }
+    stimulus {
+      itemId
+      title
+      source
+      stimulusType
+      stimulusGenre
+      stimulusTopic
+      author
+      pubDate
+      copyrightStatus
+      textComplexity
+      __typename
+    }
+    eytMetadata {
+      itemId
+      conversationStarter
+      completionCriteria
+      irtDifficulty
+      __typename
+    }
+    standards {
+      itemId
+      standardId
+      type
+      __typename
+    }
+    __typename
+  }
+}`,
+  exerciseEditorLookupItemsByAssessmentItemIDs: `query exerciseEditorLookupItemsByAssessmentItemIDs($exerciseEditorAssessmentItemIDs: [String!]!) {
+  lookupItemsByExerciseEditorAssessmentItemIDs(
+    exerciseEditorAssessmentItemIDs: $exerciseEditorAssessmentItemIDs
+  ) {
+    itemId
+    exerciseEditorContentId
+    status
+    __typename
+  }
+}`,
 }
