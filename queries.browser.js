@@ -24396,7 +24396,7 @@ fragment CourseUnit on Unit {
       after: $activeCursor
     ) @include(if: $includeActive) {
       assignments {
-        ...ContentAssignmentFields
+        ...ContentAssignment
         __typename
       }
       pageInfo {
@@ -24411,7 +24411,7 @@ fragment CourseUnit on Unit {
       after: $scheduledCursor
     ) @include(if: $includeScheduled) {
       assignments {
-        ...ContentAssignmentFields
+        ...ContentAssignment
         __typename
       }
       pageInfo {
@@ -24426,7 +24426,7 @@ fragment CourseUnit on Unit {
       after: $draftCursor
     ) @include(if: $includeDraft) {
       assignments {
-        ...ContentAssignmentFields
+        ...ContentAssignment
         __typename
       }
       pageInfo {
@@ -24440,27 +24440,14 @@ fragment CourseUnit on Unit {
       activeFilter: ACTIVE
       curationNodeLevel: UNIT
     ) @include(if: $includeMasteryAssignments) {
-      id
-      dueDate
-      unit {
-        id
-        translatedTitle
-        __typename
-      }
-      studentProgressMedian
-      studentData {
-        kaid
-        __typename
-      }
-      includeVideos
-      includeArticles
+      ...MasteryAssignment
       __typename
     }
     __typename
   }
 }
 
-fragment ContentAssignmentFields on Assignment {
+fragment ContentAssignment on Assignment {
   id
   dueDate
   assignmentStatus
@@ -24487,6 +24474,24 @@ fragment ContentAssignmentFields on Assignment {
     }
     __typename
   }
+  __typename
+}
+
+fragment MasteryAssignment on MasteryAssignment {
+  id
+  dueDate
+  unit {
+    id
+    translatedTitle
+    __typename
+  }
+  studentProgressMedian
+  studentData {
+    kaid
+    __typename
+  }
+  includeVideos
+  includeArticles
   __typename
 }`,
   KAClassroom_GetPracticeTaskAttemptSummary: `query KAClassroom_GetPracticeTaskAttemptSummary($taskId: String!) {

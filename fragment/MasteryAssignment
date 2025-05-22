@@ -1,0 +1,17 @@
+fragment MasteryAssignment on MasteryAssignment {
+  id
+  dueDate
+  unit {
+    id
+    translatedTitle
+    __typename
+  }
+  studentProgressMedian
+  studentData {
+    kaid
+    __typename
+  }
+  includeVideos
+  includeArticles
+  __typename
+}

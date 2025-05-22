@@ -13965,14 +13965,14 @@ fragment taskUserExerciseFields on UserExercise {
   KAClassroom_UpdateContentAssignment: `mutation KAClassroom_UpdateContentAssignment($id: ID!, $assignment: UpdateAssignmentInput!) {
   updateAssignment(id: $id, assignment: $assignment) {
     assignment {
-      ...ContentAssignmentFields
+      ...ContentAssignment
       __typename
     }
     __typename
   }
 }
 
-fragment ContentAssignmentFields on Assignment {
+fragment ContentAssignment on Assignment {
   id
   dueDate
   assignmentStatus
@@ -14123,6 +14123,39 @@ fragment taskUserExerciseFields on UserExercise {
   lastAttemptNumber
   lastCountHints
   totalDone
+  __typename
+}`,
+  KAClassroom_UpdateMasteryAssignment: `mutation KAClassroom_UpdateMasteryAssignment($id: ID!, $dueDate: DateTime!, $studentKaids: [ID]!) {
+  updateMasteryAssignment(
+    updateMasteryAssignmentInput: {id: $id, curationNodeLevel: UNIT, dueDate: $dueDate, studentKaids: $studentKaids}
+  ) {
+    assignment {
+      ...MasteryAssignment
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment MasteryAssignment on MasteryAssignment {
+  id
+  dueDate
+  unit {
+    id
+    translatedTitle
+    __typename
+  }
+  studentProgressMedian
+  studentData {
+    kaid
+    __typename
+  }
+  includeVideos
+  includeArticles
   __typename
 }`,
 }

@@ -2919,4 +2919,50 @@ query ActivitiesList {
   updatedStpStreakLength
   __typename
 }`,
+  ContentAssignment: `fragment ContentAssignment on Assignment {
+  id
+  dueDate
+  assignmentStatus
+  numStudentsCompleted
+  studentKaids
+  startDate
+  exerciseConfig {
+    itemPickerStrategy
+    __typename
+  }
+  contents {
+    id
+    contentDescriptor
+    contentKind
+    defaultUrlPath
+    translatedTitle
+    ... on Video {
+      duration
+      __typename
+    }
+    ... on Exercise {
+      exerciseLength(useDefault: true)
+      __typename
+    }
+    __typename
+  }
+  __typename
+}`,
+  MasteryAssignment: `fragment MasteryAssignment on MasteryAssignment {
+  id
+  dueDate
+  unit {
+    id
+    translatedTitle
+    __typename
+  }
+  studentProgressMedian
+  studentData {
+    kaid
+    __typename
+  }
+  includeVideos
+  includeArticles
+  __typename
+}`,
 }

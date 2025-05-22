@@ -1,0 +1,33 @@
+mutation KAClassroom_UpdateMasteryAssignment($id: ID!, $dueDate: DateTime!, $studentKaids: [ID]!) {
+  updateMasteryAssignment(
+    updateMasteryAssignmentInput: {id: $id, curationNodeLevel: UNIT, dueDate: $dueDate, studentKaids: $studentKaids}
+  ) {
+    assignment {
+      ...MasteryAssignment
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment MasteryAssignment on MasteryAssignment {
+  id
+  dueDate
+  unit {
+    id
+    translatedTitle
+    __typename
+  }
+  studentProgressMedian
+  studentData {
+    kaid
+    __typename
+  }
+  includeVideos
+  includeArticles
+  __typename
+}
