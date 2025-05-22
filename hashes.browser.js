@@ -889,4 +889,6 @@ hashes = {
   getTeacherClasses: 3039798597,
   assessmentItemMetadata: 3011447873,
   exerciseEditorLookupItemsByAssessmentItemIDs: 3677108668,
+  KAClassroom_GetAssignmentProgressByStudent: 803790949,
+  useBypassRolePickerCurrentUserKAID: 4220139343,
 }

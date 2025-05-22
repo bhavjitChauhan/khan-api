@@ -12369,6 +12369,11 @@ fragment TaskFragment on AssessmentTask {
 }`,
   UpdatePhantomUserRole: `mutation UpdatePhantomUserRole($role: UserRole!, $operation: RoleOperation!) {
   updateUserRole(role: $role, operation: $operation) {
+    user {
+      id
+      kaid
+      __typename
+    }
     error {
       code
       __typename

@@ -1,0 +1,90 @@
+query KAClassroom_GetAssignmentProgressByStudent($assignmentFilters: CoachAssignmentFilters, $classDescriptor: String!, $pageSize: Int, $after: ID) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    descriptor
+    name
+    studentKaidsAndNicknames {
+      id
+      coachNickname
+      __typename
+    }
+    classroomDistrictInfo {
+      id
+      studentUserDistrictInfos {
+        id
+        kaid
+        sisId
+        __typename
+      }
+      __typename
+    }
+    isChildAssignmentsClassroom
+    assignmentsPage(
+      filters: $assignmentFilters
+      after: $after
+      pageSize: $pageSize
+      orderBy: DUE_DATE_ASC
+    ) {
+      assignments {
+        id
+        title
+        dueDate
+        contents {
+          id
+          translatedTitle
+          kind
+          defaultUrlPath
+          __typename
+        }
+        itemCompletionStates: itemCompletionStatesForAllStudents {
+          exerciseAttempts {
+            id
+            __typename
+          }
+          essaySession {
+            id
+            __typename
+          }
+          completedOn
+          studentKaid
+          bestScore {
+            numAttempted
+            numCorrect
+            __typename
+          }
+          activitySubmissions {
+            threadID
+            thread {
+              id
+              flagged
+              lastUpdatedAt
+              interactions {
+                id
+                answer
+                question
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+          student {
+            id
+            kaid
+            profileRoot
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      pageInfo {
+        nextCursor
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

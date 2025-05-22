@@ -1,0 +1,7 @@
+query useBypassRolePickerCurrentUserKAID {
+  user {
+    id
+    kaid
+    __typename
+  }
+}
