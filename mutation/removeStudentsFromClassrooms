@@ -1,5 +1,8 @@
-mutation removeStudentsFromClassrooms($kaids: [ID!]!, $classroomIds: [ID!]!) {
-  removeStudentsFromClassrooms(kaids: $kaids, classroomIds: $classroomIds) {
+mutation removeStudentsFromClassrooms($kaids: [ID!]!, $classroomDescriptors: [String!]!) {
+  removeStudentsFromClassrooms(
+    kaids: $kaids
+    classroomDescriptors: $classroomDescriptors
+  ) {
     coach {
       id
       kaid

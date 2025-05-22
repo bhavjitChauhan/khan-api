@@ -1,5 +1,8 @@
-mutation addStudentsToClassrooms($kaids: [ID!]!, $classroomIds: [ID!]!) {
-  addStudentsToClassrooms(kaids: $kaids, classroomIds: $classroomIds) {
+mutation addStudentsToClassrooms($kaids: [ID!]!, $classroomDescriptors: [String!]!) {
+  addStudentsToClassrooms(
+    kaids: $kaids
+    classroomDescriptors: $classroomDescriptors
+  ) {
     coach {
       id
       kaid

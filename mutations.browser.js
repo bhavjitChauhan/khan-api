@@ -232,8 +232,11 @@ mutations = {
     __typename
   }
 }`,
-  addStudentsToClassrooms: `mutation addStudentsToClassrooms($kaids: [ID!]!, $classroomIds: [ID!]!) {
-  addStudentsToClassrooms(kaids: $kaids, classroomIds: $classroomIds) {
+  addStudentsToClassrooms: `mutation addStudentsToClassrooms($kaids: [ID!]!, $classroomDescriptors: [String!]!) {
+  addStudentsToClassrooms(
+    kaids: $kaids
+    classroomDescriptors: $classroomDescriptors
+  ) {
     coach {
       id
       kaid
@@ -7629,8 +7632,11 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }`,
-  removeStudentsFromClassrooms: `mutation removeStudentsFromClassrooms($kaids: [ID!]!, $classroomIds: [ID!]!) {
-  removeStudentsFromClassrooms(kaids: $kaids, classroomIds: $classroomIds) {
+  removeStudentsFromClassrooms: `mutation removeStudentsFromClassrooms($kaids: [ID!]!, $classroomDescriptors: [String!]!) {
+  removeStudentsFromClassrooms(
+    kaids: $kaids
+    classroomDescriptors: $classroomDescriptors
+  ) {
     coach {
       id
       kaid
