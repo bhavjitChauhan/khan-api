@@ -24458,6 +24458,7 @@ fragment ContentAssignment on Assignment {
     itemPickerStrategy
     __typename
   }
+  instructions
   contents {
     id
     contentDescriptor
@@ -24889,6 +24890,28 @@ fragment skillLevelChangeFields on SkillLevelChange {
   user {
     id
     kaid
+    __typename
+  }
+}`,
+  KAClassroom_ClassroomInfoByDescriptor: `query KAClassroom_ClassroomInfoByDescriptor($classDescriptor: String!) {
+  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+    id
+    cacheId
+    founder: coach {
+      id
+      kaid
+      nickname
+      __typename
+    }
+    descriptor
+    name
+    signupCode
+    allTeachers {
+      id
+      kaid
+      nickname
+      __typename
+    }
     __typename
   }
 }`,

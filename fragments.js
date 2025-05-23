@@ -2930,6 +2930,7 @@ query ActivitiesList {
     itemPickerStrategy
     __typename
   }
+  instructions
   contents {
     id
     contentDescriptor

@@ -13994,6 +13994,7 @@ fragment ContentAssignment on Assignment {
     itemPickerStrategy
     __typename
   }
+  instructions
   contents {
     id
     contentDescriptor

@@ -876,7 +876,7 @@ export default {
   KAClassroom_GetKhanmigoClassroomsStudents: 2612107517,
   khanmigoCoeditingDocument: 2426388558,
   getDistrictGoals: 3258580075,
-  KAClassroom_GetClassroomAssignments: 3320206810,
+  KAClassroom_GetClassroomAssignments: 3645935387,
   KAClassroom_GetPracticeTaskAttemptSummary: 3693372284,
   KAClassroom_GetDistrictTargets: 490324773,
   KAClassroom_GetStudents: 1435409384,
@@ -891,4 +891,5 @@ export default {
   exerciseEditorLookupItemsByAssessmentItemIDs: 3677108668,
   KAClassroom_GetAssignmentProgressByStudent: 803790949,
   useBypassRolePickerCurrentUserKAID: 4220139343,
+  KAClassroom_ClassroomInfoByDescriptor: 3175750940,
 }
