@@ -30,8 +30,10 @@ query classroomByDescriptor($descriptor: String!) {
           courseMasteryTargets {
             course {
               id
+              translatedTitle
               __typename
             }
+            gradeLevels
             __typename
           }
           __typename

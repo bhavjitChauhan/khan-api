@@ -1,0 +1,13 @@
+query coursesUnits($courseIds: [String]!) {
+  coursesByIds(ids: $courseIds) {
+    id
+    slug
+    translatedTitle
+    units: unitChildren {
+      id
+      translatedTitle
+      __typename
+    }
+    __typename
+  }
+}

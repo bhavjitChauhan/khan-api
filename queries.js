@@ -24237,8 +24237,10 @@ fragment CourseUnit on Unit {
           courseMasteryTargets {
             course {
               id
+              translatedTitle
               __typename
             }
+            gradeLevels
             __typename
           }
           __typename
@@ -24910,6 +24912,67 @@ fragment skillLevelChangeFields on SkillLevelChange {
       id
       kaid
       nickname
+      __typename
+    }
+    __typename
+  }
+}`,
+  courseMasteryTargets: `query courseMasteryTargets($districtID: ID!) {
+  districtById(districtId: $districtID) {
+    id
+    goal {
+      courseMasteryTargets {
+        course {
+          id
+          translatedTitle
+          __typename
+        }
+        gradeLevels
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  coursesUnits: `query coursesUnits($courseIds: [String]!) {
+  coursesByIds(ids: $courseIds) {
+    id
+    slug
+    translatedTitle
+    units: unitChildren {
+      id
+      translatedTitle
+      __typename
+    }
+    __typename
+  }
+}`,
+  getSubjectForClassroom: `query getSubjectForClassroom($classroomDescriptor: String!) {
+  classroomByDescriptorV2(descriptor: $classroomDescriptor) {
+    id
+    cacheId
+    classroomDistrictInfo {
+      id
+      district {
+        id
+        goal {
+          learningMinutesTarget {
+            domains
+            __typename
+          }
+          skillsLeveledUp {
+            domains
+            __typename
+          }
+          skillsToProficient {
+            domains
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
       __typename
     }
     __typename

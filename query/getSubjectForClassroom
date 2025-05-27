@@ -1,0 +1,30 @@
+query getSubjectForClassroom($classroomDescriptor: String!) {
+  classroomByDescriptorV2(descriptor: $classroomDescriptor) {
+    id
+    cacheId
+    classroomDistrictInfo {
+      id
+      district {
+        id
+        goal {
+          learningMinutesTarget {
+            domains
+            __typename
+          }
+          skillsLeveledUp {
+            domains
+            __typename
+          }
+          skillsToProficient {
+            domains
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

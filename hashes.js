@@ -869,7 +869,7 @@ export default {
   getLicenseOptions: 3387217432,
   productById: 1189668558,
   khanmigoCoeditingGetLatestSnapshot: 2523646677,
-  classroomByDescriptor: 1862256425,
+  classroomByDescriptor: 3426496731,
   classroomGrowthByStudent: 1815107931,
   classroomGrowthByWeek: 2929702705,
   KAClassroom_GetActivityDcul: 13195307,
@@ -892,4 +892,7 @@ export default {
   KAClassroom_GetAssignmentProgressByStudent: 803790949,
   useBypassRolePickerCurrentUserKAID: 4220139343,
   KAClassroom_ClassroomInfoByDescriptor: 3175750940,
+  courseMasteryTargets: 3757724222,
+  coursesUnits: 3161677954,
+  getSubjectForClassroom: 16548227,
 }
