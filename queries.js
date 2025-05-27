@@ -22025,6 +22025,7 @@ fragment UserFields on User {
     isKmapDistrict
     isTest
     isAdministered
+    isUMGRecommendationEnabled
     partnership {
       ... on MetaDistrict {
         id
@@ -23767,8 +23768,11 @@ fragment LearnableContentBasic on LearnableContent {
     __typename
   }
 }`,
-  districtsSISCoursesQuery: `query districtsSISCoursesQuery($districtID: ID!) {
-  getCourseSISAndSisSubjectLinesForDistrict(districtID: $districtID) {
+  districtsSISCoursesQuery: `query districtsSISCoursesQuery($districtID: ID!, $satGradesOnly: Boolean!) {
+  getCourseSISAndSisSubjectLinesForDistrict(
+    districtID: $districtID
+    satGradesOnly: $satGradesOnly
+  ) {
     courseSIS {
       name
       __typename

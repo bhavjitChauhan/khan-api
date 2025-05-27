@@ -13,6 +13,7 @@ query ExpandedDistrictQuery($districtID: ID!, $districtIDStr: String!) {
     isKmapDistrict
     isTest
     isAdministered
+    isUMGRecommendationEnabled
     partnership {
       ... on MetaDistrict {
         id

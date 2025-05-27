@@ -1,5 +1,8 @@
-query districtsSISCoursesQuery($districtID: ID!) {
-  getCourseSISAndSisSubjectLinesForDistrict(districtID: $districtID) {
+query districtsSISCoursesQuery($districtID: ID!, $satGradesOnly: Boolean!) {
+  getCourseSISAndSisSubjectLinesForDistrict(
+    districtID: $districtID
+    satGradesOnly: $satGradesOnly
+  ) {
     courseSIS {
       name
       __typename
