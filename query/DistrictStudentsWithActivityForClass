@@ -1,0 +1,9 @@
+query DistrictStudentsWithActivityForClass($districtId: ID!, $classroomDescriptor: String!) {
+  districtStudentsWithActivityForClass(
+    districtId: $districtId
+    classroomDescriptor: $classroomDescriptor
+  ) {
+    id
+    __typename
+  }
+}

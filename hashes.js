@@ -500,7 +500,7 @@ export default {
   userDataForNewContentPermission: 3271565903,
   userDistrictInfoByEmailAndClassCode: 1552829798,
   UserDistrictInfosQuery: 480514913,
-  UserDistrictStudentsQuery: 3714038324,
+  UserDistrictStudentsQuery: 2210187846,
   UserDowngradedQuery: 3196139705,
   UserEmailsQuery: 1523758591,
   userForConversationNotice: 765436338,
@@ -895,4 +895,5 @@ export default {
   courseMasteryTargets: 3757724222,
   coursesUnits: 3161677954,
   getSubjectForClassroom: 16548227,
+  DistrictStudentsWithActivityForClass: 686595584,
 }

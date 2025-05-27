@@ -15169,6 +15169,10 @@ fragment AssignmentData on Assignment {
         districtProvidedEmail
         __typename
       }
+      district {
+        id
+        __typename
+      }
       __typename
     }
     studentKaidsAndNicknames {
@@ -24975,6 +24979,15 @@ fragment skillLevelChangeFields on SkillLevelChange {
       }
       __typename
     }
+    __typename
+  }
+}`,
+  DistrictStudentsWithActivityForClass: `query DistrictStudentsWithActivityForClass($districtId: ID!, $classroomDescriptor: String!) {
+  districtStudentsWithActivityForClass(
+    districtId: $districtId
+    classroomDescriptor: $classroomDescriptor
+  ) {
+    id
     __typename
   }
 }`,
