@@ -14170,4 +14170,14 @@ fragment MasteryAssignment on MasteryAssignment {
   includeArticles
   __typename
 }`,
+  loginWithMicrosoftMutation: `mutation loginWithMicrosoftMutation($continueUrl: String, $role: UserRole) {
+  loginWithMicrosoft(continueUrl: $continueUrl, role: $role) {
+    redirectUrl
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
