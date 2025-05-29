@@ -1,0 +1,8 @@
+query GetLevelOneAreas($countryCode: String!) {
+  eduOrganizationAdminAreasByCountry(countryCode: $countryCode) {
+    id
+    name
+    isoCode
+    __typename
+  }
+}

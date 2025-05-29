@@ -24996,4 +24996,19 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  GetAreasByParentId: `query GetAreasByParentId($parentID: String!) {
+  eduOrganizationAdminAreasByParentID(parentID: $parentID) {
+    id
+    name
+    __typename
+  }
+}`,
+  GetLevelOneAreas: `query GetLevelOneAreas($countryCode: String!) {
+  eduOrganizationAdminAreasByCountry(countryCode: $countryCode) {
+    id
+    name
+    isoCode
+    __typename
+  }
+}`,
 }

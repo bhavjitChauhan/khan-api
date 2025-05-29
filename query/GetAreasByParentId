@@ -1,0 +1,7 @@
+query GetAreasByParentId($parentID: String!) {
+  eduOrganizationAdminAreasByParentID(parentID: $parentID) {
+    id
+    name
+    __typename
+  }
+}

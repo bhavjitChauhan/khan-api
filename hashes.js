@@ -896,4 +896,6 @@ export default {
   coursesUnits: 3161677954,
   getSubjectForClassroom: 16548227,
   DistrictStudentsWithActivityForClass: 686595584,
+  GetAreasByParentId: 2714930537,
+  GetLevelOneAreas: 801356846,
 }
