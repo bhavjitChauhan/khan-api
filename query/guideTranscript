@@ -23,6 +23,7 @@ query guideTranscript($transcriptId: String!) {
       question
       userInputImage
       url
+      isClassroom
       createdAt
       flagged
       flaggedCategories
