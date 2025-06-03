@@ -4981,6 +4981,8 @@ fragment UserFields on User {
     googlePrimaryEmail
     facebookId
     facebookPrimaryEmail
+    microsoftId
+    microsoftPrimaryEmail
     canAccessDistrictsHomepage
     userChosenRoles
     homepage
