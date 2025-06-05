@@ -25013,4 +25013,41 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  StandardRegionPresentationsQuery: `query StandardRegionPresentationsQuery($countrySlug: String!, $regionSlug: String!, $countryAndRegionSlug: String!, $isDiscoverable: Boolean) {
+  standardRegions(isDiscoverable: $isDiscoverable, slug: $countryAndRegionSlug) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    standardRegion {
+      id
+      imageUrl
+      isDiscoverable
+      __typename
+    }
+    __typename
+  }
+  standardRegionPresentations(countrySlug: $countrySlug, regionSlug: $regionSlug) {
+    id
+    presentationSections {
+      courses {
+        id
+        relativeUrl
+        standaloneTitle
+        __typename
+      }
+      setOfStandardsId
+      displayName
+      rootStandards {
+        displayName
+        standardId
+        relativeUrl
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }

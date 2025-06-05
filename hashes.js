@@ -898,4 +898,5 @@ export default {
   DistrictStudentsWithActivityForClass: 686595584,
   GetAreasByParentId: 2714930537,
   GetLevelOneAreas: 801356846,
+  StandardRegionPresentationsQuery: 1467610038,
 }
