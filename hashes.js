@@ -899,4 +899,5 @@ export default {
   GetAreasByParentId: 2714930537,
   GetLevelOneAreas: 801356846,
   StandardRegionPresentationsQuery: 1467610038,
+  GetSubtitlesForVideo: 1316209010,
 }

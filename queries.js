@@ -25050,4 +25050,13 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  GetSubtitlesForVideo: `query GetSubtitlesForVideo($youtubeId: String!, $kaLocale: String!) {
+  subtitles(youtubeId: $youtubeId, kaLocale: $kaLocale) {
+    text
+    startTime
+    endTime
+    kaIsValid
+    __typename
+  }
+}`,
 }

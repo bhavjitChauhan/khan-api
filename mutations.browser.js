@@ -7114,6 +7114,7 @@ fragment CourseRevisionStructure on CourseRevision {
         status
         __typename
       }
+      cleverId
       __typename
     }
     isFirstLogin
@@ -13154,6 +13155,7 @@ fragment taskAttemptHistoryFields on TaskProblemAttempt {
         status
         __typename
       }
+      cleverId
       __typename
     }
     isFirstLogin
@@ -13182,6 +13184,7 @@ fragment taskAttemptHistoryFields on TaskProblemAttempt {
         status
         __typename
       }
+      cleverId
       __typename
     }
     isFirstLogin
