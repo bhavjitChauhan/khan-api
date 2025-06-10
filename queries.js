@@ -11582,6 +11582,7 @@ fragment BaseFolder on Folder {
     canAccessDistrictsHomepage
     isTeacher
     hasUnresolvedInvitations
+    isInKhanClassroomDistrict
     preferredKaLocale {
       id
       kaLocale

@@ -872,6 +872,7 @@ fragment userExerciseFields on UserExercise {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
+      isInKhanClassroomDistrict
       preferredKaLocale {
         id
         kaLocale
@@ -6953,6 +6954,7 @@ fragment CourseRevisionStructure on CourseRevision {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
+      isInKhanClassroomDistrict
       preferredKaLocale {
         id
         kaLocale
@@ -7053,6 +7055,7 @@ fragment CourseRevisionStructure on CourseRevision {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
+      isInKhanClassroomDistrict
       preferredKaLocale {
         id
         kaLocale
@@ -7084,6 +7087,7 @@ fragment CourseRevisionStructure on CourseRevision {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
+      isInKhanClassroomDistrict
       preferredKaLocale {
         id
         kaLocale
@@ -7108,6 +7112,7 @@ fragment CourseRevisionStructure on CourseRevision {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
+      isInKhanClassroomDistrict
       preferredKaLocale {
         id
         kaLocale
@@ -8574,6 +8579,7 @@ fragment entry on TeamPageEntryForEditing {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
+      isInKhanClassroomDistrict
       preferredKaLocale {
         id
         kaLocale
@@ -8627,6 +8633,7 @@ fragment entry on TeamPageEntryForEditing {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
+      isInKhanClassroomDistrict
       preferredKaLocale {
         id
         kaLocale
@@ -8656,6 +8663,7 @@ fragment entry on TeamPageEntryForEditing {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
+      isInKhanClassroomDistrict
       preferredKaLocale {
         id
         kaLocale
@@ -8694,6 +8702,7 @@ fragment entry on TeamPageEntryForEditing {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
+      isInKhanClassroomDistrict
       preferredKaLocale {
         id
         kaLocale
@@ -13149,6 +13158,7 @@ fragment taskAttemptHistoryFields on TaskProblemAttempt {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
+      isInKhanClassroomDistrict
       preferredKaLocale {
         id
         kaLocale
@@ -13178,6 +13188,7 @@ fragment taskAttemptHistoryFields on TaskProblemAttempt {
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
+      isInKhanClassroomDistrict
       preferredKaLocale {
         id
         kaLocale

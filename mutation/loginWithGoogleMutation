@@ -13,6 +13,7 @@ mutation loginWithGoogleMutation($token: String!, $birthdate: String, $linkCleve
       canAccessDistrictsHomepage
       isTeacher
       hasUnresolvedInvitations
+      isInKhanClassroomDistrict
       preferredKaLocale {
         id
         kaLocale

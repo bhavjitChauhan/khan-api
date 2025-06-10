@@ -5,6 +5,7 @@ query loggedInUserQuery {
     canAccessDistrictsHomepage
     isTeacher
     hasUnresolvedInvitations
+    isInKhanClassroomDistrict
     preferredKaLocale {
       id
       kaLocale
