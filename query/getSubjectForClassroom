@@ -4,6 +4,16 @@ query getSubjectForClassroom($classroomDescriptor: String!) {
     cacheId
     classroomDistrictInfo {
       id
+      shouldShowAutoAssignedUMGModal
+      recommendedKACourses {
+        course {
+          id
+          title
+          __typename
+        }
+        shouldShowRecommendationBanner
+        __typename
+      }
       district {
         id
         goal {

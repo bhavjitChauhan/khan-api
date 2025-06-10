@@ -1,7 +1,8 @@
-mutation dismissClassCourseRecommendation($classroomDescriptor: String!, $courseID: String!) {
+mutation dismissClassCourseRecommendation($classroomDescriptor: String!, $courseID: String!, $dismissType: DismissType!) {
   dismissClassCourseRecommendation(
     classroomDescriptor: $classroomDescriptor
     courseID: $courseID
+    dismissType: $dismissType
   ) {
     error {
       code

@@ -18,7 +18,7 @@ query conflictingRecommendedCourses($districtID: ID!, $classroomDescriptor: Stri
         }
         __typename
       }
-      dueDate
+      dueDateTime
       __typename
     }
     existingUMGs {
@@ -31,7 +31,7 @@ query conflictingRecommendedCourses($districtID: ID!, $classroomDescriptor: Stri
         }
         __typename
       }
-      dueDate
+      dueDateTime
       isAssignedToEntireClass
       __typename
     }

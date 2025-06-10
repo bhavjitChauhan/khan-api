@@ -24150,7 +24150,7 @@ fragment CourseUnit on Unit {
         }
         __typename
       }
-      dueDate
+      dueDateTime
       __typename
     }
     existingUMGs {
@@ -24163,7 +24163,7 @@ fragment CourseUnit on Unit {
         }
         __typename
       }
-      dueDate
+      dueDateTime
       isAssignedToEntireClass
       __typename
     }
@@ -24966,6 +24966,16 @@ fragment skillLevelChangeFields on SkillLevelChange {
     cacheId
     classroomDistrictInfo {
       id
+      shouldShowAutoAssignedUMGModal
+      recommendedKACourses {
+        course {
+          id
+          title
+          __typename
+        }
+        shouldShowRecommendationBanner
+        __typename
+      }
       district {
         id
         goal {

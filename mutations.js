@@ -13916,10 +13916,11 @@ fragment taskUserExerciseFields on UserExercise {
     __typename
   }
 }`,
-  dismissClassCourseRecommendation: `mutation dismissClassCourseRecommendation($classroomDescriptor: String!, $courseID: String!) {
+  dismissClassCourseRecommendation: `mutation dismissClassCourseRecommendation($classroomDescriptor: String!, $courseID: String!, $dismissType: DismissType!) {
   dismissClassCourseRecommendation(
     classroomDescriptor: $classroomDescriptor
     courseID: $courseID
+    dismissType: $dismissType
   ) {
     error {
       code
