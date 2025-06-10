@@ -847,7 +847,7 @@ hashes = {
   KAClassroom_GetContentAssignmentStatus: 3186049731,
   DistrictGradesByEduOrg: 579575613,
   KAClassroom_GetCourse: 27447980,
-  GetCourseSISGroupings: 1291171560,
+  GetCourseSISGroupings: 1174704349,
   districtsKACourseDetailsQuery: 3131533087,
   districtsKACourseMenuTopicsQuery: 720552240,
   districtsSISCoursesQuery: 3487309637,

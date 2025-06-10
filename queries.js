@@ -23673,7 +23673,7 @@ fragment LearnableContentBasic on LearnableContent {
         __typename
       }
       unitInfos {
-        dueDate
+        dueDateTime
         unit {
           id
           __typename
@@ -23693,7 +23693,7 @@ fragment LearnableContentBasic on LearnableContent {
         __typename
       }
       unitInfos {
-        dueDate
+        dueDateTime
         unit {
           id
           __typename
@@ -23713,7 +23713,7 @@ fragment LearnableContentBasic on LearnableContent {
         __typename
       }
       unitInfos {
-        dueDate
+        dueDateTime
         unit {
           id
           __typename

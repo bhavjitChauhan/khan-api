@@ -14,7 +14,7 @@ query GetCourseSISGroupings($districtID: ID!, $subjectLines: [SISSubjectLine!], 
         __typename
       }
       unitInfos {
-        dueDate
+        dueDateTime
         unit {
           id
           __typename
@@ -34,7 +34,7 @@ query GetCourseSISGroupings($districtID: ID!, $subjectLines: [SISSubjectLine!], 
         __typename
       }
       unitInfos {
-        dueDate
+        dueDateTime
         unit {
           id
           __typename
@@ -54,7 +54,7 @@ query GetCourseSISGroupings($districtID: ID!, $subjectLines: [SISSubjectLine!], 
         __typename
       }
       unitInfos {
-        dueDate
+        dueDateTime
         unit {
           id
           __typename
