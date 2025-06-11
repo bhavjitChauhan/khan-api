@@ -7099,6 +7099,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     includesKmapDistrictOwnedData
     includesK4dDistrictOwnedData
     canAccessDistrictsHomepage
+    isInKhanClassroomDistrict
     underAgeGate {
       parentEmail
       daysUntilCutoff

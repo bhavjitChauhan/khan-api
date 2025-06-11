@@ -55,6 +55,7 @@ query getFullUserProfile($kaid: String, $username: String) {
     includesKmapDistrictOwnedData
     includesK4dDistrictOwnedData
     canAccessDistrictsHomepage
+    isInKhanClassroomDistrict
     underAgeGate {
       parentEmail
       daysUntilCutoff

@@ -214,7 +214,7 @@ hashes = {
   getFlag: 1986245167,
   getFlagsSummary: 225516176,
   getFpmMasteryForTopic: 2367143383,
-  getFullUserProfile: 3044722335,
+  getFullUserProfile: 3502725779,
   getInfoForTotalStudentCountQuery: 3058507865,
   getInitialDataForPrePhantomUser: 809190493,
   getIsClassCleverLibrarySynced: 1236091707,
