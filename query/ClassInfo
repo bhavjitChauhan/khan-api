@@ -1,6 +1,5 @@
 query ClassInfo($classCode: String!) {
-  joinByClassCodeInfo(classCode: $classCode) {
-    id
+  joinByClassCodeInfoV2(classCode: $classCode) {
     cacheId
     name
     signupCode

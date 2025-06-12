@@ -835,8 +835,7 @@ fragment AssignmentCsvData on Assignment {
   }
 }`,
   ClassInfo: `query ClassInfo($classCode: String!) {
-  joinByClassCodeInfo(classCode: $classCode) {
-    id
+  joinByClassCodeInfoV2(classCode: $classCode) {
     cacheId
     name
     signupCode
@@ -25068,6 +25067,21 @@ fragment skillLevelChangeFields on SkillLevelChange {
     startTime
     endTime
     kaIsValid
+    __typename
+  }
+}`,
+  publicClassroomInfoByClassCode: `query publicClassroomInfoByClassCode($classCode: String!) {
+  joinByClassCodeInfoV2(classCode: $classCode) {
+    cacheId
+    name
+    signupCode
+    descriptor
+    includesCentrallyOwnedDistrictData
+    classroomDistrictInfo {
+      id
+      emailDomains
+      __typename
+    }
     __typename
   }
 }`,

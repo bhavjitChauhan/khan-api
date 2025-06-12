@@ -1,0 +1,15 @@
+query publicClassroomInfoByClassCode($classCode: String!) {
+  joinByClassCodeInfoV2(classCode: $classCode) {
+    cacheId
+    name
+    signupCode
+    descriptor
+    includesCentrallyOwnedDistrictData
+    classroomDistrictInfo {
+      id
+      emailDomains
+      __typename
+    }
+    __typename
+  }
+}

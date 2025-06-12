@@ -26,7 +26,7 @@ hashes = {
   checkUsername: 2149192606,
   ClassCodeByClassIdQuery: 4162490411,
   ClassDescriptorByClassCodeQuery: 1267889878,
-  ClassInfo: 2622688273,
+  ClassInfo: 121639186,
   ClassroomByCode: 2300250233,
   ClassroomByDescriptorQuery: 3861385314,
   ClassroomDistrictInfosQuery: 3368645794,
@@ -900,4 +900,5 @@ hashes = {
   GetLevelOneAreas: 801356846,
   StandardRegionPresentationsQuery: 1467610038,
   GetSubtitlesForVideo: 1316209010,
+  publicClassroomInfoByClassCode: 210518677,
 }
