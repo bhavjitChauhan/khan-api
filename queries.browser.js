@@ -5159,6 +5159,7 @@ fragment UserFields on User {
       sha
       problemType
       itemData
+      isContextInaccessible
       __typename
     }
     error {

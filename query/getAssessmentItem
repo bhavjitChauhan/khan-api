@@ -5,6 +5,7 @@ query getAssessmentItem($input: AssessmentItemInput!) {
       sha
       problemType
       itemData
+      isContextInaccessible
       __typename
     }
     error {
