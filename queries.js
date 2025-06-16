@@ -24956,6 +24956,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
     units: unitChildren {
       id
       translatedTitle
+      masteryEnabled
       __typename
     }
     __typename
