@@ -1,4 +1,4 @@
-query guideTranscripts($kaid: String!, $cursor: String, $startDate: DateTime, $endDate: DateTime, $moderationStatus: ModerationStatus, $limit: Int) {
+query guideTranscripts($kaid: String!, $cursor: String, $startDate: DateTime, $endDate: DateTime, $moderationStatus: ModerationStatus, $limit: Int, $configName: String) {
   aiGuideThreads(
     kaid: $kaid
     cursor: $cursor
@@ -6,6 +6,7 @@ query guideTranscripts($kaid: String!, $cursor: String, $startDate: DateTime, $e
     endDate: $endDate
     moderationStatus: $moderationStatus
     limit: $limit
+    configName: $configName
   ) {
     threads {
       id
