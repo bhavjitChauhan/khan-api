@@ -14195,4 +14195,24 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  schoolPickerAdminPackageCreateImportJob: `mutation schoolPickerAdminPackageCreateImportJob($csvUrls: [String!]!, $countryCode: String!) {
+  createEduOrganizationImportJob(csvUrls: $csvUrls, countryCode: $countryCode) {
+    versionID
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  schoolPickerAdminPackageCreateUploadURLs: `mutation schoolPickerAdminPackageCreateUploadURLs($numFiles: Int!) {
+  createEduOrgImportUploadURLs(numFiles: $numFiles) {
+    urls
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

@@ -25087,4 +25087,15 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  schoolPickerAdminPackageManagedCountries: `query schoolPickerAdminPackageManagedCountries {
+  user {
+    id
+    eduOrgCountriesManagesImportsFor {
+      countryCode
+      name
+      __typename
+    }
+    __typename
+  }
+}`,
 }

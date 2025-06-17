@@ -1,0 +1,10 @@
+mutation schoolPickerAdminPackageCreateUploadURLs($numFiles: Int!) {
+  createEduOrgImportUploadURLs(numFiles: $numFiles) {
+    urls
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

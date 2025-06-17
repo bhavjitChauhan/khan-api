@@ -1,0 +1,10 @@
+mutation schoolPickerAdminPackageCreateImportJob($csvUrls: [String!]!, $countryCode: String!) {
+  createEduOrganizationImportJob(csvUrls: $csvUrls, countryCode: $countryCode) {
+    versionID
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
