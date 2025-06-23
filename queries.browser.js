@@ -11553,6 +11553,7 @@ fragment BaseFolder on Folder {
     id
     localName
     kaLocale
+    isSupportedInKhanClassroom
     __typename
   }
 }`,

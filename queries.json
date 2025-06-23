@@ -372,7 +372,7 @@
   "localeMappings": "query localeMappings($includeEnglish: Boolean) {\n  locales(includeEnglish: $includeEnglish) {\n    id\n    kaLocale\n    crowdinLocale\n    status\n    displayName\n    __typename\n  }\n}",
   "localesForFlagRuleQuery": "query localesForFlagRuleQuery {\n  localesForLanguagePicker(includeEnglish: false, includeFake: false) {\n    id\n    kaLocale\n    displayName\n    __typename\n  }\n}",
   "localesForI18nSuggestBannerQuery": "query localesForI18nSuggestBannerQuery {\n  localesForLanguagePicker(includeEnglish: true, includeFake: false) {\n    id\n    localName\n    kaLocale\n    displayName\n    __typename\n  }\n}",
-  "localesForLangDropdownQuery": "query localesForLangDropdownQuery {\n  localesForLanguagePicker(includeEnglish: true, includeFake: false) {\n    id\n    localName\n    kaLocale\n    __typename\n  }\n}",
+  "localesForLangDropdownQuery": "query localesForLangDropdownQuery {\n  localesForLanguagePicker(includeEnglish: true, includeFake: false) {\n    id\n    localName\n    kaLocale\n    isSupportedInKhanClassroom\n    __typename\n  }\n}",
   "localesForLangPickerQuery": "query localesForLangPickerQuery {\n  localesForLanguagePicker(includeEnglish: true, includeFake: false) {\n    id\n    localName\n    kaLocale\n    __typename\n  }\n}",
   "LocalesForStandardsEditor": "query LocalesForStandardsEditor {\n  locales(includeEnglish: true, includeFake: false, liveOnly: true) {\n    id\n    displayName\n    __typename\n  }\n}",
   "LocalesIncludingEnglish": "query LocalesIncludingEnglish {\n  locales(includeEnglish: true) {\n    id\n    __typename\n  }\n}",

@@ -372,7 +372,7 @@ export default {
   localeMappings: 656768408,
   localesForFlagRuleQuery: 25183330,
   localesForI18nSuggestBannerQuery: 3806546645,
-  localesForLangDropdownQuery: 4065412579,
+  localesForLangDropdownQuery: 2657407751,
   localesForLangPickerQuery: 4044929374,
   LocalesForStandardsEditor: 2011629293,
   LocalesIncludingEnglish: 227179359,

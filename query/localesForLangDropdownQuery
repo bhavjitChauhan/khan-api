@@ -3,6 +3,7 @@ query localesForLangDropdownQuery {
     id
     localName
     kaLocale
+    isSupportedInKhanClassroom
     __typename
   }
 }
