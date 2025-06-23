@@ -25100,4 +25100,61 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  classroomDashboardTiles: `query classroomDashboardTiles($classDescriptor: String!, $districtID: String!) {
+  classroomDashboardTiles(
+    classroomDescriptor: $classDescriptor
+    districtID: $districtID
+  ) {
+    courseMasteryTiles {
+      course {
+        id
+        translatedTitle
+        __typename
+      }
+      currentMedianCMPercent
+      targetMedianCMPercent
+      targetGrades
+      targetStatus
+      __typename
+    }
+    skillsLeveledUpTile {
+      lastWeekInfo {
+        domain
+        avgSkills
+        targetStatus
+        __typename
+      }
+      targetSkillsPerWeek
+      __typename
+    }
+    skillsToProficientTile {
+      lastWeekInfo {
+        domain
+        avgSkills
+        targetStatus
+        __typename
+      }
+      targetSkillsPerWeek
+      __typename
+    }
+    learningMinutesTile {
+      lastWeekInfo {
+        domain
+        percentOfStudents
+        targetStatus
+        __typename
+      }
+      targetPercentagePerWeek
+      targetMinutesPerWeek
+      __typename
+    }
+    khanmigoTile {
+      lastWeekPercentage
+      targetPercentage
+      targetStatus
+      __typename
+    }
+    __typename
+  }
+}`,
 }
