@@ -23738,6 +23738,7 @@ fragment LearnableContentBasic on LearnableContent {
       id
       translatedTitle
       masteryEnabled
+      listed
       allLearnableContent {
         id
         ... on Exercise {

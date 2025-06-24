@@ -848,7 +848,7 @@ hashes = {
   DistrictGradesByEduOrg: 579575613,
   KAClassroom_GetCourse: 27447980,
   GetCourseSISGroupings: 1174704349,
-  districtsKACourseDetailsQuery: 3131533087,
+  districtsKACourseDetailsQuery: 1759130422,
   districtsKACourseMenuTopicsQuery: 720552240,
   districtsSISCoursesQuery: 3487309637,
   khanmigoToolsGetBlooketQuestionSet: 286157504,
