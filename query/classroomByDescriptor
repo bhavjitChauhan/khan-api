@@ -7,6 +7,7 @@ query classroomByDescriptor($descriptor: String!) {
       key
       translatedTitle
       domainSlug
+      sourceKaLocale
       parent {
         id
         translatedTitle
@@ -31,6 +32,7 @@ query classroomByDescriptor($descriptor: String!) {
             course {
               id
               translatedTitle
+              sourceKaLocale
               __typename
             }
             gradeLevels

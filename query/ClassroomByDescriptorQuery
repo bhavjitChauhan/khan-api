@@ -45,6 +45,8 @@ query ClassroomByDescriptorQuery($descriptor: String!) {
         isCentrallyRostered
         schoolYearStart
         schoolYearEnd
+        isK4dDistrict
+        isKmapDistrict
         __typename
       }
       classWillBeRemovedInDays

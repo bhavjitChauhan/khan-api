@@ -16,6 +16,8 @@ query getSubjectForClassroom($classroomDescriptor: String!) {
       }
       district {
         id
+        isK4dDistrict
+        isKmapDistrict
         goal {
           learningMinutesTarget {
             domains

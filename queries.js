@@ -902,6 +902,8 @@ fragment AssignmentCsvData on Assignment {
         isCentrallyRostered
         schoolYearStart
         schoolYearEnd
+        isK4dDistrict
+        isKmapDistrict
         __typename
       }
       classWillBeRemovedInDays
@@ -10831,6 +10833,7 @@ fragment gtp_essayScoresFragment on EssayScores {
     id
     key
     translatedTitle
+    sourceKaLocale
     domain: parent {
       id
       translatedTitle
@@ -24230,6 +24233,7 @@ fragment CourseUnit on Unit {
       key
       translatedTitle
       domainSlug
+      sourceKaLocale
       parent {
         id
         translatedTitle
@@ -24254,6 +24258,7 @@ fragment CourseUnit on Unit {
             course {
               id
               translatedTitle
+              sourceKaLocale
               __typename
             }
             gradeLevels
@@ -24941,6 +24946,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
         course {
           id
           translatedTitle
+          sourceKaLocale
           __typename
         }
         gradeLevels
@@ -24983,6 +24989,8 @@ fragment skillLevelChangeFields on SkillLevelChange {
       }
       district {
         id
+        isK4dDistrict
+        isKmapDistrict
         goal {
           learningMinutesTarget {
             domains

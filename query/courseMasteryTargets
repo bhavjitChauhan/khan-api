@@ -6,6 +6,7 @@ query courseMasteryTargets($districtID: ID!) {
         course {
           id
           translatedTitle
+          sourceKaLocale
           __typename
         }
         gradeLevels

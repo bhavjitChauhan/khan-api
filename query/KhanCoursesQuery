@@ -3,6 +3,7 @@ query KhanCoursesQuery($adminAggregateID: ID!, $kaLocale: String!) {
     id
     key
     translatedTitle
+    sourceKaLocale
     domain: parent {
       id
       translatedTitle
