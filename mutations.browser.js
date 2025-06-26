@@ -14215,4 +14215,13 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  ResetGuideLanguagePreferences: `mutation ResetGuideLanguagePreferences {
+  setPreferencesForUser(guideLanguageCode: "default") {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
