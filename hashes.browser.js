@@ -757,7 +757,7 @@ hashes = {
   UserForDistrictSignup: 3526295217,
   getUserIsSubscribedToAllEmails: 862738463,
   districtDashboardCourseMastery: 3152001450,
-  getContentItem: 1931680769,
+  getContentItem: 4101459360,
   getCourseMasteryTargets: 2395357128,
   districtActivationTarget: 16257905,
   getCoeditingDocument: 3214334369,

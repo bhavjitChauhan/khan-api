@@ -21264,14 +21264,14 @@ fragment ExerciseContentFields on LearnableContent {
     __typename
   }
 }`,
-  getContentItem: `query getContentItem($descriptors: [String!]!) {
+  getContentItem: `query getContentItem($descriptors: [String!]!, $kaRegion: String!) {
   contentForDescriptors(descriptors: $descriptors) {
     id
     contentDescriptor
     contentKind
     translatedTitle
     translatedDescription
-    mappedStandards {
+    mappedStandards(region: $kaRegion) {
       id
       setId
       standardId
