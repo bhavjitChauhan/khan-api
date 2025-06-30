@@ -25118,6 +25118,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
       course {
         id
         translatedTitle
+        sourceKaLocale
         __typename
       }
       currentMedianCMPercent
