@@ -23737,6 +23737,8 @@ fragment LearnableContentBasic on LearnableContent {
     id
     translatedTitle
     contentKind
+    masteryEnabled
+    listed
     unitChildren {
       id
       translatedTitle

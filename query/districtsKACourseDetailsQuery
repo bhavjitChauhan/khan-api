@@ -3,6 +3,8 @@ query districtsKACourseDetailsQuery($ids: [String!]!) {
     id
     translatedTitle
     contentKind
+    masteryEnabled
+    listed
     unitChildren {
       id
       translatedTitle
