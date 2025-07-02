@@ -1,0 +1,14 @@
+mutation setSettingsUsername($username: String!) {
+  setSettings(username: $username) {
+    user {
+      id
+      username
+      __typename
+    }
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+}

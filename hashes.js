@@ -903,4 +903,6 @@ export default {
   publicClassroomInfoByClassCode: 210518677,
   schoolPickerAdminPackageManagedCountries: 472804284,
   classroomDashboardTiles: 2910964635,
+  GetDistrictPreservationRequest: 1603632118,
+  hasPassword: 851536748,
 }

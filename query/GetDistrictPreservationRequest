@@ -1,0 +1,8 @@
+query GetDistrictPreservationRequest($kaid: String!) {
+  getDistrictPreservationApproval(kaid: $kaid) {
+    id
+    parentEmail
+    status
+    __typename
+  }
+}

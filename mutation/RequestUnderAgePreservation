@@ -1,0 +1,14 @@
+mutation RequestUnderAgePreservation($kaid: String!, $parentEmail: String!, $newPassword: String) {
+  requestUnderAgePreservation(
+    kaid: $kaid
+    parentEmail: $parentEmail
+    newPassword: $newPassword
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

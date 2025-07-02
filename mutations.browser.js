@@ -14224,4 +14224,64 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  RequestUnderAgePreservation: `mutation RequestUnderAgePreservation($kaid: String!, $parentEmail: String!, $newPassword: String) {
+  requestUnderAgePreservation(
+    kaid: $kaid
+    parentEmail: $parentEmail
+    newPassword: $newPassword
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  changePassword: `mutation changePassword($kaid: String!, $password: String!) {
+  passwordChange(kaid: $kaid, password: $password) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  setSettingsUsername: `mutation setSettingsUsername($username: String!) {
+  setSettings(username: $username) {
+    user {
+      id
+      username
+      __typename
+    }
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  submitAlternativeEmail: `mutation submitAlternativeEmail($authEmail: String!) {
+  requestAuthEmail(authEmail: $authEmail) {
+    user {
+      id
+      pendingEmails
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  submitOverAgePreservationRequest: `mutation submitOverAgePreservationRequest($kaid: String!) {
+  requestOverAgePreservation(kaid: $kaid) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

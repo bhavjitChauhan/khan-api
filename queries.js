@@ -25169,4 +25169,19 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  GetDistrictPreservationRequest: `query GetDistrictPreservationRequest($kaid: String!) {
+  getDistrictPreservationApproval(kaid: $kaid) {
+    id
+    parentEmail
+    status
+    __typename
+  }
+}`,
+  hasPassword: `query hasPassword {
+  user {
+    id
+    hasPassword
+    __typename
+  }
+}`,
 }
