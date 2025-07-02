@@ -1,0 +1,3 @@
+query GetAvailableSubtitleLanguages($youtubeId: String!) {
+  subtitleKALocalesByYoutubeId(youtubeId: $youtubeId)
+}

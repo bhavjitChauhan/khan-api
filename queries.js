@@ -25184,4 +25184,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  GetAvailableSubtitleLanguages: `query GetAvailableSubtitleLanguages($youtubeId: String!) {
+  subtitleKALocalesByYoutubeId(youtubeId: $youtubeId)
+}`,
 }
