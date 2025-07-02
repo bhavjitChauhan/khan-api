@@ -1,0 +1,15 @@
+query schoolPickerAdminPackageFetchVersion($versionID: ID!) {
+  eduOrgDatasetVersion(versionID: $versionID) {
+    id
+    countryCode
+    creator {
+      id
+      nickname
+      __typename
+    }
+    importStartedAt
+    importCompletedAt
+    publishedAt
+    __typename
+  }
+}

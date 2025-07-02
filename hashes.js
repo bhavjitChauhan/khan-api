@@ -906,4 +906,7 @@ export default {
   GetDistrictPreservationRequest: 1603632118,
   hasPassword: 851536748,
   GetAvailableSubtitleLanguages: 1914143929,
+  schoolPickerAdminPackageFetchImportNotices: 1174454464,
+  schoolPickerAdminPackageFetchImportProgress: 4146423139,
+  schoolPickerAdminPackageFetchVersion: 704912453,
 }

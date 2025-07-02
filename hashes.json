@@ -905,5 +905,8 @@
   "classroomDashboardTiles": 2910964635,
   "GetDistrictPreservationRequest": 1603632118,
   "hasPassword": 851536748,
-  "GetAvailableSubtitleLanguages": 1914143929
+  "GetAvailableSubtitleLanguages": 1914143929,
+  "schoolPickerAdminPackageFetchImportNotices": 1174454464,
+  "schoolPickerAdminPackageFetchImportProgress": 4146423139,
+  "schoolPickerAdminPackageFetchVersion": 704912453
 }

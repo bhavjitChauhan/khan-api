@@ -1,0 +1,9 @@
+query schoolPickerAdminPackageFetchImportProgress($versionID: String!) {
+  eduOrgImportProgress(versionID: $versionID) {
+    percentComplete
+    numTotalTasks
+    numCompletedTasks
+    completedAt
+    __typename
+  }
+}

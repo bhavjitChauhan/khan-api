@@ -25187,4 +25187,43 @@ fragment skillLevelChangeFields on SkillLevelChange {
   GetAvailableSubtitleLanguages: `query GetAvailableSubtitleLanguages($youtubeId: String!) {
   subtitleKALocalesByYoutubeId(youtubeId: $youtubeId)
 }`,
+  schoolPickerAdminPackageFetchImportNotices: `query schoolPickerAdminPackageFetchImportNotices($versionID: String!, $pageSize: Int, $after: ID) {
+  eduOrgImportNotices(versionID: $versionID, pageSize: $pageSize, after: $after) {
+    notices {
+      id
+      message
+      createdAt
+      __typename
+    }
+    pageInfo {
+      nextCursor
+      __typename
+    }
+    __typename
+  }
+}`,
+  schoolPickerAdminPackageFetchImportProgress: `query schoolPickerAdminPackageFetchImportProgress($versionID: String!) {
+  eduOrgImportProgress(versionID: $versionID) {
+    percentComplete
+    numTotalTasks
+    numCompletedTasks
+    completedAt
+    __typename
+  }
+}`,
+  schoolPickerAdminPackageFetchVersion: `query schoolPickerAdminPackageFetchVersion($versionID: ID!) {
+  eduOrgDatasetVersion(versionID: $versionID) {
+    id
+    countryCode
+    creator {
+      id
+      nickname
+      __typename
+    }
+    importStartedAt
+    importCompletedAt
+    publishedAt
+    __typename
+  }
+}`,
 }
