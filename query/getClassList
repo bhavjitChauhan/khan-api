@@ -75,6 +75,7 @@ query getClassList {
       }
       isK4dClassroom
       isKmapClassroom
+      isKhanClassroom
       isCleverLibrarySynced
       includesCentrallyOwnedDistrictData
       invitations {

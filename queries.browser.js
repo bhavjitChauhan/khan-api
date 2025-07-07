@@ -852,6 +852,7 @@ fragment AssignmentCsvData on Assignment {
     id
     name
     signupCode
+    isKhanClassroom
     __typename
   }
 }`,
@@ -5399,6 +5400,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
       }
       isK4dClassroom
       isKmapClassroom
+      isKhanClassroom
       isCleverLibrarySynced
       includesCentrallyOwnedDistrictData
       invitations {

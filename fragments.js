@@ -332,6 +332,7 @@ export default {
   id
   name
   signupCode
+  isKhanClassroom
   __typename
 }`,
   ClassroomData: `fragment ClassroomData on StudentList {

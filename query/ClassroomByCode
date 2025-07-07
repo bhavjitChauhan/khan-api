@@ -7,6 +7,7 @@ query ClassroomByCode($classCode: String!) {
     id
     name
     signupCode
+    isKhanClassroom
     __typename
   }
 }
