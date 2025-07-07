@@ -25228,4 +25228,13 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  getTeachersForSchoolForAddClasses: `query getTeachersForSchoolForAddClasses($schoolID: String!) {
+  getTeachersForSchool(schoolID: $schoolID) {
+    id
+    keyNameID
+    kaid
+    displayName
+    __typename
+  }
+}`,
 }
