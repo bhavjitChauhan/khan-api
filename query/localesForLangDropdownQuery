@@ -4,6 +4,7 @@ query localesForLangDropdownQuery {
     localName
     kaLocale
     isSupportedInKhanClassroom
+    khanmigoSupport
     __typename
   }
 }

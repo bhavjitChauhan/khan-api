@@ -10535,6 +10535,8 @@ fragment gtp_essayScoresFragment on EssayScores {
       flaggedCategories
       responseWasStoppedByUser
       traceID
+      pageType
+      pageTitle
       imageMetadata {
         id
         llmSummary
@@ -11559,6 +11561,7 @@ fragment BaseFolder on Folder {
     localName
     kaLocale
     isSupportedInKhanClassroom
+    khanmigoSupport
     __typename
   }
 }`,

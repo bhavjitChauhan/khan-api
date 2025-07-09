@@ -29,6 +29,8 @@ query guideTranscript($transcriptId: String!) {
       flaggedCategories
       responseWasStoppedByUser
       traceID
+      pageType
+      pageTitle
       imageMetadata {
         id
         llmSummary
