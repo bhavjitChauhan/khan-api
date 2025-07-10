@@ -781,7 +781,7 @@ export default {
   additionalUserPageData: 2293484049,
   GetPartnershipDataForDashboard: 668828530,
   ActivationByNodeHook: 4028738232,
-  ExpandedDistrictQuery: 468033344,
+  ExpandedDistrictQuery: 2679319687,
   kadTrialDistricts: 2422363762,
   autoModerationResultByFeedbackKey: 1866303014,
   autoModerationResultByFeedbackType: 2382670733,

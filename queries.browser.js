@@ -22071,6 +22071,7 @@ fragment UserFields on User {
     }
     schoolYearStart
     schoolYearEnd
+    nextSchoolYearStart
     kaLocale
     ancestors {
       id
@@ -22088,7 +22089,6 @@ fragment UserFields on User {
       }
       __typename
     }
-    schoolYearStart
     __typename
   }
   user {
