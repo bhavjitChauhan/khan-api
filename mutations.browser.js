@@ -14284,4 +14284,13 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  schoolPickerAdminPackagePublishDataset: `mutation schoolPickerAdminPackagePublishDataset($versionID: String!) {
+  publishEduOrgDataset(versionID: $versionID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

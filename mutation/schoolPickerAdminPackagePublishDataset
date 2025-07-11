@@ -1,0 +1,9 @@
+mutation schoolPickerAdminPackagePublishDataset($versionID: String!) {
+  publishEduOrgDataset(versionID: $versionID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
