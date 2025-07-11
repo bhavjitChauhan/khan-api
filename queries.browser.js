@@ -16295,7 +16295,7 @@ fragment contentSearchLearnableContent on LearnableContent {
   getCoachedClassrooms: `query getCoachedClassrooms {
   user {
     id
-    coachedClassrooms {
+    coachedClassrooms(shouldOmitCACs: true) {
       id
       cacheId
       name

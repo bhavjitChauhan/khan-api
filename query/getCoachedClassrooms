@@ -1,7 +1,7 @@
 query getCoachedClassrooms {
   user {
     id
-    coachedClassrooms {
+    coachedClassrooms(shouldOmitCACs: true) {
       id
       cacheId
       name

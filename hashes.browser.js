@@ -540,7 +540,7 @@ hashes = {
   MappedStandardsForContent: 1396495940,
   masteryAssignmentsDevAdmin: 2369006419,
   unitMasteryAssignmentChanges: 1908934611,
-  getCoachedClassrooms: 2677063655,
+  getCoachedClassrooms: 3388327598,
   getDistrictCourseProgressByStudent: 1321995234,
   getProgressByTeacher: 1155327135,
   getUserKhanmigoDonation: 2016689673,
