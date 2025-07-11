@@ -6977,6 +6977,7 @@ fragment CourseRevisionStructure on CourseRevision {
       kaid
       canAccessDistrictsHomepage
       isTeacher
+      isInKhanClassroomDistrict
       hasUnresolvedInvitations
       preferredKaLocale {
         id
@@ -7023,6 +7024,7 @@ fragment CourseRevisionStructure on CourseRevision {
       kaid
       canAccessDistrictsHomepage
       isTeacher
+      isInKhanClassroomDistrict
       hasUnresolvedInvitations
       preferredKaLocale {
         id
@@ -8602,6 +8604,7 @@ fragment entry on TeamPageEntryForEditing {
       kaid
       canAccessDistrictsHomepage
       isTeacher
+      isInKhanClassroomDistrict
       hasUnresolvedInvitations
       preferredKaLocale {
         id
@@ -8877,6 +8880,7 @@ fragment Program on Program {
       kaid
       canAccessDistrictsHomepage
       isTeacher
+      isInKhanClassroomDistrict
       hasUnresolvedInvitations
       preferredKaLocale {
         id

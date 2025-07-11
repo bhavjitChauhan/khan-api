@@ -8,6 +8,7 @@ mutation loginWithClasslink($classlinkCode: String, $useDevClasslinkClient: Bool
       kaid
       canAccessDistrictsHomepage
       isTeacher
+      isInKhanClassroomDistrict
       hasUnresolvedInvitations
       preferredKaLocale {
         id

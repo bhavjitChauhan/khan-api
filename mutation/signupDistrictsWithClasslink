@@ -5,6 +5,7 @@ mutation signupDistrictsWithClasslink($options: ClasslinkSignupOptions) {
       kaid
       canAccessDistrictsHomepage
       isTeacher
+      isInKhanClassroomDistrict
       hasUnresolvedInvitations
       preferredKaLocale {
         id

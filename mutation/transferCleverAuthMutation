@@ -18,6 +18,7 @@ mutation transferCleverAuthMutation($transferToken: String!, $reauth: Boolean!) 
       kaid
       canAccessDistrictsHomepage
       isTeacher
+      isInKhanClassroomDistrict
       hasUnresolvedInvitations
       preferredKaLocale {
         id

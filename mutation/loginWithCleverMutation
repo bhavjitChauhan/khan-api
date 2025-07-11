@@ -26,6 +26,7 @@ mutation loginWithCleverMutation($code: String!, $reauth: Boolean!, $fromDevApp:
       kaid
       canAccessDistrictsHomepage
       isTeacher
+      isInKhanClassroomDistrict
       hasUnresolvedInvitations
       preferredKaLocale {
         id
