@@ -4,6 +4,11 @@ query getTeachersForSchoolForAddClasses($schoolID: String!) {
     keyNameID
     kaid
     displayName
+    coachedClassroomDistrictInfos {
+      id
+      name
+      __typename
+    }
     __typename
   }
 }
