@@ -600,5 +600,6 @@
   "setSettingsUsername": "mutation setSettingsUsername($username: String!) {\n  setSettings(username: $username) {\n    user {\n      id\n      username\n      __typename\n    }\n    errors {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
   "submitAlternativeEmail": "mutation submitAlternativeEmail($authEmail: String!) {\n  requestAuthEmail(authEmail: $authEmail) {\n    user {\n      id\n      pendingEmails\n      __typename\n    }\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
   "submitOverAgePreservationRequest": "mutation submitOverAgePreservationRequest($kaid: String!) {\n  requestOverAgePreservation(kaid: $kaid) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
-  "schoolPickerAdminPackagePublishDataset": "mutation schoolPickerAdminPackagePublishDataset($versionID: String!) {\n  publishEduOrgDataset(versionID: $versionID) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}"
+  "schoolPickerAdminPackagePublishDataset": "mutation schoolPickerAdminPackagePublishDataset($versionID: String!) {\n  publishEduOrgDataset(versionID: $versionID) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
+  "ApprovePreservationAsParent": "mutation ApprovePreservationAsParent($kaid: String!, $token: String!) {\n  approvePreservationAsParent(kaid: $kaid, token: $token) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}"
 }

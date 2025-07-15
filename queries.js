@@ -25245,4 +25245,11 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  IsValidPreservationEmailToken: `query IsValidPreservationEmailToken($kaid: String!, $token: String!) {
+  isValidPreservationEmailToken(kaid: $kaid, token: $token) {
+    isValid
+    invalidReasonCode
+    __typename
+  }
+}`,
 }

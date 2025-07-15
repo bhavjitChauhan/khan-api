@@ -14297,4 +14297,13 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  ApprovePreservationAsParent: `mutation ApprovePreservationAsParent($kaid: String!, $token: String!) {
+  approvePreservationAsParent(kaid: $kaid, token: $token) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
