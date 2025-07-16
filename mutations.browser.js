@@ -14336,4 +14336,18 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  GetOneTimeUseMicrosoftLoginUrlMutation: `mutation GetOneTimeUseMicrosoftLoginUrlMutation($action: MicrosoftAuthAction!, $continueUrl: String, $role: UserRole) {
+  getOneTimeUseMicrosoftLoginUrl(
+    action: $action
+    continueUrl: $continueUrl
+    role: $role
+  ) {
+    redirectUrl
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
