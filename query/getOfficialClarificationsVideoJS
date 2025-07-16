@@ -1,0 +1,10 @@
+query getOfficialClarificationsVideoJS($youtubeId: String!) {
+  officialClarifications(youtubeId: $youtubeId) {
+    id
+    text
+    openTimestamp
+    closeTimestamp
+    youtubeId
+    __typename
+  }
+}

@@ -1,0 +1,10 @@
+query getVideoPlayerSettingsVideoJS {
+  user {
+    id
+    muteVideos
+    noColorInVideos
+    showCaptions
+    playbackRate
+    __typename
+  }
+}

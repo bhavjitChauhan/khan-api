@@ -911,4 +911,7 @@ export default {
   schoolPickerAdminPackageFetchVersion: 704912453,
   getTeachersForSchoolForAddClasses: 3076155457,
   IsValidPreservationEmailToken: 931344984,
+  GetAdminCoTeacherGrants: 85690766,
+  getOfficialClarificationsVideoJS: 3115823074,
+  getVideoPlayerSettingsVideoJS: 4105030814,
 }

@@ -1,0 +1,35 @@
+query GetAdminCoTeacherGrants($districtID: String!) {
+  user {
+    id
+    userDistrictInfos(districtID: $districtID) {
+      id
+      adminCoTeacherGrants {
+        expiresAt
+        classroomDistrictInfo {
+          id
+          keyNameID
+          name
+          teacherUserDistrictInfo {
+            id
+            displayName
+            __typename
+          }
+          school {
+            id
+            name
+            __typename
+          }
+          district {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

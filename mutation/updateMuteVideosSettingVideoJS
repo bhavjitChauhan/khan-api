@@ -1,0 +1,10 @@
+mutation updateMuteVideosSettingVideoJS($muteVideos: Boolean!) {
+  setSettings(muteVideos: $muteVideos) {
+    user {
+      id
+      muteVideos
+      __typename
+    }
+    __typename
+  }
+}

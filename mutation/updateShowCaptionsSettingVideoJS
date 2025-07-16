@@ -1,0 +1,10 @@
+mutation updateShowCaptionsSettingVideoJS($showCaptions: Boolean!) {
+  setSettings(showCaptions: $showCaptions) {
+    user {
+      id
+      showCaptions
+      __typename
+    }
+    __typename
+  }
+}

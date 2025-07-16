@@ -25252,4 +25252,59 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  GetAdminCoTeacherGrants: `query GetAdminCoTeacherGrants($districtID: String!) {
+  user {
+    id
+    userDistrictInfos(districtID: $districtID) {
+      id
+      adminCoTeacherGrants {
+        expiresAt
+        classroomDistrictInfo {
+          id
+          keyNameID
+          name
+          teacherUserDistrictInfo {
+            id
+            displayName
+            __typename
+          }
+          school {
+            id
+            name
+            __typename
+          }
+          district {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  getOfficialClarificationsVideoJS: `query getOfficialClarificationsVideoJS($youtubeId: String!) {
+  officialClarifications(youtubeId: $youtubeId) {
+    id
+    text
+    openTimestamp
+    closeTimestamp
+    youtubeId
+    __typename
+  }
+}`,
+  getVideoPlayerSettingsVideoJS: `query getVideoPlayerSettingsVideoJS {
+  user {
+    id
+    muteVideos
+    noColorInVideos
+    showCaptions
+    playbackRate
+    __typename
+  }
+}`,
 }

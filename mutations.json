@@ -601,5 +601,8 @@
   "submitAlternativeEmail": "mutation submitAlternativeEmail($authEmail: String!) {\n  requestAuthEmail(authEmail: $authEmail) {\n    user {\n      id\n      pendingEmails\n      __typename\n    }\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
   "submitOverAgePreservationRequest": "mutation submitOverAgePreservationRequest($kaid: String!) {\n  requestOverAgePreservation(kaid: $kaid) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
   "schoolPickerAdminPackagePublishDataset": "mutation schoolPickerAdminPackagePublishDataset($versionID: String!) {\n  publishEduOrgDataset(versionID: $versionID) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
-  "ApprovePreservationAsParent": "mutation ApprovePreservationAsParent($kaid: String!, $token: String!) {\n  approvePreservationAsParent(kaid: $kaid, token: $token) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}"
+  "ApprovePreservationAsParent": "mutation ApprovePreservationAsParent($kaid: String!, $token: String!) {\n  approvePreservationAsParent(kaid: $kaid, token: $token) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
+  "updateMuteVideosSettingVideoJS": "mutation updateMuteVideosSettingVideoJS($muteVideos: Boolean!) {\n  setSettings(muteVideos: $muteVideos) {\n    user {\n      id\n      muteVideos\n      __typename\n    }\n    __typename\n  }\n}",
+  "updatePlaybackRateSettingVideoJS": "mutation updatePlaybackRateSettingVideoJS($playbackRate: PlaybackRate!) {\n  setSettings(playbackRate: $playbackRate) {\n    user {\n      id\n      playbackRate\n      __typename\n    }\n    __typename\n  }\n}",
+  "updateShowCaptionsSettingVideoJS": "mutation updateShowCaptionsSettingVideoJS($showCaptions: Boolean!) {\n  setSettings(showCaptions: $showCaptions) {\n    user {\n      id\n      showCaptions\n      __typename\n    }\n    __typename\n  }\n}"
 }

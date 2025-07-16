@@ -14306,4 +14306,34 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  updateMuteVideosSettingVideoJS: `mutation updateMuteVideosSettingVideoJS($muteVideos: Boolean!) {
+  setSettings(muteVideos: $muteVideos) {
+    user {
+      id
+      muteVideos
+      __typename
+    }
+    __typename
+  }
+}`,
+  updatePlaybackRateSettingVideoJS: `mutation updatePlaybackRateSettingVideoJS($playbackRate: PlaybackRate!) {
+  setSettings(playbackRate: $playbackRate) {
+    user {
+      id
+      playbackRate
+      __typename
+    }
+    __typename
+  }
+}`,
+  updateShowCaptionsSettingVideoJS: `mutation updateShowCaptionsSettingVideoJS($showCaptions: Boolean!) {
+  setSettings(showCaptions: $showCaptions) {
+    user {
+      id
+      showCaptions
+      __typename
+    }
+    __typename
+  }
+}`,
 }
