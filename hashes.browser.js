@@ -914,4 +914,5 @@ hashes = {
   GetAdminCoTeacherGrants: 85690766,
   getOfficialClarificationsVideoJS: 3115823074,
   getVideoPlayerSettingsVideoJS: 4105030814,
+  schoolPickerAdminPackageFetchActorCapabilityCountryScopes: 2129124007,
 }

@@ -25307,4 +25307,10 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  schoolPickerAdminPackageFetchActorCapabilityCountryScopes: `query schoolPickerAdminPackageFetchActorCapabilityCountryScopes($capabilityName: CapabilityName!) {
+  actorCapabilityScopes(capability: $capabilityName) {
+    country
+    __typename
+  }
+}`,
 }
