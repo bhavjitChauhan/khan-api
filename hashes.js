@@ -917,4 +917,6 @@ export default {
   schoolPickerAdminPackageFetchActorCapabilityCountryScopes: 2129124007,
   getExistingClassroomsForUser: 4097038194,
   confirmAccountLinkUserQuery: 350235031,
+  schoolPickerAdminPackageFetchAvailableCountries: 2998943360,
+  schoolPickerAdminPackageFetchVersions: 4103334908,
 }

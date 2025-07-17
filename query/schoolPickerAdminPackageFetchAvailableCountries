@@ -1,0 +1,11 @@
+query schoolPickerAdminPackageFetchAvailableCountries {
+  user {
+    id
+    eduOrgCountriesCanViewDatasetsFor {
+      name
+      countryCode
+      __typename
+    }
+    __typename
+  }
+}

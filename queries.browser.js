@@ -25334,4 +25334,44 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  schoolPickerAdminPackageFetchAvailableCountries: `query schoolPickerAdminPackageFetchAvailableCountries {
+  user {
+    id
+    eduOrgCountriesCanViewDatasetsFor {
+      name
+      countryCode
+      __typename
+    }
+    __typename
+  }
+}`,
+  schoolPickerAdminPackageFetchVersions: `query schoolPickerAdminPackageFetchVersions($countryCode: String!, $after: String, $pageSize: Int) {
+  eduOrgDatasetLiveVersionForCountry(countryCode: $countryCode) {
+    id
+    __typename
+  }
+  eduOrgDatasetVersionsForCountry(
+    countryCode: $countryCode
+    after: $after
+    pageSize: $pageSize
+  ) {
+    versions {
+      id
+      creator {
+        id
+        nickname
+        __typename
+      }
+      importStartedAt
+      importCompletedAt
+      publishedAt
+      __typename
+    }
+    pageInfo {
+      nextCursor
+      __typename
+    }
+    __typename
+  }
+}`,
 }
