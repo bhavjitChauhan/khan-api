@@ -25321,4 +25321,17 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  confirmAccountLinkUserQuery: `query confirmAccountLinkUserQuery {
+  user {
+    id
+    cleverId
+    age
+    nickname
+    userDistrictInfos {
+      id
+      __typename
+    }
+    __typename
+  }
+}`,
 }

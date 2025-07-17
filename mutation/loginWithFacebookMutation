@@ -3,16 +3,6 @@ mutation loginWithFacebookMutation($token: String!, $role: UserRole, $inviteId: 
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      hasUnresolvedInvitations
-      isInKhanClassroomDistrict
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
       __typename
     }
     isFirstLogin

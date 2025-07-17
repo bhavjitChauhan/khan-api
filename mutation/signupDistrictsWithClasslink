@@ -3,16 +3,6 @@ mutation signupDistrictsWithClasslink($options: ClasslinkSignupOptions) {
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      isInKhanClassroomDistrict
-      hasUnresolvedInvitations
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
       __typename
     }
     error {

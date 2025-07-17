@@ -916,4 +916,5 @@ hashes = {
   getVideoPlayerSettingsVideoJS: 4105030814,
   schoolPickerAdminPackageFetchActorCapabilityCountryScopes: 2129124007,
   getExistingClassroomsForUser: 4097038194,
+  confirmAccountLinkUserQuery: 350235031,
 }

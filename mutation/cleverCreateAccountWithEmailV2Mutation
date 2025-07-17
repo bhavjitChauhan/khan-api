@@ -11,16 +11,6 @@ mutation cleverCreateAccountWithEmailV2Mutation($transferToken: String!, $email:
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      hasUnresolvedInvitations
-      isInKhanClassroomDistrict
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
       __typename
     }
     __typename

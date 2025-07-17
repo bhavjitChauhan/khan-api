@@ -13,16 +13,6 @@ mutation loginWithAppleAuthCodeAndState($authCode: String!, $state: String!, $us
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      hasUnresolvedInvitations
-      isInKhanClassroomDistrict
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
       __typename
     }
     isFirstLogin

@@ -6,16 +6,6 @@ mutation loginWithClasslink($classlinkCode: String, $useDevClasslinkClient: Bool
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      isInKhanClassroomDistrict
-      hasUnresolvedInvitations
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
       __typename
     }
     isFirstLogin

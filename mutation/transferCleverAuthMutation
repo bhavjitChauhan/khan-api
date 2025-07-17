@@ -16,16 +16,6 @@ mutation transferCleverAuthMutation($transferToken: String!, $reauth: Boolean!) 
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      isInKhanClassroomDistrict
-      hasUnresolvedInvitations
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
       userDistrictInfos {
         id
         district {

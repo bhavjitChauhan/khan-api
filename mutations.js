@@ -869,16 +869,6 @@ fragment userExerciseFields on UserExercise {
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      hasUnresolvedInvitations
-      isInKhanClassroomDistrict
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
       __typename
     }
     __typename
@@ -6951,16 +6941,6 @@ fragment CourseRevisionStructure on CourseRevision {
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      hasUnresolvedInvitations
-      isInKhanClassroomDistrict
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
       __typename
     }
     isFirstLogin
@@ -6975,16 +6955,6 @@ fragment CourseRevisionStructure on CourseRevision {
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      isInKhanClassroomDistrict
-      hasUnresolvedInvitations
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
       __typename
     }
     isFirstLogin
@@ -7022,16 +6992,6 @@ fragment CourseRevisionStructure on CourseRevision {
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      isInKhanClassroomDistrict
-      hasUnresolvedInvitations
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
       userDistrictInfos {
         id
         district {
@@ -7054,16 +7014,6 @@ fragment CourseRevisionStructure on CourseRevision {
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      hasUnresolvedInvitations
-      isInKhanClassroomDistrict
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
       __typename
     }
     isFirstLogin
@@ -7086,16 +7036,6 @@ fragment CourseRevisionStructure on CourseRevision {
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      hasUnresolvedInvitations
-      isInKhanClassroomDistrict
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
       __typename
     }
     isFirstLogin
@@ -7111,17 +7051,6 @@ fragment CourseRevisionStructure on CourseRevision {
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      hasUnresolvedInvitations
-      isInKhanClassroomDistrict
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
-      cleverId
       __typename
     }
     isFirstLogin
@@ -8578,16 +8507,6 @@ fragment entry on TeamPageEntryForEditing {
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      hasUnresolvedInvitations
-      isInKhanClassroomDistrict
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
       __typename
     }
     error {
@@ -8602,16 +8521,6 @@ fragment entry on TeamPageEntryForEditing {
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      isInKhanClassroomDistrict
-      hasUnresolvedInvitations
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
       __typename
     }
     error {
@@ -8633,16 +8542,6 @@ fragment entry on TeamPageEntryForEditing {
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      hasUnresolvedInvitations
-      isInKhanClassroomDistrict
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
       __typename
     }
     error {
@@ -8663,16 +8562,6 @@ fragment entry on TeamPageEntryForEditing {
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      hasUnresolvedInvitations
-      isInKhanClassroomDistrict
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
       __typename
     }
     error {
@@ -8702,16 +8591,6 @@ fragment entry on TeamPageEntryForEditing {
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      hasUnresolvedInvitations
-      isInKhanClassroomDistrict
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
       studentLists {
         id
         cacheId
@@ -8878,16 +8757,6 @@ fragment Program on Program {
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      isInKhanClassroomDistrict
-      hasUnresolvedInvitations
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
       userDistrictInfos {
         id
         district {
@@ -13159,17 +13028,6 @@ fragment taskAttemptHistoryFields on TaskProblemAttempt {
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      hasUnresolvedInvitations
-      isInKhanClassroomDistrict
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
-      cleverId
       __typename
     }
     isFirstLogin
@@ -13189,17 +13047,6 @@ fragment taskAttemptHistoryFields on TaskProblemAttempt {
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      hasUnresolvedInvitations
-      isInKhanClassroomDistrict
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
-      cleverId
       __typename
     }
     isFirstLogin

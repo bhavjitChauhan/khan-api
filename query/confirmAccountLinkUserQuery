@@ -1,0 +1,13 @@
+query confirmAccountLinkUserQuery {
+  user {
+    id
+    cleverId
+    age
+    nickname
+    userDistrictInfos {
+      id
+      __typename
+    }
+    __typename
+  }
+}

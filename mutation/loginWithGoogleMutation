@@ -10,16 +10,6 @@ mutation loginWithGoogleMutation($token: String!, $birthdate: String, $linkCleve
     user {
       id
       kaid
-      canAccessDistrictsHomepage
-      isTeacher
-      hasUnresolvedInvitations
-      isInKhanClassroomDistrict
-      preferredKaLocale {
-        id
-        kaLocale
-        status
-        __typename
-      }
       __typename
     }
     isFirstLogin
