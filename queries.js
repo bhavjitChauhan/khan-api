@@ -1066,7 +1066,34 @@ fragment AssignmentCsvData on Assignment {
       pageSize: $pageSize
     ) {
       assignments {
-        ...AssignmentFields
+        id
+        studentKaids
+        isDraft
+        assignmentStatus
+        subjectSlug
+        numStudentsCompleted
+        assignedDate
+        startDate
+        dueDate
+        contentDescriptors
+        domainId
+        courseId
+        unitId
+        lessonId
+        contents {
+          id
+          title: translatedTitle
+          kind
+          defaultUrlPath
+          __typename
+        }
+        exerciseConfig {
+          itemPickerStrategy
+          __typename
+        }
+        title
+        instructions
+        configuredActivityInputs
         __typename
       }
       pageInfo {
@@ -1077,38 +1104,6 @@ fragment AssignmentCsvData on Assignment {
     }
     __typename
   }
-}
-
-fragment AssignmentFields on Assignment {
-  id
-  studentKaids
-  isDraft
-  assignmentStatus
-  subjectSlug
-  numStudentsCompleted
-  assignedDate
-  startDate
-  dueDate
-  contentDescriptors
-  domainId
-  courseId
-  unitId
-  lessonId
-  contents {
-    id
-    title: translatedTitle
-    kind
-    defaultUrlPath
-    __typename
-  }
-  exerciseConfig {
-    itemPickerStrategy
-    __typename
-  }
-  title
-  instructions
-  configuredActivityInputs
-  __typename
 }`,
   coachDetails: `query coachDetails {
   user {
@@ -5318,6 +5313,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
         id
         __typename
       }
+      isChildAssignmentsClassroom
       __typename
     }
     __typename
@@ -18291,6 +18287,7 @@ fragment ActivitySessionSkillLevels on SkillLevelChange {
   khanmigoEnabledForUserQuery: `query khanmigoEnabledForUserQuery {
   coach: user {
     id
+    hasAccessToAIGuideTeacher
     isAIGuideEnabled
     __typename
   }
@@ -25237,6 +25234,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
     keyNameID
     kaid
     displayName
+    fullName
     coachedClassroomDistrictInfos {
       id
       name
@@ -25310,6 +25308,16 @@ fragment skillLevelChangeFields on SkillLevelChange {
   schoolPickerAdminPackageFetchActorCapabilityCountryScopes: `query schoolPickerAdminPackageFetchActorCapabilityCountryScopes($capabilityName: CapabilityName!) {
   actorCapabilityScopes(capability: $capabilityName) {
     country
+    __typename
+  }
+}`,
+  getExistingClassroomsForUser: `query getExistingClassroomsForUser {
+  user {
+    id
+    coachedClassroomDistrictInfos {
+      id
+      __typename
+    }
     __typename
   }
 }`,

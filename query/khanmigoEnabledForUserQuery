@@ -1,6 +1,7 @@
 query khanmigoEnabledForUserQuery {
   coach: user {
     id
+    hasAccessToAIGuideTeacher
     isAIGuideEnabled
     __typename
   }

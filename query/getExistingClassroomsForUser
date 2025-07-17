@@ -1,0 +1,10 @@
+query getExistingClassroomsForUser {
+  user {
+    id
+    coachedClassroomDistrictInfos {
+      id
+      __typename
+    }
+    __typename
+  }
+}

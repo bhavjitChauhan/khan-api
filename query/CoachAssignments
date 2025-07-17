@@ -10,7 +10,34 @@ query CoachAssignments($classDescriptor: String!, $assignmentFilters: CoachAssig
       pageSize: $pageSize
     ) {
       assignments {
-        ...AssignmentFields
+        id
+        studentKaids
+        isDraft
+        assignmentStatus
+        subjectSlug
+        numStudentsCompleted
+        assignedDate
+        startDate
+        dueDate
+        contentDescriptors
+        domainId
+        courseId
+        unitId
+        lessonId
+        contents {
+          id
+          title: translatedTitle
+          kind
+          defaultUrlPath
+          __typename
+        }
+        exerciseConfig {
+          itemPickerStrategy
+          __typename
+        }
+        title
+        instructions
+        configuredActivityInputs
         __typename
       }
       pageInfo {
@@ -21,36 +48,4 @@ query CoachAssignments($classDescriptor: String!, $assignmentFilters: CoachAssig
     }
     __typename
   }
-}
-
-fragment AssignmentFields on Assignment {
-  id
-  studentKaids
-  isDraft
-  assignmentStatus
-  subjectSlug
-  numStudentsCompleted
-  assignedDate
-  startDate
-  dueDate
-  contentDescriptors
-  domainId
-  courseId
-  unitId
-  lessonId
-  contents {
-    id
-    title: translatedTitle
-    kind
-    defaultUrlPath
-    __typename
-  }
-  exerciseConfig {
-    itemPickerStrategy
-    __typename
-  }
-  title
-  instructions
-  configuredActivityInputs
-  __typename
 }

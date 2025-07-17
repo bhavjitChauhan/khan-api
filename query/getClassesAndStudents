@@ -17,6 +17,7 @@ query getClassesAndStudents {
         id
         __typename
       }
+      isChildAssignmentsClassroom
       __typename
     }
     __typename
