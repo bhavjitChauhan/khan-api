@@ -14197,4 +14197,13 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  removeCoTeacherGrants: `mutation removeCoTeacherGrants($cdiIds: [String!]!) {
+  removeCoTeacherGrants(cdiIDs: $cdiIds) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
