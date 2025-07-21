@@ -14206,4 +14206,13 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  createCoTeacherGrants: `mutation createCoTeacherGrants($cdiIds: [String!]!, $expiresAt: Date!) {
+  createCoTeacherGrants(cdiIDs: $cdiIds, expiresAt: $expiresAt) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

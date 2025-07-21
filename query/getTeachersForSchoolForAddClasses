@@ -8,6 +8,7 @@ query getTeachersForSchoolForAddClasses($schoolID: String!) {
     coachedClassroomDistrictInfos {
       id
       name
+      keyNameID
       __typename
     }
     __typename

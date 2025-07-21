@@ -606,5 +606,6 @@
   "updatePlaybackRateSettingVideoJS": "mutation updatePlaybackRateSettingVideoJS($playbackRate: PlaybackRate!) {\n  setSettings(playbackRate: $playbackRate) {\n    user {\n      id\n      playbackRate\n      __typename\n    }\n    __typename\n  }\n}",
   "updateShowCaptionsSettingVideoJS": "mutation updateShowCaptionsSettingVideoJS($showCaptions: Boolean!) {\n  setSettings(showCaptions: $showCaptions) {\n    user {\n      id\n      showCaptions\n      __typename\n    }\n    __typename\n  }\n}",
   "GetOneTimeUseMicrosoftLoginUrlMutation": "mutation GetOneTimeUseMicrosoftLoginUrlMutation($action: MicrosoftAuthAction!, $continueUrl: String, $role: UserRole) {\n  getOneTimeUseMicrosoftLoginUrl(\n    action: $action\n    continueUrl: $continueUrl\n    role: $role\n  ) {\n    redirectUrl\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
-  "removeCoTeacherGrants": "mutation removeCoTeacherGrants($cdiIds: [String!]!) {\n  removeCoTeacherGrants(cdiIDs: $cdiIds) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}"
+  "removeCoTeacherGrants": "mutation removeCoTeacherGrants($cdiIds: [String!]!) {\n  removeCoTeacherGrants(cdiIDs: $cdiIds) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
+  "createCoTeacherGrants": "mutation createCoTeacherGrants($cdiIds: [String!]!, $expiresAt: Date!) {\n  createCoTeacherGrants(cdiIDs: $cdiIds, expiresAt: $expiresAt) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}"
 }

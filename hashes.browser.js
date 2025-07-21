@@ -909,7 +909,7 @@ hashes = {
   schoolPickerAdminPackageFetchImportNotices: 1174454464,
   schoolPickerAdminPackageFetchImportProgress: 4146423139,
   schoolPickerAdminPackageFetchVersion: 704912453,
-  getTeachersForSchoolForAddClasses: 924434335,
+  getTeachersForSchoolForAddClasses: 3413195976,
   IsValidPreservationEmailToken: 931344984,
   GetAdminCoTeacherGrants: 85690766,
   getOfficialClarificationsVideoJS: 3115823074,

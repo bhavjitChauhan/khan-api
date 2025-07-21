@@ -1,0 +1,9 @@
+mutation createCoTeacherGrants($cdiIds: [String!]!, $expiresAt: Date!) {
+  createCoTeacherGrants(cdiIDs: $cdiIds, expiresAt: $expiresAt) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

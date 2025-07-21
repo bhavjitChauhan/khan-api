@@ -25238,6 +25238,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
     coachedClassroomDistrictInfos {
       id
       name
+      keyNameID
       __typename
     }
     __typename
