@@ -25382,4 +25382,11 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  GetDistrictChurnDeletionDate: `query GetDistrictChurnDeletionDate {
+  user {
+    id
+    districtChurnDeletionDate
+    __typename
+  }
+}`,
 }

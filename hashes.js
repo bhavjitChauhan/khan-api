@@ -919,4 +919,5 @@ export default {
   confirmAccountLinkUserQuery: 350235031,
   schoolPickerAdminPackageFetchAvailableCountries: 2998943360,
   schoolPickerAdminPackageFetchVersions: 4103334908,
+  GetDistrictChurnDeletionDate: 4030104058,
 }
