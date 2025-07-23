@@ -9,6 +9,12 @@ query GetAdminCoTeacherGrants($districtID: String!) {
           id
           keyNameID
           name
+          classroom {
+            id
+            cacheId
+            signupCode
+            __typename
+          }
           teacherUserDistrictInfo {
             id
             displayName
@@ -22,6 +28,7 @@ query GetAdminCoTeacherGrants($districtID: String!) {
           district {
             id
             name
+            isKhanClassroomDistrict
             __typename
           }
           __typename

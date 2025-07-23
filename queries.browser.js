@@ -25262,6 +25262,12 @@ fragment skillLevelChangeFields on SkillLevelChange {
           id
           keyNameID
           name
+          classroom {
+            id
+            cacheId
+            signupCode
+            __typename
+          }
           teacherUserDistrictInfo {
             id
             displayName
@@ -25275,6 +25281,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
           district {
             id
             name
+            isKhanClassroomDistrict
             __typename
           }
           __typename
