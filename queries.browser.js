@@ -23356,7 +23356,7 @@ fragment assessmentItemFields on AssessmentItem {
   }
 }`,
   khanmigoToolsAvailableTeacherTools: `query khanmigoToolsAvailableTeacherTools {
-  aiGuideTeacherTools(order: TEACHER_TOOLS_PAGE) {
+  aiGuideTeacherTools(order: KAC_TEACHER_TOOLS_PAGE) {
     id
     configName
     __typename
