@@ -25389,4 +25389,36 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  KAVideoPlayer_GetAvailableSubtitleKALocales: `query KAVideoPlayer_GetAvailableSubtitleKALocales($youtubeId: String!) {
+  subtitleKALocalesByYoutubeId(youtubeId: $youtubeId)
+}`,
+  KAVideoPlayer_GetOfficialClarifications: `query KAVideoPlayer_GetOfficialClarifications($youtubeId: String!) {
+  officialClarifications(youtubeId: $youtubeId) {
+    id
+    text
+    openTimestamp
+    closeTimestamp
+    youtubeId
+    __typename
+  }
+}`,
+  KAVideoPlayer_GetSubtitlesForVideo: `query KAVideoPlayer_GetSubtitlesForVideo($youtubeId: String!, $kaLocale: String!) {
+  subtitles(youtubeId: $youtubeId, kaLocale: $kaLocale) {
+    text
+    startTime
+    endTime
+    kaIsValid
+    __typename
+  }
+}`,
+  KAVideoPlayer_GetUserVideoSettings: `query KAVideoPlayer_GetUserVideoSettings {
+  user {
+    id
+    muteVideos
+    noColorInVideos
+    showCaptions
+    playbackRate
+    __typename
+  }
+}`,
 }

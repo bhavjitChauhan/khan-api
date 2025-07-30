@@ -1,0 +1,10 @@
+query KAVideoPlayer_GetOfficialClarifications($youtubeId: String!) {
+  officialClarifications(youtubeId: $youtubeId) {
+    id
+    text
+    openTimestamp
+    closeTimestamp
+    youtubeId
+    __typename
+  }
+}

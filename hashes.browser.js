@@ -920,4 +920,8 @@ hashes = {
   schoolPickerAdminPackageFetchAvailableCountries: 2998943360,
   schoolPickerAdminPackageFetchVersions: 4103334908,
   GetDistrictChurnDeletionDate: 4030104058,
+  KAVideoPlayer_GetAvailableSubtitleKALocales: 2713357086,
+  KAVideoPlayer_GetOfficialClarifications: 1695699069,
+  KAVideoPlayer_GetSubtitlesForVideo: 1318879429,
+  KAVideoPlayer_GetUserVideoSettings: 743930115,
 }

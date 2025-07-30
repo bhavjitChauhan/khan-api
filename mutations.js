@@ -14215,4 +14215,22 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  KAVideoPlayer_UpdateUserVideoSettings: `mutation KAVideoPlayer_UpdateUserVideoSettings($noColorInVideos: Boolean, $muteVideos: Boolean, $playbackRate: PlaybackRate, $showCaptions: Boolean) {
+  setSettings(
+    noColorInVideos: $noColorInVideos
+    muteVideos: $muteVideos
+    playbackRate: $playbackRate
+    showCaptions: $showCaptions
+  ) {
+    user {
+      id
+      noColorInVideos
+      muteVideos
+      playbackRate
+      showCaptions
+      __typename
+    }
+    __typename
+  }
+}`,
 }

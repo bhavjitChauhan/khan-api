@@ -1,0 +1,3 @@
+query KAVideoPlayer_GetAvailableSubtitleKALocales($youtubeId: String!) {
+  subtitleKALocalesByYoutubeId(youtubeId: $youtubeId)
+}

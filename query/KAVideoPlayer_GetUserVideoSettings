@@ -1,0 +1,10 @@
+query KAVideoPlayer_GetUserVideoSettings {
+  user {
+    id
+    muteVideos
+    noColorInVideos
+    showCaptions
+    playbackRate
+    __typename
+  }
+}
