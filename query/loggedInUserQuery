@@ -12,6 +12,7 @@ query loggedInUserQuery {
       status
       __typename
     }
+    homepageUrl
     __typename
   }
 }

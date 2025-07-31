@@ -11596,6 +11596,7 @@ fragment BaseFolder on Folder {
       status
       __typename
     }
+    homepageUrl
     __typename
   }
 }`,
