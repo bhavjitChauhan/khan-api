@@ -25422,4 +25422,10 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  configSupportsImageInput: `query configSupportsImageInput($configName: String!) {
+  aiGuideConfigSupportsImageInput(configName: $configName) {
+    supportsImageInput
+    __typename
+  }
+}`,
 }

@@ -924,4 +924,5 @@ hashes = {
   KAVideoPlayer_GetOfficialClarifications: 1695699069,
   KAVideoPlayer_GetSubtitlesForVideo: 1318879429,
   KAVideoPlayer_GetUserVideoSettings: 743930115,
+  configSupportsImageInput: 3000309724,
 }

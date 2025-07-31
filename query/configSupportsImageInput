@@ -1,0 +1,6 @@
+query configSupportsImageInput($configName: String!) {
+  aiGuideConfigSupportsImageInput(configName: $configName) {
+    supportsImageInput
+    __typename
+  }
+}
