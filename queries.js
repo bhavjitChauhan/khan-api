@@ -11597,6 +11597,15 @@ fragment BaseFolder on Folder {
       status
       __typename
     }
+    userDistrictInfos {
+      id
+      district {
+        id
+        kaLocale
+        __typename
+      }
+      __typename
+    }
     homepageUrl
     __typename
   }
