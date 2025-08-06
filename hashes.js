@@ -154,7 +154,7 @@ export default {
   getAllSubject: 1054205395,
   getAllSubmittedStories: 3633518996,
   getArticleForTeacherCampaignExtraCredit: 4131285635,
-  getAssessmentItem: 3000669585,
+  getAssessmentItem: 908280821,
   getAssessmentItems: 1491376606,
   GetAssessmentItemTags: 3475656173,
   GetAuthors: 904475571,

@@ -5158,6 +5158,7 @@ fragment UserFields on User {
       problemType
       itemData
       isContextInaccessible
+      requiresScreenOrMouse
       __typename
     }
     error {
