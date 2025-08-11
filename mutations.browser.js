@@ -13038,11 +13038,12 @@ fragment taskAttemptHistoryFields on TaskProblemAttempt {
     __typename
   }
 }`,
-  loginWithPasswordAndTwoFactorCodeMutation: `mutation loginWithPasswordAndTwoFactorCodeMutation($identifier: String!, $password: String!, $twoFactorAuthCode: String!) {
+  loginWithPasswordAndTwoFactorCodeMutation: `mutation loginWithPasswordAndTwoFactorCodeMutation($identifier: String!, $password: String!, $twoFactorAuthCode: String!, $rememberTwoFactor: Boolean!) {
   loginWithPassword(
     identifier: $identifier
     password: $password
     twoFactorAuthCode: $twoFactorAuthCode
+    rememberTwoFactor: $rememberTwoFactor
   ) {
     user {
       id
