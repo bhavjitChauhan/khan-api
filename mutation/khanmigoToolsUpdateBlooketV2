@@ -1,0 +1,9 @@
+mutation khanmigoToolsUpdateBlooketV2($input: BlooketQuestionSetInput!) {
+  updateBlooketQuestionSetV2(input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

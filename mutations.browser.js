@@ -14234,4 +14234,22 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  khanmigoToolsCreateBlooketV2: `mutation khanmigoToolsCreateBlooketV2($input: BlooketQuestionSetInput!) {
+  createBlooketQuestionSetV2(input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  khanmigoToolsUpdateBlooketV2: `mutation khanmigoToolsUpdateBlooketV2($input: BlooketQuestionSetInput!) {
+  updateBlooketQuestionSetV2(input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
