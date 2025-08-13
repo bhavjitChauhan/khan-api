@@ -14252,4 +14252,13 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  updateCoTeacherGrants: `mutation updateCoTeacherGrants($cdiIds: [String!]!, $expiresAt: Date!) {
+  updateCoTeacherGrants(cdiIDs: $cdiIds, expiresAt: $expiresAt) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
