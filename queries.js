@@ -10691,14 +10691,15 @@ fragment gtp_essayScoresFragment on EssayScores {
               __typename
             }
             createdOn
+            isKhanClassroom
+            isKmapClassroom
+            isK4dClassroom
             __typename
           }
           showAssignments
           hasActiveAssignments
           hasKmapGoals
           hasNonMapGoals
-          isKmap
-          isK4d
           latestDueDate
           __typename
         }
