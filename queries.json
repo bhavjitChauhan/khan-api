@@ -924,5 +924,6 @@
   "KAVideoPlayer_GetOfficialClarifications": "query KAVideoPlayer_GetOfficialClarifications($youtubeId: String!) {\n  officialClarifications(youtubeId: $youtubeId) {\n    id\n    text\n    openTimestamp\n    closeTimestamp\n    youtubeId\n    __typename\n  }\n}",
   "KAVideoPlayer_GetSubtitlesForVideo": "query KAVideoPlayer_GetSubtitlesForVideo($youtubeId: String!, $kaLocale: String!) {\n  subtitles(youtubeId: $youtubeId, kaLocale: $kaLocale) {\n    text\n    startTime\n    endTime\n    kaIsValid\n    __typename\n  }\n}",
   "KAVideoPlayer_GetUserVideoSettings": "query KAVideoPlayer_GetUserVideoSettings {\n  user {\n    id\n    muteVideos\n    noColorInVideos\n    showCaptions\n    playbackRate\n    __typename\n  }\n}",
-  "configSupportsImageInput": "query configSupportsImageInput($configName: String!) {\n  aiGuideConfigSupportsImageInput(configName: $configName) {\n    supportsImageInput\n    __typename\n  }\n}"
+  "configSupportsImageInput": "query configSupportsImageInput($configName: String!) {\n  aiGuideConfigSupportsImageInput(configName: $configName) {\n    supportsImageInput\n    __typename\n  }\n}",
+  "AiGuideActivityConfigGrowthbookFeatures": "query AiGuideActivityConfigGrowthbookFeatures($threadId: String!) {\n  aiGuideActivityConfigByThreadId(threadId: $threadId) {\n    growthbookFeaturesAsPromptVariables\n    growthbookExperimentFeatures\n    __typename\n  }\n}"
 }

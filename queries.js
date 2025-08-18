@@ -25439,4 +25439,11 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  AiGuideActivityConfigGrowthbookFeatures: `query AiGuideActivityConfigGrowthbookFeatures($threadId: String!) {
+  aiGuideActivityConfigByThreadId(threadId: $threadId) {
+    growthbookFeaturesAsPromptVariables
+    growthbookExperimentFeatures
+    __typename
+  }
+}`,
 }
