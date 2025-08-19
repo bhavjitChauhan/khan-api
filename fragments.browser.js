@@ -2565,6 +2565,7 @@ query ActivitiesList {
   classroom {
     id
     cacheId
+    isKhanClassroom
     name
     signupCode
     __typename
