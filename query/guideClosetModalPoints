@@ -1,0 +1,7 @@
+query guideClosetModalPoints {
+  user {
+    id
+    points
+    __typename
+  }
+}

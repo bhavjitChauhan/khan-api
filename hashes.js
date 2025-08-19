@@ -926,4 +926,5 @@ export default {
   KAVideoPlayer_GetUserVideoSettings: 743930115,
   configSupportsImageInput: 3000309724,
   AiGuideActivityConfigGrowthbookFeatures: 3784549602,
+  guideClosetModalPoints: 3085373471,
 }

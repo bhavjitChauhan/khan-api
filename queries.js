@@ -25447,4 +25447,11 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  guideClosetModalPoints: `query guideClosetModalPoints {
+  user {
+    id
+    points
+    __typename
+  }
+}`,
 }
