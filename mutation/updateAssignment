@@ -4,14 +4,14 @@ mutation updateAssignment($assignmentId: ID!, $studentKaids: [ID], $studentKaids
     assignment: {studentKaids: $studentKaids, contentDescriptors: $contentDescriptors, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft, studentKaidsToAdd: $studentKaidsToAdd, studentKaidsToRemove: $studentKaidsToRemove}
   ) {
     assignment {
-      ...AssignmentInfoFragment
+      ...NewAssignmentPostButtonFragment
       __typename
     }
     __typename
   }
 }
 
-fragment AssignmentInfoFragment on Assignment {
+fragment NewAssignmentPostButtonFragment on Assignment {
   id
   contents {
     id

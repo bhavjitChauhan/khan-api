@@ -2968,4 +2968,34 @@ query ActivitiesList {
   includeArticles
   __typename
 }`,
+  NewAssignmentPostButtonFragment: `fragment NewAssignmentPostButtonFragment on Assignment {
+  id
+  contents {
+    id
+    title: translatedTitle
+    kind
+    __typename
+  }
+  studentList {
+    id
+    cacheId
+    name
+    isK4dClassroom
+    isChildAssignmentsClassroom
+    signupCode
+    __typename
+  }
+  students {
+    id
+    kaid
+    __typename
+  }
+  startDate
+  dueDate
+  isDraft
+  subjectSlug
+  title
+  instructions
+  __typename
+}`,
 }

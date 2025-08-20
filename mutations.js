@@ -3830,14 +3830,14 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
     assignment: {classroomDescriptors: $classDescriptors, qualifiedContentDescriptorsList: $qualifiedContentDescriptorsList, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft, studentKaids: $studentKaids, subjectSlug: $subjectSlug, exerciseItemPickerStrategy: $questionSetType, title: $title, instructions: $instructions, configuredActivityInputs: $configuredActivityInputs, creationKaLocale: $creationKaLocale}
   ) {
     assignments {
-      ...AssignmentInfoFragment
+      ...NewAssignmentPostButtonFragment
       __typename
     }
     __typename
   }
 }
 
-fragment AssignmentInfoFragment on Assignment {
+fragment NewAssignmentPostButtonFragment on Assignment {
   id
   contents {
     id
@@ -8911,14 +8911,14 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
     assignment: {studentKaids: $studentKaids, contentDescriptors: $contentDescriptors, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft, studentKaidsToAdd: $studentKaidsToAdd, studentKaidsToRemove: $studentKaidsToRemove}
   ) {
     assignment {
-      ...AssignmentInfoFragment
+      ...NewAssignmentPostButtonFragment
       __typename
     }
     __typename
   }
 }
 
-fragment AssignmentInfoFragment on Assignment {
+fragment NewAssignmentPostButtonFragment on Assignment {
   id
   contents {
     id

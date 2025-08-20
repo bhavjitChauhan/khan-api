@@ -3,14 +3,14 @@ mutation createAssignments($classDescriptors: [String!]!, $qualifiedContentDescr
     assignment: {classroomDescriptors: $classDescriptors, qualifiedContentDescriptorsList: $qualifiedContentDescriptorsList, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft, studentKaids: $studentKaids, subjectSlug: $subjectSlug, exerciseItemPickerStrategy: $questionSetType, title: $title, instructions: $instructions, configuredActivityInputs: $configuredActivityInputs, creationKaLocale: $creationKaLocale}
   ) {
     assignments {
-      ...AssignmentInfoFragment
+      ...NewAssignmentPostButtonFragment
       __typename
     }
     __typename
   }
 }
 
-fragment AssignmentInfoFragment on Assignment {
+fragment NewAssignmentPostButtonFragment on Assignment {
   id
   contents {
     id
