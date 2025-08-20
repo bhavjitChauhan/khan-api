@@ -5629,6 +5629,12 @@ fragment StudentField2 on StudentsPage {
       id
       name
       rosterSource
+      founderDistrictInfo: teacherUserDistrictInfo {
+        id
+        displayNameForTeacher
+        kaid
+        __typename
+      }
       teacherUserDistrictInfoIDs {
         id
         displayNameForTeacher

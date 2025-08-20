@@ -37,6 +37,12 @@ query getClassSettings($classDescriptor: String!) {
       id
       name
       rosterSource
+      founderDistrictInfo: teacherUserDistrictInfo {
+        id
+        displayNameForTeacher
+        kaid
+        __typename
+      }
       teacherUserDistrictInfoIDs {
         id
         displayNameForTeacher
