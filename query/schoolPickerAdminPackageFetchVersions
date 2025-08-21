@@ -13,6 +13,7 @@ query schoolPickerAdminPackageFetchVersions($countryCode: String!, $after: Strin
       creator {
         id
         nickname
+        kaid
         __typename
       }
       importStartedAt

@@ -25238,6 +25238,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
     countryCode
     creator {
       id
+      kaid
       nickname
       __typename
     }
@@ -25387,6 +25388,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
       creator {
         id
         nickname
+        kaid
         __typename
       }
       importStartedAt

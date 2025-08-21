@@ -4,6 +4,7 @@ query schoolPickerAdminPackageFetchVersion($versionID: ID!) {
     countryCode
     creator {
       id
+      kaid
       nickname
       __typename
     }
