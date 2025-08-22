@@ -926,5 +926,7 @@
   "KAVideoPlayer_GetUserVideoSettings": "query KAVideoPlayer_GetUserVideoSettings {\n  user {\n    id\n    muteVideos\n    noColorInVideos\n    showCaptions\n    playbackRate\n    __typename\n  }\n}",
   "configSupportsImageInput": "query configSupportsImageInput($configName: String!) {\n  aiGuideConfigSupportsImageInput(configName: $configName) {\n    supportsImageInput\n    __typename\n  }\n}",
   "AiGuideActivityConfigGrowthbookFeatures": "query AiGuideActivityConfigGrowthbookFeatures($threadId: String!) {\n  aiGuideActivityConfigByThreadId(threadId: $threadId) {\n    growthbookFeaturesAsPromptVariables\n    growthbookExperimentFeatures\n    __typename\n  }\n}",
-  "guideClosetModalPoints": "query guideClosetModalPoints {\n  user {\n    id\n    points\n    __typename\n  }\n}"
+  "guideClosetModalPoints": "query guideClosetModalPoints {\n  user {\n    id\n    points\n    __typename\n  }\n}",
+  "getMappedStandardsForContent": "query getMappedStandardsForContent($contentDescriptor: String!, $locale: String, $region: String) {\n  standards: standardMappingsForContent(\n    contentDescriptor: $contentDescriptor\n    locale: $locale\n    region: $region\n  ) {\n    setId\n    id\n    standardId\n    description\n    relativeUrl\n    setOfStandards {\n      id\n      isDiscoverable\n      __typename\n    }\n    __typename\n  }\n}",
+  "getPrerequisiteExercises": "query getPrerequisiteExercises($slugs: [String!]!) {\n  exercisesBySlugs(slugs: $slugs) {\n    id\n    slug\n    translatedTitle\n    translatedDescription\n    mappedStandards {\n      id\n      standardId\n      __typename\n    }\n    __typename\n  }\n}"
 }

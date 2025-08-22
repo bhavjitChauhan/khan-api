@@ -25462,4 +25462,37 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  getMappedStandardsForContent: `query getMappedStandardsForContent($contentDescriptor: String!, $locale: String, $region: String) {
+  standards: standardMappingsForContent(
+    contentDescriptor: $contentDescriptor
+    locale: $locale
+    region: $region
+  ) {
+    setId
+    id
+    standardId
+    description
+    relativeUrl
+    setOfStandards {
+      id
+      isDiscoverable
+      __typename
+    }
+    __typename
+  }
+}`,
+  getPrerequisiteExercises: `query getPrerequisiteExercises($slugs: [String!]!) {
+  exercisesBySlugs(slugs: $slugs) {
+    id
+    slug
+    translatedTitle
+    translatedDescription
+    mappedStandards {
+      id
+      standardId
+      __typename
+    }
+    __typename
+  }
+}`,
 }

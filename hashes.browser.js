@@ -927,4 +927,6 @@ hashes = {
   configSupportsImageInput: 3000309724,
   AiGuideActivityConfigGrowthbookFeatures: 3784549602,
   guideClosetModalPoints: 3085373471,
+  getMappedStandardsForContent: 2440210706,
+  getPrerequisiteExercises: 3368626419,
 }
