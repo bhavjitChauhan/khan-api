@@ -5399,6 +5399,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
       isKmapClassroom
       isKhanClassroom
       isCleverLibrarySynced
+      isUpgradedClassroom
       includesCentrallyOwnedDistrictData
       invitations {
         id
