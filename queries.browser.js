@@ -25278,6 +25278,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
     userDistrictInfos(districtID: $districtID) {
       id
       adminCoTeacherGrants {
+        createdAt
         expiresAt
         classroomDistrictInfo {
           id
@@ -25287,6 +25288,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
             id
             cacheId
             signupCode
+            descriptor
             __typename
           }
           teacherUserDistrictInfo {
