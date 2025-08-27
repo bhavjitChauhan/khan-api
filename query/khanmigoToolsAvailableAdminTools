@@ -1,0 +1,7 @@
+query khanmigoToolsAvailableAdminTools {
+  aiGuideAdminTools {
+    id
+    configName
+    __typename
+  }
+}

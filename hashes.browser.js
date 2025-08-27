@@ -929,4 +929,7 @@ hashes = {
   guideClosetModalPoints: 3085373471,
   getMappedStandardsForContent: 2440210706,
   getPrerequisiteExercises: 3368626419,
+  khanmigoToolsAvailableAdminTools: 1689852240,
+  khanmigoToolsAvailableParentTools: 1654925904,
+  khanmigoToolsDistrictSchools: 4283803816,
 }

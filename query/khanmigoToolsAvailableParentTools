@@ -1,0 +1,7 @@
+query khanmigoToolsAvailableParentTools {
+  aiGuideParentTools {
+    id
+    configName
+    __typename
+  }
+}

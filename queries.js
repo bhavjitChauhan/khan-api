@@ -25498,4 +25498,29 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  khanmigoToolsAvailableAdminTools: `query khanmigoToolsAvailableAdminTools {
+  aiGuideAdminTools {
+    id
+    configName
+    __typename
+  }
+}`,
+  khanmigoToolsAvailableParentTools: `query khanmigoToolsAvailableParentTools {
+  aiGuideParentTools {
+    id
+    configName
+    __typename
+  }
+}`,
+  khanmigoToolsDistrictSchools: `query khanmigoToolsDistrictSchools($districtID: ID!) {
+  district: districtById(districtId: $districtID) {
+    id
+    schools {
+      id
+      name
+      __typename
+    }
+    __typename
+  }
+}`,
 }
