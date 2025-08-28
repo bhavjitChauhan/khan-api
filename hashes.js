@@ -932,4 +932,5 @@ export default {
   khanmigoToolsAvailableAdminTools: 1689852240,
   khanmigoToolsAvailableParentTools: 1654925904,
   khanmigoToolsDistrictSchools: 4283803816,
+  khanmigoToolsChildrenClassrooms: 914957138,
 }

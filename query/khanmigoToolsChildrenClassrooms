@@ -1,0 +1,9 @@
+query khanmigoToolsChildrenClassrooms($parentKaid: String!) {
+  childAssignmentsClassroomsForParent(parentKaid: $parentKaid) {
+    id
+    cacheId
+    descriptor
+    name
+    __typename
+  }
+}

@@ -25523,4 +25523,13 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  khanmigoToolsChildrenClassrooms: `query khanmigoToolsChildrenClassrooms($parentKaid: String!) {
+  childAssignmentsClassroomsForParent(parentKaid: $parentKaid) {
+    id
+    cacheId
+    descriptor
+    name
+    __typename
+  }
+}`,
 }
