@@ -1,0 +1,42 @@
+query getDocumentsAndBlooketsForMyDocuments($limit: Int!) {
+  user {
+    id
+    coeditingDocuments(limit: $limit) {
+      documents {
+        id
+        title
+        configName
+        threadId
+        persona
+        latestSnapshot {
+          id
+          createdAt
+          data
+          __typename
+        }
+        thread {
+          id
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    blooketQuestionSets(limit: $limit) {
+      questionSets {
+        id
+        title
+        threadId
+        persona
+        lastUpdatedAt
+        thread {
+          id
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

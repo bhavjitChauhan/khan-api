@@ -14261,4 +14261,19 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  khanmigoCoeditingMigrateDocumentToV2: `mutation khanmigoCoeditingMigrateDocumentToV2($documentId: String!) {
+  migrateCoeditingDocument(documentID: $documentId, targetVersion: 2) {
+    newConfigName
+    newSnapshot {
+      id
+      data
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

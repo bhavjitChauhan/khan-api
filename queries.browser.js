@@ -24232,17 +24232,13 @@ fragment CourseUnit on Unit {
     __typename
   }
 }`,
-  khanmigoCoeditingGetLatestSnapshot: `query khanmigoCoeditingGetLatestSnapshot($threadId: String!) {
-  aiGuideThread(threadId: $threadId) {
+  khanmigoCoeditingGetLatestSnapshot: `query khanmigoCoeditingGetLatestSnapshot($documentId: String!) {
+  coeditingDocument(documentID: $documentId) {
     id
-    coeditingDocument {
+    title
+    latestSnapshot {
       id
-      title
-      latestSnapshot {
-        id
-        data
-        __typename
-      }
+      data
       __typename
     }
     __typename
@@ -25529,6 +25525,48 @@ fragment skillLevelChangeFields on SkillLevelChange {
     cacheId
     descriptor
     name
+    __typename
+  }
+}`,
+  getDocumentsAndBlooketsForMyDocuments: `query getDocumentsAndBlooketsForMyDocuments($limit: Int!) {
+  user {
+    id
+    coeditingDocuments(limit: $limit) {
+      documents {
+        id
+        title
+        configName
+        threadId
+        persona
+        latestSnapshot {
+          id
+          createdAt
+          data
+          __typename
+        }
+        thread {
+          id
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    blooketQuestionSets(limit: $limit) {
+      questionSets {
+        id
+        title
+        threadId
+        persona
+        lastUpdatedAt
+        thread {
+          id
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }`,
