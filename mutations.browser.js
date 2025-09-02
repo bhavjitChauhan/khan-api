@@ -6926,12 +6926,13 @@ fragment CourseRevisionStructure on CourseRevision {
     __typename
   }
 }`,
-  loginWithAppleAuthCodeAndState: `mutation loginWithAppleAuthCodeAndState($authCode: String!, $state: String!, $userData: AppleUserData, $role: UserRole) {
+  loginWithAppleAuthCodeAndState: `mutation loginWithAppleAuthCodeAndState($authCode: String!, $state: String!, $userData: AppleUserData, $role: UserRole, $flowType: OAuthFlowType) {
   loginWithAppleAuthCodeAndState(
     authCode: $authCode
     state: $state
     userData: $userData
     role: $role
+    flowType: $flowType
   ) {
     error {
       code
@@ -7009,8 +7010,13 @@ fragment CourseRevisionStructure on CourseRevision {
     __typename
   }
 }`,
-  loginWithFacebookMutation: `mutation loginWithFacebookMutation($token: String!, $role: UserRole, $inviteId: String) {
-  loginWithFacebook(token: $token, role: $role, inviteId: $inviteId) {
+  loginWithFacebookMutation: `mutation loginWithFacebookMutation($token: String!, $role: UserRole, $inviteId: String, $flowType: OAuthFlowType) {
+  loginWithFacebook(
+    token: $token
+    role: $role
+    inviteId: $inviteId
+    flowType: $flowType
+  ) {
     user {
       id
       kaid
@@ -7024,7 +7030,7 @@ fragment CourseRevisionStructure on CourseRevision {
     __typename
   }
 }`,
-  loginWithGoogleMutation: `mutation loginWithGoogleMutation($token: String!, $birthdate: String, $linkClever: Boolean, $role: UserRole, $cleverTransferToken: String, $inviteId: String) {
+  loginWithGoogleMutation: `mutation loginWithGoogleMutation($token: String!, $birthdate: String, $linkClever: Boolean, $role: UserRole, $cleverTransferToken: String, $inviteId: String, $flowType: OAuthFlowType) {
   loginWithGoogle(
     token: $token
     birthdate: $birthdate
@@ -7032,6 +7038,7 @@ fragment CourseRevisionStructure on CourseRevision {
     role: $role
     cleverTransferToken: $cleverTransferToken
     inviteId: $inviteId
+    flowType: $flowType
   ) {
     user {
       id

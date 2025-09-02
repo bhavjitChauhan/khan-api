@@ -1,4 +1,4 @@
-mutation loginWithGoogleMutation($token: String!, $birthdate: String, $linkClever: Boolean, $role: UserRole, $cleverTransferToken: String, $inviteId: String) {
+mutation loginWithGoogleMutation($token: String!, $birthdate: String, $linkClever: Boolean, $role: UserRole, $cleverTransferToken: String, $inviteId: String, $flowType: OAuthFlowType) {
   loginWithGoogle(
     token: $token
     birthdate: $birthdate
@@ -6,6 +6,7 @@ mutation loginWithGoogleMutation($token: String!, $birthdate: String, $linkCleve
     role: $role
     cleverTransferToken: $cleverTransferToken
     inviteId: $inviteId
+    flowType: $flowType
   ) {
     user {
       id

@@ -1,9 +1,10 @@
-mutation loginWithAppleAuthCodeAndState($authCode: String!, $state: String!, $userData: AppleUserData, $role: UserRole) {
+mutation loginWithAppleAuthCodeAndState($authCode: String!, $state: String!, $userData: AppleUserData, $role: UserRole, $flowType: OAuthFlowType) {
   loginWithAppleAuthCodeAndState(
     authCode: $authCode
     state: $state
     userData: $userData
     role: $role
+    flowType: $flowType
   ) {
     error {
       code
