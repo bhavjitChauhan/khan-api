@@ -36,6 +36,10 @@ query guideTranscript($transcriptId: String!) {
         llmSummary
         __typename
       }
+      diagrams {
+        code
+        __typename
+      }
       __typename
     }
     blooketQuestionSet {

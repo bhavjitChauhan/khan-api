@@ -10546,6 +10546,10 @@ fragment gtp_essayScoresFragment on EssayScores {
         llmSummary
         __typename
       }
+      diagrams {
+        code
+        __typename
+      }
       __typename
     }
     blooketQuestionSet {
