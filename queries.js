@@ -25574,4 +25574,16 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  grassrootsParent: `query grassrootsParent {
+  user {
+    id
+    isParent
+    children {
+      id
+      includesDistrictOwnedData
+      __typename
+    }
+    __typename
+  }
+}`,
 }
