@@ -25587,4 +25587,25 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  productByName: `query productByName($name: String!) {
+  productByName(name: $name) {
+    id
+    name
+    isActive
+    description
+    extProductID
+    validationBillingCountries
+    prices {
+      currency
+      extProductID
+      id
+      recurringInterval
+      recurringIntervalCount
+      type
+      unitAmount
+      __typename
+    }
+    __typename
+  }
+}`,
 }

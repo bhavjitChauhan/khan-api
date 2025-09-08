@@ -14283,4 +14283,14 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  AcceptLegalDocument: `mutation AcceptLegalDocument($versionKey: String!) {
+  acceptLegalDocument(versionKey: $versionKey) {
+    error {
+      debugMessage
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

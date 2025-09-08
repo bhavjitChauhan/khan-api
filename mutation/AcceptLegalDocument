@@ -1,0 +1,10 @@
+mutation AcceptLegalDocument($versionKey: String!) {
+  acceptLegalDocument(versionKey: $versionKey) {
+    error {
+      debugMessage
+      code
+      __typename
+    }
+    __typename
+  }
+}
