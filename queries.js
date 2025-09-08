@@ -5010,6 +5010,7 @@ fragment UserFields on User {
     hasClasses
     includesDistrictOwnedData
     includesCentrallyOwnedDistrictData
+    isInKhanClassroomDistrict
     badgeCounts
     points
     userDistrictInfos {

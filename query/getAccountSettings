@@ -84,6 +84,7 @@ query getAccountSettings($targetKaid: String) {
     hasClasses
     includesDistrictOwnedData
     includesCentrallyOwnedDistrictData
+    isInKhanClassroomDistrict
     badgeCounts
     points
     userDistrictInfos {
