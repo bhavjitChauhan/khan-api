@@ -14293,4 +14293,21 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  CalculateTaxByAddress: `mutation CalculateTaxByAddress($stripePriceID: ID!, $quantity: Int!, $productName: String!, $billingAddress: StripeBillingAddress!) {
+  calculateTaxByAddress(
+    stripePriceID: $stripePriceID
+    quantity: $quantity
+    productName: $productName
+    billingAddress: $billingAddress
+  ) {
+    taxAmount
+    error {
+      debugMessage
+      code
+      __typename
+    }
+    taxAmount
+    __typename
+  }
+}`,
 }
