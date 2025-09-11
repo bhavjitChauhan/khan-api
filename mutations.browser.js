@@ -14310,4 +14310,20 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  CreateIncompleteSubscription: `mutation CreateIncompleteSubscription($stripePriceID: ID!, $quantity: Int!) {
+  createKadssIncompleteSubscription(
+    stripePriceID: $stripePriceID
+    quantity: $quantity
+  ) {
+    customerID
+    clientSecret
+    subscriptionID
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
