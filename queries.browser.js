@@ -25261,6 +25261,12 @@ fragment skillLevelChangeFields on SkillLevelChange {
       id
       name
       keyNameID
+      classroom {
+        id
+        cacheId
+        signupCode
+        __typename
+      }
       __typename
     }
     __typename
