@@ -21695,6 +21695,7 @@ fragment AssignmentFields on Assignment {
   getHomePageTargets: `query getHomePageTargets($districtID: ID!) {
   districtById(districtId: $districtID) {
     id
+    hasUMGsSet
     goal {
       courseMasteryTargets {
         course {
