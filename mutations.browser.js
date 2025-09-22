@@ -14326,4 +14326,19 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  UpdateIncompleteSubscription: `mutation UpdateIncompleteSubscription($quantity: Int!, $subscriptionID: ID!) {
+  updateKadssIncompleteSubscription(
+    quantity: $quantity
+    subscriptionID: $subscriptionID
+  ) {
+    clientSecret
+    subscriptionID
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
