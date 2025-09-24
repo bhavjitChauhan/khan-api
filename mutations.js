@@ -14341,4 +14341,15 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  UpsertPendingOrg: `mutation UpsertPendingOrg($input: UpsertSelfServePendingOrganizationInput!) {
+  upsertSelfServePendingOrganization(input: $input) {
+    id
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
