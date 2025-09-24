@@ -25615,4 +25615,32 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  KadssPaymentSummary: `query KadssPaymentSummary($confirmationTokenID: String!, $subscriptionID: String!) {
+  kadssPaymentSummary(
+    confirmationTokenID: $confirmationTokenID
+    subscriptionID: $subscriptionID
+  ) {
+    nickname
+    email
+    orgType
+    orgName
+    billingAddress {
+      line1
+      line2
+      city
+      state
+      postalCode
+      country
+      __typename
+    }
+    cardDisplayBrand
+    cardLast4
+    productName
+    quantity
+    subtotalCents
+    taxCents
+    totalCents
+    __typename
+  }
+}`,
 }
