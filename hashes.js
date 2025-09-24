@@ -936,5 +936,5 @@ export default {
   getDocumentsAndBlooketsForMyDocuments: 378855982,
   grassrootsParent: 432096628,
   productByName: 2140348651,
-  KadssPaymentSummary: 4276869683,
+  KadssPaymentSummary: 4185993970,
 }

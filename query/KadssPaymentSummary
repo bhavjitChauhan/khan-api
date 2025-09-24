@@ -3,6 +3,7 @@ query KadssPaymentSummary($confirmationTokenID: String!, $subscriptionID: String
     confirmationTokenID: $confirmationTokenID
     subscriptionID: $subscriptionID
   ) {
+    districtID
     nickname
     email
     orgType

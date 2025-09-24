@@ -25620,6 +25620,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
     confirmationTokenID: $confirmationTokenID
     subscriptionID: $subscriptionID
   ) {
+    districtID
     nickname
     email
     orgType
