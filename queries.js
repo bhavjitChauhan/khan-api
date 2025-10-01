@@ -25644,4 +25644,12 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  HasAcceptedLegalDocument: `query HasAcceptedLegalDocument($slug: String!, $kaLocale: String, $countryCode: String!, $userKaid: String!) {
+  hasAcceptedLegalDocument(
+    slug: $slug
+    kaLocale: $kaLocale
+    countryCode: $countryCode
+    userKaid: $userKaid
+  )
+}`,
 }

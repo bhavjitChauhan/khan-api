@@ -937,4 +937,5 @@ export default {
   grassrootsParent: 432096628,
   productByName: 2140348651,
   KadssPaymentSummary: 4185993970,
+  HasAcceptedLegalDocument: 3501363218,
 }
