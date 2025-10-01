@@ -938,4 +938,5 @@ export default {
   productByName: 2140348651,
   KadssPaymentSummary: 4185993970,
   HasAcceptedLegalDocument: 3501363218,
+  GetPendingOrgByKaid: 870603146,
 }

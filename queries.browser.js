@@ -25652,4 +25652,17 @@ fragment skillLevelChangeFields on SkillLevelChange {
     userKaid: $userKaid
   )
 }`,
+  GetPendingOrgByKaid: `query GetPendingOrgByKaid($kaid: String!) {
+  getSelfServePendingOrganization(creatorKaid: $kaid) {
+    id
+    creatorKaid
+    orgType
+    ncesID
+    orgName
+    stateCode
+    postalCode
+    identifiesAsMicroschool
+    __typename
+  }
+}`,
 }
