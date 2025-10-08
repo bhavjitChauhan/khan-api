@@ -25665,4 +25665,33 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  AuthPackage_UserIsInXTPartnership: `query AuthPackage_UserIsInXTPartnership {
+  user {
+    id
+    userDistrictInfos {
+      id
+      partnership {
+        ... on MetaDistrict {
+          id
+          __typename
+        }
+        ... on District {
+          id
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    userMetaInfos {
+      id
+      partnership {
+        id
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }

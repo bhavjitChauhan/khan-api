@@ -939,4 +939,5 @@ hashes = {
   KadssPaymentSummary: 4185993970,
   HasAcceptedLegalDocument: 3501363218,
   GetPendingOrgByKaid: 870603146,
+  AuthPackage_UserIsInXTPartnership: 3299762918,
 }
