@@ -30,6 +30,7 @@ query SkillsMetadataAndStudentsQuery($selectedMasteryCourseIds: [String]!, $clas
         topicPaths {
           path {
             id
+            slug
             __typename
           }
           __typename

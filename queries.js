@@ -1085,6 +1085,15 @@ fragment AssignmentCsvData on Assignment {
           title: translatedTitle
           kind
           defaultUrlPath
+          topicPaths {
+            path {
+              id
+              kind
+              slug
+              __typename
+            }
+            __typename
+          }
           __typename
         }
         exerciseConfig {
@@ -13277,6 +13286,7 @@ fragment ProblemAttemptFields on ProblemAttempt {
         topicPaths {
           path {
             id
+            slug
             __typename
           }
           __typename
@@ -13324,6 +13334,7 @@ fragment ProblemAttemptFields on ProblemAttempt {
         topicPaths {
           path {
             id
+            slug
             __typename
           }
           __typename

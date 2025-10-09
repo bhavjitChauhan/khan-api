@@ -29,6 +29,15 @@ query CoachAssignments($classDescriptor: String!, $assignmentFilters: CoachAssig
           title: translatedTitle
           kind
           defaultUrlPath
+          topicPaths {
+            path {
+              id
+              kind
+              slug
+              __typename
+            }
+            __typename
+          }
           __typename
         }
         exerciseConfig {
