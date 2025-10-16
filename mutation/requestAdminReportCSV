@@ -1,4 +1,4 @@
-mutation requestAdminReportCSV($kaid: ID!, $selectedNodeID: ID!, $childIDs: [String!]!, $reportType: AdminReportType!, $startDate: DateTime!, $endDate: DateTime!, $grades: [String!], $teacherKaids: [String!], $courseSISValues: [String!], $courseID: String, $strandKey: String, $bands: [String!], $notifyByEmail: Boolean!, $kaLocale: String) {
+mutation requestAdminReportCSV($kaid: ID!, $selectedNodeID: ID!, $childIDs: [String!]!, $reportType: AdminReportType!, $startDate: DateTime!, $endDate: DateTime!, $grades: [String!], $teacherKaids: [String!], $courseSISValues: [String!], $courseIDs: [String!], $strandKey: String, $bands: [String!], $notifyByEmail: Boolean!, $kaLocale: String) {
   requestAdminReportCSV(
     kaid: $kaid
     selectedNodeID: $selectedNodeID
@@ -9,7 +9,7 @@ mutation requestAdminReportCSV($kaid: ID!, $selectedNodeID: ID!, $childIDs: [Str
     teacherKaids: $teacherKaids
     grades: $grades
     courseSISValues: $courseSISValues
-    courseID: $courseID
+    courseIDs: $courseIDs
     strandKey: $strandKey
     bands: $bands
     notifyByEmail: $notifyByEmail
