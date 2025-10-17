@@ -87,6 +87,14 @@ query csvReportStatus($kaid: String!, $partnershipID: String) {
         masteryEnabled
         __typename
       }
+      courses {
+        id
+        key
+        title
+        translatedTitle
+        masteryEnabled
+        __typename
+      }
       gradeLevels {
         id
         name

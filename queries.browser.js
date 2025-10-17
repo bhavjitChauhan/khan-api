@@ -3508,6 +3508,14 @@ fragment CourseProgress on SubjectProgress {
         masteryEnabled
         __typename
       }
+      courses {
+        id
+        key
+        title
+        translatedTitle
+        masteryEnabled
+        __typename
+      }
       gradeLevels {
         id
         name

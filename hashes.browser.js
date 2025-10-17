@@ -96,7 +96,7 @@ hashes = {
   CourseMenuEditor_DefaultCourseMenu: 1697678709,
   courseProgresses: 4018553270,
   CoursesUnitsQuery: 3917796323,
-  csvReportStatus: 1025473962,
+  csvReportStatus: 3482301797,
   curationNodePublishedInfo: 1042148120,
   curationPageRevision: 3306111379,
   curriculumsQuery: 2648919930,
