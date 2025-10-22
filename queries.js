@@ -25725,6 +25725,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
   GetOrgPurchaseByKaid: `query GetOrgPurchaseByKaid($kaid: String!) {
   orgPurchaseByKaid(kaid: $kaid) {
     extId
+    kaids
     __typename
   }
 }`,

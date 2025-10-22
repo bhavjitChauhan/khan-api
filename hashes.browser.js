@@ -941,5 +941,5 @@ hashes = {
   GetPendingOrgByKaid: 870603146,
   AuthPackage_UserIsInXTPartnership: 3299762918,
   GetCardDetailsBySubscriptionID: 4194326727,
-  GetOrgPurchaseByKaid: 993484475,
+  GetOrgPurchaseByKaid: 4186936165,
 }
