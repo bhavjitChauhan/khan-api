@@ -14352,4 +14352,13 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  sendAdminHomepageViewedCEDAREvent: `mutation sendAdminHomepageViewedCEDAREvent($input: SendAdminHomepageViewedCEDAREventInput!) {
+  sendAdminHomepageViewedCEDAREvent(input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

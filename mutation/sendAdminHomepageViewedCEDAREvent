@@ -1,0 +1,9 @@
+mutation sendAdminHomepageViewedCEDAREvent($input: SendAdminHomepageViewedCEDAREventInput!) {
+  sendAdminHomepageViewedCEDAREvent(input: $input) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

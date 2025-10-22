@@ -21,7 +21,7 @@
   "availableKinds": "query availableKinds {\n  permission {\n    content {\n      data {\n        availableKinds\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}",
   "availableRoles": "query availableRoles {\n  permission {\n    content {\n      data {\n        availableRoles\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}",
   "avatarDataForProfile": "query avatarDataForProfile($kaid: String!) {\n  user(kaid: $kaid) {\n    id\n    avatar {\n      name\n      imageSrc\n      __typename\n    }\n    __typename\n  }\n}",
-  "careersPageQuery": "query careersPageQuery {\n  careers {\n    departments {\n      name\n      jobs {\n        title\n        location\n        url\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}",
+  "careersPageQuery": "query careersPageQuery($bustCache: Boolean) {\n  careers(bustCache: $bustCache) {\n    departments {\n      name\n      jobs {\n        title\n        location\n        url\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}",
   "checkPromotion": "query checkPromotion($promoName: String!) {\n  user {\n    id\n    promotion(promoName: $promoName)\n    __typename\n  }\n}",
   "checkUsername": "query checkUsername($username: String!) {\n  checkUsername(username: $username) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
   "ClassCodeByClassIdQuery": "query ClassCodeByClassIdQuery($classId: String!) {\n  user {\n    id\n    studentList(id: $classId) {\n      id\n      cacheId\n      signupCode\n      __typename\n    }\n    __typename\n  }\n}",

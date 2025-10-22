@@ -1,5 +1,5 @@
-query careersPageQuery {
-  careers {
+query careersPageQuery($bustCache: Boolean) {
+  careers(bustCache: $bustCache) {
     departments {
       name
       jobs {

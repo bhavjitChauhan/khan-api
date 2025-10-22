@@ -21,7 +21,7 @@ hashes = {
   availableKinds: 3930450472,
   availableRoles: 3347990888,
   avatarDataForProfile: 2132039620,
-  careersPageQuery: 3930936187,
+  careersPageQuery: 3829595779,
   checkPromotion: 4154489750,
   checkUsername: 2149192606,
   ClassCodeByClassIdQuery: 4162490411,

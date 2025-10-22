@@ -783,8 +783,8 @@ fragment AssignmentCsvData on Assignment {
     __typename
   }
 }`,
-  careersPageQuery: `query careersPageQuery {
-  careers {
+  careersPageQuery: `query careersPageQuery($bustCache: Boolean) {
+  careers(bustCache: $bustCache) {
     departments {
       name
       jobs {
