@@ -1,0 +1,6 @@
+query GetOrgPurchaseByKaid($kaid: String!) {
+  orgPurchaseByKaid(kaid: $kaid) {
+    extId
+    __typename
+  }
+}

@@ -25713,4 +25713,19 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  GetCardDetailsBySubscriptionID: `query GetCardDetailsBySubscriptionID($subscriptionID: String!) {
+  kadssCardDetails(subscriptionID: $subscriptionID) {
+    cardLast4
+    expMonth
+    expYear
+    cardDisplayBrand
+    __typename
+  }
+}`,
+  GetOrgPurchaseByKaid: `query GetOrgPurchaseByKaid($kaid: String!) {
+  orgPurchaseByKaid(kaid: $kaid) {
+    extId
+    __typename
+  }
+}`,
 }
