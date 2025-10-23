@@ -14367,4 +14367,15 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  CreateAvalaraECommerceToken: `mutation CreateAvalaraECommerceToken {
+  createAvalaraECommerceToken {
+    token
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
