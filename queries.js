@@ -25729,4 +25729,18 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  userCardForLoginMobile: `query userCardForLoginMobile {
+  user {
+    id
+    bio
+    username
+    nickname
+    avatar {
+      name
+      imageSrc
+      __typename
+    }
+    __typename
+  }
+}`,
 }

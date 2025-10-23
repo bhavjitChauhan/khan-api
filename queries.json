@@ -941,5 +941,6 @@
   "GetPendingOrgByKaid": "query GetPendingOrgByKaid($kaid: String!) {\n  getSelfServePendingOrganization(creatorKaid: $kaid) {\n    id\n    creatorKaid\n    orgType\n    ncesID\n    orgName\n    stateCode\n    postalCode\n    identifiesAsMicroschool\n    __typename\n  }\n}",
   "AuthPackage_UserIsInXTPartnership": "query AuthPackage_UserIsInXTPartnership {\n  user {\n    id\n    userDistrictInfos {\n      id\n      partnership {\n        ... on MetaDistrict {\n          id\n          __typename\n        }\n        ... on District {\n          id\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    userMetaInfos {\n      id\n      partnership {\n        id\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}",
   "GetCardDetailsBySubscriptionID": "query GetCardDetailsBySubscriptionID($subscriptionID: String!) {\n  kadssCardDetails(subscriptionID: $subscriptionID) {\n    cardLast4\n    expMonth\n    expYear\n    cardDisplayBrand\n    __typename\n  }\n}",
-  "GetOrgPurchaseByKaid": "query GetOrgPurchaseByKaid($kaid: String!) {\n  orgPurchaseByKaid(kaid: $kaid) {\n    extId\n    kaids\n    __typename\n  }\n}"
+  "GetOrgPurchaseByKaid": "query GetOrgPurchaseByKaid($kaid: String!) {\n  orgPurchaseByKaid(kaid: $kaid) {\n    extId\n    kaids\n    __typename\n  }\n}",
+  "userCardForLoginMobile": "query userCardForLoginMobile {\n  user {\n    id\n    bio\n    username\n    nickname\n    avatar {\n      name\n      imageSrc\n      __typename\n    }\n    __typename\n  }\n}"
 }

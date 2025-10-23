@@ -942,4 +942,5 @@ hashes = {
   AuthPackage_UserIsInXTPartnership: 3299762918,
   GetCardDetailsBySubscriptionID: 4194326727,
   GetOrgPurchaseByKaid: 4186936165,
+  userCardForLoginMobile: 1350339243,
 }
