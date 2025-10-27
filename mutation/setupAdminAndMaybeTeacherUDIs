@@ -1,0 +1,39 @@
+mutation setupAdminAndMaybeTeacherUDIs($params: [WriteAdminAndMaybeTeacherUDIParams!]!) {
+  setupAdminAndMaybeTeacherUDIs(params: $params) {
+    adminUDI {
+      id
+      districtProvidedFirstName
+      districtProvidedLastName
+      districtProvidedEmail
+      primaryRole
+      canManageAdmins
+      adminOfSchools {
+        id
+        name
+        __typename
+      }
+      schools {
+        id
+        name
+        __typename
+      }
+      moderatorOfSchools {
+        id
+        name
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      conflictingUDI {
+        id
+        districtProvidedFirstName
+        districtProvidedLastName
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

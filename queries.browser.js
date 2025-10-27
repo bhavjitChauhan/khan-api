@@ -22079,6 +22079,8 @@ fragment UserFields on User {
     levelHeight
     isK4dDistrict
     isKmapDistrict
+    hasKadSelfServe
+    hasKadTrial
     isTest
     isAdministered
     isUMGRecommendationEnabled

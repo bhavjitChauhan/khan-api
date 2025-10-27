@@ -14378,4 +14378,65 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  createKADSSTeacherUDIForTrialAndHIPRDistrict: `mutation createKADSSTeacherUDIForTrialAndHIPRDistrict($districtID: ID!, $udiProperties: [CreateTeacherUDIForTrialAndHIPRDistrictInput!]!) {
+  createTeacherUDIForTrialAndHIPRDistrict(
+    districtID: $districtID
+    udiProperties: $udiProperties
+  ) {
+    udi {
+      id
+      __typename
+    }
+    error {
+      code
+      dedupUDI {
+        id
+        keyNameID
+        districtProvidedEmail
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  setupAdminAndMaybeTeacherUDIs: `mutation setupAdminAndMaybeTeacherUDIs($params: [WriteAdminAndMaybeTeacherUDIParams!]!) {
+  setupAdminAndMaybeTeacherUDIs(params: $params) {
+    adminUDI {
+      id
+      districtProvidedFirstName
+      districtProvidedLastName
+      districtProvidedEmail
+      primaryRole
+      canManageAdmins
+      adminOfSchools {
+        id
+        name
+        __typename
+      }
+      schools {
+        id
+        name
+        __typename
+      }
+      moderatorOfSchools {
+        id
+        name
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      conflictingUDI {
+        id
+        districtProvidedFirstName
+        districtProvidedLastName
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
 }

@@ -11,6 +11,8 @@ query ExpandedDistrictQuery($districtID: ID!, $districtIDStr: String!) {
     levelHeight
     isK4dDistrict
     isKmapDistrict
+    hasKadSelfServe
+    hasKadTrial
     isTest
     isAdministered
     isUMGRecommendationEnabled
