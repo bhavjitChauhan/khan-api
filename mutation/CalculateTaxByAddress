@@ -6,12 +6,12 @@ mutation CalculateTaxByAddress($stripePriceID: ID!, $quantity: Int!, $productNam
     billingAddress: $billingAddress
   ) {
     taxAmount
+    taxCalculationID
     error {
       debugMessage
       code
       __typename
     }
-    taxAmount
     __typename
   }
 }

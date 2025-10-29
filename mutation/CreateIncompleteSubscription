@@ -1,7 +1,8 @@
-mutation CreateIncompleteSubscription($stripePriceID: ID!, $quantity: Int!) {
+mutation CreateIncompleteSubscription($stripePriceID: ID!, $quantity: Int!, $confirmationToken: String) {
   createKadssIncompleteSubscription(
     stripePriceID: $stripePriceID
     quantity: $quantity
+    confirmationToken: $confirmationToken
   ) {
     customerID
     clientSecret

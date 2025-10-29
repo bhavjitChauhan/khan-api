@@ -14315,19 +14315,20 @@ fragment MasteryAssignment on MasteryAssignment {
     billingAddress: $billingAddress
   ) {
     taxAmount
+    taxCalculationID
     error {
       debugMessage
       code
       __typename
     }
-    taxAmount
     __typename
   }
 }`,
-  CreateIncompleteSubscription: `mutation CreateIncompleteSubscription($stripePriceID: ID!, $quantity: Int!) {
+  CreateIncompleteSubscription: `mutation CreateIncompleteSubscription($stripePriceID: ID!, $quantity: Int!, $confirmationToken: String) {
   createKadssIncompleteSubscription(
     stripePriceID: $stripePriceID
     quantity: $quantity
+    confirmationToken: $confirmationToken
   ) {
     customerID
     clientSecret
@@ -14340,10 +14341,11 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
-  UpdateIncompleteSubscription: `mutation UpdateIncompleteSubscription($quantity: Int!, $subscriptionID: ID!) {
+  UpdateIncompleteSubscription: `mutation UpdateIncompleteSubscription($quantity: Int!, $subscriptionID: ID!, $confirmationToken: String) {
   updateKadssIncompleteSubscription(
     quantity: $quantity
     subscriptionID: $subscriptionID
+    confirmationToken: $confirmationToken
   ) {
     clientSecret
     subscriptionID
