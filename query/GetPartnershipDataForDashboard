@@ -17,6 +17,8 @@ query GetPartnershipDataForDashboard($partnershipID: ID!, $kaLocale: String!) {
         hasLearningPaths: hasLp(scopeToActor: true)
         hasKhanmigo(scopeToActor: true)
         hasCentralRostering(scopeToActor: true)
+        hasAssessments(scopeToActor: true)
+        hasAssessmentsPilots(scopeToActor: true)
         kaLocale
         __typename
       }
@@ -37,6 +39,8 @@ query GetPartnershipDataForDashboard($partnershipID: ID!, $kaLocale: String!) {
         hasLearningPaths: isKmapDistrict(scopeToActor: true)
         hasKhanmigo: hasKhanmigo(scopeToActor: true)
         hasCentralRostering: isCentrallyRostered
+        hasAssessments(scopeToActor: true)
+        hasAssessmentsPilots(scopeToActor: true)
         kaLocale
         __typename
       }
@@ -75,6 +79,7 @@ query GetPartnershipDataForDashboard($partnershipID: ID!, $kaLocale: String!) {
         isKmapDistrict
         isTest
         isAdministered
+        hasKhanmigo(scopeToActor: true)
         __typename
       }
       __typename
@@ -104,6 +109,7 @@ query GetPartnershipDataForDashboard($partnershipID: ID!, $kaLocale: String!) {
       activatedAt
       canSeeAllSchools
       canManageAdmins
+      canManageRosterBrowser
       isKmap
       isAdmin
       __typename

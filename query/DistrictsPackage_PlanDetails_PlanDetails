@@ -1,0 +1,10 @@
+query DistrictsPackage_PlanDetails_PlanDetails($subscriptionID: String!) {
+  kadssPlanDetails(subscriptionID: $subscriptionID) {
+    totalSeats
+    pricePerSeatCents
+    nextBillingDate
+    willAutoRenew
+    recurringBillingAmountCents
+    __typename
+  }
+}

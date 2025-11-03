@@ -1,0 +1,17 @@
+mutation editAdminAndMaybeTeacherUDI($urlsafeKey: ID!, $params: WriteAdminAndMaybeTeacherUDIParams!) {
+  editAdminAndMaybeTeacherUDI(urlsafeKey: $urlsafeKey, params: $params) {
+    adminUDI {
+      id
+      __typename
+    }
+    error {
+      code
+      conflictingUDI {
+        id
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

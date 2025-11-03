@@ -1,0 +1,43 @@
+query assessmentsTeacherDashboard {
+  user {
+    id
+    assessmentSeries {
+      series {
+        id
+        name
+        assessmentType
+        subject
+        __typename
+      }
+      assessments {
+        assessment {
+          id
+          slug
+          timepoint
+          __typename
+        }
+        __typename
+      }
+      classrooms {
+        id
+        cacheId
+        descriptor
+        name
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  availableAssessmentSeries: assessmentSeries {
+    id
+    __typename
+  }
+  interimAssessmentWindows {
+    timepoint
+    startDate
+    endDate
+    status
+    __typename
+  }
+}

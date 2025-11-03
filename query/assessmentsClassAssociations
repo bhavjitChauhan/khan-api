@@ -1,0 +1,29 @@
+query assessmentsClassAssociations {
+  user {
+    id
+    assessmentSeries {
+      series {
+        id
+        name
+        assessmentType
+        subject
+        __typename
+      }
+      classrooms {
+        id
+        cacheId
+        descriptor
+        __typename
+      }
+      __typename
+    }
+    coachedClassrooms {
+      id
+      cacheId
+      descriptor
+      name
+      __typename
+    }
+    __typename
+  }
+}

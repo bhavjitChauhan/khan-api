@@ -1,0 +1,6 @@
+query KadssCustomerTaxExemptionStatus {
+  kadssCustomerTaxExemptionStatus {
+    status
+    __typename
+  }
+}

@@ -21598,6 +21598,16 @@ fragment ExerciseContentFields on LearnableContent {
       }
       __typename
     }
+    userDistrictInfos {
+      id
+      district {
+        id
+        hasAssessments
+        hasAssessmentsPilots
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }`,
@@ -21913,6 +21923,8 @@ fragment UserFields on User {
         hasLearningPaths: hasLp(scopeToActor: true)
         hasKhanmigo(scopeToActor: true)
         hasCentralRostering(scopeToActor: true)
+        hasAssessments(scopeToActor: true)
+        hasAssessmentsPilots(scopeToActor: true)
         kaLocale
         __typename
       }
@@ -21933,6 +21945,8 @@ fragment UserFields on User {
         hasLearningPaths: isKmapDistrict(scopeToActor: true)
         hasKhanmigo: hasKhanmigo(scopeToActor: true)
         hasCentralRostering: isCentrallyRostered
+        hasAssessments(scopeToActor: true)
+        hasAssessmentsPilots(scopeToActor: true)
         kaLocale
         __typename
       }
@@ -21971,6 +21985,7 @@ fragment UserFields on User {
         isKmapDistrict
         isTest
         isAdministered
+        hasKhanmigo(scopeToActor: true)
         __typename
       }
       __typename
@@ -22000,6 +22015,7 @@ fragment UserFields on User {
       activatedAt
       canSeeAllSchools
       canManageAdmins
+      canManageRosterBrowser
       isKmap
       isAdmin
       __typename
@@ -22096,6 +22112,8 @@ fragment UserFields on User {
       __typename
     }
     hasKhanmigo
+    hasAssessments(scopeToActor: true)
+    hasAssessmentsPilots(scopeToActor: true)
     isCentrallyRostered
     rosterSource
     region
@@ -25742,6 +25760,162 @@ fragment skillLevelChangeFields on SkillLevelChange {
       imageSrc
       __typename
     }
+    __typename
+  }
+}`,
+  DistrictsPackage_PlanDetails_PlanDetails: `query DistrictsPackage_PlanDetails_PlanDetails($subscriptionID: String!) {
+  kadssPlanDetails(subscriptionID: $subscriptionID) {
+    totalSeats
+    pricePerSeatCents
+    nextBillingDate
+    willAutoRenew
+    recurringBillingAmountCents
+    __typename
+  }
+}`,
+  DistrictsPackage_PlanDetails_RosterCount: `query DistrictsPackage_PlanDetails_RosterCount($districtID: String!) {
+  districtDashboardActivation(filters: {districtID: $districtID}) {
+    numRosteredStudents
+    __typename
+  }
+}`,
+  KadssCustomerTaxExemptionStatus: `query KadssCustomerTaxExemptionStatus {
+  kadssCustomerTaxExemptionStatus {
+    status
+    __typename
+  }
+}`,
+  assessmentsClassAssociations: `query assessmentsClassAssociations {
+  user {
+    id
+    assessmentSeries {
+      series {
+        id
+        name
+        assessmentType
+        subject
+        __typename
+      }
+      classrooms {
+        id
+        cacheId
+        descriptor
+        __typename
+      }
+      __typename
+    }
+    coachedClassrooms {
+      id
+      cacheId
+      descriptor
+      name
+      __typename
+    }
+    __typename
+  }
+}`,
+  assessmentsTeacherDashboard: `query assessmentsTeacherDashboard {
+  user {
+    id
+    assessmentSeries {
+      series {
+        id
+        name
+        assessmentType
+        subject
+        __typename
+      }
+      assessments {
+        assessment {
+          id
+          slug
+          timepoint
+          __typename
+        }
+        __typename
+      }
+      classrooms {
+        id
+        cacheId
+        descriptor
+        name
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  availableAssessmentSeries: assessmentSeries {
+    id
+    __typename
+  }
+  interimAssessmentWindows {
+    timepoint
+    startDate
+    endDate
+    status
+    __typename
+  }
+}`,
+  getActiveUDIsForDistrict: `query getActiveUDIsForDistrict($districtID: String!) {
+  getActiveUDIsForDistrict(districtID: $districtID) {
+    id
+    keyNameID
+    uuid
+    email
+    districtProvidedFirstName
+    districtProvidedLastName
+    displayName
+    allUDIRoles
+    kaid
+    activationEmailSentAt
+    isAdmin
+    canSeeAllSchools
+    schools {
+      id
+      name
+      __typename
+    }
+    adminOfSchools {
+      id
+      name
+      __typename
+    }
+    moderatorOfSchools {
+      id
+      name
+      __typename
+    }
+    coachedClassroomDistrictInfos {
+      id
+      name
+      __typename
+    }
+    studentClassroomDistrictInfos {
+      id
+      name
+      __typename
+    }
+    __typename
+  }
+}`,
+  seriesSelectionPage: `query seriesSelectionPage {
+  user {
+    id
+    assessmentSeries {
+      series {
+        id
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  availableAssessmentSeries: assessmentSeries {
+    id
+    name
+    assessmentType
+    subject
     __typename
   }
 }`,

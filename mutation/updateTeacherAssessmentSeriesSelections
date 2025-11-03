@@ -1,0 +1,12 @@
+mutation updateTeacherAssessmentSeriesSelections($assessmentSeriesIDsToAdd: [ID!]!, $assessmentSeriesIDsToRemove: [ID!]!) {
+  updateTeacherAssessmentSeriesSelections(
+    assessmentSeriesIDsToAdd: $assessmentSeriesIDsToAdd
+    assessmentSeriesIDsToRemove: $assessmentSeriesIDsToRemove
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

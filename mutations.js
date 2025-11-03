@@ -7622,7 +7622,7 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }`,
-  requestAdminReportCSV: `mutation requestAdminReportCSV($kaid: ID!, $selectedNodeID: ID!, $childIDs: [String!]!, $reportType: AdminReportType!, $startDate: DateTime!, $endDate: DateTime!, $grades: [String!], $teacherKaids: [String!], $courseSISValues: [String!], $courseIDs: [String!], $strandKey: String, $bands: [String!], $notifyByEmail: Boolean!, $kaLocale: String, $cronSchedule: String) {
+  requestAdminReportCSV: `mutation requestAdminReportCSV($kaid: ID!, $selectedNodeID: ID!, $childIDs: [String!]!, $reportType: AdminReportType!, $startDate: DateTime!, $endDate: DateTime!, $grades: [String!], $teacherKaids: [String!], $courseSISValues: [String!], $courseIDs: [String!], $strandKey: String, $bands: [String!], $notifyByEmail: Boolean!, $kaLocale: String, $cronSchedule: String, $writeToBigQuery: Boolean) {
   requestAdminReportCSV(
     kaid: $kaid
     selectedNodeID: $selectedNodeID
@@ -7639,6 +7639,7 @@ fragment entry on TeamPageEntryForEditing {
     notifyByEmail: $notifyByEmail
     kaLocale: $kaLocale
     cronSchedule: $cronSchedule
+    writeToBigQuery: $writeToBigQuery
   ) {
     adminReportSchedule {
       id
@@ -14436,6 +14437,77 @@ fragment MasteryAssignment on MasteryAssignment {
         districtProvidedLastName
         __typename
       }
+      __typename
+    }
+    __typename
+  }
+}`,
+  editAdminAndMaybeTeacherUDI: `mutation editAdminAndMaybeTeacherUDI($urlsafeKey: ID!, $params: WriteAdminAndMaybeTeacherUDIParams!) {
+  editAdminAndMaybeTeacherUDI(urlsafeKey: $urlsafeKey, params: $params) {
+    adminUDI {
+      id
+      __typename
+    }
+    error {
+      code
+      conflictingUDI {
+        id
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  resendKADSSActivationEmailMutation: `mutation resendKADSSActivationEmailMutation($urlsafeKey: ID!) {
+  resendActivationEmail(urlsafeKey: $urlsafeKey) {
+    emailSent
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  updateAssessmentsClassAssociations: `mutation updateAssessmentsClassAssociations($inputs: [UpdateClassroomsForAssessmentSeriesListInput!]!) {
+  updateClassroomsForAssessmentSeriesList(inputs: $inputs) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  updateKADSSTeacherUDI: `mutation updateKADSSTeacherUDI($districtID: ID!, $udiID: ID!, $udiProperties: CreateTeacherUDIForTrialAndHIPRDistrictInput!) {
+  updateTeacherUDIForTrialAndHIPRDistrict(
+    districtID: $districtID
+    udiID: $udiID
+    udiProperties: $udiProperties
+  ) {
+    udi {
+      id
+      __typename
+    }
+    error {
+      code
+      dedupUDI {
+        id
+        keyNameID
+        districtProvidedEmail
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  updateTeacherAssessmentSeriesSelections: `mutation updateTeacherAssessmentSeriesSelections($assessmentSeriesIDsToAdd: [ID!]!, $assessmentSeriesIDsToRemove: [ID!]!) {
+  updateTeacherAssessmentSeriesSelections(
+    assessmentSeriesIDsToAdd: $assessmentSeriesIDsToAdd
+    assessmentSeriesIDsToRemove: $assessmentSeriesIDsToRemove
+  ) {
+    error {
+      code
       __typename
     }
     __typename

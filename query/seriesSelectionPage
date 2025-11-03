@@ -1,0 +1,20 @@
+query seriesSelectionPage {
+  user {
+    id
+    assessmentSeries {
+      series {
+        id
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  availableAssessmentSeries: assessmentSeries {
+    id
+    name
+    assessmentType
+    subject
+    __typename
+  }
+}

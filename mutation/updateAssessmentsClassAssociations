@@ -1,0 +1,9 @@
+mutation updateAssessmentsClassAssociations($inputs: [UpdateClassroomsForAssessmentSeriesListInput!]!) {
+  updateClassroomsForAssessmentSeriesList(inputs: $inputs) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

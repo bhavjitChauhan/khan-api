@@ -29,6 +29,16 @@ query getTeacherAccessPermissionsData {
       }
       __typename
     }
+    userDistrictInfos {
+      id
+      district {
+        id
+        hasAssessments
+        hasAssessmentsPilots
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }

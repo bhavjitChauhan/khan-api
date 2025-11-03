@@ -28,6 +28,8 @@ query ExpandedDistrictQuery($districtID: ID!, $districtIDStr: String!) {
       __typename
     }
     hasKhanmigo
+    hasAssessments(scopeToActor: true)
+    hasAssessmentsPilots(scopeToActor: true)
     isCentrallyRostered
     rosterSource
     region

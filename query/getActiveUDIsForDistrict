@@ -1,0 +1,42 @@
+query getActiveUDIsForDistrict($districtID: String!) {
+  getActiveUDIsForDistrict(districtID: $districtID) {
+    id
+    keyNameID
+    uuid
+    email
+    districtProvidedFirstName
+    districtProvidedLastName
+    displayName
+    allUDIRoles
+    kaid
+    activationEmailSentAt
+    isAdmin
+    canSeeAllSchools
+    schools {
+      id
+      name
+      __typename
+    }
+    adminOfSchools {
+      id
+      name
+      __typename
+    }
+    moderatorOfSchools {
+      id
+      name
+      __typename
+    }
+    coachedClassroomDistrictInfos {
+      id
+      name
+      __typename
+    }
+    studentClassroomDistrictInfos {
+      id
+      name
+      __typename
+    }
+    __typename
+  }
+}

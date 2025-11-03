@@ -1,0 +1,6 @@
+query DistrictsPackage_PlanDetails_RosterCount($districtID: String!) {
+  districtDashboardActivation(filters: {districtID: $districtID}) {
+    numRosteredStudents
+    __typename
+  }
+}
