@@ -1,0 +1,13 @@
+mutation deleteStudentUDIsForHIPRDistrict($districtId: ID!, $udiIds: [ID!]!, $shouldSendEmailToTeachers: Boolean!) {
+  deleteStudentUDIsForHIPRDistrict(
+    districtID: $districtId
+    udiIDs: $udiIds
+    shouldSendEmailToTeachers: $shouldSendEmailToTeachers
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

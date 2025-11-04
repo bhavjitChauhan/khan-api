@@ -14513,4 +14513,26 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  clearAdminOrTeacherUDIInfo: `mutation clearAdminOrTeacherUDIInfo($udiID: ID!) {
+  clearAdminOrTeacherUDIInfo(udiID: $udiID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  deleteStudentUDIsForHIPRDistrict: `mutation deleteStudentUDIsForHIPRDistrict($districtId: ID!, $udiIds: [ID!]!, $shouldSendEmailToTeachers: Boolean!) {
+  deleteStudentUDIsForHIPRDistrict(
+    districtID: $districtId
+    udiIDs: $udiIds
+    shouldSendEmailToTeachers: $shouldSendEmailToTeachers
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

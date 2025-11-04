@@ -1,0 +1,9 @@
+mutation clearAdminOrTeacherUDIInfo($udiID: ID!) {
+  clearAdminOrTeacherUDIInfo(udiID: $udiID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
