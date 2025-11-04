@@ -1,0 +1,11 @@
+mutation CreateSetupIntent($subscriptionID: String!) {
+  createKadssSetupIntent(subscriptionID: $subscriptionID) {
+    clientSecret
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

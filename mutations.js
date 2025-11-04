@@ -14535,4 +14535,28 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  CreateSetupIntent: `mutation CreateSetupIntent($subscriptionID: String!) {
+  createKadssSetupIntent(subscriptionID: $subscriptionID) {
+    clientSecret
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  UpdatePaymentMethod: `mutation UpdatePaymentMethod($subscriptionID: String!, $paymentMethodID: String!) {
+  updateKadssPaymentMethod(
+    subscriptionID: $subscriptionID
+    paymentMethodID: $paymentMethodID
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
