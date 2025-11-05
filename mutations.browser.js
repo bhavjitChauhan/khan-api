@@ -14571,4 +14571,64 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  CreateSchoolsForDistrict: `mutation CreateSchoolsForDistrict($districtID: ID!, $schoolNames: [String!]!) {
+  createSchoolsForDistrict(districtID: $districtID, schoolNames: $schoolNames) {
+    school {
+      id
+      name
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  EditSchoolNameForDistrict: `mutation EditSchoolNameForDistrict($districtID: ID!, $schoolID: ID!, $schoolName: String!) {
+  editSchoolNameForDistrict(
+    districtID: $districtID
+    schoolID: $schoolID
+    schoolName: $schoolName
+  ) {
+    school {
+      id
+      name
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  setKADSSSchoolYear: `mutation setKADSSSchoolYear($districtID: String!, $startDate: DateTime!, $endDate: DateTime!) {
+  setKADSSSchoolYear(
+    districtID: $districtID
+    startDate: $startDate
+    endDate: $endDate
+  ) {
+    schoolYearDates {
+      start {
+        nthWeek
+        dayOfWeek
+        month
+        __typename
+      }
+      end {
+        nthWeek
+        dayOfWeek
+        month
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

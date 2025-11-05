@@ -12,6 +12,7 @@ query getActiveUDIsForDistrict($districtID: String!) {
     activationEmailSentAt
     isAdmin
     canSeeAllSchools
+    canManageAdmins
     schools {
       id
       name

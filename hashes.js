@@ -948,6 +948,7 @@ export default {
   KadssCustomerTaxExemptionStatus: 749172494,
   assessmentsClassAssociations: 3411955459,
   assessmentsTeacherDashboard: 2536678083,
-  getActiveUDIsForDistrict: 2292970753,
+  getActiveUDIsForDistrict: 3977701722,
   seriesSelectionPage: 4255301079,
+  GetSchoolsForDistrict: 3916026450,
 }

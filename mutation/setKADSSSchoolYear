@@ -1,0 +1,28 @@
+mutation setKADSSSchoolYear($districtID: String!, $startDate: DateTime!, $endDate: DateTime!) {
+  setKADSSSchoolYear(
+    districtID: $districtID
+    startDate: $startDate
+    endDate: $endDate
+  ) {
+    schoolYearDates {
+      start {
+        nthWeek
+        dayOfWeek
+        month
+        __typename
+      }
+      end {
+        nthWeek
+        dayOfWeek
+        month
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

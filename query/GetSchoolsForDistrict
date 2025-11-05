@@ -1,0 +1,11 @@
+query GetSchoolsForDistrict($districtID: ID!) {
+  districtById(districtId: $districtID) {
+    id
+    schools {
+      id
+      name
+      __typename
+    }
+    __typename
+  }
+}

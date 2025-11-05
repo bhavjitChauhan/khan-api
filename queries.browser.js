@@ -25871,6 +25871,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
     activationEmailSentAt
     isAdmin
     canSeeAllSchools
+    canManageAdmins
     schools {
       id
       name
@@ -25916,6 +25917,17 @@ fragment skillLevelChangeFields on SkillLevelChange {
     name
     assessmentType
     subject
+    __typename
+  }
+}`,
+  GetSchoolsForDistrict: `query GetSchoolsForDistrict($districtID: ID!) {
+  districtById(districtId: $districtID) {
+    id
+    schools {
+      id
+      name
+      __typename
+    }
     __typename
   }
 }`,
