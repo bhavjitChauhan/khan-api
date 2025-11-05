@@ -14559,4 +14559,16 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  DistrictsPackage_PlanDetails_SetSubscriptionAutoRenew: `mutation DistrictsPackage_PlanDetails_SetSubscriptionAutoRenew($subscriptionID: String!, $shouldAutoRenew: Boolean!) {
+  kadssSetSubscriptionAutoRenew(
+    subscriptionID: $subscriptionID
+    shouldAutoRenew: $shouldAutoRenew
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
