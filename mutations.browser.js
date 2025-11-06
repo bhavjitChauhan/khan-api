@@ -14631,4 +14631,26 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  SetClassroomCoursesByIds: `mutation SetClassroomCoursesByIds($classDescriptor: String!, $courseIds: [String!]!) {
+  setClassroomCoursesByIds(
+    classroomDescriptor: $classDescriptor
+    courseIds: $courseIds
+  ) {
+    classroom {
+      id
+      cacheId
+      topics {
+        id
+        masteryEnabled
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

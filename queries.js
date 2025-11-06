@@ -25931,4 +25931,17 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  GetDomains: `query GetDomains($region: String!) {
+  domains: learnMenuTopics(region: $region) {
+    translatedTitle
+    courses: children {
+      courseId
+      contentKind
+      translatedTitle
+      href
+      __typename
+    }
+    __typename
+  }
+}`,
 }

@@ -951,4 +951,5 @@ export default {
   getActiveUDIsForDistrict: 3977701722,
   seriesSelectionPage: 4255301079,
   GetSchoolsForDistrict: 3916026450,
+  GetDomains: 1690390739,
 }
