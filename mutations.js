@@ -7622,7 +7622,7 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }`,
-  requestAdminReportCSV: `mutation requestAdminReportCSV($kaid: ID!, $selectedNodeID: ID!, $childIDs: [String!]!, $reportType: AdminReportType!, $startDate: DateTime!, $endDate: DateTime!, $grades: [String!], $teacherKaids: [String!], $courseSISValues: [String!], $courseIDs: [String!], $strandKey: String, $bands: [String!], $notifyByEmail: Boolean!, $kaLocale: String, $cronSchedule: String, $writeToBigQuery: Boolean) {
+  requestAdminReportCSV: `mutation requestAdminReportCSV($kaid: ID!, $selectedNodeID: ID!, $childIDs: [String!]!, $reportType: AdminReportType!, $startDate: DateTime!, $endDate: DateTime!, $grades: [String!], $teacherKaids: [String!], $courseSISValues: [String!], $courseIDs: [String!], $groupBy: [AdminReportField!], $strandKey: String, $bands: [String!], $notifyByEmail: Boolean!, $kaLocale: String, $cronSchedule: String, $writeToBigQuery: Boolean) {
   requestAdminReportCSV(
     kaid: $kaid
     selectedNodeID: $selectedNodeID
@@ -7634,6 +7634,7 @@ fragment entry on TeamPageEntryForEditing {
     grades: $grades
     courseSISValues: $courseSISValues
     courseIDs: $courseIDs
+    groupBy: $groupBy
     strandKey: $strandKey
     bands: $bands
     notifyByEmail: $notifyByEmail
