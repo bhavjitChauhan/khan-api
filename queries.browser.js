@@ -25865,6 +25865,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
     email
     districtProvidedFirstName
     districtProvidedLastName
+    districtProvidedFullName
     displayName
     allUDIRoles
     kaid
