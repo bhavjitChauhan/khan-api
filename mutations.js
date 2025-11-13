@@ -14654,4 +14654,13 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  DeleteHIPRDistrictSchool: `mutation DeleteHIPRDistrictSchool($districtID: ID!, $schoolID: ID!) {
+  deleteHIPRDistrictSchool(districtID: $districtID, schoolID: $schoolID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
