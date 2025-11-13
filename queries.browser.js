@@ -5332,6 +5332,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
         id
         __typename
       }
+      isK4dClassroom
       isChildAssignmentsClassroom
       __typename
     }
@@ -13568,6 +13569,7 @@ fragment TranslatedContentFields on LearnableContent {
     studentLists: coachedStudentLists {
       id
       cacheId
+      descriptor
       name
       signupCode
       topics {
@@ -13576,6 +13578,7 @@ fragment TranslatedContentFields on LearnableContent {
         translatedStandaloneTitle
         __typename
       }
+      isK4dClassroom
       isChildAssignmentsClassroom
       __typename
     }

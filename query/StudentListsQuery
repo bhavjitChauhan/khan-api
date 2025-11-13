@@ -4,6 +4,7 @@ query StudentListsQuery {
     studentLists: coachedStudentLists {
       id
       cacheId
+      descriptor
       name
       signupCode
       topics {
@@ -12,6 +13,7 @@ query StudentListsQuery {
         translatedStandaloneTitle
         __typename
       }
+      isK4dClassroom
       isChildAssignmentsClassroom
       __typename
     }
