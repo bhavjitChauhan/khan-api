@@ -25945,4 +25945,17 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  DistrictsPackage_Invoices_GetSubscriptionInvoices: `query DistrictsPackage_Invoices_GetSubscriptionInvoices($subscriptionID: String!) {
+  kadssInvoices(subscriptionID: $subscriptionID) {
+    id
+    number
+    totalAmount
+    currency
+    createdAt
+    finalizedAt
+    stripeInvoicePageUrl
+    status
+    __typename
+  }
+}`,
 }
