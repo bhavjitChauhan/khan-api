@@ -25961,4 +25961,68 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  GetAssignmentRedirectData: `query GetAssignmentRedirectData($assignmentId: String!) {
+  user {
+    id
+    assignment(id: $assignmentId) {
+      id
+      classroom {
+        id
+        cacheId
+        signupCode
+        isKhanClassroom
+        descriptor
+        __typename
+      }
+      domain {
+        id
+        __typename
+      }
+      course {
+        id
+        __typename
+      }
+      unit {
+        id
+        __typename
+      }
+      lesson {
+        id
+        __typename
+      }
+      contents {
+        id
+        contentKind
+        __typename
+      }
+      __typename
+    }
+    masteryAssignment(id: $assignmentId) {
+      id
+      unit {
+        id
+        relativeUrl
+        __typename
+      }
+      classroom {
+        id
+        cacheId
+        signupCode
+        isKhanClassroom
+        descriptor
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  KAClassroom_GetContentUrlWithinClosestAncestor: `query KAClassroom_GetContentUrlWithinClosestAncestor($contentId: String!, $contentKind: String!, $ancestorIds: [String!]!) {
+  learnableContent(id: $contentId, kind: $contentKind) {
+    id
+    defaultUrlPath
+    urlWithinClosestAncestor(ancestorIds: $ancestorIds)
+    __typename
+  }
+}`,
 }

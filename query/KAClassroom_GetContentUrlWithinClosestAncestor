@@ -1,0 +1,8 @@
+query KAClassroom_GetContentUrlWithinClosestAncestor($contentId: String!, $contentKind: String!, $ancestorIds: [String!]!) {
+  learnableContent(id: $contentId, kind: $contentKind) {
+    id
+    defaultUrlPath
+    urlWithinClosestAncestor(ancestorIds: $ancestorIds)
+    __typename
+  }
+}

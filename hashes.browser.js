@@ -953,4 +953,6 @@ hashes = {
   GetSchoolsForDistrict: 3916026450,
   GetDomains: 1690390739,
   DistrictsPackage_Invoices_GetSubscriptionInvoices: 2860782769,
+  GetAssignmentRedirectData: 963278920,
+  KAClassroom_GetContentUrlWithinClosestAncestor: 3100441024,
 }
