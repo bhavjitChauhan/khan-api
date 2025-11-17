@@ -14663,4 +14663,24 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  khanmigoToolsCreateCustomMCQAssignments: `mutation khanmigoToolsCreateCustomMCQAssignments($input: CreateCustomMCQAssignmentsInput!) {
+  createCustomMCQAssignments(input: $input) {
+    assignmentIds
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  khanmigoToolsCreateMultipleChoiceQuiz: `mutation khanmigoToolsCreateMultipleChoiceQuiz($title: String!, $questions: [String!]!) {
+  createCustomMultipleChoiceQuiz(title: $title, questions: $questions) {
+    id
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

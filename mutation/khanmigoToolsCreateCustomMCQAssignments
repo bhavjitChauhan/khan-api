@@ -1,0 +1,10 @@
+mutation khanmigoToolsCreateCustomMCQAssignments($input: CreateCustomMCQAssignmentsInput!) {
+  createCustomMCQAssignments(input: $input) {
+    assignmentIds
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

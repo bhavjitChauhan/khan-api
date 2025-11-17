@@ -26025,4 +26025,11 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  GetOrgPurchaseByDistrictID: `query GetOrgPurchaseByDistrictID($districtID: String!) {
+  orgPurchaseByDistrictID(districtID: $districtID) {
+    extId
+    kaids
+    __typename
+  }
+}`,
 }

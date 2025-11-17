@@ -1,0 +1,7 @@
+query GetOrgPurchaseByDistrictID($districtID: String!) {
+  orgPurchaseByDistrictID(districtID: $districtID) {
+    extId
+    kaids
+    __typename
+  }
+}

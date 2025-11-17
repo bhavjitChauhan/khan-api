@@ -1,0 +1,10 @@
+mutation khanmigoToolsCreateMultipleChoiceQuiz($title: String!, $questions: [String!]!) {
+  createCustomMultipleChoiceQuiz(title: $title, questions: $questions) {
+    id
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}
