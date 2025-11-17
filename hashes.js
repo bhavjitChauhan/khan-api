@@ -670,7 +670,7 @@ export default {
   getShowDiscussionsForDistrict: 1632566363,
   DistrictAdminPermissionsQuery: 707070729,
   activityByContentDescriptor: 1800741948,
-  getItemIdForGroupedExercise: 382432773,
+  getItemIdForGroupedExercise: 2562698981,
   districtId: 3726089185,
   coeditingLatestSnapshot: 2234147930,
   getAiGuideThreads: 2085710232,

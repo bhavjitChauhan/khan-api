@@ -19309,10 +19309,11 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
   }
 }`,
   getItemIdForGroupedExercise: `query getItemIdForGroupedExercise($exerciseId: String!) {
-  assessmentItemsForGroupedItemTaskWithError(
+  assessmentItemsForGroupedItemTask(
     exerciseId: $exerciseId
     nextProblemNumber: 1
-    previouslyReservedItemIds: []
+    numItems: 1
+    alreadyCompletedItemIds: []
   ) {
     value {
       id
