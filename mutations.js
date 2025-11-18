@@ -14683,4 +14683,14 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  DistrictsPackage_BillingAccess_UpdateOrgPurchaseAdmins: `mutation DistrictsPackage_BillingAccess_UpdateOrgPurchaseAdmins($orgID: ID!, $kaids: [String!]!) {
+  updateOrgPurchaseAdmins(orgID: $orgID, kaids: $kaids) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }

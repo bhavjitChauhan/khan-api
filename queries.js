@@ -26033,4 +26033,13 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  DistrictsPackage_BillingAccess_GetVisibleAdminUDIs: `query DistrictsPackage_BillingAccess_GetVisibleAdminUDIs($partnershipID: ID!, $districtID: ID!) {
+  getVisibleAdminUDIs(partnershipID: $partnershipID, districtID: $districtID) {
+    id
+    kaid
+    displayNameForTeacher
+    adrIsGlobalAdmin
+    __typename
+  }
+}`,
 }
