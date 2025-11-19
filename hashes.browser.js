@@ -957,4 +957,5 @@ hashes = {
   KAClassroom_GetContentUrlWithinClosestAncestor: 3100441024,
   GetOrgPurchaseByDistrictID: 2438344137,
   DistrictsPackage_BillingAccess_GetVisibleAdminUDIs: 2672732723,
+  UserFileMetadata: 63139544,
 }

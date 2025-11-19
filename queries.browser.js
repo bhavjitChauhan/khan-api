@@ -26042,4 +26042,22 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  UserFileMetadata: `query UserFileMetadata($fileId: ID!, $kaid: String!) {
+  getUserDocument(id: $fileId, kaid: $kaid) {
+    document {
+      metadataID
+      fileName
+      fileSize
+      mimeType
+      status
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }

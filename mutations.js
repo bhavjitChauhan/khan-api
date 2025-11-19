@@ -14693,4 +14693,21 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  UploadFile: `mutation UploadFile($input: UploadDocumentInput!) {
+  uploadDocument(input: $input) {
+    fileID
+    uploadUrl
+    fileStatus {
+      exists
+      existingFileID
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }
