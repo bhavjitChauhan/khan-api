@@ -26060,4 +26060,23 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  RecentAttachments: `query RecentAttachments($kaid: String!) {
+  listUserDocuments(kaid: $kaid) {
+    documents {
+      metadataID
+      fileName
+      fileSize
+      mimeType
+      createdAt
+      lastRead
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }

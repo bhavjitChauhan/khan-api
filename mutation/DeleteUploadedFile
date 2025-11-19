@@ -1,0 +1,6 @@
+mutation DeleteUploadedFile($id: ID!) {
+  deleteDocument(fileID: $id) {
+    success
+    __typename
+  }
+}

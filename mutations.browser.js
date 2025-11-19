@@ -14710,4 +14710,10 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  DeleteUploadedFile: `mutation DeleteUploadedFile($id: ID!) {
+  deleteDocument(fileID: $id) {
+    success
+    __typename
+  }
+}`,
 }
