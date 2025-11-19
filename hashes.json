@@ -941,7 +941,7 @@
   "GetPendingOrgByKaid": 870603146,
   "AuthPackage_UserIsInXTPartnership": 3299762918,
   "GetCardDetailsBySubscriptionID": 4194326727,
-  "GetOrgPurchaseByKaid": 4186936165,
+  "GetOrgPurchaseByKaid": 953423160,
   "userCardForLoginMobile": 1350339243,
   "DistrictsPackage_PlanDetails_PlanDetails": 3041592175,
   "DistrictsPackage_PlanDetails_RosterCount": 4132195500,
@@ -955,8 +955,9 @@
   "DistrictsPackage_Invoices_GetSubscriptionInvoices": 2860782769,
   "GetAssignmentRedirectData": 963278920,
   "KAClassroom_GetContentUrlWithinClosestAncestor": 3100441024,
-  "GetOrgPurchaseByDistrictID": 2438344137,
+  "GetOrgPurchaseByDistrictID": 1619287700,
   "DistrictsPackage_BillingAccess_GetVisibleAdminUDIs": 2672732723,
   "UserFileMetadata": 63139544,
-  "RecentAttachments": 3802699941
+  "RecentAttachments": 3802699941,
+  "DistrictsPackage_SeatUpdateEstimates": 2901667721
 }

@@ -14716,4 +14716,13 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  UpdateSeatCount: `mutation UpdateSeatCount($subscriptionID: ID!, $quantity: Int!) {
+  updateKadssSeatCount(subscriptionID: $subscriptionID, quantity: $quantity) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }

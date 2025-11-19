@@ -641,5 +641,6 @@
   "khanmigoToolsCreateMultipleChoiceQuiz": "mutation khanmigoToolsCreateMultipleChoiceQuiz($title: String!, $questions: [String!]!) {\n  createCustomMultipleChoiceQuiz(title: $title, questions: $questions) {\n    id\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}",
   "DistrictsPackage_BillingAccess_UpdateOrgPurchaseAdmins": "mutation DistrictsPackage_BillingAccess_UpdateOrgPurchaseAdmins($orgID: ID!, $kaids: [String!]!) {\n  updateOrgPurchaseAdmins(orgID: $orgID, kaids: $kaids) {\n    error {\n      code\n      debugMessage\n      __typename\n    }\n    __typename\n  }\n}",
   "UploadFile": "mutation UploadFile($input: UploadDocumentInput!) {\n  uploadDocument(input: $input) {\n    fileID\n    uploadUrl\n    fileStatus {\n      exists\n      existingFileID\n      __typename\n    }\n    error {\n      code\n      debugMessage\n      __typename\n    }\n    __typename\n  }\n}",
-  "DeleteUploadedFile": "mutation DeleteUploadedFile($id: ID!) {\n  deleteDocument(fileID: $id) {\n    success\n    __typename\n  }\n}"
+  "DeleteUploadedFile": "mutation DeleteUploadedFile($id: ID!) {\n  deleteDocument(fileID: $id) {\n    success\n    __typename\n  }\n}",
+  "UpdateSeatCount": "mutation UpdateSeatCount($subscriptionID: ID!, $quantity: Int!) {\n  updateKadssSeatCount(subscriptionID: $subscriptionID, quantity: $quantity) {\n    error {\n      code\n      __typename\n    }\n    __typename\n  }\n}"
 }

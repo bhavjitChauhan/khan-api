@@ -1,0 +1,11 @@
+query DistrictsPackage_SeatUpdateEstimates($subscriptionID: String!, $newQuantity: Int!) {
+  kadssSeatUpdateEstimates(
+    subscriptionID: $subscriptionID
+    newQuantity: $newQuantity
+  ) {
+    costPerSeatCents
+    taxCents
+    totalCostCents
+    __typename
+  }
+}

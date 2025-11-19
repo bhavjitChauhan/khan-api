@@ -25750,6 +25750,8 @@ fragment skillLevelChangeFields on SkillLevelChange {
   orgPurchaseByKaid(kaid: $kaid) {
     extId
     kaids
+    quantity
+    renewalSeatCount
     __typename
   }
 }`,
@@ -26030,6 +26032,8 @@ fragment skillLevelChangeFields on SkillLevelChange {
   orgPurchaseByDistrictID(districtID: $districtID) {
     extId
     kaids
+    quantity
+    renewalSeatCount
     __typename
   }
 }`,
@@ -26076,6 +26080,17 @@ fragment skillLevelChangeFields on SkillLevelChange {
       debugMessage
       __typename
     }
+    __typename
+  }
+}`,
+  DistrictsPackage_SeatUpdateEstimates: `query DistrictsPackage_SeatUpdateEstimates($subscriptionID: String!, $newQuantity: Int!) {
+  kadssSeatUpdateEstimates(
+    subscriptionID: $subscriptionID
+    newQuantity: $newQuantity
+  ) {
+    costPerSeatCents
+    taxCents
+    totalCostCents
     __typename
   }
 }`,
