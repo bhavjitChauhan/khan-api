@@ -5,6 +5,7 @@ query GetOrgPurchaseByDistrictID($districtID: String!) {
     quantity
     renewalSeatCount
     endedAt
+    subscriptionStatus
     __typename
   }
 }
