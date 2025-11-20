@@ -1,0 +1,7 @@
+query DistrictGradesByEduOrgOrDistrict($eduOrgID: String!, $districtID: String!) {
+  userFacingGradeLevels(eduOrgID: $eduOrgID, districtID: $districtID) {
+    id
+    name
+    __typename
+  }
+}

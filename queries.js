@@ -5393,6 +5393,8 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
           name
           __typename
         }
+        hasKadTrial
+        hasKadSelfServe
         isManuallyUnmarked
         classWillBeRemovedInDays
         __typename
@@ -5453,6 +5455,8 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
       id
       activatedAt
       rosterSource
+      hasKadTrial
+      hasKadSelfServe
       primaryRole
       district {
         id
@@ -5461,6 +5465,11 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
           id
           __typename
         }
+        __typename
+      }
+      schools {
+        id
+        name
         __typename
       }
       __typename
@@ -5681,6 +5690,8 @@ fragment StudentField2 on StudentsPage {
         __typename
       }
       isManuallyUnmarked
+      hasKadTrial
+      hasKadSelfServe
       __typename
     }
     allTeachers {
@@ -5735,6 +5746,8 @@ fragment StudentField2 on StudentsPage {
         name
         __typename
       }
+      hasKadSelfServe
+      hasKadTrial
       __typename
     }
     schoolAffiliation {
@@ -26091,6 +26104,13 @@ fragment skillLevelChangeFields on SkillLevelChange {
     costPerSeatCents
     taxCents
     totalCostCents
+    __typename
+  }
+}`,
+  DistrictGradesByEduOrgOrDistrict: `query DistrictGradesByEduOrgOrDistrict($eduOrgID: String!, $districtID: String!) {
+  userFacingGradeLevels(eduOrgID: $eduOrgID, districtID: $districtID) {
+    id
+    name
     __typename
   }
 }`,

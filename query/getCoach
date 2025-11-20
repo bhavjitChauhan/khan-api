@@ -16,6 +16,8 @@ query getCoach {
         name
         __typename
       }
+      hasKadSelfServe
+      hasKadTrial
       __typename
     }
     schoolAffiliation {

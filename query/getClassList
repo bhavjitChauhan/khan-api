@@ -52,6 +52,8 @@ query getClassList {
           name
           __typename
         }
+        hasKadTrial
+        hasKadSelfServe
         isManuallyUnmarked
         classWillBeRemovedInDays
         __typename
@@ -112,6 +114,8 @@ query getClassList {
       id
       activatedAt
       rosterSource
+      hasKadTrial
+      hasKadSelfServe
       primaryRole
       district {
         id
@@ -120,6 +124,11 @@ query getClassList {
           id
           __typename
         }
+        __typename
+      }
+      schools {
+        id
+        name
         __typename
       }
       __typename

@@ -12738,8 +12738,12 @@ fragment taskAttemptHistoryFields on TaskProblemAttempt {
     __typename
   }
 }`,
-  LinkClassToHiprDistrict: `mutation LinkClassToHiprDistrict($classDescriptor: String!, $schoolId: String!) {
-  markDistrictClass(classDescriptor: $classDescriptor, schoolID: $schoolId) {
+  LinkClassToHiprDistrict: `mutation LinkClassToHiprDistrict($classDescriptor: String!, $schoolId: String!, $grade: DistrictGradeLevel) {
+  markDistrictClass(
+    classDescriptor: $classDescriptor
+    schoolID: $schoolId
+    grade: $grade
+  ) {
     succeeded
     __typename
   }

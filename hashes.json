@@ -163,12 +163,12 @@
   "getChildrenOfTopic": 1598707302,
   "getChronomancerStatus": 470968035,
   "getClassesAndStudents": 4246511397,
-  "getClassList": 2572046739,
+  "getClassList": 3630325229,
   "getClassroomRoster": 3796170896,
   "getClassroomsAndPrimaryOffering": 3980807925,
   "getClassSelector": 173657848,
-  "getClassSettings": 1088630074,
-  "getCoach": 2077029356,
+  "getClassSettings": 1283799475,
+  "getCoach": 2086884037,
   "getCoachExerciseReport": 1799232413,
   "getCombinedBadges": 3614321869,
   "getCommoncore": 3758682353,
@@ -959,5 +959,6 @@
   "DistrictsPackage_BillingAccess_GetVisibleAdminUDIs": 2672732723,
   "UserFileMetadata": 63139544,
   "RecentAttachments": 3802699941,
-  "DistrictsPackage_SeatUpdateEstimates": 2901667721
+  "DistrictsPackage_SeatUpdateEstimates": 2901667721,
+  "DistrictGradesByEduOrgOrDistrict": 2398254553
 }
