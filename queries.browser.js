@@ -26047,6 +26047,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
     kaids
     quantity
     renewalSeatCount
+    endedAt
     __typename
   }
 }`,
