@@ -26116,4 +26116,68 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  getAssessmentItemById: `query getAssessmentItemById($exerciseId: ID!, $itemId: ID!) {
+  assessmentItemById(exerciseId: $exerciseId, itemId: $itemId) {
+    item {
+      id
+      sha
+      problemType
+      itemData
+      isContextInaccessible
+      requiresScreenOrMouse
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  getAssessmentItemByProblemNumber: `query getAssessmentItemByProblemNumber($exerciseId: ID!, $problemNumber: Int!, $hideVisual: Boolean!) {
+  assessmentItemByProblemNumber(
+    exerciseId: $exerciseId
+    problemNumber: $problemNumber
+    hideVisual: $hideVisual
+  ) {
+    item {
+      id
+      sha
+      problemType
+      itemData
+      isContextInaccessible
+      requiresScreenOrMouse
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  getAssessmentItemForLegacyQuiz: `query getAssessmentItemForLegacyQuiz($exerciseId: ID!, $quizProblemNumber: Int!) {
+  assessmentItemForLegacyQuiz(
+    exerciseId: $exerciseId
+    quizProblemNumber: $quizProblemNumber
+  ) {
+    item {
+      id
+      sha
+      problemType
+      itemData
+      isContextInaccessible
+      requiresScreenOrMouse
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
 }

@@ -1,0 +1,23 @@
+query getAssessmentItemByProblemNumber($exerciseId: ID!, $problemNumber: Int!, $hideVisual: Boolean!) {
+  assessmentItemByProblemNumber(
+    exerciseId: $exerciseId
+    problemNumber: $problemNumber
+    hideVisual: $hideVisual
+  ) {
+    item {
+      id
+      sha
+      problemType
+      itemData
+      isContextInaccessible
+      requiresScreenOrMouse
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

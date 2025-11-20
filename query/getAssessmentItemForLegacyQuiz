@@ -1,0 +1,22 @@
+query getAssessmentItemForLegacyQuiz($exerciseId: ID!, $quizProblemNumber: Int!) {
+  assessmentItemForLegacyQuiz(
+    exerciseId: $exerciseId
+    quizProblemNumber: $quizProblemNumber
+  ) {
+    item {
+      id
+      sha
+      problemType
+      itemData
+      isContextInaccessible
+      requiresScreenOrMouse
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

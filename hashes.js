@@ -961,4 +961,7 @@ export default {
   RecentAttachments: 3802699941,
   DistrictsPackage_SeatUpdateEstimates: 2901667721,
   DistrictGradesByEduOrgOrDistrict: 2398254553,
+  getAssessmentItemById: 1639701620,
+  getAssessmentItemByProblemNumber: 2271649483,
+  getAssessmentItemForLegacyQuiz: 2100156811,
 }

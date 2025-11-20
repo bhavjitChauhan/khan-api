@@ -1,0 +1,19 @@
+query getAssessmentItemById($exerciseId: ID!, $itemId: ID!) {
+  assessmentItemById(exerciseId: $exerciseId, itemId: $itemId) {
+    item {
+      id
+      sha
+      problemType
+      itemData
+      isContextInaccessible
+      requiresScreenOrMouse
+      __typename
+    }
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}
