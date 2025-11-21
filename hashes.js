@@ -158,7 +158,7 @@ export default {
   getAssessmentItems: 1491376606,
   GetAssessmentItemTags: 3475656173,
   GetAuthors: 904475571,
-  GetAvatars: 3206194254,
+  GetAvatars: 4289379469,
   getChildrenForDevadmin: 1948866426,
   getChildrenOfTopic: 1598707302,
   getChronomancerStatus: 470968035,

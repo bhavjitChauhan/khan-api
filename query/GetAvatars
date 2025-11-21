@@ -16,6 +16,7 @@ query GetAvatars {
       isAvailable
       __typename
     }
+    hasChangedAvatar
     __typename
   }
 }

@@ -5239,6 +5239,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
       isAvailable
       __typename
     }
+    hasChangedAvatar
     __typename
   }
 }`,
