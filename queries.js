@@ -1096,6 +1096,15 @@ fragment AssignmentCsvData on Assignment {
           }
           __typename
         }
+        studentList {
+          id
+          cacheId
+          descriptor
+          signupCode
+          name
+          isK4dClassroom
+          __typename
+        }
         exerciseConfig {
           itemPickerStrategy
           __typename

@@ -33,7 +33,7 @@ export default {
   classroomHasCourseMasteryAssignments: 2215210122,
   ClassSubjectMasteryProgress: 2241509294,
   ClassUnitMasteryProgress: 261494129,
-  CoachAssignments: 1792078455,
+  CoachAssignments: 2036483420,
   coachDetails: 3316873585,
   contentEditingStatus: 376099861,
   contentEditingStatusQuery: 3512812735,

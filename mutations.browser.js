@@ -3825,9 +3825,9 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
   relatedContentId: lessonId
   __typename
 }`,
-  createAssignments: `mutation createAssignments($classDescriptors: [String!]!, $qualifiedContentDescriptorsList: [String!], $startDate: DateTime!, $dueDate: DateTime, $isDraft: Boolean, $studentKaids: [ID], $subjectSlug: String!, $questionSetType: ExerciseItemPickerStrategy, $title: String, $instructions: String, $configuredActivityInputs: String, $creationKaLocale: String!) {
+  createAssignments: `mutation createAssignments($classDescriptors: [String!]!, $qualifiedContentDescriptorsList: [String!], $startDate: DateTime!, $dueDate: DateTime, $isDraft: Boolean, $studentKaids: [ID], $subjectSlug: String!, $questionSetType: ExerciseItemPickerStrategy, $title: String, $instructions: String, $configuredActivityInputs: String, $creationKaLocale: String!, $assignToAllStudents: Boolean) {
   createAssignments(
-    assignment: {classroomDescriptors: $classDescriptors, qualifiedContentDescriptorsList: $qualifiedContentDescriptorsList, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft, studentKaids: $studentKaids, subjectSlug: $subjectSlug, exerciseItemPickerStrategy: $questionSetType, title: $title, instructions: $instructions, configuredActivityInputs: $configuredActivityInputs, creationKaLocale: $creationKaLocale}
+    assignment: {classroomDescriptors: $classDescriptors, qualifiedContentDescriptorsList: $qualifiedContentDescriptorsList, startDate: $startDate, dueDate: $dueDate, isDraft: $isDraft, studentKaids: $studentKaids, subjectSlug: $subjectSlug, exerciseItemPickerStrategy: $questionSetType, title: $title, instructions: $instructions, configuredActivityInputs: $configuredActivityInputs, creationKaLocale: $creationKaLocale, assignToAllStudents: $assignToAllStudents}
   ) {
     assignments {
       ...NewAssignmentPostButtonFragment
