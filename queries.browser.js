@@ -22168,6 +22168,12 @@ fragment UserFields on User {
       }
       __typename
     }
+    onboardingSteps {
+      id
+      stepSlug
+      isComplete
+      __typename
+    }
     __typename
   }
   user {
