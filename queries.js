@@ -26065,6 +26065,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
     renewalSeatCount
     endedAt
     subscriptionStatus
+    seatUsage
     __typename
   }
 }`,
