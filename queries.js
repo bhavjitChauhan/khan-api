@@ -26197,4 +26197,11 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  DistrictsPackage_Invoices_GetUpcomingInvoice: `query DistrictsPackage_Invoices_GetUpcomingInvoice($subscriptionID: String!) {
+  kadssUpcomingInvoice(subscriptionID: $subscriptionID) {
+    id
+    amountDue
+    __typename
+  }
+}`,
 }
