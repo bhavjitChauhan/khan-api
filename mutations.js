@@ -9853,29 +9853,6 @@ fragment entry on TeamPageEntryForEditing {
 }`,
   updateUserArticleProgress: `mutation updateUserArticleProgress($input: UserArticleProgressInput!) {
   updateUserArticleProgress(articleProgressUpdate: $input) {
-    actionResults {
-      tutorialNodeProgress {
-        contentId
-        progress
-        __typename
-      }
-      notificationsAdded {
-        avatarParts
-        badges
-        continueUrl
-        readable
-        toast
-        urgent
-        __typename
-      }
-      userProfile {
-        countBrandNewNotifications
-        countVideosCompleted
-        points
-        __typename
-      }
-      __typename
-    }
     error {
       code
       debugMessage
