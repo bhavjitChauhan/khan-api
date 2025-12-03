@@ -26204,4 +26204,11 @@ fragment skillLevelChangeFields on SkillLevelChange {
     __typename
   }
 }`,
+  validateClassCodeForSignup: `query validateClassCodeForSignup($classCode: String!) {
+  joinByClassCodeInfoV2(classCode: $classCode) {
+    cacheId
+    name
+    __typename
+  }
+}`,
 }
