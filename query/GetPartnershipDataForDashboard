@@ -1,6 +1,7 @@
 query GetPartnershipDataForDashboard($partnershipID: ID!, $kaLocale: String!) {
   partnershipDataForDashboard(partnershipID: $partnershipID) {
     root {
+      __typename
       ... on MetaDistrict {
         id
         name
@@ -44,7 +45,6 @@ query GetPartnershipDataForDashboard($partnershipID: ID!, $kaLocale: String!) {
         kaLocale
         __typename
       }
-      __typename
     }
     visibleNodes {
       ... on MetaDistrict {

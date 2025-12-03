@@ -21934,6 +21934,7 @@ fragment UserFields on User {
   GetPartnershipDataForDashboard: `query GetPartnershipDataForDashboard($partnershipID: ID!, $kaLocale: String!) {
   partnershipDataForDashboard(partnershipID: $partnershipID) {
     root {
+      __typename
       ... on MetaDistrict {
         id
         name
@@ -21977,7 +21978,6 @@ fragment UserFields on User {
         kaLocale
         __typename
       }
-      __typename
     }
     visibleNodes {
       ... on MetaDistrict {

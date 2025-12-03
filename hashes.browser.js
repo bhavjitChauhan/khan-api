@@ -779,7 +779,7 @@ hashes = {
   myTestDistricts: 604300990,
   findUsersByIpAndGetRestriction: 1810532572,
   additionalUserPageData: 2293484049,
-  GetPartnershipDataForDashboard: 2049396659,
+  GetPartnershipDataForDashboard: 818678547,
   ActivationByNodeHook: 4028738232,
   ExpandedDistrictQuery: 1025121841,
   kadTrialDistricts: 2422363762,
