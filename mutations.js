@@ -411,6 +411,14 @@ fragment AssignmentInfoFragment on Assignment {
         uuid
         __typename
       }
+      score {
+        type
+        message
+        earned
+        total
+        suppressAlmostThere
+        __typename
+      }
       __typename
     }
     __typename
