@@ -14706,4 +14706,13 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
+  CompleteOnboardingStep: `mutation CompleteOnboardingStep($districtID: ID!, $stepSlug: OnboardingStepSlugs!) {
+  completeDistrictOnboardingStep(districtID: $districtID, stepSlug: $stepSlug) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
 }
