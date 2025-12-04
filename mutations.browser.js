@@ -14689,6 +14689,7 @@ fragment MasteryAssignment on MasteryAssignment {
     fileStatus {
       exists
       existingFileID
+      reason
       __typename
     }
     error {

@@ -785,21 +785,10 @@ fragment InvitationsField on Invitation {
     key
     __typename
   }
-  allStudentsCoachReportEmailSubscription {
-    key
-    checked
-    __typename
-  }
   parentReportEmailSubscriptions {
     key
     description
     checked
-    __typename
-  }
-  studentListEmailSubscriptions {
-    key
-    checked
-    description
     __typename
   }
   streaksEmailSubscription {

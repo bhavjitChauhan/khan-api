@@ -6730,21 +6730,10 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     key
     __typename
   }
-  allStudentsCoachReportEmailSubscription {
-    key
-    checked
-    __typename
-  }
   parentReportEmailSubscriptions {
     key
     description
     checked
-    __typename
-  }
-  studentListEmailSubscriptions {
-    key
-    checked
-    description
     __typename
   }
   streaksEmailSubscription {
@@ -6787,21 +6776,10 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     key
     __typename
   }
-  allStudentsCoachReportEmailSubscription {
-    key
-    checked
-    __typename
-  }
   parentReportEmailSubscriptions {
     key
     description
     checked
-    __typename
-  }
-  studentListEmailSubscriptions {
-    key
-    checked
-    description
     __typename
   }
   streaksEmailSubscription {

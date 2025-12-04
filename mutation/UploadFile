@@ -5,6 +5,7 @@ mutation UploadFile($input: UploadDocumentInput!) {
     fileStatus {
       exists
       existingFileID
+      reason
       __typename
     }
     error {
