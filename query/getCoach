@@ -18,6 +18,7 @@ query getCoach {
       }
       hasKadSelfServe
       hasKadTrial
+      primaryRole
       __typename
     }
     schoolAffiliation {

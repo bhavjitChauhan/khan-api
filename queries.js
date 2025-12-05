@@ -5758,6 +5758,7 @@ fragment StudentField2 on StudentsPage {
       }
       hasKadSelfServe
       hasKadTrial
+      primaryRole
       __typename
     }
     schoolAffiliation {

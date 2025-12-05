@@ -168,7 +168,7 @@ hashes = {
   getClassroomsAndPrimaryOffering: 3980807925,
   getClassSelector: 173657848,
   getClassSettings: 1283799475,
-  getCoach: 2086884037,
+  getCoach: 507958199,
   getCoachExerciseReport: 1799232413,
   getCombinedBadges: 3614321869,
   getCommoncore: 3758682353,
