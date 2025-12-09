@@ -1,5 +1,9 @@
-mutation DistrictsPackage_BillingAccess_UpdateOrgPurchaseAdmins($orgID: ID!, $kaids: [String!]!) {
-  updateOrgPurchaseAdmins(orgID: $orgID, kaids: $kaids) {
+mutation DistrictsPackage_BillingAccess_UpdateOrgPurchaseAdmins($orgID: ID!, $partnershipID: ID, $kaids: [String!]!) {
+  updateOrgPurchaseAdmins(
+    orgID: $orgID
+    partnershipID: $partnershipID
+    kaids: $kaids
+  ) {
     error {
       code
       debugMessage

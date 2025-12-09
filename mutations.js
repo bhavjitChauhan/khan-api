@@ -14672,8 +14672,12 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
-  DistrictsPackage_BillingAccess_UpdateOrgPurchaseAdmins: `mutation DistrictsPackage_BillingAccess_UpdateOrgPurchaseAdmins($orgID: ID!, $kaids: [String!]!) {
-  updateOrgPurchaseAdmins(orgID: $orgID, kaids: $kaids) {
+  DistrictsPackage_BillingAccess_UpdateOrgPurchaseAdmins: `mutation DistrictsPackage_BillingAccess_UpdateOrgPurchaseAdmins($orgID: ID!, $partnershipID: ID, $kaids: [String!]!) {
+  updateOrgPurchaseAdmins(
+    orgID: $orgID
+    partnershipID: $partnershipID
+    kaids: $kaids
+  ) {
     error {
       code
       debugMessage
