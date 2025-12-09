@@ -6189,6 +6189,10 @@ fragment Badge on Badge {
         familiarPercent
         proficientPercent
         masteredPercent
+        totalMinutes
+        totalSkillsLeveledUp
+        totalSkillsLeveledToProficient
+        totalSkillsWorkedOn
         minutesTargetStatus
         skillsLeveledUpTargetStatus
         skillsToProficientTargetStatus
@@ -6242,6 +6246,10 @@ fragment Badge on Badge {
         familiarPercent
         proficientPercent
         masteredPercent
+        totalMinutes
+        totalSkillsLeveledUp
+        totalSkillsLeveledToProficient
+        totalSkillsWorkedOn
         minutesTargetStatus
         skillsLeveledUpTargetStatus
         skillsToProficientTargetStatus
@@ -6293,6 +6301,10 @@ fragment Badge on Badge {
         familiarPercent
         proficientPercent
         masteredPercent
+        totalMinutes
+        totalSkillsLeveledUp
+        totalSkillsLeveledToProficient
+        totalSkillsWorkedOn
         minutesTargetStatus
         skillsLeveledUpTargetStatus
         skillsToProficientTargetStatus
@@ -6342,6 +6354,10 @@ fragment Badge on Badge {
         familiarPercent
         proficientPercent
         masteredPercent
+        totalMinutes
+        totalSkillsLeveledUp
+        totalSkillsLeveledToProficient
+        totalSkillsWorkedOn
         minutesTargetStatus
         skillsLeveledUpTargetStatus
         skillsToProficientTargetStatus
@@ -16221,6 +16237,10 @@ fragment contentSearchLearnableContent on LearnableContent {
         familiarPercent
         proficientPercent
         masteredPercent
+        totalMinutes
+        totalSkillsLeveledUp
+        totalSkillsLeveledToProficient
+        totalSkillsWorkedOn
         minutesTargetStatus
         skillsLeveledUpTargetStatus
         skillsToProficientTargetStatus
@@ -16387,6 +16407,10 @@ fragment contentSearchLearnableContent on LearnableContent {
         familiarPercent
         proficientPercent
         masteredPercent
+        totalMinutes
+        totalSkillsLeveledUp
+        totalSkillsLeveledToProficient
+        totalSkillsWorkedOn
         minutesTargetStatus
         skillsLeveledUpTargetStatus
         skillsToProficientTargetStatus
@@ -16452,6 +16476,10 @@ fragment contentSearchLearnableContent on LearnableContent {
         familiarPercent
         proficientPercent
         masteredPercent
+        totalMinutes
+        totalSkillsLeveledUp
+        totalSkillsLeveledToProficient
+        totalSkillsWorkedOn
         minutesTargetStatus
         skillsLeveledUpTargetStatus
         skillsToProficientTargetStatus
@@ -22123,6 +22151,7 @@ fragment UserFields on User {
     isCentrallyRostered
     rosterSource
     region
+    lastRostered
     activeGrades {
       id
       sortIndex
@@ -22455,6 +22484,10 @@ fragment ModerationResultFragment on AutoModerationResult {
         familiarPercent
         proficientPercent
         masteredPercent
+        totalMinutes
+        totalSkillsLeveledUp
+        totalSkillsLeveledToProficient
+        totalSkillsWorkedOn
         minutesTargetStatus
         skillsLeveledUpTargetStatus
         skillsToProficientTargetStatus

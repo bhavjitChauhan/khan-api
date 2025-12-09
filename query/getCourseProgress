@@ -40,6 +40,10 @@ query getCourseProgress($filters: DistrictCourseProgressFilters!, $getKmapTopics
         familiarPercent
         proficientPercent
         masteredPercent
+        totalMinutes
+        totalSkillsLeveledUp
+        totalSkillsLeveledToProficient
+        totalSkillsWorkedOn
         minutesTargetStatus
         skillsLeveledUpTargetStatus
         skillsToProficientTargetStatus

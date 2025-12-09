@@ -34,6 +34,10 @@ query getCourseProgressByClassroom($filters: DistrictCourseProgressFilters!, $co
         familiarPercent
         proficientPercent
         masteredPercent
+        totalMinutes
+        totalSkillsLeveledUp
+        totalSkillsLeveledToProficient
+        totalSkillsWorkedOn
         minutesTargetStatus
         skillsLeveledUpTargetStatus
         skillsToProficientTargetStatus

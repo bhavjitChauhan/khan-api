@@ -33,6 +33,7 @@ query ExpandedDistrictQuery($districtID: ID!, $districtIDStr: String!) {
     isCentrallyRostered
     rosterSource
     region
+    lastRostered
     activeGrades {
       id
       sortIndex
