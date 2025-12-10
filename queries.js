@@ -26079,6 +26079,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
     subscriptionStatus
     seatUsage
     expiresAt
+    cancelAtPeriodEnd
     __typename
   }
 }`,

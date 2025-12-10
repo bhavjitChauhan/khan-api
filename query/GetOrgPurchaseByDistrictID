@@ -8,6 +8,7 @@ query GetOrgPurchaseByDistrictID($districtID: String!) {
     subscriptionStatus
     seatUsage
     expiresAt
+    cancelAtPeriodEnd
     __typename
   }
 }
