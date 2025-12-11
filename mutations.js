@@ -327,6 +327,7 @@ fragment AssignmentInfoFragment on Assignment {
   attemptProblem: `mutation attemptProblem($input: AttemptProblemInput!, $ancestorIds: [String!]!) {
   attemptProblem(attempt: $input) {
     result {
+      itemData
       userExercise {
         ...userExerciseFields
         __typename
