@@ -9,6 +9,7 @@ query GetOrgPurchaseByDistrictID($districtID: String!) {
     seatUsage
     expiresAt
     cancelAtPeriodEnd
+    overageDate
     __typename
   }
 }

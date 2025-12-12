@@ -26080,6 +26080,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
     seatUsage
     expiresAt
     cancelAtPeriodEnd
+    overageDate
     __typename
   }
 }`,
