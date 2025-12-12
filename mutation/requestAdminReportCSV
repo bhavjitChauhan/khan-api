@@ -1,4 +1,4 @@
-mutation requestAdminReportCSV($kaid: ID!, $selectedNodeID: ID!, $childIDs: [String!]!, $reportType: AdminReportType!, $startDate: DateTime!, $endDate: DateTime!, $grades: [String!], $teacherKaids: [String!], $courseSISValues: [String!], $courseIDs: [String!], $groupBy: [AdminReportField!], $strandKey: String, $bands: [String!], $notifyByEmail: Boolean!, $kaLocale: String, $cronSchedule: String, $writeToBigQuery: Boolean) {
+mutation requestAdminReportCSV($kaid: ID!, $selectedNodeID: ID!, $childIDs: [String!]!, $reportType: AdminReportType!, $startDate: DateTime!, $endDate: DateTime!, $grades: [String!], $teacherKaids: [String!], $courseSISValues: [String!], $courseIDs: [String!], $groupBy: [AdminReportField!], $strandKey: String, $bands: [String!], $notifyByEmail: Boolean!, $kaLocale: String, $cronSchedule: String, $writeToBigQuery: Boolean, $onlyTeacherCourses: Boolean!) {
   requestAdminReportCSV(
     kaid: $kaid
     selectedNodeID: $selectedNodeID
@@ -17,6 +17,7 @@ mutation requestAdminReportCSV($kaid: ID!, $selectedNodeID: ID!, $childIDs: [Str
     kaLocale: $kaLocale
     cronSchedule: $cronSchedule
     writeToBigQuery: $writeToBigQuery
+    onlyTeacherCourses: $onlyTeacherCourses
   ) {
     adminReportSchedule {
       id
