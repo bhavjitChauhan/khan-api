@@ -20352,6 +20352,7 @@ fragment UserFields on User {
       isTest
       isKmapDistrict
       isK4dDistrict
+      hasKadSelfServe
       countryCode
       levelHeight
       __typename
@@ -26223,6 +26224,13 @@ fragment skillLevelChangeFields on SkillLevelChange {
   joinByClassCodeInfoV2(classCode: $classCode) {
     cacheId
     name
+    __typename
+  }
+}`,
+  CheckDistrictKadss: `query CheckDistrictKadss($districtID: ID!) {
+  districtById(districtId: $districtID) {
+    id
+    hasKadSelfServe
     __typename
   }
 }`,

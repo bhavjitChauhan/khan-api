@@ -19,6 +19,7 @@ query GetManagedPartnerships {
       isTest
       isKmapDistrict
       isK4dDistrict
+      hasKadSelfServe
       countryCode
       levelHeight
       __typename

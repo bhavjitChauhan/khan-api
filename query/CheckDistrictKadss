@@ -1,0 +1,7 @@
+query CheckDistrictKadss($districtID: ID!) {
+  districtById(districtId: $districtID) {
+    id
+    hasKadSelfServe
+    __typename
+  }
+}

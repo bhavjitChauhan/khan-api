@@ -712,7 +712,7 @@ hashes = {
   configurableInputsForActivity: 1805369147,
   teacherKhanmigoTotalUsage: 1207612195,
   teacherKhanmigoUsageOvertime: 17695090,
-  GetManagedPartnerships: 3143980386,
+  GetManagedPartnerships: 2135967479,
   GetPartnershipForAdminDashboard: 3908205970,
   AccountDeletionRequests: 3465911117,
   getTeacherReferralEligibilityData: 1408385550,
@@ -966,4 +966,5 @@ hashes = {
   getAssessmentItemForLegacyQuiz: 2100156811,
   DistrictsPackage_Invoices_GetUpcomingInvoice: 1519288330,
   validateClassCodeForSignup: 3096281561,
+  CheckDistrictKadss: 2033242171,
 }
