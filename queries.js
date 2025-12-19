@@ -20352,7 +20352,6 @@ fragment UserFields on User {
       isTest
       isKmapDistrict
       isK4dDistrict
-      hasKadSelfServe
       countryCode
       levelHeight
       __typename
@@ -26231,6 +26230,26 @@ fragment skillLevelChangeFields on SkillLevelChange {
   districtById(districtId: $districtID) {
     id
     hasKadSelfServe
+    __typename
+  }
+}`,
+  GetUserKadssDistrict: `query GetUserKadssDistrict {
+  user {
+    id
+    userDistrictInfos {
+      id
+      hasKadSelfServe
+      activatedAt
+      deletedAt
+      primaryRole
+      isAdmin
+      district {
+        id
+        name
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }`,

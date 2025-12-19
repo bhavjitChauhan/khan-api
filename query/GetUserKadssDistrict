@@ -1,0 +1,20 @@
+query GetUserKadssDistrict {
+  user {
+    id
+    userDistrictInfos {
+      id
+      hasKadSelfServe
+      activatedAt
+      deletedAt
+      primaryRole
+      isAdmin
+      district {
+        id
+        name
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
