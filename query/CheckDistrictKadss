@@ -4,4 +4,18 @@ query CheckDistrictKadss($districtID: ID!) {
     hasKadSelfServe
     __typename
   }
+  user {
+    id
+    userDistrictInfos {
+      id
+      district {
+        id
+        __typename
+      }
+      isAdmin
+      canManageRosterBrowser
+      __typename
+    }
+    __typename
+  }
 }

@@ -966,6 +966,6 @@ hashes = {
   getAssessmentItemForLegacyQuiz: 2100156811,
   DistrictsPackage_Invoices_GetUpcomingInvoice: 1519288330,
   validateClassCodeForSignup: 3096281561,
-  CheckDistrictKadss: 2033242171,
+  CheckDistrictKadss: 882379531,
   GetUserKadssDistrict: 608902768,
 }

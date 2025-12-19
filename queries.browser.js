@@ -26232,6 +26232,20 @@ fragment skillLevelChangeFields on SkillLevelChange {
     hasKadSelfServe
     __typename
   }
+  user {
+    id
+    userDistrictInfos {
+      id
+      district {
+        id
+        __typename
+      }
+      isAdmin
+      canManageRosterBrowser
+      __typename
+    }
+    __typename
+  }
 }`,
   GetUserKadssDistrict: `query GetUserKadssDistrict {
   user {
