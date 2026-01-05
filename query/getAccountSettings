@@ -92,6 +92,7 @@ query getAccountSettings($targetKaid: String) {
       districtProvidedBirthMonth
       districtProvidedBirthYear
       rosterSource
+      primaryRole
       __typename
     }
     __typename

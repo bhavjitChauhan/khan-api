@@ -5044,6 +5044,7 @@ fragment UserFields on User {
       districtProvidedBirthMonth
       districtProvidedBirthYear
       rosterSource
+      primaryRole
       __typename
     }
     __typename
