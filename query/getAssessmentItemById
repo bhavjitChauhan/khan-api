@@ -1,12 +1,7 @@
 query getAssessmentItemById($exerciseId: ID!, $itemId: ID!) {
   assessmentItemById(exerciseId: $exerciseId, itemId: $itemId) {
     item {
-      id
-      sha
-      problemType
-      itemData
-      isContextInaccessible
-      requiresScreenOrMouse
+      ...KA_assessmentItemFields
       __typename
     }
     error {
@@ -16,4 +11,14 @@ query getAssessmentItemById($exerciseId: ID!, $itemId: ID!) {
     }
     __typename
   }
+}
+
+fragment KA_assessmentItemFields on AssessmentItem {
+  __typename
+  id
+  sha
+  problemType
+  itemDataAnswerless
+  isContextInaccessible
+  requiresScreenOrMouse
 }

@@ -2987,4 +2987,13 @@ query ActivitiesList {
   instructions
   __typename
 }`,
+  KA_assessmentItemFields: `fragment KA_assessmentItemFields on AssessmentItem {
+  __typename
+  id
+  sha
+  problemType
+  itemDataAnswerless
+  isContextInaccessible
+  requiresScreenOrMouse
+}`,
 }

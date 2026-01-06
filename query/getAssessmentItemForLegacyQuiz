@@ -4,12 +4,7 @@ query getAssessmentItemForLegacyQuiz($exerciseId: ID!, $quizProblemNumber: Int!)
     quizProblemNumber: $quizProblemNumber
   ) {
     item {
-      id
-      sha
-      problemType
-      itemData
-      isContextInaccessible
-      requiresScreenOrMouse
+      ...KA_assessmentItemFields
       __typename
     }
     error {
@@ -19,4 +14,14 @@ query getAssessmentItemForLegacyQuiz($exerciseId: ID!, $quizProblemNumber: Int!)
     }
     __typename
   }
+}
+
+fragment KA_assessmentItemFields on AssessmentItem {
+  __typename
+  id
+  sha
+  problemType
+  itemDataAnswerless
+  isContextInaccessible
+  requiresScreenOrMouse
 }

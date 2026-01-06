@@ -5,12 +5,7 @@ query getAssessmentItemByProblemNumber($exerciseId: ID!, $problemNumber: Int!, $
     hideVisual: $hideVisual
   ) {
     item {
-      id
-      sha
-      problemType
-      itemData
-      isContextInaccessible
-      requiresScreenOrMouse
+      ...KA_assessmentItemFields
       __typename
     }
     error {
@@ -20,4 +15,14 @@ query getAssessmentItemByProblemNumber($exerciseId: ID!, $problemNumber: Int!, $
     }
     __typename
   }
+}
+
+fragment KA_assessmentItemFields on AssessmentItem {
+  __typename
+  id
+  sha
+  problemType
+  itemDataAnswerless
+  isContextInaccessible
+  requiresScreenOrMouse
 }

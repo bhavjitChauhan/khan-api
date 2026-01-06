@@ -7204,10 +7204,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
   getInitialDataForPrePhantomUser: `query getInitialDataForPrePhantomUser($exerciseId: ID!, $input: AssessmentItemInput!, $ancestorIds: [String!]!) {
   assessmentItem(input: $input) {
     item {
-      id
-      sha
-      problemType
-      itemData
+      ...KA_assessmentItemFields
       __typename
     }
     error {
@@ -7235,6 +7232,16 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     }
     __typename
   }
+}
+
+fragment KA_assessmentItemFields on AssessmentItem {
+  __typename
+  id
+  sha
+  problemType
+  itemDataAnswerless
+  isContextInaccessible
+  requiresScreenOrMouse
 }
 
 fragment practiceTaskFields on PracticeTask {
@@ -26152,12 +26159,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
   getAssessmentItemById: `query getAssessmentItemById($exerciseId: ID!, $itemId: ID!) {
   assessmentItemById(exerciseId: $exerciseId, itemId: $itemId) {
     item {
-      id
-      sha
-      problemType
-      itemData
-      isContextInaccessible
-      requiresScreenOrMouse
+      ...KA_assessmentItemFields
       __typename
     }
     error {
@@ -26167,6 +26169,16 @@ fragment skillLevelChangeFields on SkillLevelChange {
     }
     __typename
   }
+}
+
+fragment KA_assessmentItemFields on AssessmentItem {
+  __typename
+  id
+  sha
+  problemType
+  itemDataAnswerless
+  isContextInaccessible
+  requiresScreenOrMouse
 }`,
   getAssessmentItemByProblemNumber: `query getAssessmentItemByProblemNumber($exerciseId: ID!, $problemNumber: Int!, $hideVisual: Boolean!) {
   assessmentItemByProblemNumber(
@@ -26175,12 +26187,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
     hideVisual: $hideVisual
   ) {
     item {
-      id
-      sha
-      problemType
-      itemData
-      isContextInaccessible
-      requiresScreenOrMouse
+      ...KA_assessmentItemFields
       __typename
     }
     error {
@@ -26190,6 +26197,16 @@ fragment skillLevelChangeFields on SkillLevelChange {
     }
     __typename
   }
+}
+
+fragment KA_assessmentItemFields on AssessmentItem {
+  __typename
+  id
+  sha
+  problemType
+  itemDataAnswerless
+  isContextInaccessible
+  requiresScreenOrMouse
 }`,
   getAssessmentItemForLegacyQuiz: `query getAssessmentItemForLegacyQuiz($exerciseId: ID!, $quizProblemNumber: Int!) {
   assessmentItemForLegacyQuiz(
@@ -26197,12 +26214,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
     quizProblemNumber: $quizProblemNumber
   ) {
     item {
-      id
-      sha
-      problemType
-      itemData
-      isContextInaccessible
-      requiresScreenOrMouse
+      ...KA_assessmentItemFields
       __typename
     }
     error {
@@ -26212,6 +26224,16 @@ fragment skillLevelChangeFields on SkillLevelChange {
     }
     __typename
   }
+}
+
+fragment KA_assessmentItemFields on AssessmentItem {
+  __typename
+  id
+  sha
+  problemType
+  itemDataAnswerless
+  isContextInaccessible
+  requiresScreenOrMouse
 }`,
   DistrictsPackage_Invoices_GetUpcomingInvoice: `query DistrictsPackage_Invoices_GetUpcomingInvoice($subscriptionID: String!) {
   kadssUpcomingInvoice(subscriptionID: $subscriptionID) {

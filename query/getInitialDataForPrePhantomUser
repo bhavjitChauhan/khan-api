@@ -1,10 +1,7 @@
 query getInitialDataForPrePhantomUser($exerciseId: ID!, $input: AssessmentItemInput!, $ancestorIds: [String!]!) {
   assessmentItem(input: $input) {
     item {
-      id
-      sha
-      problemType
-      itemData
+      ...KA_assessmentItemFields
       __typename
     }
     error {
@@ -32,6 +29,16 @@ query getInitialDataForPrePhantomUser($exerciseId: ID!, $input: AssessmentItemIn
     }
     __typename
   }
+}
+
+fragment KA_assessmentItemFields on AssessmentItem {
+  __typename
+  id
+  sha
+  problemType
+  itemDataAnswerless
+  isContextInaccessible
+  requiresScreenOrMouse
 }
 
 fragment practiceTaskFields on PracticeTask {
