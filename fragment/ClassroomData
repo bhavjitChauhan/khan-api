@@ -1,4 +1,4 @@
-fragment ClassroomData on StudentList {
+fragment ClassroomData on Classroom {
   cacheId
   id
   descriptor

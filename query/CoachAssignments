@@ -1,5 +1,5 @@
 query CoachAssignments($classDescriptor: String!, $assignmentFilters: CoachAssignmentFilters, $orderBy: AssignmentOrder!, $pageSize: Int, $after: ID) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     isK4dClassroom

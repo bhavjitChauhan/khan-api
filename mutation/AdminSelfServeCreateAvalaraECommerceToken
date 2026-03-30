@@ -1,0 +1,13 @@
+mutation AdminSelfServeCreateAvalaraECommerceToken {
+  createAvalaraECommerceToken {
+    token
+    createdDate
+    expirationDate
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

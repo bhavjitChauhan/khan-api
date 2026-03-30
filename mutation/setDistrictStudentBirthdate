@@ -1,0 +1,13 @@
+mutation setDistrictStudentBirthdate($studentKaid: String!, $birthMonth: Int!, $birthYear: Int!) {
+  setDistrictStudentBirthdate(
+    studentKaid: $studentKaid
+    birthMonth: $birthMonth
+    birthYear: $birthYear
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

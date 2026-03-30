@@ -1,0 +1,12 @@
+mutation unsubscribeFromDeletionEmails($unsubscribeToken: String!) {
+  unsubscribeFromInactiveAccountDeletionEmails(
+    unsubscribeToken: $unsubscribeToken
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

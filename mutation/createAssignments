@@ -38,5 +38,6 @@ fragment NewAssignmentPostButtonFragment on Assignment {
   subjectSlug
   title
   instructions
+  configuredActivityInputs
   __typename
 }

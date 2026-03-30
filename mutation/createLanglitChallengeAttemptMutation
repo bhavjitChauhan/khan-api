@@ -1,0 +1,18 @@
+mutation createLanglitChallengeAttemptMutation($input: CreateLanglitChallengeAttemptInput!) {
+  createLanglitChallengeAttempt(input: $input) {
+    attempt {
+      id
+      userKAID
+      langlitChallengeId
+      performance
+      assignmentId
+      createdAt
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

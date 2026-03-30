@@ -55,7 +55,9 @@ query getFullUserProfile($kaid: String, $username: String) {
     includesKmapDistrictOwnedData
     includesK4dDistrictOwnedData
     canAccessDistrictsHomepage
-    isInKhanClassroomDistrict
+    isInKacPilotDistrict
+    hasUnifiedTeacherRole: hasUnifiedUserRole(role: TEACHER)
+    hasUnifiedCoachRole: hasUnifiedUserRole(role: COACH)
     underAgeGate {
       parentEmail
       daysUntilCutoff
@@ -85,6 +87,7 @@ query getFullUserProfile($kaid: String, $username: String) {
     userDistrictInfos {
       id
       isKAD
+      primaryRole
       district {
         id
         region

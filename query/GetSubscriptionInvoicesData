@@ -1,0 +1,13 @@
+query GetSubscriptionInvoicesData($subscriptionID: String!) {
+  kadssInvoices(subscriptionID: $subscriptionID) {
+    id
+    number
+    totalAmount
+    currency
+    createdAt
+    finalizedAt
+    stripeInvoicePageUrl
+    status
+    __typename
+  }
+}

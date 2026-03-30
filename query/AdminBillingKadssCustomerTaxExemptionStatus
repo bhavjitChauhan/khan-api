@@ -1,0 +1,6 @@
+query AdminBillingKadssCustomerTaxExemptionStatus {
+  kadssCustomerTaxExemptionStatus {
+    status
+    __typename
+  }
+}

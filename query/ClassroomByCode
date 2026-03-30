@@ -1,5 +1,5 @@
 query ClassroomByCode($classCode: String!) {
-  studentList(classCode: $classCode) {
+  classroom(classCode: $classCode) {
     cacheId
     coachKaid
     descriptor
@@ -7,7 +7,7 @@ query ClassroomByCode($classCode: String!) {
     id
     name
     signupCode
-    isKhanClassroom
+    isKacPilotClassroom
     __typename
   }
 }

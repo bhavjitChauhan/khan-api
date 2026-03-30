@@ -2,7 +2,7 @@ mutation CreateCourseMasteryAssignmentsMutation($classDescriptors: [String!]!, $
   createCourseMasteryAssignments(
     assignments: {classroomDescriptors: $classDescriptors, studentKaids: $studentKaids, courseId: $topicId, dueDate: $dueDate}
   ) {
-    assignments {
+    assignments: assignmentsV2 {
       id
       createdDate
       dueDate

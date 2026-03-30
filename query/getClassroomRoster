@@ -1,7 +1,7 @@
 query getClassroomRoster($classDescriptor: String!, $teacherKaid: String!, $after: Int, $pageSize: Int) {
   coach: user {
     id
-    studentLists: coachedStudentLists {
+    studentLists: coachedClassrooms {
       id
       cacheId
       descriptor
@@ -30,7 +30,7 @@ query getClassroomRoster($classDescriptor: String!, $teacherKaid: String!, $afte
     tosForFormalTeacherStatus
     __typename
   }
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     name

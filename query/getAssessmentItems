@@ -3,7 +3,7 @@ query getAssessmentItems($exerciseName: String) {
     id
     assessmentItems {
       id
-      itemData
+      itemDataAnswerless
       __typename
     }
     __typename

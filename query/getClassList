@@ -15,7 +15,7 @@ query getClassList {
       googleClassName
       countStudents
       hasAssignments
-      hasCourseMasteryGoals(filter: NO_KMAP)
+      hasCourseMasteryGoals: hasCourseMasteryAssignments(filter: NO_KMAP)
       hasMasteryAssignments(filters: NO_KMAP)
       classroomDistrictInfo {
         id
@@ -28,6 +28,7 @@ query getClassList {
         }
         district {
           id
+          hasKadSelfServe
           isCentrallyRostered
           schoolYearStart
           schoolYearEnd
@@ -77,7 +78,7 @@ query getClassList {
       }
       isK4dClassroom
       isKmapClassroom
-      isKhanClassroom
+      isKacPilotClassroom
       isCleverLibrarySynced
       isUpgradedClassroom
       includesCentrallyOwnedDistrictData

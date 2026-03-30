@@ -6,11 +6,13 @@ query UserDowngradedQuery {
       district {
         id
         name
+        isDowngraded
         __typename
       }
       deletedAt
       primaryRole
       rosterSource
+      hasKadSelfServe
       __typename
     }
     __typename

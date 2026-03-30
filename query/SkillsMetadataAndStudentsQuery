@@ -1,5 +1,5 @@
 query SkillsMetadataAndStudentsQuery($selectedMasteryCourseIds: [String]!, $classDescriptor: String!, $region: String!, $locale: String!) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     descriptor
     cacheId

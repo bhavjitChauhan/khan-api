@@ -1,5 +1,5 @@
 query ClassroomByDescriptorQuery($descriptor: String!) {
-  classroomByDescriptor(descriptor: $descriptor) {
+  classroomByDescriptor: classroomByDescriptorV2(descriptor: $descriptor) {
     id
     cacheId
     name
@@ -12,7 +12,7 @@ query ClassroomByDescriptorQuery($descriptor: String!) {
     googleClassName
     countStudents
     hasAssignments
-    hasCourseMasteryGoals(filter: NO_KMAP)
+    hasCourseMasteryGoals: hasCourseMasteryAssignments(filter: NO_KMAP)
     hasMasteryAssignments
     classroomDistrictInfo {
       id

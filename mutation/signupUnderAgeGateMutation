@@ -9,7 +9,7 @@ mutation signupUnderAgeGateMutation($username: String!, $password: String!, $bir
     user {
       id
       kaid
-      studentLists {
+      classrooms {
         id
         cacheId
         signupCode

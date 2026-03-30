@@ -24,6 +24,9 @@ query KadssPaymentSummary($confirmationTokenID: String!, $subscriptionID: String
     subtotalCents
     taxCents
     totalCents
+    discountCents
+    promoCode
+    couponName
     __typename
   }
 }

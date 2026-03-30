@@ -42,7 +42,7 @@ query GetProgressByStudent($filters: TeacherOverviewReportFilters!, $classDescri
     }
     __typename
   }
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     studentKaidsAndNicknames {

@@ -22,7 +22,7 @@ fragment assignmentFields on Assignment {
   classroom {
     id
     cacheId
-    isKhanClassroom
+    isKacPilotClassroom
     name
     signupCode
     __typename

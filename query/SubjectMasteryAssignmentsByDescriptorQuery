@@ -1,8 +1,8 @@
 query SubjectMasteryAssignmentsByDescriptorQuery($classDescriptor: String!) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
-    assignments: subjectMasteryAssignments(filter: NO_KMAP) {
+    assignments: courseMasteryAssignments(filter: NO_KMAP) {
       id
       dueDate
       assignedDate
@@ -12,7 +12,10 @@ query SubjectMasteryAssignmentsByDescriptorQuery($classDescriptor: String!) {
         title: translatedTitle
         __typename
       }
-      studentKaids
+      activeStudentData: activeStudentDataV2 {
+        kaid
+        __typename
+      }
       __typename
     }
     studentKaidsAndNicknames {

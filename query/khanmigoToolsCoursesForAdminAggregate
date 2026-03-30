@@ -1,0 +1,14 @@
+query khanmigoToolsCoursesForAdminAggregate($adminAggregateID: ID!, $kaLocale: String!) {
+  coursesForAdminAggregate(id: $adminAggregateID, kaLocale: $kaLocale) {
+    id
+    key
+    translatedTitle
+    sourceKaLocale
+    domain: parent {
+      id
+      translatedTitle
+      __typename
+    }
+    __typename
+  }
+}

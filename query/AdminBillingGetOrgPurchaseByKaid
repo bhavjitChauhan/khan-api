@@ -1,0 +1,9 @@
+query AdminBillingGetOrgPurchaseByKaid($kaid: String!) {
+  orgPurchaseByKaid(kaid: $kaid) {
+    extId
+    kaids
+    quantity
+    renewalSeatCount
+    __typename
+  }
+}

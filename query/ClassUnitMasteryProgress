@@ -4,7 +4,7 @@ query ClassUnitMasteryProgress($classDescriptor: String!, $topicId: String!, $te
     translatedTitle
     __typename
   }
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     students {

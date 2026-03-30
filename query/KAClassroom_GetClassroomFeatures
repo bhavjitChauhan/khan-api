@@ -1,0 +1,11 @@
+query KAClassroom_GetClassroomFeatures {
+  user {
+    id
+    classroomFeatures {
+      id
+      configName
+      __typename
+    }
+    __typename
+  }
+}

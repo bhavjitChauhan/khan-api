@@ -1,0 +1,10 @@
+query getVisualOutput($visualOutputId: ID!) {
+  getVisualOutput(id: $visualOutputId) {
+    visualOutput {
+      id
+      content
+      __typename
+    }
+    __typename
+  }
+}

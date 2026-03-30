@@ -1,5 +1,5 @@
 query assignmentCsvByClassQuery($classDescriptor: String!, $filters: CoachAssignmentFilters!, $orderBy: AssignmentOrder!, $after: ID, $teacherKaid: String!) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     assignmentsPage(filters: $filters, orderBy: $orderBy, after: $after) {

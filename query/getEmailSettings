@@ -12,6 +12,7 @@ query getEmailSettings($targetKaid: String) {
     authEmails
     hasStudents: hasCoachees
     hasChildren
+    includesDistrictOwnedData
     pendingEmailVerifications {
       email
       __typename

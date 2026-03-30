@@ -1,6 +1,6 @@
 mutation archiveSubjectMasteryAssignment($assignmentId: ID!) {
-  archiveSubjectMasteryAssignments(ids: [$assignmentId]) {
-    assignments {
+  archiveCourseMasteryAssignments(ids: [$assignmentId]) {
+    assignments: assignmentsV2 {
       id
       __typename
     }

@@ -1,0 +1,15 @@
+query AdminBillingGetOrgPurchaseByDistrictID($districtID: String!) {
+  orgPurchaseByDistrictID(districtID: $districtID) {
+    extId
+    kaids
+    quantity
+    renewalSeatCount
+    endedAt
+    subscriptionStatus
+    seatUsage
+    expiresAt
+    cancelAtPeriodEnd
+    overageDate
+    __typename
+  }
+}

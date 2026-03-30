@@ -1,0 +1,6 @@
+query RosterCountData($districtID: String!) {
+  districtDashboardActivation(filters: {districtID: $districtID}) {
+    numRosteredStudents
+    __typename
+  }
+}

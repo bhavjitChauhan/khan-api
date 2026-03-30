@@ -5,6 +5,14 @@ query extraInfoQuery {
     email
     birthMonthYear
     tosForFormalTeacherStatus
+    affiliationCountryCode
+    schoolAffiliation {
+      id
+      name
+      postalCode
+      location
+      __typename
+    }
     __typename
   }
 }

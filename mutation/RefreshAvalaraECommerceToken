@@ -1,0 +1,13 @@
+mutation RefreshAvalaraECommerceToken($token: String!) {
+  refreshAvalaraECommerceToken(token: $token) {
+    token
+    createdDate
+    expirationDate
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

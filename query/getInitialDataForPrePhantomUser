@@ -38,7 +38,6 @@ fragment KA_assessmentItemFields on AssessmentItem {
   problemType
   itemDataAnswerless
   isContextInaccessible
-  requiresScreenOrMouse
 }
 
 fragment practiceTaskFields on PracticeTask {

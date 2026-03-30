@@ -1,0 +1,9 @@
+mutation OptInToResearch($kaid: String) {
+  clearUserOptOutOfABTesting(kaid: $kaid) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

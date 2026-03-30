@@ -1,0 +1,11 @@
+mutation GenerateKhanmigoAccessToken {
+  generateKhanmigoAccessToken {
+    token
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,12 @@
+query khanmigoToolsPartnershipGrades($partnershipID: ID!) {
+  partnership: metaDistrictById(metaDistrictId: $partnershipID) {
+    id
+    activeGrades {
+      id
+      sortIndex
+      name
+      __typename
+    }
+    __typename
+  }
+}

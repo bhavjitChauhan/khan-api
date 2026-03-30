@@ -31,13 +31,15 @@ query guideTranscript($transcriptId: String!) {
       traceID
       pageType
       pageTitle
+      tutoringAction
+      tutoringActionValue
       imageMetadata {
         id
         llmSummary
         __typename
       }
-      diagrams {
-        code
+      diagramsV2 {
+        visualOutputID
         __typename
       }
       __typename

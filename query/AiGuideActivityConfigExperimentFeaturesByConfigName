@@ -1,0 +1,14 @@
+query AiGuideActivityConfigExperimentFeaturesByConfigName($configName: String!) {
+  aiGuideActivityConfigExperimentFeatures(configName: $configName) {
+    growthbookExperimentFeatures {
+      featureName
+      isKAIDExperiment
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

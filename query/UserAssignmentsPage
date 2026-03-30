@@ -25,6 +25,8 @@ query UserAssignmentsPage($classroomDescriptor: String!, $dueAfterISO: DateTime,
 fragment AssignmentData on Assignment {
   id
   title
+  instructions
+  configuredActivityInputs
   contents {
     id
     contentDescriptor

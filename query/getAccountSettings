@@ -55,6 +55,8 @@ query getAccountSettings($targetKaid: String) {
     microsoftId
     microsoftPrimaryEmail
     canAccessDistrictsHomepage
+    hasUnifiedTeacherRole: hasUnifiedUserRole(role: TEACHER)
+    hasUnifiedCoachRole: hasUnifiedUserRole(role: COACH)
     userChosenRoles
     homepage
     managingParent {
@@ -84,7 +86,7 @@ query getAccountSettings($targetKaid: String) {
     hasClasses
     includesDistrictOwnedData
     includesCentrallyOwnedDistrictData
-    isInKhanClassroomDistrict
+    isInKacPilotDistrict
     badgeCounts
     points
     userDistrictInfos {
@@ -93,8 +95,14 @@ query getAccountSettings($targetKaid: String) {
       districtProvidedBirthYear
       rosterSource
       primaryRole
+      district {
+        id
+        isCentrallyRostered
+        __typename
+      }
       __typename
     }
+    canSetOwnBirthday
     __typename
   }
   sessionHash

@@ -1,0 +1,12 @@
+mutation SetSubscriptionAutoRenewData($subscriptionID: String!, $shouldAutoRenew: Boolean!) {
+  kadssSetSubscriptionAutoRenew(
+    subscriptionID: $subscriptionID
+    shouldAutoRenew: $shouldAutoRenew
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

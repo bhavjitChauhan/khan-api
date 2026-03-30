@@ -53,7 +53,7 @@ query homepageQueryV4($kaid: String, $username: String) {
               __typename
             }
             createdOn
-            isKhanClassroom
+            isKacPilotClassroom
             isKmapClassroom
             isK4dClassroom
             __typename

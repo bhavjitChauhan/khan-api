@@ -1,7 +1,7 @@
 query StudentListsQuery {
   coach: user {
     id
-    studentLists: coachedStudentLists {
+    studentLists: coachedClassrooms {
       id
       cacheId
       descriptor

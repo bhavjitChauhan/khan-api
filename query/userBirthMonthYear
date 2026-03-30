@@ -2,6 +2,9 @@ query userBirthMonthYear {
   user {
     id
     birthMonthYear
+    tosForFormalTeacherStatus
+    hasUnifiedTeacherRole: hasUnifiedUserRole(role: TEACHER)
+    hasUnifiedCoachRole: hasUnifiedUserRole(role: COACH)
     __typename
   }
 }

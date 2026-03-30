@@ -1,8 +1,9 @@
-mutation UpdateIncompleteSubscription($quantity: Int!, $subscriptionID: ID!, $confirmationToken: String) {
+mutation UpdateIncompleteSubscription($quantity: Int!, $subscriptionID: ID!, $confirmationToken: String, $promoCode: String) {
   updateKadssIncompleteSubscription(
     quantity: $quantity
     subscriptionID: $subscriptionID
     confirmationToken: $confirmationToken
+    promoCode: $promoCode
   ) {
     clientSecret
     subscriptionID

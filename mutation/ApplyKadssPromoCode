@@ -1,0 +1,9 @@
+mutation ApplyKadssPromoCode($subscriptionID: String!, $promoCode: String!) {
+  applyKadssPromoCode(subscriptionID: $subscriptionID, promoCode: $promoCode) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

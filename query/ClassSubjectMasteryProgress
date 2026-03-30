@@ -8,7 +8,7 @@ query ClassSubjectMasteryProgress($classDescriptor: String!, $topicId: String!, 
     }
     __typename
   }
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     students {

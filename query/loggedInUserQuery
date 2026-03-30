@@ -5,7 +5,7 @@ query loggedInUserQuery {
     canAccessDistrictsHomepage
     isTeacher
     hasUnresolvedInvitations
-    isInKhanClassroomDistrict
+    isInKacPilotDistrict
     preferredKaLocale {
       id
       kaLocale
@@ -22,6 +22,17 @@ query loggedInUserQuery {
       __typename
     }
     homepageUrl
+    canAccessKaclBasedOnUserRequest
+    hasUnifiedTeacherRole: hasUnifiedUserRole(role: TEACHER)
+    hasUnifiedCoachRole: hasUnifiedUserRole(role: COACH)
+    age
+    tosForFormalTeacherStatus
+    classrooms {
+      id
+      cacheId
+      isChildAssignmentsClassroom
+      __typename
+    }
     __typename
   }
 }

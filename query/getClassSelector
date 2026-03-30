@@ -1,7 +1,7 @@
 query getClassSelector {
   coach: user {
     id
-    studentLists: coachedStudentLists {
+    studentLists: coachedClassrooms {
       id
       descriptor
       cacheId

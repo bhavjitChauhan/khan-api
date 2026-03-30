@@ -10,6 +10,7 @@ query GetPartnershipDataForDashboard($partnershipID: ID!, $kaLocale: String!) {
         levelHeight
         treeLabels(kaLocale: $kaLocale) {
           singular
+          plural
           generalized
           __typename
         }
@@ -31,6 +32,7 @@ query GetPartnershipDataForDashboard($partnershipID: ID!, $kaLocale: String!) {
         levelHeight
         treeLabels(kaLocale: $kaLocale) {
           singular
+          plural
           generalized
           __typename
         }
@@ -79,6 +81,9 @@ query GetPartnershipDataForDashboard($partnershipID: ID!, $kaLocale: String!) {
         isKmapDistrict
         isTest
         isAdministered
+        isCentrallyRostered
+        schoolYearStart
+        schoolYearEnd
         hasKhanmigo(scopeToActor: true)
         __typename
       }

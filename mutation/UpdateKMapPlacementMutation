@@ -3,7 +3,7 @@ mutation UpdateKMapPlacementMutation($classDescriptor: String!, $studentMapGoals
     classroomDescriptor: $classDescriptor
     studentMapGoals: $studentMapGoals
   ) {
-    assignments {
+    assignments: assignmentsV2 {
       id
       __typename
     }

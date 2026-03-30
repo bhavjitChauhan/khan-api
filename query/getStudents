@@ -1,5 +1,5 @@
 query getStudents($classDescriptor: String!, $aiGuideEnabledStudentsOnly: Boolean!) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     studentKaidsAndNicknames {

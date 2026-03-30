@@ -1,0 +1,24 @@
+query PlanDetailsData($subscriptionID: String!) {
+  kadssPlanDetails(subscriptionID: $subscriptionID) {
+    totalSeats
+    pricePerSeatCents
+    nextBillingDate
+    willAutoRenew
+    recurringBillingAmountCents
+    lastInvoiceDiscount {
+      amountOff
+      couponName
+      percentOff
+      promoCode
+      __typename
+    }
+    nextInvoiceDiscount {
+      amountOff
+      couponName
+      percentOff
+      promoCode
+      __typename
+    }
+    __typename
+  }
+}

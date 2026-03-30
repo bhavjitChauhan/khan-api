@@ -168,6 +168,8 @@ export default {
   AssignmentData: `fragment AssignmentData on Assignment {
   id
   title
+  instructions
+  configuredActivityInputs
   contents {
     id
     contentDescriptor
@@ -269,6 +271,7 @@ export default {
   subjectSlug
   title
   instructions
+  configuredActivityInputs
   __typename
 }`,
   Badge: `fragment Badge on Badge {
@@ -332,10 +335,10 @@ export default {
   id
   name
   signupCode
-  isKhanClassroom
+  isKacPilotClassroom
   __typename
 }`,
-  ClassroomData: `fragment ClassroomData on StudentList {
+  ClassroomData: `fragment ClassroomData on Classroom {
   cacheId
   id
   descriptor
@@ -2554,7 +2557,7 @@ query ActivitiesList {
   classroom {
     id
     cacheId
-    isKhanClassroom
+    isKacPilotClassroom
     name
     signupCode
     __typename
@@ -2985,6 +2988,7 @@ query ActivitiesList {
   subjectSlug
   title
   instructions
+  configuredActivityInputs
   __typename
 }`,
   KA_assessmentItemFields: `fragment KA_assessmentItemFields on AssessmentItem {
@@ -2994,6 +2998,5 @@ query ActivitiesList {
   problemType
   itemDataAnswerless
   isContextInaccessible
-  requiresScreenOrMouse
 }`,
 }

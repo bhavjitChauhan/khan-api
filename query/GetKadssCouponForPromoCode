@@ -1,0 +1,9 @@
+query GetKadssCouponForPromoCode($promoCode: String!) {
+  getKadssCouponForPromoCode(promoCode: $promoCode) {
+    name
+    percentOff
+    amountOff
+    valid
+    __typename
+  }
+}

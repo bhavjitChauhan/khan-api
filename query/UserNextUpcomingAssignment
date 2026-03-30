@@ -32,5 +32,6 @@ fragment Classroom on StudentList {
   id
   name
   signupCode
+  isKacPilotClassroom
   __typename
 }

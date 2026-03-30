@@ -7,6 +7,8 @@ query getActiveUDIsForDistrict($districtID: String!) {
     districtProvidedFirstName
     districtProvidedLastName
     districtProvidedFullName
+    districtProvidedBirthMonth
+    districtProvidedBirthYear
     displayName
     allUDIRoles
     kaid
@@ -37,6 +39,24 @@ query getActiveUDIsForDistrict($districtID: String!) {
     studentClassroomDistrictInfos {
       id
       name
+      __typename
+    }
+    adminCoTeacherGrants {
+      classroomDistrictInfo {
+        id
+        name
+        school {
+          id
+          name
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    user {
+      id
+      birthMonthYear
       __typename
     }
     __typename

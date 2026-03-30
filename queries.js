@@ -494,7 +494,7 @@ fragment ArticleRevision on ArticleRevision {
   }
 }`,
   assignmentCsvByClassQuery: `query assignmentCsvByClassQuery($classDescriptor: String!, $filters: CoachAssignmentFilters!, $orderBy: AssignmentOrder!, $after: ID, $teacherKaid: String!) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     assignmentsPage(filters: $filters, orderBy: $orderBy, after: $after) {
@@ -817,7 +817,7 @@ fragment AssignmentCsvData on Assignment {
   ClassCodeByClassIdQuery: `query ClassCodeByClassIdQuery($classId: String!) {
   user {
     id
-    studentList(id: $classId) {
+    classroom(id: $classId) {
       id
       cacheId
       signupCode
@@ -827,7 +827,7 @@ fragment AssignmentCsvData on Assignment {
   }
 }`,
   ClassDescriptorByClassCodeQuery: `query ClassDescriptorByClassCodeQuery($classCode: String!) {
-  studentList(classCode: $classCode) {
+  classroom(classCode: $classCode) {
     id
     cacheId
     descriptor
@@ -844,7 +844,7 @@ fragment AssignmentCsvData on Assignment {
   }
 }`,
   ClassroomByCode: `query ClassroomByCode($classCode: String!) {
-  studentList(classCode: $classCode) {
+  classroom(classCode: $classCode) {
     cacheId
     coachKaid
     descriptor
@@ -852,12 +852,12 @@ fragment AssignmentCsvData on Assignment {
     id
     name
     signupCode
-    isKhanClassroom
+    isKacPilotClassroom
     __typename
   }
 }`,
   ClassroomByDescriptorQuery: `query ClassroomByDescriptorQuery($descriptor: String!) {
-  classroomByDescriptor(descriptor: $descriptor) {
+  classroomByDescriptor: classroomByDescriptorV2(descriptor: $descriptor) {
     id
     cacheId
     name
@@ -870,7 +870,7 @@ fragment AssignmentCsvData on Assignment {
     googleClassName
     countStudents
     hasAssignments
-    hasCourseMasteryGoals(filter: NO_KMAP)
+    hasCourseMasteryGoals: hasCourseMasteryAssignments(filter: NO_KMAP)
     hasMasteryAssignments
     classroomDistrictInfo {
       id
@@ -991,7 +991,7 @@ fragment AssignmentCsvData on Assignment {
     }
     __typename
   }
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     students {
@@ -1030,7 +1030,7 @@ fragment AssignmentCsvData on Assignment {
     translatedTitle
     __typename
   }
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     students {
@@ -1055,7 +1055,7 @@ fragment AssignmentCsvData on Assignment {
   }
 }`,
   CoachAssignments: `query CoachAssignments($classDescriptor: String!, $assignmentFilters: CoachAssignmentFilters, $orderBy: AssignmentOrder!, $pageSize: Int, $after: ID) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     isK4dClassroom
@@ -2203,7 +2203,7 @@ fragment UnitTestMetadata on TopicUnitTest {
   __typename
 }`,
   ContentItemAssignmentStatusesQuery: `query ContentItemAssignmentStatusesQuery($classDescriptor: String!, $contentDescriptors: [String!]!) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     contentAssignmentStatuses: nonDraftAssignmentStatusesForContentDescriptors(
@@ -5007,6 +5007,8 @@ fragment UserFields on User {
     microsoftId
     microsoftPrimaryEmail
     canAccessDistrictsHomepage
+    hasUnifiedTeacherRole: hasUnifiedUserRole(role: TEACHER)
+    hasUnifiedCoachRole: hasUnifiedUserRole(role: COACH)
     userChosenRoles
     homepage
     managingParent {
@@ -5036,7 +5038,7 @@ fragment UserFields on User {
     hasClasses
     includesDistrictOwnedData
     includesCentrallyOwnedDistrictData
-    isInKhanClassroomDistrict
+    isInKacPilotDistrict
     badgeCounts
     points
     userDistrictInfos {
@@ -5045,8 +5047,14 @@ fragment UserFields on User {
       districtProvidedBirthYear
       rosterSource
       primaryRole
+      district {
+        id
+        isCentrallyRostered
+        __typename
+      }
       __typename
     }
+    canSetOwnBirthday
     __typename
   }
   sessionHash
@@ -5202,7 +5210,7 @@ fragment UserFields on User {
     id
     assessmentItems {
       id
-      itemData
+      itemDataAnswerless
       __typename
     }
     __typename
@@ -5327,7 +5335,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
   getClassesAndStudents: `query getClassesAndStudents {
   coach: user {
     id
-    studentLists: coachedStudentLists {
+    studentLists: coachedClassrooms {
       id
       descriptor
       cacheId
@@ -5367,7 +5375,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
       googleClassName
       countStudents
       hasAssignments
-      hasCourseMasteryGoals(filter: NO_KMAP)
+      hasCourseMasteryGoals: hasCourseMasteryAssignments(filter: NO_KMAP)
       hasMasteryAssignments(filters: NO_KMAP)
       classroomDistrictInfo {
         id
@@ -5380,6 +5388,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
         }
         district {
           id
+          hasKadSelfServe
           isCentrallyRostered
           schoolYearStart
           schoolYearEnd
@@ -5429,7 +5438,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
       }
       isK4dClassroom
       isKmapClassroom
-      isKhanClassroom
+      isKacPilotClassroom
       isCleverLibrarySynced
       isUpgradedClassroom
       includesCentrallyOwnedDistrictData
@@ -5497,7 +5506,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
   getClassroomRoster: `query getClassroomRoster($classDescriptor: String!, $teacherKaid: String!, $after: Int, $pageSize: Int) {
   coach: user {
     id
-    studentLists: coachedStudentLists {
+    studentLists: coachedClassrooms {
       id
       cacheId
       descriptor
@@ -5526,7 +5535,7 @@ fragment AssessmentItemTagFields on AssessmentItemTag {
     tosForFormalTeacherStatus
     __typename
   }
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     name
@@ -5616,7 +5625,7 @@ fragment StudentField2 on StudentsPage {
   getClassSelector: `query getClassSelector {
   coach: user {
     id
-    studentLists: coachedStudentLists {
+    studentLists: coachedClassrooms {
       id
       descriptor
       cacheId
@@ -5631,7 +5640,7 @@ fragment StudentField2 on StudentsPage {
   }
 }`,
   getClassSettings: `query getClassSettings($classDescriptor: String!) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     founder: coach {
@@ -5667,6 +5676,7 @@ fragment StudentField2 on StudentsPage {
     countStudents
     classroomDistrictInfo {
       id
+      keyNameID
       name
       rosterSource
       founderDistrictInfo: teacherUserDistrictInfo {
@@ -5703,6 +5713,12 @@ fragment StudentField2 on StudentsPage {
       isManuallyUnmarked
       hasKadTrial
       hasKadSelfServe
+      lmsSync
+      district {
+        id
+        lmsSyncType
+        __typename
+      }
       __typename
     }
     allTeachers {
@@ -6433,7 +6449,7 @@ fragment Badge on Badge {
       ...CleverCoachRequestField
       __typename
     }
-    studentLists: coachedStudentLists {
+    studentLists: coachedClassrooms {
       id
       cacheId
       descriptor
@@ -6685,11 +6701,11 @@ fragment StudentField1 on StudentsPage {
   }
   coach: user {
     id
-    coachedStudentLists {
+    coachedStudentLists: coachedClassrooms {
       id
       cacheId
       countStudents
-      hasCourseMasteryGoals
+      hasCourseMasteryGoals: hasCourseMasteryAssignments
       signupCode
       topics {
         id
@@ -6715,6 +6731,7 @@ fragment StudentField1 on StudentsPage {
     authEmails
     hasStudents: hasCoachees
     hasChildren
+    includesDistrictOwnedData
     pendingEmailVerifications {
       email
       __typename
@@ -6769,6 +6786,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     email
     hasStudents
     hasChildren
+    includesDistrictOwnedData
     emailSubscriptions {
       ...EmailSubscriptionFields
       __typename
@@ -7145,7 +7163,9 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     includesKmapDistrictOwnedData
     includesK4dDistrictOwnedData
     canAccessDistrictsHomepage
-    isInKhanClassroomDistrict
+    isInKacPilotDistrict
+    hasUnifiedTeacherRole: hasUnifiedUserRole(role: TEACHER)
+    hasUnifiedCoachRole: hasUnifiedUserRole(role: COACH)
     underAgeGate {
       parentEmail
       daysUntilCutoff
@@ -7175,6 +7195,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     userDistrictInfos {
       id
       isKAD
+      primaryRole
       district {
         id
         region
@@ -7241,7 +7262,6 @@ fragment KA_assessmentItemFields on AssessmentItem {
   problemType
   itemDataAnswerless
   isContextInaccessible
-  requiresScreenOrMouse
 }
 
 fragment practiceTaskFields on PracticeTask {
@@ -7405,7 +7425,7 @@ fragment userExerciseFields on UserExercise {
   __typename
 }`,
   getIsClassCleverLibrarySynced: `query getIsClassCleverLibrarySynced($classDescriptor: String!) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     isCleverLibrarySynced
@@ -7413,7 +7433,7 @@ fragment userExerciseFields on UserExercise {
   }
 }`,
   getIsDistrictSynced: `query getIsDistrictSynced($classDescriptor: String!) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     includesDistrictOwnedData
@@ -7565,7 +7585,7 @@ fragment userExerciseFields on UserExercise {
   getLearnStormDashboard: `query getLearnStormDashboard($classDescriptor: String!) {
   coach: user {
     id
-    studentLists: coachedStudentLists {
+    studentLists: coachedClassrooms {
       id
       cacheId
       name
@@ -7575,7 +7595,7 @@ fragment userExerciseFields on UserExercise {
     }
     __typename
   }
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     countStudents
@@ -8616,7 +8636,7 @@ fragment Badge on Badge {
   }
 }`,
   getStudents: `query getStudents($classDescriptor: String!, $aiGuideEnabledStudentsOnly: Boolean!) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     studentKaidsAndNicknames {
@@ -8667,7 +8687,7 @@ fragment Badge on Badge {
     nickname
     username
     age
-    studentLists: coachedStudentLists {
+    studentLists: coachedClassrooms {
       id
       cacheId
       key
@@ -8679,7 +8699,7 @@ fragment Badge on Badge {
       nickname
       username
       age
-      studentLists {
+      classrooms {
         id
         cacheId
         key
@@ -10586,13 +10606,15 @@ fragment gtp_essayScoresFragment on EssayScores {
       traceID
       pageType
       pageTitle
+      tutoringAction
+      tutoringActionValue
       imageMetadata {
         id
         llmSummary
         __typename
       }
-      diagrams {
-        code
+      diagramsV2 {
+        visualOutputID
         __typename
       }
       __typename
@@ -10747,7 +10769,7 @@ fragment gtp_essayScoresFragment on EssayScores {
               __typename
             }
             createdOn
-            isKhanClassroom
+            isKacPilotClassroom
             isKmapClassroom
             isK4dClassroom
             __typename
@@ -11206,19 +11228,17 @@ fragment BaseFolder on Folder {
   }
 }`,
   KmapPlacementQuery: `query KmapPlacementQuery($classDescriptor: String!) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     signupCode
     id
     cacheId
-    kmapAssignments: subjectMasteryAssignments(filter: KMAP) {
+    kmapAssignments: courseMasteryAssignments(filter: KMAP) {
       id
-      studentListId
-      activeStudentData {
+      activeStudentData: activeStudentDataV2 {
         kaid
         assignedDate
         __typename
       }
-      studentKaids
       course: topic {
         id
         slug
@@ -11234,7 +11254,7 @@ fragment BaseFolder on Folder {
         }
         __typename
       }
-      studentProgress {
+      studentProgress: studentProgressV2 {
         kaid
         currentMasteryPercentage
         __typename
@@ -11402,7 +11422,7 @@ fragment BaseFolder on Folder {
   }
 }`,
   KmapProgressReportQuery: `query KmapProgressReportQuery($classDescriptor: String!, $progressFrom: DateTime, $progressUpTo: DateTime) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     studentKaidsAndNicknames {
@@ -11411,14 +11431,17 @@ fragment BaseFolder on Folder {
       coachNickname
       __typename
     }
-    assignments: subjectMasteryAssignments(filter: KMAP) {
+    assignments: courseMasteryAssignments(filter: KMAP) {
       id
-      studentKaids
-      historicalStudentData {
+      activeStudentData: activeStudentDataV2 {
         kaid
         __typename
       }
-      completedStudentData {
+      historicalStudentData: historicalStudentDataV2 {
+        kaid
+        __typename
+      }
+      completedStudentData: completedStudentDataV2 {
         kaid
         __typename
       }
@@ -11647,7 +11670,7 @@ fragment BaseFolder on Folder {
     canAccessDistrictsHomepage
     isTeacher
     hasUnresolvedInvitations
-    isInKhanClassroomDistrict
+    isInKacPilotDistrict
     preferredKaLocale {
       id
       kaLocale
@@ -11664,6 +11687,17 @@ fragment BaseFolder on Folder {
       __typename
     }
     homepageUrl
+    canAccessKaclBasedOnUserRequest
+    hasUnifiedTeacherRole: hasUnifiedUserRole(role: TEACHER)
+    hasUnifiedCoachRole: hasUnifiedUserRole(role: COACH)
+    age
+    tosForFormalTeacherStatus
+    classrooms {
+      id
+      cacheId
+      isChildAssignmentsClassroom
+      __typename
+    }
     __typename
   }
 }`,
@@ -13338,7 +13372,7 @@ fragment ProblemAttemptFields on ProblemAttempt {
   }
 }`,
   SkillsMetadataAndStudentsQuery: `query SkillsMetadataAndStudentsQuery($selectedMasteryCourseIds: [String]!, $classDescriptor: String!, $region: String!, $locale: String!) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     descriptor
     cacheId
@@ -13472,13 +13506,11 @@ fragment TranslatedContentFields on LearnableContent {
       classroomDescriptor: $classDescriptor
     ) {
       id
-      studentListId
-      activeStudentData {
+      activeStudentData: activeStudentDataV2 {
         kaid
         assignedDate
         __typename
       }
-      studentKaids
       course: topic {
         id
         slug
@@ -13490,7 +13522,7 @@ fragment TranslatedContentFields on LearnableContent {
         }
         __typename
       }
-      studentProgress {
+      studentProgress: studentProgressV2 {
         kaid
         currentMastery {
           percentage
@@ -13502,7 +13534,7 @@ fragment TranslatedContentFields on LearnableContent {
     }
     __typename
   }
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     classroomDistrictInfo {
@@ -13581,18 +13613,18 @@ fragment TranslatedContentFields on LearnableContent {
   }
 }`,
   StudentListHasAssignments: `query StudentListHasAssignments($classDescriptor: String!) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     hasAssignments
-    hasCourseMasteryGoals
+    hasCourseMasteryGoals: hasCourseMasteryAssignments
     __typename
   }
 }`,
   StudentListsQuery: `query StudentListsQuery {
   coach: user {
     id
-    studentLists: coachedStudentLists {
+    studentLists: coachedClassrooms {
       id
       cacheId
       descriptor
@@ -13681,7 +13713,7 @@ fragment TranslatedContentFields on LearnableContent {
     isFormalTeacher
     __typename
   }
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     classroomDistrictInfo {
@@ -13814,10 +13846,10 @@ fragment TranslatedContentFields on LearnableContent {
   }
 }`,
   SubjectMasteryAssignmentsByDescriptorQuery: `query SubjectMasteryAssignmentsByDescriptorQuery($classDescriptor: String!) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
-    assignments: subjectMasteryAssignments(filter: NO_KMAP) {
+    assignments: courseMasteryAssignments(filter: NO_KMAP) {
       id
       dueDate
       assignedDate
@@ -13827,7 +13859,10 @@ fragment TranslatedContentFields on LearnableContent {
         title: translatedTitle
         __typename
       }
-      studentKaids
+      activeStudentData: activeStudentDataV2 {
+        kaid
+        __typename
+      }
       __typename
     }
     studentKaidsAndNicknames {
@@ -14945,6 +14980,8 @@ fragment ContentFields on LearnableContent {
 fragment AssignmentData on Assignment {
   id
   title
+  instructions
+  configuredActivityInputs
   contents {
     id
     contentDescriptor
@@ -15045,6 +15082,8 @@ fragment AssignmentData on Assignment {
 fragment AssignmentData on Assignment {
   id
   title
+  instructions
+  configuredActivityInputs
   contents {
     id
     contentDescriptor
@@ -15237,7 +15276,7 @@ fragment AssignmentData on Assignment {
   }
 }`,
   UserDistrictStudentsQuery: `query UserDistrictStudentsQuery($classDescriptor: String!) {
-  classroomByDescriptor(descriptor: $classDescriptor) {
+  classroomByDescriptor: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     signupCode
@@ -15275,11 +15314,13 @@ fragment AssignmentData on Assignment {
       district {
         id
         name
+        isDowngraded
         __typename
       }
       deletedAt
       primaryRole
       rosterSource
+      hasKadSelfServe
       __typename
     }
     __typename
@@ -15341,6 +15382,7 @@ fragment Classroom on StudentList {
   id
   name
   signupCode
+  isKacPilotClassroom
   __typename
 }`,
   UserPermissionsByEmail: `query UserPermissionsByEmail($email: String!) {
@@ -16765,7 +16807,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     studentKaidsAndNicknames {
@@ -19705,6 +19747,9 @@ fragment UserFields on User {
   user {
     id
     birthMonthYear
+    tosForFormalTeacherStatus
+    hasUnifiedTeacherRole: hasUnifiedUserRole(role: TEACHER)
+    hasUnifiedCoachRole: hasUnifiedUserRole(role: COACH)
     __typename
   }
 }`,
@@ -21958,6 +22003,7 @@ fragment UserFields on User {
         levelHeight
         treeLabels(kaLocale: $kaLocale) {
           singular
+          plural
           generalized
           __typename
         }
@@ -21979,6 +22025,7 @@ fragment UserFields on User {
         levelHeight
         treeLabels(kaLocale: $kaLocale) {
           singular
+          plural
           generalized
           __typename
         }
@@ -22027,6 +22074,9 @@ fragment UserFields on User {
         isKmapDistrict
         isTest
         isAdministered
+        isCentrallyRostered
+        schoolYearStart
+        schoolYearEnd
         hasKhanmigo(scopeToActor: true)
         __typename
       }
@@ -22176,6 +22226,7 @@ fragment UserFields on User {
     schoolYearStart
     schoolYearEnd
     nextSchoolYearStart
+    nextSchoolYearEnd
     kaLocale
     ancestors {
       id
@@ -22530,7 +22581,7 @@ fragment assignmentFields on Assignment {
   classroom {
     id
     cacheId
-    isKhanClassroom
+    isKacPilotClassroom
     name
     signupCode
     __typename
@@ -23433,6 +23484,14 @@ fragment assessmentItemFields on AssessmentItem {
     email
     birthMonthYear
     tosForFormalTeacherStatus
+    affiliationCountryCode
+    schoolAffiliation {
+      id
+      name
+      postalCode
+      location
+      __typename
+    }
     __typename
   }
 }`,
@@ -25733,6 +25792,9 @@ fragment skillLevelChangeFields on SkillLevelChange {
     subtotalCents
     taxCents
     totalCents
+    discountCents
+    promoCode
+    couponName
     __typename
   }
 }`,
@@ -25921,6 +25983,8 @@ fragment skillLevelChangeFields on SkillLevelChange {
     districtProvidedFirstName
     districtProvidedLastName
     districtProvidedFullName
+    districtProvidedBirthMonth
+    districtProvidedBirthYear
     displayName
     allUDIRoles
     kaid
@@ -25951,6 +26015,24 @@ fragment skillLevelChangeFields on SkillLevelChange {
     studentClassroomDistrictInfos {
       id
       name
+      __typename
+    }
+    adminCoTeacherGrants {
+      classroomDistrictInfo {
+        id
+        name
+        school {
+          id
+          name
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    user {
+      id
+      birthMonthYear
       __typename
     }
     __typename
@@ -26022,7 +26104,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
         id
         cacheId
         signupCode
-        isKhanClassroom
+        isKacPilotClassroom
         descriptor
         __typename
       }
@@ -26060,7 +26142,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
         id
         cacheId
         signupCode
-        isKhanClassroom
+        isKacPilotClassroom
         descriptor
         __typename
       }
@@ -26178,7 +26260,6 @@ fragment KA_assessmentItemFields on AssessmentItem {
   problemType
   itemDataAnswerless
   isContextInaccessible
-  requiresScreenOrMouse
 }`,
   getAssessmentItemByProblemNumber: `query getAssessmentItemByProblemNumber($exerciseId: ID!, $problemNumber: Int!, $hideVisual: Boolean!) {
   assessmentItemByProblemNumber(
@@ -26206,7 +26287,6 @@ fragment KA_assessmentItemFields on AssessmentItem {
   problemType
   itemDataAnswerless
   isContextInaccessible
-  requiresScreenOrMouse
 }`,
   getAssessmentItemForLegacyQuiz: `query getAssessmentItemForLegacyQuiz($exerciseId: ID!, $quizProblemNumber: Int!) {
   assessmentItemForLegacyQuiz(
@@ -26233,7 +26313,6 @@ fragment KA_assessmentItemFields on AssessmentItem {
   problemType
   itemDataAnswerless
   isContextInaccessible
-  requiresScreenOrMouse
 }`,
   DistrictsPackage_Invoices_GetUpcomingInvoice: `query DistrictsPackage_Invoices_GetUpcomingInvoice($subscriptionID: String!) {
   kadssUpcomingInvoice(subscriptionID: $subscriptionID) {
@@ -26287,6 +26366,279 @@ fragment KA_assessmentItemFields on AssessmentItem {
       }
       __typename
     }
+    __typename
+  }
+}`,
+  AdminBillingGetCardDetailsBySubscriptionID: `query AdminBillingGetCardDetailsBySubscriptionID($subscriptionID: String!) {
+  kadssCardDetails(subscriptionID: $subscriptionID) {
+    cardLast4
+    expMonth
+    expYear
+    cardDisplayBrand
+    __typename
+  }
+}`,
+  AdminBillingGetOrgPurchaseByDistrictID: `query AdminBillingGetOrgPurchaseByDistrictID($districtID: String!) {
+  orgPurchaseByDistrictID(districtID: $districtID) {
+    extId
+    kaids
+    quantity
+    renewalSeatCount
+    endedAt
+    subscriptionStatus
+    seatUsage
+    expiresAt
+    cancelAtPeriodEnd
+    overageDate
+    __typename
+  }
+}`,
+  AdminBillingGetOrgPurchaseByKaid: `query AdminBillingGetOrgPurchaseByKaid($kaid: String!) {
+  orgPurchaseByKaid(kaid: $kaid) {
+    extId
+    kaids
+    quantity
+    renewalSeatCount
+    __typename
+  }
+}`,
+  AdminBillingKadssCustomerTaxExemptionStatus: `query AdminBillingKadssCustomerTaxExemptionStatus {
+  kadssCustomerTaxExemptionStatus {
+    status
+    __typename
+  }
+}`,
+  AiGuideActivityConfigExperimentFeaturesByConfigName: `query AiGuideActivityConfigExperimentFeaturesByConfigName($configName: String!) {
+  aiGuideActivityConfigExperimentFeatures(configName: $configName) {
+    growthbookExperimentFeatures {
+      featureName
+      isKAIDExperiment
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  EmbeddedContentLibrary_GetResolvedContentPath: `query EmbeddedContentLibrary_GetResolvedContentPath($contentPath: String!, $countryCode: String!) {
+  contentRoute(path: $contentPath, countryCode: $countryCode) {
+    resolvedPath
+    __typename
+  }
+}`,
+  GetChildAssignmentsClassrooms: `query GetChildAssignmentsClassrooms($parentKaid: String!) {
+  childAssignmentsClassroomsForParent(parentKaid: $parentKaid) {
+    name
+    id
+    signupCode
+    cacheId
+    key
+    descriptor
+    createdOn
+    countStudents
+    hasAssignments
+    isChildAssignmentsClassroom
+    students {
+      id
+      nickname
+      __typename
+    }
+    topics {
+      id
+      key
+      slug
+      title: translatedTitle
+      translatedStandaloneTitle
+      iconPath
+      domainSlug
+      isHighSchoolSubject
+      masteryEnabled
+      subjectMasteryEnabled
+      learnableContentSummary {
+        countExercises
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  GetKadssCouponForPromoCode: `query GetKadssCouponForPromoCode($promoCode: String!) {
+  getKadssCouponForPromoCode(promoCode: $promoCode) {
+    name
+    percentOff
+    amountOff
+    valid
+    __typename
+  }
+}`,
+  GetSubscriptionInvoicesData: `query GetSubscriptionInvoicesData($subscriptionID: String!) {
+  kadssInvoices(subscriptionID: $subscriptionID) {
+    id
+    number
+    totalAmount
+    currency
+    createdAt
+    finalizedAt
+    stripeInvoicePageUrl
+    status
+    __typename
+  }
+}`,
+  GetUpcomingInvoiceData: `query GetUpcomingInvoiceData($subscriptionID: String!) {
+  kadssUpcomingInvoice(subscriptionID: $subscriptionID) {
+    id
+    amountDue
+    __typename
+  }
+}`,
+  GetVisibleAdminUDIsData: `query GetVisibleAdminUDIsData($partnershipID: ID!, $districtID: ID!) {
+  getVisibleAdminUDIs(partnershipID: $partnershipID, districtID: $districtID) {
+    id
+    kaid
+    displayNameForTeacher
+    adrIsGlobalAdmin
+    __typename
+  }
+}`,
+  KAClassroom_GetClassroomFeatures: `query KAClassroom_GetClassroomFeatures {
+  user {
+    id
+    classroomFeatures {
+      id
+      configName
+      __typename
+    }
+    __typename
+  }
+}`,
+  PlanDetailsData: `query PlanDetailsData($subscriptionID: String!) {
+  kadssPlanDetails(subscriptionID: $subscriptionID) {
+    totalSeats
+    pricePerSeatCents
+    nextBillingDate
+    willAutoRenew
+    recurringBillingAmountCents
+    lastInvoiceDiscount {
+      amountOff
+      couponName
+      percentOff
+      promoCode
+      __typename
+    }
+    nextInvoiceDiscount {
+      amountOff
+      couponName
+      percentOff
+      promoCode
+      __typename
+    }
+    __typename
+  }
+}`,
+  RosterCountData: `query RosterCountData($districtID: String!) {
+  districtDashboardActivation(filters: {districtID: $districtID}) {
+    numRosteredStudents
+    __typename
+  }
+}`,
+  SchoolSelectorUserIsInXTPartnership: `query SchoolSelectorUserIsInXTPartnership {
+  user {
+    id
+    userDistrictInfos {
+      id
+      partnership {
+        ... on MetaDistrict {
+          id
+          __typename
+        }
+        ... on District {
+          id
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    userMetaInfos {
+      id
+      partnership {
+        id
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  SeatUpdateEstimatesData: `query SeatUpdateEstimatesData($subscriptionID: String!, $newQuantity: Int!) {
+  kadssSeatUpdateEstimates(
+    subscriptionID: $subscriptionID
+    newQuantity: $newQuantity
+  ) {
+    costPerSeatCents
+    taxCents
+    totalCostCents
+    __typename
+  }
+}`,
+  getVisualOutput: `query getVisualOutput($visualOutputId: ID!) {
+  getVisualOutput(id: $visualOutputId) {
+    visualOutput {
+      id
+      content
+      __typename
+    }
+    __typename
+  }
+}`,
+  hasAccessToWritingCoachInternal: `query hasAccessToWritingCoachInternal {
+  hasAccessToWritingCoachInternal
+}`,
+  khanmigoToolsCoursesForAdminAggregate: `query khanmigoToolsCoursesForAdminAggregate($adminAggregateID: ID!, $kaLocale: String!) {
+  coursesForAdminAggregate(id: $adminAggregateID, kaLocale: $kaLocale) {
+    id
+    key
+    translatedTitle
+    sourceKaLocale
+    domain: parent {
+      id
+      translatedTitle
+      __typename
+    }
+    __typename
+  }
+}`,
+  khanmigoToolsDistrictGrades: `query khanmigoToolsDistrictGrades($districtID: ID!) {
+  district: districtById(districtId: $districtID) {
+    id
+    activeGrades {
+      id
+      name
+      sortIndex
+      __typename
+    }
+    __typename
+  }
+}`,
+  khanmigoToolsPartnershipGrades: `query khanmigoToolsPartnershipGrades($partnershipID: ID!) {
+  partnership: metaDistrictById(metaDistrictId: $partnershipID) {
+    id
+    activeGrades {
+      id
+      sortIndex
+      name
+      __typename
+    }
+    __typename
+  }
+}`,
+  userKaclCountryAccess: `query userKaclCountryAccess {
+  user {
+    id
+    canAccessKaclBasedOnUserRequest
     __typename
   }
 }`,

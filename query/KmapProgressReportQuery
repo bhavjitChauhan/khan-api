@@ -1,5 +1,5 @@
 query KmapProgressReportQuery($classDescriptor: String!, $progressFrom: DateTime, $progressUpTo: DateTime) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     studentKaidsAndNicknames {
@@ -8,14 +8,17 @@ query KmapProgressReportQuery($classDescriptor: String!, $progressFrom: DateTime
       coachNickname
       __typename
     }
-    assignments: subjectMasteryAssignments(filter: KMAP) {
+    assignments: courseMasteryAssignments(filter: KMAP) {
       id
-      studentKaids
-      historicalStudentData {
+      activeStudentData: activeStudentDataV2 {
         kaid
         __typename
       }
-      completedStudentData {
+      historicalStudentData: historicalStudentDataV2 {
+        kaid
+        __typename
+      }
+      completedStudentData: completedStudentDataV2 {
         kaid
         __typename
       }

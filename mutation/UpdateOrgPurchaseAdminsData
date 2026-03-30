@@ -1,0 +1,14 @@
+mutation UpdateOrgPurchaseAdminsData($orgID: ID!, $partnershipID: ID, $kaids: [String!]!) {
+  updateOrgPurchaseAdmins(
+    orgID: $orgID
+    partnershipID: $partnershipID
+    kaids: $kaids
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

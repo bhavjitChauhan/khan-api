@@ -1,17 +1,15 @@
 query KmapPlacementQuery($classDescriptor: String!) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     signupCode
     id
     cacheId
-    kmapAssignments: subjectMasteryAssignments(filter: KMAP) {
+    kmapAssignments: courseMasteryAssignments(filter: KMAP) {
       id
-      studentListId
-      activeStudentData {
+      activeStudentData: activeStudentDataV2 {
         kaid
         assignedDate
         __typename
       }
-      studentKaids
       course: topic {
         id
         slug
@@ -27,7 +25,7 @@ query KmapPlacementQuery($classDescriptor: String!) {
         }
         __typename
       }
-      studentProgress {
+      studentProgress: studentProgressV2 {
         kaid
         currentMasteryPercentage
         __typename

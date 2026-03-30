@@ -313,11 +313,12 @@ fragment AssignmentInfoFragment on Assignment {
   subjectSlug
   title
   instructions
+  configuredActivityInputs
   __typename
 }`,
   archiveSubjectMasteryAssignment: `mutation archiveSubjectMasteryAssignment($assignmentId: ID!) {
-  archiveSubjectMasteryAssignments(ids: [$assignmentId]) {
-    assignments {
+  archiveCourseMasteryAssignments(ids: [$assignmentId]) {
+    assignments: assignmentsV2 {
       id
       __typename
     }
@@ -3874,6 +3875,7 @@ fragment NewAssignmentPostButtonFragment on Assignment {
   subjectSlug
   title
   instructions
+  configuredActivityInputs
   __typename
 }`,
   createChildMutation: `mutation createChildMutation($birthdate: Date!, $username: String!, $password: String!, $nickname: String) {
@@ -3924,7 +3926,7 @@ fragment NewAssignmentPostButtonFragment on Assignment {
   createCourseMasteryAssignments(
     assignments: {classroomDescriptors: $classDescriptors, studentKaids: $studentKaids, courseId: $topicId, dueDate: $dueDate}
   ) {
-    assignments {
+    assignments: assignmentsV2 {
       id
       createdDate
       dueDate
@@ -7425,6 +7427,7 @@ fragment AssignmentInfoFragment on Assignment {
   subjectSlug
   title
   instructions
+  configuredActivityInputs
   __typename
 }`,
   publishStandardMappings: `mutation publishStandardMappings($set: String!, $content: String!) {
@@ -8616,7 +8619,7 @@ fragment entry on TeamPageEntryForEditing {
     user {
       id
       kaid
-      studentLists {
+      classrooms {
         id
         cacheId
         signupCode
@@ -8971,6 +8974,7 @@ fragment NewAssignmentPostButtonFragment on Assignment {
   subjectSlug
   title
   instructions
+  configuredActivityInputs
   __typename
 }`,
   updateAssignments: `mutation updateAssignments($ids: [ID]!, $startDate: DateTime, $dueDate: DateTime) {
@@ -9440,7 +9444,7 @@ fragment UnlinkedStudentData on UnsuccessfullyLinkedGoogleClassStudent {
     classroomDescriptor: $classDescriptor
     studentMapGoals: $studentMapGoals
   ) {
-    assignments {
+    assignments: assignmentsV2 {
       id
       __typename
     }
@@ -14292,12 +14296,13 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
-  CalculateTaxByAddress: `mutation CalculateTaxByAddress($stripePriceID: ID!, $quantity: Int!, $productName: String!, $billingAddress: StripeBillingAddress!) {
+  CalculateTaxByAddress: `mutation CalculateTaxByAddress($stripePriceID: ID!, $quantity: Int!, $productName: String!, $billingAddress: StripeBillingAddress!, $promoCode: String) {
   calculateTaxByAddress(
     stripePriceID: $stripePriceID
     quantity: $quantity
     productName: $productName
     billingAddress: $billingAddress
+    promoCode: $promoCode
   ) {
     taxAmount
     taxCalculationID
@@ -14309,11 +14314,12 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
-  CreateIncompleteSubscription: `mutation CreateIncompleteSubscription($stripePriceID: ID!, $quantity: Int!, $confirmationToken: String) {
+  CreateIncompleteSubscription: `mutation CreateIncompleteSubscription($stripePriceID: ID!, $quantity: Int!, $confirmationToken: String, $promoCode: String) {
   createKadssIncompleteSubscription(
     stripePriceID: $stripePriceID
     quantity: $quantity
     confirmationToken: $confirmationToken
+    promoCode: $promoCode
   ) {
     customerID
     clientSecret
@@ -14326,11 +14332,12 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
-  UpdateIncompleteSubscription: `mutation UpdateIncompleteSubscription($quantity: Int!, $subscriptionID: ID!, $confirmationToken: String) {
+  UpdateIncompleteSubscription: `mutation UpdateIncompleteSubscription($quantity: Int!, $subscriptionID: ID!, $confirmationToken: String, $promoCode: String) {
   updateKadssIncompleteSubscription(
     quantity: $quantity
     subscriptionID: $subscriptionID
     confirmationToken: $confirmationToken
+    promoCode: $promoCode
   ) {
     clientSecret
     subscriptionID
@@ -14623,10 +14630,10 @@ fragment MasteryAssignment on MasteryAssignment {
     __typename
   }
 }`,
-  SetClassroomCoursesByIds: `mutation SetClassroomCoursesByIds($classDescriptor: String!, $courseIds: [String!]!) {
+  SetClassroomCoursesByIds: `mutation SetClassroomCoursesByIds($classDescriptor: String!, $localizedCourses: [LocalizedCourseInput!]!) {
   setClassroomCoursesByIds(
     classroomDescriptor: $classDescriptor
-    courseIds: $courseIds
+    localizedCourses: $localizedCourses
   ) {
     classroom {
       id
@@ -14723,6 +14730,237 @@ fragment MasteryAssignment on MasteryAssignment {
 }`,
   CompleteOnboardingStep: `mutation CompleteOnboardingStep($districtID: ID!, $stepSlug: OnboardingStepSlugs!) {
   completeDistrictOnboardingStep(districtID: $districtID, stepSlug: $stepSlug) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  AdminBillingCreateSetupIntent: `mutation AdminBillingCreateSetupIntent($subscriptionID: String!) {
+  createKadssSetupIntent(subscriptionID: $subscriptionID) {
+    clientSecret
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  AdminBillingUpdatePaymentMethod: `mutation AdminBillingUpdatePaymentMethod($subscriptionID: String!, $paymentMethodID: String!) {
+  updateKadssPaymentMethod(
+    subscriptionID: $subscriptionID
+    paymentMethodID: $paymentMethodID
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  AdminBillingUpdateSeatCount: `mutation AdminBillingUpdateSeatCount($subscriptionID: ID!, $quantity: Int!) {
+  updateKadssSeatCount(subscriptionID: $subscriptionID, quantity: $quantity) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  AdminSelfServeCreateAvalaraECommerceToken: `mutation AdminSelfServeCreateAvalaraECommerceToken {
+  createAvalaraECommerceToken {
+    token
+    createdDate
+    expirationDate
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  ApplyKadssPromoCode: `mutation ApplyKadssPromoCode($subscriptionID: String!, $promoCode: String!) {
+  applyKadssPromoCode(subscriptionID: $subscriptionID, promoCode: $promoCode) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  GenerateKhanmigoAccessToken: `mutation GenerateKhanmigoAccessToken {
+  generateKhanmigoAccessToken {
+    token
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  OptInToResearch: `mutation OptInToResearch($kaid: String) {
+  clearUserOptOutOfABTesting(kaid: $kaid) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  OptOutOfResearch: `mutation OptOutOfResearch($kaid: String) {
+  userOptOutOfABTesting(kaid: $kaid) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  RefreshAvalaraECommerceToken: `mutation RefreshAvalaraECommerceToken($token: String!) {
+  refreshAvalaraECommerceToken(token: $token) {
+    token
+    createdDate
+    expirationDate
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  RemovePromoCode: `mutation RemovePromoCode($subscriptionID: String!) {
+  kadssRemovePromoCode(subscriptionID: $subscriptionID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  SetSubscriptionAutoRenewData: `mutation SetSubscriptionAutoRenewData($subscriptionID: String!, $shouldAutoRenew: Boolean!) {
+  kadssSetSubscriptionAutoRenew(
+    subscriptionID: $subscriptionID
+    shouldAutoRenew: $shouldAutoRenew
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  SetTeacherStatus: `mutation SetTeacherStatus($tosForFormalTeacherStatus: Boolean) {
+  setSettings(tosForFormalTeacherStatus: $tosForFormalTeacherStatus) {
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  UpdateOrgPurchaseAdminsData: `mutation UpdateOrgPurchaseAdminsData($orgID: ID!, $partnershipID: ID, $kaids: [String!]!) {
+  updateOrgPurchaseAdmins(
+    orgID: $orgID
+    partnershipID: $partnershipID
+    kaids: $kaids
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  completeLoginProcedure: `mutation completeLoginProcedure($code: String!, $redirectURI: String!) {
+  exchangeGoogleCodeForIDToken(code: $code, redirectURI: $redirectURI) {
+    idToken
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  createLanglitChallengeAttemptMutation: `mutation createLanglitChallengeAttemptMutation($input: CreateLanglitChallengeAttemptInput!) {
+  createLanglitChallengeAttempt(input: $input) {
+    attempt {
+      id
+      userKAID
+      langlitChallengeId
+      performance
+      assignmentId
+      createdAt
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  setDistrictStudentBirthdate: `mutation setDistrictStudentBirthdate($studentKaid: String!, $birthMonth: Int!, $birthYear: Int!) {
+  setDistrictStudentBirthdate(
+    studentKaid: $studentKaid
+    birthMonth: $birthMonth
+    birthYear: $birthYear
+  ) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  unsubscribeFromDeletionEmails: `mutation unsubscribeFromDeletionEmails($unsubscribeToken: String!) {
+  unsubscribeFromInactiveAccountDeletionEmails(
+    unsubscribeToken: $unsubscribeToken
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}`,
+  userSettingsSetTeacherCountryAffiliation: `mutation userSettingsSetTeacherCountryAffiliation($countryCode: String!) {
+  userSettingsSetAffiliationCountryCode(countryCode: $countryCode) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  userSettingsSetTeacherSchoolAffiliation: `mutation userSettingsSetTeacherSchoolAffiliation($countryCode: String!, $eduorgKeyId: ID!) {
+  userSettingsSetAffiliationCountryCode(countryCode: $countryCode) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+  setEduorgAffiliation(eduorgKeyId: $eduorgKeyId) {
+    user {
+      id
+      schoolAffiliation {
+        id
+        name
+        postalCode
+        location
+        __typename
+      }
+      affiliationCountryCode
+      __typename
+    }
     error {
       code
       __typename

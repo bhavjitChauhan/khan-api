@@ -1,0 +1,13 @@
+mutation AdminBillingUpdatePaymentMethod($subscriptionID: String!, $paymentMethodID: String!) {
+  updateKadssPaymentMethod(
+    subscriptionID: $subscriptionID
+    paymentMethodID: $paymentMethodID
+  ) {
+    error {
+      code
+      debugMessage
+      __typename
+    }
+    __typename
+  }
+}

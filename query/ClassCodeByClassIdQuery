@@ -1,7 +1,7 @@
 query ClassCodeByClassIdQuery($classId: String!) {
   user {
     id
-    studentList(id: $classId) {
+    classroom(id: $classId) {
       id
       cacheId
       signupCode

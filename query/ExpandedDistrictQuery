@@ -50,6 +50,7 @@ query ExpandedDistrictQuery($districtID: ID!, $districtIDStr: String!) {
     schoolYearStart
     schoolYearEnd
     nextSchoolYearStart
+    nextSchoolYearEnd
     kaLocale
     ancestors {
       id

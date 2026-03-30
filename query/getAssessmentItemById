@@ -20,5 +20,4 @@ fragment KA_assessmentItemFields on AssessmentItem {
   problemType
   itemDataAnswerless
   isContextInaccessible
-  requiresScreenOrMouse
 }

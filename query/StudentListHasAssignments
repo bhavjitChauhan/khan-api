@@ -1,9 +1,9 @@
 query StudentListHasAssignments($classDescriptor: String!) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     hasAssignments
-    hasCourseMasteryGoals
+    hasCourseMasteryGoals: hasCourseMasteryAssignments
     __typename
   }
 }

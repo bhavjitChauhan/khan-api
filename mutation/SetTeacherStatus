@@ -1,0 +1,9 @@
+mutation SetTeacherStatus($tosForFormalTeacherStatus: Boolean) {
+  setSettings(tosForFormalTeacherStatus: $tosForFormalTeacherStatus) {
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+}

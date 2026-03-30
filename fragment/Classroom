@@ -6,6 +6,6 @@ fragment Classroom on StudentList {
   id
   name
   signupCode
-  isKhanClassroom
+  isKacPilotClassroom
   __typename
 }

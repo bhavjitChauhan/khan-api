@@ -1,7 +1,7 @@
-mutation SetClassroomCoursesByIds($classDescriptor: String!, $courseIds: [String!]!) {
+mutation SetClassroomCoursesByIds($classDescriptor: String!, $localizedCourses: [LocalizedCourseInput!]!) {
   setClassroomCoursesByIds(
     classroomDescriptor: $classDescriptor
-    courseIds: $courseIds
+    localizedCourses: $localizedCourses
   ) {
     classroom {
       id

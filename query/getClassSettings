@@ -1,5 +1,5 @@
 query getClassSettings($classDescriptor: String!) {
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     founder: coach {
@@ -35,6 +35,7 @@ query getClassSettings($classDescriptor: String!) {
     countStudents
     classroomDistrictInfo {
       id
+      keyNameID
       name
       rosterSource
       founderDistrictInfo: teacherUserDistrictInfo {
@@ -71,6 +72,12 @@ query getClassSettings($classDescriptor: String!) {
       isManuallyUnmarked
       hasKadTrial
       hasKadSelfServe
+      lmsSync
+      district {
+        id
+        lmsSyncType
+        __typename
+      }
       __typename
     }
     allTeachers {

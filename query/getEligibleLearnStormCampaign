@@ -25,11 +25,11 @@ query getEligibleLearnStormCampaign {
   }
   coach: user {
     id
-    coachedStudentLists {
+    coachedStudentLists: coachedClassrooms {
       id
       cacheId
       countStudents
-      hasCourseMasteryGoals
+      hasCourseMasteryGoals: hasCourseMasteryAssignments
       signupCode
       topics {
         id

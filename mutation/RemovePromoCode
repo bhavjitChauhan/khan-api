@@ -1,0 +1,9 @@
+mutation RemovePromoCode($subscriptionID: String!) {
+  kadssRemovePromoCode(subscriptionID: $subscriptionID) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

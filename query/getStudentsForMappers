@@ -4,7 +4,7 @@ query getStudentsForMappers {
     nickname
     username
     age
-    studentLists: coachedStudentLists {
+    studentLists: coachedClassrooms {
       id
       cacheId
       key
@@ -16,7 +16,7 @@ query getStudentsForMappers {
       nickname
       username
       age
-      studentLists {
+      classrooms {
         id
         cacheId
         key

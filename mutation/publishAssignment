@@ -39,5 +39,6 @@ fragment AssignmentInfoFragment on Assignment {
   subjectSlug
   title
   instructions
+  configuredActivityInputs
   __typename
 }

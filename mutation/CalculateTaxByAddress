@@ -1,9 +1,10 @@
-mutation CalculateTaxByAddress($stripePriceID: ID!, $quantity: Int!, $productName: String!, $billingAddress: StripeBillingAddress!) {
+mutation CalculateTaxByAddress($stripePriceID: ID!, $quantity: Int!, $productName: String!, $billingAddress: StripeBillingAddress!, $promoCode: String) {
   calculateTaxByAddress(
     stripePriceID: $stripePriceID
     quantity: $quantity
     productName: $productName
     billingAddress: $billingAddress
+    promoCode: $promoCode
   ) {
     taxAmount
     taxCalculationID

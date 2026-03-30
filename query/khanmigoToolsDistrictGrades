@@ -1,0 +1,12 @@
+query khanmigoToolsDistrictGrades($districtID: ID!) {
+  district: districtById(districtId: $districtID) {
+    id
+    activeGrades {
+      id
+      name
+      sortIndex
+      __typename
+    }
+    __typename
+  }
+}

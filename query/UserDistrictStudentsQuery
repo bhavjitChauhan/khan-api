@@ -1,5 +1,5 @@
 query UserDistrictStudentsQuery($classDescriptor: String!) {
-  classroomByDescriptor(descriptor: $classDescriptor) {
+  classroomByDescriptor: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     signupCode

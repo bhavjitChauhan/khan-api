@@ -1,5 +1,5 @@
 query ClassDescriptorByClassCodeQuery($classCode: String!) {
-  studentList(classCode: $classCode) {
+  classroom(classCode: $classCode) {
     id
     cacheId
     descriptor

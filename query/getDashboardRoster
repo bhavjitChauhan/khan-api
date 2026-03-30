@@ -18,7 +18,7 @@ query getDashboardRoster($teacherKaid: String!, $after: Int, $pageSize: Int) {
       ...CleverCoachRequestField
       __typename
     }
-    studentLists: coachedStudentLists {
+    studentLists: coachedClassrooms {
       id
       cacheId
       descriptor

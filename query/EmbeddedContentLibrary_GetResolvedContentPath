@@ -1,0 +1,6 @@
+query EmbeddedContentLibrary_GetResolvedContentPath($contentPath: String!, $countryCode: String!) {
+  contentRoute(path: $contentPath, countryCode: $countryCode) {
+    resolvedPath
+    __typename
+  }
+}

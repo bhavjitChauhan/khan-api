@@ -1,0 +1,7 @@
+query userKaclCountryAccess {
+  user {
+    id
+    canAccessKaclBasedOnUserRequest
+    __typename
+  }
+}

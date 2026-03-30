@@ -1,7 +1,7 @@
 query getLearnStormDashboard($classDescriptor: String!) {
   coach: user {
     id
-    studentLists: coachedStudentLists {
+    studentLists: coachedClassrooms {
       id
       cacheId
       name
@@ -11,7 +11,7 @@ query getLearnStormDashboard($classDescriptor: String!) {
     }
     __typename
   }
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     countStudents

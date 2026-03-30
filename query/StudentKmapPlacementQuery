@@ -6,13 +6,11 @@ query StudentKmapPlacementQuery($classDescriptor: String!, $studentKaid: String!
       classroomDescriptor: $classDescriptor
     ) {
       id
-      studentListId
-      activeStudentData {
+      activeStudentData: activeStudentDataV2 {
         kaid
         assignedDate
         __typename
       }
-      studentKaids
       course: topic {
         id
         slug
@@ -24,7 +22,7 @@ query StudentKmapPlacementQuery($classDescriptor: String!, $studentKaid: String!
         }
         __typename
       }
-      studentProgress {
+      studentProgress: studentProgressV2 {
         kaid
         currentMastery {
           percentage
@@ -36,7 +34,7 @@ query StudentKmapPlacementQuery($classDescriptor: String!, $studentKaid: String!
     }
     __typename
   }
-  classroom: classroomByDescriptor(descriptor: $classDescriptor) {
+  classroom: classroomByDescriptorV2(descriptor: $classDescriptor) {
     id
     cacheId
     classroomDistrictInfo {
