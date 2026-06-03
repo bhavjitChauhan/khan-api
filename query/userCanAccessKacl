@@ -1,0 +1,7 @@
+query userCanAccessKacl {
+  user {
+    id
+    canAccessKaclBasedOnUserRequest
+    __typename
+  }
+}

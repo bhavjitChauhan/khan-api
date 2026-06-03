@@ -1,0 +1,9 @@
+query getLanglitChallengeAttemptsQuery($userKAID: String!, $assignmentID: String!) {
+  langlitChallengeAttempts(userKAID: $userKAID, assignmentID: $assignmentID) {
+    id
+    langlitChallengeId
+    performance
+    createdAt
+    __typename
+  }
+}

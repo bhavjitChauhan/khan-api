@@ -95,6 +95,7 @@ query getAccountSettings($targetKaid: String) {
       districtProvidedBirthYear
       rosterSource
       primaryRole
+      fullName
       district {
         id
         isCentrallyRostered

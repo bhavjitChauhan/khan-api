@@ -75,6 +75,7 @@ query getClassSettings($classDescriptor: String!) {
       lmsSync
       district {
         id
+        hasLMSConnect
         lmsSyncType
         __typename
       }

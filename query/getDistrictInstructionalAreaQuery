@@ -1,11 +1,13 @@
-query getDistrictInstructionalAreaQuery {
-  kmapTopics {
+query getDistrictInstructionalAreaQuery($districtId: ID!) {
+  districtById(districtId: $districtId) {
     id
-    key
-    instructionalAreaName: strand
-    instructionalAreaKey: strandKey
-    mapGrowthTest {
-      key
+    learningPathsTests {
+      id
+      strands {
+        id
+        name
+        __typename
+      }
       __typename
     }
     __typename

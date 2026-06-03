@@ -1,0 +1,18 @@
+query userDistrictNameInfo($kaid: String) {
+  user(kaid: $kaid) {
+    id
+    kaid
+    userDistrictInfos {
+      id
+      district {
+        id
+        __typename
+      }
+      districtProvidedFirstName
+      districtProvidedLastName
+      districtProvidedFullName
+      __typename
+    }
+    __typename
+  }
+}

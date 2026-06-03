@@ -1,0 +1,293 @@
+query ContentRouteCourseData($path: String!, $countryCode: String!) {
+  content {
+    metadata {
+      commitSha
+      __typename
+    }
+    __typename
+  }
+  contentRoute(path: $path, countryCode: $countryCode) {
+    resolvedPath
+    listedPathData {
+      course {
+        ...CourseData
+        unitChildren {
+          ...UnitData
+          allOrderedChildren {
+            ... on Lesson {
+              ...LessonData
+              __typename
+            }
+            ... on TopicQuiz {
+              ...QuizMetadata
+              __typename
+            }
+            ... on TopicUnitTest {
+              ...UnitTestMetadata
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    unlistedPathData {
+      course {
+        ...CourseData
+        unitChildren {
+          ...UnitData
+          allOrderedChildren {
+            ... on Lesson {
+              ...LessonData
+              __typename
+            }
+            ... on TopicQuiz {
+              ...QuizMetadata
+              __typename
+            }
+            ... on TopicUnitTest {
+              ...UnitTestMetadata
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment CourseData on Course {
+  id
+  iconPath
+  masteryEnabled
+  relativeUrl
+  slug
+  translatedTitle
+  translatedDescription
+  isListedForLearners
+  translatedCustomTitleTag
+  contentKind
+  userAuthoredContentTypes
+  masterableExercises(includeDuplicates: true) {
+    id
+    __typename
+  }
+  parent {
+    id
+    contentKind
+    relativeUrl
+    slug
+    translatedTitle
+    __typename
+  }
+  lowerToc
+  curation {
+    hideSubjectIntro
+    hideCommunityQuestions
+    sponsorFooterAttribution {
+      footnoteHtml
+      imageBaselineAligned
+      imageCaption
+      imageUrl
+      taglineHtml
+      __typename
+    }
+    modules {
+      kind
+      untranslatedFields
+      ... on CourseIntroModule {
+        callToAction
+        description
+        link
+        title
+        video
+        __typename
+      }
+      ... on ActionListModule {
+        actions {
+          text
+          URL: url
+          contentDescriptor
+          __typename
+        }
+        kind
+        title
+        __typename
+      }
+      ... on PartnershipDescriptionModule {
+        description
+        imageCaption
+        imageUrl
+        isOutro
+        partnerUrl
+        partnerUrlText
+        __typename
+      }
+      ... on ContentCarouselModule {
+        referrer
+        title
+        contentDescriptors
+        __typename
+      }
+      __typename
+    }
+    excludedChildren
+    __typename
+  }
+  courseChallenge {
+    id
+    contentKind
+    slug
+    contentDescriptor
+    parentTopic {
+      id
+      parent {
+        id
+        masteryEnabled
+        __typename
+      }
+      __typename
+    }
+    urlWithinCurationNode
+    exerciseLength
+    timeEstimate {
+      lowerBound
+      upperBound
+      __typename
+    }
+    __typename
+  }
+  masteryChallenge {
+    id
+    contentKind
+    slug
+    contentDescriptor
+    parentTopic {
+      id
+      parent {
+        id
+        masteryEnabled
+        __typename
+      }
+      __typename
+    }
+    urlWithinCurationNode
+    exerciseLength
+    timeEstimate {
+      lowerBound
+      upperBound
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+
+fragment LearnableContentMetadata on LearnableContent {
+  id
+  canonicalUrl: defaultUrlPath
+  contentDescriptor
+  contentKind
+  parentTopic {
+    id
+    parent {
+      id
+      masteryEnabled
+      __typename
+    }
+    __typename
+  }
+  progressKey
+  slug
+  translatedCustomTitleTag
+  translatedDescription
+  translatedTitle
+  urlWithinCurationNode
+  ... on Challenge {
+    userAuthoredContentType
+    __typename
+  }
+  ... on Interactive {
+    userAuthoredContentType
+    __typename
+  }
+  ... on Project {
+    userAuthoredContentType
+    __typename
+  }
+  __typename
+}
+
+fragment LessonData on Lesson {
+  id
+  relativeUrl
+  slug
+  translatedDescription
+  translatedTitle
+  key
+  curatedChildren(includeUnlisted: false) {
+    ... on LearnableContent {
+      ...LearnableContentMetadata
+      __typename
+    }
+    ... on Exercise {
+      exerciseLength
+      isSkillCheck
+      sponsored
+      thumbnailUrl
+      timeEstimate {
+        lowerBound
+        upperBound
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+
+fragment QuizMetadata on TopicQuiz {
+  ...LearnableContentMetadata
+  exerciseLength
+  index
+  timeEstimate {
+    lowerBound
+    upperBound
+    __typename
+  }
+  __typename
+}
+
+fragment UnitData on Unit {
+  id
+  iconPath
+  masteryEnabled
+  relativeUrl
+  slug
+  isListedForLearners
+  translatedCustomTitleTag
+  translatedDescription
+  translatedTitle
+  unlistedAncestorIds
+  __typename
+}
+
+fragment UnitTestMetadata on TopicUnitTest {
+  ...LearnableContentMetadata
+  exerciseLength
+  timeEstimate {
+    lowerBound
+    upperBound
+    __typename
+  }
+  __typename
+}

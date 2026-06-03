@@ -59,6 +59,10 @@ query guideTranscript($transcriptId: String!) {
       }
       __typename
     }
+    exerciseQuestion {
+      itemData
+      __typename
+    }
     coeditingDocument {
       id
       snapshots {

@@ -1,4 +1,4 @@
-query getCourseProgress($filters: DistrictCourseProgressFilters!, $getKmapTopics: Boolean!) {
+query getCourseProgress($filters: DistrictCourseProgressFilters!, $districtID: ID!, $getLearningPaths: Boolean!) {
   districtCourseProgressByCourse(filters: $filters) {
     dateInfo {
       from
@@ -22,7 +22,6 @@ query getCourseProgress($filters: DistrictCourseProgressFilters!, $getKmapTopics
       course {
         id
         title: translatedTitle
-        isKmap
         __typename
       }
       info {
@@ -53,11 +52,21 @@ query getCourseProgress($filters: DistrictCourseProgressFilters!, $getKmapTopics
     }
     __typename
   }
-  kmapTopics @include(if: $getKmapTopics) {
+  districtById(districtId: $districtID) @include(if: $getLearningPaths) {
     id
-    title
-    bandKey
-    strandKey
+    learningPathsTests {
+      id
+      courses {
+        course {
+          id
+          __typename
+        }
+        strandID
+        bandID
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }

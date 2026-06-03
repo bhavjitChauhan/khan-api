@@ -5,6 +5,7 @@ query extraInfoQuery {
     email
     birthMonthYear
     tosForFormalTeacherStatus
+    joined
     affiliationCountryCode
     schoolAffiliation {
       id

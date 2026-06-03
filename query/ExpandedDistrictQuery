@@ -74,6 +74,22 @@ query ExpandedDistrictQuery($districtID: ID!, $districtIDStr: String!) {
       isComplete
       __typename
     }
+    onboardingInfo {
+      activeCycleType
+      shouldShow
+      dismissKey
+      steps {
+        id
+        stepSlug
+        adminRole
+        isComplete
+        isRequired
+        isDismissed
+        displayOrder
+        __typename
+      }
+      __typename
+    }
     __typename
   }
   user {

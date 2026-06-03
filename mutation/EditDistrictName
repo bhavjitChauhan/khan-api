@@ -1,0 +1,14 @@
+mutation EditDistrictName($districtID: ID!, $districtName: String!) {
+  editDistrictName(districtID: $districtID, districtName: $districtName) {
+    district {
+      id
+      name
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

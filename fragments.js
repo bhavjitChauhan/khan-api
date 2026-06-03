@@ -1999,6 +1999,7 @@ fragment InvitationsField on Invitation {
     displayName
     isQuiz
     isSkillCheck
+    kaLocale
     name
     nodeSlug
     progressKey

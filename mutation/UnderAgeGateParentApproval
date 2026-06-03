@@ -23,7 +23,6 @@ mutation UnderAgeGateParentApproval($username: String!) {
         id
         coachNickname
         kaid
-        userId
         isUnderAgeGateManagedByActor
         avatar {
           name

@@ -1,0 +1,43 @@
+mutation submitChatlessELAActivityAssignmentMutation($assignmentID: ID!) {
+  submitChatlessELAActivityAssignment(assignmentID: $assignmentID) {
+    completedMissions {
+      id
+      missionType
+      __typename
+    }
+    gemAwardEventsSucceeded: gemAwardEventLogs {
+      ... on GemAwardEvent {
+        numGems
+        challengeID
+        classroomDescriptor
+        skillInfo {
+          skillID
+          currentFpmLevel
+          __typename
+        }
+        missionInfo {
+          id
+          missionType
+          __typename
+        }
+        aiActivityInfo {
+          assignmentID
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    newlyUnlockedAccessories {
+      id
+      name
+      type
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

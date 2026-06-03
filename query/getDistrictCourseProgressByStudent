@@ -1,4 +1,4 @@
-query getDistrictCourseProgressByStudent($filters: DistrictCourseProgressFilters!, $studentKaid: String!, $getKmapTopics: Boolean!, $classroomDescriptor: String!) {
+query getDistrictCourseProgressByStudent($filters: DistrictCourseProgressFilters!, $studentKaid: String!, $districtId: ID!, $getLearningPaths: Boolean!, $classroomDescriptor: String!) {
   districtCourseProgressByCourseForStudent(
     filters: $filters
     studentKaid: $studentKaid
@@ -43,13 +43,21 @@ query getDistrictCourseProgressByStudent($filters: DistrictCourseProgressFilters
     }
     __typename
   }
-  kmapTopics @include(if: $getKmapTopics) {
+  districtById(districtId: $districtId) @include(if: $getLearningPaths) {
     id
-    band
-    bandKey
-    strand
-    strandKey
-    title
+    learningPathsTests {
+      id
+      courses {
+        strandID
+        bandID
+        course {
+          id
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }

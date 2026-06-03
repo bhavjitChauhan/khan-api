@@ -5,6 +5,7 @@ fragment userExerciseFields on UserExercise {
     displayName
     isQuiz
     isSkillCheck
+    kaLocale
     name
     nodeSlug
     progressKey

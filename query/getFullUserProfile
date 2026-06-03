@@ -3,7 +3,6 @@ query getFullUserProfile($kaid: String, $username: String) {
     id
     kaid
     key
-    userId
     email
     username
     profileRoot
@@ -52,6 +51,7 @@ query getFullUserProfile($kaid: String, $username: String) {
     homepageUrl
     isMidsignupPhantom
     includesDistrictOwnedData
+    includesCentrallyOwnedDistrictData
     includesKmapDistrictOwnedData
     includesK4dDistrictOwnedData
     canAccessDistrictsHomepage

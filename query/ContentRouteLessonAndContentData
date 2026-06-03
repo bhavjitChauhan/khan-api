@@ -1,0 +1,285 @@
+query ContentRouteLessonAndContentData($path: String!, $countryCode: String!) {
+  contentRoute(path: $path, countryCode: $countryCode) {
+    resolvedPath
+    listedPathData {
+      lesson {
+        ...LessonData
+        __typename
+      }
+      content {
+        ...LearnableContentData
+        __typename
+      }
+      __typename
+    }
+    unlistedPathData {
+      lesson {
+        ...LessonData
+        __typename
+      }
+      content {
+        ...LearnableContentData
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment LearnableContentData on LearnableContent {
+  id
+  contentKind
+  slug
+  translatedTitle
+  ... on Article {
+    articleClarificationsEnabled: clarificationsEnabled
+    translatedDescription
+    translatedPerseusContent
+    __typename
+  }
+  ... on Challenge {
+    authorList {
+      name
+      __typename
+    }
+    canvasOnly
+    code
+    codeFormat
+    configVersion
+    defaultUrlPath
+    height
+    nodeSlug
+    translatedDescription
+    translatedTests
+    testsFormat
+    testStrings {
+      message
+      __typename
+    }
+    userAuthoredContentType
+    width
+    __typename
+  }
+  ... on Exercise {
+    problemTypeKind
+    __typename
+  }
+  ... on Interactive {
+    authorList {
+      name
+      __typename
+    }
+    canvasOnly
+    code
+    codeFormat
+    configVersion
+    defaultUrlPath
+    height
+    nodeSlug
+    translatedDescription
+    userAuthoredContentType
+    width
+    __typename
+  }
+  ... on Project {
+    authorList {
+      name
+      __typename
+    }
+    canvasOnly
+    code
+    codeFormat
+    configVersion
+    defaultUrlPath
+    height
+    nodeSlug
+    translatedDescription
+    translatedProjectEval
+    translatedProjectEvalTips
+    userAuthoredContentType
+    width
+    __typename
+  }
+  ... on Talkthrough {
+    authorList {
+      name
+      __typename
+    }
+    canvasOnly
+    code
+    configVersion
+    defaultUrlPath
+    height
+    nodeSlug
+    playback
+    subtitles {
+      endTime
+      kaIsValid
+      startTime
+      text
+      __typename
+    }
+    translatedDescription
+    translatedMp3Url
+    userAuthoredContentType
+    width
+    youtubeId
+    __typename
+  }
+  ... on TopicQuiz {
+    index
+    exerciseLength
+    timeEstimate {
+      lowerBound
+      upperBound
+      __typename
+    }
+    coveredTutorials {
+      id
+      translatedTitle
+      relativeUrl
+      allLearnableContent {
+        id
+        contentKind
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  ... on TopicUnitTest {
+    exerciseLength
+    timeEstimate {
+      lowerBound
+      upperBound
+      __typename
+    }
+    coveredTutorials {
+      id
+      translatedTitle
+      relativeUrl
+      allLearnableContent {
+        id
+        contentKind
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  ... on Video {
+    authorNames
+    videoAuthorList: authorList {
+      name
+      __typename
+    }
+    clarificationsEnabled
+    dateAdded
+    description
+    downloadUrls
+    duration
+    imageUrl
+    kaUrl
+    kaUserLicense
+    keywords
+    readableId
+    sha
+    thumbnailUrls {
+      category
+      url
+      __typename
+    }
+    translatedDescriptionHtml
+    translatedYoutubeId
+    translatedYoutubeLang
+    youtubeId
+    augmentedTranscript
+    relativeUrl
+    descriptionHtml
+    nodeSlug
+    translatedDescription
+    translatedCustomTitleTag
+    subtitles {
+      endTime
+      kaIsValid
+      startTime
+      text
+      __typename
+    }
+    keyMoments {
+      startOffset
+      endOffset
+      label
+      __typename
+    }
+    educationalLevel
+    learningResourceType
+    __typename
+  }
+  __typename
+}
+
+fragment LearnableContentMetadata on LearnableContent {
+  id
+  canonicalUrl: defaultUrlPath
+  contentDescriptor
+  contentKind
+  parentTopic {
+    id
+    parent {
+      id
+      masteryEnabled
+      __typename
+    }
+    __typename
+  }
+  progressKey
+  slug
+  translatedCustomTitleTag
+  translatedDescription
+  translatedTitle
+  urlWithinCurationNode
+  ... on Challenge {
+    userAuthoredContentType
+    __typename
+  }
+  ... on Interactive {
+    userAuthoredContentType
+    __typename
+  }
+  ... on Project {
+    userAuthoredContentType
+    __typename
+  }
+  __typename
+}
+
+fragment LessonData on Lesson {
+  id
+  relativeUrl
+  slug
+  translatedDescription
+  translatedTitle
+  key
+  curatedChildren(includeUnlisted: false) {
+    ... on LearnableContent {
+      ...LearnableContentMetadata
+      __typename
+    }
+    ... on Exercise {
+      exerciseLength
+      isSkillCheck
+      sponsored
+      thumbnailUrl
+      timeEstimate {
+        lowerBound
+        upperBound
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  __typename
+}

@@ -1,4 +1,4 @@
-query StudentSkillsProgressMAPQuery($studentKaid: String!, $progressFrom: DateTime!, $progressUpTo: DateTime!, $bands: [String!], $strandKey: String) {
+query StudentSkillsProgressMAPQuery($studentKaid: String!, $progressFrom: DateTime!, $progressUpTo: DateTime!, $districtId: ID!, $bands: [String!], $strandKey: String) {
   districtStudentsSkillsProgressForCourses(
     studentKaid: $studentKaid
     progressFrom: $progressFrom
@@ -23,22 +23,36 @@ query StudentSkillsProgressMAPQuery($studentKaid: String!, $progressFrom: DateTi
     workedOn
     __typename
   }
-  kmapTopics {
+  districtById(districtId: $districtId) {
     id
-    title: translatedTitle
-    band
-    bandGradeName
-    bandKey
-    strandKey
-    mapGrowthTest {
-      key
-      __typename
-    }
-    learnableContentPage(
-      pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}
-    ) {
-      contents {
-        exerciseID: id
+    learningPathsTests {
+      id
+      bands {
+        id
+        name
+        gradeLevel
+        __typename
+      }
+      courses {
+        strandID
+        bandID
+        course {
+          id
+          unitChildren {
+            id
+            learnableContentPage(
+              pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}
+            ) {
+              contents {
+                exerciseID: id
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       __typename

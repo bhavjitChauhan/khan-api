@@ -1,0 +1,9 @@
+mutation MarkOnboardingStepAsCompleted($districtID: ID!, $stepSlug: OnboardingStepSlugs!) {
+  markOnboardingStepAsCompleted(districtID: $districtID, stepSlug: $stepSlug) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

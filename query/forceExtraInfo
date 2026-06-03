@@ -1,0 +1,9 @@
+query forceExtraInfo {
+  user {
+    id
+    birthMonthYear
+    tosForFormalTeacherStatus
+    canAccessKaclBasedOnUserRequest
+    __typename
+  }
+}

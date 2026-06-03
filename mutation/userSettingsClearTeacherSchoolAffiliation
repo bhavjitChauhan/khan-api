@@ -1,0 +1,9 @@
+mutation userSettingsClearTeacherSchoolAffiliation {
+  clearEduorgAffiliation {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

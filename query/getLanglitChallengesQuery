@@ -1,0 +1,12 @@
+query getLanglitChallengesQuery($ids: [ID!]!) {
+  langlitChallenges(ids: $ids) {
+    id
+    gradeLevel
+    difficulty
+    kaLocale
+    challengeType
+    challengeContent
+    createdAt
+    __typename
+  }
+}

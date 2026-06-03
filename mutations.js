@@ -609,6 +609,7 @@ fragment userExerciseFields on UserExercise {
     displayName
     isQuiz
     isSkillCheck
+    kaLocale
     name
     nodeSlug
     progressKey
@@ -4550,12 +4551,13 @@ fragment entry on TeamPageEntryForEditing {
     __typename
   }
 }`,
-  encodeAppleLoginState: `mutation encodeAppleLoginState($action: Action!, $continueUrl: String!, $role: UserRole, $signupCodes: [String]) {
+  encodeAppleLoginState: `mutation encodeAppleLoginState($action: Action!, $continueUrl: String!, $role: UserRole, $signupCodes: [String], $verifyRedirectHost: String) {
   encodeAppleLoginState(
     action: $action
     continueUrl: $continueUrl
     role: $role
     signupCodes: $signupCodes
+    verifyRedirectHost: $verifyRedirectHost
   ) {
     redirectUri
     state
@@ -4850,6 +4852,7 @@ fragment userExerciseFields on UserExercise {
     displayName
     isQuiz
     isSkillCheck
+    kaLocale
     name
     nodeSlug
     progressKey
@@ -5039,6 +5042,7 @@ fragment userExerciseFields on UserExercise {
     displayName
     isQuiz
     isSkillCheck
+    kaLocale
     name
     nodeSlug
     progressKey
@@ -8856,7 +8860,6 @@ fragment Program on Program {
         id
         coachNickname
         kaid
-        userId
         isUnderAgeGateManagedByActor
         avatar {
           name
@@ -14961,6 +14964,154 @@ fragment MasteryAssignment on MasteryAssignment {
       affiliationCountryCode
       __typename
     }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  clearTeacherSchoolAffiliation: `mutation clearTeacherSchoolAffiliation {
+  clearEduorgAffiliation {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  createGrammarChallengeAttemptMutation: `mutation createGrammarChallengeAttemptMutation($input: CreateLanglitChallengeAttemptInput!) {
+  createLanglitChallengeAttempt(input: $input) {
+    attempt {
+      id
+      userKAID
+      langlitChallengeId
+      performance
+      assignmentId
+      createdAt
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  EditDistrictName: `mutation EditDistrictName($districtID: ID!, $districtName: String!) {
+  editDistrictName(districtID: $districtID, districtName: $districtName) {
+    district {
+      id
+      name
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  MarkOnboardingStepAsCompleted: `mutation MarkOnboardingStepAsCompleted($districtID: ID!, $stepSlug: OnboardingStepSlugs!) {
+  markOnboardingStepAsCompleted(districtID: $districtID, stepSlug: $stepSlug) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  resendUnderAgeGateApprovalEmailForUserSettings: `mutation resendUnderAgeGateApprovalEmailForUserSettings {
+  resendUnderAgeGateApprovalEmail {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  revokeTwoFactorBypass: `mutation revokeTwoFactorBypass {
+  revokeTwoFactorBypass {
+    success
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  setParentForUserSettings: `mutation setParentForUserSettings($parentEmail: String!) {
+  setParent(parentEmail: $parentEmail) {
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  submitChatlessELAActivityAssignmentMutation: `mutation submitChatlessELAActivityAssignmentMutation($assignmentID: ID!) {
+  submitChatlessELAActivityAssignment(assignmentID: $assignmentID) {
+    completedMissions {
+      id
+      missionType
+      __typename
+    }
+    gemAwardEventsSucceeded: gemAwardEventLogs {
+      ... on GemAwardEvent {
+        numGems
+        challengeID
+        classroomDescriptor
+        skillInfo {
+          skillID
+          currentFpmLevel
+          __typename
+        }
+        missionInfo {
+          id
+          missionType
+          __typename
+        }
+        aiActivityInfo {
+          assignmentID
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    newlyUnlockedAccessories {
+      id
+      name
+      type
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  updateUnderAgeGateParentEmailForUserSettings: `mutation updateUnderAgeGateParentEmailForUserSettings($parentEmail: String!) {
+  updateUnderAgeGateParentEmail(parentEmail: $parentEmail) {
+    user {
+      id
+      kaid
+      underAgeGate {
+        parentEmail
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  userSettingsClearTeacherSchoolAffiliation: `mutation userSettingsClearTeacherSchoolAffiliation {
+  clearEduorgAffiliation {
     error {
       code
       __typename

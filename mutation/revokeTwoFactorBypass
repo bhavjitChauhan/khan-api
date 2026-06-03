@@ -1,0 +1,10 @@
+mutation revokeTwoFactorBypass {
+  revokeTwoFactorBypass {
+    success
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

@@ -15,10 +15,12 @@ query getStudentSettings($kaid: String!) {
     includesDistrictOwnedData
     includesCentrallyOwnedDistrictData
     settingsCanBeModByLoggedInUser
+    playbackRate
     userDistrictInfos {
       id
       districtProvidedBirthMonth
       districtProvidedBirthYear
+      fullName
       __typename
     }
     __typename

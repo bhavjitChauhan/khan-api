@@ -853,6 +853,7 @@ fragment AssignmentCsvData on Assignment {
     name
     signupCode
     isKacPilotClassroom
+    isChildAssignmentsClassroom
     __typename
   }
 }`,
@@ -5047,6 +5048,7 @@ fragment UserFields on User {
       districtProvidedBirthYear
       rosterSource
       primaryRole
+      fullName
       district {
         id
         isCentrallyRostered
@@ -5716,6 +5718,7 @@ fragment StudentField2 on StudentsPage {
       lmsSync
       district {
         id
+        hasLMSConnect
         lmsSyncType
         __typename
       }
@@ -6164,7 +6167,7 @@ fragment Badge on Badge {
     __typename
   }
 }`,
-  getCourseProgress: `query getCourseProgress($filters: DistrictCourseProgressFilters!, $getKmapTopics: Boolean!) {
+  getCourseProgress: `query getCourseProgress($filters: DistrictCourseProgressFilters!, $districtID: ID!, $getLearningPaths: Boolean!) {
   districtCourseProgressByCourse(filters: $filters) {
     dateInfo {
       from
@@ -6188,7 +6191,6 @@ fragment Badge on Badge {
       course {
         id
         title: translatedTitle
-        isKmap
         __typename
       }
       info {
@@ -6219,11 +6221,21 @@ fragment Badge on Badge {
     }
     __typename
   }
-  kmapTopics @include(if: $getKmapTopics) {
+  districtById(districtId: $districtID) @include(if: $getLearningPaths) {
     id
-    title
-    bandKey
-    strandKey
+    learningPathsTests {
+      id
+      courses {
+        course {
+          id
+          __typename
+        }
+        strandID
+        bandID
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }`,
@@ -6557,14 +6569,16 @@ fragment StudentField1 on StudentsPage {
     __typename
   }
 }`,
-  getDistrictInstructionalAreaQuery: `query getDistrictInstructionalAreaQuery {
-  kmapTopics {
+  getDistrictInstructionalAreaQuery: `query getDistrictInstructionalAreaQuery($districtId: ID!) {
+  districtById(districtId: $districtId) {
     id
-    key
-    instructionalAreaName: strand
-    instructionalAreaKey: strandKey
-    mapGrowthTest {
-      key
+    learningPathsTests {
+      id
+      strands {
+        id
+        name
+        __typename
+      }
       __typename
     }
     __typename
@@ -7111,7 +7125,6 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     id
     kaid
     key
-    userId
     email
     username
     profileRoot
@@ -7160,6 +7173,7 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     homepageUrl
     isMidsignupPhantom
     includesDistrictOwnedData
+    includesCentrallyOwnedDistrictData
     includesKmapDistrictOwnedData
     includesK4dDistrictOwnedData
     canAccessDistrictsHomepage
@@ -7344,6 +7358,7 @@ fragment userExerciseFields on UserExercise {
     displayName
     isQuiz
     isSkillCheck
+    kaLocale
     name
     nodeSlug
     progressKey
@@ -8672,10 +8687,12 @@ fragment Badge on Badge {
     includesDistrictOwnedData
     includesCentrallyOwnedDistrictData
     settingsCanBeModByLoggedInUser
+    playbackRate
     userDistrictInfos {
       id
       districtProvidedBirthMonth
       districtProvidedBirthYear
+      fullName
       __typename
     }
     __typename
@@ -10632,6 +10649,10 @@ fragment gtp_essayScoresFragment on EssayScores {
         }
         __typename
       }
+      __typename
+    }
+    exerciseQuestion {
+      itemData
       __typename
     }
     coeditingDocument {
@@ -13781,7 +13802,7 @@ fragment TranslatedContentFields on LearnableContent {
     __typename
   }
 }`,
-  StudentSkillsProgressMAPQuery: `query StudentSkillsProgressMAPQuery($studentKaid: String!, $progressFrom: DateTime!, $progressUpTo: DateTime!, $bands: [String!], $strandKey: String) {
+  StudentSkillsProgressMAPQuery: `query StudentSkillsProgressMAPQuery($studentKaid: String!, $progressFrom: DateTime!, $progressUpTo: DateTime!, $districtId: ID!, $bands: [String!], $strandKey: String) {
   districtStudentsSkillsProgressForCourses(
     studentKaid: $studentKaid
     progressFrom: $progressFrom
@@ -13806,22 +13827,36 @@ fragment TranslatedContentFields on LearnableContent {
     workedOn
     __typename
   }
-  kmapTopics {
+  districtById(districtId: $districtId) {
     id
-    title: translatedTitle
-    band
-    bandGradeName
-    bandKey
-    strandKey
-    mapGrowthTest {
-      key
-      __typename
-    }
-    learnableContentPage(
-      pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}
-    ) {
-      contents {
-        exerciseID: id
+    learningPathsTests {
+      id
+      bands {
+        id
+        name
+        gradeLevel
+        __typename
+      }
+      courses {
+        strandID
+        bandID
+        course {
+          id
+          unitChildren {
+            id
+            learnableContentPage(
+              pageParams: {pageSize: 1000, after: 0, contentKinds: [EXERCISE]}
+            ) {
+              contents {
+                exerciseID: id
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       __typename
@@ -16425,7 +16460,7 @@ fragment contentSearchLearnableContent on LearnableContent {
     __typename
   }
 }`,
-  getDistrictCourseProgressByStudent: `query getDistrictCourseProgressByStudent($filters: DistrictCourseProgressFilters!, $studentKaid: String!, $getKmapTopics: Boolean!, $classroomDescriptor: String!) {
+  getDistrictCourseProgressByStudent: `query getDistrictCourseProgressByStudent($filters: DistrictCourseProgressFilters!, $studentKaid: String!, $districtId: ID!, $getLearningPaths: Boolean!, $classroomDescriptor: String!) {
   districtCourseProgressByCourseForStudent(
     filters: $filters
     studentKaid: $studentKaid
@@ -16470,13 +16505,21 @@ fragment contentSearchLearnableContent on LearnableContent {
     }
     __typename
   }
-  kmapTopics @include(if: $getKmapTopics) {
+  districtById(districtId: $districtId) @include(if: $getLearningPaths) {
     id
-    band
-    bandKey
-    strand
-    strandKey
-    title
+    learningPathsTests {
+      id
+      courses {
+        strandID
+        bandID
+        course {
+          id
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
     __typename
   }
 }`,
@@ -18768,8 +18811,8 @@ fragment AIGuideActivityRevision on AIGuideActivityRevision {
     __typename
   }
 }`,
-  GuidePreferences: `query GuidePreferences {
-  user {
+  GuidePreferences: `query GuidePreferences($kaid: String) {
+  user(kaid: $kaid) {
     id
     aiGuidePreferences {
       readingLevel
@@ -22250,6 +22293,22 @@ fragment UserFields on User {
       isComplete
       __typename
     }
+    onboardingInfo {
+      activeCycleType
+      shouldShow
+      dismissKey
+      steps {
+        id
+        stepSlug
+        adminRole
+        isComplete
+        isRequired
+        isDismissed
+        displayOrder
+        __typename
+      }
+      __typename
+    }
     __typename
   }
   user {
@@ -23484,6 +23543,7 @@ fragment assessmentItemFields on AssessmentItem {
     email
     birthMonthYear
     tosForFormalTeacherStatus
+    joined
     affiliationCountryCode
     schoolAffiliation {
       id
@@ -26639,6 +26699,653 @@ fragment KA_assessmentItemFields on AssessmentItem {
   user {
     id
     canAccessKaclBasedOnUserRequest
+    __typename
+  }
+}`,
+  ContentRouteCourseData: `query ContentRouteCourseData($path: String!, $countryCode: String!) {
+  content {
+    metadata {
+      commitSha
+      __typename
+    }
+    __typename
+  }
+  contentRoute(path: $path, countryCode: $countryCode) {
+    resolvedPath
+    listedPathData {
+      course {
+        ...CourseData
+        unitChildren {
+          ...UnitData
+          allOrderedChildren {
+            ... on Lesson {
+              ...LessonData
+              __typename
+            }
+            ... on TopicQuiz {
+              ...QuizMetadata
+              __typename
+            }
+            ... on TopicUnitTest {
+              ...UnitTestMetadata
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    unlistedPathData {
+      course {
+        ...CourseData
+        unitChildren {
+          ...UnitData
+          allOrderedChildren {
+            ... on Lesson {
+              ...LessonData
+              __typename
+            }
+            ... on TopicQuiz {
+              ...QuizMetadata
+              __typename
+            }
+            ... on TopicUnitTest {
+              ...UnitTestMetadata
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment CourseData on Course {
+  id
+  iconPath
+  masteryEnabled
+  relativeUrl
+  slug
+  translatedTitle
+  translatedDescription
+  isListedForLearners
+  translatedCustomTitleTag
+  contentKind
+  userAuthoredContentTypes
+  masterableExercises(includeDuplicates: true) {
+    id
+    __typename
+  }
+  parent {
+    id
+    contentKind
+    relativeUrl
+    slug
+    translatedTitle
+    __typename
+  }
+  lowerToc
+  curation {
+    hideSubjectIntro
+    hideCommunityQuestions
+    sponsorFooterAttribution {
+      footnoteHtml
+      imageBaselineAligned
+      imageCaption
+      imageUrl
+      taglineHtml
+      __typename
+    }
+    modules {
+      kind
+      untranslatedFields
+      ... on CourseIntroModule {
+        callToAction
+        description
+        link
+        title
+        video
+        __typename
+      }
+      ... on ActionListModule {
+        actions {
+          text
+          URL: url
+          contentDescriptor
+          __typename
+        }
+        kind
+        title
+        __typename
+      }
+      ... on PartnershipDescriptionModule {
+        description
+        imageCaption
+        imageUrl
+        isOutro
+        partnerUrl
+        partnerUrlText
+        __typename
+      }
+      ... on ContentCarouselModule {
+        referrer
+        title
+        contentDescriptors
+        __typename
+      }
+      __typename
+    }
+    excludedChildren
+    __typename
+  }
+  courseChallenge {
+    id
+    contentKind
+    slug
+    contentDescriptor
+    parentTopic {
+      id
+      parent {
+        id
+        masteryEnabled
+        __typename
+      }
+      __typename
+    }
+    urlWithinCurationNode
+    exerciseLength
+    timeEstimate {
+      lowerBound
+      upperBound
+      __typename
+    }
+    __typename
+  }
+  masteryChallenge {
+    id
+    contentKind
+    slug
+    contentDescriptor
+    parentTopic {
+      id
+      parent {
+        id
+        masteryEnabled
+        __typename
+      }
+      __typename
+    }
+    urlWithinCurationNode
+    exerciseLength
+    timeEstimate {
+      lowerBound
+      upperBound
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+
+fragment LearnableContentMetadata on LearnableContent {
+  id
+  canonicalUrl: defaultUrlPath
+  contentDescriptor
+  contentKind
+  parentTopic {
+    id
+    parent {
+      id
+      masteryEnabled
+      __typename
+    }
+    __typename
+  }
+  progressKey
+  slug
+  translatedCustomTitleTag
+  translatedDescription
+  translatedTitle
+  urlWithinCurationNode
+  ... on Challenge {
+    userAuthoredContentType
+    __typename
+  }
+  ... on Interactive {
+    userAuthoredContentType
+    __typename
+  }
+  ... on Project {
+    userAuthoredContentType
+    __typename
+  }
+  __typename
+}
+
+fragment LessonData on Lesson {
+  id
+  relativeUrl
+  slug
+  translatedDescription
+  translatedTitle
+  key
+  curatedChildren(includeUnlisted: false) {
+    ... on LearnableContent {
+      ...LearnableContentMetadata
+      __typename
+    }
+    ... on Exercise {
+      exerciseLength
+      isSkillCheck
+      sponsored
+      thumbnailUrl
+      timeEstimate {
+        lowerBound
+        upperBound
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+
+fragment QuizMetadata on TopicQuiz {
+  ...LearnableContentMetadata
+  exerciseLength
+  index
+  timeEstimate {
+    lowerBound
+    upperBound
+    __typename
+  }
+  __typename
+}
+
+fragment UnitData on Unit {
+  id
+  iconPath
+  masteryEnabled
+  relativeUrl
+  slug
+  isListedForLearners
+  translatedCustomTitleTag
+  translatedDescription
+  translatedTitle
+  unlistedAncestorIds
+  __typename
+}
+
+fragment UnitTestMetadata on TopicUnitTest {
+  ...LearnableContentMetadata
+  exerciseLength
+  timeEstimate {
+    lowerBound
+    upperBound
+    __typename
+  }
+  __typename
+}`,
+  ContentRouteLessonAndContentData: `query ContentRouteLessonAndContentData($path: String!, $countryCode: String!) {
+  contentRoute(path: $path, countryCode: $countryCode) {
+    resolvedPath
+    listedPathData {
+      lesson {
+        ...LessonData
+        __typename
+      }
+      content {
+        ...LearnableContentData
+        __typename
+      }
+      __typename
+    }
+    unlistedPathData {
+      lesson {
+        ...LessonData
+        __typename
+      }
+      content {
+        ...LearnableContentData
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment LearnableContentData on LearnableContent {
+  id
+  contentKind
+  slug
+  translatedTitle
+  ... on Article {
+    articleClarificationsEnabled: clarificationsEnabled
+    translatedDescription
+    translatedPerseusContent
+    __typename
+  }
+  ... on Challenge {
+    authorList {
+      name
+      __typename
+    }
+    canvasOnly
+    code
+    codeFormat
+    configVersion
+    defaultUrlPath
+    height
+    nodeSlug
+    translatedDescription
+    translatedTests
+    testsFormat
+    testStrings {
+      message
+      __typename
+    }
+    userAuthoredContentType
+    width
+    __typename
+  }
+  ... on Exercise {
+    problemTypeKind
+    __typename
+  }
+  ... on Interactive {
+    authorList {
+      name
+      __typename
+    }
+    canvasOnly
+    code
+    codeFormat
+    configVersion
+    defaultUrlPath
+    height
+    nodeSlug
+    translatedDescription
+    userAuthoredContentType
+    width
+    __typename
+  }
+  ... on Project {
+    authorList {
+      name
+      __typename
+    }
+    canvasOnly
+    code
+    codeFormat
+    configVersion
+    defaultUrlPath
+    height
+    nodeSlug
+    translatedDescription
+    translatedProjectEval
+    translatedProjectEvalTips
+    userAuthoredContentType
+    width
+    __typename
+  }
+  ... on Talkthrough {
+    authorList {
+      name
+      __typename
+    }
+    canvasOnly
+    code
+    configVersion
+    defaultUrlPath
+    height
+    nodeSlug
+    playback
+    subtitles {
+      endTime
+      kaIsValid
+      startTime
+      text
+      __typename
+    }
+    translatedDescription
+    translatedMp3Url
+    userAuthoredContentType
+    width
+    youtubeId
+    __typename
+  }
+  ... on TopicQuiz {
+    index
+    exerciseLength
+    timeEstimate {
+      lowerBound
+      upperBound
+      __typename
+    }
+    coveredTutorials {
+      id
+      translatedTitle
+      relativeUrl
+      allLearnableContent {
+        id
+        contentKind
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  ... on TopicUnitTest {
+    exerciseLength
+    timeEstimate {
+      lowerBound
+      upperBound
+      __typename
+    }
+    coveredTutorials {
+      id
+      translatedTitle
+      relativeUrl
+      allLearnableContent {
+        id
+        contentKind
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  ... on Video {
+    authorNames
+    videoAuthorList: authorList {
+      name
+      __typename
+    }
+    clarificationsEnabled
+    dateAdded
+    description
+    downloadUrls
+    duration
+    imageUrl
+    kaUrl
+    kaUserLicense
+    keywords
+    readableId
+    sha
+    thumbnailUrls {
+      category
+      url
+      __typename
+    }
+    translatedDescriptionHtml
+    translatedYoutubeId
+    translatedYoutubeLang
+    youtubeId
+    augmentedTranscript
+    relativeUrl
+    descriptionHtml
+    nodeSlug
+    translatedDescription
+    translatedCustomTitleTag
+    subtitles {
+      endTime
+      kaIsValid
+      startTime
+      text
+      __typename
+    }
+    keyMoments {
+      startOffset
+      endOffset
+      label
+      __typename
+    }
+    educationalLevel
+    learningResourceType
+    __typename
+  }
+  __typename
+}
+
+fragment LearnableContentMetadata on LearnableContent {
+  id
+  canonicalUrl: defaultUrlPath
+  contentDescriptor
+  contentKind
+  parentTopic {
+    id
+    parent {
+      id
+      masteryEnabled
+      __typename
+    }
+    __typename
+  }
+  progressKey
+  slug
+  translatedCustomTitleTag
+  translatedDescription
+  translatedTitle
+  urlWithinCurationNode
+  ... on Challenge {
+    userAuthoredContentType
+    __typename
+  }
+  ... on Interactive {
+    userAuthoredContentType
+    __typename
+  }
+  ... on Project {
+    userAuthoredContentType
+    __typename
+  }
+  __typename
+}
+
+fragment LessonData on Lesson {
+  id
+  relativeUrl
+  slug
+  translatedDescription
+  translatedTitle
+  key
+  curatedChildren(includeUnlisted: false) {
+    ... on LearnableContent {
+      ...LearnableContentMetadata
+      __typename
+    }
+    ... on Exercise {
+      exerciseLength
+      isSkillCheck
+      sponsored
+      thumbnailUrl
+      timeEstimate {
+        lowerBound
+        upperBound
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+  __typename
+}`,
+  forceExtraInfo: `query forceExtraInfo {
+  user {
+    id
+    birthMonthYear
+    tosForFormalTeacherStatus
+    canAccessKaclBasedOnUserRequest
+    __typename
+  }
+}`,
+  getLanglitChallengeAttemptsQuery: `query getLanglitChallengeAttemptsQuery($userKAID: String!, $assignmentID: String!) {
+  langlitChallengeAttempts(userKAID: $userKAID, assignmentID: $assignmentID) {
+    id
+    langlitChallengeId
+    performance
+    createdAt
+    __typename
+  }
+}`,
+  getLanglitChallengesQuery: `query getLanglitChallengesQuery($ids: [ID!]!) {
+  langlitChallenges(ids: $ids) {
+    id
+    gradeLevel
+    difficulty
+    kaLocale
+    challengeType
+    challengeContent
+    createdAt
+    __typename
+  }
+}`,
+  getUserSoundPreferences: `query getUserSoundPreferences {
+  user {
+    id
+    soundOn
+    __typename
+  }
+}`,
+  kaclAccessBasedOnUserRequest: `query kaclAccessBasedOnUserRequest {
+  user {
+    id
+    canAccessKaclBasedOnUserRequest
+    __typename
+  }
+}`,
+  userCanAccessKacl: `query userCanAccessKacl {
+  user {
+    id
+    canAccessKaclBasedOnUserRequest
+    __typename
+  }
+}`,
+  userDistrictNameInfo: `query userDistrictNameInfo($kaid: String) {
+  user(kaid: $kaid) {
+    id
+    kaid
+    userDistrictInfos {
+      id
+      district {
+        id
+        __typename
+      }
+      districtProvidedFirstName
+      districtProvidedLastName
+      districtProvidedFullName
+      __typename
+    }
     __typename
   }
 }`,
