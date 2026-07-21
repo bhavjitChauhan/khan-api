@@ -4,7 +4,6 @@ import { config } from 'dotenv'
 import { parse, print } from 'graphql'
 import { addTypenameToDocument } from 'apollo-utilities'
 import { format } from 'prettier'
-import { randomUUID } from 'crypto'
 import queries from './queries.js'
 import mutations from './mutations.js'
 import fragments from './fragments.js'
@@ -402,11 +401,6 @@ for (const type of documentTypes) {
 }
 
 console.log('Generated JSON and JavaScript files')
-
-
-console.log('Writing heartbeat file')
-await writeFile('heartbeat', "# This file should be updated hourly. It's basically a proof-of-life\n" + randomUUID() + '\n')
-console.log('Wrote heartbeat file')
 
 
 if (!failed && typeof process.env.SAFELIST_HEARTBEAT_URL === 'string') {
