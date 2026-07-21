@@ -1,6 +1,6 @@
 # Khan API Safelist
 
-![](https://data.jsdelivr.com/v1/package/gh/bhavjitChauhan/khan-api/badge)
+[![](https://data.jsdelivr.com/v1/package/gh/bhavjitChauhan/khan-api/badge)](https://www.jsdelivr.com/package/gh/bhavjitChauhan/khan-api?tab=stats)
 
 Safelisted GraphQL documents used by Khan Academy's internal API.
 
