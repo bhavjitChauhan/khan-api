@@ -7,6 +7,7 @@ query getSettingsPageDataByToken($token: String!, $targetKaid: String) {
     isChild
     email
     isEnrolledInAIGuide
+    settingsCanBeModByLoggedInUser
     __typename
   }
   emailSettingsFromUnsubscribeToken(token: $token) {

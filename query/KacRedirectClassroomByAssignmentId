@@ -1,0 +1,18 @@
+query KacRedirectClassroomByAssignmentId($assignmentId: String!) {
+  user {
+    id
+    assignment(id: $assignmentId) {
+      id
+      classroom {
+        id
+        cacheId
+        signupCode
+        isKacPilotClassroom
+        isChildAssignmentsClassroom
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

@@ -1,0 +1,10 @@
+mutation approveDeviceAuthMutation($userCode: String!) {
+  approveDeviceAuth(userCode: $userCode) {
+    success
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

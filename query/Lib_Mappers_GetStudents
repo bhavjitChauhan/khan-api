@@ -1,0 +1,29 @@
+query Lib_Mappers_GetStudents {
+  user {
+    id
+    nickname
+    username
+    age
+    studentLists: coachedClassrooms {
+      id
+      cacheId
+      key
+      name
+      __typename
+    }
+    students: coachees {
+      id
+      nickname
+      username
+      age
+      classrooms {
+        id
+        cacheId
+        key
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

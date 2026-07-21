@@ -6529,6 +6529,13 @@ fragment gtp_taskFragment on Task {
       classroomName
       __typename
     }
+    classroom {
+      id
+      cacheId
+      signupCode
+      name
+      __typename
+    }
     __typename
   }
 }`,
@@ -15113,6 +15120,73 @@ fragment MasteryAssignment on MasteryAssignment {
   userSettingsClearTeacherSchoolAffiliation: `mutation userSettingsClearTeacherSchoolAffiliation {
   clearEduorgAffiliation {
     error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  approveDeviceAuthMutation: `mutation approveDeviceAuthMutation($userCode: String!) {
+  approveDeviceAuth(userCode: $userCode) {
+    success
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  deleteLanglitChallengeAttemptsMutation: `mutation deleteLanglitChallengeAttemptsMutation($userKAID: String!, $assignmentID: String!) {
+  deleteLanglitChallengeAttempts(userKAID: $userKAID, assignmentID: $assignmentID) {
+    error {
+      code
+      message
+      __typename
+    }
+    __typename
+  }
+}`,
+  denyDeviceAuthMutation: `mutation denyDeviceAuthMutation($userCode: String!) {
+  denyDeviceAuth(userCode: $userCode) {
+    success
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  Lib_Mappers_AddSuggestions: `mutation Lib_Mappers_AddSuggestions($kaid: String!, $categories: [AddMappersCategoryInput]!) {
+  addMappersCategories(studentKaid: $kaid, categories: $categories) {
+    mappersSuggestions {
+      unit {
+        id
+        title: translatedTitle
+        relativeUrl
+        __typename
+      }
+      progress {
+        completed
+        total
+        __typename
+      }
+      __typename
+    }
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  SetAppearance: `mutation SetAppearance($kaid: String!, $colorSchemePreference: ColorSchemePreference!) {
+  setSettings(kaid: $kaid, colorSchemePreference: $colorSchemePreference) {
+    user {
+      id
+      colorSchemePreference
+      __typename
+    }
+    errors {
       code
       __typename
     }

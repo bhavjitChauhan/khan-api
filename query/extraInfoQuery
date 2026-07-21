@@ -4,7 +4,9 @@ query extraInfoQuery {
     nickname
     email
     birthMonthYear
+    isChild
     tosForFormalTeacherStatus
+    canAccessKaclBasedOnUserRequest
     joined
     affiliationCountryCode
     schoolAffiliation {

@@ -7,6 +7,13 @@ mutation joinStudentMutation($classCode: String!) {
       classroomName
       __typename
     }
+    classroom {
+      id
+      cacheId
+      signupCode
+      name
+      __typename
+    }
     __typename
   }
 }

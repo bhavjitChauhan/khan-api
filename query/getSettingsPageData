@@ -7,6 +7,7 @@ query getSettingsPageData($targetKaid: String) {
     isChild
     email
     isEnrolledInAIGuide
+    settingsCanBeModByLoggedInUser
     __typename
   }
 }

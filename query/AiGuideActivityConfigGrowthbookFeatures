@@ -2,6 +2,7 @@ query AiGuideActivityConfigGrowthbookFeatures($threadId: String!) {
   aiGuideActivityConfigByThreadId(threadId: $threadId) {
     growthbookFeaturesAsPromptVariables
     growthbookExperimentFeatures
+    globalKaidExperimentFeatures
     __typename
   }
 }

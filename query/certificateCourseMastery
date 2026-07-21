@@ -1,0 +1,13 @@
+query certificateCourseMastery($topicId: String!) {
+  user {
+    id
+    courseProgress(topicId: $topicId) {
+      currentMasteryV2 {
+        percentage
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

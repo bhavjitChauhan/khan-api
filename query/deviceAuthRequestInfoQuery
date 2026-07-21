@@ -1,0 +1,11 @@
+query deviceAuthRequestInfoQuery($userCode: String!) {
+  deviceAuthRequestInfo(userCode: $userCode) {
+    deviceDescription
+    location
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

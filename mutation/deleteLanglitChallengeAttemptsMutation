@@ -1,0 +1,10 @@
+mutation deleteLanglitChallengeAttemptsMutation($userKAID: String!, $assignmentID: String!) {
+  deleteLanglitChallengeAttempts(userKAID: $userKAID, assignmentID: $assignmentID) {
+    error {
+      code
+      message
+      __typename
+    }
+    __typename
+  }
+}

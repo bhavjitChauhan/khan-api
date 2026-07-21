@@ -102,7 +102,6 @@ query getFullUserProfile($kaid: String, $username: String) {
     }
     __typename
   }
-  actorIsImpersonatingUser
   isAIGuideEnabled
   hasAccessToAIGuideDev
 }

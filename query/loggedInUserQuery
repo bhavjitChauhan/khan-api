@@ -4,6 +4,7 @@ query loggedInUserQuery {
     kaid
     canAccessDistrictsHomepage
     isTeacher
+    hasClasses
     hasUnresolvedInvitations
     isInKacPilotDistrict
     preferredKaLocale {

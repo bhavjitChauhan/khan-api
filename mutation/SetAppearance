@@ -1,0 +1,14 @@
+mutation SetAppearance($kaid: String!, $colorSchemePreference: ColorSchemePreference!) {
+  setSettings(kaid: $kaid, colorSchemePreference: $colorSchemePreference) {
+    user {
+      id
+      colorSchemePreference
+      __typename
+    }
+    errors {
+      code
+      __typename
+    }
+    __typename
+  }
+}

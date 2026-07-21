@@ -1,0 +1,10 @@
+mutation denyDeviceAuthMutation($userCode: String!) {
+  denyDeviceAuth(userCode: $userCode) {
+    success
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}

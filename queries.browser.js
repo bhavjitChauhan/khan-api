@@ -4993,6 +4993,7 @@ fragment UserFields on User {
     hideVisual
     prefersReducedMotion
     noColorInVideos
+    colorSchemePreference
     pendingParentEmail
     profileRoot
     hasPassword
@@ -7224,7 +7225,6 @@ fragment EmailSubscriptionFields on EmailSubscriptions {
     }
     __typename
   }
-  actorIsImpersonatingUser
   isAIGuideEnabled
   hasAccessToAIGuideDev
 }`,
@@ -8456,6 +8456,7 @@ fragment Badge on Badge {
     isChild
     email
     isEnrolledInAIGuide
+    settingsCanBeModByLoggedInUser
     __typename
   }
 }`,
@@ -8468,6 +8469,7 @@ fragment Badge on Badge {
     isChild
     email
     isEnrolledInAIGuide
+    settingsCanBeModByLoggedInUser
     __typename
   }
   emailSettingsFromUnsubscribeToken(token: $token) {
@@ -10740,6 +10742,7 @@ fragment gtp_essayScoresFragment on EssayScores {
     id
     hasAccessToAIGuideLearner
     isAIGuideEnabled
+    canAccessKaclBasedOnUserRequest
     canViewAiGuideHistory: hasPermission(name: "can_view_ai_guide_history")
     canManageDistrictStudent(studentKaid: $kaid)
     __typename
@@ -10793,6 +10796,7 @@ fragment gtp_essayScoresFragment on EssayScores {
             isKacPilotClassroom
             isKmapClassroom
             isK4dClassroom
+            isChildAssignmentsClassroom
             __typename
           }
           showAssignments
@@ -11690,6 +11694,7 @@ fragment BaseFolder on Folder {
     kaid
     canAccessDistrictsHomepage
     isTeacher
+    hasClasses
     hasUnresolvedInvitations
     isInKacPilotDistrict
     preferredKaLocale {
@@ -23542,7 +23547,9 @@ fragment assessmentItemFields on AssessmentItem {
     nickname
     email
     birthMonthYear
+    isChild
     tosForFormalTeacherStatus
+    canAccessKaclBasedOnUserRequest
     joined
     affiliationCountryCode
     schoolAffiliation {
@@ -25674,6 +25681,7 @@ fragment skillLevelChangeFields on SkillLevelChange {
   aiGuideActivityConfigByThreadId(threadId: $threadId) {
     growthbookFeaturesAsPromptVariables
     growthbookExperimentFeatures
+    globalKaidExperimentFeatures
     __typename
   }
 }`,
@@ -27344,6 +27352,93 @@ fragment LessonData on Lesson {
       districtProvidedFirstName
       districtProvidedLastName
       districtProvidedFullName
+      __typename
+    }
+    __typename
+  }
+}`,
+  certificateCourseMastery: `query certificateCourseMastery($topicId: String!) {
+  user {
+    id
+    courseProgress(topicId: $topicId) {
+      currentMasteryV2 {
+        percentage
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  deviceAuthRequestInfoQuery: `query deviceAuthRequestInfoQuery($userCode: String!) {
+  deviceAuthRequestInfo(userCode: $userCode) {
+    deviceDescription
+    location
+    error {
+      code
+      __typename
+    }
+    __typename
+  }
+}`,
+  KacRedirectClassroomByAssignmentId: `query KacRedirectClassroomByAssignmentId($assignmentId: String!) {
+  user {
+    id
+    assignment(id: $assignmentId) {
+      id
+      classroom {
+        id
+        cacheId
+        signupCode
+        isKacPilotClassroom
+        isChildAssignmentsClassroom
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  Lib_Mappers_GetStudents: `query Lib_Mappers_GetStudents {
+  user {
+    id
+    nickname
+    username
+    age
+    studentLists: coachedClassrooms {
+      id
+      cacheId
+      key
+      name
+      __typename
+    }
+    students: coachees {
+      id
+      nickname
+      username
+      age
+      classrooms {
+        id
+        cacheId
+        key
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}`,
+  Lib_Mappers_GetSuggestions: `query Lib_Mappers_GetSuggestions($kaid: String!) {
+  mappersSuggestions(studentKaid: $kaid) {
+    unit {
+      id
+      title: translatedTitle
+      relativeUrl
+      __typename
+    }
+    progress {
+      completed
+      total
       __typename
     }
     __typename
