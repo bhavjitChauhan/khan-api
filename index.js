@@ -1,5 +1,5 @@
 import { existsSync, write } from 'fs'
-import { mkdir, readFile, readdir, writeFile } from 'fs/promises'
+import { mkdir, readFile, readdir, rm, writeFile } from 'fs/promises'
 import { config } from 'dotenv'
 import { parse, print } from 'graphql'
 import { addTypenameToDocument } from 'apollo-utilities'
@@ -12,10 +12,14 @@ import fragments from './fragments.js'
 config()
 
 const FETCH_BATCH_SIZE = 100
+const SCRIPTS_DIR = 'scripts'
+
+const flags = new Set(process.argv.slice(2))
+const local = flags.has('--local')
 
 /**
  * Formats a GraphQL document (query, mutation, etc.) by adding the __typename and formatting according to the GraphQL spec.
- * 
+ *
  * @param {string} str The GraphQL document (query, mutation, etc.) to format.
  */
 function formatDocument(str) {
@@ -29,7 +33,7 @@ function formatDocument(str) {
 
 /**
  * Extracts the operation name from a GraphQL document (query, mutation, etc.).
- * 
+ *
  * @param {string} str The GraphQL document (query, mutation, etc.) to extract the operation name from.
  */
 function extractOperation(str) {
@@ -45,7 +49,7 @@ function extractOperation(str) {
 
 /**
  * Extracts the fragments as an array from a GraphQL document (query, mutation, etc.).
- * 
+ *
  * @param {string} str The GraphQL document (query, mutation, etc.) to extract the fragments from.
  */
 function extractFragments(str) {
@@ -98,12 +102,12 @@ function sortDocumentFragments(str) {
 
 /**
  * Generates the hash from a GraphQL document (query, mutation, etc.).
- * 
+ *
  * @description
  * This hash may be used to make Khan API requests GET requests instead of POST requests.
- * 
+ *
  * @author [Reginald-Gillespie](https://github.com/Reginald-Gillespie)
- * 
+ *
  * @example
  * ```js
  * const hash = hashDocument(GET_FULL_USER_PROFILE_QUERY)
@@ -123,50 +127,69 @@ const documentTypes = ['query', 'mutation', 'fragment']
 let failed = false
 
 
-console.log('Fetching homepage script...')
-const html = await fetch('https://www.khanacademy.org/').then(r => r.text())
-const runtimeScriptURL = html.match(/src=(?:"|')(https?:\/\/cdn\.kastatic\.org\/[\w./]+runtime[\w.]+\.js)(?:"|')/)?.[1]
-if (!runtimeScriptURL) {
-    console.error('Failed to find runtime script URL')
-    process.exit(1)
+const fetchOptions = { headers: { 'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) Chrome/148.0.0.0 Mobile Safari/537.36' } }
+
+let scripts = []
+if (local) {
+    if (!existsSync(SCRIPTS_DIR)) {
+        console.error(`Local scripts directory not found: ${SCRIPTS_DIR}`)
+        process.exit(1)
+    }
+
+    console.log('Reading local scripts...')
+    const scriptFiles = (await readdir(SCRIPTS_DIR)).filter(file => file.endsWith('.js'))
+    scripts = await Promise.all(scriptFiles.map(file => readFile(`${SCRIPTS_DIR}/${file}`).then(buffer => buffer.toString())))
+    console.log(`Read ${scripts.length} scripts`)
+} else {
+    if (existsSync(SCRIPTS_DIR)) await rm(SCRIPTS_DIR, { recursive: true, force: true })
+    await mkdir(SCRIPTS_DIR)
+
+    console.log('Fetching homepage script...')
+    const html = await fetch('https://www.khanacademy.org/', fetchOptions).then(r => r.text())
+    const runtimeScriptURL = html.match(/src=(?:"|')(https?:\/\/cdn\.kastatic\.org\/[\w./]+runtime[\w.]+\.js)(?:"|')/)?.[1]
+    if (!runtimeScriptURL) {
+        console.error('Failed to find runtime script URL')
+        process.exit(1)
+    }
+    console.log('Fetched homepage script')
+
+
+    console.log('Fetching script URLs...')
+    const runtimeScript = await fetch(runtimeScriptURL, fetchOptions).then(r => r.text())
+    let scriptURLs = [...runtimeScript.matchAll(/(\d+):"(\w+)"/g)].map(([,key,value]) => `https://cdn.kastatic.org/khanacademy/${key}.${value}.js`)
+    const allHtmlScriptURLs = Array.from(html.matchAll(/src=(?:"|')(https?:\/\/cdn\.kastatic\.org\/.+\.js)(?:"|')/g), match => match[1])
+    scriptURLs.push(...allHtmlScriptURLs)
+    scriptURLs = [...new Set(scriptURLs)].filter(url => url)
+    console.log('Fetched runtime URLs')
+
+
+    console.log(`Fetching ${scriptURLs.length} scripts...`)
+
+    let scriptFetchedCount = 0
+    for (let i = 0; i < scriptURLs.length; i += FETCH_BATCH_SIZE) {
+        const batch = scriptURLs.slice(i, i + FETCH_BATCH_SIZE)
+        console.log(`Fetching scripts ${i + 1}-${i + batch.length}...`)
+        const batchScripts = (await Promise.all(batch.map(url => fetch(url, fetchOptions)
+            .then(async (res) => {
+                const fileName = new URL(url).pathname.split('/').pop()
+                const script = await res.text()
+                await writeFile(`${SCRIPTS_DIR}/${fileName}`, script)
+                scriptFetchedCount++
+                return script
+            })
+            .catch(() => null)
+        )))
+            .filter(script => script)
+        scripts.push(...batchScripts)
+        console.log(`Fetched ${batchScripts.length} scripts`)
+    }
+
+    console.log(`Fetched ${scriptFetchedCount}/${scriptURLs.length} scripts`)
 }
-console.log('Fetched homepage script')
-
-
-console.log('Fetching script URLs...')
-const runtimeScript = await fetch(runtimeScriptURL).then(r => r.text())
-let scriptURLs = [...runtimeScript.matchAll(/(\d+):"(\w+)"/g)].map(([,key,value]) => `https://cdn.kastatic.org/khanacademy/${key}.${value}.js`)
-const allHtmlScriptURLs = Array.from(html.matchAll(/src=(?:"|')(https?:\/\/cdn\.kastatic\.org\/.+\.js)(?:"|')/g), match => match[1])
-scriptURLs.push(...allHtmlScriptURLs)
-scriptURLs = [...new Set(scriptURLs)].filter(url => url)
-console.log('Fetched runtime URLs')
-
-
-console.log(`Fetching ${scriptURLs.length} scripts...`)
-
-let scriptFetchedCount = 0
-const scripts = []
-for (let i = 0; i < scriptURLs.length; i += FETCH_BATCH_SIZE) {
-    const batch = scriptURLs.slice(i, i + FETCH_BATCH_SIZE)
-    console.log(`Fetching scripts ${i + 1}-${i + batch.length}...`)
-    const batchScripts = (await Promise.all(batch.map(url => fetch(url)
-        .then(async (res) => {
-            scriptFetchedCount++
-            return await res.text()
-        })
-        .catch(() => null)
-    )))
-        .filter(script => script)
-    scripts.push(...batchScripts)
-    console.log(`Fetched ${batchScripts.length} scripts`)
-}
-
-console.log(`Fetched ${scriptFetchedCount}/${scriptURLs.length} scripts`)
-
 
 let documents = scripts
-    .map(script => [...script?.matchAll(/"(\\n    (?:query|mutation|fragment)[^"]+)/g), ...script?.matchAll(/'(\\n    (?:query|mutation|fragment)[^']+)/g)]
-        .map(match => match[1]?.trim().replaceAll('${0}', '').replaceAll('\\n', '\n')))
+    .map(script => [...script?.matchAll(/"(\\n    (?:query|mutation|fragment)[^"]+)/g), ...script?.matchAll(/'(\\n    (?:query|mutation|fragment)[^']+)/g), ...script?.matchAll(/`(\n    (?:query|mutation|fragment)[^`]+)/g)]
+        .map(match => match[1]?.trim().replaceAll(/\$\{[\w\.]+\}/g, '').replaceAll('\\n', '\n')))
     .flat()
     .map(document => {
         try {

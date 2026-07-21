@@ -25,3 +25,5 @@ index.d.ts
 
 # Editor directories and files
 .idea/
+
+/scripts/
